@@ -1,0 +1,6 @@
+re/ghidra/
+build/
+*.obj
+*.o
+*.exe
+__pycache__/

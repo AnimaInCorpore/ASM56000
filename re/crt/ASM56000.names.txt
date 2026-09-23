@@ -1,0 +1,279 @@
+# boundary: user code ends at 0043dccd, CRT starts at 0043dcd0
+# (user-code end = first byte after the last user function)
+# ASM56000.EXE - MSVC 5 libc.lib identification.  Format: addr<TAB>F|D<TAB>name<TAB>prototype/type<TAB>confidence
+# NOTE: the CRT actually starts at 0x0043dcd0 (_file.obj: __initstdio/__endstdio, then atan.obj), not 0x0043de50.
+# Section 1: CRT functions called directly from user code (plus atan @0043ddc4 which lies below 0x43de50)
+# Math: user code calls these via one-line wrappers 0x401000..0x40116d, referenced from the expression-function table @0x450048 (name,id,fn1,fn2)
+0043ddc4	F	atan	double atan(double x)	high
+0043dec0	F	fabs	double fabs(double x)	high
+0043dfc4	F	acos	double acos(double x)	high
+0043e094	F	asin	double asin(double x)	high
+0043e150	F	ceil	double ceil(double x)	high
+0043e250	F	sinh	double sinh(double x)	high
+0043e25a	F	cosh	double cosh(double x)	high
+0043e261	F	tanh	double tanh(double x)	high
+0043e294	F	cos	double cos(double x)	high
+0043e330	F	floor	double floor(double x)	high
+0043e444	F	log10	double log10(double x)	high
+0043e514	F	log	double log(double x)	high
+0043e5e4	F	sin	double sin(double x)	high
+0043e694	F	sqrt	double sqrt(double x)	high
+0043e754	F	tan	double tan(double x)	high
+0043e800	F	exp	double exp(double x)	high
+0043e839	F	pow	double pow(double x, double y)	high
+0043ea40	F	atan2	double atan2(double y, double x)	high
+0043fff0	F	fmod	double fmod(double x, double y)	high
+00440024	F	_ftol	long long _ftol(void)	high
+# Process / setjmp / signal / environment
+0043ea90	F	exit	void exit(int status)	high
+0043ecf0	F	signal	void *signal(int sig, void *func)	high
+0043fc50	F	longjmp	void longjmp(void *env, int value)	high
+004404b8	F	_setjmp3	int _setjmp3(void *env, int count, ...)	high
+0043ec30	F	getenv	char *getenv(char *name)	high
+# stdio
+0043efc0	F	fopen	void *fopen(char *name, char *mode)	high
+0043f6f0	F	fclose	int fclose(void *stream)	high
+0043f040	F	fgets	char *fgets(char *buf, int n, void *stream)	high
+00440db0	F	fwrite	unsigned int fwrite(void *buf, unsigned int size, unsigned int n, void *stream)	high
+00440870	F	fseek	int fseek(void *stream, long offset, int origin)	high
+0043efe0	F	rewind	void rewind(void *stream)	high
+00440910	F	ungetc	int ungetc(int c, void *stream)	high
+00440cf0	F	setvbuf	int setvbuf(void *stream, char *buf, int mode, unsigned int size)	high
+0043eba0	F	fprintf	int fprintf(void *stream, char *fmt, ...)	high
+00440fe0	F	printf	int printf(char *fmt, ...)	high
+0043f460	F	sprintf	int sprintf(char *buf, char *fmt, ...)	high
+0043ebe0	F	sscanf	int sscanf(char *buf, char *fmt, ...)	high
+0043f770	F	_filbuf	int _filbuf(void *stream)	high
+00440740	F	_flsbuf	int _flsbuf(int c, void *stream)	high
+0043fc20	F	remove	int remove(char *path)	high
+# heap
+00440b40	F	malloc	void *malloc(unsigned int size)	high
+004409a0	F	realloc	void *realloc(void *p, unsigned int size)	high
+0043fbd0	F	free	void free(void *p)	high
+# string / ctype / conversion / sort
+0043f0c0	F	strcpy	char *strcpy(char *dst, char *src)	high
+0043f0d0	F	strcat	char *strcat(char *dst, char *src)	high
+0043f4d0	F	strlen	unsigned int strlen(char *s)	high
+0043ef00	F	strcmp	int strcmp(char *a, char *b)	high
+00440700	F	strncmp	int strncmp(char *a, char *b, unsigned int n)	high
+00440540	F	strncpy	char *strncpy(char *dst, char *src, unsigned int n)	high
+00440050	F	strncat	char *strncat(char *dst, char *src, unsigned int n)	high
+0043f870	F	strchr	char *strchr(char *s, int c)	high
+0043ecc0	F	strrchr	char *strrchr(char *s, int c)	high
+00440f00	F	strtok	char *strtok(char *s, char *delim)	high
+0044bb90	F	_strdup	char *_strdup(char *s)	high
+0043fb70	F	memset	void *memset(void *dst, int c, unsigned int n)	high
+00440180	F	memcpy	void *memcpy(void *dst, void *src, unsigned int n)	high
+0043f1b0	F	strtol	long strtol(char *s, char **endptr, int base)	high
+00440640	F	strtod	double strtod(char *s, char **endptr)	high
+0043f550	F	tolower	int tolower(int c)	high
+00440bf0	F	toupper	int toupper(int c)	high
+0043f650	F	_isctype	int _isctype(int c, int mask)	high
+0043f930	F	qsort	void qsort(void *base, unsigned int num, unsigned int width, void *compare)	high
+# time
+0043fec0	F	time	long time(long *timer)	high
+0043fcd0	F	localtime	void *localtime(long *timer)	high
+# not CRT: Win32 import thunk called directly by user code (FUN_0041905d)
+0044c170	F	GetCurrentProcessId	unsigned long GetCurrentProcessId(void)	high
+# Section 2: CRT data objects touched by user code
+0045a450	D	_iob	char[640]	high
+# _iob = 20 FILE structs of 0x20 bytes: stdin = _iob+0x00 (0045a450, no user refs), stdout = _iob+0x20 (0045a470, 26 user refs), stderr = _iob+0x40 (0045a490, 2 user refs)
+# FILE layout: +0 _ptr, +4 _cnt, +8 _base, +0xc _flag, +0x10 _file, +0x14 _charbuf, +0x18 _bufsiz, +0x1c _tmpfname
+0045a780	D	_pctype	unsigned short *	high
+# _pctype points to _ctype+1 (0045a78a). isalpha() etc. in user code expand to: __mb_cur_max>1 ? _isctype(c,mask) : _pctype[c]&mask
+# getc/putc macros in user code expand to --_cnt>=0 ? *_ptr++ : _filbuf(f) / _flsbuf(c,f)
+0045a98c	D	__mb_cur_max	int	high
+00464ef0	D	errno	int	high
+# Section 3: other CRT data (not referenced by user code)
+0045a784	D	_pwctype	unsigned short *	med
+0045a788	D	_ctype	unsigned short[257]	high
+0045a990	D	__decimal_point	char[4]	med
+0045a6e0	D	_FPinit	void *	med
+0045a9f8	D	__badioinfo	char[8]	med
+0045aa30	D	_cfltcvt_tab	void *[6]	high
+0045acb8	D	_XcptActTab	char[128]	med
+0045ad38	D	_XcptActTabCount	int	med
+0045cd6c	D	__sbh_threshold	unsigned int	med
+0045cee8	D	_timezone	long	high
+0045ceec	D	_daylight	int	high
+0045cef0	D	_dstbias	long	high
+0045d100	D	_HUGE	double	med
+00464ee4	D	_cflush	int	med
+00464eec	D	_adjust_fdiv	int	med
+00464ef4	D	_doserrno	unsigned long	high
+00464f0c	D	__argc	int	high
+00464f10	D	__argv	char **	high
+00464f18	D	_environ	char **	high
+00464f1c	D	__initenv	char **	high
+00464f20	D	_wenviron	unsigned short **	med
+00464f30	D	_exitflag	char	med
+00464f34	D	_C_Termination_Done	int	med
+00464f38	D	_C_Exit_Done	int	med
+00464f68	D	_nexttoken	char *	med
+00464f6c	D	_aenvptr	char *	high
+00464fa0	D	_stdbuf	void *[2]	high
+00464fb8	D	__lc_handle	unsigned int[6]	low
+# __lc_handle: only element [LC_CTYPE] @00464fc0 is seen (toupper/tolower); array base inferred from LC_CTYPE==2
+004650e0	D	_pnhNewHandler	void *	med
+004650e4	D	_newmode	int	high
+00465bfc	D	_crtheap	void *	high
+00465c00	D	__pioinfo	void *[64]	high
+# No _osfile array in MSVC5: osfile flags are __pioinfo[fh>>5][fh&31].osfile (ioinfo = {long osfhnd; char osfile; char pipech;} 8 bytes)
+00465d00	D	_nhandle	int	high
+00465d04	D	_acmdln	char *	high
+00465d08	D	__onexitend	void **	med
+00465d0c	D	__onexitbegin	void **	med
+00465d10	D	__piob	void **	high
+00466d20	D	_nstream	int	high
+# Section 4: other CRT functions identified along the way (not called from user code)
+00401190	F	main	int main(int argc, char **argv, char **envp)	high
+# ^ main is user code (called from mainCRTStartup), listed for convenience
+00441020	F	mainCRTStartup	void mainCRTStartup(void)	high
+0043dcd0	F	__initstdio	void __initstdio(void)	high
+0043dd90	F	__endstdio	void __endstdio(void)	high
+0043de50	F	_fpmath	void _fpmath(void)	high
+0043de80	F	_cfltcvt_init	void _cfltcvt_init(void)	high
+0043ea60	F	_cinit	void _cinit(void)	high
+0043eab0	F	_exit	void _exit(int status)	high
+0043ead0	F	doexit	void doexit(int code, int quick, int retcaller)	high
+0043eb80	F	_initterm	void _initterm(void *begin, void *end)	high
+00441140	F	_amsg_exit	void _amsg_exit(int rterrnum)	high
+00441170	F	fast_error_exit	void fast_error_exit(int rterrnum)	med
+004411a0	F	_ioinit	void _ioinit(void)	high
+00448020	F	_setenvp	void _setenvp(void)	high
+00448110	F	_setargv	void _setargv(void)	high
+004481b0	F	parse_cmdline	void parse_cmdline(char *cmdstart, char **argv, char *args, int *numargs, int *numchars)	med
+004483c0	F	__crtGetEnvironmentStringsA	void *__crtGetEnvironmentStringsA(void)	high
+00448a00	F	__initmbctable	int __initmbctable(void)	med
+00448520	F	_setmbcp	int _setmbcp(int codepage)	med
+00448af0	F	_FF_MSGBANNER	void _FF_MSGBANNER(void)	med
+00448b30	F	_NMSG_WRITE	void _NMSG_WRITE(int rterrnum)	med
+0044b4c0	F	__crtMessageBoxA	int __crtMessageBoxA(char *text, char *caption, unsigned int type)	med
+00444e90	F	_XcptFilter	int _XcptFilter(unsigned long xcptnum, void *pxcptptrs)	med
+0043eeb0	F	siglookup	void *siglookup(int sig)	high
+00441a30	F	_ms_p5_mp_test_fdiv	int _ms_p5_mp_test_fdiv(void)	high
+004419e0	F	_ms_p5_test_fdiv	int _ms_p5_test_fdiv(void)	med
+# stdio internals
+0043ef90	F	_fsopen	void *_fsopen(char *name, char *mode, int shflag)	high
+004451f0	F	_getstream	void *_getstream(void)	high
+00445020	F	_openfile	void *_openfile(char *name, char *mode, int shflag, void *stream)	high
+004433d0	F	_stbuf	int _stbuf(void *stream)	high
+00443490	F	_ftbuf	void _ftbuf(int flag, void *stream)	high
+004434f0	F	_output	int _output(void *stream, char *fmt, void *argptr)	high
+00443e80	F	write_char	void write_char(int ch, void *stream, int *pnumwritten)	med
+00443ed0	F	write_multi_char	void write_multi_char(int ch, int num, void *stream, int *pnumwritten)	med
+00443f10	F	write_string	void write_string(char *string, int len, void *stream, int *pnumwritten)	med
+00443f50	F	get_int_arg	int get_int_arg(void *pargptr)	med
+00443f70	F	get_int64_arg	long long get_int64_arg(void *pargptr)	low
+00443f90	F	get_short_arg	short get_short_arg(void *pargptr)	low
+00443fb0	F	_input	int _input(void *stream, char *fmt, void *arglist)	high
+00444cf0	F	_hextodec	int _hextodec(int chr)	med
+00444d30	F	_inc	int _inc(void *stream)	med
+00444d60	F	_un_inc	void _un_inc(int chr, void *stream)	med
+00444d80	F	_whiteout	int _whiteout(int *counter, void *stream)	med
+00441500	F	_flush	int _flush(void *stream)	high
+00445a30	F	_getbuf	void _getbuf(void *stream)	high
+00445790	F	_freebuf	void _freebuf(void *stream)	high
+00447e50	F	ftell	long ftell(void *stream)	high
+00449720	F	memmove	void *memmove(void *dst, void *src, unsigned int n)	high
+# ^ memmove/memcpy are byte-identical (same memcpy.asm); 0x449720 is the copy used by cvt.c _shift (memmove), so 0x440180 is memcpy
+# lowio
+0044a420	F	_sopen	int _sopen(char *path, int oflag, int shflag, int pmode)	high
+004456b0	F	_close	int _close(int fh)	high
+004457d0	F	_read	int _read(int fh, void *buf, unsigned int cnt)	high
+00447c00	F	_write	int _write(int fh, void *buf, unsigned int cnt)	high
+00445280	F	_lseek	long _lseek(int fh, long pos, int mthd)	high
+00447e20	F	_isatty	int _isatty(int fh)	high
+0044bbe0	F	_chsize	int _chsize(int fh, long size)	med
+0044a7e0	F	_alloc_osfhnd	int _alloc_osfhnd(void)	med
+0044a8a0	F	_set_osfhnd	int _set_osfhnd(int fh, long value)	med
+0044a950	F	_free_osfhnd	int _free_osfhnd(int fh)	med
+0044a9f0	F	_get_osfhandle	long _get_osfhandle(int fh)	med
+004462c0	F	_dosmaperr	void _dosmaperr(unsigned long oserrno)	high
+# heap internals
+004413a0	F	calloc	void *calloc(unsigned int num, unsigned int size)	high
+00440b60	F	_nh_malloc	void *_nh_malloc(unsigned int size, int nhFlag)	high
+00440bb0	F	_heap_alloc	void *_heap_alloc(unsigned int size)	high
+00448000	F	_callnewh	int _callnewh(unsigned int size)	high
+00445a90	F	_heap_init	int _heap_init(void)	high
+00445ad0	F	__sbh_new_region	void *__sbh_new_region(void)	med
+00445c40	F	__sbh_release_region	void __sbh_release_region(void *preg)	med
+00445ca0	F	__sbh_decommit_pages	void __sbh_decommit_pages(int count)	med
+00445d70	F	__sbh_find_block	void *__sbh_find_block(void *pblock, void *ppreg, void *pppage)	high
+00445dd0	F	__sbh_free_block	void __sbh_free_block(void *preg, void *ppage, void *pmap)	high
+00445e30	F	__sbh_alloc_block	void *__sbh_alloc_block(unsigned int para_req)	high
+00446070	F	__sbh_alloc_block_from_page	void *__sbh_alloc_block_from_page(void *ppage, unsigned int free_para_count, unsigned int para_req)	med
+004461f0	F	__sbh_resize_block	int __sbh_resize_block(void *preg, void *ppage, void *pmap, unsigned int new_para_sz)	high
+# string / locale / env internals
+0043f1d0	F	strtoxl	unsigned long strtoxl(char *nptr, char **endptr, int ibase, int flags)	high
+00447b50	F	_fltin2	void *_fltin2(void *flt, char *str, int len_ignore, int scale, int decpt)	med
+0044ad10	F	__strgtold12	unsigned int __strgtold12(void *pld12, char **p_end_ptr, char *str, int mult12, int scale, int decpt, int implicit_E)	med
+00449480	F	_ld12tod	int _ld12tod(void *pld12, double *d)	med
+004494a0	F	_ld12tof	int _ld12tof(void *pld12, float *f)	low
+004494c0	F	_atodbl	int _atodbl(double *d, char *str)	low
+00449500	F	_atoflt	int _atoflt(float *f, char *str)	low
+0044aa40	F	atol	long atol(char *s)	high
+00449d90	F	isspace	int isspace(int c)	high
+00449c90	F	mbtowc	int mbtowc(unsigned short *pwc, char *s, unsigned int n)	med
+00449b20	F	wctomb	int wctomb(char *s, unsigned short wc)	med
+00444dd0	F	_strnicoll	int _strnicoll(char *a, char *b, unsigned int n)	med
+00444e10	F	__wtomb_environ	int __wtomb_environ(void)	med
+0044a120	F	__crtsetenv	int __crtsetenv(char *option, int primary)	med
+0044a330	F	findenv	int findenv(char *name, int len)	med
+0044a3b0	F	copy_environ	char **copy_environ(char **oldenviron)	med
+00445340	F	__crtLCMapStringA	int __crtLCMapStringA(unsigned long lcid, unsigned long flags, char *src, int cchsrc, char *dst, int cchdst, int codepage, int berror)	high
+00445570	F	__crtGetStringTypeA	int __crtGetStringTypeA(unsigned long type, char *src, int cchsrc, unsigned short *chartype, int codepage, int lcid, int berror)	high
+00449e20	F	__crtCompareStringA	int __crtCompareStringA(unsigned long lcid, unsigned long flags, char *s1, int n1, char *s2, int n2, int codepage)	med
+0044a0f0	F	__ansicp	int __ansicp(int lcid)	low
+# time internals
+00446490	F	__tzset	void __tzset(void)	high
+004464b0	F	_tzset	void _tzset(void)	high
+00446760	F	_isindst	int _isindst(void *tb)	high
+004469d0	F	cvtdate	void cvtdate(int trantype, int datetype, int year, int month, int week, int dayofweek, int date, int hour, int min, int sec, int msec)	med
+00446b70	F	gmtime	void *gmtime(long *timer)	high
+00446cd0	F	__loctotime_t	long __loctotime_t(int yr, int mo, int dy, int hr, int mn, int sc, int dstflag)	high
+# floating point support
+00441a60	F	_forcdecpt	void _forcdecpt(char *buffer)	high
+00441ac0	F	_cropzeros	void _cropzeros(char *buf)	high
+00441b30	F	_positive	int _positive(double *arg)	high
+00441b50	F	_fassign	void _fassign(int flag, char *argument, char *number)	high
+00441f00	F	_cfltcvt	void _cfltcvt(double *arg, char *buffer, int format, int precision, int caps)	high
+00441df0	F	_cftog	char *_cftog(double *pvalue, char *buf, int ndec, int caps)	med
+00441bb0	F	_cftoe	char *_cftoe(double *pvalue, char *buf, int ndec, int caps)	low
+00441cf0	F	_cftof	char *_cftof(double *pvalue, char *buf, int ndec)	low
+00441f70	F	_shift	void _shift(char *s, int dist)	high
+00449540	F	_fptostr	void _fptostr(char *buf, int digits, void *pflt)	med
+004495e0	F	_fltout2	void *_fltout2(double x, void *flt, char *resultstr)	med
+00449a60	F	_fptrap	void _fptrap(void)	high
+00442a50	F	_ctrlfp	unsigned int _ctrlfp(unsigned int newctrl, unsigned int mask)	med
+004428b0	F	_sptype	int _sptype(double x)	med
+00441ff0	F	_except1	double _except1(int flags, int opcode, double arg, double res, unsigned int cw)	med
+00441fa0	F	_handle_qnan1	double _handle_qnan1(unsigned int opcode, double x, unsigned int savedcw)	med
+00442ae0	F	_frnd	double _frnd(double x)	med
+004420b0	F	_raise_exc	void _raise_exc(void *prec, unsigned long *pcw, int flags, int opcode, double *parg1, double *presult)	low
+004423f0	F	_handle_exc	int _handle_exc(unsigned int flags, double *presult, unsigned int cw)	low
+00442720	F	_umatherr	double _umatherr(int type, unsigned int opcode, double arg1, double arg2, double retval, unsigned int cw)	low
+004477cc	F	_adj_fprem	void _adj_fprem(void)	med
+004417d0	F	__twoToTOS	void __twoToTOS(void)	low
+004417e5	F	__load_CW	void __load_CW(void)	med
+004417fc	F	__convertTOStoQNaN	void __convertTOStoQNaN(void)	med
+00441815	F	__fload_withFB	void __fload_withFB(void)	high
+00441858	F	__checkTOS_withFB	void __checkTOS_withFB(void)	med
+00441960	F	__startTwoArgErrorHandling	void __startTwoArgErrorHandling(void)	med
+# _CIxxx register-based (arg/result in ST0) entries of the math functions; compiler-intrinsic entry points, not used by this program
+0043ddb0	F	_CIatan	double _CIatan(void)	med
+0043dfb0	F	_CIacos	double _CIacos(void)	med
+0043e080	F	_CIasin	double _CIasin(void)	med
+0043e268	F	_CIsinh	double _CIsinh(void)	med
+0043e272	F	_CIcosh	double _CIcosh(void)	med
+0043e279	F	_CItanh	double _CItanh(void)	med
+0043e280	F	_CIcos	double _CIcos(void)	med
+0043e430	F	_CIlog10	double _CIlog10(void)	med
+0043e500	F	_CIlog	double _CIlog(void)	med
+0043e5d0	F	_CIsin	double _CIsin(void)	med
+0043e680	F	_CIsqrt	double _CIsqrt(void)	med
+0043e740	F	_CItan	double _CItan(void)	med
+0043e80a	F	_CIexp	double _CIexp(void)	med
+0043e820	F	_CIpow	double _CIpow(void)	med
+0043ea4a	F	_CIatan2	double _CIatan2(void)	med
+0043fffa	F	_CIfmod	double _CIfmod(void)	med

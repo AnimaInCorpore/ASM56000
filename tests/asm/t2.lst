@@ -1,0 +1,35 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-23  13:55:55  t2.asm  Page 1
+
+
+
+1                                  ident   2,7                               ; module ident comment
+2                                comment 'section comment text'
+3                                  page    132,66
+4         1.250000E+000  flt       equ     1.25
+5         -3.000000E-010 negflt    equ     -3.0e-10
+6         000107         abcdefgh  equ     $107
+7                        averylongsymbolname
+8         000123                   equ     $123
+9         P:0107                   org     p:$107
+10        P:0107 000000  entry8    nop
+11        P:0108 0605A0            rep     #5
+12        P:0109 000000            nop
+**** 13 [t2.asm 12]: WARNING --- Expression value outside fractional domain (X data move field)
+13        P:010A 44F400            move              #flt,x0
+                 7FFFFF
+14        P:010C A5A5A5            bsc     20,$A5A5A5
+15        P:0120                   dc      1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+16        X:0040                   org     x:$40
+17        X:0040 555555  xdata     bsc     4,$555555
+18        Y:0080                   org     y:$80
+19        Y:0080         ydat8ch   dc      $111111,$222222
+20        L:0100                   org     l:$100
+21        L:0100         ldata     dc      $00000100000200000300
+22        L:0101 123456            bsc     3,$123456789abc
+                 789ABC
+23                                 end     entry8
+
+0    Errors
+1    Warning 
+
+

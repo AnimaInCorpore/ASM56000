@@ -1,0 +1,128 @@
+00400000	MZ	[ 004000b4 __sbh_new_region __sbh_new_region ]
+00400080	PE	[ ]
+00400178	.text	[ ]
+004001a0	.rdata	[ ]
+004001c8	.data	[ ]
+004001f0	.idata	[ ]
+00408014	Illegal byte sequence	[ 004094e8 ]
+0040802c	Directory not empty	[ 004094e4 ]
+00408040	Function not implemented	[ 004094e0 ]
+0040805c	No locks available	[ 004094dc ]
+00408070	Filename too long	[ 004094d8 ]
+00408084	Resource deadlock avoided	[ 004094d0 ]
+004080a0	Result too large	[ 004094c8 ]
+004080b4	Domain error	[ 004094c4 ]
+004080c4	Broken pipe	[ 004094c0 ]
+004080d0	Too many links	[ 004094bc ]
+004080e0	Read-only file system	[ 004094b8 ]
+004080f8	Invalid seek	[ 004094b4 ]
+00408108	No space left on device	[ 004094b0 ]
+00408120	File too large	[ 004094ac ]
+00408130	Inappropriate I/O control operation	[ 004094a4 ]
+00408154	Too many open files	[ 004094a0 ]
+00408168	Too many open files in system	[ 0040949c ]
+00408188	Invalid argument	[ 00409498 ]
+0040819c	Is a directory	[ 00409494 ]
+004081ac	Not a directory	[ 00409490 ]
+004081bc	No such device	[ 0040948c ]
+004081cc	Improper link	[ 00409488 ]
+004081dc	File exists	[ 00409484 ]
+004081e8	Resource device	[ 00409480 ]
+004081f8	Unknown error	[ FUN_004015d0 FUN_004015d0 004094ec 0040947c 004094a8 004094cc 004094d4 ]
+00408208	Bad address	[ 00409478 ]
+00408214	Permission denied	[ 00409474 ]
+00408228	Not enough space	[ 00409470 ]
+0040823c	Resource temporarily unavailable	[ 0040946c ]
+00408260	No child processes	[ 00409468 ]
+00408274	Bad file descriptor	[ 00409464 ]
+00408288	Exec format error	[ 00409460 ]
+0040829c	Arg list too long	[ 0040945c ]
+004082b0	No such device or address	[ 00409458 ]
+004082cc	Input/output error	[ 00409454 ]
+004082e0	Interrupted function call	[ 00409450 ]
+004082fc	No such process	[ 0040944c ]
+0040830c	No such file or directory	[ 00409448 ]
+00408328	Operation not permitted	[ 00409444 ]
+00408340	No error	[ 00409440 ]
+004083ae	null)	[ _output ]
+004083bd	null)	[ _output _output ]
+004083c4	runtime error 	[ ]
+004083d8	TLOSS error\n	[ ]
+004083e8	SING error\n	[ ]
+004083f8	DOMAIN error\n	[ ]
+00408408	R6028\n- unable to initialize heap\n	[ ]
+00408430	R6027\n- not enough space for lowio initialization\n	[ ]
+00408468	R6026\n- not enough space for stdio initialization\n	[ ]
+004084a0	R6025\n- pure virtual function call\n	[ ]
+004084c8	R6024\n- not enough space for _onexit/atexit table\n	[ ]
+00408500	R6019\n- unable to open console device\n	[ ]
+0040852c	R6018\n- unexpected heap error\n	[ ]
+00408550	R6017\n- unexpected multithread lock error\n	[ ]
+00408580	R6016\n- not enough space for thread data\n	[ ]
+004085ac	\nabnormal program termination\n	[ ]
+004085d0	R6009\n- not enough space for environment\n	[ _NMSG_WRITE _NMSG_WRITE _NMSG_WRITE _NMSG_WRITE _NMSG_WRITE 0040b6ec ]
+004085fc	R6008\n- not enough space for arguments\n	[ ]
+00408628	R6002\n- floating point not loaded\n	[ ]
+00408650	Microsoft Visual C++ Runtime Library	[ _NMSG_WRITE ]
+0040867c	Runtime Error!\n\nProgram: 	[ _NMSG_WRITE _NMSG_WRITE ]
+0040869c	<program name unknown>	[ _NMSG_WRITE _NMSG_WRITE ]
+004086b4	GetLastActivePopup	[ __crtMessageBoxA ]
+004086c8	GetActiveWindow	[ __crtMessageBoxA ]
+004086d8	MessageBoxA	[ __crtMessageBoxA ]
+004086e4	user32.dll	[ __crtMessageBoxA ]
+00409030	-------------------------------------------------------------	[ FUN_0040145f ]
+00409074	Version 6.3 usage: tiohist tiofile blockfile > outputfile\n	[ main ]
+004090b4	tiohist	[ main ]
+004090c0	tiohist	[ main ]
+004090c8	tiohist	[ FUN_004010c6 ]
+004090d8	tiohist	[ FUN_004010c6 ]
+004090e0	 %lu P:$%lx	[ FUN_004010c6 ]
+004090ec	_______Cycle Count Histogram__________	[ FUN_004010c6 ]
+00409114	_______Instruction Count Histogram__________	[ FUN_004010c6 ]
+00409144	_______Block Entry Count Histogram__________	[ FUN_004010c6 ]
+00409178	\nblock     count	[ FUN_0040145f ]
+0040918c	\n--------- --------\n	[ FUN_0040145f ]
+004091a4	$%08lx %08ld %s\n	[ FUN_0040145f ]
+0040b538	 \t-]	[ _input ]
+0040d17a	ExitProcess	[ ]
+0040d188	TerminateProcess	[ ]
+0040d19c	GetCurrentProcess	[ ]
+0040d1b0	HeapReAlloc	[ ]
+0040d1be	HeapAlloc	[ ]
+0040d1ca	GetCommandLineA	[ ]
+0040d1dc	GetVersion	[ ]
+0040d1ea	HeapFree	[ ]
+0040d1f6	GetLastError	[ ]
+0040d206	CloseHandle	[ ]
+0040d214	WriteFile	[ ]
+0040d220	SetHandleCount	[ ]
+0040d232	GetStdHandle	[ ]
+0040d242	GetFileType	[ ]
+0040d250	GetStartupInfoA	[ ]
+0040d262	ReadFile	[ ]
+0040d26e	HeapDestroy	[ ]
+0040d27c	HeapCreate	[ ]
+0040d28a	VirtualFree	[ ]
+0040d298	VirtualAlloc	[ ]
+0040d2a8	UnhandledExceptionFilter	[ ]
+0040d2c4	GetModuleFileNameA	[ ]
+0040d2da	FreeEnvironmentStringsA	[ ]
+0040d2f4	MultiByteToWideChar	[ ]
+0040d30a	FreeEnvironmentStringsW	[ ]
+0040d324	GetEnvironmentStrings	[ ]
+0040d33c	GetEnvironmentStringsW	[ ]
+0040d356	WideCharToMultiByte	[ ]
+0040d36c	GetCPInfo	[ ]
+0040d378	GetACP	[ ]
+0040d382	GetOEMCP	[ ]
+0040d38e	RtlUnwind	[ ]
+0040d39a	SetStdHandle	[ ]
+0040d3aa	FlushFileBuffers	[ ]
+0040d3be	SetFilePointer	[ ]
+0040d3d0	CreateFileA	[ ]
+0040d3de	GetProcAddress	[ ]
+0040d3f0	LoadLibraryA	[ ]
+0040d400	SetEndOfFile	[ ]
+0040d410	GetStringTypeA	[ ]
+0040d422	GetStringTypeW	[ ]
+0040d432	KERNEL32.dll	[ ]

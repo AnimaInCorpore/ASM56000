@@ -1,0 +1,3 @@
+# Store everything byte for byte: test fixtures are binary COFF/library files
+# and outputs are compared exactly; sources use LF line endings.
+* -text

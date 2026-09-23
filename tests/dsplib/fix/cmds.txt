@@ -1,0 +1,4 @@
+; module list
+mod1.cln	mod2.cln ; trailing
+
+mod3.cln
