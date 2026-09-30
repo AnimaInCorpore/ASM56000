@@ -5,26 +5,33 @@
 #include "sim56000.h"
 #define W __attribute__((weak))
 
-struct sim_state *cur_sim;
-struct dev_type *cur_dtype;
-struct dev_inst *cur_dev;
-struct prof_ctx *prof_ctx;
-struct dev_type **chiptype_tab;
-struct dev_inst **dev_tab;
-struct sim_state **dev_state_tab;
-long max_devices = 1;
-long cur_dev_index = 0;
-long gui_mode[2] = { 0, 0 };
-long text_rows = 25;
-long mdisk_block_bytes = 0x400;
-long macro_active, quit_on_error, on_error_active, last_error_code[3];
-unsigned char status1_buf[256];
-char *parm_errmsg;
-unsigned long shr_fill_bit[2] = { 0x80000000UL, 0 };
-long dec_split_16[4] = { 51712L, 15258, 0, 0 };
-long dec_split_24[4] = { 10144256L, 59, 0, 1919973445L };
-const char *fmt_tab_16[5], *fmt_tab_24[5], *fmt_tab_32[5];
-const char *fmt_tab_16_nosym[5], *fmt_tab_24_nosym[5], *fmt_tab_32_nosym[5];
+W struct sim_state *cur_sim;
+W struct dev_type *cur_dtype;
+W struct dev_inst *cur_dev;
+W struct prof_ctx *prof_ctx;
+W struct dev_type **chiptype_tab;
+W struct dev_inst **dev_tab;
+W struct sim_state **dev_state_tab;
+W long max_devices = 1;
+W long cur_dev_index = 0;
+W long gui_mode[2] = { 0, 0 };
+W long text_rows = 25;
+W long mdisk_block_bytes = 0x400;
+W long macro_active;
+W long quit_on_error;
+W long on_error_active;
+W long last_error_code[3];
+W unsigned char status1_buf[256];
+W char *parm_errmsg;
+W unsigned long shr_fill_bit[2] = { 0x80000000UL, 0 };
+W long dec_split_16[4] = { 51712L, 15258, 0, 0 };
+W long dec_split_24[4] = { 10144256L, 59, 0, 1919973445L };
+W const char *fmt_tab_16[5];
+W const char *fmt_tab_24[5];
+W const char *fmt_tab_32[5];
+W const char *fmt_tab_16_nosym[5];
+W const char *fmt_tab_24_nosym[5];
+W const char *fmt_tab_32_nosym[5];
 
 W long memmap_find(long s, unsigned long a) { return 0; }
 W long mdisk_read(long d, unsigned long s, unsigned long a, unsigned long *p) { return 1; }

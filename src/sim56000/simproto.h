@@ -307,12 +307,12 @@ extern unsigned long keygen_mulmod(unsigned long a, unsigned long b); /* 41c430 
 /* no prototype yet: igrp_method_41c490@41c490 */
 
 /* ---- module insstat (0x41c750): per-instruction statistics records, eval_cc, mnemonic_name */
-extern void insn_stat_classify(void *stat, void *dec); /* 41c750 */
-extern void insn_stat_operands(void *stat, void *dec); /* 41c8b0 */
+extern void insn_stat_classify(void *stat, long *dec); /* 41c750 */
+extern void insn_stat_operands(void *stat, long *dec); /* 41c8b0 */
 extern void copy_operand4(long *dst, long *src); /* 41cb40 */
 extern unsigned long eval_cc(unsigned long ccr, long cc); /* 41cb60 */
 extern char * mnemonic_name(long id); /* 41cd00 */
-extern long stat_lmove_class(void *stat, long a2, long a3, long *class_out, long *flag1, long a6, long *flag2); /* 41cd40 */
+extern long stat_lmove_class(void *stat, long *class_out, long *flag); /* 41cd40 */
 extern long operand_is_xy_pair(long *a, long *b); /* 41ce10 */
 extern void dec_c0_enddo(unsigned long opw, long *dec); /* 41ce50 */
 

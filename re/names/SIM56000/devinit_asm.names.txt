@@ -10,7 +10,7 @@
 0041cb40	F	copy_operand4	void copy_operand4(long *dst, long *src)	med	devinit
 0041cb60	F	eval_cc	unsigned long eval_cc(unsigned long ccr, int cc)	high	devinit
 0041cd00	F	mnemonic_name	char * mnemonic_name(int id)	med	devinit
-0041cd40	F	stat_lmove_class	int stat_lmove_class(void *stat, long a2, long a3, long *class_out, long *flag1, long a6, long *flag2)	low	devinit
+0041cd40	F	stat_lmove_class	long stat_lmove_class(void *stat, long *class_out, long *flag)	low	devinit
 0041ce10	F	operand_is_xy_pair	int operand_is_xy_pair(long *a, long *b)	low	devinit
 0041ce50	F	dec_c0_enddo	void dec_c0_enddo(unsigned long opw, void *dec)	low	devinit
 0041cfb0	F	swap_ptrs	void swap_ptrs(void **a, void **b)	med	devinit

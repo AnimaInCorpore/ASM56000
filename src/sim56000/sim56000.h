@@ -316,13 +316,23 @@ struct op_ref {                        /* 0x14 bytes */
     long rw;                           /* 0 write, 1 read, 2 read+write */
     long addr, a3, a4;
 };
-/* statistics record of one decoded instruction (only the parts ref_prune looks at; see insstat.c) */
-struct stat_operand { long kind; long f[6]; };      /* stride 0x1c at +0x20 */
-struct stat_mv { long f0[3]; long kind0; long f1[8]; long kind1; };  /* kind0 at +0xc, kind1 at +0x28 */
-struct stat_link { long f0; struct stat_link *next; struct stat_mv *mv; };
-struct stat_rec {
-    struct stat_operand operand[4];    /* +0x20 */
+/* statistics record of one decoded instruction (insstat.c, igrp.c, oprefs.c) */
+struct stat_op {                       /* 0x1c bytes: copy of a DEC operand {kind, value, aux, space} + 3 counters */
+    long w[7];
+};
+struct stat_link {                     /* list of L: move operand pairs (static nodes in insstat.c) */
+    long f0;
+    struct stat_link *next;            /* +4 */
+    struct stat_op *ops;               /* +8 two consecutive operands */
+};
+struct insn_stat {
+    long f0;                           /* +0 */
+    long word0, word1;                 /* +4, +8 instruction word and extension word */
+    long flags;                        /* +0xc */
+    long cat;                          /* +0x10 category (mnemonic id, or 0x63..0x65 for move forms) */
+    struct stat_op op[4];              /* +0x14 operands */
     struct stat_link *link;            /* +0x84 L: move list */
+    long aux;                          /* +0x88 */
 };
 
 /* ------------------------------------------------------------------ simulator block (`state`, 0x4408 bytes; cur_sim = sim_tab[n])

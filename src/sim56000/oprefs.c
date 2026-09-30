@@ -61,14 +61,14 @@ void ref_record(long kind, long addr, long a3, long a4)
 /* drop pending category-3 references when the instruction has no operand of that kind */
 void ref_prune(void *vinsn)
 {
-    struct stat_rec *insn = (struct stat_rec *)vinsn;
+    struct insn_stat *insn = (struct insn_stat *)vinsn;
     struct stat_link *lk;
-    struct stat_mv *mv;
+    struct stat_op *mv;
     struct op_ref *r;
     int found = 0, i;
 
     for (i = 0; i < 4; i++) {
-        if (insn->operand[i].kind == 3) {
+        if (insn->op[i].w[3] == 3) {   /* an operand in the L space */
             found = 1;
             break;
         }
@@ -76,11 +76,11 @@ void ref_prune(void *vinsn)
     if (found)
         return;
     lk = insn->link;
-    if (lk != NULL && (mv = lk->mv) != NULL) {
-        if (mv->kind0 == 3 || mv->kind1 == 3)
+    if (lk != NULL && (mv = lk->ops) != NULL) {
+        if (mv[0].w[3] == 3 || mv[1].w[3] == 3)
             found = 1;
-        else if (lk->next != NULL && (mv = lk->next->mv) != NULL &&
-                 (mv->kind0 == 3 || mv->kind1 == 3))
+        else if (lk->next != NULL && (mv = lk->next->ops) != NULL &&
+                 (mv[0].w[3] == 3 || mv[1].w[3] == 3))
             found = 1;
     }
     if (found)
