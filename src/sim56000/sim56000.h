@@ -306,6 +306,10 @@ struct io_chan {                       /* 0x1e8 bytes, calloc'ed by the input/ou
     long id;                           /* +0x1e4 */
 };
 
+struct grp_rt {                        /* per peripheral group runtime record (sim_state.regflags) */
+    long f0;
+    unsigned long *flags;              /* +4 per register runtime flags (0x2000000 float, 0x2000 ...) */
+};
 /* pending operand references of the instruction being executed (oprefs.c) */
 struct op_ref {                        /* 0x14 bytes */
     long cat;                          /* category from ref_kind_info (0 = free slot) */
@@ -325,7 +329,7 @@ struct stat_rec {
  * Only members with documented meaning are listed (offsets from the original in comments). */
 struct sim_state {
     struct region_stat *rstat;         /* +4  per region statistics/tags (nregions x 0x12c) */
-    unsigned long **regflags;          /* +8  per group runtime record: flags[reg] arrays */
+    struct grp_rt *regflags;           /* +8  per group runtime record (8 bytes each): flags[reg] arrays */
     long version_word;                 /* +0xc.. sv_var.stat block */
     long var10, var18, var1c, var20, var24, var28, var2c;
     long default_radix;                /* +0x30 (1 = decimal) */
