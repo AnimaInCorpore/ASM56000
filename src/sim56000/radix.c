@@ -9,8 +9,8 @@
 #include "sim56000.h"
 
 typedef long (*mem_read_fn)(long space, unsigned long addr, unsigned long *out);
-typedef long (*mem_write_fn)(long space, unsigned long addr, unsigned long val);
-typedef long (*mem_write_n_fn)(long space, unsigned long addr, unsigned long val, unsigned long count);
+typedef long (*mem_write_fn)(long space, unsigned long addr, unsigned long *val);
+typedef long (*mem_write_n_fn)(long space, unsigned long addr, unsigned long count, unsigned long *val);
 typedef long (*region_of_fn)(long space, unsigned long addr);
 typedef long (*group_io_fn)(long grp, long a, long b, long c);
 typedef unsigned long (*mode_hook_fn)(void);
@@ -64,7 +64,7 @@ void dev_spaces_call_8(long a, long *out, long c)
 long dev_call_slot1(long dev, long a, long b, long c)
 {
     DEV_THUNK_BEGIN
-    r = ((mem_write_fn)cur_dtype->vtable->mem_write)(a, b, c);
+    r = ((mem_write_fn)cur_dtype->vtable->mem_write)(a, b, (unsigned long *)c);
     DEV_THUNK_END
 }
 
@@ -78,7 +78,7 @@ long dev_mem_read(long dev, long a, long b, long c)
 long dev_call_slot2(long dev, long a, long b, long c, long d)
 {
     DEV_THUNK_BEGIN
-    r = ((mem_write_n_fn)cur_dtype->vtable->mem_write_n)(a, b, c, d);
+    r = ((mem_write_n_fn)cur_dtype->vtable->mem_write_n)(a, b, c, (unsigned long *)d);
     DEV_THUNK_END
 }
 

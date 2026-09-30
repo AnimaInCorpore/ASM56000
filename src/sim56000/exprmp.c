@@ -4,63 +4,68 @@
  * Doubles are handled as real host doubles; the original bit-fiddles the x86 layout, so
  * dbl_unpack/dbl_pack give the IEEE 754 bit halves (hi, lo) portably. */
 #include <math.h>
+#include <string.h>
 #include "sim56000.h"
 
 unsigned long expr_mode = 0;           /* 0x5029dc */
 
 /* ------------------------------------------------------------------ IEEE bit halves of a double */
+/* The original stores doubles in x86 layout and reads/writes their two 32-bit halves directly.  The
+ * host double is assumed to be an IEEE 754 binary64 (true for all target machines); its bytes are
+ * accessed through an endianness probe, so NaN payloads and signs survive a round trip. */
+static int dbl_little(void)
+{
+    static int little = -1;
+
+    if (little < 0) {
+        double one = 1.0;
+        unsigned char *p = (unsigned char *)&one;
+
+        little = p[7] == 0x3f;
+    }
+    return little;
+}
+
 void dbl_unpack(double d, unsigned long *hi, unsigned long *lo)
 {
-    unsigned long sign = 0, biased;
-    double m, top;
-    int e;
+    unsigned char b[8];
+    int i, l = dbl_little();
 
-    if (d != d) {                      /* NaN */
-        *hi = 0x7ff80000UL;
-        *lo = 0;
-        return;
+    memcpy(b, &d, 8);
+    if (!l) {
+        unsigned char t;
+
+        for (i = 0; i < 4; i++) {
+            t = b[i];
+            b[i] = b[7 - i];
+            b[7 - i] = t;
+        }
     }
-    if (d < 0.0 || (d == 0.0 && 1.0 / d < 0.0)) {
-        sign = 0x80000000UL;
-        d = -d;
-    }
-    if (d == 0.0) {
-        *hi = sign;
-        *lo = 0;
-        return;
-    }
-    if (d > 1.7976931348623157e308) {  /* infinity */
-        *hi = sign | 0x7ff00000UL;
-        *lo = 0;
-        return;
-    }
-    m = frexp(d, &e);                  /* d = m * 2^e, 0.5 <= m < 1 */
-    if (e + 1022 >= 1) {
-        biased = (unsigned long)(e + 1022);
-        m = ldexp(m, 53);              /* 2^52 <= m < 2^53 */
-        m -= 4503599627370496.0;
-    } else {
-        biased = 0;
-        m = ldexp(d, 1074);            /* denormal: integer mantissa */
-    }
-    top = floor(m / 4294967296.0);
-    *hi = sign | (biased << 20) | (unsigned long)top;
-    *lo = (unsigned long)(m - top * 4294967296.0);
+    *lo = ((unsigned long)b[3] << 24) | ((unsigned long)b[2] << 16) | ((unsigned long)b[1] << 8) | b[0];
+    *hi = ((unsigned long)b[7] << 24) | ((unsigned long)b[6] << 16) | ((unsigned long)b[5] << 8) | b[4];
 }
 
 double dbl_pack(unsigned long hi, unsigned long lo)
 {
-    double v, mant;
-    unsigned long e = (hi >> 20) & 0x7ff;
+    unsigned char b[8];
+    double d;
+    int i, l = dbl_little();
 
-    mant = (double)(hi & 0xfffffUL) * 4294967296.0 + (double)(lo & MASK32);
-    if (e == 0x7ff)
-        v = mant == 0.0 ? HUGE_VAL : HUGE_VAL - HUGE_VAL;
-    else if (e == 0)
-        v = ldexp(mant, -1074);
-    else
-        v = ldexp(mant + 4503599627370496.0, (int)e - 1075);
-    return (hi & 0x80000000UL) != 0 ? -v : v;
+    b[0] = (unsigned char)lo; b[1] = (unsigned char)(lo >> 8);
+    b[2] = (unsigned char)(lo >> 16); b[3] = (unsigned char)(lo >> 24);
+    b[4] = (unsigned char)hi; b[5] = (unsigned char)(hi >> 8);
+    b[6] = (unsigned char)(hi >> 16); b[7] = (unsigned char)(hi >> 24);
+    if (!l) {
+        unsigned char t;
+
+        for (i = 0; i < 4; i++) {
+            t = b[i];
+            b[i] = b[7 - i];
+            b[7 - i] = t;
+        }
+    }
+    memcpy(&d, b, 8);
+    return d;
 }
 
 static long s32(unsigned long v)

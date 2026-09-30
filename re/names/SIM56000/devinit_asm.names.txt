@@ -415,14 +415,14 @@
 0042c470	F	qq_code	int qq_code(int reg)	high	asm
 0042c4c0	F	mem_reg_read	int mem_reg_read(int id, unsigned long addr, unsigned long *out)	med	asm
 0042c7f0	F	reg_field_pack	unsigned long reg_field_pack(int id, unsigned long val, int idx)	low	asm
-0042d460	F	mem_write_n	int mem_write_n(int id, long a2, long a3, unsigned long addr, unsigned long count, unsigned long val)	low	asmtab
+0042d460	F	mem_write_n	long mem_write_n(long id, unsigned long addr, unsigned long count, unsigned long *val)	low	asmtab
 0042d4c0	F	mem_region_of	int mem_region_of(int space, unsigned long addr)	med	asmtab
-0042da70	F	mem_reg_write	int mem_reg_write(int id, unsigned long addr, unsigned long val)	med	asmtab
+0042da70	F	mem_reg_write	long mem_reg_write(long id, unsigned long addr, unsigned long *val)	med	asmtab
 0042dd70	F	omr_remap_56009	void omr_remap_56009(unsigned long omr)	med	asmtab
 0042dec0	F	omr_remap_56011	void omr_remap_56011(unsigned long omr)	med	asmtab
 0042e010	F	omr_remap_56012	void omr_remap_56012(unsigned long omr)	med	asmtab
-0042e160	F	reg_write_check	int reg_write_check(int id, long a2, unsigned long val)	low	asmtab
-0042e370	F	reg_read_check	int reg_read_check(int id, long a2, unsigned long val)	low	asmtab
+0042e160	F	reg_write_check	long reg_write_check(long id, unsigned long addr, unsigned long *val, long flag)	low	asmtab
+0042e370	F	reg_read_check	long reg_read_check(long id, unsigned long addr, unsigned long *val, long flag)	low	asmtab
 0042eec0	F	insn_exec_info	void insn_exec_info(unsigned long devflags, unsigned long opw, long mode, long sel, void **rec)	med	asmtab
 0042f2a0	F	insn_move_info	void insn_move_info(unsigned long opw, long mode, long sel, void **rec, unsigned long devflags)	med	asmtab
 0042fdb0	F	insn_class_code	unsigned long insn_class_code(unsigned long opw, long mode, long sel, unsigned long devflags)	med	asmtab

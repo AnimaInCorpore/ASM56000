@@ -36,6 +36,17 @@ static unsigned long ext_sign(void)
     return (expr_mode & 0x1000000UL) != 0 ? 0x08UL : 0x80UL;
 }
 
+static int is_nan(double d)
+{
+    return d != d;
+}
+
+/* the x87 compare of the original treats an unordered result (NaN) as "equal" */
+static int is_zero(double d)
+{
+    return d == 0.0 || is_nan(d);
+}
+
 /* ------------------------------------------------------------------ errors and small helpers */
 void expr_error(char *msg)
 {
@@ -244,7 +255,7 @@ long op_div(void *va, void *vb)
 
     if (ISFLOAT(a) || ISFLOAT(b)) {
         db = node_get_double(expr_mode, b);
-        if (db == 0.0) {
+        if (is_zero(db)) {
             expr_error("Divide by 0");
             return 0;
         }
@@ -288,7 +299,7 @@ long op_mod(void *va, void *vb)
 
     if (ISFLOAT(a) || ISFLOAT(b)) {
         db = node_get_double(expr_mode, b);
-        if (db == 0.0) {
+        if (is_zero(db)) {
             expr_error("Divide by 0");
             return 0;
         }
@@ -563,7 +574,7 @@ long op_div32(void *va, void *vb)
         return 1;
     }
     db = node_get_double(expr_mode, b);
-    if (db == 0.0) {
+    if (is_zero(db)) {
         expr_error("Divide by 0");
         return 0;
     }
@@ -587,7 +598,7 @@ long op_mod32(void *va, void *vb)
         return 1;
     }
     db = node_get_double(expr_mode, b);
-    if (db == 0.0) {
+    if (is_zero(db)) {
         expr_error("Divide by 0");
         return 0;
     }
@@ -743,6 +754,7 @@ void node_lnot32(void *vnode)
 long node_sign32(void *vnode)
 {
     struct val *n = (struct val *)vnode;
+    unsigned long hi, lo;
     long r;
 
     ensure_double32(n);
@@ -752,8 +764,9 @@ long node_sign32(void *vnode)
             r = -1;
         return r;
     }
-    r = n->d != 0.0;
-    if (r != 0 && n->d < 0.0)
+    dbl_unpack(n->d, &hi, &lo);
+    r = !(lo == 0 && (hi & 0x7fffffffUL) == 0);
+    if (r != 0 && (hi & 0x80000000UL) != 0)
         return -1;
     return r;
 }
@@ -792,8 +805,8 @@ long op_compare(void *va, void *vb, long op)
         if (!aint || !bint) {
             db = node_get_double(expr_mode, b);
             da = node_get_double(expr_mode, a);
-            if (da <= db)
-                c = db <= da ? 0 : -1;
+            if (!(da > db))                    /* (x87: NaN counts as "less or equal") */
+                c = da >= db ? 0 : -1;               /* (x87: unordered counts as "less") */
             else
                 c = 1;
         } else {
@@ -825,11 +838,6 @@ long op_compare(void *va, void *vb, long op)
     }
     compare_result(a, op, c, 0);
     return 1;
-}
-
-static int is_nan(double d)
-{
-    return d != d;
 }
 
 long op_compare32(void *va, void *vb, long op)

@@ -730,14 +730,14 @@ extern long qq_code(long reg); /* 42c470 */
 /* ---- module memacc (0x42c4c0): memory/register access engine, region lookup, OMR remap hooks */
 extern long mem_reg_read(long id, unsigned long addr, unsigned long *out); /* 42c4c0 */
 extern unsigned long reg_field_pack(long id, unsigned long val, long idx); /* 42c7f0 */
-extern long mem_write_n(long id, long a2, long a3, unsigned long addr, unsigned long count, unsigned long val); /* 42d460 */
+extern long mem_write_n(long id, unsigned long addr, unsigned long count, unsigned long *val); /* 42d460 */
 extern long mem_region_of(long space, unsigned long addr); /* 42d4c0 */
-extern long mem_reg_write(long id, unsigned long addr, unsigned long val); /* 42da70 */
+extern long mem_reg_write(long id, unsigned long addr, unsigned long *val); /* 42da70 */
 extern void omr_remap_56009(unsigned long omr); /* 42dd70 */
 extern void omr_remap_56011(unsigned long omr); /* 42dec0 */
 extern void omr_remap_56012(unsigned long omr); /* 42e010 */
-extern long reg_write_check(long id, long a2, unsigned long val); /* 42e160 */
-extern long reg_read_check(long id, long a2, unsigned long val); /* 42e370 */
+extern long reg_write_check(long id, unsigned long addr, unsigned long *val, long flag); /* 42e160 */
+extern long reg_read_check(long id, unsigned long addr, unsigned long *val, long flag); /* 42e370 */
 /* no prototype yet: insn_exec_h42e5c0@42e5c0 insn_exec_h42e5d0@42e5d0 insn_exec_h42e600@42e600 insn_exec_h42e670@42e670 insn_exec_h42e6e0@42e6e0 insn_exec_h42e750@42e750 insn_exec_h42e780@42e780 insn_exec_h42e7b0@42e7b0 insn_exec_h42e7e0@42e7e0 insn_exec_h42e7f0@42e7f0 insn_exec_h42e810@42e810 insn_exec_h42e820@42e820 insn_exec_h42e830@42e830 insn_exec_h42e890@42e890 insn_exec_h42e8f0@42e8f0 insn_exec_h42e910@42e910 insn_exec_h42e950@42e950 insn_exec_h42e980@42e980 insn_exec_h42e9e0@42e9e0 insn_exec_h42eaf0@42eaf0 insn_exec_h42eb90@42eb90 insn_exec_h42ec20@42ec20 insn_exec_h42ec90@42ec90 insn_exec_h42ecc0@42ecc0 insn_exec_h42ecd0@42ecd0 insn_exec_h42ece0@42ece0 insn_exec_h42ed20@42ed20 insn_exec_h42ed40@42ed40 insn_exec_h42eda0@42eda0 insn_exec_h42edc0@42edc0 insn_exec_h42ede0@42ede0 insn_exec_h42ee10@42ee10 insn_exec_h42ee20@42ee20 insn_exec_h42ee40@42ee40 insn_exec_h42ee80@42ee80 insn_exec_h42ee90@42ee90 */
 
 /* ---- module insattr (0x42eec0): per-instruction attribute lookups (timing/class/EA/validate handler tables) */
