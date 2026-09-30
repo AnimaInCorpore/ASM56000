@@ -3,7 +3,7 @@
 from common import *
 import random
 
-lib = build('insattr', ['insattr.c', 'insexec.c'], ['simd_dec.c', 'simd_e.c'])
+lib = build('insattr', ['insattr.c', 'insexec.c', 'alu.c'], ['simd_dec.c', 'simd_e.c'])
 pe = PE(EXE)
 random.seed(51)
 fails = {}

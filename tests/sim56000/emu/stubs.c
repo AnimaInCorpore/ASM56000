@@ -64,3 +64,53 @@ long (*cb_insn_validate)(unsigned long, unsigned long);
 W long opclass_lookup(unsigned long opw, unsigned long cpu) { return cb_opclass_lookup ? cb_opclass_lookup(opw, cpu) : 0; }
 W long insn_validate(unsigned long opw, unsigned long fam) { return cb_insn_validate ? cb_insn_validate(opw, fam) : 0; }
 W void set_family(long f) { static struct dev_type dt; dt.family = f; cur_dtype = &dt; }
+
+/* log of the calls into the (untranslated) core register helpers, compared with the emulated original */
+long call_log[4096][3];
+long call_n;
+W void core_touch_reg(long r) { if (call_n < 4096) { call_log[call_n][0] = 1; call_log[call_n][1] = r; call_log[call_n][2] = 0; call_n++; } }
+W void core_copy_reg(long a, long b) { if (call_n < 4096) { call_log[call_n][0] = 2; call_log[call_n][1] = a; call_log[call_n][2] = b; call_n++; } }
+W void core_copy_reg_quiet(long a, long b) { if (call_n < 4096) { call_log[call_n][0] = 3; call_log[call_n][1] = a; call_log[call_n][2] = b; call_n++; } }
+W void core_read_copy(unsigned long a, long b) { if (call_n < 4096) { call_log[call_n][0] = 4; call_log[call_n][1] = (long)a; call_log[call_n][2] = b; call_n++; } }
+
+/* peripheral reset test support: build cur_dev/cur_sim/cur_dtype for chip type `t` filled from rnd[] and dump the words
+ * periph_reset may touch */
+static unsigned long *tst_rnd;
+static long tst_pos;
+static unsigned long tst_next(void) { return tst_rnd[tst_pos++]; }
+long tst_periph_setup(long t, unsigned long *rnd, long dump_only, unsigned long *out)
+{
+    static struct dev_inst dev;
+    static struct sim_state sim;
+    long i, j, n = 0;
+    tst_rnd = rnd; tst_pos = 0;
+    cur_dtype = chiptype_tab[t];
+    cur_dev = &dev; cur_sim = &sim;
+    if (!dump_only) {
+        dev.flags = (long)(tst_next() & 0xffffffffUL);
+        sim.var24 = (long)(tst_next() & 0xffffffffUL);
+        sim.rstat = (struct region_stat *)calloc((size_t)cur_dtype->n_map, sizeof(struct region_stat));
+        sim.regflags = (struct grp_rt *)calloc((size_t)cur_dtype->n_periph, sizeof(struct grp_rt));
+        for (i = 0; i < cur_dtype->n_map; i++) {
+            sim.rstat[i].rd.total = (long)(tst_next() & 0xffffffffUL);
+            sim.rstat[i].wr.total = (long)(tst_next() & 0xffffffffUL);
+        }
+        for (i = 0; i < cur_dtype->n_periph; i++) {
+            long nreg = cur_dtype->periph[i].def->nreg;
+            sim.regflags[i].flags = (unsigned long *)calloc((size_t)nreg + 1, sizeof(unsigned long));
+            for (j = 0; j < nreg; j++)
+                sim.regflags[i].flags[j] = tst_next() & 0xffffffffUL;
+        }
+        return 0;
+    }
+    out[n++] = (unsigned long)dev.flags & 0xffffffffUL;
+    out[n++] = (unsigned long)sim.var24 & 0xffffffffUL;
+    for (i = 0; i < cur_dtype->n_map; i++) {
+        out[n++] = (unsigned long)sim.rstat[i].rd.total & 0xffffffffUL;
+        out[n++] = (unsigned long)sim.rstat[i].wr.total & 0xffffffffUL;
+    }
+    for (i = 0; i < cur_dtype->n_periph; i++)
+        for (j = 0; j < cur_dtype->periph[i].def->nreg; j++)
+            out[n++] = sim.regflags[i].flags[j] & 0xffffffffUL;
+    return n;
+}

@@ -84,17 +84,6 @@ long ea_mode_index(unsigned long opw)
     return 0;
 }
 
-/* opcode validity: 0 = invalid, 1 = valid, 2 = valid without further checks (alu module) */
-long insn_validate(unsigned long opw, unsigned long devflags)
-{
-    long r;
-
-    r = ((long (*)(unsigned long))insn_valid_handlers[opclass_lookup(opw, devflags)])(opw);
-    if (r == 2)
-        return 2;
-    return r == 0;
-}
-
 void insn_exec_info(unsigned long devflags, unsigned long opw, long mode, long sel, void **rec)
 {
     long i;
