@@ -131,13 +131,6 @@ struct pin_block {                     /* 0x128 bytes (dev+0x18 + n*0x128) */
     uword w[PIN_BLOCK_WORDS];
 };
 
-/* memory region runtime block (dev+0xc + region*0x10) */
-struct mem_block {
-    uword *words;                      /* +8: one 32-bit word per address (NULL when mdisk backed) */
-    long disabled;                     /* +0xc: OMR remap hooks flip this to alias blocks */
-    struct mdisk_list *mdisk;          /* sparse/disk list when the region is REGION_MDISK */
-};
-
 /* sorted interval map (memory tags: breakpoint kinds, display marks, input/output tags) */
 struct range_node {
     long value;
@@ -161,19 +154,32 @@ struct region_stat {                   /* 0x12c bytes per region */
 };
 
 /* memory disk (sparse memory with disk spill, mdisk.c) */
+struct mdisk_list;
+struct mdisk_node;
 #define MDISK_BLOCK_WORDS 256L
 #define MD_SWAPPED  1
 #define MD_CONSTANT 2
 #define MD_RESIDENT 4
-struct mdisk_node {                    /* 20 bytes: circular doubly linked list, blocks cover [prev.bound, bound) */
+struct mdisk_node {                    /* 20 bytes: circular doubly linked list; a node covers [start, next->start), the sentinel has start 0 */
     struct mdisk_node *next, *prev;
-    unsigned long bound;
+    unsigned long start;
     long state;                        /* MD_* */
     union { unsigned long fill; long file_off; uword *block; } u;   /* fill value / offset in swap file / 256 resident words */
 };
-struct mdisk_list {                    /* 16 bytes per flagged group (dev+0xc container) */
+struct mdisk_list {                    /* per flagged group: most recently used node and the one before */
     struct mdisk_node *cursor;
     struct mdisk_node *prev_cursor;
+};
+struct mdisk_slot {                    /* free block slot in the swap file */
+    struct mdisk_slot *next;
+    long offset;
+};
+
+/* memory region runtime block (dev+0xc + region*0x10) */
+struct mem_block {
+    struct mdisk_list md;              /* sparse/disk list when the region is REGION_MDISK (words == NULL then) */
+    uword *words;                      /* +8: one word per address */
+    long disabled;                     /* +0xc: OMR remap hooks flip this to alias blocks */
 };
 
 /* ------------------------------------------------------------------ device instance (`dev`, 0x168 bytes; cur_dev = dev_tab[n]) */
@@ -189,7 +195,8 @@ struct dev_inst {
     uword *ctl;                        /* +0x40 cpu control block: [0] pin inputs, [2] ==1 stopped, [3] reset latch, [4] phase */
     long flags;                        /* +0x44 DEVF_* */
     long stop;                         /* +0x48 abort / suppress boundary events */
-    FILE *swapfile;                    /* mdisk swap (m_pdisk) */
+    FILE *swapfile;                    /* +0x10 mdisk swap (m_pdisk) */
+    struct mdisk_slot *free_slots;     /* +0x14 free slots in the swap file */
     char workdir[LINE_MAX_CHARS];      /* +0x58 device working directory (".\" default) */
     void *hook_data;                   /* +0x158 chip hook data */
 };
