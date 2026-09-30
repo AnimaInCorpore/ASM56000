@@ -131,6 +131,12 @@ struct val {
     unsigned long f20;                 /* +0x20 */
     long idx;                          /* +0x24 index into the space table */
 };
+/* disassembler formatter state (asm.c): which effective addresses an instruction touches and their selectors */
+extern unsigned long dis_effect_flags;             /* 0x4dbea0 bits: 1 a, 2 b, 4 c, 8 b, 0x10 e, 0x20 d */
+extern unsigned long dis_sel_a, dis_sel_b, dis_sel_c, dis_sel_d, dis_sel_e;     /* 0x4dbea4.. */
+extern unsigned long dis_val_b, dis_val_c, dis_val_a, dis_val_d, dis_val_e;     /* 0x4dbeb8.. */
+extern char dis_hex_ea[16], dis_hex_b[16], dis_hex_c[16];                         /* 0x4dbe88, 0x4dbed0, 0x4dbee8 */
+extern long dis_cpu_level;                         /* 0x4dbefc */
 extern char *optr;                                 /* 0x5029e0 expression/assembler text cursor */
 extern long asm_result[3];                         /* 0x5059e0 [0] = -1 after an expression error */
 extern char *expr_err_msg;                         /* 0x5059f0 */

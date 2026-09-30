@@ -457,42 +457,42 @@ extern long dis_fmt_c19(unsigned long opw, long *tok); /* 420ef0 */
 extern long dis_fmt_c20(unsigned long opw, long *tok); /* 420f50 */
 extern long dis_fmt_c21(unsigned long opw, long *tok); /* 4210f0 */
 extern long dis_fmt_c22(unsigned long opw, long *tok); /* 421280 */
-extern long dis_fmt_h4212a0(unsigned long opw, long *tok); /* 4212a0 */
+extern long dis_fmt_h4212a0(unsigned long opw, long *tok, long sel); /* 4212a0 */
 extern long dis_fmt_c23(unsigned long opw, long *tok); /* 421340 */
 extern long dis_fmt_c24(unsigned long opw, long *tok); /* 421360 */
 extern long dis_fmt_c25(unsigned long opw, long *tok); /* 421380 */
 extern long dis_fmt_c26(unsigned long opw, long *tok); /* 4213a0 */
-extern long dis_fmt_h4213c0(unsigned long opw, long *tok); /* 4213c0 */
+extern long dis_fmt_h4213c0(unsigned long opw, long *tok, long sel); /* 4213c0 */
 extern long dis_fmt_c44(unsigned long opw, long *tok); /* 421460 */
 extern long dis_fmt_c27(unsigned long opw, long *tok); /* 421480 */
 extern long dis_fmt_c45(unsigned long opw, long *tok); /* 4214a0 */
 extern long dis_fmt_c32(unsigned long opw, long *tok); /* 4214c0 */
-extern long dis_fmt_h4214e0(unsigned long opw, long *tok); /* 4214e0 */
+extern long dis_fmt_h4214e0(unsigned long opw, long *tok, long sel); /* 4214e0 */
 extern long dis_fmt_c33(unsigned long opw, long *tok); /* 4215f0 */
 extern long dis_fmt_c50(unsigned long opw, long *tok); /* 421610 */
 extern long dis_fmt_c51(unsigned long opw, long *tok); /* 421630 */
 extern long dis_fmt_c36(unsigned long opw, long *tok); /* 421650 */
-extern long dis_fmt_h421670(unsigned long opw, long *tok); /* 421670 */
+extern long dis_fmt_h421670(unsigned long opw, long *tok, long sel); /* 421670 */
 extern long dis_fmt_c37(unsigned long opw, long *tok); /* 421770 */
 extern long dis_fmt_c54(unsigned long opw, long *tok); /* 421790 */
 extern long dis_fmt_c55(unsigned long opw, long *tok); /* 4217b0 */
 extern long dis_fmt_c40(unsigned long opw, long *tok); /* 4217d0 */
-extern long dis_fmt_h4217f0(unsigned long opw, long *tok); /* 4217f0 */
+extern long dis_fmt_h4217f0(unsigned long opw, long *tok, long sel); /* 4217f0 */
 extern long dis_fmt_c41(unsigned long opw, long *tok); /* 4218f0 */
 extern long dis_fmt_c58(unsigned long opw, long *tok); /* 421910 */
 extern long dis_fmt_c59(unsigned long opw, long *tok); /* 421930 */
 extern long dis_fmt_c34(unsigned long opw, long *tok); /* 421950 */
-extern long dis_fmt_h421970(unsigned long opw, long *tok); /* 421970 */
+extern long dis_fmt_h421970(unsigned long opw, long *tok, long sel); /* 421970 */
 extern long dis_fmt_c35(unsigned long opw, long *tok); /* 421a60 */
 extern long dis_fmt_c52(unsigned long opw, long *tok); /* 421a80 */
 extern long dis_fmt_c53(unsigned long opw, long *tok); /* 421aa0 */
 extern long dis_fmt_c38(unsigned long opw, long *tok); /* 421ac0 */
-extern long dis_fmt_h421ae0(unsigned long opw, long *tok); /* 421ae0 */
+extern long dis_fmt_h421ae0(unsigned long opw, long *tok, long sel); /* 421ae0 */
 extern long dis_fmt_c39(unsigned long opw, long *tok); /* 421bd0 */
 extern long dis_fmt_c56(unsigned long opw, long *tok); /* 421bf0 */
 extern long dis_fmt_c57(unsigned long opw, long *tok); /* 421c10 */
 extern long dis_fmt_c42(unsigned long opw, long *tok); /* 421c30 */
-extern long dis_fmt_h421c50(unsigned long opw, long *tok); /* 421c50 */
+extern long dis_fmt_h421c50(unsigned long opw, long *tok, long sel); /* 421c50 */
 extern long dis_fmt_c43(unsigned long opw, long *tok); /* 421d30 */
 extern long dis_fmt_c60(unsigned long opw, long *tok); /* 421d50 */
 extern long dis_fmt_c61(unsigned long opw, long *tok); /* 421d70 */
@@ -538,12 +538,12 @@ extern long dis_fmt_c63(unsigned long opw, long *tok); /* 4235d0 */
 extern long dis_fmt_c64(unsigned long opw, long *tok); /* 4235f0 */
 extern long dis_fmt_c62(unsigned long opw, long *tok); /* 4236f0 */
 extern long dis_fmt_c30(unsigned long opw, long *tok); /* 423710 */
-extern long dis_fmt_h423730(unsigned long opw, long *tok); /* 423730 */
+extern long dis_fmt_h423730(unsigned long opw, long *tok, long sel); /* 423730 */
 extern long dis_fmt_c31(unsigned long opw, long *tok); /* 423820 */
 extern long dis_fmt_c48(unsigned long opw, long *tok); /* 423840 */
 extern long dis_fmt_c49(unsigned long opw, long *tok); /* 423860 */
 extern long dis_fmt_c28(unsigned long opw, long *tok); /* 423880 */
-extern long dis_fmt_h4238a0(unsigned long opw, long *tok); /* 4238a0 */
+extern long dis_fmt_h4238a0(unsigned long opw, long *tok, long sel); /* 4238a0 */
 extern long dis_fmt_c29(unsigned long opw, long *tok); /* 423960 */
 extern long dis_fmt_c46(unsigned long opw, long *tok); /* 423980 */
 extern long dis_fmt_c47(unsigned long opw, long *tok); /* 4239a0 */
