@@ -1643,7 +1643,7 @@ long dis_fmt_c66(unsigned long opw,long *tok)
     piVar2[3] = S32(uVar5 + 0xb0);
     piVar2[4] = 0xf1;
     puVar3 = (piVar2 + 5);
-    *puVar3 = 0xfffffffe;
+    *puVar3 = -2;
   }
 LAB_00422081:
   dis_val_c = v;

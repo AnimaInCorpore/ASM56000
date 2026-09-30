@@ -18,7 +18,7 @@ def build(name, sources, data=()):
     files = [os.path.join(os.path.dirname(__file__), 'stubs.c')] + [os.path.join(SRC, x) for x in list(sources) + list(data)]
     for f in files:
         o = os.path.join(BUILD, name + '_' + os.path.basename(f) + '.o')
-        subprocess.check_call(['gcc', '-c', '-fPIC', '-O1', '-std=gnu89', '-w', '-I' + SRC, f, '-o', o])
+        subprocess.check_call(['gcc', '-c', '-fPIC', '-O0', '-g', '-std=gnu89', '-w', '-I' + SRC, f, '-o', o])
         objs.append(o)
     defined, undefined = set(), set()
     for o in objs:

@@ -54,6 +54,9 @@ def conv(name, body):
     def st(m):
         rhs = m.group(3)
         if re.fullmatch(r'-?(0x[0-9a-f]+|\d+)', rhs.strip()):
+            v = int(rhs.strip(), 0)
+            if v >= 0x80000000:
+                return '%s%s = %d;' % (m.group(1), m.group(2), v - (1 << 32))
             return m.group(0)
         return '%s%s = S32(%s);' % (m.group(1), m.group(2), rhs)
     b = re.sub(r'(?m)^(\s*)(\*?\w+(?:\[\d+\])?) = (.*);$', lambda m: st(m) if (m.group(2).startswith('*') or '[' in m.group(2)) else m.group(0), b)

@@ -137,6 +137,14 @@ extern unsigned long dis_sel_a, dis_sel_b, dis_sel_c, dis_sel_d, dis_sel_e;     
 extern unsigned long dis_val_b, dis_val_c, dis_val_a, dis_val_d, dis_val_e;     /* 0x4dbeb8.. */
 extern char dis_hex_ea[16], dis_hex_b[16], dis_hex_c[16];                         /* 0x4dbe88, 0x4dbed0, 0x4dbee8 */
 extern long dis_cpu_level;                         /* 0x4dbefc */
+/* register/address information of a disassembled instruction (disasm.c; +0x14 rn, +0x34 nn, +0x54 mn in the original) */
+struct dis_info {
+    long f0[5];
+    unsigned long rn[8], nn[8], mn[8];   /* address, offset and modifier registers */
+    long nwords;                         /* +0x74 instruction words (0 for "dc") */
+    unsigned long flags;                 /* +0x78 effective address effects (dis_effect_flags) */
+    unsigned long ea_a, ea_b, ea_c;      /* +0x7c, +0x80, +0x84 computed addresses */
+};
 extern char *optr;                                 /* 0x5029e0 expression/assembler text cursor */
 extern long asm_result[3];                         /* 0x5059e0 [0] = -1 after an expression error */
 extern char *expr_err_msg;                         /* 0x5059f0 */
