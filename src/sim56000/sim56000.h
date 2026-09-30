@@ -280,6 +280,21 @@ struct io_chan {                       /* 0x1e8 bytes, calloc'ed by the input/ou
     long id;                           /* +0x1e4 */
 };
 
+/* pending operand references of the instruction being executed (oprefs.c) */
+struct op_ref {                        /* 0x14 bytes */
+    long cat;                          /* category from ref_kind_info (0 = free slot) */
+    long rw;                           /* 0 write, 1 read, 2 read+write */
+    long addr, a3, a4;
+};
+/* statistics record of one decoded instruction (only the parts ref_prune looks at; see insstat.c) */
+struct stat_operand { long kind; long f[6]; };      /* stride 0x1c at +0x20 */
+struct stat_mv { long f0[3]; long kind0; long f1[8]; long kind1; };  /* kind0 at +0xc, kind1 at +0x28 */
+struct stat_link { long f0; struct stat_link *next; struct stat_mv *mv; };
+struct stat_rec {
+    struct stat_operand operand[4];    /* +0x20 */
+    struct stat_link *link;            /* +0x84 L: move list */
+};
+
 /* ------------------------------------------------------------------ simulator block (`state`, 0x4408 bytes; cur_sim = sim_tab[n])
  * Only members with documented meaning are listed (offsets from the original in comments). */
 struct sim_state {
@@ -319,6 +334,7 @@ struct sim_state {
     struct dbg_db *dbg;                /* debug information (symbols, lines, sections) */
     void *cdb;                         /* C-debugger data of this device (frames at +0x3fac/+0x3fb0/+0x3fb4) */
     struct prof_ctx *prof;             /* profiler context (+0x490 region) */
+    struct op_ref refs[20];            /* +0x294 pending operand references */
 };
 /* dev_state_tab (0x4a8d98 -> 0x4dba88, 32 slots) and dev_tab (0x4aab10 -> 0x4dbb08, 32 slots): see simdata.h */
 extern struct sim_state *cur_sim;                  /* 0x50578c */
