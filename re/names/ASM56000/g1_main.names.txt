@@ -1,0 +1,196 @@
+# g1_main: asmglb (math wrappers + data tables), mchglb (data tables),
+# dspasm.c, error.c, input.c
+# addr	F|D	name	prototype/type	confidence	module[	size-bytes]
+
+# --- asmglb: 18 expression math wrappers, 0x401000-0x40116d ---
+00401000	F	mth_atan	double mth_atan(double x)	high	asmglb
+00401015	F	mth_abs	double mth_abs(double x)	high	asmglb
+0040102a	F	mth_acos	double mth_acos(double x)	high	asmglb
+0040103f	F	mth_asin	double mth_asin(double x)	high	asmglb
+00401054	F	mth_ceil	double mth_ceil(double x)	high	asmglb
+00401069	F	mth_cosh	double mth_cosh(double x)	high	asmglb
+0040107e	F	mth_cos	double mth_cos(double x)	high	asmglb
+00401093	F	mth_floor	double mth_floor(double x)	high	asmglb
+004010a8	F	mth_log10	double mth_log10(double x)	high	asmglb
+004010bd	F	mth_log	double mth_log(double x)	high	asmglb
+004010d2	F	mth_sin	double mth_sin(double x)	high	asmglb
+004010e7	F	mth_sinh	double mth_sinh(double x)	high	asmglb
+004010fc	F	mth_sqrt	double mth_sqrt(double x)	high	asmglb
+00401111	F	mth_tan	double mth_tan(double x)	high	asmglb
+00401126	F	mth_tanh	double mth_tanh(double x)	high	asmglb
+0040113b	F	mth_exp	double mth_exp(double x)	high	asmglb
+00401150	F	mth_pow	double mth_pow(double x, double y)	high	asmglb
+0040116d	F	mth_atan2	double mth_atan2(double y, double x)	high	asmglb
+
+# --- dspasm.c: main program, command line, pass control (33 functions) ---
+00401190	F	main	int main(int argc, char **argv, char **envp)	high	dspasm
+00401437	F	usage	void usage(void)	high	dspasm
+004015e3	F	run_cmode	void run_cmode(int argc, char **argv)	med	dspasm
+00401a16	F	open_source	void open_source(void *fname)	high	dspasm
+00401ad4	F	strip_ext	void strip_ext(char *name)	high	dspasm
+00401af9	F	has_ext	int has_ext(char *name, char *ext)	high	dspasm
+00401b35	F	pre_pass	void pre_pass(void)	high	dspasm
+00401c97	F	run_default	void run_default(int argc, char **argv)	high	dspasm
+00401ffb	F	cur_src_basename	void *cur_src_basename(void)	med	dspasm
+0040201b	F	parse_opts_wrap	void parse_opts_wrap(void)	high	dspasm
+00402025	F	parse_cmdline_opts	void parse_cmdline_opts(void)	high	dspasm
+004029fe	F	noop_argsrc	void noop_argsrc(void)	high	dspasm
+00402a03	F	altsrc_more	int altsrc_more(void *list)	med	dspasm
+00402a0d	F	apply_o_options	void apply_o_options(void)	high	dspasm
+00402a99	F	default_obj_basename	void *default_obj_basename(int argc, void *argv)	high	dspasm
+00402b5e	F	ensure_ext	unsigned long ensure_ext(void *ext)	high	dspasm
+00402bfa	F	add_ext_if_empty	unsigned long add_ext_if_empty(void *ext)	high	dspasm
+00402c7c	F	ensure_path_sep	void ensure_path_sep(void)	high	dspasm
+00402cde	F	set_curfile	void set_curfile(void *name)	high	dspasm
+00402dfa	F	build_argv	int build_argv(int argc, int *argv)	high	dspasm
+00403070	F	tokenize_str	int tokenize_str(void *str, int *tail)	med	dspasm
+004033a1	F	read_cmdfile	int read_cmdfile(char *fname, int *tail)	med	dspasm
+00403aa7	F	opt_find	int opt_find(char letter, int argc, int *argv)	high	dspasm
+00403b78	F	opt_index	int opt_index(char letter, int argc, int *argv)	high	dspasm
+00403c50	F	errfile_open	void errfile_open(int argc, int idx)	high	dspasm
+00403d70	F	getopt_asm	int getopt_asm(int argc, int argv, char *optstring)	high	dspasm
+004040b4	F	init_globals	void init_globals(void)	high	dspasm
+004047e0	F	init_pass1	void init_pass1(void)	high	dspasm
+00404ef2	F	init_pass	void init_pass(void)	high	dspasm
+00405611	F	sect_rewind	void sect_rewind(void)	med	dspasm
+004059f6	F	end_prepass	void end_prepass(void)	high	dspasm
+00405b98	F	end_pass	void end_pass(int final)	high	dspasm
+00405db4	F	sig_handler	void sig_handler(int sig)	high	dspasm
+
+# --- error.c: error/warning reporting + parallel-move field encoders (24 functions) ---
+004127e6	F	enc_pm_flag1	void enc_pm_flag1(void *obj, int a, int b, int *c, int d)	low	error
+00412822	F	enc_ea_dual	void enc_ea_dual(void *obj, int a, int *ea, int b, int c)	low	error
+0041290b	F	y_code	unsigned long y_code(unsigned long regclass)	high	error
+00412941	F	enc_ea_dual_pm	void enc_ea_dual_pm(void *obj, int *a, int b, int c, int d)	low	error
+0041297d	F	enc_lll	void enc_lll(int obj, int a, int b)	med	error
+004129d7	F	lll_code	unsigned long lll_code(unsigned long regclass)	high	error
+00412a8f	F	enc_lll_flag	void enc_lll_flag(int obj, int a, int b)	low	error
+00412ac3	F	enc_ea_dual2	void enc_ea_dual2(void *obj, int a, int *ea)	low	error
+00412b7b	F	enc_ea_dual2_pm	void enc_ea_dual2_pm(void *obj, int *a, int b)	low	error
+00412baf	F	enc_acc_field	void enc_acc_field(int obj, int a, int b)	low	error
+00412c09	F	enc_acc_pair	void enc_acc_pair(int obj, int a, int b)	low	error
+00412c72	F	enc_ea_pair_raw	void enc_ea_pair_raw(int obj, int *ea)	low	error
+00412ce3	F	enc_ea_dual3	void enc_ea_dual3(void *obj, int a, int *ea)	low	error
+00412da0	F	enc_ea_dual3_pm	void enc_ea_dual3_pm(void *obj, int *a, int b)	low	error
+00412dd4	F	enc_l_field	void enc_l_field(int obj, int a, int b)	low	error
+00412e1b	F	enc_l_field_pm	void enc_l_field_pm(int obj, int a, int b)	low	error
+00412e4f	F	enc_acc_ea	void enc_acc_ea(int obj, int *ea, int a)	low	error
+00412ecb	F	enc_qq_reg	void enc_qq_reg(int obj, int a, int b, int c)	low	error
+00412f33	F	qq_code	unsigned long qq_code(unsigned long regclass)	high	error
+00412fa0	F	fatal	void fatal(char *msg)	high	error
+00413085	F	err	void err(char *msg)	high	error
+004131f9	F	err_s	void err_s(char *msg, char *arg)	high	error
+004133a9	F	warn	void warn(char *msg)	high	error
+0041351d	F	warn_s	void warn_s(char *msg, char *arg)	high	error
+
+# --- input.c: source input, include/macro stack, line reading (20 functions) ---
+004197d0	F	process_file	void process_file(void)	high	input
+0041983e	F	get_line	unsigned long get_line(void)	high	input
+00419ba2	F	input_pop	unsigned long input_pop(void)	high	input
+00419caf	F	read_line	unsigned long read_line(void)	high	input
+0041a0a7	F	input_getc	unsigned long input_getc(void)	high	input
+0041a3ce	F	mstate_push	void mstate_push(unsigned long v)	med	input
+0041a3ff	F	mstate_pop	unsigned long mstate_pop(void)	med	input
+0041a444	F	chk_line_end	unsigned long chk_line_end(void)	med	input
+0041a4bc	F	parse_line	unsigned long parse_line(void)	high	input
+0041a92e	F	scan_token	char *scan_token(char *p)	high	input
+0041a9e9	F	subst_symbol	unsigned long *subst_symbol(unsigned long *tok, unsigned long *dst, int ctx)	med	input
+0041ad75	F	proc_line1	unsigned long proc_line1(void)	high	input
+0041af7e	F	proc_line2	unsigned long proc_line2(int a, int b)	high	input
+0041b339	F	do_line_reset	void do_line_reset(void)	high	input
+0041b3c7	F	do_save_line	void do_save_line(int kind)	high	input
+0041b43f	F	do_stack_unwind	void do_stack_unwind(int *frame)	high	input
+0041b4d3	F	do_replay_line	void do_replay_line(int *frame)	high	input
+0041b615	F	do_check_end_range	unsigned long do_check_end_range(int n)	high	input
+0041b685	F	do_check_end_range_err	int do_check_end_range_err(int n)	high	input
+0041b7c9	F	do_check_end_word_err	int do_check_end_word_err(int n)	high	input
+
+# --- mchglb data tables, 0x44e000-0x44f668 (data-only module) ---
+0044e0b0	D	InstrTab	void *	high	mchglb	2840
+0044ebc8	D	InstrTabCount	unsigned long	high	mchglb	4
+0044ed44	D	RegNameTab	void *	high	mchglb	448
+0044edb4	D	RegMaskTab	void *	med	mchglb	1948
+0044eca8	D	ProcTab	void *	high	mchglb	56
+0044ece0	D	ProcTabCount	unsigned long	high	mchglb	4
+0044ec70	D	RevTab	void *	high	mchglb	48
+0044eca0	D	RevTabCount	unsigned long	high	mchglb	4
+0044ece8	D	AModeTab	void *	low	mchglb	92
+
+# --- asmglb data tables/scalars, 0x44f668-0x450be8 ---
+0044f6a0	D	ClassCodeTab	void *	med	asmglb	172
+0044f74c	D	ClassCodeCount	unsigned long	high	asmglb	4
+0044f808	D	SrcBaseName	void *	med	asmglb	4
+0044f80c	D	CurFileName	void *	high	asmglb	4
+0044f810	D	LabelField	void *	high	asmglb	4
+0044f814	D	MnemField	void *	high	asmglb	4
+0044f818	D	Op1Field	void *	high	asmglb	4
+0044f81c	D	Op2Field	void *	high	asmglb	4
+0044f820	D	Op3Field	void *	high	asmglb	4
+0044f824	D	Op4Field	void *	high	asmglb	4
+0044f830	D	NoSubstChar	char	high	asmglb	1
+0044f778	D	OptCl	char	high	asmglb	1
+0044f77c	D	OptMd	char	high	asmglb	1
+0044f780	D	OptMc	char	high	asmglb	1
+0044f784	D	OptCm	char	high	asmglb	1
+0044f788	D	OptWarn	char	high	asmglb	1
+0044f78c	D	OptDxl	char	high	asmglb	1
+0044f790	D	AbsMode	char	high	asmglb	1
+0044f794	D	AbsMode2	char	high	asmglb	1
+0044f798	D	AbsMode3	char	high	asmglb	1
+0044f79c	D	OptPs	char	high	asmglb	1
+0044f7a4	D	OptMsw	char	high	asmglb	1
+0044f7a8	D	OptPp	char	high	asmglb	1
+0044f7ac	D	OptNs	char	high	asmglb	1
+0044f7b0	D	OptFlagF7b0	char	low	asmglb	1
+0044f7b4	D	OptAe	char	high	asmglb	1
+0044f7bc	D	OptPsb	char	high	asmglb	1
+0044f7c0	D	OptAl	char	high	asmglb	1
+0044f7c4	D	OptSms	char	high	asmglb	1
+0044f7c8	D	VerboseInterval	unsigned long	high	asmglb	4
+0044f7d0	D	TabWidth	unsigned long	high	asmglb	4
+0044f9a4	D	ErrFilePtr	void *	high	asmglb	4
+0044f9fc	D	CpuVariant	unsigned long	high	asmglb	4
+0044fab0	D	PseudoTab	void *	high	asmglb	600
+0044fd08	D	PseudoTabCount	unsigned long	high	asmglb	4
+0044fd10	D	OptNameTab	void *	high	asmglb	736
+0044fff0	D	OptNameCount	unsigned long	high	asmglb	4
+00450048	D	ExprFuncTab	void *	high	asmglb	864
+
+# --- shared/bss globals central to dspasm.c / error.c / input.c pass and I/O state ---
+0045f8fc	D	Pass	unsigned long	high	bss	4
+0045f904	D	SrcArgc	unsigned long	high	bss	4
+0045f908	D	SrcArgv	void *	high	bss	4
+0045f900	D	CurSrcFp	void *	high	bss	4
+0045eb78	D	LineTotal	unsigned long	med	bss	4
+0045eb80	D	LineNo	unsigned long	high	bss	4
+0045eb7c	D	LineNoBase	unsigned long	med	bss	4
+0045d824	D	LineNoRaw	unsigned long	low	bss	4
+0045eb84	D	ErrorCount	unsigned long	high	bss	4
+0045eb88	D	WarningCount	unsigned long	high	bss	4
+0045eb98	D	ErrOnThisLine	unsigned long	med	bss	4
+0045ea98	D	OptC	char	high	bss	4
+0045eb34	D	OptJ	char	med	bss	4
+0045eb50	D	OptT	char	high	bss	4
+0045ea78	D	AltSrcMode	char	low	bss	4
+0045f854	D	ObjFileName	void *	high	bss	4
+0045f858	D	LstFileName	void *	high	bss	4
+0045fcac	D	LstFilePtr	void *	high	bss	4
+0045fca8	D	ObjFilePtr	void *	high	bss	4
+0045f220	D	LineBuf	char	high	bss	512
+0045ec08	D	RawLineBuf	char	high	bss	512
+0045fc24	D	OpenFileList	void *	med	bss	4
+0045fc28	D	InputModeStack	void *	med	bss	4
+0045fc2c	D	MacroStateStack	void *	med	bss	4
+0045fc30	D	DoStack	void *	high	bss	4
+0045fc6c	D	OOptList	void *	high	bss	4
+0045ea18	D	NoMoreInput	char	med	bss	4
+0045ea34	D	OptListSave	char	low	bss	4
+0045ea9c	D	AbsModeShadow	char	med	bss	4
+0045eadc	D	OptG	char	high	bss	4
+0045ead8	D	OptZ	char	high	bss	4
+0045eb18	D	ScaleErrByWarn	char	med	bss	4
+0045eb4c	D	OptV	char	high	bss	4
+0045ea70	D	InMacroExpand	char	med	bss	4
+0045ea74	D	DoEndSeen	char	med	bss	4
+0045f860	D	CurInstrFieldMsg	void *	med	bss	4
+0045fb6c	D	MacroCallCtx	void *	med	bss	4

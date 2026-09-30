@@ -1,0 +1,308 @@
+0045e5a0	F	hio_buf_clear	void hio_buf_clear(void *buf)	high	cdbutil
+0045e5d0	F	hio_buf_alloc	void hio_buf_alloc(void *buf, unsigned long n)	high	cdbutil
+0045e620	F	hio_buf_resize	void hio_buf_resize(void *buf, unsigned long n)	high	cdbutil
+0045e680	F	hio_buf_free	void hio_buf_free(void *buf)	high	cdbutil
+0045e6a0	F	hio_step	void hio_step(void *reply, void *request, int *fd_wordmode, unsigned long *state, unsigned long *result)	med	cdbutil
+0045edd0	F	hio_errno_map	int hio_errno_map(int host_errno)	high	cdbutil
+0045ee70	F	hio_words_to_bytes	char *hio_words_to_bytes(void *words, unsigned long n)	high	cdbutil
+0045eea0	F	hio_pack_words	char *hio_pack_words(unsigned long *words, int n)	high	cdbutil
+0045ef20	F	hio_bytes_to_words	unsigned long *hio_bytes_to_words(char *bytes, int n)	high	cdbutil
+0045ef60	F	hio_unpack_words	unsigned long *hio_unpack_words(char *bytes, int n)	high	cdbutil
+0045efe0	F	cdb_load_value	int cdb_load_value(void *v)	high	cdbutil
+0045f090	F	cdb_store_value	int cdb_store_value(void *v)	high	cdbutil
+0045f150	F	cdb_set_quiet	void cdb_set_quiet(int flag)	high	cdbutil
+0045f160	F	cdb_error	void cdb_error(char *msg)	high	cdbutil
+0045f1b0	F	cdb_c_error	void cdb_c_error(char *msg)	high	cdbutil
+0045f1f0	F	cdb_internal_error	void cdb_internal_error(char *file, int line)	high	cdbutil
+0045f230	F	cdb_malloc	void *cdb_malloc(unsigned long n)	high	cdbutil
+0045f240	F	cdb_realloc	void *cdb_realloc(void *p, unsigned long n)	high	cdbutil
+0045f260	F	cdb_free	void cdb_free(void *p)	high	cdbutil
+0045f270	F	cdb_free_expr	void cdb_free_expr(void *node)	high	cdbutil
+0045f2f0	F	cdb_value_to_string	char *cdb_value_to_string(void *v, int radix)	high	cdbutil
+0045f310	F	cdb_type_to_string	char *cdb_type_to_string(void *v)	high	cdbutil
+0045f330	F	cdb_print_typed_value	void cdb_print_typed_value(int radix, void *v)	high	cdbutil
+0045f390	F	cdb_frame_slot	int cdb_frame_slot(int sclass, int offset, int *space_out, unsigned long *addr_out)	med	cdbutil
+0045f400	F	cdb_register_value	void *cdb_register_value(char *name)	high	cdbutil
+0045f790	F	cdb_arch_init	void cdb_arch_init(void)	high	cdbutil
+0045f930	F	cdb_reg_name	char *cdb_reg_name(int reg_class, unsigned long index)	high	cdbutil
+0045fb90	F	cdb_memspace_name	char *cdb_memspace_name(int space, unsigned long addr)	med	cdbutil
+0045fbc0	F	cdb_print_wrapped	void cdb_print_wrapped(char *text, char *prefix_first, char *prefix_cont, unsigned long indent, int to_log)	med	cdbutil
+0045fea0	F	cdb_expr_has_call	int cdb_expr_has_call(void *tree)	high	cdbutil
+0045ff00	F	cdb_saved_push	void cdb_saved_push(void *node)	high	cdbutil
+0045ff30	F	cdb_saved_pop	void *cdb_saved_pop(void)	high	cdbutil
+0045ff50	F	cdb_saved_clear	void cdb_saved_clear(void)	high	cdbutil
+0045ff60	F	cdb_save_counters	void cdb_save_counters(int retaddr)	med	cdbutil
+00460000	F	cdb_finish_call	void cdb_finish_call(unsigned long *retaddr_out)	med	cdbutil
+004604e0	F	cdb_type_name	void cdb_type_name(void *v)	high	cdbutil
+00460940	F	cdb_format_value	void cdb_format_value(void *v, int radix)	high	cdbutil
+00460b50	F	cdb_fmt_pointer	void cdb_fmt_pointer(void *v, int radix)	high	cdbutil
+00460fd0	F	cdb_fmt_function	void cdb_fmt_function(void *v, int radix)	high	cdbutil
+004610f0	F	cdb_fmt_array	void cdb_fmt_array(void *v, int radix)	high	cdbutil
+004611d0	F	cdb_fmt_char	void cdb_fmt_char(void *v, int radix)	high	cdbutil
+00461550	F	cdb_fmt_short	void cdb_fmt_short(void *v, int radix)	high	cdbutil
+004616a0	F	cdb_fmt_int	void cdb_fmt_int(void *v, int radix)	high	cdbutil
+004618c0	F	cdb_fmt_long	void cdb_fmt_long(void *v, int radix)	high	cdbutil
+004619f0	F	cdb_fmt_accum	void cdb_fmt_accum(void *v, int radix)	high	cdbutil
+00461af0	F	cdb_fmt_long_accum	void cdb_fmt_long_accum(void *v, int radix)	high	cdbutil
+00461bf0	F	cdb_fmt_float	void cdb_fmt_float(void *v, int radix)	high	cdbutil
+00461d50	F	cdb_fmt_double	void cdb_fmt_double(void *v, int radix)	high	cdbutil
+00461ec0	F	cdb_fmt_struct	void cdb_fmt_struct(void *v, int radix)	high	cdbutil
+00461ff0	F	cdb_fmt_union	void cdb_fmt_union(void *v, int radix)	high	cdbutil
+00462010	F	cdb_num_signed	void cdb_num_signed(unsigned long *w, char *out, int nwords)	high	cdbutil
+00462110	F	cdb_num_dec_wide_signed	void cdb_num_dec_wide_signed(unsigned long *w, char *out, int nwords, int is_signed)	med	cdbutil
+00462220	F	cdb_num_dec_wide_signed32	void cdb_num_dec_wide_signed32(unsigned long *w, char *out, int nwords, int is_signed)	med	cdbutil
+00462320	F	cdb_num_unsigned	void cdb_num_unsigned(unsigned long *w, char *out, int nwords)	high	cdbutil
+004623d0	F	cdb_num_float	void cdb_num_float(void *w, char *out)	high	cdbutil
+004624c0	F	cdb_num_double	void cdb_num_double(void *w, char *out)	high	cdbutil
+004625c0	F	cdb_num_hex	void cdb_num_hex(void *w, char *out, int nwords)	high	cdbutil
+004626a0	F	cdb_num_bin	void cdb_num_bin(void *w, char *out, int nwords)	med	cdbutil
+004627a0	F	cdb_num_frac	void cdb_num_frac(void *v, unsigned long *w, char *out, int nwords)	high	cdbutil
+004628c0	F	cdb_frac_to_double	void cdb_frac_to_double(unsigned long *w, double *out)	high	cdbutil
+004629d0	F	cdb_frac_to_double_a	void cdb_frac_to_double_a(unsigned long *w, double *out)	med	cdbutil
+00462a00	F	cdb_frac_to_double_b	void cdb_frac_to_double_b(unsigned long *w, double *out)	med	cdbutil
+00462a20	F	cdb_frac_to_double_c	void cdb_frac_to_double_c(unsigned long *w, double *out)	med	cdbutil
+00462a50	F	cdb_load_auto	int cdb_load_auto(void *v)	high	cdbutil
+00462ab0	F	cdb_store_auto	int cdb_store_auto(void *v)	high	cdbutil
+00462b10	F	cdb_load_memory	int cdb_load_memory(void *v)	high	cdbutil
+00463480	F	cdb_store_memory	int cdb_store_memory(void *v)	high	cdbutil
+00463e50	F	cdb_load_register	int cdb_load_register(void *v)	high	cdbutil
+00464290	F	cdb_find_saved_reg	char *cdb_find_saved_reg(void *list, char *name)	high	cdbutil
+004642e0	F	cdb_store_register	int cdb_store_register(void *v)	high	cdbutil
+00464640	F	cdb_load_devreg	int cdb_load_devreg(void *v)	high	cdbutil
+004648a0	F	cdb_store_devreg	int cdb_store_devreg(void *v)	high	cdbutil
+00464b10	F	cdb_load_arg	int cdb_load_arg(void *v)	high	cdbutil
+00464b30	F	cdb_store_arg	int cdb_store_arg(void *v)	high	cdbutil
+00464b50	F	cdb_out_reset	void cdb_out_reset(void)	high	cdbutil
+00464b80	F	cdb_out_append	void cdb_out_append(char *s)	high	cdbutil
+00464c30	F	cdb_frac2_to_double	void cdb_frac2_to_double(unsigned long hi, unsigned long lo, double *out)	high	cdbutil
+00464d60	F	cdb_frac1_to_double	void cdb_frac1_to_double(unsigned long w, double *out)	high	cdbutil
+00464e30	F	cdb_find_file_index	int cdb_find_file_index(char *name)	med	cdbutil
+00464f40	F	cdb_find_function	int cdb_find_function(char *name, int file_sym)	med	cdbutil
+004650a0	F	cdb_lookup_scoped	int cdb_lookup_scoped(char *name, int sclass)	high	cdbsym
+00465110	F	cdb_struct_size	unsigned long cdb_struct_size(int sym)	high	cdbsym
+00465170	F	cdb_types_match	int cdb_types_match(unsigned long type1, int tag1, unsigned long type2, int tag2)	high	cdbsym
+00465230	F	cdb_lookup_variable	void *cdb_lookup_variable(char *name)	high	cdbsym
+004653d0	F	cdb_sym_name	char *cdb_sym_name(int sym)	high	cdbsym
+00465400	F	cdb_next_member	int cdb_next_member(int sym)	high	cdbsym
+00465430	F	cdb_find_member	int cdb_find_member(int struct_sym, char *name)	high	cdbsym
+004654c0	F	cdb_lookup_typedef	int cdb_lookup_typedef(char *name)	high	cdbsym
+004654d0	F	cdb_lookup_enum_member	int cdb_lookup_enum_member(char *name)	med	cdbsym
+004654e0	F	cdb_sym_to_value	void cdb_sym_to_value(void *v, int sym)	high	cdbsym
+00465620	F	cdb_default_space	int cdb_default_space(void)	high	cdbsym
+00465640	F	cdb_detect_space_model	void cdb_detect_space_model(void)	med	cdbsym
+00465750	F	cdb_pc_in_function	int cdb_pc_in_function(int func_sym, int block_depth)	low	cdbsym
+004657c0	F	cdb_line_index	int cdb_line_index(unsigned long addr)	high	cdbsym
+00465890	F	cdb_enum_tag_sym	int cdb_enum_tag_sym(int member_sym)	med	cdbsym
+004658f0	F	cdb_enum_member_by_value	int cdb_enum_member_by_value(int enum_sym, long value)	high	cdbsym
+00465950	F	cdb_func_body_addr	unsigned long cdb_func_body_addr(unsigned long pc)	med	cdbsym
+00465990	F	cdb_sym_name_eq	int cdb_sym_name_eq(char *name, void *sym)	high	cdbsym
+00465a00	F	cdb_func_of_pc	int cdb_func_of_pc(unsigned long pc)	high	cdbsym
+00465ad0	F	cdb_func_of_pc_checked	int cdb_func_of_pc_checked(unsigned long pc)	med	cdbsym
+00465b30	F	cdb_next_eos_marker	int cdb_next_eos_marker(int sym)	low	cdbsym
+00465b80	F	cdb_func_bf_sym	int cdb_func_bf_sym(int func_sym)	med	cdbsym
+00465c00	F	cdb_func_ef_sym	int cdb_func_ef_sym(int func_sym)	med	cdbsym
+00465c90	F	cdb_struct_layout_eq	int cdb_struct_layout_eq(int sym1, int sym2)	med	cdbsym
+00465e30	F	cdb_union_layout_eq	int cdb_union_layout_eq(int sym1, int sym2)	med	cdbsym
+00466000	F	cdb_enum_layout_eq	int cdb_enum_layout_eq(int sym1, int sym2)	med	cdbsym
+00466220	F	cdb_lookup_global	int cdb_lookup_global(char *name, int sclass)	med	cdbsym
+004662f0	F	cdb_lookup_symbol	int cdb_lookup_symbol(char *name)	high	cdbsym
+004663e0	F	cdb_lookup_static_or_ext	int cdb_lookup_static_or_ext(char *name)	med	cdbsym
+00466500	F	cdb_enclosing_block	int cdb_enclosing_block(unsigned long pc)	high	cdbsym
+00466620	F	cdb_find_local	int cdb_find_local(int block_sym, char *name)	high	cdbsym
+004666c0	F	cdb_find_in_block	int cdb_find_in_block(int block_sym, char *name, int sclass)	high	cdbsym
+00466750	F	cdb_find_arg	int cdb_find_arg(int func_sym, char *name)	high	cdbsym
+004667f0	F	cdb_parent_block	int cdb_parent_block(int sym)	med	cdbsym
+004668b0	F	cdb_symname_ptr	char *cdb_symname_ptr(void *sym)	high	cdbsym
+004668f0	F	cdb_symname_is	int cdb_symname_is(char *name, void *sym)	high	cdbsym
+00466950	F	parm_match_port	int parm_match_port(int idx)	med	cdbsym
+00466a5c	F	parm_match_periph_reg	int parm_match_periph_reg(int idx)	low	cdbsym
+00466b2b	F	parm_match_space_sym	int parm_match_space_sym(int idx, int dev)	med	cdbsym
+00466d71	F	parm_match_space_cur	int parm_match_space_cur(int idx)	med	cdbsym
+00466d8b	F	parm_match_space_any	int parm_match_space_any(int idx)	med	cdbsym
+00466ed6	F	parm_kw_A	int parm_kw_A(int idx)	med	cdbsym
+00466efa	F	parm_match_c_test	int parm_match_c_test(int idx)	med	cdbsym
+0046706c	F	parm_match_condition	int parm_match_condition(int idx)	med	cdbsym
+0046757b	F	parm_reg_is_pcvalue	int parm_reg_is_pcvalue(int idx)	low	cdbsym
+00467652	F	parm_kw_M_rw	int parm_kw_M_rw(int idx)	high	cdbsym
+00467676	F	parm_kw_N_drw	int parm_kw_N_drw(int idx)	high	cdbsym
+0046769a	F	parm_kw_H_cmp	int parm_kw_H_cmp(int idx)	high	cdbsym
+004676be	F	parm_kw_O_logic	int parm_kw_O_logic(int idx)	high	cdbsym
+004676e2	F	parm_break_number	int parm_break_number(int idx)	high	cdbsym
+00467816	F	parm_kw_cond_code	int parm_kw_cond_code(int idx)	high	cdbsym
+0046793e	F	parm_kw_bus_name	int parm_kw_bus_name(int idx)	high	cdbsym
+00467afb	F	parm_break_number_list	int parm_break_number_list(int idx)	high	cdbsym
+00467c98	F	parm_colon_number	int parm_colon_number(int idx)	med	cdbsym
+00467d69	F	parm_c_expr	int parm_c_expr(int idx)	high	cdbsym
+00467d7c	F	parm_c_expr_check	int parm_c_expr_check(int idx, int forbid_calls)	high	cdbsym
+00467e61	F	parm_bp_expr	int parm_bp_expr(int idx)	high	cdbsym
+00467ea0	F	parm_type_expr	int parm_type_expr(int idx)	high	cdbsym
+00467edf	F	parm_watch_expr	int parm_watch_expr(int idx)	high	cdbsym
+00467f1e	F	parm_brace_block	int parm_brace_block(int idx)	med	cdbsym
+00467fa9	F	parm_command_name	int parm_command_name(int idx)	high	cdbsym
+00468115	F	parm_device_name	int parm_device_name(int idx)	high	cdbsym
+00468218	F	parm_device_type	int parm_device_type(int idx)	high	cdbsym
+004682c6	F	parm_kw_d_onoff	int parm_kw_d_onoff(int idx)	high	cdbsym
+004682ea	F	parm_check_too_many	int parm_check_too_many(int idx)	high	cdbsym
+0046833d	F	parm_kw_r_radix	int parm_kw_r_radix(int idx)	high	cdbsym
+00468361	F	parm_number_expr	int parm_number_expr(int idx)	med	cdbsym
+004684ed	F	parm_number_addr	int parm_number_addr(int idx)	med	cdbsym
+00468562	F	parm_number_or_end	int parm_number_or_end(int idx)	med	cdbsym
+00468587	F	parm_any_token	int parm_any_token(int idx)	high	cdbsym
+004685b5	F	parm_need_more	int parm_need_more(int idx)	high	cdbsym
+00468620	F	parm_frame_number	int parm_frame_number(int idx)	high	cdbsym
+00468758	F	parm_mem_or_reg_x	int parm_mem_or_reg_x(int idx)	med	cdbsym
+004687c3	F	parm_reg_flag_x	int parm_reg_flag_x(int idx)	low	cdbsym
+004687d9	F	parm_reg_flag	int parm_reg_flag(int idx, unsigned long flag)	med	cdbsym
+00468877	F	parm_mem_or_reg_y	int parm_mem_or_reg_y(int idx)	med	cdbsym
+004688e2	F	parm_reg_flag_y	int parm_reg_flag_y(int idx)	low	cdbsym
+004688f8	F	parm_integer_expr	int parm_integer_expr(int idx)	med	cdbsym
+00468a2f	F	parm_float_expr	int parm_float_expr(int idx)	med	cdbsym
+00468b59	F	parm_address_spec	int parm_address_spec(int idx)	high	cdbsym
+00468f5f	F	parm_kw_m_memmode	int parm_kw_m_memmode(int idx)	high	cdbsym
+00468f83	F	parm_filename	int parm_filename(int idx)	med	cdbsym
+0046903c	F	parm_count_expr	int parm_count_expr(int idx)	med	cdbsym
+004690cf	F	parm_port_name	int parm_port_name(int idx, int dev)	high	cdbsym
+00469271	F	parm_port_name_dev	int parm_port_name_dev(int idx)	med	cdbsym
+004693bf	F	parm_port_range	int parm_port_range(int idx)	med	cdbsym
+0046953e	F	parm_periph_name	int parm_periph_name(int idx)	high	cdbsym
+0046963f	F	parm_memspace_name	int parm_memspace_name(int idx)	med	cdbsym
+00469720	F	parm_addr_or_expr	int parm_addr_or_expr(int idx)	low	cdbsym
+0046975b	F	parm_addr_list	int parm_addr_list(int idx)	low	cdbsym
+004697da	F	parm_addr_list_simple	int parm_addr_list_simple(int idx)	low	cdbsym
+00469849	F	parm_register	int parm_register(int idx)	high	cdbsym
+0046992e	F	parm_kw_R_radix	int parm_kw_R_radix(int idx)	high	cdbsym
+00469952	F	parm_kw_r2_radix_opt	int parm_kw_r2_radix_opt(int idx)	high	cdbsym
+00469976	F	parm_kw_pullup	int parm_kw_pullup(int idx)	high	cdbsym
+0046999a	F	parm_kw_r3_radix_opt	int parm_kw_r3_radix_opt(int idx)	high	cdbsym
+004699be	F	parm_kw_o_options	int parm_kw_o_options(int idx)	high	cdbsym
+004699e2	F	parm_register_range	int parm_register_range(int idx)	med	cdbsym
+00469b40	F	parm_periph_or_group	int parm_periph_or_group(int idx)	med	cdbsym
+00469c30	F	parm_number	int parm_number(int idx, unsigned long max)	high	cdbsym
+00469d42	F	parm_keyword1	int parm_keyword1(int idx, char *kw)	high	cdbsym
+00469d6e	F	parm_kw_h_stdio	int parm_kw_h_stdio(int idx)	high	cdbsym
+00469d9d	F	parm_window_name	int parm_window_name(int idx)	med	cdbsym
+00469eaa	F	parm_break_number_ff	int parm_break_number_ff(int idx)	med	cdbsym
+00469fe1	F	parm_match_keyword	int parm_match_keyword(int idx, char **table, int letter, int count)	high	cdbsym
+0046a0d3	F	str_find_char	int str_find_char(char *s, int c)	high	cdbsym
+0046a134	F	str_find_word	int str_find_word(char *s, char *pat)	high	cdbsym
+0046a2cc	F	parm_nop	void parm_nop(void)	high	cdbsym
+0046a2d1	F	parse_command_line	void *parse_command_line(char *line)	high	cdbsym
+0046a36a	F	parm_tokenize	void parm_tokenize(char *line)	high	cdbsym
+0046a700	F	avl_new	void *avl_new(int cmp_type)	high	cdbsym
+0046a750	F	avl_free	void avl_free(void *tree, int free_mode)	high	cdbsym
+0046a780	F	avl_free_nodes	void avl_free_nodes(void *node, int free_mode)	high	cdbsym
+0046a7d0	F	avl_insert	void avl_insert(void *tree, void *item, int replace)	high	cdbsym
+0046a800	F	avl_insert_node	void *avl_insert_node(void *node, void *item, int replace)	high	cdbsym
+0046a930	F	avl_set_node	void avl_set_node(void *node, void *left, void *item, void *right)	high	cdbsym
+0046a990	F	avl_rebalance	void avl_rebalance(void *n0, void *n1, void *l, void *d1, void *m, void *d2, void *r)	med	cdbsym
+0046aa90	F	avl_delete	void *avl_delete(void *tree, void *key, int free_mode, int repeat)	high	cdbsym
+0046ab20	F	avl_delete_node	void *avl_delete_node(void *node, void *key)	high	cdbsym
+0046ac60	F	avl_find	void *avl_find(void *tree, void *key, int mode)	high	cdbsym
+0046acf0	F	avl_walk	void avl_walk(void *tree, void *fn, int order, int bracket)	high	cdbsym
+0046ad40	F	avl_walk_node	void avl_walk_node(void *node, void *fn, int order)	high	cdbsym
+0046ade0	F	avl_copy_sorted	void *avl_copy_sorted(void *tree, int cmp_type, int resort)	med	cdbsym
+0046aec0	F	avl_iter	char *avl_iter(void *tree, char *iter, void *key)	high	cdbsym
+0046b090	F	prof_list_count	int prof_list_count(void *tree)	high	profrep
+0046b0a0	F	prof_error	void prof_error(int level, char *fmt, ...)	high	profrep
+0046b150	F	prof_malloc	void *prof_malloc(unsigned long n)	high	profrep
+0046b190	F	prof_swap32	void prof_swap32(void *buf, unsigned long nbytes)	high	profrep
+0046b1d0	F	prof_fopen	void *prof_fopen(char *name, char *mode, char *ext, int errlevel)	high	profrep
+0046b440	F	prof_match_word	int prof_match_word(char **pp, char *word)	med	profrep
+0046b4c0	F	prof_fwrite	void prof_fwrite(void *buf, unsigned long size, unsigned long count, void *fp, int swap)	high	profrep
+0046b510	F	prof_fread	void *prof_fread(void *buf, unsigned long size, unsigned long count, void *fp, int swap)	high	profrep
+0046b580	F	prof_func_fullname	void prof_func_fullname(char *out, void *func, unsigned long max)	med	profrep
+0046b610	F	prof_strnicmp	int prof_strnicmp(char *a, char *b, int n)	high	profrep
+0046b700	F	prof_add_line	void *prof_add_line(unsigned long file_idx, unsigned long line)	med	profrep
+0046b770	F	prof_del_line	void prof_del_line(unsigned long file_idx, unsigned long line)	med	profrep
+0046b7a0	F	prof_cmp_ulong	int prof_cmp_ulong(unsigned long *a, unsigned long *b)	high	profrep
+0046b8b0	F	prof_add_instr	void *prof_add_instr(unsigned long addr, int kind, unsigned long space_addr, void *srcloc)	med	profrep
+0046ba80	F	prof_is_branch_class	int prof_is_branch_class(void *instr)	low	profrep
+0046bac0	F	prof_find_instr	char *prof_find_instr(unsigned long addr, void *ref, int mode)	med	profrep
+0046bbb0	F	prof_cmp_srcloc	int prof_cmp_srcloc(void *a, void *b)	med	profrep
+0046bcd0	F	prof_add_file	void *prof_add_file(char *name, unsigned long kind)	med	profrep
+0046bd40	F	prof_del_file	void prof_del_file(void *a, void *b)	low	profrep
+0046bde0	F	prof_cmp_name_nocase	int prof_cmp_name_nocase(void *a, void *b)	high	profrep
+0046be10	F	prof_add_func	void *prof_add_func(void *instr, char *name, int kind)	med	profrep
+0046bf50	F	prof_list_add	void *prof_list_add(void *list, void *item)	high	profrep
+0046bfa0	F	prof_list_remove	void prof_list_remove(void *list, void *item)	high	profrep
+0046bfd0	F	prof_list_delete	void prof_list_delete(void *list, void *item)	high	profrep
+0046c000	F	cdb_build_backtrace	void cdb_build_backtrace(void)	high	cdbbt
+0046c4c0	F	cdb_free_frames	void cdb_free_frames(void)	high	cdbbt
+0046c540	F	cdb_frame_first	void *cdb_frame_first(void)	high	cdbbt
+0046c550	F	cdb_frame_last	void *cdb_frame_last(void)	high	cdbbt
+0046c560	F	cdb_frame_current	void *cdb_frame_current(void)	high	cdbbt
+0046c570	F	cdb_set_frame_current	void cdb_set_frame_current(void *frame)	high	cdbbt
+0046c590	F	cdb_frame_refresh_text	void cdb_frame_refresh_text(void *frame)	med	cdbbt
+0046c6a0	F	cdb_frame_pc	unsigned long cdb_frame_pc(void)	high	cdbbt
+0046c6c0	F	cdb_frame_fp	unsigned long cdb_frame_fp(void)	high	cdbbt
+0046c7f0	F	cdb_caller_pc	unsigned long cdb_caller_pc(unsigned long pc, unsigned long fp, unsigned long sp, void *regs)	med	cdbbt
+0046c890	F	cdb_caller_pc_56100	unsigned long cdb_caller_pc_56100(unsigned long pc, unsigned long fp, unsigned long sp)	med	cdbbt
+0046ca50	F	cdb_hwstack_pop	unsigned long cdb_hwstack_pop(void)	med	cdbbt
+0046cca0	F	cdb_caller_pc_56000	unsigned long cdb_caller_pc_56000(unsigned long pc, unsigned long fp, unsigned long sp)	med	cdbbt
+0046cee0	F	cdb_caller_pc_96000	unsigned long cdb_caller_pc_96000(unsigned long pc, unsigned long fp, unsigned long sp)	med	cdbbt
+0046d100	F	cdb_caller_fp	unsigned long cdb_caller_fp(unsigned long pc, unsigned long fp, unsigned long sp, unsigned long cpc)	med	cdbbt
+0046d1b0	F	cdb_caller_fp_56100	unsigned long cdb_caller_fp_56100(unsigned long pc, unsigned long fp, unsigned long sp, unsigned long cpc)	med	cdbbt
+0046d1d0	F	cdb_caller_fp_56000	unsigned long cdb_caller_fp_56000(unsigned long pc, unsigned long fp)	med	cdbbt
+0046d300	F	cdb_caller_fp_96000	unsigned long cdb_caller_fp_96000(unsigned long pc, unsigned long fp)	med	cdbbt
+0046d430	F	cdb_caller_sp_56100	unsigned long cdb_caller_sp_56100(unsigned long pc, unsigned long sp, unsigned long cpc)	med	cdbbt
+0046d480	F	cdb_count_pushes_56100	int cdb_count_pushes_56100(unsigned long pc)	med	cdbbt
+0046d5c0	F	cdb_frame_adjust_56100	long cdb_frame_adjust_56100(unsigned long pc)	med	cdbbt
+0046d7a0	F	cdb_frame_adjust	long cdb_frame_adjust(unsigned long pc)	med	cdbbt
+0046d7e0	F	cdb_frame_adjust_56000	long cdb_frame_adjust_56000(unsigned long pc)	med	cdbbt
+0046d990	F	cdb_frame_adjust_96000	long cdb_frame_adjust_96000(unsigned long pc)	med	cdbbt
+0046db40	F	cdb_caller_sp	unsigned long cdb_caller_sp(unsigned long pc, unsigned long sp, unsigned long cpc)	med	cdbbt
+0046dbd0	F	cdb_caller_sp_56000	unsigned long cdb_caller_sp_56000(unsigned long pc, unsigned long sp, unsigned long cpc)	med	cdbbt
+0046dc20	F	cdb_count_pushes_56000	int cdb_count_pushes_56000(unsigned long pc)	med	cdbbt
+0046dd90	F	cdb_caller_sp_96000	unsigned long cdb_caller_sp_96000(unsigned long pc, unsigned long sp, unsigned long cpc)	med	cdbbt
+0046dde0	F	cdb_count_pushes_96000	int cdb_count_pushes_96000(unsigned long pc)	med	cdbbt
+0046df10	F	cdb_scan_prologue	char *cdb_scan_prologue(unsigned long pc, int fp)	med	cdbbt
+0046dfa0	F	cdb_scan_prologue_56100	char *cdb_scan_prologue_56100(unsigned long pc, int fp)	med	cdbbt
+00503c84	D	cdb_quiet	int	high	cdbutil	4
+00503b80	D	cdb_errbuf	char[256]	high	cdbutil	256
+00503c80	D	cdb_saved_idx	int	high	cdbutil	4
+00502b80	D	cdb_saved_stack	void *[1024]	high	cdbutil	4096
+00502a60	D	cdb_saved_ictr	unsigned long[4]	med	cdbutil	12
+00502a6c	D	cdb_saved_retaddr	unsigned long	med	cdbutil	4
+00502a70	D	cdb_wrap_line	char[256]	high	cdbutil	256
+00502b70	D	cdb_saved_cyc	unsigned long[4]	med	cdbutil	12
+004a8dac	D	cdb_wrap_width	int	med	cdbutil	4
+00503c88	D	cdb_outbuf	char *	high	cdbutil	4
+00503c8c	D	cdb_outlen	int	high	cdbutil	4
+004d30a0	D	cdb_outcap	int	high	cdbutil	4
+00503f44	D	cdb_arch	int	high	cdbutil	4
+00503f48	D	cdb_word_mask	unsigned long	high	cdbutil	4
+00503f4c	D	cdb_ext_mask	unsigned long	high	cdbutil	4
+00503f50	D	cdb_addr_mask	unsigned long	high	cdbutil	4
+00503f54	D	cdb_word_bits	unsigned long	high	cdbutil	4
+00503f58	D	cdb_ext_bits	unsigned long	high	cdbutil	4
+00503f5c	D	cdb_sign_bit	unsigned long	high	cdbutil	4
+00503f60	D	cdb_ext_sign_bit	unsigned long	high	cdbutil	4
+004927f8	D	cdb_bitmask_tab	unsigned long[33]	med	cdbutil	132
+004927b8	D	cdb_hexdigit_tab	char *[16]	med	cdbutil	64
+00505790	D	cur_arch_desc	void *	high	shared	4
+00505794	D	cur_dev_ops	void *	high	shared	4
+00505798	D	cur_dev	void *	high	shared	4
+0050578c	D	cur_prog	void *	high	shared	4
+005029e0	D	cdb_expr_end	char *	med	cdbsym	4
+00503c90	D	parm_ctx	void *	high	cdbsym	4
+004a91e8	D	parm_ctx_storage	char[6280]	med	cdbsym	6280
+004aaa68	D	parm_cmdline	char *	med	cdbsym	4
+004a8dd0	D	parm_errmsg	char *	high	cdbsym	4
+004d4134	D	cdb_lookup_cache_depth	int	low	cdbsym	4
+004d4138	D	cdb_lookup_cache_sym	int	low	cdbsym	4
+00503c98	D	avl_spare_node	void *	high	cdbsym	4
+00503c9c	D	avl_cur_tree	void *	high	cdbsym	4
+00503f24	D	avl_removed	void *	high	cdbsym	4
+004d3b48	D	avl_cmp_tab	void *[]	med	cdbsym	0
+004aab04	D	dev_type_count	int	med	shared	4
+004aab08	D	dev_type_tab	void *	med	shared	4
+004aab0c	D	dev_count	int	med	shared	4
+004aab10	D	dev_tab	void *	med	shared	4
+004a8db8	D	cmd_count	int	med	shared	4
+004a8dbc	D	cmd_tab	void *	med	shared	4
+00505b64	D	prof_ctx	void *	high	profrep	4
+00505b20	D	prof_jmpbuf	char[64]	high	profrep	64
+00505b60	D	prof_file_size	long	med	profrep	4
+00505a20	D	prof_filename	char[256]	high	profrep	256
+00503ca0	D	prof_instr_scratch	char[644]	med	profrep	644
+00503f28	D	prof_line_key	unsigned long[2]	med	profrep	8

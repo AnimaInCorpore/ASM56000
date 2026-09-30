@@ -1,0 +1,26 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  02:45:39  d_defsym.asm
+  Page 1
+
+
+
+1                        ; symbols defined on the command line with -d <symbol> 
+<string>
+2                                  opt     cex
+3         X:0000                   org     x:$0
+**** 4 [d_defsym.asm 4]: ERROR --- Symbol undefined on pass 2: FOO (Operand field)
+**** 4 [d_defsym.asm 4]: ERROR --- Symbol undefined on pass 2: FOO (Operand field)
+**** 4 [d_defsym.asm 4]: ERROR --- Symbol undefined on pass 2: FOO (Operand field)
+4    d    X:0000 000000            dc      FOO,BAR
+     d           000000
+**** 5 [d_defsym.asm 5]: ERROR --- Symbol undefined on pass 2: FOO*2 (Operand field)
+**** 5 [d_defsym.asm 5]: ERROR --- Symbol undefined on pass 2: FOO*2 (Operand field)
+**** 5 [d_defsym.asm 5]: ERROR --- Symbol undefined on pass 2: FOO*2 (Operand field)
+5    d    X:0002 000000            dc      FOO*2
+6         P:0000                   org     p:$0
+7         P:0000 240000            move              #FOO,x0
+8                                  end
+
+2    Errors
+0    Warnings
+
+

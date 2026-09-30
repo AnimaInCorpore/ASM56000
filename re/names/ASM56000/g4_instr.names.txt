@@ -1,0 +1,209 @@
+# g4_instr: amode.c, encode.c, procop.c, procxy.c (instruction encoder) - see re/notes/ASM56000/g4_instr.md
+# addr	F|D	name	prototype/type	confidence	module[	size-bytes]
+# Struct pointers are void * here: OPERAND = 32-byte addressing-mode descriptor, INSN = 80-byte opcode
+# build record, IENTRY = 20-byte InstrTab entry (layouts in g4_instr.md section 1).
+#
+# --- amode.c (modules.txt: 19). 0x405eea..0x405fd4 use strings that precede amode's $Id and are
+# --- called only from dspasm/pseudo: probably the tail of dspasm.c (module kept as modules.txt says).
+00405eea	F	get_date_time	long get_date_time(char *date, char *time)	high	amode
+00405f6a	F	set_file_type	int set_file_type(char *fname, char *type, char *creator)	high	amode
+00405f74	F	free_str_list	void free_str_list(void *list)	high	amode
+00405fbe	F	set_opt_rp	void set_opt_rp(int on)	high	amode
+00405fd4	F	get_opt_rp	int get_opt_rp(void)	high	amode
+00405fe0	F	parse_xfield_src	int parse_xfield_src(void *op)	high	amode
+004060d8	F	parse_operand	int parse_operand(unsigned long flags, void *op, int regclass, int eaclass, int absclass, int immclass)	high	amode
+004061ae	F	get_amode	int get_amode(unsigned long flags, void *op, int regclass, int eaclass, int absclass, int immclass)	high	amode
+0040641c	F	amode_register	int amode_register(int regclass, void *op)	high	amode
+00406938	F	note_reg_direct	int note_reg_direct(unsigned long flags, int regclass, int reg)	high	amode
+004069eb	F	check_areg_stall	void check_areg_stall(int reg, int mode)	high	amode
+00406aaf	F	check_dup_dest	int check_dup_dest(int regclass, int reg)	high	amode
+00406bfa	F	amode_indirect	int amode_indirect(int eaclass, void *op)	high	amode
+00406f87	F	amode_immediate	int amode_immediate(int immclass, void *op)	high	amode
+00407462	F	get_imm_expr	void * get_imm_expr(int immclass)	high	amode
+00407511	F	imm_dest_is_alu	int imm_dest_is_alu(void)	high	amode
+0040758c	F	amode_absolute	int amode_absolute(int absclass, void *op)	high	amode
+0040800f	F	parse_addr_reg	int parse_addr_reg(void)	high	amode
+00408046	F	parse_offset_reg	int parse_offset_reg(int areg)	high	amode
+#
+# --- encode.c (modules.txt: 70). 0x410901 is really debug.c (no strings, resets debug.c's DEF staging state).
+00410901	F	dbg_pending_reset	void dbg_pending_reset(void)	med	encode
+00410950	F	enc_andi	void enc_andi(void *insn, void *imm, void *dst)	high	encode
+00410994	F	ee_code	int ee_code(int reg)	high	encode
+004109d7	F	enc_div	void enc_div(void *insn, void *src, void *dst)	high	encode
+00410a2b	F	d_code	int d_code(int reg)	high	encode
+00410a61	F	jjj_code	int jjj_code(int reg)	high	encode
+00410acf	F	enc_norm	void enc_norm(void *insn, void *src, void *dst)	high	encode
+00410b29	F	rrr_code	int rrr_code(int mode, int reg)	high	encode
+00410bcb	F	enc_loop_ea	void enc_loop_ea(void *insn, void *op)	high	encode
+00410c5c	F	mmm_code	int mmm_code(int mode)	high	encode
+00410cfb	F	s_code	int s_code(int space)	high	encode
+00410d0f	F	enc_loop_abs	void enc_loop_abs(void *insn, void *op)	high	encode
+00410d51	F	enc_loop_reg	void enc_loop_reg(void *insn, void *op)	high	encode
+00410d97	F	d6_code	int d6_code(int reg)	high	encode
+00410e44	F	ccc_code	int ccc_code(int reg)	high	encode
+00410ec7	F	ddddd_code	int ddddd_code(int reg)	high	encode
+00410f7f	F	dd_code	int dd_code(int reg)	high	encode
+00410fde	F	ddd_code	int ddd_code(int reg)	high	encode
+00411079	F	fff_code	int fff_code(int reg)	high	encode
+00411104	F	nnn_code	int nnn_code(int reg)	high	encode
+0041118f	F	enc_loop_imm	void enc_loop_imm(void *insn, void *op)	high	encode
+004112b9	F	enc_do_ea	void enc_do_ea(void *insn, void *op, void *target)	high	encode
+004112e0	F	set_ext_word	void set_ext_word(void *insn, void *op, int minus1)	high	encode
+004113ae	F	enc_do_abs	void enc_do_abs(void *insn, void *op, void *target)	high	encode
+004113d5	F	enc_do_reg	void enc_do_reg(void *insn, void *op, void *target)	high	encode
+004113fc	F	enc_do_imm	void enc_do_imm(void *insn, void *op, void *target)	high	encode
+00411423	F	enc_jmp_abs	void enc_jmp_abs(void *insn, void *op)	high	encode
+00411457	F	enc_jmp_ea	void enc_jmp_ea(void *insn, void *op)	high	encode
+00411501	F	enc_jcc_abs	void enc_jcc_abs(void *insn, void *op)	high	encode
+00411535	F	enc_jcc_ea	void enc_jcc_ea(void *insn, void *op)	high	encode
+004115dc	F	enc_tcc_r	void enc_tcc_r(void *insn, void *s1, void *d1, void *s2, void *d2)	high	encode
+00411697	F	enc_tcc	void enc_tcc(void *insn, void *s1, void *d1)	high	encode
+004116eb	F	enc_bit_ea	void enc_bit_ea(void *insn, void *bitno, void *op)	high	encode
+004117a2	F	enc_bit_reg	void enc_bit_reg(void *insn, void *bitno, void *op)	high	encode
+004117ff	F	enc_bit_abs	void enc_bit_abs(void *insn, void *bitno, void *op)	high	encode
+004119e4	F	enc_bit_pp	void enc_bit_pp(void *insn, void *bitno, void *op)	high	encode
+00411a18	F	enc_jbit_ea	void enc_jbit_ea(void *insn, void *bitno, void *op, void *target)	high	encode
+00411a43	F	enc_jbit_reg	void enc_jbit_reg(void *insn, void *bitno, void *op, void *target)	high	encode
+00411ab2	F	enc_jbit_abs	void enc_jbit_abs(void *insn, void *bitno, void *op, void *target)	high	encode
+00411add	F	enc_jbit_pp	void enc_jbit_pp(void *insn, void *bitno, void *op, void *target)	high	encode
+00411b08	F	enc_movep_reg	void enc_movep_reg(void *insn, void *pp, void *reg)	high	encode
+00411b70	F	enc_movep_mem	void enc_movep_mem(void *insn, void *pp, void *mem)	high	encode
+00411c6a	F	enc_movep_reg_w	void enc_movep_reg_w(void *insn, void *reg, void *pp)	high	encode
+00411c9e	F	enc_movep_mem_w	void enc_movep_mem_w(void *insn, void *mem, void *pp)	high	encode
+00411cd2	F	enc_movec_ea	void enc_movec_ea(void *insn, void *creg, void *mem)	high	encode
+00411db2	F	enc_movec_ea_w	void enc_movec_ea_w(void *insn, void *mem, void *creg)	high	encode
+00411de6	F	enc_movec_imm	void enc_movec_imm(void *insn, void *imm, void *creg)	high	encode
+00411e5a	F	enc_movec_reg	void enc_movec_reg(void *insn, void *creg, void *reg)	high	encode
+00411edd	F	enc_movec_reg_w	void enc_movec_reg_w(void *insn, void *reg, void *creg)	high	encode
+00411f11	F	enc_movec_abs	void enc_movec_abs(void *insn, void *creg, void *abs)	high	encode
+00411f93	F	enc_movec_abs_w	void enc_movec_abs_w(void *insn, void *abs, void *creg)	high	encode
+00411fc7	F	enc_movec_ea2	void enc_movec_ea2(void *insn, void *creg, void *mem)	high	encode
+004120a7	F	enc_movec_ea2_w	void enc_movec_ea2_w(void *insn, void *mem, void *creg)	high	encode
+004120db	F	enc_pm_xy	void enc_pm_xy(void *insn, void *xreg, void *xmem, void *yreg, void *ymem)	high	encode
+004121da	F	xx_code	int xx_code(int reg)	high	encode
+0041223d	F	yy_code	int yy_code(int reg)	high	encode
+004122a4	F	enc_pm_xy_wx	void enc_pm_xy_wx(void *insn, void *xmem, void *xreg, void *yreg, void *ymem)	high	encode
+004122e0	F	enc_pm_xy_wy	void enc_pm_xy_wy(void *insn, void *xreg, void *xmem, void *ymem, void *yreg)	high	encode
+0041231c	F	enc_pm_xy_wxy	void enc_pm_xy_wxy(void *insn, void *xmem, void *xreg, void *ymem, void *yreg)	high	encode
+00412370	F	enc_pm_xr2	void enc_pm_xr2(void *insn, void *acc, void *mem)	high	encode
+00412424	F	enc_pm_x_ea	void enc_pm_x_ea(void *insn, void *reg, void *mem)	high	encode
+004124fe	F	enc_pm_x_ea_w	void enc_pm_x_ea_w(void *insn, void *mem, void *reg)	high	encode
+00412532	F	enc_pm_y_ea	void enc_pm_y_ea(void *insn, void *reg, void *mem)	high	encode
+00412566	F	enc_pm_y_ea_w	void enc_pm_y_ea_w(void *insn, void *mem, void *reg)	high	encode
+0041259a	F	enc_pm_x_abs	void enc_pm_x_abs(void *insn, void *reg, void *abs)	high	encode
+00412616	F	enc_pm_x_abs_w	void enc_pm_x_abs_w(void *insn, void *abs, void *reg)	high	encode
+0041264a	F	enc_pm_y_abs	void enc_pm_y_abs(void *insn, void *reg, void *abs)	high	encode
+0041267e	F	enc_pm_y_abs_w	void enc_pm_y_abs_w(void *insn, void *abs, void *reg)	high	encode
+004126b2	F	enc_pm_ry	void enc_pm_ry(void *insn, void *s1, void *d1, void *yreg, void *ymem)	high	encode
+004127b0	F	x_code	int x_code(int reg)	high	encode
+#
+# --- really encode.c (strings "Y/LLL/QQ encoding failure" precede error.c's $Id), assigned to error by
+# --- modules.txt and named by g1 (enc_ea_dual...). Proposed replacement names, same prototypes shape:
+004127e6	F	enc_pm_ry_w	void enc_pm_ry_w(void *insn, void *s1, void *d1, void *ymem, void *yreg)	high	error
+00412822	F	enc_pm_xr	void enc_pm_xr(void *insn, void *xreg, void *xmem, void *s2, void *d2)	high	error
+0041290b	F	y_code	int y_code(int reg)	high	error
+00412941	F	enc_pm_xr_w	void enc_pm_xr_w(void *insn, void *xmem, void *xreg, void *s2, void *d2)	high	error
+0041297d	F	enc_pm_l_abs	void enc_pm_l_abs(void *insn, void *reg, void *abs)	high	error
+004129d7	F	lll_code	int lll_code(int reg)	high	error
+00412a8f	F	enc_pm_l_abs_w	void enc_pm_l_abs_w(void *insn, void *abs, void *reg)	high	error
+00412ac3	F	enc_pm_l_ea	void enc_pm_l_ea(void *insn, void *reg, void *mem)	high	error
+00412b7b	F	enc_pm_l_ea_w	void enc_pm_l_ea_w(void *insn, void *mem, void *reg)	high	error
+00412baf	F	enc_pm_imm	void enc_pm_imm(void *insn, void *imm, void *dst)	high	error
+00412c09	F	enc_pm_reg	void enc_pm_reg(void *insn, void *src, void *dst)	high	error
+00412c72	F	enc_pm_update	void enc_pm_update(void *insn, void *op)	high	error
+00412ce3	F	enc_movem_ea	void enc_movem_ea(void *insn, void *reg, void *mem)	high	error
+00412da0	F	enc_movem_ea_w	void enc_movem_ea_w(void *insn, void *mem, void *reg)	high	error
+00412dd4	F	enc_movem_abs	void enc_movem_abs(void *insn, void *reg, void *abs)	high	error
+00412e1b	F	enc_movem_abs_w	void enc_movem_abs_w(void *insn, void *abs, void *reg)	high	error
+00412e4f	F	enc_lua	void enc_lua(void *insn, void *mem, void *dst)	high	error
+00412ecb	F	enc_mul_imm	void enc_mul_imm(void *insn, void *s1, void *imm, void *dst)	high	error
+00412f33	F	qq_code	int qq_code(int reg)	high	error
+#
+# --- procop.c (modules.txt: 33). 0x42420d..0x424b1a use strings before procop's $Id: really object.c.
+0042420d	F	obj_add_reloc	int obj_add_reloc(char *expr)	high	procop
+0042433e	F	obj_add_lineno	int obj_add_lineno(int line)	high	procop
+0042447e	F	obj_add_symrec	int obj_add_symrec(void *rec)	high	procop
+0042456e	F	strtab_add	int strtab_add(char *s)	high	procop
+00424733	F	obj_cmt_sym	void obj_cmt_sym(char *text, long value)	med	procop
+004247b1	F	obj_sdi_sym	void obj_sdi_sym(long relocidx)	med	procop
+00424817	F	obj_emit_sym	void obj_emit_sym(void *sym)	med	procop
+00424b1a	F	obj_emit_ext_sym	void obj_emit_ext_sym(void *ext)	med	procop
+00424bf0	F	proc_instr	int proc_instr(void *ientry)	high	procop
+00425340	F	p_noarg	int p_noarg(int iclass)	high	procop
+0042546b	F	p_rts	int p_rts(int iclass)	high	procop
+00425552	F	p_andi	int p_andi(void *insn)	high	procop
+0042562d	F	p_and_or	int p_and_or(void *insn)	high	procop
+004256e7	F	p_alu1	int p_alu1(int iclass, void *insn)	high	procop
+0042578d	F	p_addl	int p_addl(void *insn)	high	procop
+004257f4	F	p_eor_adc	int p_eor_adc(int iclass, void *insn)	high	procop
+00425883	F	p_alu2	int p_alu2(int iclass, void *insn)	high	procop
+00425945	F	p_norm	int p_norm(void *insn)	high	procop
+00425a05	F	p_lua	int p_lua(void *insn)	high	procop
+00425a60	F	p_div	int p_div(void *insn)	high	procop
+00425abb	F	p_bitop	int p_bitop(int iclass, void *insn)	high	procop
+00425d15	F	p_do	int p_do(void *insn)	high	procop
+00426106	F	p_enddo	int p_enddo(void)	high	procop
+004261da	F	p_rep	int p_rep(void *insn)	high	procop
+00426305	F	p_jmp	int p_jmp(int iclass, void *insn)	high	procop
+0042666f	F	p_jsr	int p_jsr(int iclass, void *insn)	high	procop
+00426a45	F	p_jbit	int p_jbit(int iclass, void *insn)	high	procop
+00426dc3	F	p_tcc	int p_tcc(void *insn)	high	procop
+00426ee5	F	p_mul	int p_mul(int iclass, void *insn)	high	procop
+004270d6	F	p_move	int p_move(void)	high	procop
+0042712b	F	p_movep	int p_movep(void *insn)	high	procop
+00427d58	F	set_alu_reg	void set_alu_reg(int which, int reg, unsigned long *word)	high	procop
+00427e5d	F	mulreg	int mulreg(int s1, int s2, int d, unsigned long *word)	high	procop
+#
+# --- procxy.c (modules.txt: 17) + 0x42b12c/0x42b1e5 (modules.txt: pseudo, g5 named them
+# --- pseudo_check_move_class/_mask; their only string precedes pseudo.c's $Id, so they are procxy.c).
+00428040	F	do_xy	int do_xy(void *insn, unsigned long pmclass, void *xs, void *xd, void *ys, void *yd)	high	procxy
+0042838d	F	xy_imm_short	int xy_imm_short(unsigned long pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	procxy
+0042859c	F	xy_imm_long	int xy_imm_long(unsigned long pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	procxy
+004287cc	F	xy_lreg	int xy_lreg(unsigned long pmclass, void *insn, void *xs, void *xd)	high	procxy
+004288fe	F	xy_acc	int xy_acc(unsigned long pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	procxy
+00428cce	F	xy_xreg	int xy_xreg(unsigned long pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	procxy
+00428e50	F	xdst_mem	int xdst_mem(unsigned long pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	procxy
+00429729	F	xy_reg	int xy_reg(unsigned long pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	procxy
+00429b8a	F	xy_mreg	int xy_mreg(unsigned long pmclass, void *insn, void *xs, void *xd)	high	procxy
+00429d39	F	xy_ctlreg	int xy_ctlreg(unsigned long pmclass, void *insn, void *xs, void *xd)	high	procxy
+00429fb4	F	xy_pdst	int xy_pdst(unsigned long pmclass, void *insn, void *xs, void *xd)	high	procxy
+0042a096	F	xy_xsrc	int xy_xsrc(unsigned long pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	procxy
+0042a7d2	F	xy_xsrc_acc	int xy_xsrc_acc(unsigned long pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	procxy
+0042aa80	F	xy_ysrc	int xy_ysrc(unsigned long pmclass, void *insn, void *xs, void *xd)	high	procxy
+0042adb6	F	xy_lsrc	int xy_lsrc(unsigned long pmclass, void *insn, void *xs, void *xd)	high	procxy
+0042ae87	F	xy_psrc	int xy_psrc(unsigned long pmclass, void *insn, void *xs, void *xd)	high	procxy
+0042b08d	F	chk_xy_regs	int chk_xy_regs(int xreg, int yreg)	high	procxy
+0042b12c	F	note_ctrl_write	int note_ctrl_write(int reg)	high	pseudo
+0042b1e5	F	chk_move_class	int chk_move_class(unsigned long pmclass, unsigned long mask, void *insn)	high	pseudo
+#
+# --- globals (tables in mchglb, state in bss/asmglb)
+0044e0b0	D	InstrTab	void *	high	mchglb	2840
+0044ebc8	D	InstrTabCount	unsigned long	high	mchglb	4
+0044ece8	D	RegNameTab	char *[51]	high	mchglb	204
+0044f814	D	MnemField	char *	high	asmglb	4
+0044f818	D	Op1Field	char *	high	asmglb	4
+0044f81c	D	Op2Field	char *	high	asmglb	4
+0044f820	D	Op3Field	char *	high	asmglb	4
+0044f824	D	Op4Field	char *	high	asmglb	4
+0045ec04	D	EmptyField	char[4]	high	bss	4
+0045f860	D	optr	char *	high	bss	4
+0044f9fc	D	CpuVariant	long	high	asmglb	4
+0044f95c	D	PrevInstrWords	long	high	asmglb	4
+0045ebb4	D	HazardCur	unsigned long	high	bss	4
+0045ebb8	D	HazardPrev	unsigned long	high	bss	4
+0045f93c	D	DestRegMask	unsigned long	high	bss	4
+0045f940	D	AregWritten	unsigned long	high	bss	4
+0045f944	D	AregWrittenPrev	unsigned long	high	bss	4
+0045f948	D	LastSrcReg	long	high	bss	4
+0045f94c	D	AregWritePc	unsigned long	high	bss	4
+0045ea5c	D	CtrlRegAccessed	char	high	bss	1
+0045eac8	D	OptRp	char	high	bss	1
+0045eacc	D	InsertingNop	char	med	bss	1
+0045eb8c	D	RpLocked	long	low	bss	4
+0045ead4	D	OptSi	char	high	bss	1
+0045ea38	D	OptCc	char	high	bss	1
+0045f928	D	CycleCount	long	high	bss	4
+0045f930	D	CycleTotal	long	high	bss	4
+0045ea90	D	VectorCheck	char	med	bss	1
+0044f924	D	VectorAreaSize	unsigned long	med	asmglb	4
+0045f868	D	SdiHandle	char *	med	bss	4

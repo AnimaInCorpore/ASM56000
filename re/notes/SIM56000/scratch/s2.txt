@@ -1,0 +1,18 @@
+log s l2.txt
+load p1.cld
+display
+reg
+step 3
+display a
+break pc==$45
+go
+evaluate 3+4*5
+eval $ff
+change x:$10 $77
+display x:$10..$12
+disassemble p:$40..$48
+where
+radix h
+history
+log off
+quit

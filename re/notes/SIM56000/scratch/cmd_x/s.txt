@@ -1,0 +1,6 @@
+log s a.log
+more off
+eval $ff
+ev f .5
+log off
+quit

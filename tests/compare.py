@@ -21,7 +21,7 @@ import os, re, sys, shutil, subprocess, tempfile, filecmp
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ORIG = os.path.join(ROOT, "re", "bin")
-NEW = os.path.join(ROOT, "build")
+NEW = os.environ.get("CLAS_BUILD") or os.path.join(ROOT, "build")
 
 FIXED_TIME = "931953600"
 
@@ -56,6 +56,24 @@ def main():
     src = os.getcwd()
     ro, fo, wo = run(os.path.join(orig, tool.upper() + ".EXE"), args, src, stdin)
     rn, fn, wn = run(os.path.join(NEW, tool + ".exe"), args, src, stdin, env)
+    # program name in messages: the original prints its argv[0] path
+    def norm(o, is_orig):
+        if is_orig:
+            return re.sub(rb"(?m)^\S*[/\\]re[/\\]bin(?:_ft)?[/\\](\w+)(?=:)", rb"\1", o)
+        return o
+    def fold(o):
+        return re.sub(rb"(?mi)^" + tool.encode() + rb"(?=:)", tool.encode(), o)
+    if os.environ.get("CLAS_NORM_CRLF"):
+        # LP64 test builds run under the MSYS runtime, which writes LF
+        # where the Win32 originals write CR LF (text mode)
+        crlf, lf = bytes(bytearray([13, 10])), bytes(bytearray([10]))
+        for r in (ro, rn):
+            r.stdout, r.stderr = r.stdout.replace(crlf, lf), r.stderr.replace(crlf, lf)
+        for f in list(fo.values()) + list(fn.values()):
+            data = open(f, "rb").read().replace(crlf, lf)
+            open(f, "wb").write(data)
+    ro.stdout, ro.stderr = fold(norm(ro.stdout, 1)), fold(norm(ro.stderr, 1))
+    rn.stdout, rn.stderr = fold(norm(rn.stdout, 0)), fold(norm(rn.stderr, 0))
     fo = {k: v for k, v in fo.items() if not any(r.search(k) for r in ignore)}
     fn = {k: v for k, v in fn.items() if not any(r.search(k) for r in ignore)}
     ok = True

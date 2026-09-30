@@ -1,0 +1,197 @@
+# SIM56000.EXE names/prototypes - group cmd (state, cmdloop, macro, fmt, console, dispval)
+# addr	F|D	name	prototype|type	confidence	module[	size-bytes]
+# NOTE: module boundaries in filemap.txt are only approximate; the module column below follows the real content
+# (fmt.c really holds the command dispatcher + memory-tag range maps + register value formatting,
+#  macro.c holds the macro-file reader + disassembly line formatter, console.c the console + arena).
+#
+# ==================== state.c (0x4340f0-0x438fff): device create/destroy, save/load state ====================
+004340f0	F	str_icmp	int str_icmp(char *a, char *b)	high	state
+004341a0	F	str_nicmp	int str_nicmp(char *a, char *b, int n)	high	state
+00434270	F	dev_write_reg	int dev_write_reg(int dev, int bank, int reg, long *val)	med	state
+00434300	F	str_tolower	int str_tolower(char *s)	high	state
+00434830	F	sorted_table_lookup	int sorted_table_lookup(char *s, char **table, int n)	med	state
+00434880	F	save_state_all	void save_state_all(char *filename)	high	state
+004348a0	F	save_state	int save_state(char *filename, int first_dev, int last_dev)	high	state
+004358d0	F	save_maplist	void save_maplist(void *list, void *fp)	high	state
+00435930	F	save_io_files	void save_io_files(void *fp)	high	state
+004359a0	F	save_io_list	int save_io_list(void *fp, void *list_head)	high	state
+00435b00	F	save_expr_tree	void save_expr_tree(void *fp, void *node, int code)	high	state
+00435c20	F	expr_tree_size	int expr_tree_size(void *node, int code, int *count)	high	state
+00435ce0	F	devtype_find	int devtype_find(char *name1, char *name2)	med	state
+00435d40	F	dev_create	int dev_create(int dev, char *devtype_name)	high	state
+004360b0	F	dev_alloc_regbank	int dev_alloc_regbank(int bank)	high	state
+00436150	F	dev_init_regbank	void dev_init_regbank(int bank)	high	state
+004361f0	F	dev_alloc_memmaps	int dev_alloc_memmaps(void)	high	state
+004362e0	F	dev_init_memmaps	void dev_init_memmaps(void)	high	state
+004363e0	F	dev_alloc_periph	int dev_alloc_periph(void)	high	state
+00436430	F	dev_init_periph	void dev_init_periph(void)	high	state
+00436470	F	dev_reset	void dev_reset(int dev, int arg)	high	state
+004364f0	F	dev_free_program_info	void dev_free_program_info(void)	high	state
+00436620	F	dev_clear_memory	void dev_clear_memory(int devtype_unused)	med	state
+00436640	F	free_memtags	void free_memtags(void)	high	state
+00436730	F	free_io_lists	void free_io_lists(void)	high	state
+004367a0	F	dev_destroy	void dev_destroy(int dev)	high	state
+00436a50	F	dev_free_regbank	void dev_free_regbank(int bank)	high	state
+00436ad0	F	dev_free_memmaps	void dev_free_memmaps(void)	high	state
+00436b30	F	chip_reset_regs	int chip_reset_regs(int mode, long arg)	med	state
+00436bb0	F	dev_state_init	void dev_state_init(void)	high	state
+00436f90	F	load_state	int load_state(char *filename)	high	state
+004383d0	F	load_maplist	void load_maplist(void *listp, void *fp)	high	state
+00438450	F	load_expr_tree	void *load_expr_tree(void *fp)	high	state
+00438690	F	dev_cycle_begin	void dev_cycle_begin(int dev)	med	state
+00438850	F	dev_cycle_stage1	void dev_cycle_stage1(int dev)	med	state
+004388a0	F	dev_cycle_stage2	void dev_cycle_stage2(int dev)	med	state
+004388f0	F	dev_cycle_end	int dev_cycle_end(int dev)	med	state
+00438a30	F	dev_housekeeping	void dev_housekeeping(int dev)	high	state
+00438a80	F	load_io_files	void load_io_files(void *fp)	high	state
+00438af0	F	load_io_list	int load_io_list(void *fp, void *list_head_addr)	high	state
+00438d70	F	path_combine	void path_combine(char *dir, char *name, char *ext, char *out)	high	state
+00438eb0	F	path_search	int path_search(char *name, char *defext, char *out)	high	state
+#
+# ==================== cmdloop.c (0x439000-0x439fff): line editor ====================
+00439000	F	sim_init_tables	void sim_init_tables(void)	med	cmdloop
+00439080	F	memmap_find	int memmap_find(int space, unsigned long addr)	high	cmdloop
+00439140	F	dev_select	void dev_select(int dev)	high	cmdloop
+004391f0	F	cmd_complete	char *cmd_complete(char *line)	high	cmdloop
+00439360	F	cmdstack_push	void cmdstack_push(char *line)	high	cmdloop
+00439410	F	cmd_read_line	void cmd_read_line(int dev, char *out)	high	cmdloop
+00439d80	F	prompt_show	void prompt_show(void)	high	cmdloop
+00439e50	F	status_line1	void status_line1(char *text)	high	cmdloop
+00439eb0	F	cmd_error_position	int cmd_error_position(char *line)	low	cmdloop
+00439f40	F	help_line_edit	int help_line_edit(char *line)	low	cmdloop
+#
+# ==================== macro.c (0x43a470-0x43aff0): macro files, run banner, disassembly line ====================
+0043a470	F	macro_read_line	void macro_read_line(int dev, char *out)	high	macro
+0043a610	F	macro_pop	void macro_pop(void)	high	macro
+0043a6a0	F	macro_push	void macro_push(char *filename)	high	macro
+0043a770	F	macro_abort_all	void macro_abort_all(void)	high	macro
+0043a7c0	F	confirm_overwrite	int confirm_overwrite(char *filename, int mode)	high	macro
+0043a8b0	F	show_running_banner	void show_running_banner(void)	high	macro
+0043a930	F	memtag_add	void memtag_add(int flags, int region, unsigned long lo, unsigned long hi, int kind)	high	macro
+0043a9d0	F	disasm_line	int disasm_line(unsigned long space, unsigned long addr, char *out, int arg)	high	macro
+#
+# ==================== fmt.c (0x43b5a0-0x43c2ef): dispatcher, range maps, register value format ====================
+0043b5a0	F	cmd_execute	void cmd_execute(int dev, char *line)	high	fmt
+0043b640	F	iolist_remove	void iolist_remove(void *list_head_addr, char *name, int mode)	med	fmt
+0043b790	F	memtag_clear_id	void memtag_clear_id(int id, unsigned long addr)	med	fmt
+0043b860	F	iolist_find_id	void *iolist_find_id(void *list, int id)	med	fmt
+0043b880	F	iolist_find	void *iolist_find(void *list, int type, int a, int b)	med	fmt
+0043b8c0	F	rangemap_set	void rangemap_set(void *mapp, unsigned long lo, unsigned long hi, int space_size, int value)	high	fmt
+0043ba40	F	rangemap_get	int rangemap_get(void *mapp, unsigned long addr)	high	fmt
+0043ba70	F	prompt_help_cycle	void prompt_help_cycle(int step)	high	fmt
+0043bb00	F	status_line2	void status_line2(char *text)	high	fmt
+0043bb50	F	display_refresh	void display_refresh(int full)	high	fmt
+0043bc00	F	memtag_rebuild	void memtag_rebuild(void)	high	fmt
+0043bd90	F	fmt_float_exp	char *fmt_float_exp(char *fmt, int *dbl)	high	fmt
+0043bec0	F	fmt_register	int fmt_register(int bank, int reg, int radix, char *out)	high	fmt
+#
+# ==================== console.c (0x43c2f0-0x43df00): screen painter, log path, console, arena ====================
+0043c2f0	F	display_all	void display_all(int with_watch)	high	console
+0043ca50	F	rtrim_line	int rtrim_line(char *s)	high	console
+0043ca80	F	reg_next	void reg_next(int *reg, int *bank)	med	console
+0043cad0	F	reg_prev	void reg_prev(int *reg, int *bank)	med	console
+0043cb10	F	list_next_id	int list_next_id(void *head)	med	console
+0043cb40	F	list_find_id	int *list_find_id(void *head, int id)	med	console
+0043cb70	F	list_insert_sorted	void list_insert_sorted(void *head, void *node)	med	console
+0043cc60	F	str_nicmp_ascii	int str_nicmp_ascii(char *a, char *b, int n)	high	console
+0043ccc0	F	str_icmp_ascii	int str_icmp_ascii(char *a, char *b)	high	console
+0043cd00	F	console_open	void console_open(void)	high	console
+0043ce90	F	console_rows	int console_rows(void *h)	high	console
+0043cec0	F	console_cols	int console_cols(void *h)	high	console
+0043cef0	F	console_get_attr	void console_get_attr(long h)	med	console
+0043cf70	F	console_set_size	void console_set_size(void *h, int cols, int rows)	high	console
+0043d0b0	F	screen_clear	void screen_clear(void)	high	console
+0043d180	F	scrollback_end	void scrollback_end(int dev)	high	console
+0043d1e0	F	log_echo	void log_echo(char *line, int nocmdlog)	high	console
+0043d200	F	out_line	void out_line(char *line, int nocmdlog, int plain)	high	console
+0043d3a0	F	out_text	void out_text(char *line, int nocmdlog)	high	console
+0043d3c0	F	scrollback_move	void scrollback_move(int n)	high	console
+0043d4e0	F	screen_rotate	void screen_rotate(int dir)	high	console
+0043d520	F	cursor_set	void cursor_set(int row, int col)	high	console
+0043d570	F	screen_putc	void screen_putc(int ch)	med	console
+0043d5b0	F	screen_clear_eol	void screen_clear_eol(void)	high	console
+0043d640	F	screen_puts_attr	void screen_puts_attr(char *s, int mode)	high	console
+0043d800	F	screen_write	void screen_write(int row, int col, char *s, int mode)	high	console
+0043d840	F	key_get	int key_get(void)	high	console
+0043d9e0	F	console_beep	void console_beep(void)	low	console
+0043d9f0	F	screen_flush	void screen_flush(void)	high	console
+0043db40	F	screen_hold	void screen_hold(void)	high	console
+0043db50	F	screen_release	void screen_release(void)	high	console
+0043db70	F	console_close	void console_close(void)	high	console
+0043dbc0	F	abort_check	int abort_check(void)	high	console
+0043dc00	F	screen_fill_rows	void screen_fill_rows(char *text)	med	console
+0043dcb0	F	pool_init	void pool_init(int *pool, unsigned long blocksize)	med	console
+0043dcf0	F	pool_new_block	unsigned long *pool_new_block(int pool, unsigned long size, unsigned long kind)	med	console
+0043dd40	F	chain_free	void chain_free(void **head)	low	console
+0043dd70	F	pool_alloc	int pool_alloc(int pool, unsigned long n)	med	console
+0043ddd0	F	pool_strdup	char *pool_strdup(int pool, char *s)	med	console
+0043deb0	F	cdb_snapshot_write	void cdb_snapshot_write(char *name, int unused, int mode)	low	console
+#
+# ==================== dispval.c (0x43f010-0x43fe20) ====================
+0043f010	F	watch_format_value	void watch_format_value(void *watch, char *out)	high	dispval
+0043fdf0	F	src_find_line	int src_find_line(unsigned char *name)	low	dispval
+0043fe20	F	addr_to_srcline	int addr_to_srcline(unsigned long addr, int level)	low	dispval
+#
+# ==================== globals ====================
+004a8d98	D	dev_state_tab	void *	high	state	4
+004aab10	D	dev_tab	void *	high	state	4
+004aab08	D	chiptype_tab	void *	high	state	4
+004a8db4	D	chipui_tab	void *	med	state	4
+004aab04	D	num_chiptypes	int	high	state	4
+004aab0c	D	max_devices	int	high	state	4
+004aab00	D	banner_ptr	char *	high	state	4
+004aab98	D	devtype_find_hook	void *	med	state	4
+004aab9c	D	no_console	int	high	console	4
+0050578c	D	cur_state	void *	high	state	4
+00505790	D	cur_chip	void *	high	state	4
+00505794	D	cur_chipui	void *	med	state	4
+00505798	D	cur_dev	void *	high	state	4
+004a8dcc	D	cur_dev_index	int	high	state	4
+004a90d4	D	run_dev_index	int	med	state	4
+004aaaa4	D	source_path_list	char *	high	state	4
+004a8dc8	D	profiler_hook	void *	med	state	4
+004aaa90	D	gui_mode	int	med	console	4
+004aaaac	D	more_flag	int	high	console	4
+004aaa8c	D	overwrite_mode	int	high	console	4
+004aaa88	D	screen_hold_cnt	int	high	console	4
+004aaab0	D	more_line_count	int	high	console	4
+004aaab4	D	quit_on_error	int	high	console	4
+004aaab8	D	on_error_active	int	low	console	4
+004aab14	D	abort_flag	int	high	console	4
+004a90d8	D	cmdlog_fp	void *	high	console	4
+004a90dc	D	cmdlog_name	char[]	med	console	256
+004a91dc	D	macro_active	int	high	macro	4
+004a91e0	D	macro_fp	void *	high	macro	4
+004a91e4	D	macro_stack	void *	high	macro	4
+004a91e8	D	cmd_tokbuf	char[]	high	macro	1208
+004a8fd4	D	cmd_linebuf	char[]	high	cmdloop	256
+004a8dc4	D	cmdstack_buf	void *	high	cmdloop	4
+004a8d9c	D	cmdstack_size	int	high	cmdloop	4
+004a8da0	D	history_size	int	med	state	4
+004a8da4	D	scrollback_lines	int	high	console	4
+004a8da8	D	screen_rows	int	high	console	4
+004a8dac	D	screen_cols	int	high	console	4
+004a8db0	D	text_rows	int	high	console	4
+004a8db8	D	num_commands	int	high	cmdloop	4
+004a8dbc	D	command_table	void *	high	cmdloop	4
+004a8dc0	D	default_help_lines	void *	med	cmdloop	4
+004aaa70	D	help_mode	int	med	cmdloop	4
+004aaa74	D	help_index	int	med	cmdloop	4
+004aaa78	D	help_lines_cur	void *	med	cmdloop	4
+004aaa7c	D	help_lines_alt	void *	med	cmdloop	4
+004aaa80	D	cursor_row	int	high	console	4
+004aaa84	D	cursor_col	int	high	console	4
+004aaa98	D	prompt_text	char[]	high	cmdloop	16
+004a8dd4	D	status1_buf	char[]	high	cmdloop	256
+004a8ed4	D	status2_buf	char[]	high	cmdloop	100
+004db080	D	empty_str	char[]	high	fmt	1
+004dc398	D	float_fmt_buf	char[]	med	fmt	64
+004dc3c8	D	screen_attr_buf	char[]	high	console	25600
+004e27d8	D	screen_char_buf	char[]	high	console	25957
+004e27d0	D	screen_top_row	int	high	console	4
+004dc3c4	D	console_out_handle	void *	high	console	4
+004e27d4	D	console_orig_handle	void *	high	console	4
+004e9054	D	console_in_handle	void *	high	console	4
+004e9058	D	screen_charinfo_buf	char[]	high	console	16384
+004e8c40	D	vk_to_editkey	int[]	med	console	1024
+004a8c90	D	command_entries	void *[]	high	cmdloop	156

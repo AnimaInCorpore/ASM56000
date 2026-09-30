@@ -1,0 +1,17 @@
+Motorola DSP56000 Assembler  Version 6.3.0   99-07-14  14:00:00  ok1.asm
+  Page 1
+
+
+
+1                        ; minimal valid source, used for command-line option co
+verage in cases.txt
+2         000001         FOO       equ     1
+3         P:0000                   org     p:$0
+4         P:0000 000000            nop
+5         P:0001 240100            move              #FOO,x0
+6                                  end
+
+0    Errors
+0    Warnings
+
+

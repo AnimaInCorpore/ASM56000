@@ -1,0 +1,242 @@
+00401a20	F	main	int main(int argc, char **argv, char **envp)	high	dsplnk
+00401dfe	F	lnk_usage	void lnk_usage(void)	high	dsplnk
+00401fe0	F	strip_ext_copy	void strip_ext_copy(char *dst, char *src)	high	dsplnk
+00402017	F	parse_cmdline_options	void parse_cmdline_options(void)	high	dsplnk
+00402871	F	deref_dword	unsigned long deref_dword(unsigned long *p)	low	dsplnk
+0040287b	F	scan_argv_for_opt	long scan_argv_for_opt(char opt, int argc, char **argv)	high	dsplnk
+0040294c	F	find_opt_argv_index	long find_opt_argv_index(char opt, int argc, char **argv)	high	dsplnk
+00402a24	F	open_error_file_opt	void open_error_file_opt(char **argv, int idx)	high	dsplnk
+00402b44	F	init_link_state_pass1	void init_link_state_pass1(void)	high	dsplnk
+00402cd2	F	init_link_state_pass2	void init_link_state_pass2(void)	high	dsplnk
+00402e52	F	finish_link	void finish_link(long final)	high	dsplnk
+0040303c	F	lnk_signal_handler	void lnk_signal_handler(int sig)	high	dsplnk
+00403172	F	default_base_name	char *default_base_name(int argc, char **argv)	high	dsplnk
+004032e9	F	set_default_ext	char *set_default_ext(char *ext)	high	dsplnk
+00403385	F	open_default_object_file	void open_default_object_file(void)	high	dsplnk
+0040343e	F	expand_dsplnkopt	long expand_dsplnkopt(long argc, char ***argv)	high	dsplnk
+004036b4	F	tokenize_env_options	long tokenize_env_options(char *s, long *listtail)	high	dsplnk
+004039e5	F	read_command_file	long read_command_file(char *name, long *listtail)	high	dsplnk
+004040eb	F	dsp_getopt	long dsp_getopt(long argc, char **argv, char *optstring)	high	dsplnk
+004044bd	F	add_library_path	long add_library_path(char *path)	high	dsplnk
+0040456e	F	ensure_trailing_backslash	void ensure_trailing_backslash(void)	high	dsplnk
+004045d0	F	set_target_cpu	void set_target_cpu(char *targetname)	high	dsplnk
+00404859	F	init_float_format_table	void init_float_format_table(void)	medium	dsplnk
+00404bba	F	get_date_time_strings	void get_date_time_strings(char *datebuf, char *timebuf)	high	dsplnk
+00408b90	F	identity_long	long identity_long(long v)	low	error
+00408ba1	F	dwords_to_double	double dwords_to_double(unsigned long hi, unsigned long lo)	medium	error
+00408bba	F	swap_dword_pair	void swap_dword_pair(long a, long b, long *out1, long *out2)	medium	error
+004098b0	F	lnk_fatal1	void lnk_fatal1(char *fmt, ...)	high	error
+00409a25	F	lnk_error1	void lnk_error1(char *fmt, ...)	high	error
+00409bfd	F	lnk_error2	void lnk_error2(char *fmt, ...)	high	error
+00409d88	F	lnk_warning1	void lnk_warning1(char *fmt, ...)	high	error
+00409f4d	F	lnk_warning2	void lnk_warning2(char *fmt, ...)	high	error
+0040a0ca	F	lnk_cmdline_fatal1	void lnk_cmdline_fatal1(char *fmt, ...)	high	error
+0040a0f6	F	lnk_cmdline_fatal2	void lnk_cmdline_fatal2(char *fmt, ...)	high	error
+0040a126	F	lnk_cmdline_warn1	void lnk_cmdline_warn1(char *fmt, ...)	high	error
+0041c470	F	free_dup_globals_list	void free_dup_globals_list(void)	high	lib
+0041c4cf	F	check_l_switch_arg	long check_l_switch_arg(void)	high	lib
+0041c5ec	F	check_library_magic	void check_library_magic(void)	high	lib
+0041c6d7	F	scan_library	void scan_library(void)	high	lib
+0041c7a2	F	init_dup_globals_list	void init_dup_globals_list(void)	high	lib
+0041c7d9	F	scan_library_members	void scan_library_members(void)	high	lib
+0041ca95	F	process_library_member	long process_library_member(char *name, long hdr_off, long member_size)	high	lib
+0041cd73	F	add_dup_global_name	void add_dup_global_name(char *name)	high	lib
+0041ce1b	F	dup_global_seen	long dup_global_seen(char *name)	high	lib
+0041ce63	F	next_pullable_symbol	void *next_pullable_symbol(void)	medium	lib
+0041d20a	F	stage_symbol_record	long stage_symbol_record(void *rec, long addr, long *sizes)	medium	lib
+0041d288	F	read_library_header_line	long read_library_header_line(void *stream, char *buf)	high	lib
+00414110	F	process_input_files	void process_input_files(void)	high	input
+004143b4	F	open_next_input_file	void open_next_input_file(void)	high	input
+004145bb	F	new_module	void *new_module(char *name, long size, long offset)	high	input
+004146c6	F	process_module	long process_module(void *module)	high	input
+00414d76	F	read_module_header	void read_module_header(void *module)	high	input
+0041507a	F	check_module_version	void check_module_version(void *module)	high	input
+0041516a	F	read_module_raw_reloc_lines	void read_module_raw_reloc_lines(void *module)	high	input
+00415316	F	read_module_relocations	void read_module_relocations(void *module)	medium	input
+004153a6	F	set_current_section	long set_current_section(void *rec, void *symrec, void *module)	medium	input
+00416622	F	add_reloc_symbol	long add_reloc_symbol(void *name, void *symrec)	medium	input
+00416bed	F	add_plain_symbol	void add_plain_symbol(void *name, void *symrec)	medium	input
+00416cf8	F	apply_module_fixups	void apply_module_fixups(void *symrec, void *module)	low	input
+00417a64	F	check_value_truncation	void check_value_truncation(double *val, long kind, long flags, unsigned long *dest)	medium	input
+0041839c	F	parse_sdi_expression	void parse_sdi_expression(void *module, long recoff)	high	input
+0041874a	F	section_nest_track	void section_nest_track(void *rec)	medium	input
+0041882a	F	emit_pass2_record	void emit_pass2_record(void *rec, void *module)	low	input
+0041976c	F	update_address_extent	void update_address_extent(long size)	medium	input
+0041999e	F	select_counter_block	void select_counter_block(unsigned long flags, long *sizes, long addr)	medium	input
+00419ece	F	find_section_record	void *find_section_record(unsigned long flags, long addr)	medium	input
+00419ff9	F	find_overlay_record	void *find_overlay_record(unsigned long flags, long addr)	medium	input
+0041a425	F	get_alloc_record	void *get_alloc_record(void)	low	input
+0041a5e0	F	alloc_module_tables	void alloc_module_tables(void *module)	high	input
+0041a815	F	open_input_stream	void *open_input_stream(char *name)	high	input
+0041a8c0	F	file_size	long file_size(void *stream)	high	input
+0041a8ef	F	read_section_headers	void *read_section_headers(unsigned long count)	high	input
+0041a937	F	read_symbol_entries	void *read_symbol_entries(unsigned long count)	high	input
+0041a97f	F	read_string_table	void *read_string_table(void)	high	input
+00457c18	D	target_cpu_table	void *	high	lnkglb	696
+00457ed0	D	Program_name	char *	high	lnkglb	4
+00457bf0	D	Default_base_name	char *	high	lnkglb	4
+00457fe0	D	Object_ext	char *	medium	lnkglb	4
+00457c00	D	Cur_section_num	long	high	lnkglb	4
+00457c08	D	Msg_fp	void *	high	lnkglb	4
+00457c0c	D	Section_ext_mask	unsigned long	low	lnkglb	4
+00457b74	D	Opt_hex_upper	long	medium	lnkglb	4
+00457b78	D	Opt_word_wrap	long	low	lnkglb	4
+00457b7c	D	Opt_something_b7c	long	low	lnkglb	4
+00457b80	D	Opt_something_b80	long	low	lnkglb	4
+00457b84	D	Opt_check_version	long	medium	lnkglb	4
+00457b88	D	Cur_overlay_flag	long	medium	lnkglb	4
+00457b98	D	Cur_valid_flag	long	low	lnkglb	4
+00457ba0	D	Verbose_level	long	high	lnkglb	4
+00457ba4	D	Radix	long	medium	lnkglb	4
+00457ba8	D	Module_count	long	low	lnkglb	4
+00457f98	D	Lib_magic	char *	high	lnkglb	8
+00457fa0	D	Lib_magic_len	unsigned long	high	lnkglb	4
+0046120c	D	Opt_c_flag	char	medium	dsplnk	1
+00461214	D	Opt_n_ignore_case	char	high	dsplnk	1
+00461228	D	Warn_flag_228	char	low	dsplnk	1
+0046122c	D	Warn_flag_22c	char	low	dsplnk	1
+00461230	D	Warn_flag_230	char	low	dsplnk	1
+00461234	D	Opt_warnings_as_errors	char	medium	dsplnk	1
+00461238	D	Opt_flag_238	char	low	dsplnk	1
+0046123c	D	Opt_flag_23c	char	low	dsplnk	1
+00461240	D	Opt_flag_240	char	low	dsplnk	1
+00461244	D	Opt_flag_244	char	low	dsplnk	1
+00461248	D	Opt_i_incremental	char	high	dsplnk	1
+0046124c	D	Opt_g_debug	char	high	dsplnk	1
+00461250	D	Opt_z_strip	char	high	dsplnk	1
+00461254	D	Target_name_set	char	medium	input	1
+00461258	D	Overlay_seen	char	medium	input	1
+0046125c	D	Opt_v_verbose	char	high	dsplnk	1
+00461260	D	Opt_t_upcase_names	char	medium	dsplnk	1
+00461264	D	Opt_q_quiet	char	high	dsplnk	1
+0046126c	D	Opt_a_autoalign	char	high	dsplnk	1
+00461270	D	Module_has_overlay	char	medium	input	1
+00461274	D	Overlay_no_incr	char	low	input	1
+00461278	D	Module_overlay_seen	char	low	input	1
+00461288	D	Target_is_56600	char	low	dsplnk	1
+0046128c	D	Opt_flag_28c	char	low	dsplnk	1
+00461290	D	Opt_flag_290	char	low	dsplnk	1
+00461294	D	Cur_pass	char	high	dsplnk	1
+00461298	D	Sym_count_298	long	low	dsplnk	4
+0046129c	D	Sym_count_29c	long	low	dsplnk	4
+004611b8	D	Dup_globals_tail	void *	high	lib	4
+004611bc	D	Dup_globals_head	void *	high	lib	4
+004611e8	D	Lib_pull_mode	long	low	lib	4
+004611ec	D	Opt_s_summary	char	medium	dsplnk	1
+004611f0	D	Suppress_errors	char	high	dsplnk	1
+004611f4	D	Cur_no_argv_mode	char	medium	dsplnk	1
+004611f8	D	Saved_no_argv_mode	char	medium	dsplnk	1
+004611fc	D	Lib_rescan_needed	char	high	lib	1
+004612a0	D	Cur_reloc_section_idx	long	low	input	4
+004612a4	D	Cur_section_id	long	low	input	4
+004612a8	D	Cur_reloc_section_id	long	low	input	4
+004612ac	D	Cur_overlay_num	long	medium	input	4
+004612b0	D	Overlay_count	long	medium	input	4
+004612b4	D	Buffer_count	long	medium	input	4
+004612b8	D	Cur_overlay_flags	unsigned long	low	input	4
+004612bc	D	Autoalign_count	long	low	input	4
+004612c0	D	Cur_overlay_size	long	low	input	4
+004612c4	D	Save_overlay_num	long	low	input	4
+004612c8	D	Cur_buffer_num	long	medium	input	4
+004612cc	D	Buffer_switch_count	long	medium	input	4
+004612d0	D	Bss_buffer_count	long	medium	input	4
+004612d4	D	Force_buffer_num	long	low	input	4
+004612d8	D	Save_buffer_num	long	low	input	4
+004612e0	D	Lib_file_size	long	high	lib	4
+004612e4	D	Lib_read_offset	long	high	lib	4
+004612e8	D	Bss_section_count	long	low	input	4
+004612ec	D	Error_count	long	high	dsplnk	4
+004612f0	D	Warning_count	long	high	dsplnk	4
+004612f4	D	Suppressed_error_count	long	medium	error	4
+004612fc	D	Cpu_id	long	low	dsplnk	4
+00461300	D	Low_p_addr	unsigned long	medium	input	4
+00461304	D	Low_xy_addr	unsigned long	medium	input	4
+00461308	D	High_p_addr	unsigned long	medium	input	4
+0046130c	D	High_xy_addr	unsigned long	medium	input	4
+00461310	D	Pass2_started	long	low	dsplnk	4
+00461314	D	Cur_source_line	long	high	error	4
+00461318	D	Cur_line_mode	long	high	error	4
+00461527	D	Namebuf_len	char	low	dsplnk	1
+00461528	D	Namebuf	char	high	dsplnk	260
+00461730	D	Namebuf2	char	medium	dsplnk	260
+00461b40	D	Err_context_suffix	char	medium	error	40
+00461d44	D	Date_time_flag	long	low	dsplnk	4
+00461d48	D	Date_str	char	high	dsplnk	16
+00461d58	D	Time_str	char	high	dsplnk	12
+00461d64	D	Object_file_name	char *	high	dsplnk	4
+00461d68	D	Cur_parse_ptr	char *	medium	dsplnk	4
+00461d6c	D	Cur_opt_arg2	unsigned long	low	dsplnk	4
+00461d70	D	Cur_mapping_from	long	medium	input	4
+00461d74	D	Cur_mapping_to	long	low	input	4
+00461d78	D	Cur_ctr_from	long	low	input	4
+00461d7c	D	Cur_ctr_size_from	unsigned long	medium	input	4
+00461d80	D	Cur_mapping_from2	long	medium	input	4
+00461d84	D	Cur_mapping_to2	long	low	input	4
+00461d88	D	Cur_ctr_to	unsigned long	low	input	4
+00461d8c	D	Cur_ctr_size_to	unsigned long	medium	input	4
+00461d90	D	Cur_counter_ptr	unsigned long *	medium	input	4
+00461d94	D	Alt_counter_ptr	unsigned long *	medium	input	4
+00461d98	D	Saved_counter_val	unsigned long	low	input	4
+00461d9c	D	Overlay_ovl_size	long	low	input	4
+00461da0	D	Cur_argc	long	high	dsplnk	4
+00461da4	D	Cur_argv	char **	high	dsplnk	4
+00461da8	D	Getopt_index	long	high	dsplnk	4
+00461dac	D	Getopt_optarg	char *	high	dsplnk	4
+00461db0	D	Getopt_optarg2	unsigned long	medium	dsplnk	4
+00461db4	D	Cur_file	void *	high	input	4
+00461db8	D	Input_list_head	void *	high	dsplnk	4
+00461dbc	D	Cur_input_file	void *	high	dsplnk	4
+00461dc4	D	Target_name	char *	medium	input	4
+00461dcc	D	Lib_path_head	void *	high	dsplnk	4
+00461dd0	D	Lib_path_tail	void *	high	dsplnk	4
+00461dd4	D	Cur_mapping_flags	unsigned long	low	input	4
+00461ddc	D	Cur_section_rec	void *	high	error	4
+00461de0	D	Cur_reloc_section_rec	void *	high	input	4
+00461de4	D	Cur_alloc_rec	void *	medium	input	4
+00461de8	D	Module_section_map	void **	high	input	4
+00461dec	D	Cur_section_map_entry	void *	medium	input	4
+00461df0	D	Cur_reloc_section_map_entry	void *	medium	input	8
+00461e5c	D	Module_alloc_table	unsigned long *	high	input	4
+00461e60	D	Module_buffer_table	unsigned long *	high	input	4
+00461e64	D	Module_counter_table	unsigned long *	high	input	4
+00461e68	D	Cur_bss_section_rec	void *	low	input	4
+00461e6c	D	Lib_member_symtab	void *	high	lib	4
+00461e70	D	Lib_member_symcount	unsigned long	high	lib	4
+00461e74	D	Lib_member_symidx	unsigned long	high	lib	4
+00461e78	D	Lib_member_strtab	void *	high	lib	4
+00461e7c	D	Cur_record_index	long	high	error	4
+00461e90	D	Cur_counter_rec	void *	medium	input	4
+00461e94	D	Alt_counter_rec	void *	low	input	4
+00461e98	D	Sym_alloc_count	long	medium	dsplnk	4
+00461ea8	D	P_used_count	unsigned long	low	input	4
+00461eb4	D	P_reserved_count	unsigned long	low	input	4
+00461eb8	D	Sect_offset_total	unsigned long	low	input	4
+00461ec8	D	Reloc_count_total	unsigned long	low	input	4
+00461ef4	D	Ext_count	long	low	dsplnk	4
+00461f04	D	Verbose_arg	unsigned long	low	dsplnk	4
+00461f08	D	P_map_extent	unsigned long *	medium	input	4
+00461f0c	D	Local_ext_count	long	low	dsplnk	4
+00461f10	D	Lib_path_alt_head	void *	low	dsplnk	4
+00461f14	D	Lib_path_alt_tail	void *	low	dsplnk	4
+00461f30	D	In_eval_flag	char	low	dsplnk	1
+00461f34	D	Err_fp	void *	high	error	4
+00461f38	D	Object_fp	void *	high	dsplnk	4
+00461f3c	D	Map_fp	void *	high	dsplnk	4
+00461f40	D	Memctl_fp	void *	high	dsplnk	4
+00461f44	D	Target_index	long	high	dsplnk	4
+00461f48	D	Target_name_str	char *	medium	dsplnk	4
+00461f4c	D	Target_word_size	unsigned long	high	dsplnk	4
+00461f6c	D	Target_addr_mask	unsigned long	high	dsplnk	4
+00461f70	D	Target_word_mask	unsigned long	medium	dsplnk	4
+00461f74	D	Target_p_mask	unsigned long	high	dsplnk	4
+00461f78	D	Target_xy_mask	unsigned long	high	dsplnk	4
+00461fa0	D	Cpu_magic	unsigned long	high	dsplnk	4
+00461fc0	D	Target_table_entry	void *	high	dsplnk	4
+00461fdc	D	Linker_major	long	high	dsplnk	4
+00461fe0	D	Linker_minor	long	high	dsplnk	4
+00461fe4	D	Linker_patch	long	high	dsplnk	4
+00461fe8	D	Obj_major	long	high	input	4
+00461fec	D	Obj_minor	long	high	input	4
+00461ff0	D	Obj_patch	long	high	input	4
+0046c300	D	Jmp_env	void *	medium	dsplnk	64
+0046c348	D	Sdi_flag	long	low	dsplnk	4

@@ -1,0 +1,3 @@
+; membad3: REGION never closed -> "Region without associated ENDR directive"
+REGION leaky
+MEMORY p $0 TO $ff

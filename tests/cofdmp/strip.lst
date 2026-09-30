@@ -1,0 +1,28 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-23  14:21:12  t1.asm  Page 1
+
+
+
+1                        ; simple smoke test for the CLAS56 toolchain
+2                                  page    132,66
+3         P:0100                   org     p:$100
+4         P:0100 44F400  start     move              #$123456,x0
+                 123456
+5         P:0102 60F400            move              #>tab,r0
+                 000000
+6         P:0104 060A80            do      #10,loop
+                 000106
+7         P:0106 F098D2            mac     x0,y0,a   x:(r0)+,x0  y:(r4)+,y0
+8                        loop
+9         P:0107 0C0100            jmp     start
+10        X:0000                   org     x:$0
+11        X:0000         tab       dc      1,2,3,4,5
+12        Y:0010                   org     y:$10
+13        Y:0010         ytab      ds      8
+14        L:0020                   org     l:$20
+15        L:0020         ltab      dc      $123456789abc
+16                                 end     start
+
+0    Errors
+0    Warnings
+
+

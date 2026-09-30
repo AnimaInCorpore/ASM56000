@@ -1,0 +1,2 @@
+Motorola DSP56000 Assembler  Version 6.3.0 
+Copyright Motorola, Inc. 1987-1998.  All rights reserved.

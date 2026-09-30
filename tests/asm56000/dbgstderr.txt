@@ -1,0 +1,1 @@
+DBG event kind=0 space=0 addr=256 count=2 first=0 line=6 name=GLOBAL\nDBG abs bss=0 events=1 segments=1 records=151\n

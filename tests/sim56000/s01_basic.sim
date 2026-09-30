@@ -1,0 +1,13 @@
+log s s01.log
+more off
+radix
+radix h
+radix
+radix d
+evaluate 3+4*5
+eval $ff
+eval b 10
+eval f .5
+display v
+log off
+quit

@@ -1,0 +1,10 @@
+more off
+path
+Device Working Directory: {.\}
+No Alternate Source Paths:
+path .
+path +..
+{Error in Path Specification.}
+path -
+log s s13b.log
+Output log file:.\s13b.log

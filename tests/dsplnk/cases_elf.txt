@@ -1,0 +1,54 @@
+-q -c -bo.cld elf01.cln
+-q -c -bo.cld elf02.cln
+-q -c -bo.cld elf03.cln
+-q -c -bo.cld elf04.cln
+-q -c -bo.cld elf05.cln
+-q -c -bo.cld elf06.cln
+-q -c -bo.cld elf07.cln
+-q -c -bo.cld elf08.cln
+-q -c -bo.cld elf09a.cln elf09b.cln
+-q -c -bo.cld elf10.cln elf10x.cln
+-q -c -bo.cld elf12.cln
+-q -c -bo.cld elf13.cln
+-q -c -bo.cld elf14.cln
+-q -c -bo.cld elf15.cln
+-q -c -bo.cld elf16.cln
+-q -c -bo.cld elf17.cln
+-q -c -bro.cld elf01.cln
+-c -bo.cld elf01.cln
+-c -v -bo.cld elf01.cln
+-q -c -v -bo.cld elf03.cln
+-q -bo.cld elf01.cln
+-q -c -i -bo.cld elf01.cln
+-q -c -b- elf01.cln
+-q -c -b- -m elf01.cln
+-q -c -bO.CLD elf01.cln
+-q -c -bfoo.bar elf02.cln
+-q -c -bfoo elf02.cln
+-q -c -ba.b.c.cld elf02.cln
+-q -c -b.cld elf02.cln
+-q -c -b./o.cld elf02.cln
+-q -c -bo.cld -mo.map elf03.cln
+-q -c -bverylongobjectnamemorethaneightchars.cld elf03.cln
+-q -c -bo.cld -s elf04.cln
+-q -c -bo.cld -r elf01.cln
+-q -c -bo.cld -mo.map -a elf02.cln
+-q -c -bo.cld -e elf02.cln
+-q -c -bo.cld -f elf04.cln
+-q -c -bo.cld elf01.cln elf02.cln
+-q -c -bo.cld elf02.cln elf01.cln
+-q -c -bo.cld elf06.cln elf07.cln elf13.cln
+-q -c -bo.cld elf03.cln elf04.cln elf05.cln elf08.cln
+-q -c -bo.cld elf12.cln elf01.cln
+-q -c -bo.cld elf01.cln elf15.cln
+-q -c -bo.cld elf15.cln elf01.cln
+-q -c -bo.cld -mo.map elf10.cln elf10x.cln
+-q -c -bo.cld -g elf10.cln elf10x.cln
+-q -c -bo.cld -g elf02.cln
+-q -c -bo.cld -w elf01.cln
+-q -c -bo.cld -u elf01.cln
+-q -c -bo.cld -d elf01.cln
+-q -c -bo.cld -z elf01.cln
+-q -c -c -bo.cld elf01.cln
+-q -c -bo.cld -bp.cld elf01.cln
+-q -c -bo.cld -Ffoo elf01.cln

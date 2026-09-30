@@ -1,0 +1,2 @@
+; membad5: SECTION naming a section that does not exist in the link
+SECTION nosuchsection

@@ -1,0 +1,200 @@
+# DSPLNK.EXE names/prototypes - group l2_output (fixup.c, object.c, memctl.c)
+# addr	F|D	name	prototype|type	confidence	module[	size-bytes]
+#
+# ==================== fixup.c (38 functions) ====================
+0040cac2	F	fixup_free_worklist	void fixup_free_worklist(void)	low	fixup
+0040d4e0	F	fixup_relocate	void fixup_relocate(void)	high	fixup
+0040d5e0	F	fixup_alloc_sections	void fixup_alloc_sections(void)	high	fixup
+0040dd4a	F	fixup_get_counter_group	void *fixup_get_counter_group(int counter)	medium	fixup
+0040ddde	F	fixup_flush_pad_lists	void fixup_flush_pad_lists(void *sec)	medium	fixup
+0040df91	F	fixup_check_secsizes	void fixup_check_secsizes(void)	high	fixup
+0040e2bd	F	fixup_save_counters	void fixup_save_counters(void)	high	fixup
+0040e501	F	fixup_restore_counters	void fixup_restore_counters(void)	high	fixup
+0040e72e	F	fixup_symbol_extent	int fixup_symbol_extent(void *sym)	medium	fixup
+0040e832	F	fixup_collect_relocs	int *fixup_collect_relocs(int sec)	medium	fixup
+0040e8ba	F	fixup_collect_xdefs	int *fixup_collect_xdefs(int sec)	medium	fixup
+0040e981	F	fixup_collect_xdefs_all	int *fixup_collect_xdefs_all(int sec)	medium	fixup
+0040ea59	F	fixup_collect_buffer_syms	int *fixup_collect_buffer_syms(int sec)	medium	fixup
+0040eb31	F	fixup_collect_relocs_filtered	int *fixup_collect_relocs_filtered(int sec)	medium	fixup
+0040ebca	F	fixup_size_all_sections	void fixup_size_all_sections(void)	high	fixup
+0040ec8b	F	fixup_size_section	void fixup_size_section(int *sec)	high	fixup
+0040ed4c	F	fixup_place_reloc	void fixup_place_reloc(int *rel, int counter)	high	fixup
+0040f005	F	fixup_reloc_length	int fixup_reloc_length(int *rel)	high	fixup
+0040f04a	F	fixup_place_buffer	void fixup_place_buffer(int *rel, int counter)	high	fixup
+0040f17f	F	fixup_place_simple	void fixup_place_simple(int *rel, int counter)	high	fixup
+0040f225	F	fixup_place_secsize_syms	void fixup_place_secsize_syms(int region, int counter)	medium	fixup
+0040f3c5	F	fixup_place_group	void fixup_place_group(int sec, int *relocs, int counter)	medium	fixup
+0040f58e	F	fixup_place_default	void fixup_place_default(int sec, int *relocs, int counter)	medium	fixup
+0040f722	F	fixup_update_high_water	void fixup_update_high_water(int counter, unsigned long addr)	high	fixup
+0040f868	F	fixup_mark_used	void fixup_mark_used(int *rel, int counter, unsigned long lo, unsigned long hi, int flag)	high	fixup
+0040fa6c	F	fixup_alloc_range	unsigned long fixup_alloc_range(unsigned long size, unsigned long align, int commit, unsigned long boundary)	high	fixup
+0040fdb9	F	fixup_freeblk_new	int fixup_freeblk_new(int after, unsigned long lo, unsigned long hi)	medium	fixup
+0040fe58	F	fixup_usedrng_add	void fixup_usedrng_add(int *listhead, unsigned long lo, unsigned long hi)	medium	fixup
+0040ff2c	F	fixup_usedrng_merge	void *fixup_usedrng_merge(void *left, void *node, void *right)	medium	fixup
+0041006f	F	fixup_size_symbols	unsigned long fixup_size_symbols(void)	high	fixup
+00410668	F	fixup_place_overlays	void fixup_place_overlays(void)	high	fixup
+00410a84	F	fixup_gen_relocs	void fixup_gen_relocs(void)	high	fixup
+00410c8b	F	fixup_collect_secsize_syms	int *fixup_collect_secsize_syms(int rel)	medium	fixup
+00410d70	F	fixup_gen_overlay_relocs	void fixup_gen_overlay_relocs(int *sec, int *relocs, int counter)	high	fixup
+00410fe8	F	fixup_gen_buffer_relocs	void fixup_gen_buffer_relocs(int *sec, int *relocs, int counter)	high	fixup
+00411200	F	fixup_gen_secsize_relocs	void fixup_gen_secsize_relocs(int *sec, int *relocs, int counter)	high	fixup
+00411450	F	fixup_gen_default_relocs	void fixup_gen_default_relocs(int *sec, int *relocs, int counter)	high	fixup
+004115dd	F	fixup_check_bounds	void fixup_check_bounds(int *sec, int *rel, int counter, unsigned long lo, unsigned long hi, int report)	high	fixup
+#
+# ==================== object.c (16 functions) ====================
+00426437	F	obj_reserve_entry_get	unsigned long *obj_reserve_entry_get(int *sec, unsigned long lo, unsigned long hi)	medium	object
+00426558	F	obj_default_ok	unsigned long obj_default_ok(void)	low	object
+00426562	F	memctl_get_token	unsigned int memctl_get_token(int mode)	high	object
+00427710	F	obj_layout_offsets	void obj_layout_offsets(void)	high	object
+0042785f	F	obj_write_file	void obj_write_file(void)	high	object
+00427941	F	obj_write_headers	void obj_write_headers(void)	high	object
+00427d54	F	obj_write_text_data_headers	void obj_write_text_data_headers(void)	high	object
+00427ebb	F	obj_write_section	void obj_write_section(int *sec)	high	object
+004282de	F	obj_write_linenos	void obj_write_linenos(void)	high	object
+00428356	F	obj_write_symtab	void obj_write_symtab(void)	high	object
+00428449	F	obj_build_symtab	void obj_build_symtab(void)	high	object
+00428524	F	obj_reorder_symtab	void obj_reorder_symtab(void)	medium	object
+00428bc4	F	obj_link_symbol_tags	void obj_link_symbol_tags(int lo1, int hi1, int lo2, int hi2, int base1, int base2)	medium	object
+00428e67	F	obj_patch_symtab_links	void obj_patch_symtab_links(void)	medium	object
+0042930e	F	obj_write_sdi_syms	void obj_write_sdi_syms(void)	medium	object
+00429399	F	obj_write_strtab	void obj_write_strtab(void)	high	object
+#
+# ==================== memctl.c (15 functions) ====================
+00421ec7	F	misc_sort_list	void misc_sort_list(void *array, int count)	low	memctl
+00421eef	F	misc_sort_cmp	int misc_sort_cmp(void *a, void *b)	low	memctl
+00421f79	F	tok_precedence_a	unsigned long tok_precedence_a(int class1, int class2)	low	memctl
+004221bc	F	tok_precedence_b	unsigned long tok_precedence_b(int class1, int class2)	low	memctl
+00423710	F	memctl_process_file	unsigned long memctl_process_file(int mode)	high	memctl
+00423863	F	memctl_parse_line	int memctl_parse_line(int mode)	high	memctl
+00424879	F	memctl_parse_qualifiers	unsigned long memctl_parse_qualifiers(int kw_id, unsigned long *sec)	high	memctl
+004250ad	F	memctl_check_region_bounds	unsigned long memctl_check_region_bounds(int region)	high	memctl
+004252ad	F	memctl_assign_region	void memctl_assign_region(int region, int *sec, int qualifier)	high	memctl
+00425470	F	memctl_do_set	unsigned long memctl_do_set(void)	high	memctl
+0042568f	F	memctl_do_map	unsigned long memctl_do_map(void)	high	memctl
+00425747	F	memctl_map_page	unsigned long memctl_map_page(void)	high	memctl
+00425a60	F	memctl_map_option	unsigned long memctl_map_option(void)	high	memctl
+00425cf1	F	memctl_do_option	unsigned long memctl_do_option(char *optlist)	high	memctl
+0042609f	F	memctl_do_include	unsigned long memctl_do_include(void)	high	memctl
+#
+# ==================== globals: memctl.c keyword/option tables (data, in .rdata) ====================
+00458010	D	memctl_kw_tab	void *	high	memctl	136
+00458098	D	memctl_kw_tab_n	int	high	memctl	4
+004580a0	D	memctl_mapopt_tab	void *	high	memctl	96
+00458100	D	memctl_mapopt_tab_n	int	high	memctl	4
+00458108	D	memctl_xopt_tab	void *	high	memctl	264
+00458210	D	memctl_xopt_tab_n	int	high	memctl	4
+00459b58	D	fmt_version_scan	char	high	memctl	36
+00459b7c	D	fmt_revision_scan	char	high	memctl	1128
+#
+# ==================== globals: fixup.c owned (bss) ====================
+00461dd8	D	g_reloc_global_rec	void *	medium	fixup	4
+00461dfc	D	g_freelist_l_x	void *	low	fixup	4
+00461e00	D	g_freelist_l_y	void *	low	fixup	4
+00461e04	D	g_usedrange_l	void *	low	fixup	20
+00461e18	D	g_freelist_head	void *	medium	fixup	4
+00461e1c	D	g_freelist_cursor	void *	medium	fixup	4
+00461e20	D	g_freelist_prev_end	unsigned long	low	fixup	4
+00461e24	D	g_counter_groups	void *	medium	fixup	4
+00461e28	D	g_counter_totals	void *	medium	fixup	8
+00461e30	D	g_high_water_default	unsigned long	low	fixup	4
+00461e34	D	g_high_water_x	unsigned long	high	fixup	4
+00461e38	D	g_high_water_y	unsigned long	high	fixup	4
+00461e3c	D	g_high_water_l	unsigned long	high	fixup	4
+00461e40	D	g_high_water_p	unsigned long	medium	fixup	16
+00461e50	D	g_high_water_cur	unsigned long	medium	fixup	4
+004612f8	D	g_reloc_cur_symname	char *	low	fixup	4
+#
+# ==================== globals: object.c owned (bss) ====================
+00461e98	D	g_obj_nscns	int	high	object	4
+00461e9c	D	g_obj_scnptr	unsigned long	high	object	4
+00461ea0	D	g_obj_scnptr_save	unsigned long	medium	object	4
+00461ea4	D	g_obj_rawptr	unsigned long	high	object	4
+00461ea8	D	g_obj_nreloc_total	unsigned long	medium	object	4
+00461eac	D	g_obj_relptr	unsigned long	high	object	4
+00461eb0	D	g_obj_relptr_save	unsigned long	medium	object	4
+00461eb4	D	g_obj_nlnno_total	unsigned long	medium	object	4
+00461ec0	D	g_obj_lnnoptr	unsigned long	high	object	4
+00461ec4	D	g_obj_lnnoptr_save	unsigned long	medium	object	4
+00461ec8	D	g_obj_nlnno	unsigned long	high	object	4
+00461ecc	D	g_obj_lnno_buf	void *	high	object	4
+00461ed0	D	g_obj_lnno_count	unsigned long	high	object	4
+00461ed4	D	g_obj_symptr	unsigned long	high	object	4
+00461ed8	D	g_obj_nsyms	unsigned long	high	object	4
+00461edc	D	g_obj_symtab	void *	high	object	4
+00461ee4	D	g_obj_strptr	unsigned long	high	object	4
+00461efc	D	g_obj_nglobal	unsigned long	medium	object	4
+00469384	D	g_obj_ungetc_char	char	medium	object	4
+00469388	D	g_obj_ungetc_flag	char	medium	object	8
+0046c120	D	g_coff_fhdr	unsigned long	high	object	28
+0046c138	D	g_coff_fflags	unsigned long	high	object	8
+0046c140	D	g_coff_sym_scratch	char	high	object	4
+0046c2a0	D	g_coff_ohdr_abs	unsigned long	high	object	160
+0046c340	D	g_coff_ohdr_inc	unsigned long	high	object	56
+#
+# ==================== globals: memctl.c owned (bss) ====================
+00461dc0	D	g_incfile_stack	void *	high	memctl	4
+00461dc4	D	g_start_sym_name	char *	high	memctl	4
+00461f10	D	g_libpath_list	void *	medium	memctl	4
+00461f18	D	g_omem_sort_array	void *	low	memctl	4
+00461fc4	D	g_global_sec	void *	medium	memctl	4
+00461fc8	D	g_module_version	unsigned long	medium	memctl	4
+00461fcc	D	g_module_revision	unsigned long	medium	memctl	4
+00461320	D	g_memctl_token	char	high	memctl	519
+00461528	D	g_memctl_filename	char	high	memctl	1
+#
+# ==================== globals: shared flags read/written by fixup/object/memctl ====================
+00461248	D	g_incremental	char	high	shared(lnkglb)	4
+0046124c	D	g_debug_lines	char	high	shared(lnkglb)	4
+00461254	D	g_start_sym_given	char	high	shared(lnkglb)	4
+0046125c	D	g_verbose	char	medium	shared(lnkglb)	4
+00461274	D	g_pass2_retry	char	medium	shared(lnkglb)	4
+0046127c	D	g_pass2_changed	char	medium	shared(lnkglb)	4
+00461294	D	g_gen_relocs_mode	char	medium	shared(lnkglb)	4
+0046129c	D	g_reserve_count	unsigned long	low	shared(lnkglb)	4
+00457b74	D	g_case_insens	char	medium	shared(lnkglb)	4
+00457b78	D	g_opt_abc	char	high	shared(lnkglb)	4
+00457b7c	D	g_opt_aec	char	high	shared(lnkglb)	4
+0046122c	D	g_opt_ro	char	high	shared(lnkglb)	4
+00461228	D	g_opt_asc	char	high	shared(lnkglb)	4
+00461230	D	g_opt_eso	char	high	shared(lnkglb)	4
+00461234	D	g_opt_wex	char	high	shared(lnkglb)	4
+00461238	D	g_opt_ovlp	char	high	shared(lnkglb)	4
+0046123c	D	g_opt_svo	char	high	shared(lnkglb)	4
+00457b80	D	g_opt_rsc	char	high	shared(lnkglb)	4
+00461240	D	g_opt_ff	char	high	shared(lnkglb)	4
+00461244	D	g_opt_csl	char	high	shared(lnkglb)	4
+00457b84	D	g_opt_wvr	char	high	shared(lnkglb)	4
+00457b94	D	g_opt_sdi	char	high	shared(lnkglb)	4
+00461288	D	g_opt_sbm	char	high	shared(lnkglb)	4
+0046128c	D	g_opt_osp	char	high	shared(lnkglb)	4
+00461290	D	g_opt_isw	char	high	shared(lnkglb)	4
+004611e8	D	g_opt_wdg	char	high	shared(lnkglb)	4
+004611d8	D	g_opt_mcm	char	high	shared(lnkglb)	4
+00457b4c	D	g_map_buffer	char	high	shared(lnkglb)	4
+00457b50	D	g_map_const	char	high	shared(lnkglb)	4
+00457b54	D	g_map_local	char	high	shared(lnkglb)	4
+00457b58	D	g_map_overlay	char	high	shared(lnkglb)	4
+00457b5c	D	g_map_secaddr	char	high	shared(lnkglb)	4
+00457b60	D	g_map_secname	char	high	shared(lnkglb)	4
+00457b64	D	g_map_symname	char	high	shared(lnkglb)	4
+00457b68	D	g_map_symval	char	high	shared(lnkglb)	4
+00457b6c	D	g_map_unused	char	high	shared(lnkglb)	4
+00457b70	D	g_map_globsym	char	high	shared(lnkglb)	4
+00461208	D	g_map_globmap	char	high	shared(lnkglb)	4
+004611e0	D	g_map_symlen_flag	char	high	shared(lnkglb)	4
+004611e4	D	g_map_symlen	unsigned long	high	shared(lnkglb)	4
+00457bc4	D	g_map_pagewidth	unsigned long	high	shared(lnkglb)	4
+00457bd4	D	g_map_pagelength	unsigned long	high	shared(lnkglb)	4
+00457bdc	D	g_map_topmargin	unsigned long	high	shared(lnkglb)	4
+00457be0	D	g_map_botmargin	unsigned long	high	shared(lnkglb)	8
+00457bd0	D	g_map_bodylines	unsigned long	high	shared(lnkglb)	4
+00457bc8	D	g_map_lineno	unsigned long	high	shared(lnkglb)	4
+00461ff8	D	g_sec_hash_tab	void *	medium	shared(bss)	8016
+00463f48	D	g_sym_hash_tab	void *	medium	shared(bss)	8016
+00461dcc	D	g_region_sentinel	void *	high	shared(bss)	4
+00461dd0	D	g_cur_region	void *	high	shared(bss)	4
+00461dd4	D	g_cur_reloc	void *	high	shared(bss)	4
+00461db4	D	g_memctl_fp	void *	high	shared(bss)	4
+00461dbc	D	g_lex_dest	void *	medium	shared(bss)	4
+00461d68	D	g_lex_cursor	char *	high	shared(bss)	4
+00461318	D	g_line_number	long	high	shared(bss)	4

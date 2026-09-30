@@ -1,0 +1,36 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  02:30:04  d_incl.asm
+  Page 1
+
+
+
+1                        ; INCLUDE and MACLIB, with -i and -m search paths (see 
+cases.txt)
+2                                  opt     cex,mex
+3         X:0000                   org     x:$0
+4                                  include 'incloc.asm'
+5                        ; include file in the current directory
+6         000007         locval    equ     7
+7    d    X:0000 000007            dc      locval
+9                                  include "incdefs.asm"
+10                       ; include file found through the -i search path
+11        000ABC         incval    equ     $abc
+12                                 include 'incnest.asm'
+13                       ; nested include, also found through the -i path
+14        000ABD         nestval   set     incval+1
+16                                 msg     'incdefs.asm included'
+18                                 include <incnest.asm>
+19                       ; nested include, also found through the -i path
+20        000ABD         nestval   set     incval+1
+22   d    X:0001 000ABC            dc      incval,nestval
+     d           000ABD
+23        P:0000                   org     p:$0
+25        P:0000 240500            move              #5,x0
+26        X:0020                   org     x:$20
+28   d    X:0020 000003            dc      1+2
+30   d    X:0021 000003            dc      3
+31                                 end
+
+0    Errors
+0    Warnings
+
+

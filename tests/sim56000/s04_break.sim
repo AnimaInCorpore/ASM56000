@@ -1,0 +1,11 @@
+log s s04.log
+more off
+load p1.cld
+break pc==$45
+break
+go
+go
+break off
+go 5
+log off
+quit

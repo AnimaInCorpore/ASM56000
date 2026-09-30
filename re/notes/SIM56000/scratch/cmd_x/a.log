@@ -1,0 +1,6 @@
+more off
+evaluate $ff
+ Hex:0000ff Uns:00255 Fract:3.039837e-005 Bin:000000000000000011111111
+evaluate f .5
+ Fract:          0.5
+log off

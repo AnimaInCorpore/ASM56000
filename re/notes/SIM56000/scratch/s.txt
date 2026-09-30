@@ -1,0 +1,6 @@
+log s l.txt
+radix
+radix h
+radix
+log off
+quit

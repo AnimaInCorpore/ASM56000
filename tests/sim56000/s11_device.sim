@@ -1,0 +1,9 @@
+log s s11.log
+more off
+device
+device dv0 56002
+device
+display v
+device dv0 56001
+log off
+quit

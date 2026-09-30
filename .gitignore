@@ -4,3 +4,9 @@ build/
 *.o
 *.exe
 __pycache__/
+__pycache__/
+scratch_*/
+*.pyc
+build_*/
+*.cld
+!tests/**/*.cld

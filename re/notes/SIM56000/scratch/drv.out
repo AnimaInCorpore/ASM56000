@@ -1,0 +1,194 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOTOROLA DSP56000 SIMULATOR:  VERSION 6.3.0 01-15-1999
+0>
+
+asm    break    change    copy    device    disassemble    <space>=more
+=====
+> log s l.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOTOROLA DSP56000 SIMULATOR:  VERSION 6.3.0 01-15-1999
+log s l.txt
+Output log file:.\l.txt
+0>
+
+asm    break    change    copy    device    disassemble    <space>=more
+=====
+> radix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOTOROLA DSP56000 SIMULATOR:  VERSION 6.3.0 01-15-1999
+log s l.txt
+Output log file:.\l.txt
+radix
+The current default radix is decimal.
+0>
+
+asm    break    change    copy    device    disassemble    <space>=more
+=====
+> radix h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOTOROLA DSP56000 SIMULATOR:  VERSION 6.3.0 01-15-1999
+log s l.txt
+Output log file:.\l.txt
+radix
+The current default radix is decimal.
+radix h
+0>
+
+asm    break    change    copy    device    disassemble    <space>=more
+=====
+> radix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOTOROLA DSP56000 SIMULATOR:  VERSION 6.3.0 01-15-1999
+log s l.txt
+Output log file:.\l.txt
+radix
+The current default radix is decimal.
+radix h
+radix
+The current default radix is hexadecimal.
+0>
+
+asm    break    change    copy    device    disassemble    <space>=more
+=====
+> log off
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOTOROLA DSP56000 SIMULATOR:  VERSION 6.3.0 01-15-1999
+log s l.txt
+Output log file:.\l.txt
+radix
+The current default radix is decimal.
+radix h
+radix
+The current default radix is hexadecimal.
+log off
+0>
+
+asm    break    change    copy    device    disassemble    <space>=more
+=====
+> quit
+
+=====

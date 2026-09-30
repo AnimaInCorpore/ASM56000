@@ -1,0 +1,6 @@
+radix
+The current default radix is {decimal}.
+radix h
+radix
+The current default radix is {hexadecimal}.
+log off

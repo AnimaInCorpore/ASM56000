@@ -1,0 +1,6 @@
+# overrides resolving cross-group conflicts (addr F|D name type conf module size)
+0050578c	D	cur_sim	void *	high	shared	4
+00505790	D	cur_dtype	void *	high	shared	4
+00505794	D	cur_itype	void *	high	shared	4
+00505798	D	cur_dev	void *	high	shared	4
+004aab14	D	abort_flag	int	med	console	4

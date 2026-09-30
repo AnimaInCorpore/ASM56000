@@ -1,0 +1,42 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-23  14:21:12  r3.asm
+  Page 1
+
+
+
+1                        ; buffers, macros, local labels, block data, overlays o
+f memory spaces
+2                                  section bufsec
+3                                  xdef    cbuf,rbuf,mac1
+4         X:0000                   org     x:
+5         X:0000                   buffer  m,16
+6                        cbuf
+7         X:0000                   dc      1,2,3
+8                                  endbuf
+9         X:0010                   buffer  r,8
+10                       rbuf
+11                                 endbuf
+12        Y:0000                   org     y:
+13        Y:0000         ydata     dc      $aaaaaa
+14        Y:0020                   dsm     32
+15        Y:0040 000055  yblk      bsc     10,$55
+16        P:0000                   org     p:
+17                       mymac     macro   arg
+18   m                             move    #arg,a
+19   m                             endm
+20                       mac1      mymac   5
+22        P:0001 000000  _loc      nop
+23                                 mymac   7
+25        P:0003 0AF080            jmp     _loc
+                 000001
+26                                 endsec
+27                                 section big_section_name_here
+28        L:0000                   org     l:
+29        L:0000         lbig      dc      0.5,-0.25
+30        P:0000                   org     p:
+31        P:0000                   dc      "text string"
+32                                 endsec
+
+0    Errors
+0    Warnings
+
+

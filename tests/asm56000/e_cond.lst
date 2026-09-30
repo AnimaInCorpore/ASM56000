@@ -1,0 +1,56 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  17:39:57  e_cond.asm
+  Page 1
+
+
+
+1                        ; conditional-assembly / structured-control errors (11 
+distinct messages)
+2         P:0000                   org     p:$0
+**** 3 [e_cond.asm 3]: ERROR --- ELSE without associated IF directive
+3                                  else
+**** 4 [e_cond.asm 4]: ERROR --- ENDIF without associated IF directive
+4                                  endif
+**** 5 [e_cond.asm 5]: ERROR --- Syntax error - invalid conditional operator
+5                                  .if     a <zz> b
+6         P:0000 000000            nop
+**** 7 [e_cond.asm 7]: ERROR --- .ENDI without associated .IF statement
+7                                  .endi
+**** 8 [e_cond.asm 8]: ERROR --- Syntax error - expected keyword TO or DOWNTO
+8                                  .for    r0 = #0 downup #10
+9         P:0001 000000            nop
+**** 10 [e_cond.asm 10]: ERROR --- .ENDF without associated .FOR statement
+10                                 .endf
+**** 11 [e_cond.asm 11]: ERROR --- Syntax error - invalid assignment operator
+**** 11 [e_cond.asm 11]: ERROR --- Symbol undefined on pass 2: to (Operand field
+)
+**** 11 [e_cond.asm 11]: ERROR --- Syntax error - expected keyword TO or DOWNTO
+**** 11 [e_cond.asm 11]: ERROR --- Syntax error - missing address mode specifier
+**** 11 [e_cond.asm 11]: ERROR --- Possible invalid white space between operands
+ or arguments
+11                                 .for    r0 #0 to #10
+12        P:0002 000000            nop
+**** 13 [e_cond.asm 13]: ERROR --- .ENDF without associated .FOR statement
+13                                 .endf
+14                                 if      1
+15        P:0003 000000            nop
+16                                 .if     <eq>
+19        P:0006 000000            nop
+20                                 .endi
+22                                 .while  <cs>
+**** 24 [e_cond.asm 19]: ERROR --- Symbol undefined on pass 2: Z_L00004 (Operand
+ field)
+26        P:0009 000000            nop
+**** 27 [e_cond.asm 21]: ERROR --- .UNTIL without associated .REPEAT statement
+27                                 .until  <cs>
+**** 28 [e_cond.asm 22]: ERROR --- Syntax error - missing address mode specifier
+**** 28 [e_cond.asm 22]: ERROR --- Possible invalid white space between operands
+ or arguments
+28                                 .for    r0 = #0 to
+29        P:000A 000000            nop
+**** 30 [e_cond.asm 24]: ERROR --- .ENDF without associated .FOR statement
+30                                 .endf
+
+17   Errors
+0    Warnings
+
+

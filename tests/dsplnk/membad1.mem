@@ -1,0 +1,2 @@
+; membad1: unrecognised top-level keyword -> "Invalid relocation type field"
+FROBNICATE p $0 TO $ff

@@ -1,0 +1,10 @@
+log s s10.log
+more off
+load p1.cld
+step 2
+save s st10.sav
+reset s
+load s st10.sav
+display
+log off
+quit

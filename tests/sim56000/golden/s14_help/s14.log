@@ -1,0 +1,60 @@
+more off
+help radix
+  {----------- RADIX: Change Input or Display Radix --------}
+
+  {R}ADIX [{B}(bin)/{D}(dec)/{F}(frc or flt)/{H}(hex)/{U}(uns)] [reg[_block]/addr[_block]]...
+
+  {radix}
+  Display the default radix currently enabled.
+
+  {radix h}
+  Change input radix to hexadecimal.  Hexadecimal constant entries
+  no longer require a preceding dollar sign, but any decimal constants will
+  require a preceding grave accent.
+
+  {radix f x0  x1}
+  Change display radix for registers x0 and x1 to floating point.
+
+  {radix d x:0..10 p:0..10}
+  Change display radix for specified memory locations to decimal.
+
+  {radix u x0 x1}
+  Change display radix for x0 and x1 to unsigned decimal.
+help step
+  {----------- STEP: Step Through DSP Program -----------}
+
+  {ST}EP [count] [{CY}(cycles)/{LI}(lines)/{IN}(inst)] [{H}(halt at breakpoints)]
+
+  {step }
+  Step one instruction or source line, depending on display mode.
+  Display the enabled registers and memory blocks after last instruction.
+
+  {step $50}
+  Execute hex 50 instructions or source lines, depending on display mode.
+  Ignores breakpoints during execution (use h option to halt at breakpoints).
+  Display the enabled registers and memory blocks after the last instruction.
+
+  {step 20 cy}
+  Execute 20 clock cycles. Display the enabled registers and memory
+  blocks at the end of the 20th clock cycle.
+
+  {step 20 li h}
+  Execute instructions corresponding to 20 source lines. Halt at enabled
+  breakpoints. Display the enabled registers and memory blocks after the
+  last instruction.
+
+  {step 20 in h}
+  Execute 20 instructions. Halt at enabled breakpoints. Display the enabled
+  registers and memory blocks after the last instruction.
+
+help unknown
+{Help topic not found}
+help r0
+core register
+Address Alu Address Register
+.-------.-------.-------.-------
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 < Bit States
+.-------.-------.-------.-------
+ 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 < Bit Number
+ 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
+log off

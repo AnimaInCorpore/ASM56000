@@ -1,0 +1,195 @@
+0040fba0	F	pin_drive_update	void pin_drive_update(unsigned long ctl,int mode,void *pingrp,unsigned long mask)	med	exec
+0040fc20	F	sai_iofile_parse	int sai_iofile_parse(char *text,void *state)	med	exec
+0040fc80	F	sai_iofile_format	int sai_iofile_format(void *rec,int arg2,char *out)	low	exec
+0040fe30	F	sai_load_input	void sai_load_input(int dev,void *rec)	med	exec
+0040feb0	F	sai_write_reg	int sai_write_reg(int dev,int reg,unsigned long *val)	med	exec
+0040ff80	F	sai_tick	void sai_tick(int dev)	med	exec
+00410010	F	sai_write_io	int sai_write_io(int dev,unsigned long addr,unsigned long val)	med	exec
+00410110	F	sai_read_io	int sai_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec
+004101f0	F	sai_reset	int sai_reset(int dev)	med	exec
+00410270	F	sai_reset_regs	void sai_reset_regs(void)	high	exec
+00410300	F	sai_int_pending	long sai_int_pending(int dev)	med	exec
+00410410	F	sai_int_ack	int sai_int_ack(int dev,long vec)	med	exec
+00410550	F	sai_write_reg_core	void sai_write_reg_core(int reg,unsigned long val)	high	exec
+00410770	F	sai_refresh_reg	void sai_refresh_reg(int reg)	high	exec
+00410830	F	sai_read_reg_core	void sai_read_reg_core(int reg,unsigned long *out,int side)	high	exec
+004108e0	F	sai_clock	void sai_clock(int dev)	med	exec
+004122e0	F	sai_rx_decode_terms	void sai_rx_decode_terms(void)	med	exec
+00412b20	F	sai_rx_terms_to_flags	void sai_rx_terms_to_flags(void)	med	exec
+00412c70	F	sai_tx_decode_terms	void sai_tx_decode_terms(void)	med	exec
+004131d0	F	sai_tx_terms_to_flags	void sai_tx_terms_to_flags(void)	med	exec
+004132b0	F	periph_read_reg	int periph_read_reg(int dev,int reg,unsigned long *out)	high	exec
+004132e0	F	timer_write_reg	int timer_write_reg(int dev,int reg,unsigned long *val)	high	exec
+004133b0	F	timer_tick	void timer_tick(int dev)	high	exec
+00413440	F	timer_write_io	int timer_write_io(int dev,unsigned long addr,unsigned long val)	high	exec
+00413510	F	timer_read_io	int timer_read_io(int dev,unsigned long addr,unsigned long *out,int side)	high	exec
+004135d0	F	timer_set_reg	void timer_set_reg(int reg,unsigned long val)	high	exec
+004135f0	F	timer_reset	int timer_reset(int dev)	high	exec
+00413690	F	timer_reset_regs	void timer_reset_regs(void)	high	exec
+00413710	F	timer_int_pending	long timer_int_pending(int dev)	high	exec
+004137a0	F	timer_int_ack	int timer_int_ack(int dev,long vec)	high	exec
+00413840	F	timer_write_reg_core	void timer_write_reg_core(int reg,unsigned long val,int force)	high	exec
+00413980	F	timer_set_tio	void timer_set_tio(int level)	med	exec
+00413a00	F	timer_start_mode	void timer_start_mode(unsigned long tcsr)	med	exec
+00413ae0	F	timer_refresh_reg	void timer_refresh_reg(int reg)	high	exec
+00413ba0	F	timer_read_reg_core	void timer_read_reg_core(int reg,unsigned long *out,int side)	high	exec
+00413bc0	F	timer_clock	void timer_clock(void)	high	exec
+00413e60	F	timer_edge_match	int timer_edge_match(int level)	med	exec
+00413ea0	F	timer_expire	void timer_expire(int mode)	med	exec
+00413f70	F	iofmt_idle_format	int iofmt_idle_format(int arg1,long *word,char *out)	med	exec
+00413fa0	F	pwm_write_reg	int pwm_write_reg(int dev,int reg,unsigned long *val)	med	exec
+00414070	F	pwm_tick	void pwm_tick(int dev)	med	exec
+00414100	F	pwm_write_io	int pwm_write_io(int dev,unsigned long addr,unsigned long val)	med	exec
+004141d0	F	pwm_read_io	int pwm_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec
+00414270	F	pwm_reset	int pwm_reset(int dev)	med	exec
+004142f0	F	pwm_reset_regs	void pwm_reset_regs(void)	high	exec
+004144a0	F	pwm_set_reg	void pwm_set_reg(int reg,unsigned long val)	high	exec
+004144c0	F	pwm_int_pending	long pwm_int_pending(int dev)	med	exec
+00414570	F	pwm_int_ack	int pwm_int_ack(int dev,long vec)	med	exec
+00414640	F	pwm_write_reg_core	void pwm_write_reg_core(int reg,unsigned long val)	high	exec
+00414920	F	pwm_chan_reload	void pwm_chan_reload(void *chan)	med	exec
+00414960	F	pwm_refresh_reg	void pwm_refresh_reg(int reg)	high	exec
+00414a20	F	pwm_read_reg_core	void pwm_read_reg_core(int reg,unsigned long *out)	high	exec
+00414a40	F	pwm_clock	void pwm_clock(void)	med	exec
+00414c20	F	pwm_drive_int	void pwm_drive_int(void *chan,int level,unsigned long bits)	low	exec
+00414cd0	F	pwm_prescale_step	void pwm_prescale_step(int *carry2)	med	exec
+00414e90	F	wdog_write_reg	int wdog_write_reg(int dev,int reg,unsigned long *val)	med	exec
+00414f60	F	wdog_tick	void wdog_tick(int dev)	med	exec
+00414ff0	F	wdog_write_io	int wdog_write_io(int dev,unsigned long addr,unsigned long val)	med	exec
+004150b0	F	wdog_read_io	int wdog_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec
+00415150	F	wdog_reset	int wdog_reset(int dev)	med	exec
+004151d0	F	wdog_reset_regs	void wdog_reset_regs(void)	high	exec
+00415210	F	wdog_set_reg	void wdog_set_reg(int reg,unsigned long val)	high	exec
+00415230	F	wdog_int_pending	long wdog_int_pending(int dev)	med	exec
+00415280	F	wdog_int_ack	int wdog_int_ack(int dev,long vec)	med	exec
+004152d0	F	wdog_write_reg_core	void wdog_write_reg_core(int reg,unsigned long val)	high	exec
+004153d0	F	wdog_refresh_reg	void wdog_refresh_reg(int reg)	high	exec
+00415490	F	wdog_read_reg_core	void wdog_read_reg_core(int reg,unsigned long *out,int side)	high	exec
+004154d0	F	wdog_stop	void wdog_stop(void)	med	exec
+004154f0	F	wdog_clock	void wdog_clock(void)	high	exec
+004155b0	F	simvar_read_reg	int simvar_read_reg(int dev,int reg,unsigned long *out)	low	exec
+004156a0	F	simvar_write_reg	int simvar_write_reg(int dev,int reg,unsigned long *val)	low	exec
+004157f0	F	simvar_write_io	int simvar_write_io(int dev,unsigned long addr,unsigned long val)	low	exec
+00415930	F	simvar_refresh_reg	void simvar_refresh_reg(int reg)	med	exec
+004159b0	F	port_read_reg	int port_read_reg(int dev,int reg,unsigned long *out)	high	exec
+00415a00	F	port_write_reg	int port_write_reg(int dev,int reg,unsigned long *val)	med	exec
+00415a90	F	port_reset	int port_reset(int dev,int full)	med	exec
+00415b10	F	port_reset_regs	void port_reset_regs(void)	high	exec
+00415b50	F	port_write_io	int port_write_io(int dev,unsigned long addr,unsigned long val)	med	exec
+00415c00	F	port_read_io	int port_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec
+00415cb0	F	port_write_io_c	int port_write_io_c(int dev,unsigned long addr,unsigned long val)	low	exec
+00415d60	F	port_read_io_c	int port_read_io_c(int dev,unsigned long addr,unsigned long *out,int side)	low	exec
+00415e10	F	port_refresh_reg	void port_refresh_reg(int reg)	high	exec
+00415ed0	F	port_write_pins	void port_write_pins(int dev,int reg,unsigned long val)	high	exec
+00416050	F	port_read_pins	void port_read_pins(int dev,int reg,unsigned long *out,int fetch)	high	exec
+00416190	F	sci_iofile_parse	int sci_iofile_parse(char *text,void *state)	low	exec
+00416260	F	sci_iofile_format	int sci_iofile_format(void *rec,int arg2,char *out)	low	exec
+004162b0	F	sci_write_reg	int sci_write_reg(int dev,int reg,unsigned long *val)	med	exec
+00416380	F	sci_tick	void sci_tick(int dev)	med	exec
+00416410	F	sci_write_io	int sci_write_io(int dev,unsigned long addr,unsigned long val)	med	exec
+004165b0	F	sci_read_io	int sci_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec
+004166e0	F	sci_reset	int sci_reset(int dev)	med	exec
+00416760	F	sci_reset_regs	void sci_reset_regs(void)	high	exec
+004167f0	F	sci_set_reg	void sci_set_reg(int reg,unsigned long val)	high	exec
+00416810	F	sci_int_pending	long sci_int_pending(int dev)	med	exec
+00416890	F	sci_int_ack	int sci_int_ack(int dev,long vec)	med	exec
+00416920	F	sci_write_reg_core	void sci_write_reg_core(int reg,unsigned long val)	high	exec
+00416a90	F	sci_refresh_reg	void sci_refresh_reg(int reg)	high	exec
+00416b50	F	sci_read_reg_core	void sci_read_reg_core(int reg,unsigned long *out,int side)	high	exec
+00416c50	F	sci_reset_state	void sci_reset_state(void)	med	exec
+00416d20	F	sci_clock	void sci_clock(int dev,int feed_input)	med	exec
+00417ad0	F	sci_tx_abort_if_disabled	int sci_tx_abort_if_disabled(void)	low	exec
+00417b20	F	sci_tx_frame_done	int sci_tx_frame_done(int rx_idle,int dev)	low	exec
+00417d00	F	sci_build_frame_bits	void sci_build_frame_bits(void)	med	exec
+00417ed0	F	sci_decode_frame	void sci_decode_frame(unsigned long *data,unsigned long *parity,unsigned long *stop)	med	exec
+00417f50	F	sci_encode_frame	void sci_encode_frame(unsigned long word,unsigned long *frame)	med	exec
+00418010	F	iofmt_idle_parse	int iofmt_idle_parse(char *text,void *state)	med	exec
+00418080	F	ssi_write_reg	int ssi_write_reg(int dev,int reg,unsigned long *val)	med	exec
+00418150	F	ssi_tick	void ssi_tick(int dev)	med	exec
+004181e0	F	ssi_write_io	int ssi_write_io(int dev,unsigned long addr,unsigned long val)	med	exec
+00418340	F	ssi_read_io	int ssi_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec
+00418460	F	ssi_reset	int ssi_reset(int dev)	med	exec
+004184e0	F	ssi_reset_regs	void ssi_reset_regs(void)	high	exec
+00418570	F	ssi_set_reg	void ssi_set_reg(int reg,unsigned long val)	high	exec
+00418590	F	ssi_int_pending	long ssi_int_pending(int dev)	med	exec
+00418610	F	ssi_int_ack	int ssi_int_ack(int dev,long vec)	med	exec
+00418690	F	ssi_write_reg_core	void ssi_write_reg_core(int reg,unsigned long val)	high	exec
+004187c0	F	ssi_refresh_reg	void ssi_refresh_reg(int reg)	high	exec
+00418880	F	ssi_read_reg_core	void ssi_read_reg_core(int reg,unsigned long *out,int side)	high	exec
+00418910	F	ssi_reset_state	void ssi_reset_state(void)	med	exec
+00418b20	F	ssi_clock	void ssi_clock(int dev,int feed_input)	med	exec
+0041a300	F	hi_write_reg	int hi_write_reg(int dev,int reg,unsigned long *val)	high	exec
+0041a570	F	hi_tick_a	void hi_tick_a(int dev)	med	exec
+0041a600	F	hi_tick_b	void hi_tick_b(int dev)	med	exec
+0041a690	F	hi_reset	int hi_reset(int dev)	med	exec
+0041a710	F	hi_int_pending	long hi_int_pending(int dev)	med	exec
+0041a770	F	hi_int_ack	int hi_int_ack(int dev,long vec)	med	exec
+0041a830	F	hi_set_reg	void hi_set_reg(int reg,unsigned long val)	high	exec
+0041a850	F	hi_write_io	int hi_write_io(int dev,unsigned long addr,unsigned long val)	med	exec
+0041a9d0	F	hi_find_pin_shift	int hi_find_pin_shift(void)	med	exec
+0041aa10	F	hi_read_io	int hi_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec
+0041ab20	F	hi_refresh_reg	void hi_refresh_reg(int reg)	high	exec
+0041abe0	F	hi_write_reg_masked	void hi_write_reg_masked(int reg,unsigned long val)	med	exec
+0041acb0	F	hi_read_reg_core	void hi_read_reg_core(int reg,unsigned long *out,int side)	high	exec
+0041ad00	F	hi_reset_state	void hi_reset_state(int full)	high	exec
+0041adb0	F	hi_clock_a	void hi_clock_a(int dev,int feed_input)	med	exec
+0041b760	F	hi_clock_b	void hi_clock_b(int dev,int feed_input)	med	exec
+004b6838	D	pwm_prescale_tab	long [8]	med	exec	32
+004b83d8	D	sci_mode_bits_tab	long [8]	med	exec	32
+004b83f8	D	sci_mode_nbits_tab	long [8]	med	exec	32
+004ba778	D	hi_cmd_reg_tab	long [8]	low	exec	32
+004dbca8	D	sai_chipflags	void *	med	exec	4
+004dbcac	D	sai_st	unsigned long *	high	exec	4
+004dbcb0	D	sai_dev	void *	high	exec	4
+004dbcb4	D	sai_regflags	unsigned long *	high	exec	4
+004dbcb8	D	sai_stslot	void *	med	exec	4
+004dbcc0	D	sai_status	long *	med	exec	4
+004dbcc4	D	timer_chipflags	void *	med	exec	4
+004dbcc8	D	timer_regs	unsigned long *	high	exec	4
+004dbccc	D	timer_st	unsigned long *	high	exec	4
+004dbcd0	D	timer_dev	void *	high	exec	4
+004dbcd4	D	timer_regflags	unsigned long *	high	exec	4
+004dbcd8	D	timer_stslot	void *	med	exec	4
+004dbcdc	D	timer_aux	void *	med	exec	4
+004dbce0	D	timer_status	long *	med	exec	4
+004dbce4	D	pwm_chipflags	void *	med	exec	4
+004dbce8	D	pwm_regs	unsigned long *	high	exec	4
+004dbcec	D	pwm_st	unsigned long *	high	exec	4
+004dbcf0	D	pwm_dev	void *	high	exec	4
+004dbcf4	D	pwm_regflags	unsigned long *	high	exec	4
+004dbcf8	D	pwm_stslot	void *	med	exec	4
+004dbcfc	D	pwm_aux	void *	med	exec	4
+004dbd00	D	pwm_status	long *	med	exec	4
+004dbd04	D	wdog_chipflags	void *	med	exec	4
+004dbd08	D	wdog_regs	unsigned long *	high	exec	4
+004dbd0c	D	wdog_st	unsigned long *	high	exec	4
+004dbd10	D	wdog_dev	void *	high	exec	4
+004dbd14	D	wdog_regflags	unsigned long *	high	exec	4
+004dbd18	D	wdog_stslot	void *	med	exec	4
+004dbd1c	D	wdog_aux	void *	med	exec	4
+004dbd20	D	wdog_status	long *	med	exec	4
+004dbd28	D	simvar_regs	unsigned long *	med	exec	4
+004dbd2c	D	simvar_dev	void *	med	exec	4
+004dbd30	D	simvar_regflags	unsigned long *	med	exec	4
+004dbd40	D	port_regs	unsigned long *	high	exec	4
+004dbd44	D	port_dev	void *	high	exec	4
+004dbd48	D	port_regflags	unsigned long *	high	exec	4
+004dbd58	D	sci_chipflags	void *	med	exec	4
+004dbd5c	D	sci_st	unsigned long *	high	exec	4
+004dbd60	D	sci_dev	void *	high	exec	4
+004dbd64	D	sci_regflags	unsigned long *	high	exec	4
+004dbd70	D	sci_status	long *	med	exec	4
+004dbd74	D	sci_pins	unsigned long *	med	exec	4
+004dbd78	D	sci_pins2	unsigned long *	med	exec	4
+004dbd80	D	ssi_st	unsigned long *	high	exec	4
+004dbd84	D	ssi_dev	void *	high	exec	4
+004dbd88	D	ssi_regflags	unsigned long *	high	exec	4
+004dbd94	D	ssi_status	long *	med	exec	4
+004dbd98	D	ssi_pins	unsigned long *	med	exec	4
+004dbda0	D	hi_st	unsigned long *	high	exec	4
+004dbda4	D	hi_dev	void *	high	exec	4
+004dbda8	D	hi_regflags	unsigned long *	high	exec	4
+004dbdac	D	hi_stslot	void *	med	exec	4
+004dbdb0	D	hi_aux	void *	low	exec	4
+004dbdb4	D	hi_status	long *	med	exec	4
+004dbdb8	D	hi_pins	unsigned long *	med	exec	4

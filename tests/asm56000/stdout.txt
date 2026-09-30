@@ -1,0 +1,1 @@
+**** 4 [d_defsym.asm 4]: ERROR --- Symbol undefined on pass 2: FOO (Operand field)

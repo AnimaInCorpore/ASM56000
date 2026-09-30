@@ -1,0 +1,93 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  11:56:47  d_org.asm
+  Page 1
+
+
+
+1                        ; ORG: runtime/load spaces, location counters, memory m
+apping
+2         P:0100                   org     p:$100
+3                                  opt     cex
+4         P:0100 000000  start     nop
+5         X:0010                   org     x:$10
+6    d    X:0010 000001  xv        dc      1
+7         Y:0020                   org     y:$20
+8    d    Y:0020 000002  yv        dc      2
+9         L:0030                   org     l:$30
+10   d    L:0030 123456  lv        dc      $123456654321
+     d           654321
+11        P:0101                   org     p:
+12        P:0101 000000            nop
+13        X:0011                   org     x:
+14   d    X:0011 000003  xv2       dc      3
+15        P:0400                   org     pl:$400
+16        P:0400 000000  low1      nop
+17        P:0800                   org     ph:$800
+18        P:0800 000000  high1     nop
+19        P:0401                   org     pl:
+20        P:0401 000000  low2      nop
+21        P:0801                   org     ph:
+22        P:0801 000000  high2     nop
+23        P:0500                   org     p(1):$500
+24        P:0500 000000  c1        nop
+25        P:0600                   org     p(2):$600
+26        P:0600 000000  c2        nop
+27        P:0501                   org     p(1):
+28        P:0501 000000  c1b       nop
+29        X:0040                   org     x(7):$40
+30   d    X:0040 000007  xc7       dc      7
+31        P:0010                   org     pi:$10
+32        P:0010 000000  int1      nop
+33        P:1000                   org     pe:$1000
+34        P:1000 000000  ext1      nop
+35        X:0050                   org     xi:$50
+36   d    X:0050 000050            dc      $50
+37        Y:2000                   org     ye:$2000
+38   d    Y:2000 002000            dc      $2000
+39        P:0E00                   org     pr:$e00
+40        P:0E00 000000  rom1      nop
+41                       ; runtime counter differs from load counter
+42        P:0040 P:1040                   org     p:$40,p:$1040
+43        P:0040 P:1040 000000  ovl       nop
+44        P:0041 P:1041 0C0040            jmp     ovl
+45                              ovend
+46        P:0060 X:0300                   org     p:$60,x:$300
+47        P:0060 X:0300 000000            nop
+48        P:0061 X:0301 304000            move              #ovl,r0
+49        X:0070 Y:0080                   org     x:$70,y:$80
+50   d    X:0070 Y:0080 000001            dc      1,2,3
+     d                  000002
+     d                  000003
+51        L:0090 L:0190                   org     l:$90,l:$190
+52   d    L:0090 L:0190 000000            dc      5
+     d                  000005
+53        P:0062 P:1042                   org     p:,p:
+54        P:0062 P:1042 000000            nop
+55        P:0700 P:0900                   org     pl:$700,ph:$900
+56        P:0700 P:0900 000000            nop
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  11:56:47  d_org.asm
+  Page 2
+
+
+
+57        P:0A00 P:0B00                   org     p(3):$a00,pe:$b00
+58        P:0A00 P:0B00 000000            nop
+59                              ; @LCV/@LCV and the * location counter symbol
+60        P:0C00                   org     p:$c00
+61   d    P:0C00 000C00  here      dc      *,@lcv(r),@lcv(l),@lcv(r,l),@lcv(l,l)
+,@lcv(r,h)
+     d           000C01
+     d           000C02
+     d           000502
+     d           000502
+     d           000901
+62        P:0D00 P:0E00                   org     p:$d00,p:$e00
+63   d    P:0D00 P:0E00 000D00            dc      *,@lcv(r),@lcv(l)
+     d                  000D01
+     d                  000E02
+64        P:0050                   org     p:$50
+65                                 end     start
+
+0    Errors
+0    Warnings
+
+

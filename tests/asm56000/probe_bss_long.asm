@@ -1,0 +1,25 @@
+; one
+; two
+; three
+; four
+; five
+; six
+; seven
+; eight
+; nine
+; ten
+; eleven
+; twelve
+; thirteen
+; fourteen
+; fifteen
+; sixteen
+; seventeen
+; eighteen
+; nineteen
+; twenty
+        org     x:$0
+        ds      3
+        org     p:$100
+        dc      1
+        end

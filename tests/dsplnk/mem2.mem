@@ -1,0 +1,10 @@
+; mem2: REGION/ENDR - group section placement inside a bounded region
+; (a section may be assigned to only one region)
+REGION progmem
+MEMORY p $2000 TO $2fff
+SECTION main
+ENDR
+REGION xmem
+MEMORY x $3000 TO $3fff
+SECTION util
+ENDR

@@ -1,0 +1,9 @@
+log s s09.log
+more off
+load p1.cld
+watch a
+watch r0
+step 4
+watch
+log off
+quit

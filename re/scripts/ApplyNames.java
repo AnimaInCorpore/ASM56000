@@ -36,7 +36,7 @@ public class ApplyNames extends GhidraScript {
             String type = p.length > 3 ? p[3].trim() : "";
             if (p[1].equals("F")) {
                 Function fn = getFunctionAt(a);
-                if (fn == null) fn = createFunction(a, name);
+                if (fn == null) { disassemble(a); fn = createFunction(a, name); }
                 if (fn == null) { println("no function at " + a); continue; }
                 fn.setName(name, SourceType.USER_DEFINED);
                 nf++;

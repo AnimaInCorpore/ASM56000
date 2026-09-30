@@ -1,0 +1,114 @@
+-a -b -l i_alu.asm
+-b -l i_alu.asm
+-a -l i_alu.asm
+-a -b i_alu.asm
+-a -b -l -g i_alu.asm
+-a -b -l -z i_alu.asm
+-a -b -l -p56000 i_alu.asm
+-a -b -l -p56001 i_alu.asm
+-a -b -l -p56002 i_alu.asm
+-a -b -l -p56004 i_alu.asm
+-a -b -l -p56007 i_alu.asm
+-a -b -l -r2 i_alu.asm
+-a -b -l -r4 i_alu.asm
+-a -b -l -r7 i_alu.asm
+-a -b -l i_ctrl.asm
+-b -l i_ctrl.asm
+-a -b -l -g i_ctrl.asm
+-a -b -l -v i_ctrl.asm
+-a -b -l i_pmove.asm
+-b -l i_pmove.asm
+-a -b -l -ocex i_pmove.asm
+-a -b -l i_force.asm
+-b -l i_force.asm
+-a -b -l -ocex i_force.asm
+-a -b -l i_56002.asm
+-b -l i_56002.asm
+-a -b -l -p56002 i_56002.asm
+-a -b -l -p56000 i_56002.asm
+-a -b -l d_cond.asm
+-b -l d_cond.asm
+-a -b -l -ocex d_cond.asm
+-a -b -l d_data.asm
+-b -l d_data.asm
+-a -b -l -ocex d_data.asm
+-a -l -dFOO 3 -dBAR 7 d_defsym.asm
+-a -b -l -dFOO 3 -dBAR 7 d_defsym.asm
+-a -l d_defsym.asm
+-a -b -l -iinc -mmlib d_incl.asm
+-b -l -iinc -mmlib d_incl.asm
+-a -b -l d_macro.asm
+-b -l d_macro.asm
+-a -b -l -ocex d_macro.asm
+-a -b -l d_mlib.asm
+-b -l d_mlib.asm
+-a -b -l d_org.asm
+-b -l d_org.asm
+-a -b -l -ocex d_org.asm
+-a -b -l l_page.asm
+-b -l l_page.asm
+-l -omu,cre,s l_page.asm
+-l -onomd,mex,cex l_page.asm
+-a -b -l l_std.asm
+-b -l l_std.asm
+-l -os,cre,mu,md,mex,cex,cl,u,loc,nocm,fc,rc l_std.asm
+-l -ocre l_std.asm
+-l -ogl,gs l_std.asm
+-l -oxr,xll l_std.asm
+-l -osco,svo,ic,lb,lbx,ldb l_std.asm
+-a -b -l s_scs.asm
+-b -l s_scs.asm
+-a -b -l -ocex s_scs.asm
+-a -b -l sect1.asm sect2.asm
+-b -l sect1.asm sect2.asm
+-a -b -l -z sect1.asm sect2.asm
+-a -b -l e_addr.asm
+-b -l e_addr.asm
+-ea err_addr.txt -a -l e_addr.asm
+-a -b -l e_expr.asm
+-b -l e_expr.asm
+-ew err_expr.txt -a -l e_expr.asm
+-a -b -l e_sym.asm
+-b -l e_sym.asm
+-a -b -l e_macro.asm
+-b -l e_macro.asm
+-a -b -l e_cond.asm
+-b -l e_cond.asm
+-a -b -l e_sect.asm
+-b -l e_sect.asm
+-a -b -l e_dir.asm
+-b -l e_dir.asm
+-a -b -l e_loop.asm
+-b -l e_loop.asm
+-q -l e_manysec.asm
+-q -a -l e_manysec.asm
+-q nosuchfile.asm
+-q -pXY ok1.asm
+-q -r99 ok1.asm
+-q -r0 ok1.asm
+-q -r3 ok1.asm
+-q -ex bad.txt ok1.asm
+-q -e ok1.asm
+-q -b -bfoo.cld -bbar.cld -a ok1.asm
+-q -l -lfoo.lst -lbar.lst ok1.asm
+-q -ozzz ok1.asm
+-q -o ok1.asm
+-q -d ok1.asm
+-q -dFOO ok1.asm
+-q -i ok1.asm
+-q -m ok1.asm
+-q -f nosuchargs.txt
+-q -a -b -l -z ok1.asm
+-q -a -b -l -g -v ok1.asm
+-q -v -a -l ok1.asm
+-f args1.txt
+-f args2.txt
+-q -a -b -l ok1.asm ok1.asm
+-q -a -b -l -p56000 -r2 ok1.asm
+-q -a -b -l -p56002 -r4 ok1.asm
+-q -a -b -l -p56004 -r7 ok1.asm
+-q -a -b -l -o ok1.asm
+-q
+-a -b -l i_alu.asm i_ctrl.asm
+-a -b -l e_org.asm
+-b -l e_org.asm

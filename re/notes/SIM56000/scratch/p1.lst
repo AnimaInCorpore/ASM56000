@@ -1,0 +1,22 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-30  09:33:05  p1.asm
+  Page 1
+
+
+
+1         P:0040                   org     p:$40
+2         P:0040 300500  start     move              #5,r0
+3         P:0041 56F400            move              #$123456,a
+                 123456
+4         P:0043 240300            move              #3,x0
+5         P:0044 060480            do      #4,loop
+                 000047
+6         P:0046 200040            add     x0,a
+7         P:0047 000009            inc     b
+8         P:0048 000000  loop      nop
+9         P:0049 565800            move              a,x:(r0)+
+10        P:004A 0C004A            jmp     *
+
+0    Errors
+0    Warnings
+
+

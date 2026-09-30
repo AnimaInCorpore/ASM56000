@@ -1,0 +1,107 @@
+-q -bo.cld main.cln util.cln vec.cln
+-q -bo.cld -m main.cln util.cln vec.cln
+-q -bo.cld -mo.map main.cln util.cln vec.cln
+main.cln util.cln vec.cln -bo.cld
+-bo.cld main.cln util.cln vec.cln
+-v -bo.cld main.cln util.cln vec.cln
+-q -bo.cld -a main.cln util.cln vec.cln
+-q -bo.cld -z main.cln util.cln vec.cln
+-q -bo.cld -a -z -m main.cln util.cln vec.cln
+-q -bo.cld start.cln main.cln util.cln vec.cln
+-q -bo.cld util.cln main.cln vec.cln
+-q -bo.cld data.cln
+-q -bo.cld -m data.cln
+-q -bo.cld ovb.cln
+-q -bo.cld big.cln range.cln
+-q -bo.cld range.cln big.cln
+-q -bo.cld vec.cln
+-q -bo.cld -m vec.cln
+-q -bo.cld case1.cln
+-q -bo.cld case1.cln case2.cln
+-q -n -bo.cld case1.cln case2.cln
+-q -n -bo.cld -m case1.cln case2.cln
+-q -bo.cld -g dbg.cln main.cln util.cln
+-q -bo.cld -mo.map -g dbg.cln main.cln util.cln
+-q -bo.cld -i main.cln util.cln
+-q -bo.cld -i inc.cln vec.cln
+-q -bo.cld inc.cln vec.cln
+-q -bo.cld uselib.cln -lmylib.clb
+-q -bo.cld -mo.map uselib.cln -lmylib.clb
+-q -bo.cld -umylib_unused uselib.cln -lmylib.clb
+-q -bo.cld -ulfunc3 uselib.cln -lmylib.clb
+-q -bo.cld -ulfunc3 -mo.map uselib.cln -lmylib.clb
+-q -bo.cld -plib uselib.cln -lmylib.clb
+-q -bo.cld uselib.cln -lduplib.clb
+-q -bo.cld uselib.cln -lmylib.clb -lduplib.clb
+-q -bo.cld -op:$0 main.cln util.cln vec.cln
+-q -bo.cld -op:$2000 main.cln util.cln
+-q -bo.cld -ox:$1000 main.cln util.cln
+-q -bo.cld -oy:$1000 main.cln util.cln
+-q -bo.cld -ol:$1000 main.cln util.cln
+-q -bo.cld -oxL:$1000 main.cln util.cln
+-q -bo.cld -oxR:$1000 main.cln util.cln
+-q -bo.cld -opi:$100 data.cln
+-q -bo.cld -ope:$100 data.cln
+-q -bo.cld -oye:$100 data.cln
+-q -bo.cld -op:$0 -ox:$1000 -oy:$2000 -ol:$3000 main.cln util.cln vec.cln
+-q -bo.cld -rmem1.mem main.cln util.cln vec.cln
+-q -bo.cld -rmem2.mem main.cln util.cln vec.cln
+-q -bo.cld -rmem3.mem main.cln util.cln vec.cln
+-q -bo.cld -rmem4.mem main.cln util.cln vec.cln
+-q -bo.cld -rmem5.mem -mo.map main.cln util.cln vec.cln
+-q -bo.cld -rmem6.mem main.cln util.cln vec.cln
+-q -bo.cld -rmembad1.mem main.cln util.cln
+-q -bo.cld -rmembad2.mem main.cln util.cln
+-q -bo.cld -rmembad3.mem main.cln util.cln
+-q -bo.cld -rmembad4.mem main.cln util.cln
+-q -bo.cld -rmembad5.mem main.cln util.cln
+-q -bo.cld -rnosuch.mem main.cln util.cln
+-q -bo.cld -xabc main.cln util.cln
+-q -bo.cld -xnoabc main.cln util.cln
+-q -bo.cld -xaec,noro main.cln util.cln
+-q -bo.cld -xasc,noeso main.cln util.cln
+-q -bo.cld -xwex,noovlp main.cln util.cln
+-q -bo.cld -xsvo main.cln util.cln
+-q -bo.cld -xrsc,ff main.cln util.cln
+-q -bo.cld -xcsl,sdi main.cln util.cln
+-q -bo.cld -xsbm,wvr main.cln util.cln
+-q -bo.cld -xosp,isw,wdg main.cln util.cln
+-q -bo.cld -xmcm main.cln util.cln
+-q -bo.cld -xbogus main.cln util.cln
+-q -bo.cld -x main.cln util.cln
+-bo.cld -ea o.err main.cln util.cln
+-bo.cld -ew o.err main.cln util.cln
+-bo.cld -ea o.err main.cln util.cln dup.cln
+-q -bo.cld -ea o.err main.cln util.cln dup.cln
+-fcmd1.cmd
+-q -fcmd2.cmd
+-q -fcmd3.cmd
+-q -bo.cld undef.cln
+-q -bo.cld -mo.map undef.cln
+-q -bo.cld main.cln util.cln dup.cln
+-q -bo.cld start.cln dupg.cln
+-q -bo.cld vec.cln vec2.cln
+-q -bo.cld -mo.map vec.cln vec2.cln
+-q -bo.cld big.cln range.cln main.cln util.cln
+-q -bo.cld nosuchfile.cln
+-q -bo.cld main.cln util.cln nosuchfile.cln
+-q -bo.cld abs.cld util.cln
+-q -bo.cld -robs.cld main.cln util.cln
+-q -k -bo.cld main.cln util.cln
+-q -9 -bo.cld main.cln util.cln
+-q -o main.cln util.cln
+-q -bo.cld -e
+-q -bo.cld -ea main.cln util.cln
+-q -bo.cld -l main.cln util.cln
+-q -bo.cld -lnosuch.clb main.cln util.cln
+-q -bo.cld -mnosuchdir/o.map main.cln util.cln
+-q
+-bo.cld
+-q -bo.cld -a -z -n -v -g -mo.map main.cln util.cln vec.cln
+-q -bo.cld -i -mo.map main.cln util.cln
+-q -bo.cld -i inc.cln
+-q -bo.cld case1.cln case2.cln case1.cln
+-q -bo.cld -mo.map big.cln range.cln
+-q -bo.cld -oxi:$100 -oxe:$200 data.cln
+-q -bo.cld -op:$0:extra main.cln util.cln
+-q -bo.cld -rmem1.mem -rmem3.mem main.cln util.cln

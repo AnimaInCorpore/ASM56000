@@ -1,0 +1,12 @@
+log s s06.log
+more off
+change a $123456
+change r0 $10
+change pc $100
+display a
+display r0 pc
+display
+radix h a
+display a
+log off
+quit

@@ -1,0 +1,23 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  17:47:17  sect2.asm
+  Page 1
+
+
+
+1                        ; second module assembled together with sect1.asm
+2                                  section lib
+3                                  xdef    extfun,extdat
+4         P:0000                   org     p:
+5         P:0000 56F000  extfun    move              x:extdat,a
+                 000000
+**** 6 [sect2.asm 6]: WARNING --- Instruction cannot appear in interrupt vector 
+locations (Opcode field)
+6         P:0002 00000C            rts
+7         X:0000                   org     x:
+8         X:0000         extdat    dc      $123456
+9                                  endsec
+10                                 end
+
+0    Errors
+1    Warning 
+
+

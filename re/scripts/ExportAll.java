@@ -35,7 +35,7 @@ public class ExportAll extends GhidraScript {
                     refs.append(' ').append(f != null ? f.getName() : r.getFromAddress().toString());
                 }
                 pw.printf("%s\t%s\t[%s ]%n", d.getAddress(),
-                    v.toString().replace("\n", "\\n").replace("\t", "\\t"), refs);
+                    v.toString().replace("\r", "\\r").replace("\n", "\\n").replace("\t", "\\t"), refs);
             }
         }
 

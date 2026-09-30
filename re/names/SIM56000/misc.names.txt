@@ -1,0 +1,189 @@
+00454630	F	prof_reset	void prof_reset(void)	M	profile
+00454690	F	prof_record_insn	int prof_record_insn(void *insn)	M	profile
+00454990	F	prof_flush_refs	void prof_flush_refs(void *insn)	M	profile
+00454b50	F	prof_start	void prof_start(char *symfile,char *outfile,char *title)	M	profile
+00454c50	F	prof_report	void prof_report(long arg)	M	profile
+00454d50	F	prof_coverage_report	int prof_coverage_report(void)	H	profile
+00454fc0	F	prof_print_cov_line	void prof_print_cov_line(long addr,int is_addr,void *counts,int kind)	M	profile
+004551a0	F	prof_cov_by_source	void prof_cov_by_source(void)	M	source
+004553c0	F	src_get_line	char *src_get_line(void *pfile,int *pfailed,char **pname,unsigned long *pline,char *name,unsigned long want,char **ptext)	M	source
+00455670	F	src_include_name	char *src_include_name(char *line)	H	source
+00455750	F	src_is_c_file	int src_is_c_file(char *name)	H	source
+004557a0	F	prof_cov_source_file	void prof_cov_source_file(char *name)	M	source
+00455a50	F	prof_symbol_mem_refs	void prof_symbol_mem_refs(void)	H	source
+00455bd0	F	prof_symbol_mem_refs_sym	void prof_symbol_mem_refs_sym(void *sym,long *unnamed)	M	source
+00455db0	F	prof_moves_breakdown	void prof_moves_breakdown(void)	H	source
+004561f0	F	prof_addr_mode_breakdown	void prof_addr_mode_breakdown(void)	H	stats
+00456440	F	prof_data_mem_refs	void prof_data_mem_refs(void)	H	stats
+00456530	F	prof_occurrence_reports	void prof_occurrence_reports(void)	H	stats
+004565a0	F	cmp_insn_name	int cmp_insn_name(void *a,void *b)	H	stats
+00456690	F	prof_insn_occurrence	void prof_insn_occurrence(void *cmp,char *title)	H	stats
+004569f0	F	prof_doloop_occurrence	void prof_doloop_occurrence(void *cmp,char *title)	H	stats
+00456d60	F	prof_basic_profile	void prof_basic_profile(void)	H	stats
+00456f60	F	dev_spaces_call_c	void dev_spaces_call_c(long a,long b,long c)	L	stats
+00456fb0	F	dev_spaces_call_8	void dev_spaces_call_8(long a,long *out,long c)	L	stats
+00457000	F	dev_call_slot1	long dev_call_slot1(int dev,long a,long b,long c)	M	radix
+00457060	F	dev_call_slot14	long dev_call_slot14(int dev,long a,long b,long c)	M	radix
+004570c0	F	dev_call_slot15	long dev_call_slot15(int dev,long a,long b,long c)	M	radix
+00457120	F	dev_call_slot13	long dev_call_slot13(int dev,long a,long b,long c)	M	radix
+00457180	F	dev_mem_read	long dev_mem_read(int dev,long a,long b,long c)	H	radix
+004571e0	F	dev_call_slot10	long dev_call_slot10(int dev,long a,long b,long c)	M	radix
+00457240	F	dev_call_slot11	long dev_call_slot11(int dev,long a,long b,long c)	M	radix
+004572a0	F	dev_call_slot12	long dev_call_slot12(int dev,long a,long b,long c)	M	radix
+00457300	F	dev_call_slot2	long dev_call_slot2(int dev,long a,long b,long c,long d)	M	radix
+00457370	F	dev_find_space	int dev_find_space(int dev,char *name,long *pid)	H	radix
+00457420	F	stricmp_ci	int stricmp_ci(char *a,char *b)	H	radix
+004574d0	F	space_notify	void space_notify(int space_idx,unsigned long addr,unsigned long val,int arg)	L	radix
+00457560	F	mem_addr_check	int mem_addr_check(int space_idx,unsigned long addr)	L	radix
+004575c0	F	fmt_addr	void fmt_addr(unsigned long addr,char *buf)	H	radix
+00457630	F	fmt_read_word	long fmt_read_word(long space,unsigned long addr,int radix,char *out,char *nanfmt)	M	radix
+00457950	F	fmt_word	void fmt_word(int space_idx,long addr,int radix,char *out,unsigned long value)	M	radix
+00457cc0	F	mem_trace_access	void mem_trace_access(unsigned long space,unsigned long addr,int is_write,long value)	M	radix
+00457de0	F	mem_trace_fetch	void mem_trace_fetch(unsigned long addr)	M	radix
+00457e00	F	dsp_alloc	void *dsp_alloc(unsigned long size,int zero)	H	radix
+00457ed0	F	dsp_free	void dsp_free(void *p)	H	radix
+00457f00	F	dsp_realloc	void *dsp_realloc(void *p,unsigned long size)	H	radix
+00457fb0	F	mdisk_free_all	void mdisk_free_all(int dev)	M	radix
+00458060	F	mdisk_save_all	void mdisk_save_all(int dev,void *fp)	M	mdisk
+004580d0	F	mdisk_close	void mdisk_close(int dev)	M	mdisk
+00458180	F	mdisk_init	int mdisk_init(void)	M	mdisk
+00458210	F	mdisk_load_all	void mdisk_load_all(int dev,void *fp)	M	mdisk
+00458280	F	mdisk_read	int mdisk_read(int dev,unsigned long space,unsigned long addr,unsigned long *pval)	H	mdisk
+00458340	F	mdisk_find_node	void *mdisk_find_node(void *list,unsigned long addr)	M	mdisk
+00458380	F	mdisk_page_in	char *mdisk_page_in(void *node)	H	mdisk
+00458480	F	mdisk_write	void mdisk_write(int dev,unsigned long space,unsigned long addr,unsigned long val)	H	mdisk
+004585f0	F	mdisk_clear_list	void mdisk_clear_list(void *list)	M	mdisk
+00458660	F	mdisk_save_space	int mdisk_save_space(void *list,void *fp)	M	mdisk
+00458770	F	mdisk_load_space	int mdisk_load_space(void *list,void *fp)	M	mdisk
+00458870	F	mdisk_spill	int mdisk_spill(void)	M	mdisk
+00458a10	F	mdisk_spill_lru	int mdisk_spill_lru(void *list)	M	mdisk
+00458a50	F	mdisk_spill_mru	int mdisk_spill_mru(void *list)	M	mdisk
+00458a80	F	mdisk_spill_node	void mdisk_spill_node(void *node)	M	mdisk
+00458c10	F	sim_profile_step	void sim_profile_step(int dev)	M	mdisk
+00459030	F	ref_kind_info	void ref_kind_info(int kind,long *pcat,long *prw)	M	expr
+00459140	F	ref_record	void ref_record(int kind,long addr,long a3,long a4)	M	expr
+004591c0	F	ref_prune	void ref_prune(void *insn)	L	expr
+00459250	F	eval_int_addr	void *eval_int_addr(unsigned long mode)	H	expr
+00459330	F	node_word	unsigned long node_word(void *node)	H	expr
+00459360	F	eval_int_masked	void *eval_int_masked(unsigned long mode,unsigned long mask)	M	expr
+004593e0	F	eval_data_word	void *eval_data_word(unsigned long mode)	M	expr
+00459480	F	eval_expr	void *eval_expr(unsigned long mode)	H	expr
+00459510	F	parse_expr	void *parse_expr(void)	H	expr
+00459530	F	parse_binop_rhs	void *parse_binop_rhs(void *lhs,int minprec)	H	expr
+00459810	F	peek_binop	int peek_binop(void)	H	expr
+004599c0	F	binop_prec	int binop_prec(int op)	H	expr
+00459a70	F	parse_primary	void *parse_primary(void)	H	expr
+0045a7b0	F	stricmp_ci2	int stricmp_ci2(char *a,char *b)	H	expr
+0045a860	F	node_free	void node_free(void *node)	H	expr
+0045a880	F	parse_float	void parse_float(void *node)	H	expr
+0045a8c0	F	expr_error	void expr_error(char *msg)	H	expr
+0045a8e0	F	expr_error2	void expr_error2(char *prefix,char *msg)	H	expr
+0045a920	F	str_index1	int str_index1(int c,char *set)	H	expr
+0045a950	F	node_to_double	void node_to_double(unsigned long mode,void *node)	M	expr
+0045a990	F	node_get_double	double node_get_double(unsigned long mode,void *node)	M	expr
+0045a9c0	F	node_from_double	void node_from_double(unsigned long mode,void *node)	M	expr
+0045aa50	F	op_add	int op_add(void *a,void *b)	H	expr
+0045aaf0	F	op_add32	int op_add32(void *a,void *b)	H	expr
+0045ab90	F	op_sub	int op_sub(void *a,void *b)	H	expr
+0045ac20	F	op_sub32	int op_sub32(void *a,void *b)	H	expr
+0045acd0	F	op_mul	int op_mul(void *a,void *b)	H	expr
+0045ae60	F	op_mul32	int op_mul32(void *a,void *b)	H	expr
+0045af00	F	op_div	int op_div(void *a,void *b)	H	expr
+0045b080	F	op_div32	int op_div32(void *a,void *b)	H	expr
+0045b160	F	op_mod	int op_mod(void *a,void *b)	H	expr
+0045b250	F	op_mod32	int op_mod32(void *a,void *b)	H	expr
+0045b330	F	op_or	int op_or(void *a,void *b)	H	expr
+0045b3a0	F	op_or32	int op_or32(void *a,void *b)	H	expr
+0045b3f0	F	op_and	int op_and(void *a,void *b)	H	expr
+0045b460	F	op_and32	int op_and32(void *a,void *b)	H	expr
+0045b4b0	F	op_xor	int op_xor(void *a,void *b)	H	expr
+0045b520	F	op_xor32	int op_xor32(void *a,void *b)	H	expr
+0045b570	F	op_shl	int op_shl(void *a,void *b)	H	expr
+0045b620	F	op_shl32	int op_shl32(void *a,void *b)	H	expr
+0045b6a0	F	op_shr	int op_shr(void *a,void *b)	H	expr
+0045b7b0	F	op_shr32	int op_shr32(void *a,void *b)	H	expr
+0045b850	F	op_land	int op_land(void *a,void *b)	H	expr
+0045b8a0	F	op_land32	int op_land32(void *a,void *b)	H	expr
+0045b8f0	F	op_lor	int op_lor(void *a,void *b)	H	expr
+0045b940	F	op_lor32	int op_lor32(void *a,void *b)	H	expr
+0045b990	F	node_neg	void node_neg(void *node)	H	expr
+0045b9c0	F	node_neg32	void node_neg32(void *node)	H	expr
+0045ba20	F	node_not	int node_not(void *node)	H	expr
+0045baa0	F	node_not32	int node_not32(void *node)	H	expr
+0045bad0	F	node_lnot	void node_lnot(void *node)	H	expr
+0045bb00	F	node_lnot32	void node_lnot32(void *node)	H	expr
+0045bb30	F	node_sign	int node_sign(void *node)	M	expr
+0045bbc0	F	node_sign32	int node_sign32(void *node)	M	expr
+0045bc50	F	node_normalize	void node_normalize(void *node)	H	expr
+0045bce0	F	op_compare	int op_compare(void *a,void *b,int op)	H	expr
+0045bf20	F	op_compare32	int op_compare32(void *a,void *b,int op)	H	expr
+0045c180	F	mp_divmod	void mp_divmod(unsigned long *num,unsigned long *den,unsigned long *quot,unsigned long *rem)	M	expr
+0045c2d0	F	mp_cmp	int mp_cmp(unsigned long *a,unsigned long *b)	H	expr
+0045c320	F	mp_unpack	void mp_unpack(unsigned long *val,unsigned long *limbs)	H	expr
+0045c3b0	F	mp_pack	void mp_pack(unsigned long *limbs,unsigned long *val)	H	expr
+0045c430	F	mp_copy_limbs	void mp_copy_limbs(unsigned long *src,unsigned long *dst,int n)	L	expr
+0045c460	F	mp_div_digit	unsigned long mp_div_digit(unsigned long *den,unsigned long *rem,int n,unsigned long *tmp)	M	expr
+0045c510	F	mp_mul_digit	void mp_mul_digit(unsigned long d,unsigned long *a,unsigned long *out,int n)	H	expr
+0045c550	F	mp_ge	int mp_ge(unsigned long *a,unsigned long *b,int n)	M	expr
+0045c590	F	mp_sub	void mp_sub(unsigned long *a,unsigned long *b,int n)	H	expr
+0045c5d0	F	mp_len	int mp_len(unsigned long *limbs)	H	expr
+0045c5f0	F	ieee_single_to_double	void ieee_single_to_double(unsigned long f,unsigned long *d)	H	expr
+0045c6c0	F	word_to_frac	void word_to_frac(unsigned long mode,void *node)	H	expr
+0045c7b0	F	double_to_ieee_single	void double_to_ieee_single(unsigned long *d)	H	expr
+0045c890	F	frac_to_word	unsigned long frac_to_word(unsigned long mode,void *node)	H	expr
+0045ca20	F	dword_to_frac	void dword_to_frac(unsigned long mode,void *node)	H	expr
+0045cb30	F	long_to_frac	void long_to_frac(void *node)	H	expr
+0045ccc0	F	ext_to_double	void ext_to_double(unsigned long *v)	M	expr
+0045cd40	F	frac_to_dword	void frac_to_dword(unsigned long mode,void *node)	H	expr
+0045ced0	F	frac_to_long	void frac_to_long(void *node)	H	expr
+0045d0c0	F	double_to_ext	void double_to_ext(unsigned long *v)	M	expr
+0045d120	F	val_to_dec_parts2	void val_to_dec_parts2(unsigned long mode,unsigned long *in,unsigned long *out)	M	misc
+0045d1b0	F	val_to_dec_parts	void val_to_dec_parts(unsigned long mode,unsigned long *in,long *out)	M	misc
+0045d280	F	dsp_free_ext	void dsp_free_ext(void *p)	M	misc
+0045d290	F	ret_true	int ret_true(void)	H	misc
+0045d2a0	F	ret_false	int ret_false(void)	H	misc
+0045d2b0	F	sim_error	void sim_error(char *msg)	H	misc
+0045d350	F	ret_99	int ret_99(void)	H	misc
+0050578c	D	cur_sim	void *	H	state	4
+00505790	D	cur_devtype	void *	H	state	4
+00505794	D	cur_isa	void *	M	state	4
+00505798	D	cur_dev	void *	H	state	4
+004aab08	D	devtype_table	void *	M	state	4
+004aab10	D	dev_table	void *	M	state	4
+004aab0c	D	ndevices	int	M	state	4
+004a8d98	D	sim_table	void *	M	state	4
+004a8dcc	D	cur_dev_index	int	H	state	4
+004a8db0	D	err_stream	void *	L	state	4
+004a8dd0	D	errmsg	char *	H	expr	4
+004a8dd4	D	errmsg_buf	char	H	expr	256
+005059e0	D	expr_err_flag	long	M	expr	4
+005059f0	D	expr_err_msg	char *	M	expr	4
+005029dc	D	expr_mode	unsigned long	H	expr	4
+005029e0	D	expr_ptr	char *	H	expr	4
+005029e8	D	mp_tmp	unsigned long	M	expr	12
+004d2978	D	dec_split_16	unsigned long	H	expr	16
+004d2988	D	dec_split_24	unsigned long	H	expr	16
+004d2970	D	shr_fill_bit	unsigned long	M	expr	4
+004aab14	D	bit_mask_tab	unsigned long	H	radix	128
+004d2758	D	fmt_tab_16	char *	H	radix	20
+004d2770	D	fmt_tab_24	char *	H	radix	20
+004d2788	D	fmt_tab_32	char *	H	radix	20
+004d27e8	D	fmt_tab_16_nosym	char *	H	radix	20
+004d2800	D	fmt_tab_24_nosym	char *	H	radix	20
+004d2818	D	fmt_tab_32_nosym	char *	H	radix	20
+004aaa90	D	ext_alloc	int	M	radix	4
+004d2878	D	mdisk_block_bytes	long	H	mdisk	4
+00505b64	D	prof	void *	H	profile	4
+00505b20	D	prof_jmpbuf	char	H	profile	64
+00505b60	D	prof_exe_mtime	long	L	profile	4
+00502714	D	prof_sym_list	void *	M	profile	4
+00502930	D	prof_sym_cur	void *	M	profile	4
+00502718	D	src_line_buf	char	H	source	400
+005028b0	D	src_include_buf	char	H	source	256
+00502710	D	stats_group	int	M	stats	4
+00502938	D	prof_disasm_buf	char	L	mdisk	16
+005029d0	D	prof_prev_state	int	L	mdisk	4
+004aaab4	D	quit_on_error_en	int	L	misc	4
+004a91dc	D	script_active	int	L	misc	4
+004aaab8	D	in_error_quit	int	L	misc	4
+004aaabc	D	last_error_code	long	L	misc	4

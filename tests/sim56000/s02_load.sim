@@ -1,0 +1,8 @@
+log s s02.log
+more off
+load p1.cld
+display
+disassemble p:$40..$48
+history
+log off
+quit

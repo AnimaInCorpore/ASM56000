@@ -1,0 +1,28 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  02:30:28  d_mlib.asm
+  Page 1
+
+
+
+1                        ; MACLIB directive: current directory, and an explicit 
+library directory
+2                        ; (MACLIB requires a quoted pathname; a DEFINE/-d symbo
+l used bare there is
+3                        ; textually substituted unquoted and fails "expected qu
+ote" - see d_mlibd.asm)
+4                                  opt     cex,mex
+5                                  maclib  '.'
+6                                  maclib  'mlib'
+7         X:0000                   org     x:$0
+**** 8 [d_mlib.asm 8]: ERROR --- Unrecognized mnemonic (Opcode field)
+**** 8 [d_mlib.asm 8]: ERROR --- Unrecognized mnemonic (Opcode field)
+10   d    X:0000 000009            dc      4+5
+12   d    X:0001 000003            dc      3
+14   d    X:0002 000003            dc      3
+15        P:0000                   org     p:$0
+17        P:0000 240700            move              #7,x0
+18                                 end
+
+1    Error
+0    Warnings
+
+

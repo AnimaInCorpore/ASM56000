@@ -1,0 +1,10 @@
+log s s13.log
+more off
+path
+path .
+path +..
+path -
+log s s13b.log
+log off
+log off
+quit

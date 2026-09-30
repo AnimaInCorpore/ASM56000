@@ -1,0 +1,361 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  02:54:02  i_ctrl.asm
+  Page 1
+
+
+
+1                        ; program control, bit manipulation, loops, MOVEC/MOVEM
+/MOVEP, misc.
+2         00FFE0         ioa       equ     $ffe0
+3         00FFFF         iob       equ     $ffff
+4         P:0000                   org     p:$0
+5         P:0000 0C0040            jmp     start
+6         P:0040                   org     p:$40
+7                                  start             
+8                        ; unconditional jumps and subroutine calls
+9         P:0040 0C0040            jmp     start
+10        P:0041 0C0040            jmp     <start
+11        P:0042 0AF080            jmp     >start
+                 000040
+12        P:0044 0C0FFF            jmp     $0fff
+13        P:0045 0AF080            jmp     $1000
+                 001000
+14        P:0047 0AE080            jmp     (r0)
+15        P:0048 0AD980            jmp     (r1)+
+16        P:0049 0AD280            jmp     (r2)-
+17        P:004A 0ACB80            jmp     (r3)+n3
+18        P:004B 0AC480            jmp     (r4)-n4
+19        P:004C 0AED80            jmp     (r5+n5)
+20        P:004D 0AFE80            jmp     -(r6)
+21        P:004E 0BF0A0            jsr     sub1
+                 00016C
+22        P:0050 0BF0A0            jsr     >sub1
+                 00016C
+23        P:0052 0BF0A0            jsr     (r7)
+                 000000
+24        P:0054 0BF0A0            jsr     $2000
+                 002000
+25                       ; conditional jumps, every condition code
+26        P:0056 0E0040            jcc     start
+27        P:0057 0E8040            jcs     start
+28        P:0058 0E5040            jec     start
+29        P:0059 0EA040            jeq     start
+30        P:005A 0ED040            jes     start
+31        P:005B 0E1040            jge     start
+32        P:005C 0E7040            jgt     start
+33        P:005D 0E0040            jhs     start
+34        P:005E 0E6040            jlc     start
+35        P:005F 0EF040            jle     start
+36        P:0060 0E8040            jlo     start
+37        P:0061 0EE040            jls     start
+38        P:0062 0E9040            jlt     start
+39        P:0063 0EB040            jmi     start
+40        P:0064 0E2040            jne     start
+41        P:0065 0E4040            jnn     start
+42        P:0066 0EC040            jnr     start
+43        P:0067 0E3040            jpl     start
+44        P:0068 0AD8AA            jeq     (r0)+
+45        P:0069 0AF0A2            jne     >start
+                 000040
+46        P:006B 0AF0A0            jcc     $1234
+                 001234
+47        P:006D 0BF0A0            jscc    sub1
+                 00016C
+48        P:006F 0BF0A8            jscs    sub1
+                 00016C
+49        P:0071 0BF0A5            jsec    sub1
+                 00016C
+50        P:0073 0BF0AA            jseq    sub1
+                 00016C
+51        P:0075 0BF0AD            jses    sub1
+                 00016C
+52        P:0077 0BF0A1            jsge    sub1
+                 00016C
+53        P:0079 0BF0A7            jsgt    sub1
+                 00016C
+54        P:007B 0BF0A0            jshs    sub1
+                 00016C
+55        P:007D 0BF0A6            jslc    sub1
+                 00016C
+56        P:007F 0BF0AF            jsle    sub1
+                 00016C
+57        P:0081 0BF0A8            jslo    sub1
+                 00016C
+58        P:0083 0BF0AE            jsls    sub1
+                 00016C
+59        P:0085 0BF0A9            jslt    sub1
+                 00016C
+60        P:0087 0BF0AB            jsmi    sub1
+                 00016C
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  02:54:02  i_ctrl.asm
+  Page 2
+
+
+
+61        P:0089 0BF0A2            jsne    sub1
+                 00016C
+62        P:008B 0BF0A4            jsnn    sub1
+                 00016C
+63        P:008D 0BF0AC            jsnr    sub1
+                 00016C
+64        P:008F 0BF0A3            jspl    sub1
+                 00016C
+65        P:0091 0BF0A7            jsgt    (r3+n3)
+                 000000
+66        P:0093 0BF0AF            jsle    $4000
+                 004000
+67                       ; transfer conditionally, every condition code
+68        P:0095 020000            tcc     x0,a
+69        P:0096 028028            tcs     x1,b
+70        P:0097 025010            tec     y0,a
+71        P:0098 02A038            teq     y1,b
+72        P:0099 02D008            tes     a,b
+73        P:009A 021000            tge     b,a
+74        P:009B 037009            tgt     x0,b      r0,r1
+75        P:009C 030223            ths     x1,a      r2,r3
+76        P:009D 03641D            tlc     y0,b      r4,r5
+77        P:009E 03F637            tle     y1,a      r6,r7
+78        P:009F 038708            tlo     a,b       r7,r0
+79        P:00A0 03E102            tls     b,a       r1,r2
+80        P:00A1 029000            tlt     x0,a
+81        P:00A2 02B008            tmi     x0,b
+82        P:00A3 022010            tne     y0,a
+83        P:00A4 024038            tnn     y1,b
+84        P:00A5 02C020            tnr     x1,a
+85        P:00A6 033304            tpl     b,a       r3,r4
+86                       ; bit manipulation, every addressing mode
+87        P:00A7 0A5800            bchg    #0,x:(r0)+
+88        P:00A8 0A4157            bchg    #23,y:(r1)-n1
+89        P:00A9 0A1005            bchg    #5,x:$10
+90        P:00AA 0A3F47            bchg    #7,y:$3f
+91        P:00AB 0AA001            bchg    #1,x:ioa
+92        P:00AC 0ABF42            bchg    #2,y:iob
+93        P:00AD 0A3403            bchg    #3,x:$1234
+94        P:00AE 0ACE44            bchg    #4,a
+95        P:00AF 0AD34C            bchg    #12,r3
+96        P:00B0 0AF94D            bchg    #13,sr
+97        P:00B1 0A6D00            bclr    #0,x:(r5+n5)
+98        P:00B2 0A7E41            bclr    #1,y:-(r6)
+99        P:00B3 0A2002            bclr    #2,x:$20
+100       P:00B4 0A2043            bclr    #3,y:<$20
+101       P:00B5 0AB004            bclr    #4,x:<<$fff0
+102       P:00B6 0A0045            bclr    #5,y:>$ffc0
+103       P:00B7 0AFA46            bclr    #6,omr
+104       P:00B8 0ACD47            bclr    #7,b1
+105       P:00B9 0A6228            bset    #8,x:(r2)
+106       P:00BA 0A4B69            bset    #9,y:(r3)+n3
+107       P:00BB 0A002A            bset    #10,x:$00
+108       P:00BC 0A906B            bset    #11,y:$ffd0
+109       P:00BD 0AC46C            bset    #12,x0
+110       P:00BE 0AE56D            bset    #13,m5
+111       P:00BF 0A54AE            btst    #14,x:(r4)-
+112       P:00C0 0A67EF            btst    #15,y:(r7)
+113       P:00C1 0A3FB0            btst    #16,x:$3f
+114       P:00C2 0A80F1            btst    #17,y:$ffc0
+115       P:00C3 0AFC72            btst    #18,ssh
+116       P:00C4 0AFE73            btst    #19,la
+117                      ; bit test and jump
+118       P:00C5 0A5880            jclr    #0,x:(r0)+,start
+                 000040
+119       P:00C7 0A61C1            jclr    #1,y:(r1),start
+                 000040
+120       P:00C9 0A1082            jclr    #2,x:$10,start
+                 000040
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  02:54:02  i_ctrl.asm
+  Page 3
+
+
+
+121       P:00CB 0A20C3            jclr    #3,y:$20,start
+                 000040
+122       P:00CD 0AA584            jclr    #4,x:$ffe5,start
+                 000040
+123       P:00CF 0AA0C5            jclr    #5,y:ioa,start
+                 000040
+124       P:00D1 0ACE06            jclr    #6,a,start
+                 000040
+125       P:00D3 0AF907            jclr    #7,sr,start
+                 000040
+126       P:00D5 007A08            jset    #8,x:-(r2),start
+                 000040
+127       P:00D7 003F49            jset    #9,y:$3f,start
+                 000040
+128       P:00D9 00B00A            jset    #10,x:$fff0,start
+                 000040
+129       P:00DB 00D40B            jset    #11,r4,start
+                 000040
+130       P:00DD 0B4D0C            jsclr   #12,x:(r5)+n5,sub1
+                 00016C
+131       P:00DF 0B054D            jsclr   #13,y:$05,sub1
+                 00016C
+132       P:00E1 0B810E            jsclr   #14,x:$ffc1,sub1
+                 00016C
+133       P:00E3 0BFA0F            jsclr   #15,omr,sub1
+                 00016C
+134       P:00E5 0B6EF0            jsset   #16,y:(r6+n6),sub1
+                 00016C
+135       P:00E7 0B00B1            jsset   #17,x:$00,sub1
+                 00016C
+136       P:00E9 0BBFF2            jsset   #18,y:$ffff,sub1
+                 00016C
+137       P:00EB 0BFF33            jsset   #19,lc,sub1
+                 00016C
+138                      ; hardware loops
+139       P:00ED 060A80            do      #10,lp1
+                 0000EF
+140       P:00EF 000000            nop
+141                                lp1               
+142       P:00F0 06FF8F            do      #$fff,lp2
+                 0000F2
+143       P:00F2 000000            nop
+144                                lp2               
+145       P:00F3 065800            do      x:(r0)+,lp3
+                 0000F5
+146       P:00F5 000000            nop
+147                                lp3               
+148       P:00F6 061040            do      y:$10,lp4
+                 0000F8
+149       P:00F8 000000            nop
+150                                lp4               
+151       P:00F9 06C400            do      x0,lp5
+                 0000FB
+152       P:00FB 000000            nop
+153                                lp5               
+154       P:00FC 06CE00            do      a,lp6
+                 0000FE
+155       P:00FE 000000            nop
+156                                lp6               
+157       P:00FF 06D700            do      r7,lp7
+                 000101
+158       P:0101 000000            nop
+159                                lp7               
+160       P:0102 060380            do      #3,outer
+                 000107
+161       P:0104 060480            do      #4,inner
+                 000106
+162       P:0106 F098D2            mac     x0,y0,a   x:(r0)+,x0y:(r4)+,y0
+163                                inner             
+164       P:0107 000000            nop
+165                                outer             
+166       P:0108 06FF00            do      lc,lp8
+                 00010B
+167       P:010A 00008C            enddo
+168       P:010B 000000            nop
+169                                lp8               
+170       P:010C 060CA0            rep     #12
+171       P:010D 000032            asl     a
+172       P:010E 06FFAF            rep     #$fff
+173       P:010F 000000            nop
+174       P:0110 065120            rep     x:(r1)-
+175       P:0111 00002A            asr     b
+176       P:0112 063F60            rep     y:$3f
+177       P:0113 200033            lsl     a
+178       P:0114 06DA20            rep     n2
+179       P:0115 000000            nop
+180       P:0116 06CF20            rep     b
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  02:54:02  i_ctrl.asm
+  Page 4
+
+
+
+181       P:0117 000000            nop
+182                      ; control register moves
+183       P:0118 055820            movec             x:(r0)+,m0
+184       P:0119 054161            movec             y:(r1)-n1,m1
+185       P:011A 051039            movec             x:$10,sr
+186       P:011B 053F7A            movec             y:$3f,omr
+187       P:011C 05343E            movec             x:$1234,la
+188       P:011D 05FFA2            movec             #$ffff,m2
+189       P:011E 0512A3            movec             #$12,m3
+190       P:011F 0512A4            movec             #>$12,m4
+191       P:0120 04C4A5            movec             x0,m5
+192       P:0121 04CEBF            movec             a,lc
+193       P:0122 04FC84            movec             ssh,x0
+194       P:0123 04FB90            movec             sp,r0
+195       P:0124 05E226            movec             m6,x:(r2)
+196       P:0125 05CB67            movec             m7,y:(r3)+n3
+197       P:0126 05A039            movec             sr,x:$20
+198       P:0127 05807A            movec             omr,y:$2000
+199       P:0128 04FE8F            movec             la,b
+200       P:0129 04FD87            movec             ssl,y1
+201       P:012A 04E0BC            movec             m0,ssh
+202       P:012B 055C21            move              m1,x:(r4)+
+203       P:012C 05E539            move              x:(r5),sr
+204                      ; program memory moves
+205       P:012D 07D884            movem             p:(r0)+,x0
+206       P:012E 07C18E            movem             p:(r1)-n1,a
+207       P:012F 079007            movem             p:$10,y1
+208       P:0130 07B414            movem             p:$1234,r4
+209       P:0131 000000            movem             x1,p:(r2)
+210       P:0132 073F0F            movem             b,p:$3f
+211       P:0133 07001D            movem             n5,p:$4000
+212       P:0134 000000            movem             m3,p:(r3+n3)
+213       P:0135 07A039            movem             p:<$20,sr
+214       P:0136 07A03A            movem             p:>$20,omr
+215                      ; peripheral moves
+216       P:0137 08D8A0            movep             x:(r0)+,x:ioa
+217       P:0138 08C1E1            movep             y:(r1)-n1,x:$ffe1
+218       P:0139 09F0BF            movep             x:$1234,y:iob
+                 001234
+219       P:013B 09F0C0            movep             y:$10,y:$ffc0
+                 000010
+220       P:013D 0862A0            movep             x:ioa,x:(r2)
+221       P:013E 0970BF            movep             y:iob,x:$20
+                 000020
+222       P:0140 084BF0            movep             x:$fff0,y:(r3)+n3
+223       P:0141 08F4A0            movep             #$123456,x:ioa
+                 123456
+224       P:0143 09F482            movep             #$1,y:$ffc2
+                 000001
+225       P:0145 086460            movep             x:ioa,p:(r4)
+226       P:0146 09DD7F            movep             p:(r5)+,y:iob
+227       P:0147 08F063            movep             p:$100,x:$ffe3
+                 000100
+228       P:0149 087064            movep             x:$ffe4,p:$100
+                 000100
+229       P:014B 084E20            movep             x:ioa,a
+230       P:014C 09533F            movep             y:iob,r3
+231       P:014D 08CF28            movep             b,x:$ffe8
+232       P:014E 09DF3F            movep             n7,y:$ffff
+233       P:014F 08F920            movep             sr,x:ioa
+234       P:0150 086020            movep             x:ioa,m0
+235       P:0151 0870A0            movep             x:<<ioa,x:$10
+                 000010
+236                      ; immediate logic on control registers
+237       P:0153 00FCB8            andi    #$fc,mr
+238       P:0154 00FEB9            andi    #$fe,ccr
+239       P:0155 0003BA            andi    #$03,omr
+240       P:0156 00BFBC            and     #$bf,mr
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  02:54:02  i_ctrl.asm
+  Page 5
+
+
+
+241       P:0157 0003F8            ori     #$03,mr
+242       P:0158 0001F9            ori     #$01,ccr
+243       P:0159 0080FA            ori     #$80,omr
+244       P:015A 0004B9            or      #$04,ccr
+245                      ; misc
+246       P:015B 01D815            norm    r0,a
+247       P:015C 01DF1D            norm    r7,b
+248       P:015D 018040            div     x0,a
+249       P:015E 018068            div     x1,b
+250       P:015F 018050            div     y0,a
+251       P:0160 018078            div     y1,b
+252       P:0161 044811            lua     (r0)+n0,r1
+253       P:0162 04421B            lua     (r2)-n2,n3
+254       P:0163 045C15            lua     (r4)+,r5
+255       P:0164 04561F            lua     (r6)-,n7
+256       P:0165 000000            nop
+257       P:0166 000005            illegal
+258       P:0167 000084            reset
+259       P:0168 000087            stop
+260       P:0169 000086            wait
+261       P:016A 000006            swi
+262       P:016B 000004            rti
+263       P:016C 00000C  sub1      rts
+264                                end     start
+
+0    Errors
+0    Warnings
+
+

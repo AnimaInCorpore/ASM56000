@@ -1,0 +1,280 @@
+0043e080	F	snap_reloc_add	void snap_reloc_add(unsigned long *slot, int kind)	med	cdbwatch
+0043e4a0	F	snap_find_block	int snap_find_block(unsigned long addr, int *out_block_off)	med	cdbwatch
+0043e4f0	F	snap_restore	void snap_restore(char *filename, int unused, int reopen)	med	cdbwatch
+0043e9b0	F	watch_update_all	void watch_update_all(void)	high	cdbwatch
+0043ec80	F	watch_update_one	void watch_update_one(int dev, int wnum)	med	cdbwatch
+0043eca0	F	watch_display	void watch_display(void *watch)	high	cdbwatch
+00401000	F	main	int main(int argc, char **argv, char **envp)	high	simmain
+0046e1a0	F	scan_saved_regs_56800	char *scan_saved_regs_56800(unsigned long func_addr, int frame_base)	med	cdbeval
+0046e3a0	F	scan_saved_regs_56000	char *scan_saved_regs_56000(unsigned long func_addr, int frame_base)	med	cdbeval
+0046e5c0	F	scan_saved_regs_96000	char *scan_saved_regs_96000(unsigned long func_addr, int frame_base)	med	cdbeval
+0046e810	F	opcode_tab_search	int opcode_tab_search(void *tab, int count, unsigned long key)	high	cdbeval
+0046e870	F	frame_locals_string	char *frame_locals_string(int func_symidx, int frame_base)	med	cdbeval
+0046ec10	F	eval_tree	int eval_tree(void *node)	high	cdbeval
+0046ec50	F	eval_tree_core_thunk	int eval_tree_core_thunk(void)	med	cdbeval
+0046ec60	F	parse_c_expression	void *parse_c_expression(char *text)	high	cdbeval
+0046ecb0	F	type_size	int type_size(void *value, void *out_value)	high	cdbeval
+0046f0f0	F	value_dsp_to_double	void value_dsp_to_double(void *value)	med	cdbeval
+0046f150	F	value_double_to_dsp	void value_double_to_dsp(void *value)	med	cdbeval
+0046f1a0	F	dw_udivmod	int dw_udivmod(unsigned long *num, unsigned long *den, unsigned long *quot, unsigned long *rem)	med	cdbeval
+0046f3e0	F	dw_udivmod_b	int dw_udivmod_b(unsigned long *num, unsigned long *den, unsigned long *quot, unsigned long *rem)	med	cdbeval
+0046f620	F	eval_unary	int eval_unary(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval
+0046f7d0	F	eval_binary	int eval_binary(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+0046fb70	F	eval_ternary	int eval_ternary(void *pcond, void *pa, void *pb, void *result_node, int do_eval)	high	cdbeval
+0046ff40	F	value_is_true	int value_is_true(void *value)	high	cdbeval
+00470120	F	tree_mark_leaves	void tree_mark_leaves(void *node)	med	cdbeval
+004701d0	F	eval_tree_core	int eval_tree_core(void)	med	cdbeval
+004703c0	F	eval_node	int eval_node(void *node)	med	cdbeval
+00470400	F	arglist_free_temps	void arglist_free_temps(void *arglist)	low	cdbeval
+00470430	F	eval_node_binary	int eval_node_binary(void *node)	high	cdbeval
+00470450	F	eval_node_unary	int eval_node_unary(void *node)	high	cdbeval
+00470470	F	eval_node_ternary	int eval_node_ternary(void *node)	high	cdbeval
+00470490	F	value_neg	int value_neg(void *src, void *dst)	high	cdbeval
+004707e0	F	value_copy_trunc	void value_copy_trunc(void *src, void *dst)	low	cdbeval
+00470800	F	ternary_select_value	int ternary_select_value(void *cond, void *a, void *b, void *out)	high	cdbeval
+00470870	F	eval_dot_values	int eval_dot_values(void *base, void *member, void *out)	med	cdbeval
+00470920	F	eval_arrow_values	int eval_arrow_values(void *base, void *member, void *out)	med	cdbeval
+00470980	F	dw_add	int dw_add(unsigned long *a, unsigned long *b, unsigned long *out)	med	cdbeval
+004709e0	F	dw_add_b	int dw_add_b(unsigned long *a, unsigned long *b, unsigned long *out)	med	cdbeval
+00470a40	F	dw_neg	int dw_neg(unsigned long *a)	med	cdbeval
+00470a90	F	dw_neg_b	int dw_neg_b(unsigned long *a)	med	cdbeval
+00470ae0	F	dw_shl1	int dw_shl1(unsigned long *a)	med	cdbeval
+00470b30	F	dw_shl1_b	int dw_shl1_b(unsigned long *a)	med	cdbeval
+00470b70	F	dw_shr1	int dw_shr1(unsigned long *a)	med	cdbeval
+00470ba0	F	dw_shr1_b	int dw_shr1_b(unsigned long *a)	med	cdbeval
+00470bd0	F	dw_cmp	int dw_cmp(unsigned long *a, unsigned long *b)	high	cdbeval
+00470c10	F	tw_normalize	void tw_normalize(unsigned long *w)	med	cdbeval
+00470c80	F	mant_to_double	void mant_to_double(void *value)	med	cdbeval
+00470cc0	F	double_to_mant	void double_to_mant(void *value)	med	cdbeval
+00470d40	F	eval_subscript	int eval_subscript(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00470ea0	F	subscript_values	int subscript_values(void *ptr, void *idx, void *out)	med	cdbeval
+00470ed0	F	ptr_add_values	int ptr_add_values(void *ptr, void *idx, void *out)	high	cdbeval
+00471020	F	coerce_array_func	void coerce_array_func(void *pnode)	med	cdbeval
+00471060	F	make_func_ptr_node	void make_func_ptr_node(void *node)	med	cdbeval
+004710d0	F	make_array_ptr_node	void make_array_ptr_node(void *node)	med	cdbeval
+00471160	F	eval_cast	int eval_cast(void *ptype, void *pval, int op, void *result_node, int do_eval)	high	cdbeval
+00471330	F	cast_value	int cast_value(void *to_type, void *from_value, void *out)	high	cdbeval
+00471530	F	cast_to_pointer	int cast_to_pointer(void *from_value, void *out)	med	cdbeval
+00471580	F	cast_to_int_kind	void *cast_to_int_kind(void *from, void *out, int flags)	low	cdbeval
+00471890	F	cast_to_uint_kind	int cast_to_uint_kind(void *from, void *out, int flags)	low	cdbeval
+00471c30	F	word_split_hi	void word_split_hi(void *value)	med	cdbeval
+00471c60	F	cast_to_float	int cast_to_float(void *from, void *out)	med	cdbeval
+004720d0	F	word_join_hi	void word_join_hi(void *value)	med	cdbeval
+004720f0	F	cast_to_double	int cast_to_double(void *from, void *out)	med	cdbeval
+004725e0	F	cast_to_fract_common	int cast_to_fract_common(void *from, void *out)	low	cdbeval
+00472850	F	double_to_fract_words	void double_to_fract_words(double d, void *out)	med	cdbeval
+00472970	F	cast_to_fract_3	void cast_to_fract_3(void *from, void *out)	low	cdbeval
+00472990	F	cast_to_fract_2	void cast_to_fract_2(void *from, void *out)	low	cdbeval
+004729b0	F	cast_to_fract_4	void cast_to_fract_4(void *from, void *out)	low	cdbeval
+004729e0	F	cast_to_fract_0	void cast_to_fract_0(void *from, void *out)	low	cdbeval
+00472a10	F	cast_to_fract_1	void cast_to_fract_1(void *from, void *out)	low	cdbeval
+00472a40	F	eval_muldiv	int eval_muldiv(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00472c20	F	mul_values	int mul_values(void *a, void *b, void *out)	high	cdbeval
+00472f50	F	sign_extend_word	void sign_extend_word(void *value)	med	cdbeval
+00472f90	F	double_to_fract_value	void double_to_fract_value(void *value)	med	cdbeval
+00473000	F	fract_mul_helper	void fract_mul_helper(void *value)	low	cdbeval
+00473180	F	div_values	int div_values(void *a, void *b, void *out)	high	cdbeval
+00473600	F	dw_mul	int dw_mul(unsigned long *a, unsigned long *b, int *out)	med	cdbeval
+004736e0	F	mul_int_values	int mul_int_values(void *a, void *b, unsigned long *out)	med	cdbeval
+00473870	F	div_double_values	int div_double_values(void *a, void *b, void *out)	med	cdbeval
+00473910	F	eval_add	int eval_add(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00473c40	F	add_values	int add_values(void *a, void *b, void *out)	high	cdbeval
+00473ef0	F	add_words	int add_words(void *a, void *b, int n)	low	cdbeval
+00474130	F	eval_sub	int eval_sub(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+004743e0	F	sub_values	int sub_values(void *a, void *b, void *out)	high	cdbeval
+00474410	F	ptr_sub_int_values	int ptr_sub_int_values(void *ptr, void *idx, void *out)	med	cdbeval
+00474530	F	ptr_diff_values	int ptr_diff_values(void *p, void *q, void *out)	med	cdbeval
+00474630	F	eval_bitop	int eval_bitop(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00474870	F	shl_values	int shl_values(void *a, void *b, void *out)	high	cdbeval
+00474c50	F	shr_values	int shr_values(void *a, void *b, void *out)	high	cdbeval
+00475020	F	and_values	int and_values(void *a, void *b, void *out)	high	cdbeval
+00475090	F	xor_values	int xor_values(void *a, void *b, void *out)	high	cdbeval
+00475100	F	or_values	int or_values(void *a, void *b, void *out)	high	cdbeval
+00475170	F	mod_values	int mod_values(void *a, void *b, void *out)	high	cdbeval
+004754b0	F	eval_relational	int eval_relational(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00475b00	F	ge_values	int ge_values(void *a, void *b, void *out)	high	cdbeval
+00475b50	F	eq_values	int eq_values(void *a, void *b, void *out)	high	cdbeval
+00475ec0	F	le_values	int le_values(void *a, void *b, void *out)	high	cdbeval
+00475f10	F	gt_values	int gt_values(void *a, void *b, void *out)	high	cdbeval
+00475f30	F	lt_values	int lt_values(void *a, void *b, void *out)	high	cdbeval
+00476520	F	eval_equality	int eval_equality(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00476860	F	ne_values	int ne_values(void *a, void *b, void *out)	high	cdbeval
+004768a0	F	eval_logical	int eval_logical(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00476a90	F	logand_values	int logand_values(void *a, void *b, void *out)	high	cdbeval
+00476b00	F	logor_values	int logor_values(void *a, void *b, void *out)	high	cdbeval
+00476b70	F	eval_assign	int eval_assign(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00476f60	F	assign_values	int assign_values(void *lhs, void *rhs, void *out)	high	cdbeval
+00477020	F	eval_muldiv_assign	int eval_muldiv_assign(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00477250	F	eval_bitop_assign	int eval_bitop_assign(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+004774e0	F	eval_add_assign	int eval_add_assign(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+004777b0	F	eval_sub_assign	int eval_sub_assign(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00477a80	F	eval_comma	int eval_comma(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval
+00477b30	F	eval_hash	int eval_hash(void *plhs, void *prhs, int op, void *result_node, int do_eval)	med	cdbeval
+00477c60	F	eval_incdec	int eval_incdec(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval
+00478060	F	value_inc	int value_inc(void *value)	high	cdbeval
+00478190	F	value_dec	int value_dec(void *value)	high	cdbeval
+004782c0	F	eval_addr_of	int eval_addr_of(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval
+00478380	F	addr_of_value	int addr_of_value(void *value, void *out)	med	cdbeval
+00478410	F	eval_deref	int eval_deref(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval
+004784f0	F	eval_uplus	int eval_uplus(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval
+00478600	F	eval_uminus	int eval_uminus(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval
+004786c0	F	eval_compl	int eval_compl(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval
+00478750	F	compl_value	int compl_value(void *value, void *out)	high	cdbeval
+004788f0	F	eval_lognot	int eval_lognot(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval
+004789c0	F	lognot_value	int lognot_value(void *value, void *out)	high	cdbeval
+00478ba0	F	eval_sizeof	int eval_sizeof(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval
+00478c20	F	eval_call	int eval_call(void *pfunc, int op, void *result_node, int do_eval)	high	cdbeval
+00478d50	F	call_target_function	int call_target_function(void *func_node, void *result_node)	high	cdbeval
+00478e40	F	call_setup_run	void call_setup_run(void)	med	cdbeval
+00478ea0	F	call_setup_56000	int call_setup_56000(void *func_node, void *result_node)	high	cdbeval
+00479210	F	call_setup_56100	int call_setup_56100(void *func_node, void *result_node)	high	cdbeval
+00479550	F	call_setup_56800	int call_setup_56800(void *func_node, void *result_node)	high	cdbeval
+00479890	F	call_setup_56300	int call_setup_56300(void *func_node, void *result_node)	high	cdbeval
+00479bd0	F	call_setup_96000	int call_setup_96000(void *func_node, void *result_node)	high	cdbeval
+00479f40	F	push_args_56000	void push_args_56000(void *arglist, int *sp)	med	cdbeval
+00479fe0	F	push_args_56300	void push_args_56300(void *arglist, int *sp)	med	cdbeval
+0047a0f0	F	push_args_96000	void push_args_96000(void *arglist, int *sp)	med	cdbeval
+0047a200	F	eval_array_to_ptr	int eval_array_to_ptr(void *pchild, int op, void *result_node, int do_eval)	med	cdbeval
+0047a240	F	array_to_ptr_value	int array_to_ptr_value(void *value, void *out)	med	cdbeval
+0047a2d0	F	eval_func_to_ptr	int eval_func_to_ptr(void *pchild, int op, void *result_node, int do_eval)	med	cdbeval
+0047a310	F	func_to_ptr_value	int func_to_ptr_value(void *value, void *out)	med	cdbeval
+0047a3a0	F	copy_node_type	void copy_node_type(void *dst_node, void *src_node)	high	cdbeval
+0047a400	F	usual_arith_conv	void usual_arith_conv(void *pnode1, void *pnode2)	high	cdbeval
+0047a710	F	integral_promote	void integral_promote(void *pnode)	high	cdbeval
+0047a760	F	make_cast_node	void *make_cast_node(int kind, void *node)	high	cdbeval
+0047a7f0	F	clone_tree	void *clone_tree(void *node)	high	cdbeval
+0047a8a0	F	clone_arglist	void *clone_arglist(void *arglist)	high	cdbeval
+0047a900	F	host_write	long host_write(int hfd, char *buf, unsigned long n)	high	cdbhost
+0047a9a0	F	host_read	long host_read(int hfd, char *buf, unsigned long n)	high	cdbhost
+0047aa10	F	host_close	int host_close(int hfd)	high	cdbhost
+0047aa90	F	host_open	int host_open(char *path, unsigned long oflag, unsigned long pmode)	high	cdbhost
+0047abc0	F	host_lseek	long host_lseek(int hfd, long off, int whence)	high	cdbhost
+0047ac00	F	host_io_init	void host_io_init(void)	high	cdbhost
+0047ade0	F	host_io_mode	int host_io_mode(void)	med	cdbhost
+0047adf0	F	host_io_service	int host_io_service(void)	high	cdbhost
+0047b110	F	host_io_get_ret_arg	int host_io_get_ret_arg(void)	med	cdbhost
+0047b400	F	host_io_get_ret_arg2	int host_io_get_ret_arg2(void)	med	cdbhost
+0047b670	F	prof_out_open	void prof_out_open(char *objname, char *basename, char *ext)	high	profps
+0047b8b0	F	prof_out_close	void prof_out_close(void)	high	profps
+0047b8f0	F	ps_font	void ps_font(int op, int a, int b)	high	profps
+0047ba70	F	ps_flush_line	void ps_flush_line(void)	high	profps
+0047bad0	F	prof_heading	void prof_heading(char *fmt, ...)	med	profps
+0047bb70	F	ps_new_page	void ps_new_page(void)	high	profps
+0047bcb0	F	ps_putc	void ps_putc(int c)	high	profps
+0047bdf0	F	prof_printf	void prof_printf(char *fmt, ...)	high	profps
+0047bf70	F	prof_put_number	void prof_put_number(char *spec, int dest)	med	profps
+0047c2c0	F	lst_write_buf	void lst_write_buf(void)	high	profdir
+0047c530	F	prof_parse_call_directive	void prof_parse_call_directive(void *src_line, char *text)	high	profdir
+0047c6e0	F	cg_lookup_name	void *cg_lookup_name(char *name, int type)	med	profdir
+0047c710	F	prof_scan_call_directive	void prof_scan_call_directive(void *src_line, char *text, void *out)	high	profdir
+0047c8e0	F	prof_scan_identifier	char *prof_scan_identifier(char **pp, char *outbuf)	high	profdir
+0047ca00	F	cg_note_pc_change	void cg_note_pc_change(void *src_line, int a, int b, int cycles)	med	profdir
+0047cc20	F	cg_merge_nodes	void *cg_merge_nodes(void *node, void *other)	med	profdir
+0047cd50	F	cg_reaches	int cg_reaches(void *from, void *target, int mark)	med	profdir
+0047cde0	F	cg_merge_edges	void cg_merge_edges(void *node, void *other, void *dst_list, void *src_list, int kind)	med	profdir
+0047ced0	F	cg_merge_edge_counts	void cg_merge_edge_counts(void *list, void *node, void *other)	low	profdir
+0047cf30	F	cg_make_mother	void cg_make_mother(void)	med	profdir
+0047cfe0	F	cg_push_call	void cg_push_call(void *node, void *src_line, int cycles, int joint, void *ret_line)	med	profdir
+0047f090	F	parse_get_root	void *parse_get_root(void)	high	cdbparse
+0047f0a0	F	new_node	void *new_node(void)	high	cdbparse
+0047f180	F	parse_free_all	void parse_free_all(void)	med	cdbparse
+0047f1a0	F	parse_free_keep_nodes	void parse_free_keep_nodes(void)	med	cdbparse
+0047f1c0	F	free_node_list	void free_node_list(void *plist, int free_contents)	med	cdbparse
+0047f240	F	yyparse	int yyparse(void)	high	cdbparse
+004804c0	F	yyerror	int yyerror(char *msg)	high	cdblex
+00480520	F	mk_type_node	void *mk_type_node(int kind)	high	cdblex
+00480540	F	mk_binary_node	void *mk_binary_node(void *lhs, int op, void *rhs)	high	cdblex
+004805b0	F	mk_unary_node	void *mk_unary_node(int op, void *child)	high	cdblex
+00480610	F	mk_ternary_node	void *mk_ternary_node(void *cond, void *a, void *b)	high	cdblex
+00480690	F	mk_call_node	void *mk_call_node(void *func, void *arglist)	high	cdblex
+00480740	F	mk_arglist	void *mk_arglist(void *node)	high	cdblex
+00480760	F	arglist_append	void *arglist_append(void *list, void *node)	high	cdblex
+00480780	F	track_list_cell	void track_list_cell(void *p)	low	cdblex
+004807b0	F	mk_member_dot	void *mk_member_dot(void *base, char *name)	high	cdblex
+00480a10	F	mk_member_arrow	void *mk_member_arrow(void *base, char *name)	high	cdblex
+00480cb0	F	yylex	int yylex(void)	high	cdblex
+00481220	F	lex_init	int lex_init(char *text)	high	cdblex
+004812d0	F	lex_get_column	int lex_get_column(void)	med	cdblex
+004812e0	F	yywrap	int yywrap(void)	high	cdblex
+004812f0	F	keyword_lookup	int keyword_lookup(char *word)	high	cdblex
+00481360	F	lex_typedef_name	void *lex_typedef_name(char *name)	med	cdblex
+004813c0	F	lex_symbol_name	void *lex_symbol_name(char *name)	med	cdblex
+00481440	F	lex_int_const	void *lex_int_const(char *text, int base)	high	cdblex
+00481670	F	lex_float_const	void *lex_float_const(char *text)	high	cdblex
+00481760	F	lex_char_const	void *lex_char_const(char *text)	high	cdblex
+004819e0	F	yy_scan	int yy_scan(void)	high	cdblex
+00481d20	F	int_list_contains	int int_list_contains(int *list, int value)	low	cdblex
+00481d50	F	cg_print_tree_text	void cg_print_tree_text(void)	high	profgraph
+00481dd0	F	cg_print_tree_node	void cg_print_tree_node(void *node)	high	profgraph
+00481f00	F	cg_print_tree_children	void cg_print_tree_children(void *node)	high	profgraph
+00482000	F	cg_ps_call_tree	void cg_ps_call_tree(void)	high	profgraph
+004820d0	F	cg_ps_tree_node	void cg_ps_tree_node(void *node, int x)	high	profgraph
+00482250	F	cg_ps_tree_flush	void cg_ps_tree_flush(void)	med	profgraph
+004822b0	F	cg_ps_tree_box	void cg_ps_tree_box(int x, void *node, int expanded)	high	profgraph
+00482310	F	cg_ps_call_graph	void cg_ps_call_graph(void)	high	profgraph
+004823e0	F	cgl_layout_node	void cgl_layout_node(void *node)	med	profgraph
+00482490	F	cgl_init_shape	void cgl_init_shape(void *node)	low	profgraph
+00482580	F	cgl_next_child	int cgl_next_child(void *node, void **out)	med	profgraph
+00482610	F	cgl_add_point	void *cgl_add_point(void *prev, int x, int y)	med	profgraph
+004826a0	F	cgl_compute_edges	void cgl_compute_edges(void)	low	profgraph
+00482800	F	cgl_place_child	void cgl_place_child(void)	low	profgraph
+00482930	F	cgl_commit_shape	void cgl_commit_shape(void *cand)	low	profgraph
+00482a70	F	cgl_del_point	void *cgl_del_point(void *pt)	med	profgraph
+00482ab0	F	cgl_segments_hit	int cgl_segments_hit(void *p, void *q)	low	profgraph
+00482c80	F	cgl_next_candidate	int cgl_next_candidate(void *cand)	low	profgraph
+00482e50	F	cgl_score	void cgl_score(void *cand)	low	profgraph
+00482fb0	F	cgl_finish	void cgl_finish(void)	low	profgraph
+00483070	F	cg_ps_graph_node	void cg_ps_graph_node(void *node, int x, int y, int *size)	high	profgraph
+004831f0	F	cg_ps_graph_arrow	void cg_ps_graph_arrow(int x1, int y1, int x2, int y2)	high	profgraph
+0050578c	D	g_sim	void *	med	shared	4
+00505798	D	g_cur_dev	void *	med	shared	4
+00505790	D	g_target	void *	med	shared	4
+00505794	D	g_host_if	void *	low	shared	4
+00505b64	D	g_dev	void *	med	shared	4
+00503f44	D	cdb_target_magic	int	high	cdbeval	4
+00503f48	D	cdb_word_mask	unsigned long	high	cdbeval	4
+00503f4c	D	cdb_hiword_mask	unsigned long	med	cdbeval	4
+00503f50	D	cdb_addr_mask	unsigned long	med	cdbeval	4
+00503f54	D	cdb_word_bits	int	high	cdbeval	4
+00503f58	D	cdb_mask_58	unsigned long	low	cdbeval	4
+00503f5c	D	cdb_sign_bit	unsigned long	high	cdbeval	4
+00503f60	D	cdb_mask_60	unsigned long	low	cdbeval	4
+00503f40	D	frame_locals_buf	char *	med	cdbeval	4
+004d3f94	D	frame_locals_buf_size	int	med	cdbeval	4
+00503f64	D	host_io_mode_var	int	high	cdbhost	4
+00503f68	D	host_io_char	char	med	cdbhost	1
+005046a8	D	parse_root	void *	high	cdbparse	4
+005046ac	D	node_alloc_list	void *	high	cdbparse	4
+005046b0	D	tmp_list_cells	void *	med	cdbparse	4
+00504590	D	yyval_node	void *	med	cdbparse	4
+005045a0	D	yy_state_stack	int *	med	cdbparse	4
+005045a4	D	yy_val_stack	int *	med	cdbparse	4
+005045a8	D	yyerror_buf	char	med	cdbparse	256
+005057c0	D	yytext_buf	char	high	cdblex	256
+005050e8	D	lex_input_line	char	high	cdblex	256
+005050d8	D	lex_pos	int	high	cdblex	4
+005051f4	D	lex_token_col	int	med	cdblex	4
+00502068	D	snap_reloc_list	void *	med	cdbwatch	4
+0050206c	D	snap_file	void *	med	cdbwatch	4
+00502074	D	snap_error	int	low	cdbwatch	4
+005020c8	D	watch_line_buf	char *	med	cdbwatch	4
+005020cc	D	watch_line_buf_size	int	med	cdbwatch	4
+00503f70	D	ps_file	void *	high	profps	4
+00503fbc	D	lst_file	void *	high	profps	4
+00503fb8	D	prof_date_str	char *	med	profps	4
+00503f80	D	prof_version_str	char	med	profps	32
+0050415c	D	prof_objname	char *	med	profps	4
+00504160	D	ps_line_buf	char	high	profps	128
+00503f74	D	ps_line_len	int	high	profps	4
+00503f78	D	ps_line_no	int	high	profps	4
+00503f7c	D	ps_need_page	int	high	profps	4
+00504158	D	ps_page_no	int	high	profps	4
+00503fb4	D	ps_font_sp	int	med	profps	4
+005041e8	D	ps_font_stack	int	med	profps	160
+00503fc8	D	prof_fmt_buf	char	high	profps	1024
+00503fa8	D	lst_line_no	int	med	profdir	4
+00503fac	D	lst_page_no	int	med	profdir	4
+00503fb0	D	lst_col	int	med	profdir	4
+004d4ef0	D	ps_font_names	char *	high	profps	28
+005052a8	D	cg_depth	int	med	profgraph	4
+00505270	D	cg_ps_y	int	med	profgraph	4

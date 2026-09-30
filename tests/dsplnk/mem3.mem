@@ -1,0 +1,4 @@
+; mem3: RESERVE - carve out reserved address ranges
+RESERVE p $0 TO $ff
+RESERVE x $ffe0 TO $ffff
+RESERVE y $0 $1f

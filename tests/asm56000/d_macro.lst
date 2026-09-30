@@ -1,0 +1,217 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  17:23:34  d_macro.asm
+  Page 1
+
+
+
+1                        ; macros: arguments, concatenation, value substitution,
+ local labels,
+2                        ; nested definitions and calls, EXITM, @ARG/@CNT/@MAC/@
+MXP, DUP family
+3                                  opt     mex,cex
+4         P:0100                   org     p:$100
+5                        ldimm     macro   reg,val
+6    m                             move    #val,reg
+7    m                             endm
+8                        addto     macro   src,dst
+9    m                             add     src,dst
+10   m                             endm
+11                       clr2      macro
+12   m                             clr     a
+13   m                             clr     b
+14   m                             endm
+15                       concat    macro   n
+16   m                             move    r\n,x:save\n
+17   m                             endm
+18                       valsub    macro   sym
+19   m                             dc      ?sym,%sym
+20   m                             endm
+21                       loclab    macro
+22   m                   _lab      nop
+23   m                             jmp     _lab
+24   m                             endm
+25                       quote     macro   str
+26   m                             dc      "str"
+27   m                             dc      '\str'
+28   m                             endm
+29                       cnt       macro   p1,p2,p3
+30   m                             if      @arg(3)
+31   m                             dc      3,@cnt()
+32   m                             else
+33   m                             if      @arg(2)
+34   m                             dc      2,@cnt()
+35   m                             else
+36   m                             dc      1,@cnt()
+37   m                             endif
+38   m                             endif
+39   m                             endm
+40                       early     macro   v
+41   m                             dc      v
+42   m                             exitm
+43   m                             dc      v+1
+44   m                             endm
+45                       outer     macro   name,v
+46   m                   name      macro
+47   m                             dc      v
+48   m                             endm
+49   m                             endm
+50                       recur     macro   depth
+51   m                             dc      depth
+52   m                             if      depth>0
+53   m                             recur   depth-1
+54   m                             endif
+55   m                             endm
+56                       isdef     macro   mname
+57   m                             dc      @mac(mname),@mxp()
+58   m                             endm
+59        000010         save0     equ     $10
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  17:23:34  d_macro.asm
+  Page 2
+
+
+
+60        000015         save5     equ     $15
+**** 61 [d_macro.asm 61]: WARNING --- Number of macro expansion arguments is gre
+ater than definition (Operand field)
+61                                 ldimm   x0,$123456
+**** 62 [d_macro.asm 62]: WARNING --- Number of macro expansion arguments is gre
+ater than definition (Operand field)
+62                                 ldimm   y1,1
+63                                 addto   x0,a
+64    +   P:0100 200040            add     x0,a
+65                                 clr2
+66                                 concat  0
+67    +   P:0101 601000            move              r0,x:save0
+68                                 concat  5
+69    +   P:0102 651500            move              r5,x:save5
+70                                 loclab
+71    +   P:0103 000000  _lab      nop
+72    +   P:0104 0C0103            jmp     _lab
+73                                 loclab
+74    +   P:0105 000000  _lab      nop
+75    +   P:0106 0C0105            jmp     _lab
+76        X:0000                   org     x:$0
+77                                 valsub  save5
+78   d+   X:0000 000015            dc      21,15
+     d           00000F
+79                                 valsub  save0
+80   d+   X:0002 000010            dc      16,10
+     d           00000A
+81                                 quote   hello
+82   d+   X:0004 68656C            dc      'hello'
+     d           6C6F00
+83   d+   X:0006 5C7374            dc      '\str'
+     d           720000
+**** 84 [d_macro.asm 73]: WARNING --- Number of macro expansion arguments is les
+s than definition (Operand field)
+84                                 cnt     1
+85    +                            if      @arg(3)
+87    +                            else
+88    +                            if      @arg(2)
+90    +                            else
+91   d+   X:0008 000001            dc      1,@cnt()
+92    +                            endif
+93    +                            endif
+**** 94 [d_macro.asm 74]: WARNING --- Number of macro expansion arguments is les
+s than definition (Operand field)
+94                                 cnt     1,2
+95    +                            if      @arg(3)
+97    +                            else
+98    +                            if      @arg(2)
+99   d+   X:0009 000002            dc      2,@cnt()
+100   +                            else
+102   +                            endif
+103   +                            endif
+104                                cnt     1,2,3
+105   +                            if      @arg(3)
+106  d+   X:000A 000003            dc      3,@cnt()
+107   +                            else
+113   +                            endif
+114                                early   5
+115  d+   X:000B 000005            dc      5
+116   +                            exitm
+117                                outer   inmac,$77
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  17:23:34  d_macro.asm
+  Page 3
+
+
+
+**** 118 [d_macro.asm 77]: ERROR --- Macro cannot be redefined: inmac
+118   +                  inmac     macro
+119  d+   X:000C 000077            dc      $77
+**** 120 [d_macro.asm 77]: ERROR --- ENDM without associated MACRO directive
+120   +                            endm
+121                                inmac
+122  d+   X:000D 000077            dc      $77
+123                                recur   3
+124  d+   X:000E 000003            dc      3
+125   +                            if      3>0
+126   +                            recur   3-1
+127  d+   X:000F 000002            dc      3-1
+128   +                            if      3-1>0
+129   +                            recur   3-1-1
+130  d+   X:0010 000001            dc      3-1-1
+131   +                            if      3-1-1>0
+132   +                            recur   3-1-1-1
+133  d+   X:0011 000000            dc      3-1-1-1
+134   +                            if      3-1-1-1>0
+136   +                            endif
+137   +                            endif
+138   +                            endif
+139   +                            endif
+140                                isdef   ldimm
+141   +                            dc      @mac(ldimm),@mxp()
+142                                isdef   nothere
+143   +                            dc      @mac(nothere),@mxp()
+144                                pmacro  clr2,ldimm
+145                                dc      @mac(clr2)
+146                      ; DUP family
+147                                dup     3
+148  m                             dc      *
+149  m                             endm
+150  d+   X:0012 000012            dc      *
+151  d+   X:0013 000013            dc      *
+152  d+   X:0014 000014            dc      *
+153                                dupa    val,1,2,$10
+154  m                             dc      val
+155  m                             endm
+156  d+   X:0015 000001            dc      1
+157  d+   X:0016 000002            dc      2
+158  d+   X:0017 000010            dc      $10
+159                                dupa    reg,x0,x1
+160  m                             endm
+161                                dupc    ch,'AB9'
+162  m                             dc      "ch"
+163  m                             endm
+164  d+   X:0018 000041            dc      'A'
+165  d+   X:0019 000042            dc      'B'
+166  d+   X:001A 000039            dc      '9'
+167                                dupc    d,'123'
+168  m                             dc      d*2
+169  m                             endm
+170  d+   X:001B 000002            dc      1*2
+171  d+   X:001C 000004            dc      2*2
+172  d+   X:001D 000006            dc      3*2
+173                                dupf    i,1,4
+174  m                             dc      i
+175  m                             endm
+176  d+   X:001E 000001            dc      1
+177  d+   X:001F 000002            dc      2
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  17:23:34  d_macro.asm
+  Page 4
+
+
+
+178  d+   X:0020 000003            dc      3
+179  d+   X:0021 000004            dc      4
+180                                dupf    j,10,0,-5
+181  m                             dc      j
+182  m                             endm
+183  d+   X:0022 00000A            dc      10
+184  d+   X:0023 000005            dc      5
+185  d+   X:0024 000000            dc      0
+186                                end
+
+2    Errors
+4    Warnings
+
+

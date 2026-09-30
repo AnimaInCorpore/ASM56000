@@ -1,0 +1,2376 @@
+# merged by mergenames.py from re/names/SIM56000/*.names.txt
+00401000	F	main	int main(int argc, char **argv, char **envp)	high	simmain	
+00401140	F	igrp_map_kind	int igrp_map_kind(void *rec)	high	exec	
+00401250	F	igrp_names_hook	void igrp_names_hook(void *rec)	low	exec	
+00401260	F	igrp_fill_mode_names	void igrp_fill_mode_names(char **tab)	high	exec	
+00401380	F	igrp_count_instr	void igrp_count_instr(void *rec)	high	exec	
+004016a0	F	igrp_mode_bucket	int igrp_mode_bucket(int mode)	high	exec	
+00401700	F	igrp_method_401700		low	hidden	
+00401860	F	igrp_method_401860		low	hidden	
+004018b0	F	igrp_method_4018b0		low	hidden	
+00401910	F	igrp_method_401910		low	hidden	
+00401970	F	igrp_method_401970		low	hidden	
+00401990	F	igrp_method_401990		low	hidden	
+00401a10	F	igrp_method_401a10		low	hidden	
+00401a50	F	emi1_m_poke	int emi1_m_poke(int grp, int reg, unsigned long *val)	med	exec	
+00401b20	F	emi1_touch_reg	void emi1_touch_reg(int reg)	med	exec	
+00401be0	F	emi1_m_clock	void emi1_m_clock(int grp, int dev)	med	exec	
+00401c70	F	emi1_m_io_write	int emi1_m_io_write(int grp, unsigned long addr, unsigned long val)	med	exec	
+00401da0	F	emi1_m_io_read	int emi1_m_io_read(int grp, unsigned long addr, unsigned long *out, int side)	med	exec	
+00401eb0	F	emi1_m_reset	void emi1_m_reset(int grp)	med	exec	
+00401fa0	F	emi1_clear_pending	void emi1_clear_pending(void)	med	exec	
+00401fc0	F	emi1_m_irq_poll	int emi1_m_irq_poll(int grp)	med	exec	
+00402010	F	emi1_m_irq_ack	void emi1_m_irq_ack(int grp, unsigned long vec)	med	exec	
+00402060	F	emi1_write_reg	void emi1_write_reg(int reg, unsigned long val)	med	exec	
+00402310	F	emi1_read_reg	void emi1_read_reg(int reg, unsigned long *out, int side_effect)	med	exec	
+004024b0	F	emi1_next_read_addr	int emi1_next_read_addr(unsigned long ecsr, int idx)	low	exec	
+004024f0	F	emi1_next_write_addr	int emi1_next_write_addr(unsigned long ecsr, int idx)	low	exec	
+00402530	F	emi1_clock	void emi1_clock(int dev)	med	exec	
+00403330	F	emi1_row_addr	void emi1_row_addr(unsigned long mode, unsigned long addr, void *pins, unsigned long ctl)	med	exec	
+004036c0	F	emi1_col_addr	void emi1_col_addr(unsigned long mode, unsigned long addr, void *pins, unsigned long ctl, int col)	med	exec	
+00403950	F	emi1_sample_dram_data	void emi1_sample_dram_data(unsigned long *pins, int dev)	med	exec	
+00403a10	F	emi1_merge_shift_data	void emi1_merge_shift_data(unsigned long *pins)	low	exec	
+00403a40	F	emi1_drive_dram_data	void emi1_drive_dram_data(unsigned long *pins, int dev)	med	exec	
+00403ab0	F	emi1_shift_in	void emi1_shift_in(unsigned long *pins)	low	exec	
+00403ae0	F	core_m_peek	int core_m_peek(int dev, int reg, unsigned long *out)	high	exec	
+00403c50	F	core_write_reg	int core_write_reg(int dev, int reg, unsigned long *val)	high	exec	
+00403f70	F	core_m_clock	void core_m_clock(int dev)	high	exec	
+00404040	F	core_m_reset	void core_m_reset(int dev, int a, int kind, long pinval)	med	exec	
+00404130	F	core_m_irq_ack	int core_m_irq_ack(int dev, unsigned long vec)	med	exec	
+004042b0	F	core_set_reg	void core_set_reg(int reg, unsigned long val)	high	exec	
+004042d0	F	core_set_reg_quiet	void core_set_reg_quiet(int reg, unsigned long val)	high	exec	
+004042f0	F	core_m_io_write	int core_m_io_write(int dev, unsigned long addr, unsigned long val)	med	exec	
+00404480	F	core_m_io_read	int core_m_io_read(int dev, unsigned long addr, unsigned long *out)	med	exec	
+004045f0	F	core_store_reg_masked	void core_store_reg_masked(int reg, unsigned long val)	med	exec	
+00404690	F	core_touch_reg	void core_touch_reg(int reg)	high	exec	
+004046a0	F	core_touch_reg_ex	void core_touch_reg_ex(int reg, int quiet)	high	exec	
+004048d0	F	core_touch_reg_quiet	void core_touch_reg_quiet(int reg)	high	exec	
+004048e0	F	core_get_reg	void core_get_reg(int reg, unsigned long *out)	high	exec	
+00404900	F	core_copy_reg	void core_copy_reg(int dst, int src)	high	exec	
+00404920	F	core_copy_reg_quiet	void core_copy_reg_quiet(int dst, int src)	high	exec	
+00404940	F	core_read_copy	void core_read_copy(unsigned long src, int dst)	high	exec	
+00404960	F	core_touch_read	void core_touch_read(unsigned long reg)	med	exec	
+00404a70	F	core_reset_io	void core_reset_io(int hard)	med	exec	
+00404ad0	F	core_reset	void core_reset(void)	high	exec	
+00404e30	F	core_reset_pipeline	void core_reset_pipeline(void)	high	exec	
+00405000	F	core_fetch_decode	void core_fetch_decode(void)	med	exec	
+00405440	F	core_decode_ctl	void core_decode_ctl(void)	med	exec	
+00405b40	F	core_clock	void core_clock(int phase_step)	high	exec	
+00408510	F	core_sample_pins	void core_sample_pins(void)	med	exec	
+00408a30	F	core_cc_test	unsigned long core_cc_test(int cc)	high	exec	
+00408b80	F	core_ss_dec	void core_ss_dec(void)	high	exec	
+00408bd0	F	core_ss_push	void core_ss_push(int ssh_src, int ssl_src)	high	exec	
+00408c70	F	core_ss_pop	void core_ss_pop(int ssh_dst, int ssl_dst)	high	exec	
+00408d20	F	core_read_to_bus	void core_read_to_bus(unsigned long src, int dst)	high	exec	
+00409170	F	core_agu_setup	void core_agu_setup(unsigned long ea, int latch)	med	exec	
+00409230	F	core_agu_calc	void core_agu_calc(unsigned long mode, unsigned long rn)	high	exec	
+00409440	F	bit_reverse16	void bit_reverse16(unsigned long v, unsigned long *out)	high	exec	
+00409470	F	core_agu_writeback	void core_agu_writeback(unsigned long ea, int flag)	med	exec	
+004094c0	F	core_ext_addr_match	int core_ext_addr_match(int space, unsigned long addr)	low	exec	
+00409530	F	core_mem_write	void core_mem_write(unsigned long space, unsigned long addr, unsigned long *data, unsigned long strobe)	high	exec	
+00409730	F	core_ext_addr	unsigned long core_ext_addr(unsigned long addr)	low	exec	
+00409750	F	core_irq_arbitrate	int core_irq_arbitrate(void)	high	exec	
+004098a0	F	core_irq_scan	int core_irq_scan(void)	high	exec	
+00409b10	F	core_irq_ack	void core_irq_ack(void)	med	exec	
+00409b40	F	core_mem_read	void core_mem_read(unsigned long space, unsigned long addr, unsigned long *data, unsigned long strobe)	high	exec	
+00409dd0	F	core_write_from_bus	void core_write_from_bus(int src, int dst)	high	exec	
+00409f20	F	core_do_loop_end	void core_do_loop_end(void)	med	exec	
+00409fa0	F	core_bit_test	int core_bit_test(void)	high	exec	
+00409fd0	F	core_bit_test_not	int core_bit_test_not(void)	high	exec	
+0040a000	F	core_bit_op	void core_bit_op(void)	high	exec	
+0040a0a0	F	dax_m_poke	int dax_m_poke(int grp, int reg, unsigned long *val)	high	exec	
+0040a170	F	dax_m_clock	void dax_m_clock(int grp)	high	exec	
+0040a1f0	F	dax_m_io_write	int dax_m_io_write(int grp, unsigned long addr, unsigned long val)	high	exec	
+0040a2d0	F	dax_m_io_read	int dax_m_io_read(int grp, unsigned long addr, unsigned long *out, int side)	high	exec	
+0040a380	F	dax_m_reset	void dax_m_reset(int grp)	high	exec	
+0040a3f0	F	dax_reset_regs	void dax_reset_regs(void)	med	exec	
+0040a460	F	dax_m_irq_poll	int dax_m_irq_poll(int grp)	high	exec	
+0040a4c0	F	dax_m_irq_ack	void dax_m_irq_ack(int grp, unsigned long vec)	high	exec	
+0040a530	F	dax_write_reg	void dax_write_reg(int reg, unsigned long val)	med	exec	
+0040a640	F	dax_touch_reg	void dax_touch_reg(int reg)	high	exec	
+0040a700	F	dax_read_reg	void dax_read_reg(int reg, unsigned long *out, int side_effect)	med	exec	
+0040a740	F	dax_clock	void dax_clock(int dev)	med	exec	
+0040ad60	F	gpio_m_peek	int gpio_m_peek(int grp, int reg, unsigned long *out)	med	exec	
+0040adb0	F	gpio_m_poke	int gpio_m_poke(int grp, int reg, unsigned long *val)	med	exec	
+0040ae40	F	gpio_m_clock	void gpio_m_clock(int grp)	med	exec	
+0040ae50	F	gpio_m_io_write	int gpio_m_io_write(int grp, unsigned long addr, unsigned long val)	med	exec	
+0040aed0	F	gpio_m_io_read	int gpio_m_io_read(int grp, unsigned long addr, unsigned long *out, int side)	med	exec	
+0040af60	F	gpio_m_reset	void gpio_m_reset(int grp)	med	exec	
+0040afe0	F	gpio_reset_regs	void gpio_reset_regs(void)	med	exec	
+0040b000	F	gpio_write_reg	void gpio_write_reg(int grp, int reg, unsigned long val)	med	exec	
+0040b0f0	F	gpio_touch_reg	void gpio_touch_reg(int reg)	high	exec	
+0040b1b0	F	gpio_read_reg	void gpio_read_reg(int grp, int reg, unsigned long *out, int sample_pins)	med	exec	
+0040b280	F	emi2_m_poke	int emi2_m_poke(int grp, int reg, unsigned long *val)	med	exec	
+0040b350	F	emi2_touch_reg	void emi2_touch_reg(int reg)	med	exec	
+0040b410	F	emi2_m_clock	void emi2_m_clock(int grp, int dev)	med	exec	
+0040b4a0	F	emi2_m_io_write	int emi2_m_io_write(int grp, unsigned long addr, unsigned long val)	med	exec	
+0040b5d0	F	emi2_m_io_read	int emi2_m_io_read(int grp, unsigned long addr, unsigned long *out, int side)	med	exec	
+0040b6e0	F	emi2_m_reset	void emi2_m_reset(int grp)	med	exec	
+0040b7d0	F	emi2_clear_pending	void emi2_clear_pending(void)	med	exec	
+0040b7f0	F	emi2_m_irq_poll	int emi2_m_irq_poll(int grp)	med	exec	
+0040b860	F	emi2_m_irq_ack	void emi2_m_irq_ack(int grp, unsigned long vec)	med	exec	
+0040b900	F	emi2_write_reg	void emi2_write_reg(int reg, unsigned long val)	med	exec	
+0040bbc0	F	emi2_read_reg	void emi2_read_reg(int reg, unsigned long *out, int side_effect)	med	exec	
+0040bd40	F	emi2_next_read_addr	int emi2_next_read_addr(unsigned long ecsr, int idx)	low	exec	
+0040bda0	F	emi2_check_wrap	void emi2_check_wrap(unsigned long ecsr, int idx)	low	exec	
+0040be40	F	emi2_next_write_addr	int emi2_next_write_addr(unsigned long ecsr, int idx)	low	exec	
+0040bea0	F	emi2_clock	void emi2_clock(int dev)	med	exec	
+0040cda0	F	emi2_row_addr	void emi2_row_addr(unsigned long mode, unsigned long addr, void *pins, unsigned long ctl)	med	exec	
+0040d130	F	emi2_col_addr	void emi2_col_addr(unsigned long mode, unsigned long addr, void *pins, unsigned long ctl, int col)	med	exec	
+0040d410	F	emi2_sample_dram_data	void emi2_sample_dram_data(unsigned long *pins, int dev)	med	exec	
+0040d4d0	F	emi2_merge_shift_data	void emi2_merge_shift_data(unsigned long *pins)	low	exec	
+0040d500	F	emi2_drive_dram_data	void emi2_drive_dram_data(unsigned long *pins, int dev)	med	exec	
+0040d570	F	emi2_shift_in	void emi2_shift_in(unsigned long *pins)	low	exec	
+0040d5a0	F	shi_m_poke	int shi_m_poke(int grp, int reg, unsigned long *val)	med	exec	
+0040d670	F	shi_m_clock	void shi_m_clock(int grp)	med	exec	
+0040d6f0	F	shi_m_io_write	int shi_m_io_write(int grp, unsigned long addr, unsigned long val)	med	exec	
+0040d7d0	F	shi_m_io_read	int shi_m_io_read(int grp, unsigned long addr, unsigned long *out, int side)	med	exec	
+0040d890	F	shi_m_reset	void shi_m_reset(int grp)	med	exec	
+0040d900	F	shi_reset_regs	void shi_reset_regs(void)	med	exec	
+0040d9a0	F	shi_m_irq_poll	int shi_m_irq_poll(int grp)	med	exec	
+0040da20	F	shi_m_irq_ack	void shi_m_irq_ack(int grp, unsigned long vec)	med	exec	
+0040dac0	F	shi_write_reg	void shi_write_reg(int reg, unsigned long val)	med	exec	
+0040dbc0	F	shi_touch_reg	void shi_touch_reg(int reg)	high	exec	
+0040dc80	F	shi_read_reg	void shi_read_reg(int reg, unsigned long *out, int side_effect)	med	exec	
+0040dd80	F	shi_clock	void shi_clock(int dev)	med	exec	
+0040fba0	F	pin_drive_update	void pin_drive_update(unsigned long ctl,int mode,void *pingrp,unsigned long mask)	med	exec	
+0040fc20	F	sai_iofile_parse	int sai_iofile_parse(char *text,void *state)	med	exec	
+0040fc80	F	sai_iofile_format	int sai_iofile_format(void *rec,int arg2,char *out)	low	exec	
+0040fe30	F	sai_load_input	void sai_load_input(int dev,void *rec)	med	exec	
+0040feb0	F	sai_write_reg	int sai_write_reg(int dev,int reg,unsigned long *val)	med	exec	
+0040ff80	F	sai_tick	void sai_tick(int dev)	med	exec	
+00410010	F	sai_write_io	int sai_write_io(int dev,unsigned long addr,unsigned long val)	med	exec	
+00410110	F	sai_read_io	int sai_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec	
+004101f0	F	sai_reset	int sai_reset(int dev)	med	exec	
+00410270	F	sai_reset_regs	void sai_reset_regs(void)	high	exec	
+00410300	F	sai_int_pending	long sai_int_pending(int dev)	med	exec	
+00410410	F	sai_int_ack	int sai_int_ack(int dev,long vec)	med	exec	
+00410550	F	sai_write_reg_core	void sai_write_reg_core(int reg,unsigned long val)	high	exec	
+00410770	F	sai_refresh_reg	void sai_refresh_reg(int reg)	high	exec	
+00410830	F	sai_read_reg_core	void sai_read_reg_core(int reg,unsigned long *out,int side)	high	exec	
+004108e0	F	sai_clock	void sai_clock(int dev)	med	exec	
+004122e0	F	sai_rx_decode_terms	void sai_rx_decode_terms(void)	med	exec	
+00412b20	F	sai_rx_terms_to_flags	void sai_rx_terms_to_flags(void)	med	exec	
+00412c70	F	sai_tx_decode_terms	void sai_tx_decode_terms(void)	med	exec	
+004131d0	F	sai_tx_terms_to_flags	void sai_tx_terms_to_flags(void)	med	exec	
+004132b0	F	periph_read_reg	int periph_read_reg(int dev,int reg,unsigned long *out)	high	exec	
+004132e0	F	timer_write_reg	int timer_write_reg(int dev,int reg,unsigned long *val)	high	exec	
+004133b0	F	timer_tick	void timer_tick(int dev)	high	exec	
+00413440	F	timer_write_io	int timer_write_io(int dev,unsigned long addr,unsigned long val)	high	exec	
+00413510	F	timer_read_io	int timer_read_io(int dev,unsigned long addr,unsigned long *out,int side)	high	exec	
+004135d0	F	timer_set_reg	void timer_set_reg(int reg,unsigned long val)	high	exec	
+004135f0	F	timer_reset	int timer_reset(int dev)	high	exec	
+00413690	F	timer_reset_regs	void timer_reset_regs(void)	high	exec	
+00413710	F	timer_int_pending	long timer_int_pending(int dev)	high	exec	
+004137a0	F	timer_int_ack	int timer_int_ack(int dev,long vec)	high	exec	
+00413840	F	timer_write_reg_core	void timer_write_reg_core(int reg,unsigned long val,int force)	high	exec	
+00413980	F	timer_set_tio	void timer_set_tio(int level)	med	exec	
+00413a00	F	timer_start_mode	void timer_start_mode(unsigned long tcsr)	med	exec	
+00413ae0	F	timer_refresh_reg	void timer_refresh_reg(int reg)	high	exec	
+00413ba0	F	timer_read_reg_core	void timer_read_reg_core(int reg,unsigned long *out,int side)	high	exec	
+00413bc0	F	timer_clock	void timer_clock(void)	high	exec	
+00413e60	F	timer_edge_match	int timer_edge_match(int level)	med	exec	
+00413ea0	F	timer_expire	void timer_expire(int mode)	med	exec	
+00413f70	F	iofmt_idle_format	int iofmt_idle_format(int arg1,long *word,char *out)	med	exec	
+00413fa0	F	pwm_write_reg	int pwm_write_reg(int dev,int reg,unsigned long *val)	med	exec	
+00414070	F	pwm_tick	void pwm_tick(int dev)	med	exec	
+00414100	F	pwm_write_io	int pwm_write_io(int dev,unsigned long addr,unsigned long val)	med	exec	
+004141d0	F	pwm_read_io	int pwm_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec	
+00414270	F	pwm_reset	int pwm_reset(int dev)	med	exec	
+004142f0	F	pwm_reset_regs	void pwm_reset_regs(void)	high	exec	
+004144a0	F	pwm_set_reg	void pwm_set_reg(int reg,unsigned long val)	high	exec	
+004144c0	F	pwm_int_pending	long pwm_int_pending(int dev)	med	exec	
+00414570	F	pwm_int_ack	int pwm_int_ack(int dev,long vec)	med	exec	
+00414640	F	pwm_write_reg_core	void pwm_write_reg_core(int reg,unsigned long val)	high	exec	
+00414920	F	pwm_chan_reload	void pwm_chan_reload(void *chan)	med	exec	
+00414960	F	pwm_refresh_reg	void pwm_refresh_reg(int reg)	high	exec	
+00414a20	F	pwm_read_reg_core	void pwm_read_reg_core(int reg,unsigned long *out)	high	exec	
+00414a40	F	pwm_clock	void pwm_clock(void)	med	exec	
+00414c20	F	pwm_drive_int	void pwm_drive_int(void *chan,int level,unsigned long bits)	low	exec	
+00414cd0	F	pwm_prescale_step	void pwm_prescale_step(int *carry2)	med	exec	
+00414e90	F	wdog_write_reg	int wdog_write_reg(int dev,int reg,unsigned long *val)	med	exec	
+00414f60	F	wdog_tick	void wdog_tick(int dev)	med	exec	
+00414ff0	F	wdog_write_io	int wdog_write_io(int dev,unsigned long addr,unsigned long val)	med	exec	
+004150b0	F	wdog_read_io	int wdog_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec	
+00415150	F	wdog_reset	int wdog_reset(int dev)	med	exec	
+004151d0	F	wdog_reset_regs	void wdog_reset_regs(void)	high	exec	
+00415210	F	wdog_set_reg	void wdog_set_reg(int reg,unsigned long val)	high	exec	
+00415230	F	wdog_int_pending	long wdog_int_pending(int dev)	med	exec	
+00415280	F	wdog_int_ack	int wdog_int_ack(int dev,long vec)	med	exec	
+004152d0	F	wdog_write_reg_core	void wdog_write_reg_core(int reg,unsigned long val)	high	exec	
+004153d0	F	wdog_refresh_reg	void wdog_refresh_reg(int reg)	high	exec	
+00415490	F	wdog_read_reg_core	void wdog_read_reg_core(int reg,unsigned long *out,int side)	high	exec	
+004154d0	F	wdog_stop	void wdog_stop(void)	med	exec	
+004154f0	F	wdog_clock	void wdog_clock(void)	high	exec	
+004155b0	F	simvar_read_reg	int simvar_read_reg(int dev,int reg,unsigned long *out)	low	exec	
+004156a0	F	simvar_write_reg	int simvar_write_reg(int dev,int reg,unsigned long *val)	low	exec	
+004157f0	F	simvar_write_io	int simvar_write_io(int dev,unsigned long addr,unsigned long val)	low	exec	
+00415930	F	simvar_refresh_reg	void simvar_refresh_reg(int reg)	med	exec	
+004159b0	F	port_read_reg	int port_read_reg(int dev,int reg,unsigned long *out)	high	exec	
+00415a00	F	port_write_reg	int port_write_reg(int dev,int reg,unsigned long *val)	med	exec	
+00415a90	F	port_reset	int port_reset(int dev,int full)	med	exec	
+00415b10	F	port_reset_regs	void port_reset_regs(void)	high	exec	
+00415b50	F	port_write_io	int port_write_io(int dev,unsigned long addr,unsigned long val)	med	exec	
+00415c00	F	port_read_io	int port_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec	
+00415cb0	F	port_write_io_c	int port_write_io_c(int dev,unsigned long addr,unsigned long val)	low	exec	
+00415d60	F	port_read_io_c	int port_read_io_c(int dev,unsigned long addr,unsigned long *out,int side)	low	exec	
+00415e10	F	port_refresh_reg	void port_refresh_reg(int reg)	high	exec	
+00415ed0	F	port_write_pins	void port_write_pins(int dev,int reg,unsigned long val)	high	exec	
+00416050	F	port_read_pins	void port_read_pins(int dev,int reg,unsigned long *out,int fetch)	high	exec	
+00416190	F	sci_iofile_parse	int sci_iofile_parse(char *text,void *state)	low	exec	
+00416260	F	sci_iofile_format	int sci_iofile_format(void *rec,int arg2,char *out)	low	exec	
+004162b0	F	sci_write_reg	int sci_write_reg(int dev,int reg,unsigned long *val)	med	exec	
+00416380	F	sci_tick	void sci_tick(int dev)	med	exec	
+00416410	F	sci_write_io	int sci_write_io(int dev,unsigned long addr,unsigned long val)	med	exec	
+004165b0	F	sci_read_io	int sci_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec	
+004166e0	F	sci_reset	int sci_reset(int dev)	med	exec	
+00416760	F	sci_reset_regs	void sci_reset_regs(void)	high	exec	
+004167f0	F	sci_set_reg	void sci_set_reg(int reg,unsigned long val)	high	exec	
+00416810	F	sci_int_pending	long sci_int_pending(int dev)	med	exec	
+00416890	F	sci_int_ack	int sci_int_ack(int dev,long vec)	med	exec	
+00416920	F	sci_write_reg_core	void sci_write_reg_core(int reg,unsigned long val)	high	exec	
+00416a90	F	sci_refresh_reg	void sci_refresh_reg(int reg)	high	exec	
+00416b50	F	sci_read_reg_core	void sci_read_reg_core(int reg,unsigned long *out,int side)	high	exec	
+00416c50	F	sci_reset_state	void sci_reset_state(void)	med	exec	
+00416d20	F	sci_clock	void sci_clock(int dev,int feed_input)	med	exec	
+00417ad0	F	sci_tx_abort_if_disabled	int sci_tx_abort_if_disabled(void)	low	exec	
+00417b20	F	sci_tx_frame_done	int sci_tx_frame_done(int rx_idle,int dev)	low	exec	
+00417d00	F	sci_build_frame_bits	void sci_build_frame_bits(void)	med	exec	
+00417ed0	F	sci_decode_frame	void sci_decode_frame(unsigned long *data,unsigned long *parity,unsigned long *stop)	med	exec	
+00417f50	F	sci_encode_frame	void sci_encode_frame(unsigned long word,unsigned long *frame)	med	exec	
+00418010	F	iofmt_idle_parse	int iofmt_idle_parse(char *text,void *state)	med	exec	
+00418080	F	ssi_write_reg	int ssi_write_reg(int dev,int reg,unsigned long *val)	med	exec	
+00418150	F	ssi_tick	void ssi_tick(int dev)	med	exec	
+004181e0	F	ssi_write_io	int ssi_write_io(int dev,unsigned long addr,unsigned long val)	med	exec	
+00418340	F	ssi_read_io	int ssi_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec	
+00418460	F	ssi_reset	int ssi_reset(int dev)	med	exec	
+004184e0	F	ssi_reset_regs	void ssi_reset_regs(void)	high	exec	
+00418570	F	ssi_set_reg	void ssi_set_reg(int reg,unsigned long val)	high	exec	
+00418590	F	ssi_int_pending	long ssi_int_pending(int dev)	med	exec	
+00418610	F	ssi_int_ack	int ssi_int_ack(int dev,long vec)	med	exec	
+00418690	F	ssi_write_reg_core	void ssi_write_reg_core(int reg,unsigned long val)	high	exec	
+004187c0	F	ssi_refresh_reg	void ssi_refresh_reg(int reg)	high	exec	
+00418880	F	ssi_read_reg_core	void ssi_read_reg_core(int reg,unsigned long *out,int side)	high	exec	
+00418910	F	ssi_reset_state	void ssi_reset_state(void)	med	exec	
+00418b20	F	ssi_clock	void ssi_clock(int dev,int feed_input)	med	exec	
+0041a300	F	hi_write_reg	int hi_write_reg(int dev,int reg,unsigned long *val)	high	exec	
+0041a570	F	hi_tick_a	void hi_tick_a(int dev)	med	exec	
+0041a600	F	hi_tick_b	void hi_tick_b(int dev)	med	exec	
+0041a690	F	hi_reset	int hi_reset(int dev)	med	exec	
+0041a710	F	hi_int_pending	long hi_int_pending(int dev)	med	exec	
+0041a770	F	hi_int_ack	int hi_int_ack(int dev,long vec)	med	exec	
+0041a830	F	hi_set_reg	void hi_set_reg(int reg,unsigned long val)	high	exec	
+0041a850	F	hi_write_io	int hi_write_io(int dev,unsigned long addr,unsigned long val)	med	exec	
+0041a9d0	F	hi_find_pin_shift	int hi_find_pin_shift(void)	med	exec	
+0041aa10	F	hi_read_io	int hi_read_io(int dev,unsigned long addr,unsigned long *out,int side)	med	exec	
+0041ab20	F	hi_refresh_reg	void hi_refresh_reg(int reg)	high	exec	
+0041abe0	F	hi_write_reg_masked	void hi_write_reg_masked(int reg,unsigned long val)	med	exec	
+0041acb0	F	hi_read_reg_core	void hi_read_reg_core(int reg,unsigned long *out,int side)	high	exec	
+0041ad00	F	hi_reset_state	void hi_reset_state(int full)	high	exec	
+0041adb0	F	hi_clock_a	void hi_clock_a(int dev,int feed_input)	med	exec	
+0041b760	F	hi_clock_b	void hi_clock_b(int dev,int feed_input)	med	exec	
+0041c140	F	device_install	int device_install(char *name, char *key)	med	devinit	
+0041c2c0	F	device_keygen	char * device_keygen(char *name)	med	devinit	
+0041c400	F	keygen_step	void keygen_step(void)	med	devinit	
+0041c430	F	keygen_mulmod	unsigned long keygen_mulmod(unsigned long a, unsigned long b)	med	devinit	
+0041c490	F	igrp_method_41c490		low	hidden	
+0041c750	F	insn_stat_classify	void insn_stat_classify(void *stat, void *dec)	low	devinit	
+0041c8b0	F	insn_stat_operands	void insn_stat_operands(void *stat, void *dec)	low	devinit	
+0041cb40	F	copy_operand4	void copy_operand4(long *dst, long *src)	med	devinit	
+0041cb60	F	eval_cc	unsigned long eval_cc(unsigned long ccr, int cc)	high	devinit	
+0041cd00	F	mnemonic_name	char * mnemonic_name(int id)	med	devinit	
+0041cd40	F	stat_lmove_class	int stat_lmove_class(void *stat, long a2, long a3, long *class_out, long *flag1, long a6, long *flag2)	low	devinit	
+0041ce10	F	operand_is_xy_pair	int operand_is_xy_pair(long *a, long *b)	low	devinit	
+0041ce50	F	dec_c0_enddo	void dec_c0_enddo(unsigned long opw, void *dec)	low	devinit	
+0041cfb0	F	swap_ptrs	void swap_ptrs(void **a, void **b)	med	devinit	
+0041cfd0	F	dec_alu	void dec_alu(unsigned long opw, void *dec)	med	devinit	
+0041d010	F	dec_flag_nomove	void dec_flag_nomove(void *dec)	med	devinit	
+0041d020	F	dec_alu_dp	void dec_alu_dp(unsigned long opw, void *dec)	med	devinit	
+0041d090	F	dec_alu_mpy	void dec_alu_mpy(unsigned long opw, void *dec)	med	devinit	
+0041d100	F	dec_ea6	void dec_ea6(long *slot, unsigned long ea6)	high	devinit	
+0041d170	F	dec_c1_enddo	void dec_c1_enddo(unsigned long opw, void *dec)	low	devinit	
+0041d220	F	dec_c2_doforever	void dec_c2_doforever(unsigned long opw, void *dec)	low	devinit	
+0041d2d0	F	dec_c9_enddo	void dec_c9_enddo(unsigned long opw, void *dec)	low	devinit	
+0041d3d0	F	dec_c10_doforever	void dec_c10_doforever(unsigned long opw, void *dec)	low	devinit	
+0041d4d0	F	dec_c11_pm	void dec_c11_pm(unsigned long opw, void *dec)	low	devinit	
+0041d530	F	dec_c15_pm	void dec_c15_pm(unsigned long opw, void *dec)	low	devinit	
+0041d580	F	dec_pm_update	void dec_pm_update(unsigned long opw, void *dec)	med	devinit	
+0041d5b0	F	dec_c19_pm	void dec_c19_pm(unsigned long opw, void *dec)	low	devinit	
+0041d5d0	F	dec_c20_enddo	void dec_c20_enddo(unsigned long opw, void *dec)	low	devinit	
+0041d690	F	dec_c21_pm	void dec_c21_pm(unsigned long opw, void *dec)	low	devinit	
+0041d770	F	dec_c22_pm	void dec_c22_pm(unsigned long opw, void *dec)	low	devinit	
+0041d7c0	F	dec_c26_pm	void dec_c26_pm(unsigned long opw, void *dec)	low	devinit	
+0041d810	F	dec_c36_jsset	void dec_c36_jsset(unsigned long opw, void *dec)	low	devinit	
+0041d830	F	dec_jbit_ea	void dec_jbit_ea(unsigned long opw, void *dec)	med	devinit	
+0041d870	F	dec_bit_ea	void dec_bit_ea(unsigned long opw, void *dec)	med	devinit	
+0041d8b0	F	dec_c37_jsclr	void dec_c37_jsclr(unsigned long opw, void *dec)	low	devinit	
+0041d8d0	F	dec_h41d8d0		low	hidden	
+0041d8f0	F	dec_h41d8f0		low	hidden	
+0041d910	F	dec_c54_jset	void dec_c54_jset(unsigned long opw, void *dec)	low	devinit	
+0041d930	F	dec_c55_jclr	void dec_c55_jclr(unsigned long opw, void *dec)	low	devinit	
+0041d950	F	dec_h41d950		low	hidden	
+0041d970	F	dec_h41d970		low	hidden	
+0041d990	F	dec_c30_jsset	void dec_c30_jsset(unsigned long opw, void *dec)	low	devinit	
+0041d9b0	F	dec_jbit_reg	void dec_jbit_reg(unsigned long opw, void *dec)	med	devinit	
+0041d9f0	F	dec_bit_reg	void dec_bit_reg(unsigned long opw, void *dec)	med	devinit	
+0041da20	F	dec_c31_jsclr	void dec_c31_jsclr(unsigned long opw, void *dec)	low	devinit	
+0041da40	F	dec_c48_jset	void dec_c48_jset(unsigned long opw, void *dec)	low	devinit	
+0041da60	F	dec_c49_jclr	void dec_c49_jclr(unsigned long opw, void *dec)	low	devinit	
+0041da80	F	dec_h41da80		low	hidden	
+0041daa0	F	dec_h41daa0		low	hidden	
+0041dac0	F	dec_h41dac0		low	hidden	
+0041dae0	F	dec_h41dae0		low	hidden	
+0041db00	F	dec_c40_jsset	void dec_c40_jsset(unsigned long opw, void *dec)	low	devinit	
+0041db20	F	dec_jbit_aa	void dec_jbit_aa(unsigned long opw, void *dec)	med	devinit	
+0041db60	F	dec_bit_aa	void dec_bit_aa(unsigned long opw, void *dec)	med	devinit	
+0041dba0	F	dec_c41_jsclr	void dec_c41_jsclr(unsigned long opw, void *dec)	low	devinit	
+0041dbc0	F	dec_c58_jset	void dec_c58_jset(unsigned long opw, void *dec)	low	devinit	
+0041dbe0	F	dec_c59_jclr	void dec_c59_jclr(unsigned long opw, void *dec)	low	devinit	
+0041dc00	F	dec_h41dc00		low	hidden	
+0041dc20	F	dec_h41dc20		low	hidden	
+0041dc40	F	dec_h41dc40		low	hidden	
+0041dc60	F	dec_h41dc60		low	hidden	
+0041dc80	F	dec_c32_jsset	void dec_c32_jsset(unsigned long opw, void *dec)	low	devinit	
+0041dca0	F	dec_jbit_pp	void dec_jbit_pp(unsigned long opw, void *dec, long spacesel)	med	devinit	
+0041dce0	F	dec_bit_pp	void dec_bit_pp(unsigned long opw, void *dec, long spacesel)	med	devinit	
+0041dd30	F	dec_c33_jsclr	void dec_c33_jsclr(unsigned long opw, void *dec)	low	devinit	
+0041dd50	F	dec_c50_jset	void dec_c50_jset(unsigned long opw, void *dec)	low	devinit	
+0041dd70	F	dec_c51_jclr	void dec_c51_jclr(unsigned long opw, void *dec)	low	devinit	
+0041dd90	F	dec_h41dd90		low	hidden	
+0041ddb0	F	dec_h41ddb0		low	hidden	
+0041ddd0	F	dec_h41ddd0		low	hidden	
+0041ddf0	F	dec_h41ddf0		low	hidden	
+0041de10	F	dec_h41de10		low	hidden	
+0041de30	F	dec_h41de30		low	hidden	
+0041de50	F	dec_h41de50		low	hidden	
+0041de70	F	dec_h41de70		low	hidden	
+0041de90	F	dec_h41de90		low	hidden	
+0041deb0	F	dec_h41deb0		low	hidden	
+0041ded0	F	dec_h41ded0		low	hidden	
+0041def0	F	dec_h41def0		low	hidden	
+0041df10	F	dec_c34_btst	void dec_c34_btst(unsigned long opw, void *dec)	low	devinit	
+0041df30	F	dec_c35_bchg	void dec_c35_bchg(unsigned long opw, void *dec)	low	devinit	
+0041df50	F	dec_c52_bset	void dec_c52_bset(unsigned long opw, void *dec)	low	devinit	
+0041df70	F	dec_c53_bclr	void dec_c53_bclr(unsigned long opw, void *dec)	low	devinit	
+0041df90	F	dec_c38_btst	void dec_c38_btst(unsigned long opw, void *dec)	low	devinit	
+0041dfb0	F	dec_c39_bchg	void dec_c39_bchg(unsigned long opw, void *dec)	low	devinit	
+0041dfd0	F	dec_c56_bset	void dec_c56_bset(unsigned long opw, void *dec)	low	devinit	
+0041dff0	F	dec_c57_bclr	void dec_c57_bclr(unsigned long opw, void *dec)	low	devinit	
+0041e010	F	dec_c42_btst	void dec_c42_btst(unsigned long opw, void *dec)	low	devinit	
+0041e030	F	dec_c43_bchg	void dec_c43_bchg(unsigned long opw, void *dec)	low	devinit	
+0041e050	F	dec_c60_bset	void dec_c60_bset(unsigned long opw, void *dec)	low	devinit	
+0041e070	F	dec_c61_bclr	void dec_c61_bclr(unsigned long opw, void *dec)	low	devinit	
+0041e090	F	dec_c65_pm	void dec_c65_pm(unsigned long opw, void *dec)	low	devinit	
+0041e0e0	F	dec_movep_ea	void dec_movep_ea(void *dec, long a2, long a3, long a4, long swap, unsigned long ea6)	low	devinit	
+0041e150	F	dec_h41e150		low	hidden	
+0041e1a0	F	dec_c66_pm	void dec_c66_pm(unsigned long opw, void *dec)	low	devinit	
+0041e1f0	F	dec_h41e1f0		low	hidden	
+0041e230	F	dec_c67_pm	void dec_c67_pm(unsigned long opw, void *dec)	low	devinit	
+0041e280	F	dec_movep_reg	void dec_movep_reg(void *dec, long a2, long a3, long swap, long regsel)	low	devinit	
+0041e2f0	F	dec_h41e2f0		low	hidden	
+0041e340	F	dec_h41e340		low	hidden	
+0041e390	F	dec_h41e390		low	hidden	
+0041e3f0	F	dec_h41e3f0		low	hidden	
+0041e440	F	dec_c69_enddo	void dec_c69_enddo(unsigned long opw, void *dec)	low	devinit	
+0041e4c0	F	dec_c70_doforever	void dec_c70_doforever(unsigned long opw, void *dec)	low	devinit	
+0041e540	F	dec_c75_rep	void dec_c75_rep(unsigned long opw, void *dec)	low	devinit	
+0041e570	F	dec_c71_rep	void dec_c71_rep(unsigned long opw, void *dec)	low	devinit	
+0041e5a0	F	dec_c73_rep	void dec_c73_rep(unsigned long opw, void *dec)	low	devinit	
+0041e5e0	F	dec_c77_rep	void dec_c77_rep(unsigned long opw, void *dec)	low	devinit	
+0041e610	F	dec_do_imm	void dec_do_imm(unsigned long opw, void *dec)	med	devinit	
+0041e650	F	dec_do_reg	void dec_do_reg(unsigned long opw, void *dec)	med	devinit	
+0041e690	F	dec_do_ea	void dec_do_ea(unsigned long opw, void *dec)	med	devinit	
+0041e6e0	F	dec_do_aa	void dec_do_aa(unsigned long opw, void *dec)	med	devinit	
+0041e730	F	dec_c81_pm	void dec_c81_pm(unsigned long opw, void *dec)	low	devinit	
+0041e760	F	dec_c79_enddo	void dec_c79_enddo(unsigned long opw, void *dec)	low	devinit	
+0041e7f0	F	dec_c83_doforever	void dec_c83_doforever(unsigned long opw, void *dec)	low	devinit	
+0041e880	F	dec_c85_enddo	void dec_c85_enddo(unsigned long opw, void *dec)	low	devinit	
+0041e900	F	dec_c87_lua	void dec_c87_lua(unsigned long opw, void *dec)	low	devinit	
+0041e950	F	dec_tcc	void dec_tcc(unsigned long opw, void *dec)	med	devinit	
+0041ea00	F	dec_div	void dec_div(unsigned long opw, void *dec)	med	devinit	
+0041ea50	F	dec_incdec	void dec_incdec(unsigned long opw, void *dec)	med	devinit	
+0041ea90	F	dec_shift_imm	void dec_shift_imm(unsigned long opw, void *dec)	low	devinit	
+0041eaf0	F	dec_shift_reg	void dec_shift_reg(unsigned long opw, void *dec)	low	devinit	
+0041eb60	F	dec_lsl_lsr_imm	void dec_lsl_lsr_imm(unsigned long opw, void *dec)	low	devinit	
+0041ebb0	F	dec_lsl_lsr_reg	void dec_lsl_lsr_reg(unsigned long opw, void *dec)	low	devinit	
+0041ec00	F	dec_extract_reg	void dec_extract_reg(unsigned long opw, void *dec)	low	devinit	
+0041ec70	F	dec_insert_reg	void dec_insert_reg(unsigned long opw, void *dec)	low	devinit	
+0041ecd0	F	dec_normf_merge	void dec_normf_merge(unsigned long opw, void *dec)	low	devinit	
+0041ed20	F	dec_clb	void dec_clb(unsigned long opw, void *dec)	low	devinit	
+0041ed70	F	dec_alu_imm_short	void dec_alu_imm_short(unsigned long opw, void *dec)	med	devinit	
+0041edc0	F	dec_alu_imm_long	void dec_alu_imm_long(unsigned long opw, void *dec)	med	devinit	
+0041ee20	F	dec_cmpu	void dec_cmpu(unsigned long opw, void *dec)	low	devinit	
+0041ee80	F	dec_mpy_reg	void dec_mpy_reg(unsigned long opw, void *dec)	low	devinit	
+0041ef00	F	dec_mac_su	void dec_mac_su(unsigned long opw, void *dec)	low	devinit	
+0041efc0	F	dec_mpyi	void dec_mpyi(unsigned long opw, void *dec)	low	devinit	
+0041f040	F	dec_extract_imm	void dec_extract_imm(unsigned long opw, void *dec)	low	devinit	
+0041f0b0	F	dec_insert_imm	void dec_insert_imm(unsigned long opw, void *dec)	low	devinit	
+0041f110	F	dec_c91_norm	void dec_c91_norm(unsigned long opw, void *dec)	low	devinit	
+0041f160	F	dec_c95_ori	void dec_c95_ori(unsigned long opw, void *dec)	low	devinit	
+0041f1a0	F	dec_c96_andi	void dec_c96_andi(unsigned long opw, void *dec)	low	devinit	
+0041f1e0	F	dec_c97_enddo	void dec_c97_enddo(unsigned long opw, void *dec)	low	devinit	
+0041f1f0	F	dec_c98_stop	void dec_c98_stop(unsigned long opw, void *dec)	low	devinit	
+0041f200	F	dec_c99_wait	void dec_c99_wait(unsigned long opw, void *dec)	low	devinit	
+0041f210	F	dec_c100_reset	void dec_c100_reset(unsigned long opw, void *dec)	low	devinit	
+0041f220	F	dec_c104_trap	void dec_c104_trap(unsigned long opw, void *dec)	low	devinit	
+0041f230	F	dec_c107_nop	void dec_c107_nop(unsigned long opw, void *dec)	low	devinit	
+0041f240	F	dec_c106_rti	void dec_c106_rti(unsigned long opw, void *dec)	low	devinit	
+0041f250	F	dec_c101_rts	void dec_c101_rts(unsigned long opw, void *dec)	low	devinit	
+0041f260	F	dec_c63_pm	void dec_c63_pm(unsigned long opw, void *dec)	low	devinit	
+0041f2e0	F	dec_c62_pm	void dec_c62_pm(unsigned long opw, void *dec)	low	devinit	
+0041f350	F	dec_c28_btst	void dec_c28_btst(unsigned long opw, void *dec)	low	devinit	
+0041f370	F	dec_c29_bchg	void dec_c29_bchg(unsigned long opw, void *dec)	low	devinit	
+0041f390	F	dec_c46_bset	void dec_c46_bset(unsigned long opw, void *dec)	low	devinit	
+0041f3b0	F	dec_c47_bclr	void dec_c47_bclr(unsigned long opw, void *dec)	low	devinit	
+0041f3d0	F	dec_c93_debug	void dec_c93_debug(unsigned long opw, void *dec)	low	devinit	
+0041f3f0	F	dec_c105_illegal	void dec_c105_illegal(unsigned long opw, void *dec)	low	devinit	
+0041f400	F	dec_h41f400		low	hidden	
+0041f420	F	dec_h41f420		low	hidden	
+0041f440	F	dec_h41f440		low	hidden	
+0041f460	F	dec_h41f460		low	hidden	
+0041f480	F	dec_h41f480		low	hidden	
+0041f4f0	F	dec_h41f4f0		low	hidden	
+0041f540	F	dec_h41f540		low	hidden	
+0041f580	F	dec_h41f580		low	hidden	
+0041f5e0	F	dec_h41f5e0		low	hidden	
+0041f620	F	dec_h41f620		low	hidden	
+0041f650	F	dec_h41f650		low	hidden	
+0041f700	F	dec_h41f700		low	hidden	
+0041f7b0	F	dec_h41f7b0		low	hidden	
+0041f7f0	F	dec_h41f7f0		low	hidden	
+0041f850	F	dec_alu_cc	void dec_alu_cc(unsigned long opw, void *dec)	low	devinit	
+0041f890	F	dec_h41f890		low	hidden	
+0041f8b0	F	dec_h41f8b0		low	hidden	
+0041f8d0	F	dec_h41f8d0		low	hidden	
+0041f8f0	F	dec_h41f8f0		low	hidden	
+0041f910	F	dec_h41f910		low	hidden	
+0041f940	F	dec_h41f940		low	hidden	
+0041f9e0	F	decode_insn	int decode_insn(void *dec, long pc, long unused, unsigned long *flags)	med	devinit	
+0041fab0	F	dec_init	void dec_init(void *dec)	med	devinit	
+0041fb60	F	dis_fmt_h41fb60		low	hidden	
+0041fb70	F	dis_fmt_c0	int dis_fmt_c0(unsigned long opw, long *tok)	med	devinit	
+0041fd70	F	dis_fmt_c1	int dis_fmt_c1(unsigned long opw, long *tok)	low	devinit	
+0041feb0	F	dis_fmt_c2	int dis_fmt_c2(unsigned long opw, long *tok)	low	devinit	
+0041ffc0	F	dis_fmt_c3	int dis_fmt_c3(unsigned long opw, long *tok)	low	devinit	
+00420100	F	dis_fmt_c4	int dis_fmt_c4(unsigned long opw, long *tok)	low	devinit	
+00420210	F	dis_fmt_c5	int dis_fmt_c5(unsigned long opw, long *tok)	med	devinit	
+004203e0	F	pm_is_short_ea	int pm_is_short_ea(unsigned long opw)	low	devinit	
+00420400	F	dis_fmt_c6	int dis_fmt_c6(unsigned long opw, long *tok)	low	devinit	
+004205b0	F	dis_fmt_c7	int dis_fmt_c7(unsigned long opw, long *tok)	low	devinit	
+004206e0	F	dis_fmt_c8	int dis_fmt_c8(unsigned long opw, long *tok)	low	devinit	
+004207f0	F	dis_fmt_c9	int dis_fmt_c9(unsigned long opw, long *tok)	med	devinit	
+00420980	F	dis_fmt_c10	int dis_fmt_c10(unsigned long opw, long *tok)	med	devinit	
+00420b00	F	dis_fmt_c11	int dis_fmt_c11(unsigned long opw, long *tok)	med	devinit	
+00420b80	F	dis_fmt_c12	int dis_fmt_c12(unsigned long opw, long *tok)	med	devinit	
+00420c00	F	dis_fmt_c13	int dis_fmt_c13(unsigned long opw, long *tok)	low	devinit	
+00420d10	F	dis_fmt_c14	int dis_fmt_c14(unsigned long opw, long *tok)	med	devinit	
+00420d90	F	dis_fmt_c15	int dis_fmt_c15(unsigned long opw, long *tok)	low	devinit	
+00420eb0	F	dis_fmt_c18	int dis_fmt_c18(unsigned long opw, long *tok)	med	devinit	
+00420ef0	F	dis_fmt_c19	int dis_fmt_c19(unsigned long opw, long *tok)	med	devinit	
+00420f50	F	dis_fmt_c20	int dis_fmt_c20(unsigned long opw, long *tok)	med	devinit	
+004210f0	F	dis_fmt_c21	int dis_fmt_c21(unsigned long opw, long *tok)	med	devinit	
+00421280	F	dis_fmt_c22	int dis_fmt_c22(unsigned long opw, long *tok)	low	devinit	
+004212a0	F	dis_fmt_h4212a0	int dis_fmt_h4212a0(unsigned long opw, long *tok)	none	devinit	
+00421340	F	dis_fmt_c23	int dis_fmt_c23(unsigned long opw, long *tok)	low	devinit	
+00421360	F	dis_fmt_c24	int dis_fmt_c24(unsigned long opw, long *tok)	low	devinit	
+00421380	F	dis_fmt_c25	int dis_fmt_c25(unsigned long opw, long *tok)	low	devinit	
+004213a0	F	dis_fmt_c26	int dis_fmt_c26(unsigned long opw, long *tok)	low	devinit	
+004213c0	F	dis_fmt_h4213c0	int dis_fmt_h4213c0(unsigned long opw, long *tok)	none	devinit	
+00421460	F	dis_fmt_c44	int dis_fmt_c44(unsigned long opw, long *tok)	low	devinit	
+00421480	F	dis_fmt_c27	int dis_fmt_c27(unsigned long opw, long *tok)	low	devinit	
+004214a0	F	dis_fmt_c45	int dis_fmt_c45(unsigned long opw, long *tok)	low	devinit	
+004214c0	F	dis_fmt_c32	int dis_fmt_c32(unsigned long opw, long *tok)	low	devinit	
+004214e0	F	dis_fmt_h4214e0	int dis_fmt_h4214e0(unsigned long opw, long *tok)	none	devinit	
+004215f0	F	dis_fmt_c33	int dis_fmt_c33(unsigned long opw, long *tok)	low	devinit	
+00421610	F	dis_fmt_c50	int dis_fmt_c50(unsigned long opw, long *tok)	low	devinit	
+00421630	F	dis_fmt_c51	int dis_fmt_c51(unsigned long opw, long *tok)	low	devinit	
+00421650	F	dis_fmt_c36	int dis_fmt_c36(unsigned long opw, long *tok)	low	devinit	
+00421670	F	dis_fmt_h421670	int dis_fmt_h421670(unsigned long opw, long *tok)	none	devinit	
+00421770	F	dis_fmt_c37	int dis_fmt_c37(unsigned long opw, long *tok)	low	devinit	
+00421790	F	dis_fmt_c54	int dis_fmt_c54(unsigned long opw, long *tok)	low	devinit	
+004217b0	F	dis_fmt_c55	int dis_fmt_c55(unsigned long opw, long *tok)	low	devinit	
+004217d0	F	dis_fmt_c40	int dis_fmt_c40(unsigned long opw, long *tok)	low	devinit	
+004217f0	F	dis_fmt_h4217f0	int dis_fmt_h4217f0(unsigned long opw, long *tok)	none	devinit	
+004218f0	F	dis_fmt_c41	int dis_fmt_c41(unsigned long opw, long *tok)	low	devinit	
+00421910	F	dis_fmt_c58	int dis_fmt_c58(unsigned long opw, long *tok)	low	devinit	
+00421930	F	dis_fmt_c59	int dis_fmt_c59(unsigned long opw, long *tok)	low	devinit	
+00421950	F	dis_fmt_c34	int dis_fmt_c34(unsigned long opw, long *tok)	low	devinit	
+00421970	F	dis_fmt_h421970	int dis_fmt_h421970(unsigned long opw, long *tok)	none	devinit	
+00421a60	F	dis_fmt_c35	int dis_fmt_c35(unsigned long opw, long *tok)	low	devinit	
+00421a80	F	dis_fmt_c52	int dis_fmt_c52(unsigned long opw, long *tok)	low	devinit	
+00421aa0	F	dis_fmt_c53	int dis_fmt_c53(unsigned long opw, long *tok)	low	devinit	
+00421ac0	F	dis_fmt_c38	int dis_fmt_c38(unsigned long opw, long *tok)	low	devinit	
+00421ae0	F	dis_fmt_h421ae0	int dis_fmt_h421ae0(unsigned long opw, long *tok)	none	devinit	
+00421bd0	F	dis_fmt_c39	int dis_fmt_c39(unsigned long opw, long *tok)	low	devinit	
+00421bf0	F	dis_fmt_c56	int dis_fmt_c56(unsigned long opw, long *tok)	low	devinit	
+00421c10	F	dis_fmt_c57	int dis_fmt_c57(unsigned long opw, long *tok)	low	devinit	
+00421c30	F	dis_fmt_c42	int dis_fmt_c42(unsigned long opw, long *tok)	low	devinit	
+00421c50	F	dis_fmt_h421c50	int dis_fmt_h421c50(unsigned long opw, long *tok)	none	devinit	
+00421d30	F	dis_fmt_c43	int dis_fmt_c43(unsigned long opw, long *tok)	low	devinit	
+00421d50	F	dis_fmt_c60	int dis_fmt_c60(unsigned long opw, long *tok)	low	devinit	
+00421d70	F	dis_fmt_c61	int dis_fmt_c61(unsigned long opw, long *tok)	low	devinit	
+00421d90	F	dis_fmt_c65	int dis_fmt_c65(unsigned long opw, long *tok)	med	devinit	
+00421f60	F	dis_fmt_c66	int dis_fmt_c66(unsigned long opw, long *tok)	low	devinit	
+004220e0	F	dis_fmt_c67	int dis_fmt_c67(unsigned long opw, long *tok)	low	devinit	
+00422220	F	dis_fmt_c69	int dis_fmt_c69(unsigned long opw, long *tok)	low	devinit	
+00422330	F	dis_fmt_c70	int dis_fmt_c70(unsigned long opw, long *tok)	low	devinit	
+00422440	F	dis_fmt_c75	int dis_fmt_c75(unsigned long opw, long *tok)	low	devinit	
+004224a0	F	dis_fmt_c71	int dis_fmt_c71(unsigned long opw, long *tok)	low	devinit	
+00422560	F	dis_fmt_c73	int dis_fmt_c73(unsigned long opw, long *tok)	low	devinit	
+004225f0	F	dis_fmt_c77	int dis_fmt_c77(unsigned long opw, long *tok)	low	devinit	
+004226a0	F	dis_fmt_c76	int dis_fmt_c76(unsigned long opw, long *tok)	low	devinit	
+00422730	F	dis_fmt_c72	int dis_fmt_c72(unsigned long opw, long *tok)	low	devinit	
+004227e0	F	dis_fmt_c74	int dis_fmt_c74(unsigned long opw, long *tok)	low	devinit	
+00422890	F	dis_fmt_c78	int dis_fmt_c78(unsigned long opw, long *tok)	low	devinit	
+00422960	F	dis_fmt_c82	int dis_fmt_c82(unsigned long opw, long *tok)	med	devinit	
+004229d0	F	dis_fmt_c80	int dis_fmt_c80(unsigned long opw, long *tok)	low	devinit	
+00422b00	F	dis_fmt_c84	int dis_fmt_c84(unsigned long opw, long *tok)	med	devinit	
+00422c10	F	dis_fmt_c81	int dis_fmt_c81(unsigned long opw, long *tok)	med	devinit	
+00422c80	F	dis_fmt_c79	int dis_fmt_c79(unsigned long opw, long *tok)	low	devinit	
+00422dc0	F	dis_fmt_c83	int dis_fmt_c83(unsigned long opw, long *tok)	low	devinit	
+00422ec0	F	dis_fmt_c86	int dis_fmt_c86(unsigned long opw, long *tok)	med	devinit	
+00422f80	F	dis_fmt_c85	int dis_fmt_c85(unsigned long opw, long *tok)	low	devinit	
+00423050	F	dis_fmt_c88	int dis_fmt_c88(unsigned long opw, long *tok)	med	devinit	
+004230c0	F	dis_fmt_c87	int dis_fmt_c87(unsigned long opw, long *tok)	med	devinit	
+00423130	F	dis_fmt_c89	int dis_fmt_c89(unsigned long opw, long *tok)	med	devinit	
+00423210	F	dis_fmt_c90	int dis_fmt_c90(unsigned long opw, long *tok)	med	devinit	
+004232b0	F	dis_fmt_c91	int dis_fmt_c91(unsigned long opw, long *tok)	med	devinit	
+00423310	F	dis_fmt_c92	int dis_fmt_c92(unsigned long opw, long *tok)	low	devinit	
+00423370	F	dis_fmt_c95	int dis_fmt_c95(unsigned long opw, long *tok)	med	devinit	
+004233e0	F	dis_fmt_c96	int dis_fmt_c96(unsigned long opw, long *tok)	med	devinit	
+00423450	F	dis_fmt_c97	int dis_fmt_c97(unsigned long opw, long *tok)	low	devinit	
+00423460	F	dis_fmt_c98	int dis_fmt_c98(unsigned long opw, long *tok)	low	devinit	
+00423470	F	dis_fmt_c99	int dis_fmt_c99(unsigned long opw, long *tok)	low	devinit	
+00423480	F	dis_fmt_c100	int dis_fmt_c100(unsigned long opw, long *tok)	low	devinit	
+00423490	F	dis_fmt_c104	int dis_fmt_c104(unsigned long opw, long *tok)	low	devinit	
+004234a0	F	dis_fmt_c107	int dis_fmt_c107(unsigned long opw, long *tok)	low	devinit	
+004234b0	F	dis_fmt_c106	int dis_fmt_c106(unsigned long opw, long *tok)	low	devinit	
+004234c0	F	dis_fmt_c101	int dis_fmt_c101(unsigned long opw, long *tok)	low	devinit	
+004234d0	F	dis_fmt_c68	int dis_fmt_c68(unsigned long opw, long *tok)	med	devinit	
+004235d0	F	dis_fmt_c63	int dis_fmt_c63(unsigned long opw, long *tok)	low	devinit	
+004235f0	F	dis_fmt_c64	int dis_fmt_c64(unsigned long opw, long *tok)	med	devinit	
+004236f0	F	dis_fmt_c62	int dis_fmt_c62(unsigned long opw, long *tok)	low	devinit	
+00423710	F	dis_fmt_c30	int dis_fmt_c30(unsigned long opw, long *tok)	low	devinit	
+00423730	F	dis_fmt_h423730	int dis_fmt_h423730(unsigned long opw, long *tok)	none	devinit	
+00423820	F	dis_fmt_c31	int dis_fmt_c31(unsigned long opw, long *tok)	low	devinit	
+00423840	F	dis_fmt_c48	int dis_fmt_c48(unsigned long opw, long *tok)	low	devinit	
+00423860	F	dis_fmt_c49	int dis_fmt_c49(unsigned long opw, long *tok)	low	devinit	
+00423880	F	dis_fmt_c28	int dis_fmt_c28(unsigned long opw, long *tok)	low	devinit	
+004238a0	F	dis_fmt_h4238a0	int dis_fmt_h4238a0(unsigned long opw, long *tok)	none	devinit	
+00423960	F	dis_fmt_c29	int dis_fmt_c29(unsigned long opw, long *tok)	low	devinit	
+00423980	F	dis_fmt_c46	int dis_fmt_c46(unsigned long opw, long *tok)	low	devinit	
+004239a0	F	dis_fmt_c47	int dis_fmt_c47(unsigned long opw, long *tok)	low	devinit	
+004239c0	F	dis_fmt_c93	int dis_fmt_c93(unsigned long opw, long *tok)	low	devinit	
+004239f0	F	dis_fmt_c105	int dis_fmt_c105(unsigned long opw, long *tok)	low	devinit	
+00423a00	F	dis_fmt_c102	int dis_fmt_c102(unsigned long opw, long *tok)	low	devinit	
+00423a40	F	dis_fmt_c109	int dis_fmt_c109(unsigned long opw, long *tok)	low	devinit	
+00423ae0	F	hid_423ae0		low	hidden	
+00423b10	F	disassemble	int disassemble(unsigned long *insn, char *text, long a3, long a4, void *info)	med	devinit	
+00423d90	F	dis_move_addrs	void dis_move_addrs(void *info, unsigned long pc)	med	devinit	
+00423e90	F	dis_ea_addr	void dis_ea_addr(void *info, unsigned long pc, unsigned long sel, unsigned long defval, unsigned long *out)	med	devinit	
+00423f90	F	dis_agu_addr	void dis_agu_addr(unsigned long rn, unsigned long nn, unsigned long mn, int negate, unsigned long *out)	med	devinit	
+004240d0	F	bitrev16	void bitrev16(unsigned long v, unsigned long *out)	high	asm	
+00424100	F	dis_reset	void dis_reset(void)	med	asm	
+00424130	F	hid_424130		low	hidden	
+00424160	F	disassemble_l1	void disassemble_l1(unsigned long *insn, char *text, long a3, long a4, void *info)	med	asm	
+00424190	F	str_find_token	unsigned long str_find_token(char *hay, char *needle, char **pos)	med	asm	
+00424200	F	fmt_hex_dollar	void fmt_hex_dollar(unsigned long v, char *out)	high	asm	
+00424260	F	fmt_hex24	void fmt_hex24(unsigned long v, char *out)	high	asm	
+004242c0	F	dis_ea_tokens	int dis_ea_tokens(unsigned long opw, long *tok)	med	asm	
+004243f0	F	hid_4243f0		low	hidden	
+00424480	F	asm_split_fields	void asm_split_fields(void)	high	asm	
+004246e0	F	skip_to_space	char * skip_to_space(char *s)	med	asm	
+00424730	F	asm_line	void asm_line(void)	high	asm	
+00424790	F	str_lower_copy	char * str_lower_copy(char *s)	med	asm	
+004247d0	F	lower_char	char lower_char(char c)	med	asm	
+00424810	F	find_mnemonic	void * find_mnemonic(char *name)	high	asm	
+00424830	F	bsearch_cb	void * bsearch_cb(char *key, char *base, long count, long size, void *cmp)	high	asm	
+004248a0	F	hid_4248a0		low	hidden	
+004248e0	F	proc_instr	int proc_instr(void *ientry)	high	asm	
+00424c50	F	do_xy	int do_xy(void *insn, int pmclass, void *xs, void *xd, void *ys, void *yd)	high	asm	
+00424f60	F	parse_space	int parse_space(long *space, int cls)	high	asm	
+004250d0	F	space_code	int space_code(char c)	high	asm	
+00425140	F	parse_xfield_src	int parse_xfield_src(void *op)	high	asm	
+004251c0	F	parse_operand	int parse_operand(unsigned long flags, void *op, int regclass, int eaclass, int absclass, int immclass)	high	asm	
+00425230	F	get_amode	int get_amode(unsigned long flags, void *op, int regclass, int eaclass, int absclass, int immclass)	high	asm	
+00425390	F	amode_indirect	int amode_indirect(int eaclass, void *op)	high	asm	
+004255d0	F	parse_addr_reg	int parse_addr_reg(void)	high	asm	
+004255f0	F	parse_offset_reg	int parse_offset_reg(int areg)	high	asm	
+00425650	F	match_register_name	int match_register_name(char **pp)	high	asm	
+00426210	F	amode_immediate	int amode_immediate(int immclass, void *op)	high	asm	
+00426370	F	get_imm_expr	int get_imm_expr(int immclass)	med	asm	
+00426410	F	amode_absolute	int amode_absolute(int absclass, void *op)	high	asm	
+004267d0	F	amode_register	int amode_register(int regclass, void *op)	high	asm	
+00426b50	F	note_reg_direct	int note_reg_direct(unsigned long flags, int regclass, int reg)	med	asm	
+00426b80	F	check_dup_dest	int check_dup_dest(int regclass, int reg)	high	asm	
+00426c90	F	chk_no_yfield	int chk_no_yfield(void)	high	asm	
+00426cd0	F	xy_imm_short	int xy_imm_short(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm	
+00426e50	F	xy_imm_long	int xy_imm_long(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm	
+00427020	F	xy_lreg	int xy_lreg(void *insn, void *xs, void *xd)	high	asm	
+00427100	F	xy_acc	int xy_acc(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm	
+004273b0	F	xy_xreg	int xy_xreg(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm	
+004274e0	F	xdst_mem	int xdst_mem(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm	
+00427b80	F	chk_move_class	int chk_move_class(int pmclass, long mask, void *insn)	high	asm	
+00427c20	F	xy_reg	int xy_reg(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm	
+00427f40	F	xy_mreg	int xy_mreg(int pmclass, void *insn, void *xs, void *xd)	high	asm	
+00428070	F	xy_ctlreg	int xy_ctlreg(int pmclass, void *insn, void *xs, void *xd)	high	asm	
+004281c0	F	xy_xsrc	int xy_xsrc(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm	
+004286e0	F	xy_xsrc_acc	int xy_xsrc_acc(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm	
+00428910	F	xy_ysrc	int xy_ysrc(int pmclass, void *insn, void *xs, void *xd)	high	asm	
+00428b40	F	xy_lsrc	int xy_lsrc(void *insn, void *xs, void *xd)	high	asm	
+00428bc0	F	xy_psrc	int xy_psrc(int pmclass, void *insn, void *xs, void *xd)	high	asm	
+00428cf0	F	chk_xy_regs	int chk_xy_regs(int xreg, int yreg)	high	asm	
+00428d60	F	canon_xy_fields	int canon_xy_fields(void)	med	asm	
+00428dc0	F	swap_op2_op3	void swap_op2_op3(void)	med	asm	
+00428de0	F	asm_clear_flags	void asm_clear_flags(void)	low	asm	
+00428df0	F	p_noarg	int p_noarg(void)	high	asm	
+00428e20	F	p_rts	int p_rts(void)	high	asm	
+00428e50	F	p_andi	int p_andi(void *insn)	high	asm	
+00428ed0	F	p_and_or	int p_and_or(void *insn)	high	asm	
+00428fa0	F	p_alu_dst	int p_alu_dst(int cls)	med	asm	
+00429080	F	p_alu1	int p_alu1(int iclass, void *insn)	high	asm	
+00429110	F	p_addl	int p_addl(void *insn)	high	asm	
+00429180	F	p_eor_adc	int p_eor_adc(int iclass, void *insn)	high	asm	
+00429220	F	p_alu2	int p_alu2(int iclass, void *insn)	high	asm	
+004292e0	F	p_norm	int p_norm(void *insn)	high	asm	
+00429340	F	p_lua	int p_lua(void *insn)	high	asm	
+004293a0	F	p_div	int p_div(void *insn)	high	asm	
+00429400	F	p_bitop	int p_bitop(void *insn)	high	asm	
+00429540	F	p_do	int p_do(void *insn)	high	asm	
+004296e0	F	p_enddo	int p_enddo(void)	high	asm	
+00429710	F	p_rep	int p_rep(void *insn)	high	asm	
+00429800	F	p_jmp	int p_jmp(int iclass, void *insn)	high	asm	
+004298d0	F	p_jsr	int p_jsr(int iclass, void *insn)	high	asm	
+004299a0	F	p_jbit	int p_jbit(void *insn)	high	asm	
+00429b00	F	p_tcc	int p_tcc(void *insn)	high	asm	
+00429c10	F	p_mul	int p_mul(int iclass, void *insn)	high	asm	
+00429da0	F	mulreg	int mulreg(int s1, int s2, int d, unsigned long *word)	high	asm	
+00429ea0	F	p_move	int p_move(void)	high	asm	
+00429f00	F	p_movep	int p_movep(void *insn)	high	asm	
+0042a3a0	F	skip_comma	void skip_comma(void)	high	asm	
+0042a3c0	F	enc_andi	void enc_andi(void *insn, void *imm, void *dst)	high	asm	
+0042a410	F	insert_bits	unsigned long insert_bits(unsigned long word, unsigned long val, int pos, int width)	high	asm	
+0042a440	F	ee_code	int ee_code(int reg)	high	asm	
+0042a470	F	enc_div	void enc_div(void *insn, void *src, void *dst)	high	asm	
+0042a4c0	F	d_code	int d_code(int reg)	high	asm	
+0042a4f0	F	jjj_code	int jjj_code(int reg)	high	asm	
+0042a550	F	enc_norm	void enc_norm(void *insn, void *src, void *dst)	high	asm	
+0042a5b0	F	rrr_code	int rrr_code(int mode, int reg)	high	asm	
+0042a640	F	enc_loop_ea	void enc_loop_ea(void *insn, void *op)	high	asm	
+0042a6c0	F	mmm_code	int mmm_code(int mode)	high	asm	
+0042a750	F	s_code	int s_code(int space)	high	asm	
+0042a760	F	enc_loop_abs	void enc_loop_abs(void *insn, void *op)	high	asm	
+0042a7a0	F	enc_loop_reg	void enc_loop_reg(void *insn, void *op)	high	asm	
+0042a7e0	F	d6_code	int d6_code(int reg)	high	asm	
+0042a870	F	ccc_code	int ccc_code(int reg)	high	asm	
+0042a8e0	F	ddddd_code	int ddddd_code(int reg)	high	asm	
+0042a980	F	dd_code	int dd_code(int reg)	high	asm	
+0042a9d0	F	nnn_code	int nnn_code(int reg)	high	asm	
+0042aa40	F	ddd_code	int ddd_code(int reg)	high	asm	
+0042aac0	F	fff_code	int fff_code(int reg)	high	asm	
+0042ab30	F	enc_loop_imm	void enc_loop_imm(void *insn, void *op)	high	asm	
+0042ab80	F	enc_do_ea	void enc_do_ea(void *insn, void *op, void *target)	high	asm	
+0042abb0	F	enc_do_abs	void enc_do_abs(void *insn, void *op, void *target)	high	asm	
+0042abe0	F	enc_do_reg	void enc_do_reg(void *insn, void *op, void *target)	high	asm	
+0042ac10	F	enc_do_imm	void enc_do_imm(void *insn, void *op, void *target)	high	asm	
+0042ac40	F	enc_jmp_abs	void enc_jmp_abs(void *insn, void *op)	high	asm	
+0042ac80	F	enc_jmp_ea	void enc_jmp_ea(void *insn, void *op)	high	asm	
+0042ad10	F	set_ext_word	void set_ext_word(void *insn, void *op)	high	asm	
+0042ad40	F	enc_jcc_abs	void enc_jcc_abs(void *insn, void *op)	high	asm	
+0042ad80	F	enc_jcc_ea	void enc_jcc_ea(void *insn, void *op)	high	asm	
+0042ae10	F	enc_tcc_r	void enc_tcc_r(void *insn, void *s1, void *d1, void *s2, void *d2)	high	asm	
+0042aec0	F	enc_tcc	void enc_tcc(void *insn, void *s1, void *d1)	high	asm	
+0042af10	F	enc_bit_ea	void enc_bit_ea(void *insn, void *bitno, void *op)	high	asm	
+0042afb0	F	enc_bit_reg	void enc_bit_reg(void *insn, void *bitno, void *op)	high	asm	
+0042b010	F	enc_bit_abs	void enc_bit_abs(void *insn, void *bitno, void *op)	high	asm	
+0042b070	F	enc_bit_pp	void enc_bit_pp(void *insn, void *bitno, void *op)	high	asm	
+0042b0e0	F	enc_jbit_ea	void enc_jbit_ea(void *insn, void *bitno, void *op, void *target)	high	asm	
+0042b110	F	enc_jbit_reg	void enc_jbit_reg(void *insn, void *bitno, void *op, void *target)	high	asm	
+0042b180	F	enc_jbit_abs	void enc_jbit_abs(void *insn, void *bitno, void *op, void *target)	high	asm	
+0042b1b0	F	enc_jbit_pp	void enc_jbit_pp(void *insn, void *bitno, void *op, void *target)	high	asm	
+0042b1e0	F	enc_movep_reg	void enc_movep_reg(void *insn, void *pp, void *reg)	high	asm	
+0042b250	F	enc_movep_mem	void enc_movep_mem(void *insn, void *pp, void *mem)	high	asm	
+0042b320	F	enc_movep_reg_w	void enc_movep_reg_w(void *insn, void *reg, void *pp)	high	asm	
+0042b350	F	enc_movep_mem_w	void enc_movep_mem_w(void *insn, void *mem, void *pp)	high	asm	
+0042b380	F	enc_movec_ea	void enc_movec_ea(void *insn, void *creg, void *mem)	high	asm	
+0042b440	F	enc_movec_ea_w	void enc_movec_ea_w(void *insn, void *mem, void *creg)	high	asm	
+0042b470	F	enc_movec_imm	void enc_movec_imm(void *insn, void *imm, void *creg)	high	asm	
+0042b4e0	F	enc_movec_reg	void enc_movec_reg(void *insn, void *creg, void *reg)	high	asm	
+0042b560	F	enc_movec_reg_w	void enc_movec_reg_w(void *insn, void *reg, void *creg)	high	asm	
+0042b590	F	enc_movec_abs	void enc_movec_abs(void *insn, void *creg, void *abs)	high	asm	
+0042b610	F	enc_movec_abs_w	void enc_movec_abs_w(void *insn, void *abs, void *creg)	high	asm	
+0042b640	F	enc_movec_ea2	void enc_movec_ea2(void *insn, void *creg, void *mem)	high	asm	
+0042b700	F	enc_movec_ea2_w	void enc_movec_ea2_w(void *insn, void *mem, void *creg)	high	asm	
+0042b730	F	enc_pm_xy	void enc_pm_xy(void *insn, void *xreg, void *xmem, void *yreg, void *ymem)	high	asm	
+0042b810	F	xx_code	int xx_code(int reg)	high	asm	
+0042b860	F	yy_code	int yy_code(int reg)	high	asm	
+0042b8b0	F	enc_pm_xy_wx	void enc_pm_xy_wx(void *insn, void *xmem, void *xreg, void *yreg, void *ymem)	high	asm	
+0042b8f0	F	enc_pm_xy_wy	void enc_pm_xy_wy(void *insn, void *xreg, void *xmem, void *ymem, void *yreg)	high	asm	
+0042b930	F	enc_pm_xy_wxy	void enc_pm_xy_wxy(void *insn, void *xmem, void *xreg, void *ymem, void *yreg)	high	asm	
+0042b980	F	enc_pm_xr2	void enc_pm_xr2(void *insn, void *acc, void *mem)	high	asm	
+0042ba20	F	enc_pm_x_ea	void enc_pm_x_ea(void *insn, void *reg, void *mem)	high	asm	
+0042bad0	F	enc_pm_x_ea_w	void enc_pm_x_ea_w(void *insn, void *mem, void *reg)	high	asm	
+0042bb00	F	enc_pm_y_ea	void enc_pm_y_ea(void *insn, void *reg, void *mem)	high	asm	
+0042bb30	F	enc_pm_y_ea_w	void enc_pm_y_ea_w(void *insn, void *mem, void *reg)	high	asm	
+0042bb60	F	enc_pm_x_abs	void enc_pm_x_abs(void *insn, void *reg, void *abs)	high	asm	
+0042bbd0	F	enc_pm_x_abs_w	void enc_pm_x_abs_w(void *insn, void *abs, void *reg)	high	asm	
+0042bc00	F	enc_pm_y_abs	void enc_pm_y_abs(void *insn, void *reg, void *abs)	high	asm	
+0042bc30	F	enc_pm_y_abs_w	void enc_pm_y_abs_w(void *insn, void *abs, void *reg)	high	asm	
+0042bc60	F	enc_pm_ry	void enc_pm_ry(void *insn, void *s1, void *d1, void *yreg, void *ymem)	high	asm	
+0042bd40	F	x_code	int x_code(int reg)	high	asm	
+0042bd70	F	enc_pm_ry_w	void enc_pm_ry_w(void *insn, void *s1, void *d1, void *ymem, void *yreg)	high	asm	
+0042bdb0	F	enc_pm_xr	void enc_pm_xr(void *insn, void *xreg, void *xmem, void *s2, void *d2)	high	asm	
+0042be80	F	y_code	int y_code(int reg)	high	asm	
+0042beb0	F	enc_pm_xr_w	void enc_pm_xr_w(void *insn, void *xmem, void *xreg, void *s2, void *d2)	high	asm	
+0042bef0	F	enc_pm_l_abs	void enc_pm_l_abs(void *insn, void *reg, void *abs)	high	asm	
+0042bf50	F	lll_code	int lll_code(int reg)	high	asm	
+0042c000	F	enc_pm_l_abs_w	void enc_pm_l_abs_w(void *insn, void *abs, void *reg)	high	asm	
+0042c030	F	enc_pm_l_ea	void enc_pm_l_ea(void *insn, void *reg, void *mem)	high	asm	
+0042c0d0	F	enc_pm_l_ea_w	void enc_pm_l_ea_w(void *insn, void *mem, void *reg)	high	asm	
+0042c100	F	enc_pm_imm	void enc_pm_imm(void *insn, void *imm, void *dst)	high	asm	
+0042c160	F	enc_pm_reg	void enc_pm_reg(void *insn, void *src, void *dst)	high	asm	
+0042c1c0	F	enc_pm_update	void enc_pm_update(void *insn, void *op)	high	asm	
+0042c230	F	enc_movem_ea	void enc_movem_ea(void *insn, void *reg, void *mem)	high	asm	
+0042c2e0	F	enc_movem_ea_w	void enc_movem_ea_w(void *insn, void *mem, void *reg)	high	asm	
+0042c310	F	enc_movem_abs	void enc_movem_abs(void *insn, void *reg, void *abs)	high	asm	
+0042c360	F	enc_movem_abs_w	void enc_movem_abs_w(void *insn, void *abs, void *reg)	high	asm	
+0042c390	F	enc_lua	void enc_lua(void *insn, void *mem, void *dst)	high	asm	
+0042c400	F	enc_mul_imm	void enc_mul_imm(void *insn, void *s1, void *imm, void *dst)	high	asm	
+0042c470	F	qq_code	int qq_code(int reg)	high	asm	
+0042c4c0	F	mem_reg_read	int mem_reg_read(int id, unsigned long addr, unsigned long *out)	med	asm	
+0042c7f0	F	reg_field_pack	unsigned long reg_field_pack(int id, unsigned long val, int idx)	low	asm	
+0042d460	F	mem_write_n	int mem_write_n(int id, long a2, long a3, unsigned long addr, unsigned long count, unsigned long val)	low	asmtab	
+0042d4c0	F	mem_region_of	int mem_region_of(int space, unsigned long addr)	med	asmtab	
+0042da70	F	mem_reg_write	int mem_reg_write(int id, unsigned long addr, unsigned long val)	med	asmtab	
+0042dd70	F	omr_remap_56009	void omr_remap_56009(unsigned long omr)	med	asmtab	
+0042dec0	F	omr_remap_56011	void omr_remap_56011(unsigned long omr)	med	asmtab	
+0042e010	F	omr_remap_56012	void omr_remap_56012(unsigned long omr)	med	asmtab	
+0042e160	F	reg_write_check	int reg_write_check(int id, long a2, unsigned long val)	low	asmtab	
+0042e370	F	reg_read_check	int reg_read_check(int id, long a2, unsigned long val)	low	asmtab	
+0042e5c0	F	insn_exec_h42e5c0		low	hidden	
+0042e5d0	F	insn_exec_h42e5d0		low	hidden	
+0042e600	F	insn_exec_h42e600		low	hidden	
+0042e670	F	insn_exec_h42e670		low	hidden	
+0042e6e0	F	insn_exec_h42e6e0		low	hidden	
+0042e750	F	insn_exec_h42e750		low	hidden	
+0042e780	F	insn_exec_h42e780		low	hidden	
+0042e7b0	F	insn_exec_h42e7b0		low	hidden	
+0042e7e0	F	insn_exec_h42e7e0		low	hidden	
+0042e7f0	F	insn_exec_h42e7f0		low	hidden	
+0042e810	F	insn_exec_h42e810		low	hidden	
+0042e820	F	insn_exec_h42e820		low	hidden	
+0042e830	F	insn_exec_h42e830		low	hidden	
+0042e890	F	insn_exec_h42e890		low	hidden	
+0042e8f0	F	insn_exec_h42e8f0		low	hidden	
+0042e910	F	insn_exec_h42e910		low	hidden	
+0042e950	F	insn_exec_h42e950		low	hidden	
+0042e980	F	insn_exec_h42e980		low	hidden	
+0042e9e0	F	insn_exec_h42e9e0		low	hidden	
+0042eaf0	F	insn_exec_h42eaf0		low	hidden	
+0042eb90	F	insn_exec_h42eb90		low	hidden	
+0042ec20	F	insn_exec_h42ec20		low	hidden	
+0042ec90	F	insn_exec_h42ec90		low	hidden	
+0042ecc0	F	insn_exec_h42ecc0		low	hidden	
+0042ecd0	F	insn_exec_h42ecd0		low	hidden	
+0042ece0	F	insn_exec_h42ece0		low	hidden	
+0042ed20	F	insn_exec_h42ed20		low	hidden	
+0042ed40	F	insn_exec_h42ed40		low	hidden	
+0042eda0	F	insn_exec_h42eda0		low	hidden	
+0042edc0	F	insn_exec_h42edc0		low	hidden	
+0042ede0	F	insn_exec_h42ede0		low	hidden	
+0042ee10	F	insn_exec_h42ee10		low	hidden	
+0042ee20	F	insn_exec_h42ee20		low	hidden	
+0042ee40	F	insn_exec_h42ee40		low	hidden	
+0042ee80	F	insn_exec_h42ee80		low	hidden	
+0042ee90	F	insn_exec_h42ee90		low	hidden	
+0042eec0	F	insn_exec_info	void insn_exec_info(unsigned long devflags, unsigned long opw, long mode, long sel, void **rec)	med	asmtab	
+0042ef30	F	insn_move_h42ef30		low	hidden	
+0042ef40	F	insn_move_h42ef40		low	hidden	
+0042ef50	F	insn_move_h42ef50		low	hidden	
+0042ef80	F	insn_move_h42ef80		low	hidden	
+0042ef90	F	insn_move_h42ef90		low	hidden	
+0042efa0	F	insn_move_h42efa0		low	hidden	
+0042efd0	F	insn_move_h42efd0		low	hidden	
+0042f000	F	insn_move_h42f000		low	hidden	
+0042f010	F	insn_move_h42f010		low	hidden	
+0042f040	F	insn_move_h42f040		low	hidden	
+0042f070	F	insn_move_h42f070		low	hidden	
+0042f0c0	F	insn_move_h42f0c0		low	hidden	
+0042f0f0	F	insn_move_h42f0f0		low	hidden	
+0042f120	F	insn_move_h42f120		low	hidden	
+0042f130	F	insn_move_h42f130		low	hidden	
+0042f140	F	insn_move_h42f140		low	hidden	
+0042f170	F	insn_move_h42f170		low	hidden	
+0042f180	F	insn_move_h42f180		low	hidden	
+0042f1b0	F	insn_move_h42f1b0		low	hidden	
+0042f1c0	F	insn_move_h42f1c0		low	hidden	
+0042f1f0	F	insn_move_h42f1f0		low	hidden	
+0042f200	F	insn_move_h42f200		low	hidden	
+0042f210	F	insn_move_h42f210		low	hidden	
+0042f220	F	insn_exec_h42f220		low	hidden	
+0042f230	F	insn_move_h42f230		low	hidden	
+0042f240	F	insn_move_h42f240		low	hidden	
+0042f250	F	insn_move_h42f250		low	hidden	
+0042f260	F	insn_move_h42f260		low	hidden	
+0042f270	F	insn_move_h42f270		low	hidden	
+0042f290	F	insn_move_h42f290		low	hidden	
+0042f2a0	F	insn_move_info	void insn_move_info(unsigned long opw, long mode, long sel, void **rec, unsigned long devflags)	med	asmtab	
+0042f4a0	F	insn_class_h42f4a0		low	hidden	
+0042f4b0	F	insn_class_h42f4b0		low	hidden	
+0042f4d0	F	insn_class_h42f4d0		low	hidden	
+0042f530	F	insn_class_h42f530		low	hidden	
+0042f570	F	insn_class_h42f570		low	hidden	
+0042f5c0	F	insn_class_h42f5c0		low	hidden	
+0042f5e0	F	insn_class_h42f5e0		low	hidden	
+0042f5f0	F	insn_class_h42f5f0		low	hidden	
+0042f640	F	insn_class_h42f640		low	hidden	
+0042f690	F	insn_class_h42f690		low	hidden	
+0042f6c0	F	insn_class_h42f6c0		low	hidden	
+0042f710	F	insn_class_h42f710		low	hidden	
+0042f770	F	insn_class_h42f770		low	hidden	
+0042f7a0	F	insn_class_h42f7a0		low	hidden	
+0042f850	F	insn_class_h42f850		low	hidden	
+0042f8b0	F	insn_class_h42f8b0		low	hidden	
+0042fba0	F	insn_class_h42fba0		low	hidden	
+0042fbe0	F	insn_class_h42fbe0		low	hidden	
+0042fc30	F	insn_class_h42fc30		low	hidden	
+0042fc50	F	insn_class_h42fc50		low	hidden	
+0042fcb0	F	insn_class_h42fcb0		low	hidden	
+0042fcd0	F	insn_class_h42fcd0		low	hidden	
+0042fd20	F	insn_class_h42fd20		low	hidden	
+0042fd70	F	insn_class_h42fd70		low	hidden	
+0042fdb0	F	insn_class_code	unsigned long insn_class_code(unsigned long opw, long mode, long sel, unsigned long devflags)	med	asmtab	
+0042fe10	F	insn_ea_class	void insn_ea_class(unsigned long opw, long flag, unsigned long *out, unsigned long devflags)	med	asmtab	
+0042fe50	F	insn_valid_h42fe50		low	hidden	
+0042fe60	F	insn_valid_h42fe60		low	hidden	
+0042ff20	F	ea_mode_index	int ea_mode_index(unsigned long opw)	med	asmtab	
+0042ff80	F	insn_valid_pm_a	int insn_valid_pm_a(unsigned long opw)	low	asmtab	
+0042ffb0	F	insn_valid_h42ffb0		low	hidden	
+0042ffc0	F	insn_valid_h42ffc0		low	hidden	
+00430080	F	insn_valid_pm_b	int insn_valid_pm_b(unsigned long opw)	low	asmtab	
+004300a0	F	insn_valid_h4300a0		low	hidden	
+00430160	F	insn_valid_h430160		low	hidden	
+00430210	F	insn_valid_h430210		low	hidden	
+004302d0	F	insn_valid_pm_c	int insn_valid_pm_c(unsigned long opw)	low	asmtab	
+00430300	F	insn_valid_pm_d	int insn_valid_pm_d(unsigned long opw)	low	asmtab	
+00430390	F	insn_valid_pm_e	int insn_valid_pm_e(unsigned long opw)	low	asmtab	
+00430410	F	insn_valid_h430410		low	hidden	
+00430430	F	insn_valid_h430430		low	hidden	
+00430450	F	insn_valid_h430450		low	hidden	
+00430480	F	insn_valid_h430480		low	hidden	
+004304b0	F	insn_valid_h4304b0		low	hidden	
+004304e0	F	insn_valid_h4304e0		low	hidden	
+00430510	F	insn_valid_h430510		low	hidden	
+00430550	F	insn_valid_h430550		low	hidden	
+00430580	F	insn_valid_h430580		low	hidden	
+004305a0	F	insn_valid_h4305a0		low	hidden	
+004305e0	F	insn_valid_h4305e0		low	hidden	
+00430630	F	insn_valid_h430630		low	hidden	
+00430650	F	insn_valid_h430650		low	hidden	
+00430670	F	insn_valid_pm_f	int insn_valid_pm_f(unsigned long opw)	low	asmtab	
+004306e0	F	insn_valid_h4306e0		low	hidden	
+00430720	F	insn_valid_h430720		low	hidden	
+00430740	F	opclass_lookup	int opclass_lookup(unsigned long opw, unsigned long cpu)	high	asmtab	
+004307d0	F	opclass_lookup_any	int opclass_lookup_any(unsigned long opw)	high	asmtab	
+00430850	F	insn_validate	int insn_validate(unsigned long opw, unsigned long devflags)	med	asmtab	
+00430880	F	alu_op_h430880		low	hidden	
+004309c0	F	alu_ovf_add	void alu_ovf_add(void)	low	asmtab	
+00430a10	F	alu_norm_sum	void alu_norm_sum(void)	med	asmtab	
+00430a90	F	alu_op_h430a90		low	hidden	
+00430b90	F	alu_ovf_sub	void alu_ovf_sub(void)	low	asmtab	
+00430be0	F	alu_add56	void alu_add56(void)	med	asmtab	
+00430cd0	F	alu_op_h430cd0		low	hidden	
+00430e00	F	alu_norm_res	void alu_norm_res(void)	med	asmtab	
+00430e80	F	alu_op_h430e80		low	hidden	
+00430fc0	F	alu_op_h430fc0		low	hidden	
+00431090	F	alu_op_h431090		low	hidden	
+00431170	F	alu_op_h431170		low	hidden	
+00431270	F	alu_op_h431270		low	hidden	
+00431290	F	alu_op_h431290		low	hidden	
+004312b0	F	alu_op_h4312b0		low	hidden	
+00431300	F	alu_op_h431300		low	hidden	
+00431400	F	alu_ovf_c	void alu_ovf_c(void)	low	asmtab	
+00431450	F	alu_ovf_d	void alu_ovf_d(void)	low	asmtab	
+004314a0	F	alu_op_h4314a0		low	hidden	
+00431680	F	alu_norm_abs	void alu_norm_abs(void)	med	asmtab	
+00431700	F	alu_op_h431700		low	hidden	
+004318a0	F	alu_op_h4318a0		low	hidden	
+004318e0	F	alu_op_h4318e0		low	hidden	
+00431920	F	alu_op_h431920		low	hidden	
+004319f0	F	alu_op_h4319f0		low	hidden	
+00431ac0	F	alu_op_h431ac0		low	hidden	
+00431b80	F	alu_op_h431b80		low	hidden	
+00431b90	F	alu_op_h431b90		low	hidden	
+00431c70	F	alu_op_h431c70		low	hidden	
+00431d40	F	alu_op_h431d40		low	hidden	
+00431e10	F	alu_op_h431e10		low	hidden	
+00431ef0	F	alu_op_h431ef0		low	hidden	
+00431fe0	F	alu_op_h431fe0		low	hidden	
+00432120	F	alu_op_h432120		low	hidden	
+00432140	F	alu_op_h432140		low	hidden	
+00432290	F	alu_op_h432290		low	hidden	
+00432410	F	alu_op_h432410		low	hidden	
+00432590	F	alu_op_h432590		low	hidden	
+004325c1	F	hid_4325c1		low	hidden	
+00432d50	F	alu_mpy	void alu_mpy(void)	med	asmtab	
+00433020	F	alu_mac	void alu_mac(void)	med	asmtab	
+00433250	F	alu_round	void alu_round(void)	med	asmtab	
+00433360	F	alu_shift1	void alu_shift1(void *core)	med	asmtab	
+004335a0	F	alu_op_h4335a0		low	hidden	
+00433650	F	alu_op_h433650		low	hidden	
+00433700	F	alu_store_ext	void alu_store_ext(void)	low	asmtab	
+004337c0	F	alu_load_src	void alu_load_src(int mode)	low	asmtab	
+00433890	F	alu_set_ccr	void alu_set_ccr(void)	med	asmtab	
+004339b0	F	alu_load_acc	void alu_load_acc(void)	low	asmtab	
+00433a30	F	alu_load_ops	void alu_load_ops(void)	low	asmtab	
+00433c50	F	sign_ext_word	void sign_ext_word(int src, int dst)	low	asmtab	
+00433c80	F	alu_execute	void alu_execute(void *core)	med	asmtab	
+00433ce0	F	alu_decode	void alu_decode(unsigned long opw, long *out)	low	asmtab	
+00433e80	F	periph_reset	void periph_reset(void)	med	asmtab	
+00433f10	F	periph_call	long periph_call(int devidx, int periph, long a, long b)	med	asmtab	
+00433f60	F	periph_find_reg	long periph_find_reg(int devidx, char *name, int *periph, int *reg)	med	asmtab	
+004340f0	F	str_icmp	int str_icmp(char *a, char *b)	high	state	
+004341a0	F	str_nicmp	int str_nicmp(char *a, char *b, int n)	high	state	
+00434270	F	dev_write_reg	int dev_write_reg(int dev, int bank, int reg, long *val)	med	state	
+00434300	F	str_tolower	int str_tolower(char *s)	high	state	
+00434350	F	cmd_load_h0_sub_434350		low	hidden	
+00434830	F	sorted_table_lookup	int sorted_table_lookup(char *s, char **table, int n)	med	state	
+00434880	F	save_state_all	void save_state_all(char *filename)	high	state	
+004348a0	F	save_state	int save_state(char *filename, int first_dev, int last_dev)	high	state	
+004358d0	F	save_maplist	void save_maplist(void *list, void *fp)	high	state	
+00435930	F	save_io_files	void save_io_files(void *fp)	high	state	
+004359a0	F	save_io_list	int save_io_list(void *fp, void *list_head)	high	state	
+00435b00	F	save_expr_tree	void save_expr_tree(void *fp, void *node, int code)	high	state	
+00435c20	F	expr_tree_size	int expr_tree_size(void *node, int code, int *count)	high	state	
+00435ce0	F	devtype_find	int devtype_find(char *name1, char *name2)	med	state	
+00435d40	F	dev_create	int dev_create(int dev, char *devtype_name)	high	state	
+004360b0	F	dev_alloc_regbank	int dev_alloc_regbank(int bank)	high	state	
+00436150	F	dev_init_regbank	void dev_init_regbank(int bank)	high	state	
+004361f0	F	dev_alloc_memmaps	int dev_alloc_memmaps(void)	high	state	
+004362e0	F	dev_init_memmaps	void dev_init_memmaps(void)	high	state	
+004363e0	F	dev_alloc_periph	int dev_alloc_periph(void)	high	state	
+00436430	F	dev_init_periph	void dev_init_periph(void)	high	state	
+00436470	F	dev_reset	void dev_reset(int dev, int arg)	high	state	
+004364f0	F	dev_free_program_info	void dev_free_program_info(void)	high	state	
+00436620	F	dev_clear_memory	void dev_clear_memory(int devtype_unused)	med	state	
+00436640	F	free_memtags	void free_memtags(void)	high	state	
+00436730	F	free_io_lists	void free_io_lists(void)	high	state	
+004367a0	F	dev_destroy	void dev_destroy(int dev)	high	state	
+00436a50	F	dev_free_regbank	void dev_free_regbank(int bank)	high	state	
+00436ad0	F	dev_free_memmaps	void dev_free_memmaps(void)	high	state	
+00436b30	F	chip_reset_regs	int chip_reset_regs(int mode, long arg)	med	state	
+00436bb0	F	dev_state_init	void dev_state_init(void)	high	state	
+00436f90	F	load_state	int load_state(char *filename)	high	state	
+004383d0	F	load_maplist	void load_maplist(void *listp, void *fp)	high	state	
+00438450	F	load_expr_tree	void *load_expr_tree(void *fp)	high	state	
+00438690	F	dev_cycle_begin	void dev_cycle_begin(int dev)	med	state	
+00438850	F	dev_cycle_stage1	void dev_cycle_stage1(int dev)	med	state	
+004388a0	F	dev_cycle_stage2	void dev_cycle_stage2(int dev)	med	state	
+004388f0	F	dev_cycle_end	int dev_cycle_end(int dev)	med	state	
+00438a30	F	dev_housekeeping	void dev_housekeeping(int dev)	high	state	
+00438a80	F	load_io_files	void load_io_files(void *fp)	high	state	
+00438af0	F	load_io_list	int load_io_list(void *fp, void *list_head_addr)	high	state	
+00438d70	F	path_combine	void path_combine(char *dir, char *name, char *ext, char *out)	high	state	
+00438eb0	F	path_search	int path_search(char *name, char *defext, char *out)	high	state	
+00439000	F	sim_init_tables	void sim_init_tables(void)	med	cmdloop	
+00439080	F	memmap_find	int memmap_find(int space, unsigned long addr)	high	cmdloop	
+00439140	F	dev_select	void dev_select(int dev)	high	cmdloop	
+004391f0	F	cmd_complete	char *cmd_complete(char *line)	high	cmdloop	
+00439360	F	cmdstack_push	void cmdstack_push(char *line)	high	cmdloop	
+00439410	F	cmd_read_line	void cmd_read_line(int dev, char *out)	high	cmdloop	
+00439d80	F	prompt_show	void prompt_show(void)	high	cmdloop	
+00439e50	F	status_line1	void status_line1(char *text)	high	cmdloop	
+00439eb0	F	cmd_error_position	int cmd_error_position(char *line)	low	cmdloop	
+00439f40	F	help_line_edit	int help_line_edit(char *line)	low	cmdloop	
+0043a3f0	F	hid_43a3f0		low	hidden	
+0043a470	F	macro_read_line	void macro_read_line(int dev, char *out)	high	macro	
+0043a610	F	macro_pop	void macro_pop(void)	high	macro	
+0043a6a0	F	macro_push	void macro_push(char *filename)	high	macro	
+0043a770	F	macro_abort_all	void macro_abort_all(void)	high	macro	
+0043a7c0	F	confirm_overwrite	int confirm_overwrite(char *filename, int mode)	high	macro	
+0043a8b0	F	show_running_banner	void show_running_banner(void)	high	macro	
+0043a930	F	memtag_add	void memtag_add(int flags, int region, unsigned long lo, unsigned long hi, int kind)	high	macro	
+0043a9d0	F	disasm_line	int disasm_line(unsigned long space, unsigned long addr, char *out, int arg)	high	macro	
+0043b5a0	F	cmd_execute	void cmd_execute(int dev, char *line)	high	fmt	
+0043b640	F	iolist_remove	void iolist_remove(void *list_head_addr, char *name, int mode)	med	fmt	
+0043b790	F	memtag_clear_id	void memtag_clear_id(int id, unsigned long addr)	med	fmt	
+0043b860	F	iolist_find_id	void *iolist_find_id(void *list, int id)	med	fmt	
+0043b880	F	iolist_find	void *iolist_find(void *list, int type, int a, int b)	med	fmt	
+0043b8c0	F	rangemap_set	void rangemap_set(void *mapp, unsigned long lo, unsigned long hi, int space_size, int value)	high	fmt	
+0043ba40	F	rangemap_get	int rangemap_get(void *mapp, unsigned long addr)	high	fmt	
+0043ba70	F	prompt_help_cycle	void prompt_help_cycle(int step)	high	fmt	
+0043bb00	F	status_line2	void status_line2(char *text)	high	fmt	
+0043bb50	F	display_refresh	void display_refresh(int full)	high	fmt	
+0043bc00	F	memtag_rebuild	void memtag_rebuild(void)	high	fmt	
+0043bd90	F	fmt_float_exp	char *fmt_float_exp(char *fmt, int *dbl)	high	fmt	
+0043bec0	F	fmt_register	int fmt_register(int bank, int reg, int radix, char *out)	high	fmt	
+0043c2f0	F	display_all	void display_all(int with_watch)	high	console	
+0043ca50	F	rtrim_line	int rtrim_line(char *s)	high	console	
+0043ca80	F	reg_next	void reg_next(int *reg, int *bank)	med	console	
+0043cad0	F	reg_prev	void reg_prev(int *reg, int *bank)	med	console	
+0043cb10	F	list_next_id	int list_next_id(void *head)	med	console	
+0043cb40	F	list_find_id	int *list_find_id(void *head, int id)	med	console	
+0043cb70	F	list_insert_sorted	void list_insert_sorted(void *head, void *node)	med	console	
+0043cbb0	F	cmd_watch_h1_sub_43cbb0		low	hidden	
+0043cc10	F	cmd_watch_h1_sub_43cc10		low	hidden	
+0043cc60	F	str_nicmp_ascii	int str_nicmp_ascii(char *a, char *b, int n)	high	console	
+0043ccc0	F	str_icmp_ascii	int str_icmp_ascii(char *a, char *b)	high	console	
+0043cd00	F	console_open	void console_open(void)	high	console	
+0043ce80	F	cmd_unlock_h0		low	hidden	
+0043ce90	F	console_rows	int console_rows(void *h)	high	console	
+0043cec0	F	console_cols	int console_cols(void *h)	high	console	
+0043cef0	F	console_get_attr	void console_get_attr(long h)	med	console	
+0043cf70	F	console_set_size	void console_set_size(void *h, int cols, int rows)	high	console	
+0043d080	F	hid_43d080		low	hidden	
+0043d0b0	F	screen_clear	void screen_clear(void)	high	console	
+0043d180	F	scrollback_end	void scrollback_end(int dev)	high	console	
+0043d1e0	F	log_echo	void log_echo(char *line, int nocmdlog)	high	console	
+0043d200	F	out_line	void out_line(char *line, int nocmdlog, int plain)	high	console	
+0043d3a0	F	out_text	void out_text(char *line, int nocmdlog)	high	console	
+0043d3c0	F	scrollback_move	void scrollback_move(int n)	high	console	
+0043d4e0	F	screen_rotate	void screen_rotate(int dir)	high	console	
+0043d520	F	cursor_set	void cursor_set(int row, int col)	high	console	
+0043d570	F	screen_putc	void screen_putc(int ch)	med	console	
+0043d5b0	F	screen_clear_eol	void screen_clear_eol(void)	high	console	
+0043d640	F	screen_puts_attr	void screen_puts_attr(char *s, int mode)	high	console	
+0043d800	F	screen_write	void screen_write(int row, int col, char *s, int mode)	high	console	
+0043d840	F	key_get	int key_get(void)	high	console	
+0043d9e0	F	console_beep	void console_beep(void)	low	console	
+0043d9f0	F	screen_flush	void screen_flush(void)	high	console	
+0043db40	F	screen_hold	void screen_hold(void)	high	console	
+0043db50	F	screen_release	void screen_release(void)	high	console	
+0043db70	F	console_close	void console_close(void)	high	console	
+0043dbc0	F	abort_check	int abort_check(void)	high	console	
+0043dc00	F	screen_fill_rows	void screen_fill_rows(char *text)	med	console	
+0043dcb0	F	pool_init	void pool_init(int *pool, unsigned long blocksize)	med	console	
+0043dcf0	F	pool_new_block	unsigned long *pool_new_block(int pool, unsigned long size, unsigned long kind)	med	console	
+0043dd40	F	chain_free	void chain_free(void **head)	low	console	
+0043dd70	F	pool_alloc	int pool_alloc(int pool, unsigned long n)	med	console	
+0043ddd0	F	pool_strdup	char *pool_strdup(int pool, char *s)	med	console	
+0043de70	F	avl_cmp_h43de70		low	hidden	
+0043deb0	F	cdb_snapshot_write	void cdb_snapshot_write(char *name, int unused, int mode)	low	console	
+0043e080	F	snap_reloc_add	void snap_reloc_add(unsigned long *slot, int kind)	med	cdbwatch	
+0043e4a0	F	snap_find_block	int snap_find_block(unsigned long addr, int *out_block_off)	med	cdbwatch	
+0043e4f0	F	snap_restore	void snap_restore(char *filename, int unused, int reopen)	med	cdbwatch	
+0043e750	F	cmd_where_h0		low	hidden	
+0043e7c0	F	cmd_where_h1		low	hidden	
+0043e8b0	F	cmd_where_parse		low	hidden	
+0043e9b0	F	watch_update_all	void watch_update_all(void)	high	cdbwatch	
+0043e9e0	F	cmd_watch_h0		low	hidden	
+0043ebe0	F	cmd_watch_h1		low	hidden	
+0043ec30	F	cmd_watch_h2		low	hidden	
+0043ec80	F	watch_update_one	void watch_update_one(int dev, int wnum)	med	cdbwatch	
+0043eca0	F	watch_display	void watch_display(void *watch)	high	cdbwatch	
+0043f010	F	watch_format_value	void watch_format_value(void *watch, char *out)	high	dispval	
+0043fa30	F	cmd_watch_parse		low	hidden	
+0043fd20	F	cmd_wait_h0		low	hidden	
+0043fdb0	F	cmd_wait_parse		low	hidden	
+0043fdf0	F	src_find_line	int src_find_line(unsigned char *name)	low	dispval	
+0043fe20	F	addr_to_srcline	int addr_to_srcline(unsigned long addr, int level)	low	dispval	
+00440030	F	dbg_verify_section	int dbg_verify_section(int dev, int secno)	med	coffrd	
+004401c0	F	fread_swap32	unsigned int fread_swap32(char *buf, unsigned int size, unsigned int n, void *fp)	high	coffrd	
+00440200	F	swap32_array	void swap32_array(void *buf, int size, int count)	high	coffrd	
+00440240	F	dbg_sym_name	char * dbg_sym_name(void *sym)	high	coffrd	
+00440280	F	dbg_aux_name	char * dbg_aux_name(void *aux)	high	coffrd	
+004402c0	F	dbg_find_label	int dbg_find_label(unsigned int addr, int space, unsigned int *is_local)	med	coffrd	
+00440450	F	dbg_find_sym_d2	int dbg_find_sym_d2(char *name)	low	coffrd	
+004404e0	F	dbg_sym_name_eq	int dbg_sym_name_eq(char *name, void *sym)	high	coffrd	
+00440540	F	dbg_sym_bsearch	int dbg_sym_bsearch(char *name)	high	coffrd	
+00440670	F	dbg_find_macro_of_file	int dbg_find_macro_of_file(int fileno)	low	coffrd	
+00440730	F	dbg_resolve_symbol	int dbg_resolve_symbol(char *name, void *value)	med	coffrd	
+00440bf0	F	dbg_addr_to_first_sym	int dbg_addr_to_first_sym(unsigned int addr, int space)	low	coffrd	
+00440c20	F	dbg_find_sym_d3	int dbg_find_sym_d3(char *name)	low	coffrd	
+00440cb0	F	dbg_find_scoped_sym	int dbg_find_scoped_sym(char *name, int fileidx)	low	coffrd	
+00440da0	F	dbg_find_block_sym	int dbg_find_block_sym(char *name, int fileidx)	low	coffrd	
+00440e90	F	dbg_find_macro_local	int dbg_find_macro_local(unsigned int addr, int space, char *name)	low	coffrd	
+00440fe0	F	dbg_find_local_label	int dbg_find_local_label(unsigned int addr, int space, char *name)	low	coffrd	
+004411c0	F	dbg_find_nearest_named	int dbg_find_nearest_named(unsigned int addr, char *name)	low	coffrd	
+00441250	F	dbg_find_nearest_sorted	int dbg_find_nearest_sorted(unsigned int addr, char *name)	low	coffrd	
+00441320	F	dbg_addr_to_file_sym	int dbg_addr_to_file_sym(unsigned int addr, int space)	med	coffrd	
+004413b0	F	dbg_addr_to_fileno	int dbg_addr_to_fileno(unsigned int addr, int space)	med	coffrd	
+004413e0	F	dbg_addr_to_filename	char * dbg_addr_to_filename(unsigned int addr, int space)	med	coffrd	
+00441420	F	dbg_addr_to_line_index	int dbg_addr_to_line_index(unsigned int addr, int space)	med	coffrd	
+00441490	F	dbg_addr_to_line	int dbg_addr_to_line(unsigned int addr, int space)	med	coffrd	
+004414c0	F	dbg_fileno_to_name	char * dbg_fileno_to_name(int fileno)	med	coffrd	
+00441500	F	dbg_format_addr	char * dbg_format_addr(int space, unsigned int addr)	high	coffrd	
+004415c0	F	dbg_build_indexes	int dbg_build_indexes(void)	med	coffrd	
+004417e0	F	hid_4417e0		low	hidden	
+00441890	F	hid_441890		low	hidden	
+00441910	F	dbg_load_cld	int dbg_load_cld(int dev, char *filename)	high	coffrd	
+00441b30	F	dbg_read_filhdr	int dbg_read_filhdr(void)	high	coffrd	
+00441ba0	F	dbg_read_strtab	int dbg_read_strtab(void)	high	coffrd	
+00441d10	F	dbg_read_sections	int dbg_read_sections(void)	high	coffrd	
+00441ea0	F	dbg_build_line_map	void dbg_build_line_map(unsigned int nlines, void *lines, int *map)	low	coffrd	
+00441f50	F	hid_441f50		low	hidden	
+00441fc0	F	dbg_map_section_lines	void dbg_map_section_lines(int secno, int *map, int fileno)	low	coffrd	
+00442000	F	dbg_read_linenos	int dbg_read_linenos(void)	high	coffrd	
+004421c0	F	dbg_fix_linenos	void dbg_fix_linenos(int lnnoptr, void *lines, unsigned int nlines)	low	coffrd	
+00442340	F	dbg_read_symbols	int dbg_read_symbols(void)	high	coffrd	
+00442530	F	dbg_number_symbols	void dbg_number_symbols(void)	med	coffrd	
+00442610	F	dbg_set_section_line_start	void dbg_set_section_line_start(void)	low	coffrd	
+00442680	F	dbg_fix_section_line_range	void dbg_fix_section_line_range(void)	low	coffrd	
+004426f0	F	dbg_load_source_files	int dbg_load_source_files(void)	med	coffrd	
+00442930	F	dbg_find_file_sym	int dbg_find_file_sym(char *name, int limit)	med	coffrd	
+004429f0	F	dbg_load_source_index	int dbg_load_source_index(int fileno, char *path)	med	coffrd	
+00442be0	F	dbg_fix_symbol_classes	void dbg_fix_symbol_classes(void)	low	coffrd	
+00442c80	F	dbg_free	void dbg_free(void)	high	coffrd	
+00442de0	F	win_buf_alloc	int win_buf_alloc(void)	med	coffrd	
+00442e10	F	win_update	void win_update(int delta)	med	coffrd	
+00442ee0	F	win_status_line	void win_status_line(void)	high	coffrd	
+004431f0	F	asmwin_scroll	void asmwin_scroll(int delta, unsigned int pc, int space)	med	coffrd	
+00443260	F	asmwin_fill	void asmwin_fill(unsigned int addr, int space)	high	coffrd	
+00443a40	F	srcwin_scroll	void srcwin_scroll(int delta, unsigned int pc, int space)	med	coffrd	
+00443c30	F	srcwin_fill	int srcwin_fill(char *file, int width, int first_line, int fileno, int pc_line, int pc_fileno)	med	coffrd	
+00443e30	F	step_mode_at_pc	int step_mode_at_pc(int mode)	low	coffrd	
+00443ed0	F	insn_is_branch	int insn_is_branch(int addr, int *len)	med	coffrd	
+00443fd0	F	step_advance	void step_advance(int *refresh, int *stop_run)	med	coffrd	
+004444a0	F	step_classify_insn	int step_classify_insn(int addr)	low	coffrd	
+004446d0	F	step_setup_next	void step_setup_next(void)	low	coffrd	
+004447b0	F	cmd_next_h0		low	hidden	
+00444860	F	cmd_next_h1		low	hidden	
+00444880	F	cmd_next_h2		low	hidden	
+004448a0	F	cmd_next_h3		low	hidden	
+004448c0	F	cmd_next_h4		low	hidden	
+004448e0	F	cmd_next_h5		low	hidden	
+00444900	F	cmd_next_parse		low	hidden	
+00444ad0	F	parse_line_spec	int parse_line_spec(int tok)	med	coffrd	
+00444bf0	F	dbg_line_to_addr	unsigned int dbg_line_to_addr(int fileno, unsigned int line, int *addr_space)	med	coffrd	
+00444cd0	F	dbg_find_source_file	int dbg_find_source_file(char *name)	high	coffrd	
+00444d50	F	dbg_parse_file_line	int dbg_parse_file_line(char *arg, void *value, unsigned int *line)	med	coffrd	
+00444e10	F	cmd_until_h0		low	hidden	
+00444ee0	F	cmd_until_h1		low	hidden	
+00444f00	F	cmd_until_parse		low	hidden	
+00444f60	F	cmd_view_h0		low	hidden	
+00445030	F	cmd_view_parse		low	hidden	
+004450a0	F	dbg_next_label	int dbg_next_label(int idx, char **desc)	low	coffrd	
+00445290	F	cmd_list_h0		low	hidden	
+004452d0	F	cmd_list_h1		low	hidden	
+00445310	F	cmd_list_h2		low	hidden	
+00445350	F	cmd_list_h3		low	hidden	
+00445410	F	cmd_list_h4		low	hidden	
+00445450	F	cmd_list_h4_sub_445450		low	hidden	
+00445500	F	cmd_list_parse		low	hidden	
+004455b0	F	parse_list_spec	void parse_list_spec(int tok)	med	coffrd	
+00445750	F	cmd_finish_h0		low	hidden	
+004457f0	F	cmd_finish_parse		low	hidden	
+00445810	F	cmd_up_h0		low	hidden	
+00445930	F	cmd_up_parse		low	hidden	
+00445970	F	cmd_unlock_parse		low	hidden	
+004459e0	F	cmd_type_h0		low	hidden	
+00445dd0	F	cmd_type_parse		low	hidden	
+00445e10	F	cmd_trace_h0		low	hidden	
+00445ed0	F	cmd_trace_h2		low	hidden	
+00445ef0	F	cmd_trace_h1		low	hidden	
+00445f10	F	cmd_step_exec	void cmd_step_exec(int arg)	low	coffrd	
+00445fe0	F	cmd_trace_h3		low	hidden	
+00446000	F	cmd_trace_h6		low	hidden	
+00446020	F	cmd_trace_h7		low	hidden	
+00446040	F	cmd_trace_h4		low	hidden	
+00446060	F	cmd_trace_h5		low	hidden	
+00446080	F	cmd_trace_parse		low	hidden	
+004462c0	F	cmd_system_h0		low	hidden	
+00446310	F	cmd_system_h1		low	hidden	
+00446440	F	cmd_system_h2		low	hidden	
+00446510	F	cmd_system_parse		low	hidden	
+00446580	F	cmd_streams_h0		low	hidden	
+00446590	F	cmd_streams_h1		low	hidden	
+004465a0	F	cmd_streams_h2		low	hidden	
+00446600	F	cmd_streams_parse		low	hidden	
+004466a0	F	cmd_step_h0		low	hidden	
+004466d0	F	cmd_run_devices	void cmd_run_devices(void)	low	symdisp	
+00446760	F	cmd_step_h1		low	hidden	
+004467c0	F	cmd_step_h2		low	hidden	
+004467f0	F	cmd_step_h3		low	hidden	
+00446820	F	cmd_step_h4		low	hidden	
+00446850	F	cmd_step_h5		low	hidden	
+004468b0	F	cmd_step_h6		low	hidden	
+004468e0	F	cmd_step_h7		low	hidden	
+00446910	F	cmd_step_parse		low	hidden	
+00446b50	F	cmd_save_h0		low	hidden	
+00446c50	F	cmd_save_h1		low	hidden	
+00447170	F	cmd_save_parse	void * cmd_save_parse(void)	med	symdisp	
+00447230	F	cmd_reset_h0		low	hidden	
+00447270	F	cmd_reset_parse		low	hidden	
+004472d0	F	cmd_redirect_h0		low	hidden	
+004474c0	F	cmd_redirect_h1		low	hidden	
+00447500	F	cmd_redirect_h1_sub_447500		low	hidden	
+00447560	F	cmd_redirect_h2		low	hidden	
+004475b0	F	redirect_show	void redirect_show(int which)	med	symdisp	
+00447630	F	cmd_redirect_parse		low	hidden	
+00447720	F	cmd_radix_h0		low	hidden	
+00447770	F	cmd_radix_h1		low	hidden	
+00447980	F	cmd_radix_parse		low	hidden	
+004479e0	F	cmd_quit_h1		low	hidden	
+004479f0	F	cmd_quit_h2		low	hidden	
+00447a00	F	cmd_quit_h0		low	hidden	
+00447b30	F	cmd_quit_parse		low	hidden	
+00447ba0	F	cmd_path_h0		low	hidden	
+00447c70	F	cmd_path_h1		low	hidden	
+00447d30	F	cmd_path_h3		low	hidden	
+00447e90	F	cmd_path_h2		low	hidden	
+00447eb0	F	cmd_path_parse		low	hidden	
+00447f50	F	cmd_output_h0		low	hidden	
+004480b0	F	cmd_output_h1		low	hidden	
+004481a0	F	cmd_output_h2		low	hidden	
+004486f0	F	cmd_output_h2_sub_4486f0		low	hidden	
+00448730	F	cmd_output_h3		low	hidden	
+00448740	F	io_emit	void io_emit(void *io, char *text)	high	iohist	
+004487f0	F	io_out_poll	void io_out_poll(void)	med	iohist	
+00448980	F	io_pin_state_str	int io_pin_state_str(void *io, char *buf)	med	iohist	
+00448b60	F	io_out_mem_write	void io_out_mem_write(int space, unsigned long addr, unsigned long value)	med	iohist	
+00448d80	F	io_read_string	void io_read_string(int space, int addr, char *buf)	med	iohist	
+00448de0	F	io_out_reg_write	void io_out_reg_write(int reg, unsigned long *value, int delta)	med	iohist	
+00449200	F	io_out_note	int io_out_note(char *text)	med	iohist	
+004493d0	F	io_out_insn_trace	void io_out_insn_trace(int idx)	med	iohist	
+004496a0	F	io_out_pin_write	void io_out_pin_write(int pin, unsigned long *value, int delta)	med	iohist	
+00449a70	F	io_out_periph_write	void io_out_periph_write(int a, int b)	low	iohist	
+00449bb0	F	cmd_output_parse		low	hidden	
+00449e20	F	cmd_more_h0		low	hidden	
+00449e30	F	cmd_more_h1		low	hidden	
+00449e40	F	cmd_more_parse		low	hidden	
+00449e90	F	cmd_log_h0		low	hidden	
+00449f80	F	cmd_log_h6		low	hidden	
+00449fe0	F	cmd_log_h5		low	hidden	
+0044a1d0	F	cmd_log_h1		low	hidden	
+0044a3b0	F	cmd_log_h2		low	hidden	
+0044a540	F	cmd_log_h3		low	hidden	
+0044a550	F	cmd_log_h4		low	hidden	
+0044a560	F	cmd_log_parse		low	hidden	
+0044a7a0	F	cmd_load_h1		low	hidden	
+0044a870	F	cmd_load_h0		low	hidden	
+0044aa20	F	cmd_load_h3		low	hidden	
+0044ab00	F	cmd_load_h2		low	hidden	
+0044abf0	F	cmd_load_parse		low	hidden	
+0044acd0	F	cmd_input_h0		low	hidden	
+0044ae30	F	io_next_free_id	int io_next_free_id(int id, void **list)	med	iohist	
+0044ae80	F	cmd_input_h1		low	hidden	
+0044af20	F	io_lists_reset	void io_lists_reset(void)	low	iohist	
+0044af70	F	parse_num_dec	void parse_num_dec(char *s, void *val, unsigned long type)	high	iohist	
+0044b0b0	F	parse_num_hex	void parse_num_hex(char *s, void *val, unsigned long type)	high	iohist	
+0044b1d0	F	parse_num_bin	void parse_num_bin(char *s, void *val, unsigned long type)	high	iohist	
+0044b2e0	F	parse_num_float	void parse_num_float(char *s, void *val, unsigned long type)	high	iohist	
+0044b380	F	io_parse_value	void io_parse_value(char *s, void *io, unsigned long type)	med	iohist	
+0044b410	F	io_in_mem_read	int io_in_mem_read(int space, unsigned long addr, unsigned long *value)	med	iohist	
+0044b4f0	F	io_in_next	void io_in_next(void *io)	med	iohist	
+0044b550	F	io_in_read_token	void io_in_read_token(void *io, char *fmt)	med	iohist	
+0044b840	F	io_pin_set_from_text	void io_pin_set_from_text(int first, int last, char *text, int analog)	med	iohist	
+0044b9d0	F	io_in_skip_loops	void io_in_skip_loops(void *io)	med	iohist	
+0044bb90	F	io_in_reg_read	int io_in_reg_read(int reg, unsigned long *value)	med	iohist	
+0044bbe0	F	io_in_periph_read	int io_in_periph_read(int a, int b, unsigned long *value)	low	iohist	
+0044bc30	F	io_in_pin_read	int io_in_pin_read(int pin, unsigned long *value)	med	iohist	
+0044bc80	F	io_in_timed_pin_read	int io_in_timed_pin_read(int pin, unsigned long *value)	med	iohist	
+0044bce0	F	io_in_timed_next	int io_in_timed_next(void *io)	med	iohist	
+0044bd60	F	io_in_timed_advance	void io_in_timed_advance(void *io)	med	iohist	
+0044bde0	F	io_in_poll	void io_in_poll(void)	med	iohist	
+0044c150	F	io_pin_copy	void io_pin_copy(int dev, int src, int dst, int analog)	med	iohist	
+0044c280	F	io_pin_copy_tri	void io_pin_copy_tri(int dev, int src, int dst)	low	iohist	
+0044c340	F	cmd_input_open	void cmd_input_open(void)	med	iohist	
+0044c890	F	io_alloc_id	int io_alloc_id(void)	high	iohist	
+0044c8d0	F	cmd_input_h3		low	hidden	
+0044cbd0	F	cmd_input_h3_sub_44cbd0		low	hidden	
+0044cc80	F	cmd_input_parse		low	hidden	
+0044ceb0	F	cmd_history_h0		low	hidden	
+0044d140	F	cmd_history_parse		low	hidden	
+0044d160	F	help_list_all	void help_list_all(void)	high	help	
+0044d370	F	help_page_check	int help_page_check(int state)	high	help	
+0044d390	F	help_topic	void help_topic(char *topic)	high	help	
+0044d670	F	cmd_help_h0		low	hidden	
+0044dff0	F	cmd_help_h0_sub_44dff0		low	hidden	
+0044e5a0	F	cmd_help_h0_sub_44e5a0		low	hidden	
+0044e720	F	cmd_help_h2		low	hidden	
+0044e900	F	cmd_help_h2_sub_44e900		low	hidden	
+0044e9f0	F	cmd_help_h3		low	hidden	
+0044ea70	F	cmd_help_h4		low	hidden	
+0044eb90	F	cmd_help_h1		low	hidden	
+0044ec10	F	cmd_help_parse		low	hidden	
+0044ed20	F	cmd_go_h0		low	hidden	
+0044eee0	F	cmd_go_parse		low	hidden	
+0044f020	F	cmd_frame_h0		low	hidden	
+0044f070	F	cmd_frame_h1		low	hidden	
+0044f120	F	cmd_frame_parse		low	hidden	
+0044f160	F	cmd_evaluate_h0		low	hidden	
+0044fc60	F	cmd_evaluate_parse		low	hidden	
+0044fd30	F	cmd_down_h0		low	hidden	
+0044fe50	F	cmd_down_parse		low	hidden	
+0044fe90	F	cmd_display_h1		low	hidden	
+00450550	F	cmd_display_h3		low	hidden	
+00450650	F	cmd_display_h4		low	hidden	
+00450680	F	cmd_display_h5		low	hidden	
+00450690	F	cmd_display_h6		low	hidden	
+004506a0	F	cmd_display_h0		low	hidden	
+004506c0	F	cmd_display_parse		low	hidden	
+004507c0	F	cmd_disassemble_h0		low	hidden	
+00450ac0	F	cmd_disassemble_parse		low	hidden	
+00450b10	F	cmd_device_h0		low	hidden	
+00450cd0	F	cmd_device_h1		low	hidden	
+00450d90	F	cmd_device_h3		low	hidden	
+00450df0	F	cmd_device_h2		low	hidden	
+00450e10	F	cmd_device_h5		low	hidden	
+00450e70	F	cmd_device_h4		low	hidden	
+00450f00	F	cmd_device_parse		low	hidden	
+00450fd0	F	cmd_copy_h0		low	hidden	
+00451120	F	cmd_copy_parse		low	hidden	
+00451160	F	cmd_change_h0		low	hidden	
+00451900	F	cmd_change_h1		low	hidden	
+00452030	F	cmd_change_h2		low	hidden	
+004523c0	F	cmd_change_parse	void * cmd_change_parse(void)	high	run	
+00452470	F	break_list_free	void break_list_free(void)	high	run	
+004524d0	F	sim_check_stop	int sim_check_stop(void)	med	run	
+00452f20	F	break_hit	void break_hit(void *bp, int *stop_run, int *refresh)	med	run	
+00453100	F	cmd_break_h0		low	hidden	
+004534f0	F	cmd_break_h1		low	hidden	
+00453820	F	cmd_break_h2		low	hidden	
+004538d0	F	cmd_break_h4		low	hidden	
+00453960	F	cmd_break_h5		low	hidden	
+004539f0	F	cmd_break_h3		low	hidden	
+00453b30	F	cmd_break_parse		low	hidden	
+00453e80	F	cmd_break_parse_sub_453e80		low	hidden	
+00453ef0	F	cmd_asm_h0		low	hidden	
+00454400	F	cmd_asm_h1		low	hidden	
+00454590	F	cmd_asm_parse		low	hidden	
+00454630	F	prof_reset	void prof_reset(void)	M	profile	
+00454690	F	prof_record_insn	int prof_record_insn(void *insn)	M	profile	
+00454990	F	prof_flush_refs	void prof_flush_refs(void *insn)	M	profile	
+00454b50	F	prof_start	void prof_start(char *symfile,char *outfile,char *title)	M	profile	
+00454c50	F	prof_report	void prof_report(long arg)	M	profile	
+00454d50	F	prof_coverage_report	int prof_coverage_report(void)	H	profile	
+00454fc0	F	prof_print_cov_line	void prof_print_cov_line(long addr,int is_addr,void *counts,int kind)	M	profile	
+004551a0	F	prof_cov_by_source	void prof_cov_by_source(void)	M	source	
+004553c0	F	src_get_line	char *src_get_line(void *pfile,int *pfailed,char **pname,unsigned long *pline,char *name,unsigned long want,char **ptext)	M	source	
+00455670	F	src_include_name	char *src_include_name(char *line)	H	source	
+00455750	F	src_is_c_file	int src_is_c_file(char *name)	H	source	
+004557a0	F	prof_cov_source_file	void prof_cov_source_file(char *name)	M	source	
+00455a50	F	prof_symbol_mem_refs	void prof_symbol_mem_refs(void)	H	source	
+00455bd0	F	prof_symbol_mem_refs_sym	void prof_symbol_mem_refs_sym(void *sym,long *unnamed)	M	source	
+00455db0	F	prof_moves_breakdown	void prof_moves_breakdown(void)	H	source	
+004561b0	F	hid_4561b0		low	hidden	
+004561f0	F	prof_addr_mode_breakdown	void prof_addr_mode_breakdown(void)	H	stats	
+00456400	F	hid_456400		low	hidden	
+00456440	F	prof_data_mem_refs	void prof_data_mem_refs(void)	H	stats	
+00456530	F	prof_occurrence_reports	void prof_occurrence_reports(void)	H	stats	
+004565a0	F	cmp_insn_name	int cmp_insn_name(void *a,void *b)	H	stats	
+00456640	F	hid_456640		low	hidden	
+00456690	F	prof_insn_occurrence	void prof_insn_occurrence(void *cmp,char *title)	H	stats	
+004569f0	F	prof_doloop_occurrence	void prof_doloop_occurrence(void *cmp,char *title)	H	stats	
+00456d60	F	prof_basic_profile	void prof_basic_profile(void)	H	stats	
+00456f60	F	dev_spaces_call_c	void dev_spaces_call_c(long a,long b,long c)	L	stats	
+00456fb0	F	dev_spaces_call_8	void dev_spaces_call_8(long a,long *out,long c)	L	stats	
+00457000	F	dev_call_slot1	long dev_call_slot1(int dev,long a,long b,long c)	M	radix	
+00457060	F	dev_call_slot14	long dev_call_slot14(int dev,long a,long b,long c)	M	radix	
+004570c0	F	dev_call_slot15	long dev_call_slot15(int dev,long a,long b,long c)	M	radix	
+00457120	F	dev_call_slot13	long dev_call_slot13(int dev,long a,long b,long c)	M	radix	
+00457180	F	dev_mem_read	long dev_mem_read(int dev,long a,long b,long c)	H	radix	
+004571e0	F	dev_call_slot10	long dev_call_slot10(int dev,long a,long b,long c)	M	radix	
+00457240	F	dev_call_slot11	long dev_call_slot11(int dev,long a,long b,long c)	M	radix	
+004572a0	F	dev_call_slot12	long dev_call_slot12(int dev,long a,long b,long c)	M	radix	
+00457300	F	dev_call_slot2	long dev_call_slot2(int dev,long a,long b,long c,long d)	M	radix	
+00457370	F	dev_find_space	int dev_find_space(int dev,char *name,long *pid)	H	radix	
+00457420	F	stricmp_ci	int stricmp_ci(char *a,char *b)	H	radix	
+004574d0	F	space_notify	void space_notify(int space_idx,unsigned long addr,unsigned long val,int arg)	L	radix	
+00457560	F	mem_addr_check	int mem_addr_check(int space_idx,unsigned long addr)	L	radix	
+004575c0	F	fmt_addr	void fmt_addr(unsigned long addr,char *buf)	H	radix	
+00457630	F	fmt_read_word	long fmt_read_word(long space,unsigned long addr,int radix,char *out,char *nanfmt)	M	radix	
+00457950	F	fmt_word	void fmt_word(int space_idx,long addr,int radix,char *out,unsigned long value)	M	radix	
+00457cc0	F	mem_trace_access	void mem_trace_access(unsigned long space,unsigned long addr,int is_write,long value)	M	radix	
+00457de0	F	mem_trace_fetch	void mem_trace_fetch(unsigned long addr)	M	radix	
+00457e00	F	dsp_alloc	void *dsp_alloc(unsigned long size,int zero)	H	radix	
+00457ed0	F	dsp_free	void dsp_free(void *p)	H	radix	
+00457f00	F	dsp_realloc	void *dsp_realloc(void *p,unsigned long size)	H	radix	
+00457fb0	F	mdisk_free_all	void mdisk_free_all(int dev)	M	radix	
+00458060	F	mdisk_save_all	void mdisk_save_all(int dev,void *fp)	M	mdisk	
+004580d0	F	mdisk_close	void mdisk_close(int dev)	M	mdisk	
+00458180	F	mdisk_init	int mdisk_init(void)	M	mdisk	
+00458210	F	mdisk_load_all	void mdisk_load_all(int dev,void *fp)	M	mdisk	
+00458280	F	mdisk_read	int mdisk_read(int dev,unsigned long space,unsigned long addr,unsigned long *pval)	H	mdisk	
+00458340	F	mdisk_find_node	void *mdisk_find_node(void *list,unsigned long addr)	M	mdisk	
+00458380	F	mdisk_page_in	char *mdisk_page_in(void *node)	H	mdisk	
+00458480	F	mdisk_write	void mdisk_write(int dev,unsigned long space,unsigned long addr,unsigned long val)	H	mdisk	
+004585f0	F	mdisk_clear_list	void mdisk_clear_list(void *list)	M	mdisk	
+00458660	F	mdisk_save_space	int mdisk_save_space(void *list,void *fp)	M	mdisk	
+00458770	F	mdisk_load_space	int mdisk_load_space(void *list,void *fp)	M	mdisk	
+00458870	F	mdisk_spill	int mdisk_spill(void)	M	mdisk	
+00458a10	F	mdisk_spill_lru	int mdisk_spill_lru(void *list)	M	mdisk	
+00458a50	F	mdisk_spill_mru	int mdisk_spill_mru(void *list)	M	mdisk	
+00458a80	F	mdisk_spill_node	void mdisk_spill_node(void *node)	M	mdisk	
+00458c10	F	sim_profile_step	void sim_profile_step(int dev)	M	mdisk	
+00459030	F	ref_kind_info	void ref_kind_info(int kind,long *pcat,long *prw)	M	expr	
+00459140	F	ref_record	void ref_record(int kind,long addr,long a3,long a4)	M	expr	
+004591c0	F	ref_prune	void ref_prune(void *insn)	L	expr	
+00459250	F	eval_int_addr	void *eval_int_addr(unsigned long mode)	H	expr	
+00459330	F	node_word	unsigned long node_word(void *node)	H	expr	
+00459360	F	eval_int_masked	void *eval_int_masked(unsigned long mode,unsigned long mask)	M	expr	
+004593e0	F	eval_data_word	void *eval_data_word(unsigned long mode)	M	expr	
+00459480	F	eval_expr	void *eval_expr(unsigned long mode)	H	expr	
+00459510	F	parse_expr	void *parse_expr(void)	H	expr	
+00459530	F	parse_binop_rhs	void *parse_binop_rhs(void *lhs,int minprec)	H	expr	
+00459810	F	peek_binop	int peek_binop(void)	H	expr	
+004599c0	F	binop_prec	int binop_prec(int op)	H	expr	
+00459a70	F	parse_primary	void *parse_primary(void)	H	expr	
+0045a7b0	F	stricmp_ci2	int stricmp_ci2(char *a,char *b)	H	expr	
+0045a860	F	node_free	void node_free(void *node)	H	expr	
+0045a880	F	parse_float	void parse_float(void *node)	H	expr	
+0045a8c0	F	expr_error	void expr_error(char *msg)	H	expr	
+0045a8e0	F	expr_error2	void expr_error2(char *prefix,char *msg)	H	expr	
+0045a920	F	str_index1	int str_index1(int c,char *set)	H	expr	
+0045a950	F	node_to_double	void node_to_double(unsigned long mode,void *node)	M	expr	
+0045a990	F	node_get_double	double node_get_double(unsigned long mode,void *node)	M	expr	
+0045a9c0	F	node_from_double	void node_from_double(unsigned long mode,void *node)	M	expr	
+0045aa50	F	op_add	int op_add(void *a,void *b)	H	expr	
+0045aaf0	F	op_add32	int op_add32(void *a,void *b)	H	expr	
+0045ab90	F	op_sub	int op_sub(void *a,void *b)	H	expr	
+0045ac20	F	op_sub32	int op_sub32(void *a,void *b)	H	expr	
+0045acd0	F	op_mul	int op_mul(void *a,void *b)	H	expr	
+0045ae60	F	op_mul32	int op_mul32(void *a,void *b)	H	expr	
+0045af00	F	op_div	int op_div(void *a,void *b)	H	expr	
+0045b080	F	op_div32	int op_div32(void *a,void *b)	H	expr	
+0045b160	F	op_mod	int op_mod(void *a,void *b)	H	expr	
+0045b250	F	op_mod32	int op_mod32(void *a,void *b)	H	expr	
+0045b330	F	op_or	int op_or(void *a,void *b)	H	expr	
+0045b3a0	F	op_or32	int op_or32(void *a,void *b)	H	expr	
+0045b3f0	F	op_and	int op_and(void *a,void *b)	H	expr	
+0045b460	F	op_and32	int op_and32(void *a,void *b)	H	expr	
+0045b4b0	F	op_xor	int op_xor(void *a,void *b)	H	expr	
+0045b520	F	op_xor32	int op_xor32(void *a,void *b)	H	expr	
+0045b570	F	op_shl	int op_shl(void *a,void *b)	H	expr	
+0045b620	F	op_shl32	int op_shl32(void *a,void *b)	H	expr	
+0045b6a0	F	op_shr	int op_shr(void *a,void *b)	H	expr	
+0045b7b0	F	op_shr32	int op_shr32(void *a,void *b)	H	expr	
+0045b850	F	op_land	int op_land(void *a,void *b)	H	expr	
+0045b8a0	F	op_land32	int op_land32(void *a,void *b)	H	expr	
+0045b8f0	F	op_lor	int op_lor(void *a,void *b)	H	expr	
+0045b940	F	op_lor32	int op_lor32(void *a,void *b)	H	expr	
+0045b990	F	node_neg	void node_neg(void *node)	H	expr	
+0045b9c0	F	node_neg32	void node_neg32(void *node)	H	expr	
+0045ba20	F	node_not	int node_not(void *node)	H	expr	
+0045baa0	F	node_not32	int node_not32(void *node)	H	expr	
+0045bad0	F	node_lnot	void node_lnot(void *node)	H	expr	
+0045bb00	F	node_lnot32	void node_lnot32(void *node)	H	expr	
+0045bb30	F	node_sign	int node_sign(void *node)	M	expr	
+0045bbc0	F	node_sign32	int node_sign32(void *node)	M	expr	
+0045bc50	F	node_normalize	void node_normalize(void *node)	H	expr	
+0045bce0	F	op_compare	int op_compare(void *a,void *b,int op)	H	expr	
+0045bf20	F	op_compare32	int op_compare32(void *a,void *b,int op)	H	expr	
+0045c180	F	mp_divmod	void mp_divmod(unsigned long *num,unsigned long *den,unsigned long *quot,unsigned long *rem)	M	expr	
+0045c2d0	F	mp_cmp	int mp_cmp(unsigned long *a,unsigned long *b)	H	expr	
+0045c320	F	mp_unpack	void mp_unpack(unsigned long *val,unsigned long *limbs)	H	expr	
+0045c3b0	F	mp_pack	void mp_pack(unsigned long *limbs,unsigned long *val)	H	expr	
+0045c430	F	mp_copy_limbs	void mp_copy_limbs(unsigned long *src,unsigned long *dst,int n)	L	expr	
+0045c460	F	mp_div_digit	unsigned long mp_div_digit(unsigned long *den,unsigned long *rem,int n,unsigned long *tmp)	M	expr	
+0045c510	F	mp_mul_digit	void mp_mul_digit(unsigned long d,unsigned long *a,unsigned long *out,int n)	H	expr	
+0045c550	F	mp_ge	int mp_ge(unsigned long *a,unsigned long *b,int n)	M	expr	
+0045c590	F	mp_sub	void mp_sub(unsigned long *a,unsigned long *b,int n)	H	expr	
+0045c5d0	F	mp_len	int mp_len(unsigned long *limbs)	H	expr	
+0045c5f0	F	ieee_single_to_double	void ieee_single_to_double(unsigned long f,unsigned long *d)	H	expr	
+0045c6c0	F	word_to_frac	void word_to_frac(unsigned long mode,void *node)	H	expr	
+0045c7b0	F	double_to_ieee_single	void double_to_ieee_single(unsigned long *d)	H	expr	
+0045c890	F	frac_to_word	unsigned long frac_to_word(unsigned long mode,void *node)	H	expr	
+0045ca20	F	dword_to_frac	void dword_to_frac(unsigned long mode,void *node)	H	expr	
+0045cb30	F	long_to_frac	void long_to_frac(void *node)	H	expr	
+0045ccc0	F	ext_to_double	void ext_to_double(unsigned long *v)	M	expr	
+0045cd40	F	frac_to_dword	void frac_to_dword(unsigned long mode,void *node)	H	expr	
+0045ced0	F	frac_to_long	void frac_to_long(void *node)	H	expr	
+0045d0c0	F	double_to_ext	void double_to_ext(unsigned long *v)	M	expr	
+0045d120	F	val_to_dec_parts2	void val_to_dec_parts2(unsigned long mode,unsigned long *in,unsigned long *out)	M	misc	
+0045d1b0	F	val_to_dec_parts	void val_to_dec_parts(unsigned long mode,unsigned long *in,long *out)	M	misc	
+0045d280	F	dsp_free_ext	void dsp_free_ext(void *p)	M	misc	
+0045d290	F	ret_true	int ret_true(void)	H	misc	
+0045d2a0	F	ret_false	int ret_false(void)	H	misc	
+0045d2b0	F	sim_error	void sim_error(char *msg)	H	misc	
+0045d350	F	ret_99	int ret_99(void)	H	misc	
+0045d360	F	cmd_load_h0_sub_45d360		low	hidden	
+0045d400	F	cmd_save_h1_sub_45d400		low	hidden	
+0045d480	F	fn_45d910_sub_45d480		low	hidden	
+0045d4c0	F	cmd_save_h1_sub_45d4c0		low	hidden	
+0045d510	F	cmd_load_h0_sub_45d510		low	hidden	
+0045d910	F	cmd_save_h1_sub_45d910		low	hidden	
+0045e5a0	F	hio_buf_clear	void hio_buf_clear(void *buf)	high	cdbutil	
+0045e5d0	F	hio_buf_alloc	void hio_buf_alloc(void *buf, unsigned long n)	high	cdbutil	
+0045e620	F	hio_buf_resize	void hio_buf_resize(void *buf, unsigned long n)	high	cdbutil	
+0045e680	F	hio_buf_free	void hio_buf_free(void *buf)	high	cdbutil	
+0045e6a0	F	hio_step	void hio_step(void *reply, void *request, int *fd_wordmode, unsigned long *state, unsigned long *result)	med	cdbutil	
+0045edd0	F	hio_errno_map	int hio_errno_map(int host_errno)	high	cdbutil	
+0045ee70	F	hio_words_to_bytes	char *hio_words_to_bytes(void *words, unsigned long n)	high	cdbutil	
+0045eea0	F	hio_pack_words	char *hio_pack_words(unsigned long *words, int n)	high	cdbutil	
+0045ef20	F	hio_bytes_to_words	unsigned long *hio_bytes_to_words(char *bytes, int n)	high	cdbutil	
+0045ef60	F	hio_unpack_words	unsigned long *hio_unpack_words(char *bytes, int n)	high	cdbutil	
+0045efe0	F	cdb_load_value	int cdb_load_value(void *v)	high	cdbutil	
+0045f090	F	cdb_store_value	int cdb_store_value(void *v)	high	cdbutil	
+0045f150	F	cdb_set_quiet	void cdb_set_quiet(int flag)	high	cdbutil	
+0045f160	F	cdb_error	void cdb_error(char *msg)	high	cdbutil	
+0045f1b0	F	cdb_c_error	void cdb_c_error(char *msg)	high	cdbutil	
+0045f1f0	F	cdb_internal_error	void cdb_internal_error(char *file, int line)	high	cdbutil	
+0045f230	F	cdb_malloc	void *cdb_malloc(unsigned long n)	high	cdbutil	
+0045f240	F	cdb_realloc	void *cdb_realloc(void *p, unsigned long n)	high	cdbutil	
+0045f260	F	cdb_free	void cdb_free(void *p)	high	cdbutil	
+0045f270	F	cdb_free_expr	void cdb_free_expr(void *node)	high	cdbutil	
+0045f2f0	F	cdb_value_to_string	char *cdb_value_to_string(void *v, int radix)	high	cdbutil	
+0045f310	F	cdb_type_to_string	char *cdb_type_to_string(void *v)	high	cdbutil	
+0045f330	F	cdb_print_typed_value	void cdb_print_typed_value(int radix, void *v)	high	cdbutil	
+0045f390	F	cdb_frame_slot	int cdb_frame_slot(int sclass, int offset, int *space_out, unsigned long *addr_out)	med	cdbutil	
+0045f400	F	cdb_register_value	void *cdb_register_value(char *name)	high	cdbutil	
+0045f790	F	cdb_arch_init	void cdb_arch_init(void)	high	cdbutil	
+0045f930	F	cdb_reg_name	char *cdb_reg_name(int reg_class, unsigned long index)	high	cdbutil	
+0045fb90	F	cdb_memspace_name	char *cdb_memspace_name(int space, unsigned long addr)	med	cdbutil	
+0045fbc0	F	cdb_print_wrapped	void cdb_print_wrapped(char *text, char *prefix_first, char *prefix_cont, unsigned long indent, int to_log)	med	cdbutil	
+0045fea0	F	cdb_expr_has_call	int cdb_expr_has_call(void *tree)	high	cdbutil	
+0045ff00	F	cdb_saved_push	void cdb_saved_push(void *node)	high	cdbutil	
+0045ff30	F	cdb_saved_pop	void *cdb_saved_pop(void)	high	cdbutil	
+0045ff50	F	cdb_saved_clear	void cdb_saved_clear(void)	high	cdbutil	
+0045ff60	F	cdb_save_counters	void cdb_save_counters(int retaddr)	med	cdbutil	
+00460000	F	cdb_finish_call	void cdb_finish_call(unsigned long *retaddr_out)	med	cdbutil	
+004604e0	F	cdb_type_name	void cdb_type_name(void *v)	high	cdbutil	
+00460940	F	cdb_format_value	void cdb_format_value(void *v, int radix)	high	cdbutil	
+00460b50	F	cdb_fmt_pointer	void cdb_fmt_pointer(void *v, int radix)	high	cdbutil	
+00460fd0	F	cdb_fmt_function	void cdb_fmt_function(void *v, int radix)	high	cdbutil	
+004610f0	F	cdb_fmt_array	void cdb_fmt_array(void *v, int radix)	high	cdbutil	
+004611d0	F	cdb_fmt_char	void cdb_fmt_char(void *v, int radix)	high	cdbutil	
+00461550	F	cdb_fmt_short	void cdb_fmt_short(void *v, int radix)	high	cdbutil	
+004616a0	F	cdb_fmt_int	void cdb_fmt_int(void *v, int radix)	high	cdbutil	
+004618c0	F	cdb_fmt_long	void cdb_fmt_long(void *v, int radix)	high	cdbutil	
+004619f0	F	cdb_fmt_accum	void cdb_fmt_accum(void *v, int radix)	high	cdbutil	
+00461af0	F	cdb_fmt_long_accum	void cdb_fmt_long_accum(void *v, int radix)	high	cdbutil	
+00461bf0	F	cdb_fmt_float	void cdb_fmt_float(void *v, int radix)	high	cdbutil	
+00461d50	F	cdb_fmt_double	void cdb_fmt_double(void *v, int radix)	high	cdbutil	
+00461ec0	F	cdb_fmt_struct	void cdb_fmt_struct(void *v, int radix)	high	cdbutil	
+00461ff0	F	cdb_fmt_union	void cdb_fmt_union(void *v, int radix)	high	cdbutil	
+00462010	F	cdb_num_signed	void cdb_num_signed(unsigned long *w, char *out, int nwords)	high	cdbutil	
+00462110	F	cdb_num_dec_wide_signed	void cdb_num_dec_wide_signed(unsigned long *w, char *out, int nwords, int is_signed)	med	cdbutil	
+00462220	F	cdb_num_dec_wide_signed32	void cdb_num_dec_wide_signed32(unsigned long *w, char *out, int nwords, int is_signed)	med	cdbutil	
+00462320	F	cdb_num_unsigned	void cdb_num_unsigned(unsigned long *w, char *out, int nwords)	high	cdbutil	
+004623d0	F	cdb_num_float	void cdb_num_float(void *w, char *out)	high	cdbutil	
+004624c0	F	cdb_num_double	void cdb_num_double(void *w, char *out)	high	cdbutil	
+004625c0	F	cdb_num_hex	void cdb_num_hex(void *w, char *out, int nwords)	high	cdbutil	
+004626a0	F	cdb_num_bin	void cdb_num_bin(void *w, char *out, int nwords)	med	cdbutil	
+004627a0	F	cdb_num_frac	void cdb_num_frac(void *v, unsigned long *w, char *out, int nwords)	high	cdbutil	
+004628c0	F	cdb_frac_to_double	void cdb_frac_to_double(unsigned long *w, double *out)	high	cdbutil	
+004629d0	F	cdb_frac_to_double_a	void cdb_frac_to_double_a(unsigned long *w, double *out)	med	cdbutil	
+00462a00	F	cdb_frac_to_double_b	void cdb_frac_to_double_b(unsigned long *w, double *out)	med	cdbutil	
+00462a20	F	cdb_frac_to_double_c	void cdb_frac_to_double_c(unsigned long *w, double *out)	med	cdbutil	
+00462a50	F	cdb_load_auto	int cdb_load_auto(void *v)	high	cdbutil	
+00462ab0	F	cdb_store_auto	int cdb_store_auto(void *v)	high	cdbutil	
+00462b10	F	cdb_load_memory	int cdb_load_memory(void *v)	high	cdbutil	
+00463480	F	cdb_store_memory	int cdb_store_memory(void *v)	high	cdbutil	
+00463e50	F	cdb_load_register	int cdb_load_register(void *v)	high	cdbutil	
+00464290	F	cdb_find_saved_reg	char *cdb_find_saved_reg(void *list, char *name)	high	cdbutil	
+004642e0	F	cdb_store_register	int cdb_store_register(void *v)	high	cdbutil	
+00464640	F	cdb_load_devreg	int cdb_load_devreg(void *v)	high	cdbutil	
+004648a0	F	cdb_store_devreg	int cdb_store_devreg(void *v)	high	cdbutil	
+00464b10	F	cdb_load_arg	int cdb_load_arg(void *v)	high	cdbutil	
+00464b30	F	cdb_store_arg	int cdb_store_arg(void *v)	high	cdbutil	
+00464b50	F	cdb_out_reset	void cdb_out_reset(void)	high	cdbutil	
+00464b80	F	cdb_out_append	void cdb_out_append(char *s)	high	cdbutil	
+00464c30	F	cdb_frac2_to_double	void cdb_frac2_to_double(unsigned long hi, unsigned long lo, double *out)	high	cdbutil	
+00464d60	F	cdb_frac1_to_double	void cdb_frac1_to_double(unsigned long w, double *out)	high	cdbutil	
+00464e30	F	cdb_find_file_index	int cdb_find_file_index(char *name)	med	cdbutil	
+00464f40	F	cdb_find_function	int cdb_find_function(char *name, int file_sym)	med	cdbutil	
+004650a0	F	cdb_lookup_scoped	int cdb_lookup_scoped(char *name, int sclass)	high	cdbsym	
+00465110	F	cdb_struct_size	unsigned long cdb_struct_size(int sym)	high	cdbsym	
+00465170	F	cdb_types_match	int cdb_types_match(unsigned long type1, int tag1, unsigned long type2, int tag2)	high	cdbsym	
+00465230	F	cdb_lookup_variable	void *cdb_lookup_variable(char *name)	high	cdbsym	
+004653d0	F	cdb_sym_name	char *cdb_sym_name(int sym)	high	cdbsym	
+00465400	F	cdb_next_member	int cdb_next_member(int sym)	high	cdbsym	
+00465430	F	cdb_find_member	int cdb_find_member(int struct_sym, char *name)	high	cdbsym	
+004654c0	F	cdb_lookup_typedef	int cdb_lookup_typedef(char *name)	high	cdbsym	
+004654d0	F	cdb_lookup_enum_member	int cdb_lookup_enum_member(char *name)	med	cdbsym	
+004654e0	F	cdb_sym_to_value	void cdb_sym_to_value(void *v, int sym)	high	cdbsym	
+00465620	F	cdb_default_space	int cdb_default_space(void)	high	cdbsym	
+00465640	F	cdb_detect_space_model	void cdb_detect_space_model(void)	med	cdbsym	
+00465750	F	cdb_pc_in_function	int cdb_pc_in_function(int func_sym, int block_depth)	low	cdbsym	
+004657c0	F	cdb_line_index	int cdb_line_index(unsigned long addr)	high	cdbsym	
+00465890	F	cdb_enum_tag_sym	int cdb_enum_tag_sym(int member_sym)	med	cdbsym	
+004658f0	F	cdb_enum_member_by_value	int cdb_enum_member_by_value(int enum_sym, long value)	high	cdbsym	
+00465950	F	cdb_func_body_addr	unsigned long cdb_func_body_addr(unsigned long pc)	med	cdbsym	
+00465990	F	cdb_sym_name_eq	int cdb_sym_name_eq(char *name, void *sym)	high	cdbsym	
+00465a00	F	cdb_func_of_pc	int cdb_func_of_pc(unsigned long pc)	high	cdbsym	
+00465ad0	F	cdb_func_of_pc_checked	int cdb_func_of_pc_checked(unsigned long pc)	med	cdbsym	
+00465b30	F	cdb_next_eos_marker	int cdb_next_eos_marker(int sym)	low	cdbsym	
+00465b80	F	cdb_func_bf_sym	int cdb_func_bf_sym(int func_sym)	med	cdbsym	
+00465c00	F	cdb_func_ef_sym	int cdb_func_ef_sym(int func_sym)	med	cdbsym	
+00465c90	F	cdb_struct_layout_eq	int cdb_struct_layout_eq(int sym1, int sym2)	med	cdbsym	
+00465e30	F	cdb_union_layout_eq	int cdb_union_layout_eq(int sym1, int sym2)	med	cdbsym	
+00466000	F	cdb_enum_layout_eq	int cdb_enum_layout_eq(int sym1, int sym2)	med	cdbsym	
+00466220	F	cdb_lookup_global	int cdb_lookup_global(char *name, int sclass)	med	cdbsym	
+004662f0	F	cdb_lookup_symbol	int cdb_lookup_symbol(char *name)	high	cdbsym	
+004663e0	F	cdb_lookup_static_or_ext	int cdb_lookup_static_or_ext(char *name)	med	cdbsym	
+00466500	F	cdb_enclosing_block	int cdb_enclosing_block(unsigned long pc)	high	cdbsym	
+00466620	F	cdb_find_local	int cdb_find_local(int block_sym, char *name)	high	cdbsym	
+004666c0	F	cdb_find_in_block	int cdb_find_in_block(int block_sym, char *name, int sclass)	high	cdbsym	
+00466750	F	cdb_find_arg	int cdb_find_arg(int func_sym, char *name)	high	cdbsym	
+004667f0	F	cdb_parent_block	int cdb_parent_block(int sym)	med	cdbsym	
+004668b0	F	cdb_symname_ptr	char *cdb_symname_ptr(void *sym)	high	cdbsym	
+004668f0	F	cdb_symname_is	int cdb_symname_is(char *name, void *sym)	high	cdbsym	
+00466950	F	parm_match_port	int parm_match_port(int idx)	med	cdbsym	
+00466a5c	F	parm_match_periph_reg	int parm_match_periph_reg(int idx)	low	cdbsym	
+00466b2b	F	parm_match_space_sym	int parm_match_space_sym(int idx, int dev)	med	cdbsym	
+00466d71	F	parm_match_space_cur	int parm_match_space_cur(int idx)	med	cdbsym	
+00466d8b	F	parm_match_space_any	int parm_match_space_any(int idx)	med	cdbsym	
+00466ed6	F	parm_kw_A	int parm_kw_A(int idx)	med	cdbsym	
+00466efa	F	parm_match_c_test	int parm_match_c_test(int idx)	med	cdbsym	
+0046706c	F	parm_match_condition	int parm_match_condition(int idx)	med	cdbsym	
+0046757b	F	parm_reg_is_pcvalue	int parm_reg_is_pcvalue(int idx)	low	cdbsym	
+00467652	F	parm_kw_M_rw	int parm_kw_M_rw(int idx)	high	cdbsym	
+00467676	F	parm_kw_N_drw	int parm_kw_N_drw(int idx)	high	cdbsym	
+0046769a	F	parm_kw_H_cmp	int parm_kw_H_cmp(int idx)	high	cdbsym	
+004676be	F	parm_kw_O_logic	int parm_kw_O_logic(int idx)	high	cdbsym	
+004676e2	F	parm_break_number	int parm_break_number(int idx)	high	cdbsym	
+00467816	F	parm_kw_cond_code	int parm_kw_cond_code(int idx)	high	cdbsym	
+0046793e	F	parm_kw_bus_name	int parm_kw_bus_name(int idx)	high	cdbsym	
+00467afb	F	parm_break_number_list	int parm_break_number_list(int idx)	high	cdbsym	
+00467c98	F	parm_colon_number	int parm_colon_number(int idx)	med	cdbsym	
+00467d69	F	parm_c_expr	int parm_c_expr(int idx)	high	cdbsym	
+00467d7c	F	parm_c_expr_check	int parm_c_expr_check(int idx, int forbid_calls)	high	cdbsym	
+00467e61	F	parm_bp_expr	int parm_bp_expr(int idx)	high	cdbsym	
+00467ea0	F	parm_type_expr	int parm_type_expr(int idx)	high	cdbsym	
+00467edf	F	parm_watch_expr	int parm_watch_expr(int idx)	high	cdbsym	
+00467f1e	F	parm_brace_block	int parm_brace_block(int idx)	med	cdbsym	
+00467fa9	F	parm_command_name	int parm_command_name(int idx)	high	cdbsym	
+00468115	F	parm_device_name	int parm_device_name(int idx)	high	cdbsym	
+00468218	F	parm_device_type	int parm_device_type(int idx)	high	cdbsym	
+004682c6	F	parm_kw_d_onoff	int parm_kw_d_onoff(int idx)	high	cdbsym	
+004682ea	F	parm_check_too_many	int parm_check_too_many(int idx)	high	cdbsym	
+0046833d	F	parm_kw_r_radix	int parm_kw_r_radix(int idx)	high	cdbsym	
+00468361	F	parm_number_expr	int parm_number_expr(int idx)	med	cdbsym	
+004684ed	F	parm_number_addr	int parm_number_addr(int idx)	med	cdbsym	
+00468562	F	parm_number_or_end	int parm_number_or_end(int idx)	med	cdbsym	
+00468587	F	parm_any_token	int parm_any_token(int idx)	high	cdbsym	
+004685b5	F	parm_need_more	int parm_need_more(int idx)	high	cdbsym	
+00468620	F	parm_frame_number	int parm_frame_number(int idx)	high	cdbsym	
+00468758	F	parm_mem_or_reg_x	int parm_mem_or_reg_x(int idx)	med	cdbsym	
+004687c3	F	parm_reg_flag_x	int parm_reg_flag_x(int idx)	low	cdbsym	
+004687d9	F	parm_reg_flag	int parm_reg_flag(int idx, unsigned long flag)	med	cdbsym	
+00468877	F	parm_mem_or_reg_y	int parm_mem_or_reg_y(int idx)	med	cdbsym	
+004688e2	F	parm_reg_flag_y	int parm_reg_flag_y(int idx)	low	cdbsym	
+004688f8	F	parm_integer_expr	int parm_integer_expr(int idx)	med	cdbsym	
+00468a2f	F	parm_float_expr	int parm_float_expr(int idx)	med	cdbsym	
+00468b59	F	parm_address_spec	int parm_address_spec(int idx)	high	cdbsym	
+00468f5f	F	parm_kw_m_memmode	int parm_kw_m_memmode(int idx)	high	cdbsym	
+00468f83	F	parm_filename	int parm_filename(int idx)	med	cdbsym	
+0046903c	F	parm_count_expr	int parm_count_expr(int idx)	med	cdbsym	
+004690cf	F	parm_port_name	int parm_port_name(int idx, int dev)	high	cdbsym	
+00469271	F	parm_port_name_dev	int parm_port_name_dev(int idx)	med	cdbsym	
+004693bf	F	parm_port_range	int parm_port_range(int idx)	med	cdbsym	
+0046953e	F	parm_periph_name	int parm_periph_name(int idx)	high	cdbsym	
+0046963f	F	parm_memspace_name	int parm_memspace_name(int idx)	med	cdbsym	
+00469720	F	parm_addr_or_expr	int parm_addr_or_expr(int idx)	low	cdbsym	
+0046975b	F	parm_addr_list	int parm_addr_list(int idx)	low	cdbsym	
+004697da	F	parm_addr_list_simple	int parm_addr_list_simple(int idx)	low	cdbsym	
+00469849	F	parm_register	int parm_register(int idx)	high	cdbsym	
+0046992e	F	parm_kw_R_radix	int parm_kw_R_radix(int idx)	high	cdbsym	
+00469952	F	parm_kw_r2_radix_opt	int parm_kw_r2_radix_opt(int idx)	high	cdbsym	
+00469976	F	parm_kw_pullup	int parm_kw_pullup(int idx)	high	cdbsym	
+0046999a	F	parm_kw_r3_radix_opt	int parm_kw_r3_radix_opt(int idx)	high	cdbsym	
+004699be	F	parm_kw_o_options	int parm_kw_o_options(int idx)	high	cdbsym	
+004699e2	F	parm_register_range	int parm_register_range(int idx)	med	cdbsym	
+00469b40	F	parm_periph_or_group	int parm_periph_or_group(int idx)	med	cdbsym	
+00469c30	F	parm_number	int parm_number(int idx, unsigned long max)	high	cdbsym	
+00469d42	F	parm_keyword1	int parm_keyword1(int idx, char *kw)	high	cdbsym	
+00469d6e	F	parm_kw_h_stdio	int parm_kw_h_stdio(int idx)	high	cdbsym	
+00469d9d	F	parm_window_name	int parm_window_name(int idx)	med	cdbsym	
+00469eaa	F	parm_break_number_ff	int parm_break_number_ff(int idx)	med	cdbsym	
+00469fe1	F	parm_match_keyword	int parm_match_keyword(int idx, char **table, int letter, int count)	high	cdbsym	
+0046a0d3	F	str_find_char	int str_find_char(char *s, int c)	high	cdbsym	
+0046a134	F	str_find_word	int str_find_word(char *s, char *pat)	high	cdbsym	
+0046a2cc	F	parm_nop	void parm_nop(void)	high	cdbsym	
+0046a2d1	F	parse_command_line	void *parse_command_line(char *line)	high	cdbsym	
+0046a36a	F	parm_tokenize	void parm_tokenize(char *line)	high	cdbsym	
+0046a700	F	avl_new	void *avl_new(int cmp_type)	high	cdbsym	
+0046a750	F	avl_free	void avl_free(void *tree, int free_mode)	high	cdbsym	
+0046a780	F	avl_free_nodes	void avl_free_nodes(void *node, int free_mode)	high	cdbsym	
+0046a7d0	F	avl_insert	void avl_insert(void *tree, void *item, int replace)	high	cdbsym	
+0046a800	F	avl_insert_node	void *avl_insert_node(void *node, void *item, int replace)	high	cdbsym	
+0046a930	F	avl_set_node	void avl_set_node(void *node, void *left, void *item, void *right)	high	cdbsym	
+0046a990	F	avl_rebalance	void avl_rebalance(void *n0, void *n1, void *l, void *d1, void *m, void *d2, void *r)	med	cdbsym	
+0046aa90	F	avl_delete	void *avl_delete(void *tree, void *key, int free_mode, int repeat)	high	cdbsym	
+0046ab20	F	avl_delete_node	void *avl_delete_node(void *node, void *key)	high	cdbsym	
+0046ac60	F	avl_find	void *avl_find(void *tree, void *key, int mode)	high	cdbsym	
+0046acf0	F	avl_walk	void avl_walk(void *tree, void *fn, int order, int bracket)	high	cdbsym	
+0046ad40	F	avl_walk_node	void avl_walk_node(void *node, void *fn, int order)	high	cdbsym	
+0046ade0	F	avl_copy_sorted	void *avl_copy_sorted(void *tree, int cmp_type, int resort)	med	cdbsym	
+0046aec0	F	avl_iter	char *avl_iter(void *tree, char *iter, void *key)	high	cdbsym	
+0046b090	F	prof_list_count	int prof_list_count(void *tree)	high	profrep	
+0046b0a0	F	prof_error	void prof_error(int level, char *fmt, ...)	high	profrep	
+0046b150	F	prof_malloc	void *prof_malloc(unsigned long n)	high	profrep	
+0046b190	F	prof_swap32	void prof_swap32(void *buf, unsigned long nbytes)	high	profrep	
+0046b1d0	F	prof_fopen	void *prof_fopen(char *name, char *mode, char *ext, int errlevel)	high	profrep	
+0046b440	F	prof_match_word	int prof_match_word(char **pp, char *word)	med	profrep	
+0046b4c0	F	prof_fwrite	void prof_fwrite(void *buf, unsigned long size, unsigned long count, void *fp, int swap)	high	profrep	
+0046b510	F	prof_fread	void *prof_fread(void *buf, unsigned long size, unsigned long count, void *fp, int swap)	high	profrep	
+0046b580	F	prof_func_fullname	void prof_func_fullname(char *out, void *func, unsigned long max)	med	profrep	
+0046b610	F	prof_strnicmp	int prof_strnicmp(char *a, char *b, int n)	high	profrep	
+0046b6c0	F	avl_cmp_h46b6c0		low	hidden	
+0046b700	F	prof_add_line	void *prof_add_line(unsigned long file_idx, unsigned long line)	med	profrep	
+0046b770	F	prof_del_line	void prof_del_line(unsigned long file_idx, unsigned long line)	med	profrep	
+0046b7a0	F	prof_cmp_ulong	int prof_cmp_ulong(unsigned long *a, unsigned long *b)	high	profrep	
+0046b7c0	F	avl_cmp_h46b7c0		low	hidden	
+0046b870	F	avl_cmp_h46b870		low	hidden	
+0046b8b0	F	prof_add_instr	void *prof_add_instr(unsigned long addr, int kind, unsigned long space_addr, void *srcloc)	med	profrep	
+0046ba80	F	prof_is_branch_class	int prof_is_branch_class(void *instr)	low	profrep	
+0046bac0	F	prof_find_instr	char *prof_find_instr(unsigned long addr, void *ref, int mode)	med	profrep	
+0046bbb0	F	prof_cmp_srcloc	int prof_cmp_srcloc(void *a, void *b)	med	profrep	
+0046bc60	F	avl_cmp_h46bc60		low	hidden	
+0046bcd0	F	prof_add_file	void *prof_add_file(char *name, unsigned long kind)	med	profrep	
+0046bd40	F	prof_del_file	void prof_del_file(void *a, void *b)	low	profrep	
+0046bd80	F	avl_cmp_h46bd80		low	hidden	
+0046bda0	F	avl_cmp_h46bda0		low	hidden	
+0046bdc0	F	avl_cmp_h46bdc0		low	hidden	
+0046bde0	F	prof_cmp_name_nocase	int prof_cmp_name_nocase(void *a, void *b)	high	profrep	
+0046be10	F	prof_add_func	void *prof_add_func(void *instr, char *name, int kind)	med	profrep	
+0046bf00	F	avl_cmp_h46bf00		low	hidden	
+0046bf30	F	avl_cmp_h46bf30		low	hidden	
+0046bf50	F	prof_list_add	void *prof_list_add(void *list, void *item)	high	profrep	
+0046bfa0	F	prof_list_remove	void prof_list_remove(void *list, void *item)	high	profrep	
+0046bfd0	F	prof_list_delete	void prof_list_delete(void *list, void *item)	high	profrep	
+0046c000	F	cdb_build_backtrace	void cdb_build_backtrace(void)	high	cdbbt	
+0046c4c0	F	cdb_free_frames	void cdb_free_frames(void)	high	cdbbt	
+0046c540	F	cdb_frame_first	void *cdb_frame_first(void)	high	cdbbt	
+0046c550	F	cdb_frame_last	void *cdb_frame_last(void)	high	cdbbt	
+0046c560	F	cdb_frame_current	void *cdb_frame_current(void)	high	cdbbt	
+0046c570	F	cdb_set_frame_current	void cdb_set_frame_current(void *frame)	high	cdbbt	
+0046c590	F	cdb_frame_refresh_text	void cdb_frame_refresh_text(void *frame)	med	cdbbt	
+0046c6a0	F	cdb_frame_pc	unsigned long cdb_frame_pc(void)	high	cdbbt	
+0046c6c0	F	cdb_frame_fp	unsigned long cdb_frame_fp(void)	high	cdbbt	
+0046c7f0	F	cdb_caller_pc	unsigned long cdb_caller_pc(unsigned long pc, unsigned long fp, unsigned long sp, void *regs)	med	cdbbt	
+0046c890	F	cdb_caller_pc_56100	unsigned long cdb_caller_pc_56100(unsigned long pc, unsigned long fp, unsigned long sp)	med	cdbbt	
+0046ca50	F	cdb_hwstack_pop	unsigned long cdb_hwstack_pop(void)	med	cdbbt	
+0046cca0	F	cdb_caller_pc_56000	unsigned long cdb_caller_pc_56000(unsigned long pc, unsigned long fp, unsigned long sp)	med	cdbbt	
+0046cee0	F	cdb_caller_pc_96000	unsigned long cdb_caller_pc_96000(unsigned long pc, unsigned long fp, unsigned long sp)	med	cdbbt	
+0046d100	F	cdb_caller_fp	unsigned long cdb_caller_fp(unsigned long pc, unsigned long fp, unsigned long sp, unsigned long cpc)	med	cdbbt	
+0046d1b0	F	cdb_caller_fp_56100	unsigned long cdb_caller_fp_56100(unsigned long pc, unsigned long fp, unsigned long sp, unsigned long cpc)	med	cdbbt	
+0046d1d0	F	cdb_caller_fp_56000	unsigned long cdb_caller_fp_56000(unsigned long pc, unsigned long fp)	med	cdbbt	
+0046d300	F	cdb_caller_fp_96000	unsigned long cdb_caller_fp_96000(unsigned long pc, unsigned long fp)	med	cdbbt	
+0046d430	F	cdb_caller_sp_56100	unsigned long cdb_caller_sp_56100(unsigned long pc, unsigned long sp, unsigned long cpc)	med	cdbbt	
+0046d480	F	cdb_count_pushes_56100	int cdb_count_pushes_56100(unsigned long pc)	med	cdbbt	
+0046d5c0	F	cdb_frame_adjust_56100	long cdb_frame_adjust_56100(unsigned long pc)	med	cdbbt	
+0046d7a0	F	cdb_frame_adjust	long cdb_frame_adjust(unsigned long pc)	med	cdbbt	
+0046d7e0	F	cdb_frame_adjust_56000	long cdb_frame_adjust_56000(unsigned long pc)	med	cdbbt	
+0046d990	F	cdb_frame_adjust_96000	long cdb_frame_adjust_96000(unsigned long pc)	med	cdbbt	
+0046db40	F	cdb_caller_sp	unsigned long cdb_caller_sp(unsigned long pc, unsigned long sp, unsigned long cpc)	med	cdbbt	
+0046dbd0	F	cdb_caller_sp_56000	unsigned long cdb_caller_sp_56000(unsigned long pc, unsigned long sp, unsigned long cpc)	med	cdbbt	
+0046dc20	F	cdb_count_pushes_56000	int cdb_count_pushes_56000(unsigned long pc)	med	cdbbt	
+0046dd90	F	cdb_caller_sp_96000	unsigned long cdb_caller_sp_96000(unsigned long pc, unsigned long sp, unsigned long cpc)	med	cdbbt	
+0046dde0	F	cdb_count_pushes_96000	int cdb_count_pushes_96000(unsigned long pc)	med	cdbbt	
+0046df10	F	cdb_scan_prologue	char *cdb_scan_prologue(unsigned long pc, int fp)	med	cdbbt	
+0046dfa0	F	cdb_scan_prologue_56100	char *cdb_scan_prologue_56100(unsigned long pc, int fp)	med	cdbbt	
+0046e1a0	F	scan_saved_regs_56800	char *scan_saved_regs_56800(unsigned long func_addr, int frame_base)	med	cdbeval	
+0046e3a0	F	scan_saved_regs_56000	char *scan_saved_regs_56000(unsigned long func_addr, int frame_base)	med	cdbeval	
+0046e5c0	F	scan_saved_regs_96000	char *scan_saved_regs_96000(unsigned long func_addr, int frame_base)	med	cdbeval	
+0046e810	F	opcode_tab_search	int opcode_tab_search(void *tab, int count, unsigned long key)	high	cdbeval	
+0046e870	F	frame_locals_string	char *frame_locals_string(int func_symidx, int frame_base)	med	cdbeval	
+0046ec10	F	eval_tree	int eval_tree(void *node)	high	cdbeval	
+0046ec50	F	eval_tree_core_thunk	int eval_tree_core_thunk(void)	med	cdbeval	
+0046ec60	F	parse_c_expression	void *parse_c_expression(char *text)	high	cdbeval	
+0046ecb0	F	type_size	int type_size(void *value, void *out_value)	high	cdbeval	
+0046f0f0	F	value_dsp_to_double	void value_dsp_to_double(void *value)	med	cdbeval	
+0046f150	F	value_double_to_dsp	void value_double_to_dsp(void *value)	med	cdbeval	
+0046f1a0	F	dw_udivmod	int dw_udivmod(unsigned long *num, unsigned long *den, unsigned long *quot, unsigned long *rem)	med	cdbeval	
+0046f3e0	F	dw_udivmod_b	int dw_udivmod_b(unsigned long *num, unsigned long *den, unsigned long *quot, unsigned long *rem)	med	cdbeval	
+0046f620	F	eval_unary	int eval_unary(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval	
+0046f7d0	F	eval_binary	int eval_binary(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+0046fb70	F	eval_ternary	int eval_ternary(void *pcond, void *pa, void *pb, void *result_node, int do_eval)	high	cdbeval	
+0046ff40	F	value_is_true	int value_is_true(void *value)	high	cdbeval	
+00470120	F	tree_mark_leaves	void tree_mark_leaves(void *node)	med	cdbeval	
+004701d0	F	eval_tree_core	int eval_tree_core(void)	med	cdbeval	
+004703c0	F	eval_node	int eval_node(void *node)	med	cdbeval	
+00470400	F	arglist_free_temps	void arglist_free_temps(void *arglist)	low	cdbeval	
+00470430	F	eval_node_binary	int eval_node_binary(void *node)	high	cdbeval	
+00470450	F	eval_node_unary	int eval_node_unary(void *node)	high	cdbeval	
+00470470	F	eval_node_ternary	int eval_node_ternary(void *node)	high	cdbeval	
+00470490	F	value_neg	int value_neg(void *src, void *dst)	high	cdbeval	
+004707e0	F	value_copy_trunc	void value_copy_trunc(void *src, void *dst)	low	cdbeval	
+00470800	F	ternary_select_value	int ternary_select_value(void *cond, void *a, void *b, void *out)	high	cdbeval	
+00470870	F	eval_dot_values	int eval_dot_values(void *base, void *member, void *out)	med	cdbeval	
+00470920	F	eval_arrow_values	int eval_arrow_values(void *base, void *member, void *out)	med	cdbeval	
+00470980	F	dw_add	int dw_add(unsigned long *a, unsigned long *b, unsigned long *out)	med	cdbeval	
+004709e0	F	dw_add_b	int dw_add_b(unsigned long *a, unsigned long *b, unsigned long *out)	med	cdbeval	
+00470a40	F	dw_neg	int dw_neg(unsigned long *a)	med	cdbeval	
+00470a90	F	dw_neg_b	int dw_neg_b(unsigned long *a)	med	cdbeval	
+00470ae0	F	dw_shl1	int dw_shl1(unsigned long *a)	med	cdbeval	
+00470b30	F	dw_shl1_b	int dw_shl1_b(unsigned long *a)	med	cdbeval	
+00470b70	F	dw_shr1	int dw_shr1(unsigned long *a)	med	cdbeval	
+00470ba0	F	dw_shr1_b	int dw_shr1_b(unsigned long *a)	med	cdbeval	
+00470bd0	F	dw_cmp	int dw_cmp(unsigned long *a, unsigned long *b)	high	cdbeval	
+00470c10	F	tw_normalize	void tw_normalize(unsigned long *w)	med	cdbeval	
+00470c80	F	mant_to_double	void mant_to_double(void *value)	med	cdbeval	
+00470cc0	F	double_to_mant	void double_to_mant(void *value)	med	cdbeval	
+00470d40	F	eval_subscript	int eval_subscript(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00470ea0	F	subscript_values	int subscript_values(void *ptr, void *idx, void *out)	med	cdbeval	
+00470ed0	F	ptr_add_values	int ptr_add_values(void *ptr, void *idx, void *out)	high	cdbeval	
+00471020	F	coerce_array_func	void coerce_array_func(void *pnode)	med	cdbeval	
+00471060	F	make_func_ptr_node	void make_func_ptr_node(void *node)	med	cdbeval	
+004710d0	F	make_array_ptr_node	void make_array_ptr_node(void *node)	med	cdbeval	
+00471160	F	eval_cast	int eval_cast(void *ptype, void *pval, int op, void *result_node, int do_eval)	high	cdbeval	
+00471330	F	cast_value	int cast_value(void *to_type, void *from_value, void *out)	high	cdbeval	
+00471530	F	cast_to_pointer	int cast_to_pointer(void *from_value, void *out)	med	cdbeval	
+00471580	F	cast_to_int_kind	void *cast_to_int_kind(void *from, void *out, int flags)	low	cdbeval	
+00471890	F	cast_to_uint_kind	int cast_to_uint_kind(void *from, void *out, int flags)	low	cdbeval	
+00471c30	F	word_split_hi	void word_split_hi(void *value)	med	cdbeval	
+00471c60	F	cast_to_float	int cast_to_float(void *from, void *out)	med	cdbeval	
+004720d0	F	word_join_hi	void word_join_hi(void *value)	med	cdbeval	
+004720f0	F	cast_to_double	int cast_to_double(void *from, void *out)	med	cdbeval	
+004725e0	F	cast_to_fract_common	int cast_to_fract_common(void *from, void *out)	low	cdbeval	
+00472850	F	double_to_fract_words	void double_to_fract_words(double d, void *out)	med	cdbeval	
+00472970	F	cast_to_fract_3	void cast_to_fract_3(void *from, void *out)	low	cdbeval	
+00472990	F	cast_to_fract_2	void cast_to_fract_2(void *from, void *out)	low	cdbeval	
+004729b0	F	cast_to_fract_4	void cast_to_fract_4(void *from, void *out)	low	cdbeval	
+004729e0	F	cast_to_fract_0	void cast_to_fract_0(void *from, void *out)	low	cdbeval	
+00472a10	F	cast_to_fract_1	void cast_to_fract_1(void *from, void *out)	low	cdbeval	
+00472a40	F	eval_muldiv	int eval_muldiv(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00472c20	F	mul_values	int mul_values(void *a, void *b, void *out)	high	cdbeval	
+00472f50	F	sign_extend_word	void sign_extend_word(void *value)	med	cdbeval	
+00472f90	F	double_to_fract_value	void double_to_fract_value(void *value)	med	cdbeval	
+00473000	F	fract_mul_helper	void fract_mul_helper(void *value)	low	cdbeval	
+00473180	F	div_values	int div_values(void *a, void *b, void *out)	high	cdbeval	
+00473600	F	dw_mul	int dw_mul(unsigned long *a, unsigned long *b, int *out)	med	cdbeval	
+004736e0	F	mul_int_values	int mul_int_values(void *a, void *b, unsigned long *out)	med	cdbeval	
+00473870	F	div_double_values	int div_double_values(void *a, void *b, void *out)	med	cdbeval	
+00473910	F	eval_add	int eval_add(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00473c40	F	add_values	int add_values(void *a, void *b, void *out)	high	cdbeval	
+00473ef0	F	add_words	int add_words(void *a, void *b, int n)	low	cdbeval	
+00474130	F	eval_sub	int eval_sub(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+004743e0	F	sub_values	int sub_values(void *a, void *b, void *out)	high	cdbeval	
+00474410	F	ptr_sub_int_values	int ptr_sub_int_values(void *ptr, void *idx, void *out)	med	cdbeval	
+00474530	F	ptr_diff_values	int ptr_diff_values(void *p, void *q, void *out)	med	cdbeval	
+00474630	F	eval_bitop	int eval_bitop(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00474870	F	shl_values	int shl_values(void *a, void *b, void *out)	high	cdbeval	
+00474c50	F	shr_values	int shr_values(void *a, void *b, void *out)	high	cdbeval	
+00475020	F	and_values	int and_values(void *a, void *b, void *out)	high	cdbeval	
+00475090	F	xor_values	int xor_values(void *a, void *b, void *out)	high	cdbeval	
+00475100	F	or_values	int or_values(void *a, void *b, void *out)	high	cdbeval	
+00475170	F	mod_values	int mod_values(void *a, void *b, void *out)	high	cdbeval	
+004754b0	F	eval_relational	int eval_relational(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00475b00	F	ge_values	int ge_values(void *a, void *b, void *out)	high	cdbeval	
+00475b50	F	eq_values	int eq_values(void *a, void *b, void *out)	high	cdbeval	
+00475ec0	F	le_values	int le_values(void *a, void *b, void *out)	high	cdbeval	
+00475f10	F	gt_values	int gt_values(void *a, void *b, void *out)	high	cdbeval	
+00475f30	F	lt_values	int lt_values(void *a, void *b, void *out)	high	cdbeval	
+00476520	F	eval_equality	int eval_equality(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00476860	F	ne_values	int ne_values(void *a, void *b, void *out)	high	cdbeval	
+004768a0	F	eval_logical	int eval_logical(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00476a90	F	logand_values	int logand_values(void *a, void *b, void *out)	high	cdbeval	
+00476b00	F	logor_values	int logor_values(void *a, void *b, void *out)	high	cdbeval	
+00476b70	F	eval_assign	int eval_assign(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00476f60	F	assign_values	int assign_values(void *lhs, void *rhs, void *out)	high	cdbeval	
+00477020	F	eval_muldiv_assign	int eval_muldiv_assign(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00477250	F	eval_bitop_assign	int eval_bitop_assign(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+004774e0	F	eval_add_assign	int eval_add_assign(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+004777b0	F	eval_sub_assign	int eval_sub_assign(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00477a80	F	eval_comma	int eval_comma(void *plhs, void *prhs, int op, void *result_node, int do_eval)	high	cdbeval	
+00477b30	F	eval_hash	int eval_hash(void *plhs, void *prhs, int op, void *result_node, int do_eval)	med	cdbeval	
+00477c60	F	eval_incdec	int eval_incdec(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval	
+00478060	F	value_inc	int value_inc(void *value)	high	cdbeval	
+00478190	F	value_dec	int value_dec(void *value)	high	cdbeval	
+004782c0	F	eval_addr_of	int eval_addr_of(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval	
+00478380	F	addr_of_value	int addr_of_value(void *value, void *out)	med	cdbeval	
+00478410	F	eval_deref	int eval_deref(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval	
+004784f0	F	eval_uplus	int eval_uplus(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval	
+00478600	F	eval_uminus	int eval_uminus(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval	
+004786c0	F	eval_compl	int eval_compl(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval	
+00478750	F	compl_value	int compl_value(void *value, void *out)	high	cdbeval	
+004788f0	F	eval_lognot	int eval_lognot(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval	
+004789c0	F	lognot_value	int lognot_value(void *value, void *out)	high	cdbeval	
+00478ba0	F	eval_sizeof	int eval_sizeof(void *pchild, int op, void *result_node, int do_eval)	high	cdbeval	
+00478c20	F	eval_call	int eval_call(void *pfunc, int op, void *result_node, int do_eval)	high	cdbeval	
+00478d50	F	call_target_function	int call_target_function(void *func_node, void *result_node)	high	cdbeval	
+00478e40	F	call_setup_run	void call_setup_run(void)	med	cdbeval	
+00478ea0	F	call_setup_56000	int call_setup_56000(void *func_node, void *result_node)	high	cdbeval	
+00479210	F	call_setup_56100	int call_setup_56100(void *func_node, void *result_node)	high	cdbeval	
+00479550	F	call_setup_56800	int call_setup_56800(void *func_node, void *result_node)	high	cdbeval	
+00479890	F	call_setup_56300	int call_setup_56300(void *func_node, void *result_node)	high	cdbeval	
+00479bd0	F	call_setup_96000	int call_setup_96000(void *func_node, void *result_node)	high	cdbeval	
+00479f40	F	push_args_56000	void push_args_56000(void *arglist, int *sp)	med	cdbeval	
+00479fe0	F	push_args_56300	void push_args_56300(void *arglist, int *sp)	med	cdbeval	
+0047a0f0	F	push_args_96000	void push_args_96000(void *arglist, int *sp)	med	cdbeval	
+0047a200	F	eval_array_to_ptr	int eval_array_to_ptr(void *pchild, int op, void *result_node, int do_eval)	med	cdbeval	
+0047a240	F	array_to_ptr_value	int array_to_ptr_value(void *value, void *out)	med	cdbeval	
+0047a2d0	F	eval_func_to_ptr	int eval_func_to_ptr(void *pchild, int op, void *result_node, int do_eval)	med	cdbeval	
+0047a310	F	func_to_ptr_value	int func_to_ptr_value(void *value, void *out)	med	cdbeval	
+0047a3a0	F	copy_node_type	void copy_node_type(void *dst_node, void *src_node)	high	cdbeval	
+0047a400	F	usual_arith_conv	void usual_arith_conv(void *pnode1, void *pnode2)	high	cdbeval	
+0047a710	F	integral_promote	void integral_promote(void *pnode)	high	cdbeval	
+0047a760	F	make_cast_node	void *make_cast_node(int kind, void *node)	high	cdbeval	
+0047a7f0	F	clone_tree	void *clone_tree(void *node)	high	cdbeval	
+0047a8a0	F	clone_arglist	void *clone_arglist(void *arglist)	high	cdbeval	
+0047a900	F	host_write	long host_write(int hfd, char *buf, unsigned long n)	high	cdbhost	
+0047a9a0	F	host_read	long host_read(int hfd, char *buf, unsigned long n)	high	cdbhost	
+0047aa10	F	host_close	int host_close(int hfd)	high	cdbhost	
+0047aa90	F	host_open	int host_open(char *path, unsigned long oflag, unsigned long pmode)	high	cdbhost	
+0047abc0	F	host_lseek	long host_lseek(int hfd, long off, int whence)	high	cdbhost	
+0047ac00	F	host_io_init	void host_io_init(void)	high	cdbhost	
+0047ade0	F	host_io_mode	int host_io_mode(void)	med	cdbhost	
+0047adf0	F	host_io_service	int host_io_service(void)	high	cdbhost	
+0047b110	F	host_io_get_ret_arg	int host_io_get_ret_arg(void)	med	cdbhost	
+0047b400	F	host_io_get_ret_arg2	int host_io_get_ret_arg2(void)	med	cdbhost	
+0047b670	F	prof_out_open	void prof_out_open(char *objname, char *basename, char *ext)	high	profps	
+0047b8b0	F	prof_out_close	void prof_out_close(void)	high	profps	
+0047b8f0	F	ps_font	void ps_font(int op, int a, int b)	high	profps	
+0047ba70	F	ps_flush_line	void ps_flush_line(void)	high	profps	
+0047bad0	F	prof_heading	void prof_heading(char *fmt, ...)	med	profps	
+0047bb70	F	ps_new_page	void ps_new_page(void)	high	profps	
+0047bcb0	F	ps_putc	void ps_putc(int c)	high	profps	
+0047bdf0	F	prof_printf	void prof_printf(char *fmt, ...)	high	profps	
+0047bf70	F	prof_put_number	void prof_put_number(char *spec, int dest)	med	profps	
+0047c2c0	F	lst_write_buf	void lst_write_buf(void)	high	profdir	
+0047c530	F	prof_parse_call_directive	void prof_parse_call_directive(void *src_line, char *text)	high	profdir	
+0047c6e0	F	cg_lookup_name	void *cg_lookup_name(char *name, int type)	med	profdir	
+0047c710	F	prof_scan_call_directive	void prof_scan_call_directive(void *src_line, char *text, void *out)	high	profdir	
+0047c8e0	F	prof_scan_identifier	char *prof_scan_identifier(char **pp, char *outbuf)	high	profdir	
+0047ca00	F	cg_note_pc_change	void cg_note_pc_change(void *src_line, int a, int b, int cycles)	med	profdir	
+0047cc20	F	cg_merge_nodes	void *cg_merge_nodes(void *node, void *other)	med	profdir	
+0047cd50	F	cg_reaches	int cg_reaches(void *from, void *target, int mark)	med	profdir	
+0047cde0	F	cg_merge_edges	void cg_merge_edges(void *node, void *other, void *dst_list, void *src_list, int kind)	med	profdir	
+0047ced0	F	cg_merge_edge_counts	void cg_merge_edge_counts(void *list, void *node, void *other)	low	profdir	
+0047cf30	F	cg_make_mother	void cg_make_mother(void)	med	profdir	
+0047cfe0	F	cg_push_call	void cg_push_call(void *node, void *src_line, int cycles, int joint, void *ret_line)	med	profdir	
+0047d160	F	subr_on_stack	int subr_on_stack(void *sub)	med	cofload	
+0047d1a0	F	subr_return	void subr_return(void *from, int cycles)	low	cofload	
+0047d2e0	F	subr_profile_finish	int subr_profile_finish(void)	med	cofload	
+0047d4a0	F	subr_format_name	void subr_format_name(void *sub)	med	cofload	
+0047d680	F	subr_report	void subr_report(void)	high	cofload	
+0047d7a0	F	subr_report_basic	void subr_report_basic(void)	high	cofload	
+0047da20	F	subr_report_callgraph	void subr_report_callgraph(void)	high	cofload	
+0047dc80	F	prof_load_cld	void prof_load_cld(void)	med	cofload	
+0047dd20	F	prof_read_cld	void prof_read_cld(void)	med	cofload	
+0047de10	F	prof_read_strtab	int prof_read_strtab(void)	high	cofload	
+0047df00	F	prof_read_sections	void prof_read_sections(void)	high	cofload	
+0047e020	F	prof_link_sections	void prof_link_sections(void)	low	cofload	
+0047e0b0	F	prof_read_filhdr	void prof_read_filhdr(void)	high	cofload	
+0047e180	F	prof_read_symbols	void prof_read_symbols(void)	high	cofload	
+0047e3a0	F	prof_sym_name	char * prof_sym_name(int *sym)	high	cofload	
+0047e3e0	F	prof_build_file_names	void prof_build_file_names(void)	med	cofload	
+0047e530	F	prof_aux_name	char * prof_aux_name(char *aux)	high	cofload	
+0047e570	F	prof_section_file_name	char * prof_section_file_name(int sec)	med	cofload	
+0047e5b0	F	prof_number_symbols	void prof_number_symbols(void)	med	cofload	
+0047e680	F	prof_add_symbol	int prof_add_symbol(char *sym, char *name)	med	cofload	
+0047e7d0	F	hid_47e7d0		low	hidden	
+0047e8c0	F	prof_get_source_line	void * prof_get_source_line(int fileno, int line)	med	cofload	
+0047eba0	F	prof_read_all_lines	void prof_read_all_lines(void)	med	cofload	
+0047eca0	F	prof_mark_data_section	void prof_mark_data_section(int secno, char *sec)	low	cofload	
+0047ed70	F	prof_read_section_lines	void prof_read_section_lines(int secno, char *sec)	med	cofload	
+0047efa0	F	hid_47efa0		low	hidden	
+0047f090	F	parse_get_root	void *parse_get_root(void)	high	cdbparse	
+0047f0a0	F	new_node	void *new_node(void)	high	cdbparse	
+0047f180	F	parse_free_all	void parse_free_all(void)	med	cdbparse	
+0047f1a0	F	parse_free_keep_nodes	void parse_free_keep_nodes(void)	med	cdbparse	
+0047f1c0	F	free_node_list	void free_node_list(void *plist, int free_contents)	med	cdbparse	
+0047f240	F	yyparse	int yyparse(void)	high	cdbparse	
+004804c0	F	yyerror	int yyerror(char *msg)	high	cdblex	
+00480520	F	mk_type_node	void *mk_type_node(int kind)	high	cdblex	
+00480540	F	mk_binary_node	void *mk_binary_node(void *lhs, int op, void *rhs)	high	cdblex	
+004805b0	F	mk_unary_node	void *mk_unary_node(int op, void *child)	high	cdblex	
+00480610	F	mk_ternary_node	void *mk_ternary_node(void *cond, void *a, void *b)	high	cdblex	
+00480690	F	mk_call_node	void *mk_call_node(void *func, void *arglist)	high	cdblex	
+00480740	F	mk_arglist	void *mk_arglist(void *node)	high	cdblex	
+00480760	F	arglist_append	void *arglist_append(void *list, void *node)	high	cdblex	
+00480780	F	track_list_cell	void track_list_cell(void *p)	low	cdblex	
+004807b0	F	mk_member_dot	void *mk_member_dot(void *base, char *name)	high	cdblex	
+00480a10	F	mk_member_arrow	void *mk_member_arrow(void *base, char *name)	high	cdblex	
+00480cb0	F	yylex	int yylex(void)	high	cdblex	
+00481220	F	lex_init	int lex_init(char *text)	high	cdblex	
+004812d0	F	lex_get_column	int lex_get_column(void)	med	cdblex	
+004812e0	F	yywrap	int yywrap(void)	high	cdblex	
+004812f0	F	keyword_lookup	int keyword_lookup(char *word)	high	cdblex	
+00481360	F	lex_typedef_name	void *lex_typedef_name(char *name)	med	cdblex	
+004813c0	F	lex_symbol_name	void *lex_symbol_name(char *name)	med	cdblex	
+00481440	F	lex_int_const	void *lex_int_const(char *text, int base)	high	cdblex	
+00481670	F	lex_float_const	void *lex_float_const(char *text)	high	cdblex	
+00481760	F	lex_char_const	void *lex_char_const(char *text)	high	cdblex	
+004819e0	F	yy_scan	int yy_scan(void)	high	cdblex	
+00481d20	F	int_list_contains	int int_list_contains(int *list, int value)	low	cdblex	
+00481d50	F	cg_print_tree_text	void cg_print_tree_text(void)	high	profgraph	
+00481dd0	F	cg_print_tree_node	void cg_print_tree_node(void *node)	high	profgraph	
+00481f00	F	cg_print_tree_children	void cg_print_tree_children(void *node)	high	profgraph	
+00482000	F	cg_ps_call_tree	void cg_ps_call_tree(void)	high	profgraph	
+004820d0	F	cg_ps_tree_node	void cg_ps_tree_node(void *node, int x)	high	profgraph	
+00482250	F	cg_ps_tree_flush	void cg_ps_tree_flush(void)	med	profgraph	
+004822b0	F	cg_ps_tree_box	void cg_ps_tree_box(int x, void *node, int expanded)	high	profgraph	
+00482310	F	cg_ps_call_graph	void cg_ps_call_graph(void)	high	profgraph	
+004823e0	F	cgl_layout_node	void cgl_layout_node(void *node)	med	profgraph	
+00482490	F	cgl_init_shape	void cgl_init_shape(void *node)	low	profgraph	
+00482580	F	cgl_next_child	int cgl_next_child(void *node, void **out)	med	profgraph	
+00482610	F	cgl_add_point	void *cgl_add_point(void *prev, int x, int y)	med	profgraph	
+004826a0	F	cgl_compute_edges	void cgl_compute_edges(void)	low	profgraph	
+00482800	F	cgl_place_child	void cgl_place_child(void)	low	profgraph	
+00482930	F	cgl_commit_shape	void cgl_commit_shape(void *cand)	low	profgraph	
+00482a70	F	cgl_del_point	void *cgl_del_point(void *pt)	med	profgraph	
+00482ab0	F	cgl_segments_hit	int cgl_segments_hit(void *p, void *q)	low	profgraph	
+00482c80	F	cgl_next_candidate	int cgl_next_candidate(void *cand)	low	profgraph	
+00482e50	F	cgl_score	void cgl_score(void *cand)	low	profgraph	
+00482fb0	F	cgl_finish	void cgl_finish(void)	low	profgraph	
+00483070	F	cg_ps_graph_node	void cg_ps_graph_node(void *node, int x, int y, int *size)	high	profgraph	
+004831f0	F	cg_ps_graph_arrow	void cg_ps_graph_arrow(int x1, int y1, int x2, int y2)	high	profgraph	
+00492018	D	g_redir_names	char *[3]	high	symdisp	12
+00492028	D	g_redir_modes	char *[3]	high	symdisp	12
+004927b8	D	cdb_hexdigit_tab	char *[16]	med	cdbutil	64
+004927f8	D	cdb_bitmask_tab	unsigned long[33]	med	cdbutil	132
+004a24f8	D	dev_56007	void *	high	devinit	1248
+004a29e8	D	dev_56011	void *	high	devinit	1248
+004a2ed8	D	dev_56012	void *	high	devinit	1248
+004a33c8	D	dev_56009	void *	high	devinit	1248
+004a3da8	D	dev_56002	void *	high	devinit	1248
+004a4298	D	dev_56000	void *	high	devinit	1248
+004a4788	D	dev_56001	void *	high	devinit	1248
+004a4c78	D	dev_56004	void *	high	devinit	1248
+004a5168	D	dev_56004rom	void *	high	devinit	1248
+004a5658	D	dev_56005	void *	high	devinit	1248
+004a8c90	D	command_entries	void *[]	high	cmdloop	156
+004a8d98	D	dev_state_tab	void *	high	state	4
+004a8d9c	D	cmdstack_size	int	high	cmdloop	4
+004a8da0	D	history_size	int	med	state	4
+004a8da4	D	scrollback_lines	int	high	console	4
+004a8da8	D	screen_rows	int	high	console	4
+004a8dac	D	screen_cols	int	high	console	4
+004a8db0	D	text_rows	int	high	console	4
+004a8db4	D	itype_tab	void **	high	shared	4
+004a8db8	D	num_commands	int	high	cmdloop	4
+004a8dbc	D	command_table	void *	high	cmdloop	4
+004a8dc0	D	default_help_lines	void *	med	cmdloop	4
+004a8dc4	D	cmdstack_buf	void *	high	cmdloop	4
+004a8dc8	D	profiler_hook	void *	med	state	4
+004a8dcc	D	cur_dev_index	int	high	state	4
+004a8dd0	D	parm_errmsg	char *	high	cdbsym	4
+004a8dd4	D	status1_buf	char[]	high	cmdloop	256
+004a8ed4	D	status2_buf	char[]	high	cmdloop	100
+004a8fd4	D	cmd_linebuf	char[]	high	cmdloop	256
+004a90d4	D	run_dev_index	int	med	state	4
+004a90d8	D	cmdlog_fp	void *	high	console	4
+004a90dc	D	cmdlog_name	char[]	med	console	256
+004a91dc	D	macro_active	int	high	macro	4
+004a91e0	D	macro_fp	void *	high	macro	4
+004a91e4	D	macro_stack	void *	high	macro	4
+004a91e8	D	cmd_tokbuf	char[]	high	macro	1208
+004a92e8	D	g_cmdline	char[]	med	cmdparse	256
+004a93e8	D	g_tok_type	char[]	med	cmdparse	0
+004a9468	D	g_tok_start	int[]	med	cmdparse	0
+004a9670	D	g_tok_val	char[]	med	cmdparse	0
+004a96c4	D	g_io_id_arg	int	low	iohist	4
+004aaa68	D	parm_cmdline	char *	med	cdbsym	4
+004aaa6c	D	g_err_tok	int	low	cmdparse	4
+004aaa70	D	help_mode	int	med	cmdloop	4
+004aaa74	D	help_index	int	med	cmdloop	4
+004aaa78	D	help_lines_cur	void *	med	cmdloop	4
+004aaa7c	D	help_lines_alt	void *	med	cmdloop	4
+004aaa80	D	cursor_row	int	high	console	4
+004aaa84	D	cursor_col	int	high	console	4
+004aaa88	D	screen_hold_cnt	int	high	console	4
+004aaa8c	D	overwrite_mode	int	high	console	4
+004aaa90	D	gui_mode	int	med	console	4
+004aaa98	D	prompt_text	char[]	high	cmdloop	16
+004aaaa4	D	source_path_list	char *	high	state	4
+004aaaa8	D	g_win_buf	char *	high	coffrd	4
+004aaaac	D	more_flag	int	high	console	4
+004aaab0	D	more_line_count	int	high	console	4
+004aaab4	D	quit_on_error	int	high	console	4
+004aaab8	D	on_error_active	int	low	console	4
+004aaabc	D	last_error_code	long	L	misc	4
+004aab00	D	banner_ptr	char *	high	state	4
+004aab04	D	num_chiptypes	int	high	state	4
+004aab08	D	chiptype_tab	void *	high	state	4
+004aab0c	D	max_devices	int	high	state	4
+004aab10	D	dev_tab	void *	high	state	4
+004aab14	D	abort_flag	int	med	console	4
+004aab18	D	bit_mask_tab	unsigned long[16]	high	exec	64
+004aab98	D	devtype_find_hook	void *	med	state	4
+004aab9c	D	no_console	int	high	console	4
+004adaa0	D	emi1_timing_tab_a	unsigned long[8]	low	exec	32
+004adac0	D	emi1_timing_tab_b	unsigned long[8]	low	exec	32
+004adae0	D	emi1_timing_tab_c	unsigned long[4]	low	exec	16
+004b2748	D	regsel_tab	int[]	med	exec	0
+004b2898	D	agu_wrap_mask_tab	unsigned long[16]	med	exec	64
+004b47a0	D	emi2_burst_bits_tab	unsigned long[]	low	exec	0
+004b4870	D	emi2_burst_bits_tab2	unsigned long[]	low	exec	0
+004b6838	D	pwm_prescale_tab	long [8]	med	exec	32
+004b83d8	D	sci_mode_bits_tab	long [8]	med	exec	32
+004b83f8	D	sci_mode_nbits_tab	long [8]	med	exec	32
+004ba778	D	hi_cmd_reg_tab	long [8]	low	exec	32
+004bcef8	D	dev_68356	void *	high	devinit	1248
+004be8e0	D	dev_56030	void *	high	devinit	1248
+004bf758	D	keyed_dev_aux	void *[2]	low	devinit	8
+004bf760	D	keyed_dev_table	void *[8]	high	devinit	32
+004bf780	D	keygen_mod	unsigned long	high	devinit	4
+004bf784	D	keygen_base	unsigned long	high	devinit	4
+004bf788	D	keygen_mult	unsigned long	high	devinit	4
+004bf860	D	mnemonic_names	char *[103]	high	devinit	412
+004bfc78	D	dec_cpu_level	long	med	devinit	4
+004c02b0	D	dec_handlers	void *[210]	high	devinit	840
+004c05e8	D	hex_digits	char *	high	devinit	4
+004c05f0	D	dis_token_strings	char *[256]	high	devinit	1024
+004c1298	D	dis_fmt_handlers	void *[110]	high	devinit	440
+004c16f0	D	asm_mnem_table	void *[420]	high	asm	1680
+004c1d80	D	asm_mnem_count	long	high	asm	4
+004c2ab0	D	core_vtable_56000	void *[7]	high	asmtab	28
+004c2af0	D	core_vtable_56009	void *[7]	high	asmtab	28
+004c2b30	D	core_vtable_56011	void *[7]	high	asmtab	28
+004c2b70	D	core_vtable_56012	void *[7]	high	asmtab	28
+004c2bb0	D	insn_exec_records	long[]	med	asmtab	0
+004c36f0	D	insn_exec_handlers	void *[110]	med	asmtab	440
+004c38a8	D	insn_move_records	long[]	med	asmtab	0
+004c3ad0	D	insn_move_handlers	void *[110]	med	asmtab	440
+004c3c88	D	insn_class_handlers	void *[110]	med	asmtab	440
+004c45b0	D	opclass_table	unsigned long[436]	high	devinit	1744
+004c4c90	D	insn_valid_handlers	void *[109]	med	asmtab	436
+004c4e48	D	opclass_last_any	long	med	devinit	4
+004c4e4c	D	opclass_last	long	med	devinit	4
+004c4eb0	D	alu_handlers	void *[64]	med	asmtab	256
+004c6d10	D	g_space_names	char *[]	high	coffrd	0
+004cbed0	D	g_radix_names	char *[5]	high	iohist	20
+004cc750	D	g_help_misc_topics	char *[]	high	help	0
+004cc810	D	g_help_topic_tab	void *[]	high	help	80
+004d0488	D	g_bp_action_names	char *[8]	med	run	32
+004d04a8	D	g_bp_type_names	char *[13]	med	run	52
+004d2758	D	fmt_tab_16	char *	H	radix	20
+004d2770	D	fmt_tab_24	char *	H	radix	20
+004d2788	D	fmt_tab_32	char *	H	radix	20
+004d27e8	D	fmt_tab_16_nosym	char *	H	radix	20
+004d2800	D	fmt_tab_24_nosym	char *	H	radix	20
+004d2818	D	fmt_tab_32_nosym	char *	H	radix	20
+004d2878	D	mdisk_block_bytes	long	H	mdisk	4
+004d2970	D	shr_fill_bit	unsigned long	M	expr	4
+004d2978	D	dec_split_16	unsigned long	H	expr	16
+004d2988	D	dec_split_24	unsigned long	H	expr	16
+004d30a0	D	cdb_outcap	int	high	cdbutil	4
+004d3b48	D	avl_cmp_tab	void *[]	med	cdbsym	0
+004d3f94	D	frame_locals_buf_size	int	med	cdbeval	4
+004d4134	D	cdb_lookup_cache_depth	int	low	cdbsym	4
+004d4138	D	cdb_lookup_cache_sym	int	low	cdbsym	4
+004d4ef0	D	ps_font_names	char *	high	profps	28
+004db080	D	empty_str	char[]	high	fmt	1
+004dbbec	D	emi1_cpu_ctl	unsigned long *	high	exec	4
+004dbbf0	D	emi1_regs	unsigned long *	high	exec	4
+004dbbf4	D	emi1_grp	void *	high	exec	4
+004dbbf8	D	emi1_flags	unsigned long *	high	exec	4
+004dbbfc	D	emi1_regs_slot	unsigned long **	high	exec	4
+004dbc00	D	emi1_aux	void *	high	exec	4
+004dbc04	D	emi1_gruntime	void *	high	exec	4
+004dbc08	D	core_pins_gpio	unsigned long *	high	exec	4
+004dbc0c	D	core_ctl	unsigned long *	high	exec	4
+004dbc10	D	core_regs	unsigned long *	high	exec	4
+004dbc14	D	core_grp	void *	high	exec	4
+004dbc18	D	core_flags	unsigned long *	high	exec	4
+004dbc1c	D	core_pins_addr	unsigned long *	high	exec	4
+004dbc20	D	core_pins_data	unsigned long *	high	exec	4
+004dbc24	D	core_pins	unsigned long *	high	exec	4
+004dbc28	D	core_regs_slot	unsigned long **	high	exec	4
+004dbc2c	D	core_aux	void *	high	exec	4
+004dbc30	D	core_gruntime	void *	high	exec	4
+004dbc34	D	core_trace	unsigned long *	high	exec	4
+004dbc38	D	dax_cpu_ctl	unsigned long *	high	exec	4
+004dbc3c	D	dax_regs	unsigned long *	high	exec	4
+004dbc40	D	dax_grp	void *	high	exec	4
+004dbc44	D	dax_flags	unsigned long *	high	exec	4
+004dbc48	D	dax_regs_slot	unsigned long **	high	exec	4
+004dbc4c	D	dax_aux	void *	high	exec	4
+004dbc50	D	dax_gruntime	void *	high	exec	4
+004dbc54	D	gpio_regs	unsigned long *	high	exec	4
+004dbc58	D	gpio_grp	void *	high	exec	4
+004dbc5c	D	gpio_flags	unsigned long *	high	exec	4
+004dbc6c	D	emi2_cpu_ctl	unsigned long *	high	exec	4
+004dbc70	D	emi2_regs	unsigned long *	high	exec	4
+004dbc74	D	emi2_regs_alias	unsigned long *	high	exec	4
+004dbc78	D	emi2_grp	void *	high	exec	4
+004dbc7c	D	emi2_flags	unsigned long *	high	exec	4
+004dbc80	D	emi2_regs_slot	unsigned long **	high	exec	4
+004dbc84	D	emi2_aux	void *	high	exec	4
+004dbc88	D	emi2_gruntime	void *	high	exec	4
+004dbc8c	D	shi_cpu_ctl	unsigned long *	high	exec	4
+004dbc90	D	shi_regs	unsigned long *	high	exec	4
+004dbc94	D	shi_grp	void *	high	exec	4
+004dbc98	D	shi_flags	unsigned long *	high	exec	4
+004dbca8	D	sai_chipflags	void *	med	exec	4
+004dbcac	D	sai_st	unsigned long *	high	exec	4
+004dbcb0	D	sai_dev	void *	high	exec	4
+004dbcb4	D	sai_regflags	unsigned long *	high	exec	4
+004dbcb8	D	sai_stslot	void *	med	exec	4
+004dbcc0	D	sai_status	long *	med	exec	4
+004dbcc4	D	timer_chipflags	void *	med	exec	4
+004dbcc8	D	timer_regs	unsigned long *	high	exec	4
+004dbccc	D	timer_st	unsigned long *	high	exec	4
+004dbcd0	D	timer_dev	void *	high	exec	4
+004dbcd4	D	timer_regflags	unsigned long *	high	exec	4
+004dbcd8	D	timer_stslot	void *	med	exec	4
+004dbcdc	D	timer_aux	void *	med	exec	4
+004dbce0	D	timer_status	long *	med	exec	4
+004dbce4	D	pwm_chipflags	void *	med	exec	4
+004dbce8	D	pwm_regs	unsigned long *	high	exec	4
+004dbcec	D	pwm_st	unsigned long *	high	exec	4
+004dbcf0	D	pwm_dev	void *	high	exec	4
+004dbcf4	D	pwm_regflags	unsigned long *	high	exec	4
+004dbcf8	D	pwm_stslot	void *	med	exec	4
+004dbcfc	D	pwm_aux	void *	med	exec	4
+004dbd00	D	pwm_status	long *	med	exec	4
+004dbd04	D	wdog_chipflags	void *	med	exec	4
+004dbd08	D	wdog_regs	unsigned long *	high	exec	4
+004dbd0c	D	wdog_st	unsigned long *	high	exec	4
+004dbd10	D	wdog_dev	void *	high	exec	4
+004dbd14	D	wdog_regflags	unsigned long *	high	exec	4
+004dbd18	D	wdog_stslot	void *	med	exec	4
+004dbd1c	D	wdog_aux	void *	med	exec	4
+004dbd20	D	wdog_status	long *	med	exec	4
+004dbd28	D	simvar_regs	unsigned long *	med	exec	4
+004dbd2c	D	simvar_dev	void *	med	exec	4
+004dbd30	D	simvar_regflags	unsigned long *	med	exec	4
+004dbd40	D	port_regs	unsigned long *	high	exec	4
+004dbd44	D	port_dev	void *	high	exec	4
+004dbd48	D	port_regflags	unsigned long *	high	exec	4
+004dbd58	D	sci_chipflags	void *	med	exec	4
+004dbd5c	D	sci_st	unsigned long *	high	exec	4
+004dbd60	D	sci_dev	void *	high	exec	4
+004dbd64	D	sci_regflags	unsigned long *	high	exec	4
+004dbd70	D	sci_status	long *	med	exec	4
+004dbd74	D	sci_pins	unsigned long *	med	exec	4
+004dbd78	D	sci_pins2	unsigned long *	med	exec	4
+004dbd80	D	ssi_st	unsigned long *	high	exec	4
+004dbd84	D	ssi_dev	void *	high	exec	4
+004dbd88	D	ssi_regflags	unsigned long *	high	exec	4
+004dbd94	D	ssi_status	long *	med	exec	4
+004dbd98	D	ssi_pins	unsigned long *	med	exec	4
+004dbda0	D	hi_st	unsigned long *	high	exec	4
+004dbda4	D	hi_dev	void *	high	exec	4
+004dbda8	D	hi_regflags	unsigned long *	high	exec	4
+004dbdac	D	hi_stslot	void *	med	exec	4
+004dbdb0	D	hi_aux	void *	low	exec	4
+004dbdb4	D	hi_status	long *	med	exec	4
+004dbdb8	D	hi_pins	unsigned long *	med	exec	4
+004dbdc0	D	keygen_seed	unsigned long	high	devinit	4
+004dbdc8	D	keygen_out	char[9]	high	devinit	9
+004dbe78	D	dec_uses_extword	long	high	devinit	4
+004dbe7c	D	dec_extword	unsigned long	high	devinit	4
+004dbe80	D	dec_pc	unsigned long	med	devinit	4
+004dbe88	D	dis_hex_ea	char[16]	med	devinit	16
+004dbea0	D	dis_effect_flags	unsigned long	med	devinit	4
+004dbea4	D	dis_sel_a	unsigned long	low	devinit	4
+004dbea8	D	dis_sel_b	unsigned long	low	devinit	4
+004dbeac	D	dis_sel_c	unsigned long	low	devinit	4
+004dbeb0	D	dis_sel_d	unsigned long	low	devinit	4
+004dbeb4	D	dis_sel_e	unsigned long	low	devinit	4
+004dbeb8	D	dis_val_b	unsigned long	low	devinit	4
+004dbed0	D	dis_hex_b	char[16]	low	devinit	16
+004dbee8	D	dis_hex_c	char[16]	low	devinit	16
+004dbefc	D	dis_cpu_level	long	med	devinit	4
+004dbf00	D	asm_op3_field	char *	high	asm	4
+004dbf08	D	asm_line_buf	char[264]	med	asm	264
+004dc008	D	asm_op1_field	char *	high	asm	4
+004dc00c	D	asm_mnem_field	char *	high	asm	4
+004dc010	D	asm_label	char *	med	asm	4
+004dc110	D	asm_flags	long	low	asm	4
+004dc114	D	asm_xy_swapped	long	med	asm	4
+004dc118	D	asm_op2_field	char *	high	asm	4
+004dc120	D	asm_mnem_lower	char[16]	med	asm	16
+004dc134	D	opclass_key_any	unsigned long	med	devinit	4
+004dc138	D	opclass_key	unsigned long	med	devinit	4
+004dc13c	D	alu_ccr	unsigned long	med	asmtab	4
+004dc140	D	alu_flag	long	low	asmtab	4
+004dc144	D	alu_core	void *	med	asmtab	4
+004dc398	D	float_fmt_buf	char[]	med	fmt	64
+004dc3c4	D	console_out_handle	void *	high	console	4
+004dc3c8	D	screen_attr_buf	char[]	high	console	25600
+004e27d0	D	screen_top_row	int	high	console	4
+004e27d4	D	console_orig_handle	void *	high	console	4
+004e27d8	D	screen_char_buf	char[]	high	console	25957
+004e8c40	D	vk_to_editkey	int[]	med	console	1024
+004e9054	D	console_in_handle	void *	high	console	4
+004e9058	D	screen_charinfo_buf	char[]	high	console	16384
+00502068	D	snap_reloc_list	void *	med	cdbwatch	4
+0050206c	D	snap_file	void *	med	cdbwatch	4
+00502074	D	snap_error	int	low	cdbwatch	4
+005020c8	D	watch_line_buf	char *	med	cdbwatch	4
+005020cc	D	watch_line_buf_size	int	med	cdbwatch	4
+005020d0	D	g_addr_str_buf	char[256]	med	coffrd	256
+005021d0	D	g_cld_filhdr	unsigned long[7]	high	coffrd	28
+005021ec	D	g_src_fp	void *	high	coffrd	4
+00502200	D	g_dasm_pc	unsigned long	low	coffrd	4
+00502268	D	g_dasm_opflags	unsigned long	low	coffrd	4
+00502280	D	g_label_desc_buf	char[128]	med	coffrd	128
+00502380	D	g_null_section	unsigned long[8]	med	coffrd	32
+005023a0	D	g_cld_fp	void *	high	coffrd	4
+005024d8	D	g_null_value	unsigned long[10]	med	iohist	40
+00502710	D	stats_group	int	M	stats	4
+00502714	D	prof_sym_list	void *	M	profile	4
+00502718	D	src_line_buf	char	H	source	400
+005028b0	D	src_include_buf	char	H	source	256
+00502930	D	prof_sym_cur	void *	M	profile	4
+00502938	D	prof_disasm_buf	char	L	mdisk	16
+005029d0	D	prof_prev_state	int	L	mdisk	4
+005029dc	D	expr_mode	unsigned long	H	expr	4
+005029e0	D	optr	char *	high	asm	4
+005029e8	D	mp_tmp	unsigned long	M	expr	12
+00502a60	D	cdb_saved_ictr	unsigned long[4]	med	cdbutil	12
+00502a6c	D	cdb_saved_retaddr	unsigned long	med	cdbutil	4
+00502a70	D	cdb_wrap_line	char[256]	high	cdbutil	256
+00502b70	D	cdb_saved_cyc	unsigned long[4]	med	cdbutil	12
+00502b80	D	cdb_saved_stack	void *[1024]	high	cdbutil	4096
+00503b80	D	cdb_errbuf	char[256]	high	cdbutil	256
+00503c80	D	cdb_saved_idx	int	high	cdbutil	4
+00503c84	D	cdb_quiet	int	high	cdbutil	4
+00503c88	D	cdb_outbuf	char *	high	cdbutil	4
+00503c8c	D	cdb_outlen	int	high	cdbutil	4
+00503c90	D	parm_ctx	void *	high	cdbsym	4
+00503c98	D	avl_spare_node	void *	high	cdbsym	4
+00503c9c	D	avl_cur_tree	void *	high	cdbsym	4
+00503ca0	D	prof_instr_scratch	char[644]	med	profrep	644
+00503f24	D	avl_removed	void *	high	cdbsym	4
+00503f28	D	prof_line_key	unsigned long[2]	med	profrep	8
+00503f40	D	frame_locals_buf	char *	med	cdbeval	4
+00503f44	D	cdb_arch	int	high	cdbutil	4
+00503f48	D	cdb_word_mask	unsigned long	high	cdbutil	4
+00503f4c	D	cdb_ext_mask	unsigned long	high	cdbutil	4
+00503f50	D	cdb_addr_mask	unsigned long	high	cdbutil	4
+00503f54	D	cdb_word_bits	unsigned long	high	cdbutil	4
+00503f58	D	cdb_ext_bits	unsigned long	high	cdbutil	4
+00503f5c	D	cdb_sign_bit	unsigned long	high	cdbutil	4
+00503f60	D	cdb_ext_sign_bit	unsigned long	high	cdbutil	4
+00503f64	D	host_io_mode_var	int	high	cdbhost	4
+00503f68	D	host_io_char	char	med	cdbhost	1
+00503f70	D	ps_file	void *	high	profps	4
+00503f74	D	ps_line_len	int	high	profps	4
+00503f78	D	ps_line_no	int	high	profps	4
+00503f7c	D	ps_need_page	int	high	profps	4
+00503f80	D	prof_version_str	char	med	profps	32
+00503fa8	D	lst_line_no	int	med	profdir	4
+00503fac	D	lst_page_no	int	med	profdir	4
+00503fb0	D	lst_col	int	med	profdir	4
+00503fb4	D	ps_font_sp	int	med	profps	4
+00503fb8	D	prof_date_str	char *	med	profps	4
+00503fbc	D	lst_file	void *	high	profps	4
+00503fc8	D	prof_fmt_buf	char	high	profps	1024
+00504158	D	ps_page_no	int	high	profps	4
+0050415c	D	prof_objname	char *	med	profps	4
+00504160	D	ps_line_buf	char	high	profps	128
+005041e8	D	ps_font_stack	int	med	profps	160
+005042b8	D	g_prof_src_name	char *	high	cofload	4
+005042bc	D	g_prof_nscns	int	high	cofload	4
+005042c0	D	g_prof_fp	void *	high	cofload	4
+005042c8	D	g_prof_filhdr	unsigned long[7]	high	cofload	28
+005042e8	D	g_prof_linebuf	char[400]	high	cofload	400
+0050447c	D	g_prof_src_line	int	high	cofload	4
+00504480	D	g_prof_src_fp	void *	high	cofload	4
+00504484	D	g_prof_strlen	unsigned long	high	cofload	4
+0050448c	D	g_prof_strtab	char *	high	cofload	4
+00504490	D	g_prof_srcinfo	char *[6]	med	cofload	24
+005044a4	D	g_prof_nsyms	long	high	cofload	4
+005044a8	D	g_prof_symptr	long	high	cofload	4
+00504578	D	g_prof_symtab	char *	high	cofload	4
+0050457c	D	g_prof_scn_ofs	long	high	cofload	4
+00504590	D	yyval_node	void *	med	cdbparse	4
+005045a0	D	yy_state_stack	int *	med	cdbparse	4
+005045a4	D	yy_val_stack	int *	med	cdbparse	4
+005045a8	D	yyerror_buf	char	med	cdbparse	256
+005046a8	D	parse_root	void *	high	cdbparse	4
+005046ac	D	node_alloc_list	void *	high	cdbparse	4
+005046b0	D	tmp_list_cells	void *	med	cdbparse	4
+005050d8	D	lex_pos	int	high	cdblex	4
+005050e8	D	lex_input_line	char	high	cdblex	256
+005051f4	D	lex_token_col	int	med	cdblex	4
+00505270	D	cg_ps_y	int	med	profgraph	4
+005052a8	D	cg_depth	int	med	profgraph	4
+0050578c	D	cur_sim	void *	high	shared	4
+00505790	D	cur_dtype	void *	high	shared	4
+00505794	D	cur_itype	void *	high	shared	4
+00505798	D	cur_dev	void *	high	shared	4
+005057c0	D	yytext_buf	char	high	cdblex	256
+005059c4	D	g_prof_sections	char *	high	cofload	4
+005059e0	D	asm_result	long[3]	high	asm	12
+005059f0	D	expr_err_msg	char *	M	expr	4
+00505a20	D	prof_filename	char[256]	high	profrep	256
+00505b20	D	prof_jmpbuf	char[64]	high	profrep	64
+00505b60	D	prof_file_size	long	med	profrep	4
+00505b64	D	prof_ctx	void *	high	profrep	4

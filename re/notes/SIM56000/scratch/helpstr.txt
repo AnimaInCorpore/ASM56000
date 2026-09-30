@@ -1,0 +1,988 @@
+004c5530	symbol
+004c553c	comment
+004c5544	blockdata
+004c5550	Error writing register
+004c557c	Error writing file
+004c5598	\n[viewdev]\n
+004c55a4	1\n^%s\n
+004c55ac	\n[io files and external memory]\n
+004c55d0	\n[winsz]\n
+004c55dc	\n%d %d\n
+004c55e4	\n[win next, head]\n
+004c55f8	\n[state]\n
+004c5604	\n[FOPEN_MAX]\n
+004c5614	\n[redirect flag, filename, fileposition]\n
+004c5650	\n[afi ufi]\n
+004c565c	\n%d %lu
+004c5664	\n[send address recv address]\n
+004c5684	\n[recv buffer]\n
+004c569c	\n%d %lu %lu
+004c56a8	\n[send buffer]\n
+004c56b8	\n[hio enabled]\n
+004c56c8	\n%u\n^%s\n%d %d %lu %lu
+004c56e0	\n[watch list]\n
+004c56f0	\n%d %d
+004c56fc	\n%d %d %d %d\n^%s\n^%s\n%d %lx %lx %lx %d %d %d %d
+004c572c	\n[breakpoint info]\n
+004c5744	\n[breakpoint count]\n
+004c576c	\n[histsz and hist log]\n
+004c5784	\n%lx %lx %lx %lx %lx %d %d 
+004c57a0	\n[counters and history]\n
+004c57bc	\n[pathwork]\n
+004c57cc	\n%d %d %lx %lx %d %d %d %d %lx %d %d %d %d %d %d\n^%s\n
+004c5804	\n[sv_var.stat]\n
+004c5814	\n%lx %lx %lx %d %d
+004c5828	\n[reg_exec,reg_cycl,reg_icnt,flg_stat]\n
+004c5850	\n[analog pp.aval values]\n
+004c5874	\n[analog pc.aval values]\n
+004c5894	\n%lx %lx %lx %lx %lx %lx %lx %lx %lx %lx
+004c58c0	\n[port values]\n
+004c58d0	\n[global signals]\n
+004c58e4	\n[memory display tags]\n
+004c58fc	\n[memval]\n
+004c5908	\n[mem disabled]\n
+004c591c	\n[regval]\n
+004c5928	\n[regattr]\n
+004c593c	\n[perattr]\n
+004c5948	%d %d\n
+004c5958	%d -2\n
+004c5960	\n[devindex devtype]\n
+004c5978	\n[numdevices]\n
+004c5988	(null)\n
+004c5995	null)
+004c599c	\n[profiler]\n
+004c59b4	%d\n^%s\n
+004c59bc	\n[source_path]\n
+004c59cc	\n[%s]\n
+004c59d8	Error opening file.
+004c59f0	\n%d %lx %lx
+004c5a00	%lx %lx %ld\n
+004c5a10	 %lx %lx %d %d %ld %d \n
+004c5a28	^%s\n^%s\n%d %lx %lx %lx %lx %lx %lx %lx %lx %lx %d
+004c5a60	\n%lu %ld %ld %lu %lu %lu %lu
+004c5a80	\n%d %lu %hu
+004c5a8c	\n%hu %hu
+004c5a98	\n%lu %lu
+004c5ab0	 %[^\n] 
+004c5ab8	 %ld %d 
+004c5ac4	 %d %ld 
+004c5ad0	 %ld 
+004c5ad8	 %d %lu %lu 
+004c5ae8	 %d %d %lu %lu 
+004c5b00	 %d %d 
+004c5b08	 %d %lx %lx %lx %d %d %d %d
+004c5b24	 %d %d %d %d 
+004c5b34	 %lx %lx %lx %lx %lx %d %d
+004c5b54	%[^\n] 
+004c5b5c	 %d %d %lx %lx %d %d %d %d %lx %d %d %d %d %d %d 
+004c5b90	 %lx %lx %lx %d %d
+004c5ba4	 %lx 
+004c5bac	 %lx %lx %lx %lx %lx %lx %lx %lx %lx %lx 
+004c5bd8	 %d %d
+004c5be4	 ^%*[^\n] 
+004c5bf0	 ^%[^\n] 
+004c5c04	 [%[^\n] 
+004c5c14	 %d %lx %lx 
+004c5c24	 %lu %ld %ld %lu %lu %lu %lu 
+004c5c44	 %d %lu %hu 
+004c5c54	 %hu %hu 
+004c5c60	 %lu %lu 
+004c5c6c	 %lx %lx %ld
+004c5c7c	{Error opening:%s}
+004c5c94	%d %lx %lx %lx %lx %lx %lx %lx %lx %lx %d %lx %lx %d %d %ld %d
+004c5cd8	%255[^,]
+004c5d48	                                                  
+004c5d7c	comments
+004c5d88	macros
+004c5d90	{Macro filename}
+004c5da4	{;}comment string entry
+004c5dbc	{^I}=tab-rt    {^E}=eol    {^Z}=del-eol  
+004c5de8	{ESC}=terminate  {^H}=del-lft    {^K}=del-rt    {^O}=overwrite/insert  
+004c5e30	{?}=help {^T}=pg-up    {^V}=pg-dn    {^R}=right    {^L}=left
+004c5e70	{^A}=sel-ln
+004c5e7c	{^B}=back in command stack   {^F}=forward in command stack {^W}=toggle window
+004c5ecc	{^I}=tab-rt    {^E}=eol    {^Z}=del-eol    {CR}=execute    {?}=more help
+004c5f18	{^H}=del-lft    {^K}=del-rt    {^O}=overwrite/insert    {Esc}=clear command line
+004c5f6c	{^U}=ln-up    {^N}=ln-dn    {^T}=pg-up    {^V}=pg-dn    {^R}=right    {^L}=left
+004c5fc8	Error in Macro
+004c5fd8	Error opening macro file:
+004c5ff8	Error opening macro file
+004c6014	{a = append, o = overwrite, c = cancel command :}
+004c6048	A file with the same name currently exists - Enter a character:
+004c6088	{SIMULATION IN PROGRESS.} Enter Ctrl-C to Halt. dev:%d pc:%04lx cyc:%lu
+004c60d0	{SIMULATION IN PROGRESS.} Enter Ctrl-C to Halt. dev:%d pc:%06lx cyc:%lu
+004c6120	 = %s
+004c6128	%s%s%s%s%s%s%s
+004c6138	lx = %s
+004c6144	%s%s%s
+004c6150	 ;*** MEMORY LOCATION DOESN'T EXIST
+004c6178	Error reading register
+004c6190	%s%s%s%s%s
+004c619c	%s:$%0
+004c61a4	lx %0
+004c61b8	      
+004c61c0	        
+004c61d8	%-26.24e
+004c61e4	0.0000000000000000000e+00
+004c6200	-0.000000000000000000e+00
+004c6234	%011lu
+004c623c	%011ld
+004c6244	%08lu%09lu
+004c6250	%06lu%09lu
+004c625c	%06lu
+004c6264	%06ld
+004c626c	%05lu
+004c6274	%05ld
+004c627c	%03lu
+004c6284	%03ld
+004c628c	$%02lx%06lx%06lx
+004c62a0	$%08lx%08lx%08lx
+004c62b4	$%02lx%04lx%04lx
+004c62c8	$%01lx%04lx%04lx
+004c62dc	$%04lx%06lx
+004c62e8	$%06lx%06lx
+004c62f4	$%02lx%06lx
+004c6300	$%08lx%08lx
+004c630c	$%04lx%04lx
+004c6318	$%08lx
+004c6320	$%06lx
+004c6328	$%04lx
+004c6330	$%02lx
+004c6340	%18.15f
+004c6348	%13.10f
+004c6350	%10.7f
+004c6358	%6.3f
+004c6360	%8.5f
+004c6368	%22.22s
+004c6370	%12.12s
+004c6378	%s:$%s=
+004c6380	Motorola DSP
+004c6390	{More: Type any key to continue.}\t
+004c642c	where
+004c6434	  Display the five outermost frames in the call stack.
+004c646c	  {where -5}
+004c647c	  Display the three innermost frames in the call stack.
+004c64b4	  {where 3}
+004c64c0	  Display the call stack.
+004c64dc	  {where}
+004c64e8	  {WH}ERE [[+/-]n]
+004c64fc	  {----------- WHERE: Display C Function Call Stack -----------}
+004c6540	{WH}ERE [[+/-]n]
+004c655c	There aren't %ld frames
+004c6684	watch
+004c670c	  Remove all items from the watch list.
+004c6734	  {watch off}
+004c6744	  Remove item number three from the watch list.
+004c6774	  {watch #3 off}
+004c6788	  Display the watch list.
+004c67a4	  {watch}
+004c67b0	  Add the expression r0+x:0 to the watch list.
+004c67e0	  {watch r0+x:0}
+004c67f4	  Add the given C variable to the watch list, with radix binary.
+004c6838	  {watch b ${flag$}}
+004c6850	  Add the given C expression to the watch list, with radix hex.
+004c6890	  {watch h ${count/2$}}
+004c68a8	  Add the given C expression to the watch list.
+004c68d8	  {watch ${(count+1)%total$}}
+004c68f8	  Add x:0 to the watch list.
+004c6918	  {watch x:0}
+004c6928	  Add register r0 to the watch list.
+004c6950	  {watch r0}
+004c6960	  {WAT}CH [{#}wn] {OFF}
+004c6978	  {WAT}CH [{#}wn] [radix] reg/addr/expression/{${}c_expression{$}}
+004c69bc	  {----------- WATCH: Set, Modify, View, or Clear Watch Item -----------}
+004c6a20	{WAT}CH [{#}wn] [radix] reg/addr/expression/{${}c_expression{$}}
+004c6a64	Expression out of scope
+004c6a7c	Error evaluating C expression
+004c6a9c	#%d %s %s
+004c6ab8	%10.7g
+004c6ac0	%13.10g
+004c6ac8	%14.14s
+004c6ad0	%25.25s
+004c6ad8	Invalid Expression
+004c6b4c	  types <return>.
+004c6b60	  without a count parameter,  the command will only terminate if the user
+004c6bac	  before continuing to the next command.  If the wait command is entered
+004c6bf8	  The wait command pauses for count seconds or until the user types <return>
+004c6c48	  {W}AIT [count(seconds)]
+004c6c64	  {----------- WAIT: Wait Specified Time -----------}
+004c6c9c	{W}AIT [count(seconds)]
+004c6cb4	{Wait command: Type <CTRL-C> to continue. }\t
+004c6ce4	{Wait command: Type any Key to continue. }\t
+004c6d88	                                                                                                                                  
+004c70e8	finish
+004c70f0	  Step until an rts instruction is encountered for the current level.
+004c7138	  {finish}
+004c7144	  {F}INISH
+004c7150	  {----------- FINISH: Step Until Return From Subroutine -----------}
+004c7198	{F}INISH 
+004c71ac	  Display source page corresponding to address p:50
+004c71e0	  {list p:50}
+004c71f0	  Display page corresponding to current execution address
+004c722c	  {list .}
+004c7238	  Display previous page of current file
+004c7260	  {list -}
+004c726c	  Display next page of current file
+004c7290	  {list +}
+004c729c	  Display current file begginning at line 50
+004c72cc	  {list 50}
+004c72d8	  Display myfile.asm beginning at line 4
+004c7304	  {list myfile.asm@4}
+004c731c	  Display file myfile.asm beginning at start of file
+004c7354	  {list myfile.asm}
+004c7368	  {LI}ST {+}/{-}/{.}/addr
+004c7384	  {----------- LIST: List Source File Lines ----------}
+004c73bc	{LI}ST [{+}/{-}/{.}/addr]
+004c73e4	  Toggle to next display mode.
+004c7404	  {view}
+004c7410	  Select register display mode.
+004c7430	  {view r}
+004c743c	  Select source file display mode.
+004c7460	  {view s}
+004c746c	  Select assembly display mode.
+004c748c	  {view a}
+004c7498	  {V}IEW [{A}(assembly/{S}(source)/{R}(register)]
+004c74cc	  {----------- VIEW: Select Display Mode -----------}
+004c7504	{V}IEW [{A}(assembly)/{S}(source)/{R}(register)]
+004c7538	until
+004c7540	  in section sec3.
+004c7554	  Go until the execution address is at symbolic label lab_c
+004c7590	  {until sec3@lab_c}
+004c75a8	  Go until the execution address is at symbolic label lab_d.
+004c75e8	  {until lab_d}
+004c75f8	  Go until the execution address is p:50. Halt at breakpoints.
+004c7638	  {until p:50 h}
+004c764c	  of line 4 in the source file myfile.asm.
+004c7678	  {until myfile.asm@4}
+004c7690	  of line 5 in the current sourcefile. Ignore breakpoints.
+004c76cc	  Go until the execution address is at the first instruction
+004c770c	  {until 5}
+004c7718	  {U}NTIL line/addr [{H}(halt at breakpoints)]
+004c7748	  {----------- UNTIL: Go Until Address -----------}
+004c777c	{U}NTIL line/addr [{H}(halt at breakpoints)]
+004c77b4	  Halt at breakpoints.
+004c77cc	  the enabled registers and memory when execution terminates.
+004c780c	  until return to the address following that instruction.  Display
+004c7850	  Execute 3 instructions. If any one of them is a jsr or bsr, go
+004c7894	  {next 3 h}
+004c78a4	  when execution terminates. Ignore breakpoints
+004c78d4	  next instruction.  Display the enabled registers and memory
+004c7914	  address following that instruction. Otherwise just execute the
+004c7958	  If the next instruction is a jsr or bsr, go until return to the
+004c799c	  {next }
+004c79a8	  {N}EXT [count][{LI}(lines)/{IN}(inst)] [{H}(halt at breakpoints)]
+004c79ec	  {----------- NEXT: Step Over Subroutine Calls -----------}
+004c7a2c	{N}EXT [count][{LI}(lines)/{IN}(inst)] [{H}(halt at breakpoints)]
+004c7aa4	cannot open input file 
+004c7abc	Error reading memory
+004c7ad4	invalid string table offset
+004c7af4	global
+004c7b04	 %s:(%s%.200s+%lu)
+004c7b18	 %s:%s%.200s
+004c7b2c	cannot read string table
+004c7b48	cannot seek to string table
+004c7b64	cannot read string table length
+004c7b84	cannot seek to string table length
+004c7ba8	cannot read section headers
+004c7bc4	cannot seek to section headers
+004c7be4	cannot read line number records
+004c7c04	cannot seek to line number records
+004c7c2c	cannot read symbol table entries
+004c7c50	cannot seek to symbol table
+004c7c70	no_source_file pc=%.20s@%lu %s:$%lx <%s%.12s%s>%s section:%.12s%s
+004c7cb4	src:%.20s@%lu pc=%.20s@%lu %s:$%lx <%s%.12s%s>%s section:%.12s%s
+004c7cf8	asm:%s:$%lx pc=%.20s@%lu %s:$%lx <%s%.12s%s>%s section:%.12s%s
+004c7d38	 macro:%.12s
+004c7d50	no_label
+004c7d5c	%s%04lx %s %s%s%s
+004c7d70	%s%06lx %s %s%s%s
+004c7d84	%s%08lx %s %s%s%s
+004c7da0	             
+004c7db0	%8.8s     
+004c7dbc	%8.8s+%04lu
+004c7dc8	  % 6d %s%s
+004c7dd4	%s% 6d %s%s
+004c7de0	%160[^\n]
+004c7df0	Invalid line number
+004c7e08	%s%-20.20s %4s:$%-8lx section:%.20s
+004c7e94	  Move up the call stack by three stack frames.
+004c7ec4	  {up 3}
+004c7ed0	  Move up the call stack by one stack frame.
+004c7f00	  {up}
+004c7f08	  {UP} [n]
+004c7f14	  {----------- UP: Move Up the C Function Call Stack -----------}
+004c7f58	{UP} [n]
+004c7f64	Can't go up %ld times
+004c7f7c	Can't go up any further
+004c7fec	unlock
+004c7ff4	  Passwords are required only for hidden device types. 
+004c802c	  Provide password to enable operation of device type 56001.
+004c806c	  {unlock 56001 x51-234}
+004c8088	{----------- UNLOCK: Device Type Enable ----------}
+004c80bc	{UN}LOCK device_type password
+004c80dc	Invalid Device Name or Password
+004c8164	  Display the type of the given expression.
+004c8190	  {type ${0.5+i$}}
+004c81a4	  Display the type and location of the variable count.
+004c81dc	  {type ${count$}}
+004c81f0	  {TY}PE {${}c_expression{$}}
+004c8210	  {----------- TYPE: Display The Result Type of C Expression -----------}
+004c825c	{TY}PE {${}c_expression{$}}
+004c8278	 in register %s
+004c8288	(unknown)
+004c8294	 at %s:0x%lx (%s[=0x%lx]%c0x%lx)
+004c82b8	 at %s:0x%lx
+004c82c8	 starting at %s:0x%lx, bit %lu, with length %lu %s
+004c83f8	trace
+004c8400	  blocks after each instruction.
+004c8424	  option to halt at breakpoints).  Display the enabled registers and memory
+004c8470	  Execute 10 instructions. Ignore breakpoints during execution (use h
+004c84b8	  {trace 10 in}
+004c84c8	  enabled registers and memory blocks after each instruction.
+004c8508	  during execution (use h option to halt at breakpoints).  Display the
+004c8550	  Execute instructions corresponding to 10 source lines. Ignore breakpoints
+004c859c	  {trace 10 li}
+004c85ac	  blocks after each clock cycle.
+004c85d0	  Execute 10 clock cycles and display the enabled registers and memory
+004c8618	  {trace 10 cy}
+004c8628	  instruction.  Halt at enabled breakpoints.
+004c8658	  mode.  Display the enabled registers and memory blocks after each
+004c869c	  Execute up to 20 instructions or source lines, depending on display
+004c86e4	  {trace 20 h}
+004c86f4	  Display the enabled registers and memory blocks after each instruction.
+004c8740	  Ignores breakpoints during execution (use h option to halt at breakpoints).
+004c8790	  Execute 20 instructions or source lines, depending on display mode.
+004c87d8	  {trace 20}
+004c87e8	  Display the enabled registers and memory blocks.
+004c881c	  Execute one instruction or source line, depending on display mode.
+004c8864	  {trace }
+004c8870	  {T}RACE [count] [{CY}(cycles)/{LI}(lines)/{IN}(inst)] [{H}(halt at breakpoints)]
+004c88c4	  {----------- TRACE: Trace Through DSP Program -----------}
+004c8904	{T}RACE [count] [{CY}(cycles)/{LI}(lines)/{IN}(inst)] [{H}(halt at breakpoints)]
+004c89fc	system
+004c8a04	  command is executed.
+004c8a1c	  'del he.io' commands.  Return to the simulator when the system 'exit'
+004c8a64	  Leave the simulator temporarily.  Execute the system 'dir *.io' and
+004c8aac	  {exit}
+004c8ab8	  {del he.io}
+004c8ac8	  {dir *.io}
+004c8ad8	  {system }
+004c8ae4	  Execute the system 'dir *.io' command and continue
+004c8b1c	  {system -c dir *.io}
+004c8b34	  Execute the system 'dir *.io' command
+004c8b5c	  {system dir *.io}
+004c8b70	  Execute the system 'dir' command and immediately return to the simulator.
+004c8bbc	  {system dir}
+004c8bcc	  {SY}STEM [[{-c}] system_command [parameter_list]]
+004c8c00	  {----------- SYSTEM: Execute System Command -----------}
+004c8c3c	{SY}STEM [[{-c}] system_command [parameter_list]]
+004c8c70	cmd.exe
+004c8c78	ComSpec
+004c8c80	To return to the simulator program, type EXIT\n
+004c8cb0	Type return to continue:\n
+004c8ccc	cmd.exe /K %s
+004c8cdc	command.com /K %s
+004c8d7c	streams
+004c8d84	  stdin, stdout, and stderr.
+004c8da4	  Do {help redirect} for more information on redirecting
+004c8de0	  {NOTE:} By default, handling of input/output is enabled.
+004c8e1c	  Disable handling of C input/output.
+004c8e44	  {streams d}
+004c8e54	  host software (e.g. fopen(), fwrite(), printf(), etc.).
+004c8e90	  in a C program running on the DSP will be handled by the
+004c8ecc	  Enable handling of C input/output.  All input/output calls done
+004c8f10	  {streams e}
+004c8f20	  {STR}EAMS [{E}(enable)/{D}(disable)]
+004c8f48	  {----------- STREAMS: Enable/Disable Handling of I/O for C Programs -----------}
+004c8f9c	{STR}EAMS [{E}(enable)/{D}(disable)]
+004c8fc4	streams %s
+004c8fd0	disabled
+004c8fdc	enabled
+004c8fe4	disable
+004c8ff0	enable
+004c90dc	  registers and memory blocks after the last instruction.
+004c9118	  Execute 20 instructions. Halt at enabled breakpoints. Display the enabled
+004c9164	  {step 20 in h}
+004c9178	  last instruction.
+004c918c	  breakpoints. Display the enabled registers and memory blocks after the
+004c91d8	  Execute instructions corresponding to 20 source lines. Halt at enabled
+004c9224	  {step 20 li h}
+004c9238	  blocks at the end of the 20th clock cycle.
+004c9268	  Execute 20 clock cycles. Display the enabled registers and memory
+004c92ac	  {step 20 cy}
+004c92bc	  Display the enabled registers and memory blocks after the last instruction.
+004c930c	  Execute hex 50 instructions or source lines, depending on display mode.
+004c9358	  {step $50}
+004c9368	  Display the enabled registers and memory blocks after last instruction.
+004c93b4	  Step one instruction or source line, depending on display mode.
+004c93f8	  {step }
+004c9404	  {ST}EP [count] [{CY}(cycles)/{LI}(lines)/{IN}(inst)] [{H}(halt at breakpoints)]
+004c9458	  {----------- STEP: Step Through DSP Program -----------}
+004c9494	{ST}EP [count] [{CY}(cycles)/{LI}(lines)/{IN}(inst)] [{H}(halt at breakpoints)]
+004c9574	  If the file already exists, cancel this command.
+004c95a8	  Save the simulator state to filename 'lunchbrk.b'. if it doesn't exist
+004c95f4	  {save s lunchbrk.b -c}
+004c9610	  If the file already exists, overwrite it.
+004c963c	  Save the simulator state to filename 'lunchbrk.sim'.
+004c9674	  {save s lunchbrk -o}
+004c968c	  If the file already exists, append to it.
+004c96b8	  Save both memory maps to OMF file 'session1.lod'.
+004c96ec	  {save p:0..$ff x:0..$20 session1 -a}
+004c9714	  {S}AVE {S}(state)/addr_block... filename [{-A}/{-O}/{-C}]
+004c9750	  {----------- SAVE: Save Simulator File -----------}
+004c9788	{S}AVE {S}(state)/addr_block... filename [{-A}/{-O}/{-C}]
+004c97c4	Error writing file:%s
+004c97dc	Output file:%s
+004c97f4	\n_END %lx \n
+004c9814	\n_DATA %s %lx\n
+004c982c	Error saving file.
+004c98bc	  I/O files are closed.
+004c98d4	  breakpoints are cleared, the memory is initialized, and all logging and
+004c9920	  Reset the entire simulator state to the start-up condition.  All
+004c9964	  {reset s}
+004c9970	  subsequent simulated hardware reset.
+004c9998	  device operating mode will be redefined as mode 2 in response to a
+004c99e0	  Reset all device registers to the defined reset conditions.  The
+004c9a24	  {reset d m2}
+004c9a34	  {RE}SET {S}(state)/{D}(device) [{M}n]
+004c9a5c	  {----------- RESET: Reset Device or Simulator State -----------
+004c9aa0	{RE}SET {S}(state)/{D}(device) [{M}n]
+004c9ba4	redirect
+004c9bbc	stderr
+004c9bc4	stdout
+004c9bcc	stdin
+004c9bd4	  for more information.
+004c9bec	  the {streams} option has been disabled.  Do {help streams}
+004c9c2c	  {NOTE:}  No I/O processing or handling of redirection occurs if
+004c9c70	  but don't redirect if the file already exists.
+004c9ca4	  {redirect stdout output -c}
+004c9cc4	  appending to the end of the file if it already exists.
+004c9d00	  {redirect stdout output -a}
+004c9d20	  overwriting the file if it already exists.
+004c9d50	  Redirect the C stdout stream to the file output.cio,
+004c9d88	  {redirect stdout output -o}
+004c9da8	  errors.cio.
+004c9db8	  Redirect the C stderr (standard error) stream to the file
+004c9df4	  {redirect stderr errors}
+004c9e10	  output.txt.
+004c9e20	  Redirect the C stdout (standard output) stream to the file
+004c9e60	  {redirect stdout output.txt}
+004c9e80	  input.cio (.cio is the default extension).
+004c9eb0	  Redirect the C stdin (standard input) stream from the file
+004c9ef0	  {redirect stdin input}
+004c9f0c	  {RED}IRECT [{OFF}]
+004c9f24	  {RED}IRECT {STDOUT}/{STDERR} {OFF}/file [{-A}/{-O}/{-C}]
+004c9f60	  {RED}IRECT {STDIN} {OFF}/file
+004c9f80	  {----------- REDIRECT: Redirect stdin/stdout/stderr for C Programs -----------}
+004c9fd4	{RED}IRECT [{OFF}]
+004c9fe8	{RED}IRECT {STDOUT}/{STDERR} {OFF}/file [{-A}/{-O}/{-C}]
+004ca024	{RED}IRECT {STDIN} {OFF}/file
+004ca044	Error opening:%s
+004ca060	%s %s %s
+004ca06c	%s off
+004ca138	radix
+004ca140	unsigned
+004ca14c	hexadecimal
+004ca158	fractional
+004ca164	decimal
+004ca16c	binary
+004ca174	  Change display radix for x0 and x1 to unsigned decimal.
+004ca1b0	  {radix u x0 x1}
+004ca1c4	  Change display radix for specified memory locations to decimal.
+004ca208	  {radix d x:0..10 p:0..10}
+004ca224	  Change display radix for registers x0 and x1 to floating point.
+004ca268	  {radix f x0  x1}
+004ca27c	  require a preceding grave accent.
+004ca2a0	  no longer require a preceding dollar sign, but any decimal constants will
+004ca2ec	  Change input radix to hexadecimal.  Hexadecimal constant entries
+004ca330	  {radix h}
+004ca33c	  Display the default radix currently enabled.
+004ca36c	  {radix}
+004ca378	  {R}ADIX [{B}(bin)/{D}(dec)/{F}(frc or flt)/{H}(hex)/{U}(uns)] [reg[_block]/addr[_block]]...
+004ca3d8	  {----------- RADIX: Change Input or Display Radix --------}
+004ca418	{R}ADIX [{B}(bin)/{D}(dec)/{F}(frc or flt)/{H}(hex)/{U}(uns)] [reg[_block]/addr[_block]]...
+004ca474	The current default radix is {%s}.
+004ca524	  Disables quit on error feature.
+004ca548	  {quit d}
+004ca554	  if an error occurs during macro execution.
+004ca584	  Enables immediate quit and return of a non-zero exit status
+004ca5c4	  {quit e}
+004ca5d0	  Exit simulator with status 0.
+004ca5f0	  {quit}
+004ca5fc	  {----------- Examples -----------}
+004ca624	  {Q}UIT [{E}/{D}]
+004ca638	  {----------- QUIT: Quit Simulator Session -----------}
+004ca674	{Q}UIT [{E}(enable)/{D}(disable)]
+004ca698	log off p
+004ca748	  Clear the multiple source path list.
+004ca770	  {path -}
+004ca77c	  Show the current default pathname and multiple source path list.
+004ca7c0	  {path}
+004ca7cc	  Add '\sim' to the list of multiple search paths for source files
+004ca810	  {path + \sim}
+004ca820	  Define the default directory for simulator files as '\sim'.
+004ca860	  {path \sim}
+004ca870	  {P}ATH -
+004ca87c	  {P}ATH + [pathname][,pathname,...]
+004ca8a4	  {P}ATH [pathname]
+004ca8b8	  {----------- PATH: Specify Default Pathname -----------}
+004ca8f4	{P}ATH -
+004ca900	{P}ATH + [pathname][,pathname,...]
+004ca924	{P}ATH [pathname]
+004ca938	No Alternate Source Paths:
+004ca954	Alternate Source Paths:
+004ca96c	Device Working Directory: {%s}
+004ca98c	Error in Path Specification.
+004caac4	output
+004caad8	 Delete output file assignment number 3.
+004cab04	  {output #3 off}
+004cab18	  states or pipeline stalls.
+004cab38	  The output may include additional information relating to wait
+004cab7c	  Output extended execution history to timed file 'histfile.tio' .
+004cabc0	  {output t ehistory histfile}
+004cabe0	  Output execution history to file 'histfile.io' .
+004cac14	  {output history histfile}
+004cac30	  The data portion of the time-data pair will be output in decimal form.
+004cac7c	  Output time and data pairs for memory location X:$FFCF to 'xfile.tio'.
+004cacc8	  {output t x:$ffcf xfile -rd}
+004cace8	  The data portion of the time-data pair will be output in floating point.
+004cad34	  Output time and data pairs from Port A data bus to file 'adfile.tio'.
+004cad7c	  {output t dbus dfile -rf}
+004cad98	  Output time and data pairs from the device BG pin to the terminal.
+004cade0	  {output t bg term}
+004cadf8	  Overwrite the file if it already exists.
+004cae24	  Output values for the RW pin to file 'rwfile.io'.
+004cae58	  {output rw rwfile -o}
+004cae70	  Store output values for pins PD0 through PD7 to output file 'adfile.io'.
+004caebc	  {output pd0..pd7 adfile}
+004caed8	  Append to the file if it already exists.
+004caf04	  Store values from the Host peripheral to output file 'hfile.io'.
+004caf48	  {output host hfile -a}
+004caf64	  Store values written to memory location x:0 in output file 'xfile.io'.
+004cafb0	  {output x:$0 xfile}
+004cafc8	{----------- OUTPUT: Assign Output File -----------}
+004cb000	{O}UTPUT [#n] [{T}] ehistory {OFF}/{TERM}/file [{-A}/{-O}/{-C}]
+004cb040	{O}UTPUT [#n] [{T}] history {OFF}/{TERM}/file [{-A}/{-O}/{-C}]
+004cb080	{O}UTPUT [#n] [{T}] addr/port/pin[_group] {OFF}/{TERM}/file [{-RD}/{-RF}/{-RH}/{-RU}/{-RS}] [{-A}/{-O}/{-C}]
+004cb0f0	%d. Timed   writes of %s to   %s
+004cb114	%d. Untimed writes of %s to   %s
+004cb140	%s cyc=%lu:%s
+004cb154	#%01ld
+004cb160	%01lu %s\n
+004cb170	%01lu %lx %s\n
+004cb180	%lx %s\n
+004cb188	%s%01lx\n
+004cb194	%s%1.7f\n
+004cb1a0	%s%01ld\n
+004cb1ac	%s%s\n
+004cb1b4	%01lu 
+004cb1bc	\n%01lx
+004cb1c4	\n%1.7f
+004cb1cc	%15.15s
+004cb1d4	\n%01ld
+004cb1dc	 *** %s
+004cb1e4	%01lu *** %s\n
+004cb1f4	\n*** %s
+004cb204	stall
+004cb214	%06lx 
+004cb21c	%08lx 
+004cb224	%04lx 
+004cb22c	P:$%04lx %06lx 
+004cb23c	P:$%08lx %08lx 
+004cb24c	P:$%06lx %06lx 
+004cb25c	P:$%04lx %04lx 
+004cb26c	history
+004cb274	dhistory
+004cb280	ehistory
+004cb304	 Disable session display paging control (reset state).
+004cb33c	 {more off}
+004cb348	 Turn on session display paging control.
+004cb374	 {more}
+004cb37c	  {M}ORE [{OFF}]
+004cb390	  {----------- MORE: Session Paging Control -----------}
+004cb3cc	{M}ORE [{OFF}]
+004cb4f8	  Generate profile and stop logging of profile information.
+004cb534	  {log off p}
+004cb544	  Enable logging of profile information during session.
+004cb57c	  {log p}
+004cb588	  Disable logging of display status line during session logging.
+004cb5cc	  {log off v}
+004cb5dc	  This is primarily intended for testing of the debugger.
+004cb618	  Enable logging of display status line during session logging.
+004cb658	  {log v}
+004cb664	  Terminate all logging.
+004cb680	  {log off}
+004cb68c	  Terminate command logging.
+004cb6ac	  {log off c}
+004cb6bc	  Log commands to filename 'macro1.cmd'.  Append if it already exists.
+004cb704	  {log c macro1 -a}
+004cb718	  Log all display entries to filename 'session1.log' in directory 'debugger'
+004cb768	  {log s \debugger\session1}
+004cb788	  Display currently opened log files.
+004cb7b0	  {log }
+004cb7bc	  {LO}G [{OFF}] {V}(source display status line)
+004cb7ec	  {LO}G [{OFF}] [{C}(commands)/{S}(session)/{P}(profile) [filename [{-A}/{-O}/{-C}]]]
+004cb844	  {----------- LOG: Log Commands and/or Session -----------
+004cb880	{LO}G [{OFF}] {V}(source display status line)
+004cb8b0	{LO}G [{OFF}] [{C}(commands)/{S}(session)/{P}(profile) [filename [{-A}/{-O}/{-C}]]]
+004cb904	Profiling to:{%s}
+004cb918	Logging session to:{%s}
+004cb930	Logging commands to:{%s}
+004cb94c	Done.
+004cb954	Generating profile. Please wait...
+004cb978	Initializing profiler. Please wait...
+004cb9a0	Output profile:%s
+004cb9b4	Profiler not available in this simulator
+004cb9e0	Output log file:%s
+004cbaa0	  Load 'lunchbrk.sim', replacing the entire current simulator state.
+004cbae8	  {load s lunchbrk}
+004cbafc	  Load debug symbol contents only from file 'test.cld' in current directory.
+004cbb4c	  {load d test.cld}
+004cbb60	  Load memory contents only from file 'test.cld' in current directory.
+004cbba8	  {load m test.cld}
+004cbbbc	  Load memory and debug contents from file 'test.cld' in current directory.
+004cbc08	  {load test.cld}
+004cbc1c	  Load 'lasttest.lod' file from current directory.
+004cbc50	  {load lasttest}
+004cbc64	  Load 'testloop.obj' file from directory 'source'.
+004cbc98	  {load \source\testloop.obj}
+004cbcb8	  {L}OAD [{S}(state)|{M}(memory-only)|{D}(debug symbols-only)] (from) filename
+004cbd08	  {----------- LOAD: Load Simulator File -----------}
+004cbd40	{L}OAD [{S}(state)|{M}(memory-only)|{D}(debug symbols-only)] (from) filename
+004cbd90	Error reading file:%s
+004cbda8	Loading State file:%s
+004cbdc0	Error reading symbols
+004cbde0	Error reading input file
+004cbdfc	Loading file:%s
+004cbe14	{No Debug Info}
+004cbe24	Loading Debug info from file:%s
+004cbf44	input
+004cbf4c	%03d Data: 
+004cbf58	termXXXX.tio
+004cbf68	termXXXX.io
+004cbf74	float
+004cbf7c	{CR}=change   {^U}=ln-up    {^N}=ln-dn   {ESC}=exit  <{space}>=more
+004cbfc0	{CR}=store    {^U}=previous line  {^N}=next line  {ESC}=exit terminal input
+004cc00c	  The input file assignment number 3 is deleted.
+004cc040	  {input #3 off}
+004cc054	  The data portion of the time-data pair will be read as a decimal integer.
+004cc0a0	  Input time and data pairs for memory location X:$FFCF from 'xfile.tio'.
+004cc0ec	  {input t x:$ffcf xfile -rd}
+004cc10c	  Input time and data pairs from the terminal for the device IRQA pin.
+004cc154	  {input t irqa term}
+004cc16c	  Input values for the RESET pin from the terminal.
+004cc1a0	  {input reset term}
+004cc1b8	  Get values for the Host peripheral from input file 'hfile.io'.
+004cc1fc	  {input host hfile}
+004cc214	  Get values for memory location x:0 from input file 'xfile.io'.
+004cc258	  {input x:$0 xfile}
+004cc270	  {I}NPUT [#n] addr [{DVn:}]addr
+004cc294	  {I}NPUT [#n] pin [{DVn:}]pin
+004cc2b4	  {I}NPUT [#n] [{T}(timed)] addr/port/pin[_group] {OFF}/{TERM}/file [{-RD}/{-RF}/{-RH}/{-RU}]
+004cc314	  {----------- INPUT: Assign Input File -----------}
+004cc34c	{I}NPUT [#n] addr [{DVn:}]addr
+004cc36c	{I}NPUT [#n] pin [{DVn:}]pin
+004cc38c	{I}NPUT [#n] [{T}(timed)] addr/port/pin[_group] {OFF}/{TERM}/file [{-RD}/{-RF}/{-RH}/{-RU}]
+004cc3e8	%d. Timed   reads of %s from %s
+004cc408	%d. Untimed reads of %s from %s
+004cc428	 # %ld
+004cc430	 %89[^ #()\n\t;]
+004cc448	Enter %s value for %s:
+004cc460	Enter pin data for %s:
+004cc478	 %[t]
+004cc480	 %1[(]
+004cc488	%*[^\n]
+004cc490	 %[;]
+004cc498	 %[)]
+004cc4a0	 %89[^ ()\n\t;]
+004cc4b8	 %[+]
+004cc51c	  Disassemble and display the previous 20 instructions that executed.
+004cc564	  {history}
+004cc570	  {HI}story [dev_list]
+004cc588	  {----------- HISTORY: Execution History -----------
+004cc5c0	{HI}STORY
+004cc5d8	6666555555555544444444443333333333222222222211111111110000000000 < Bit Number
+004cc670	 3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 < Bit Number
+004cc6c0	 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
+004cc708	--------.-------.-------.-------.-------.-------.-------.-------
+004cc910	  Display a list of debug symbols from the currently loaded .cld file.
+004cc958	  {help sym}
+004cc968	  Display a summary of the assemble command and its parameters.
+004cc9a8	  {help asm}
+004cc9b8	  Display a summary of all available commands and their parameters.
+004cc9fc	  {help}
+004cca08	  {H}ELP [command/reg/topic]
+004cca28	  {----------- HELP: Simulator Help Text -----------
+004cca60	{H}ELP [command/reg/topic]
+004cca7c	                        
+004ccac0	  Macro command files may be created using the simulator LOG command.
+004ccb08	  Any unrecognized mnemonic entry will be interpreted as a macro name.
+004ccb50	  {----------- Macro Commands -----------}
+004ccb7c	  comment.  It can be logged to the output log files to document a session.
+004ccbc8	  Anything on the command line following a semicolon is considered a user
+004ccc14	  {;}comment string entry
+004ccc30	  {----------- User Comments -----------}
+004ccc5c	  Pin data input expects 1, 0, or x for each pin.  No imbedded blanks.
+004ccca4	  Float input accepts almost any floating point format.
+004cccdc	  Decimal input expects decimal integers. Don't use float notation.
+004ccd20	  Hex input just expects hex digits 0-f.  Don't precede with $.
+004ccd60	  Input data value may be hexadecimal, decimal, float, or pin data.
+004ccda4	  {dd ff ec} 5 times before proceeding to the next data.
+004ccde0	  values.  For example: (dd ff ec)#5 means repeat the data input sequence
+004cce2c	  Repeat punctuation may be used to repeat a data value or a group of
+004cce74	  absolute cycle time.  The following data value is in hexadecimal.
+004cceb8	  data if it is preceded by a + sign.  Otherwise it is considered to be an
+004ccf04	  It is in decimal.  The time is considered as relative to the previous
+004ccf4c	  Timed inputs consist of a time-data pairs.  The time is specified first.
+004ccf98	  Untimed inputs consist of simple hexadecimal value separated by spaces.
+004ccfe4	{----------- Terminal Input Examples ----------}
+004cd018	 {sym}   : display of debug symbol information
+004cd048	 {stack} : display of values on device stack
+004cd078	 {reg}   : list of register names,size, and index by peripheral
+004cd0b8	 {port}  : list of port names with index and mask
+004cd0ec	 {periph}: list of periperhal names with index
+004cd11c	 {pin}   : list of pin names with index and pin values
+004cd154	 {mem}   : memory names with block addresses
+004cd184	 {map}   : memory map descriptions for various omr settings
+004cd1c0	 {io}    : list of on-chip io registers and their addresses
+004cd1fc	{----------- Other Help Topics ----------------}
+004cd230	 {Macro filename}
+004cd244	 {;}comment string entry
+004cd260	 {%s} : %s
+004cd26c	{     -------------- DSP SIMULATOR COMMANDS --------------}
+004cd2a8	{Help topic not found}
+004cd2c0	Error reading stack
+004cd2d4	port:%s, index:%d ,mask:0x%lx
+004cd2f8	$%04lx %s %s%s
+004cd334	%3d %d:%2d %s
+004cd344	%c%s%c%s%c%s
+004cd354	pin_index port_index:bit_number pin_name1,pin_name2,pin_name3 input_val,output_val
+004cd3ac	{  STACK POINTER INDICATES STACK OVERFLOW ERROR  }
+004cd3e0	{  STACK POINTER INDICATES STACK UNDERFLOW ERROR  }
+004cd414	{   %08lx %08lx level %02d}
+004cd430	-- -------- -------- -----------
+004cd454	SP    SSH     SSL    STACK LEVEL
+004cd478	stack
+004cd480	 < Bit States
+004cd490	%s register
+004cd49c	Write-Only
+004cd4a8	Read-Only
+004cd4b4	Read-Write
+004cd4c0	%s %s register. Y:%04lx
+004cd4d8	%s %s register. X:%04lx
+004cd4f0	 disabled
+004cd4fc	 enabled
+004cd508	%s  from $%08lx through $%08lx
+004cd528	%c%s%c%s%c%s%c%s
+004cd53c	%s%s, #%d, sz:%d
+004cd550	peripheral index:%d, name:%s, number of registers:%d
+004cd588	peripheral index:%d, name:%s, registers:%d, port index:%d, port mask:0x%lx
+004cd5d4	%s:%lx..%lx, %s
+004cd5e4	%s:%lx..%lx, %s      SHARED
+004cd600	%s:%lx..%lx, %s      (reserved)
+004cd620	{     -------------- Symbol Table Dump --------------}
+004cd65c	periph
+004cd740	  Start from the address corresponding to symbolic label lab_1
+004cd780	  {go lab_1}
+004cd790	  after clearing the simulator pipeline.
+004cd7bc	  Start from the address corresponding to line 13 off the current file
+004cd804	  {go @13}
+004cd810	  the third occurrence of breakpoint number 5.
+004cd840	  Start from address P:100 after clearing the simulator pipeline.  Halt on
+004cd88c	  {go 100 #5 :3}
+004cd8a0	  Continue execution from the current instruction.  Halt on the third
+004cd8e8	  {go #5 :3}
+004cd8f8	  occurrence of breakpoint number 5.
+004cd920	  Continue execution from the current instruction.  Halt on the first
+004cd968	  {go #5}
+004cd974	  according to the DSP microprocessor reset sequence.
+004cd9ac	  the reset vector (address 0).  The simulated machine state is also reset
+004cd9f8	  Clear the simulator pipeline and start DSP program simulation at
+004cda3c	  {go r}
+004cda48	  breakpoint.
+004cda58	  clearing the instruction pipeline.  Stop at the first occurrence of any
+004cdaa4	  Start DSP program simulation at program memory address hex 100 after
+004cdaec	  {go $100}
+004cdaf8	  the first occurrence of any breakpoint.
+004cdb24	  Start DSP program simulation from the current instruction.  Stop at
+004cdb6c	  {go}
+004cdb74	  {G}O [(from)location/{R}(reset)] [(to break number){#}bn] [(occurrence){:}count]
+004cdbc8	  {----------- GO: Execute Program -----------}
+004cdbf8	{G}O [(from)location/{R}(reset)] [(to break number){#}bn] [(occurrence){:}count]
+004cdcb4	frame
+004cdcbc	  Select call stack frame number zero (innermost frame).
+004cdcf8	  {frame #0}
+004cdd08	  Select call stack frame number two.
+004cdd30	  {frame #2}
+004cdd40	  {FR}AME [{#}fn]
+004cdd54	  {----------- FRAME: Select C Function Call Stack Frame -----------}
+004cdd9c	{FR}AME [{#}fn]
+004cddac	There is no frame #%ld
+004cdec8	evaluate
+004cded4	  result of assignment.
+004cdeec	  Assign the value 3.5 to the C variable dbl and display the
+004cdf2c	  {evaluate ${dbl = 3.5$}}
+004cdf48	  Display the result of adding the C variables count and max.
+004cdf88	  {evaluate ${count+max$}}
+004cdfa4	  Display the address corresponding to symbolic label lab_1 in section sec4
+004cdff0	  {evaluate sec4@lab_1}
+004ce008	  Display the address corresponding to symbolic label lab_1
+004ce044	  {evaluate lab_1}
+004ce058	  Display the address corresponding to line 30 of the sourcefile test.asm
+004ce0a4	  {evaluate test.asm@30}
+004ce0c0	  Display the address corresponding to line 30 of the current sourcefile
+004ce10c	  {evaluate @30}
+004ce120	  in hexadecimal.
+004ce134	  value in r0 register and the binary value 10101010 and display the result
+004ce180	  Calculate the bitwise AND of the program memory address specified by the
+004ce1cc	  {evaluate h %10101010&p:r0 }
+004ce1ec	  Convert hexadecimal 345 to binary and display the result.
+004ce228	  {evaluate b $345 }
+004ce240	  hexadecimal 50 and display the result using the default radix.
+004ce284	  Add the value in r0 register to the value in program memory address
+004ce2cc	  {evaluate r0+p:$50}
+004ce2e4	  {E}VALUATE [{B}(bin)/{D}(dec)/{F}(frc or flt)/{H}(hex)/{U}(unsigned)] expression/{${}c_expression{$}}
+004ce34c	  {----------- EVALUATE: Evaluate an Expression -----------}
+004ce38c	{E}VALUATE [{B}(bin)/{D}(dec)/{F}(frc or flt)/{H}(hex)/{U}(unsigned)] expression/{${}c_expression{$}}
+004ce3fc	 Fract:%10.7g
+004ce40c	 Fract:%13.10g
+004ce41c	 Float:%14.14s
+004ce42c	 Float:%25.25s
+004ce43c	 Uns:%05lu
+004ce448	 Dec:%05ld
+004ce454	 Dec:%06lu%09lu
+004ce464	 Hex:%08lx
+004ce470	 Hex:%06lx
+004ce47c	 Hex:%04lx
+004ce488	 Hex:%08lx%08lx
+004ce498	 Hex:%06lx%06lx
+004ce4a8	 Hex:%04lx%04lx
+004ce4b8	 Hex:%08lx%08lx%08lx
+004ce4d0	 Hex:%02lx%06lx%06lx
+004ce4e8	 Hex:%02lx%04lx%04lx
+004ce500	 Hex:%01lx%04lx%04lx
+004ce578	  Move down the call stack by two stack frames.
+004ce5a8	  {down 2}
+004ce5b4	  Move down the call stack by one stack frame.
+004ce5e4	  {down}
+004ce5f0	  {DO}WN [n]
+004ce600	  {----------- DOWN: Move Down the C Function Call Stack -----------}
+004ce648	{DO}WN [n]
+004ce654	Can't go down %ld times
+004ce66c	Can't go down any further
+004ce800	display
+004ce808	  to symbolic label xdat.
+004ce824	  Immediate display of 11 memory addresses beginning at the address corresponding
+004ce878	  {display xdat..xdat+10}
+004ce894	  Immediate display of all registers plus the enabled memory locations.
+004ce8dc	  {display all}
+004ce8ec	  Immediate display of p memory addresses 0 through 300.
+004ce928	  {display p:0..300}
+004ce940	  Display all currently enabled registers and memory.
+004ce978	  {display}
+004ce984	    {COUNT} all simulator counter registers (cyc, ictr, cnt1,cnt2,cnt3,cnt4 )
+004ce9d4	    {periph}all registers of the specified peripheral interface.
+004cea18	    {CORE}  all of the DSP programming model registers.
+004cea50	    {ALL}   all registers.
+004cea6c	  {----------- Register Group Names -----------}
+004ceaa0	  all peripheral registers, and x memory locations 0 through 100.
+004ceae4	  Display conditionally (if they are written) registers r0 through r3, all
+004ceb30	  {display w r0..r3 io x:0..100}
+004ceb54	  registers, the HOST peripheral registers, and the SSI registers.
+004ceb98	  Disable all display, then enable display of the DSP programming model
+004cebe0	  display on core host ssi
+004cebfc	  {display off }
+004cec10	  30 to 40 and x memory address hexadecimal 100.
+004cec44	  Display enable p memory address block 0 to 20, x memory address block
+004cec8c	  {display on p:0..20 x:30..40 x:$100}
+004cecb4	  Enable all registers for display
+004cecd8	  {display on }
+004cece8	        occurred.
+004cecfc	        accessed for read or write operations since the last display
+004ced44	    {RW}  Display the following register and memory locations if they were
+004ced90	        accessed for a write operation since the last display occurred.
+004cedd8	    {W}   Display the following register and memory locations if they were
+004cee24	        accessed for a read operation since the last display occurred.
+004cee6c	    {R}   Display the following registers and memory locations if they were
+004ceeb8	    {OFF} Never display the following registers and memory locations.
+004cef00	    {ON}  Always display the following registers and memory locations.
+004cef48	  {----------- Register and Memory Display Modes -----------}
+004cef88	  Modifies memory display commands so that labels are displayed.
+004cefcc	  {display l}
+004cefdc	  Display debugger version number and date of release.
+004cf014	  {display v}
+004cf024	  {D}ISPLAY {L}(labels) [{OFF}]
+004cf044	  {D}ISPLAY {V}(version)
+004cf060	  {D}ISPLAY [{ON}/{OFF}/{R}/{W}/{RW}] [reg[_block/_group]/addr[_block]]...
+004cf0ac	  {-----------DISPLAY: Display Register or Memory -----------}
+004cf0ec	{D}ISPLAY {L}(labels) [{OFF}]
+004cf10c	{D}ISPLAY {V}(version)
+004cf124	{D}ISPLAY [{ON}/{OFF}/{R}/{W}/{RW}] [reg[_block/_group]/addr[_block]]...
+004cf21c	disassemble
+004cf228	  Disassemble the byte-wide program memory beginning at address P:$c000.
+004cf274	  {disassemble b p:$c000}
+004cf290	  at the address corresponding to line 15 of the current sourcefile
+004cf2d4	  corresponding to line 13 of the current sourcefile and ending
+004cf314	  {disassemble @13..@15}
+004cf330	  of symbolic label lab1 and ending at the address of label lab2.
+004cf374	  Disassemble the block of instructions starting at the address
+004cf3b4	  {disassemble lab1..lab2}
+004cf3d0	  Disassemble 10 instructions starting at x memory map hex 50.
+004cf410	  {disassemble x:$50#10}
+004cf42c	  Disassemble program memory address block 0 to 20.
+004cf460	  {disassemble p:0..20}
+004cf478	  Disassemble 20 instructions beginning at x memory map address 5.
+004cf4bc	  {disassemble x:5}
+004cf4d0	  Disassemble 20 instructions beginning at program counter address.
+004cf514	  {disassemble }
+004cf528	  {DI}SASSEMBLE [{B}(byte wide)] [addr[_block]]
+004cf558	  {----------- DISASSEMBLE: Object Code Disassembler -----------}
+004cf59c	{DI}SASSEMBLE [{B}(byte wide)] [addr[_block]]
+004cf688	device
+004cf690	  with device dv3.
+004cf6a4	  Release all the debugger device structures and memory associated 
+004cf6e8	  {device dv3 x}
+004cf6fc	  for the selected device, but it's current state is maintained.
+004cf740	  Suspend simulation of device dv2.  Cycles are not executed
+004cf780	  {device dv2 off}
+004cf794	  on, it is initialized as the default device type.
+004cf7c8	  Turns on simulation of device dv1.  If it was not previously
+004cf808	  {device dv1 on}
+004cf81c	  device. 
+004cf828	  supports up to 32 devices. This command also turns on the
+004cf864	  The 'n' may be 0 to 31, since the default simulator now 
+004cf8a0	  for example: 56001, 56002, 56116, 96002,
+004cf8cc	  may be any of the device types supported by your simulator -
+004cf90c	  Specify that device 0 is a 56000.  The device_type parameter
+004cf94c	  {device dv0 56000}
+004cf964	{----------- DEVICE: Device Type Specification ----------}
+004cf9a0	{DE}VICE {DVn} [device_type/{ON}/{OFF}/{X}]
+004cf9cc	--Possible device types--
+004cf9e8	dv%02d   unused
+004cf9f8	dv%02d   %s    %s
+004cfa0c	dv%02d   unused           
+004cfa28	dv%02d   %s    %s     
+004cfa44	------ ------ --------  ------ ------ --------
+004cfa74	DEVICE STATUS TYPE      DEVICE STATUS TYPE    
+004cfaa4	{Can't delete the only device.}
+004cfb54	  lab3
+004cfb5c	  ending at the label lab2 to the destination memory beginning at the label
+004cfba8	  Copy memory locations from the block beginning at symbolic label lab1 and
+004cfbf4	  {copy lab1..lab2 lab3}
+004cfc10	  Copy p memory locations 0 through 20 to p memory locations 40 through 60.
+004cfc5c	  {copy p:0..20 p:40}
+004cfc74	  p memory beginning at location 0.
+004cfc98	  Copy one hundred memory locations beginning at x memory location 0 to
+004cfce0	  {copy x:0#100 p:0}
+004cfcf8	  hexadecimal 500 to x memory starting at hexadecimal 500.
+004cfd34	  Copy the program memory values located from hexadecimal 100 through
+004cfd7c	  {copy p:$100..$500 x:$500}
+004cfd9c	  {CO}PY (from) addr[_block] (to) addr
+004cfdc4	  {----------- COPY: Copy a Memory Block -----------}
+004cfdfc	{CO}PY (from) addr[_block] (to) addr
+004cfef8	change
+004cff00	  counter to 100 decimal.
+004cff1c	  through 300 to 0, x memory address hex fffe to hex 55 and the program
+004cff64	  Change registers r0 through r3 to 0, p memory addresses hexadecimal 30
+004cffb0	  {change r0..r3 0 p:$30..$300 0 x:$fffe $55 pc 100}
+004cffe8	  Change memory address associated with symbolic label xdat to hexadecimal 44.

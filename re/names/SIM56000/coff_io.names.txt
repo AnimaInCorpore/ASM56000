@@ -1,0 +1,188 @@
+# SIM56000.EXE names/prototypes - group coff_io (coffrd, cofload, symdisp, iohist, help, run)
+# addr	F|D	name	prototype|type	confidence	module[	size-bytes]
+00440030	F	dbg_verify_section	int dbg_verify_section(int dev, int secno)	med	coffrd
+004401c0	F	fread_swap32	unsigned int fread_swap32(char *buf, unsigned int size, unsigned int n, void *fp)	high	coffrd
+00440200	F	swap32_array	void swap32_array(void *buf, int size, int count)	high	coffrd
+00440240	F	dbg_sym_name	char * dbg_sym_name(void *sym)	high	coffrd
+00440280	F	dbg_aux_name	char * dbg_aux_name(void *aux)	high	coffrd
+004402c0	F	dbg_find_label	int dbg_find_label(unsigned int addr, int space, unsigned int *is_local)	med	coffrd
+00440450	F	dbg_find_sym_d2	int dbg_find_sym_d2(char *name)	low	coffrd
+004404e0	F	dbg_sym_name_eq	int dbg_sym_name_eq(char *name, void *sym)	high	coffrd
+00440540	F	dbg_sym_bsearch	int dbg_sym_bsearch(char *name)	high	coffrd
+00440670	F	dbg_find_macro_of_file	int dbg_find_macro_of_file(int fileno)	low	coffrd
+00440730	F	dbg_resolve_symbol	int dbg_resolve_symbol(char *name, void *value)	med	coffrd
+00440bf0	F	dbg_addr_to_first_sym	int dbg_addr_to_first_sym(unsigned int addr, int space)	low	coffrd
+00440c20	F	dbg_find_sym_d3	int dbg_find_sym_d3(char *name)	low	coffrd
+00440cb0	F	dbg_find_scoped_sym	int dbg_find_scoped_sym(char *name, int fileidx)	low	coffrd
+00440da0	F	dbg_find_block_sym	int dbg_find_block_sym(char *name, int fileidx)	low	coffrd
+00440e90	F	dbg_find_macro_local	int dbg_find_macro_local(unsigned int addr, int space, char *name)	low	coffrd
+00440fe0	F	dbg_find_local_label	int dbg_find_local_label(unsigned int addr, int space, char *name)	low	coffrd
+004411c0	F	dbg_find_nearest_named	int dbg_find_nearest_named(unsigned int addr, char *name)	low	coffrd
+00441250	F	dbg_find_nearest_sorted	int dbg_find_nearest_sorted(unsigned int addr, char *name)	low	coffrd
+00441320	F	dbg_addr_to_file_sym	int dbg_addr_to_file_sym(unsigned int addr, int space)	med	coffrd
+004413b0	F	dbg_addr_to_fileno	int dbg_addr_to_fileno(unsigned int addr, int space)	med	coffrd
+004413e0	F	dbg_addr_to_filename	char * dbg_addr_to_filename(unsigned int addr, int space)	med	coffrd
+00441420	F	dbg_addr_to_line_index	int dbg_addr_to_line_index(unsigned int addr, int space)	med	coffrd
+00441490	F	dbg_addr_to_line	int dbg_addr_to_line(unsigned int addr, int space)	med	coffrd
+004414c0	F	dbg_fileno_to_name	char * dbg_fileno_to_name(int fileno)	med	coffrd
+00441500	F	dbg_format_addr	char * dbg_format_addr(int space, unsigned int addr)	high	coffrd
+004415c0	F	dbg_build_indexes	int dbg_build_indexes(void)	med	coffrd
+00441910	F	dbg_load_cld	int dbg_load_cld(int dev, char *filename)	high	coffrd
+00441b30	F	dbg_read_filhdr	int dbg_read_filhdr(void)	high	coffrd
+00441ba0	F	dbg_read_strtab	int dbg_read_strtab(void)	high	coffrd
+00441d10	F	dbg_read_sections	int dbg_read_sections(void)	high	coffrd
+00441ea0	F	dbg_build_line_map	void dbg_build_line_map(unsigned int nlines, void *lines, int *map)	low	coffrd
+00441fc0	F	dbg_map_section_lines	void dbg_map_section_lines(int secno, int *map, int fileno)	low	coffrd
+00442000	F	dbg_read_linenos	int dbg_read_linenos(void)	high	coffrd
+004421c0	F	dbg_fix_linenos	void dbg_fix_linenos(int lnnoptr, void *lines, unsigned int nlines)	low	coffrd
+00442340	F	dbg_read_symbols	int dbg_read_symbols(void)	high	coffrd
+00442530	F	dbg_number_symbols	void dbg_number_symbols(void)	med	coffrd
+00442610	F	dbg_set_section_line_start	void dbg_set_section_line_start(void)	low	coffrd
+00442680	F	dbg_fix_section_line_range	void dbg_fix_section_line_range(void)	low	coffrd
+004426f0	F	dbg_load_source_files	int dbg_load_source_files(void)	med	coffrd
+00442930	F	dbg_find_file_sym	int dbg_find_file_sym(char *name, int limit)	med	coffrd
+004429f0	F	dbg_load_source_index	int dbg_load_source_index(int fileno, char *path)	med	coffrd
+00442be0	F	dbg_fix_symbol_classes	void dbg_fix_symbol_classes(void)	low	coffrd
+00442c80	F	dbg_free	void dbg_free(void)	high	coffrd
+00442de0	F	win_buf_alloc	int win_buf_alloc(void)	med	coffrd
+00442e10	F	win_update	void win_update(int delta)	med	coffrd
+00442ee0	F	win_status_line	void win_status_line(void)	high	coffrd
+004431f0	F	asmwin_scroll	void asmwin_scroll(int delta, unsigned int pc, int space)	med	coffrd
+00443260	F	asmwin_fill	void asmwin_fill(unsigned int addr, int space)	high	coffrd
+00443a40	F	srcwin_scroll	void srcwin_scroll(int delta, unsigned int pc, int space)	med	coffrd
+00443c30	F	srcwin_fill	int srcwin_fill(char *file, int width, int first_line, int fileno, int pc_line, int pc_fileno)	med	coffrd
+00443e30	F	step_mode_at_pc	int step_mode_at_pc(int mode)	low	coffrd
+00443ed0	F	insn_is_branch	int insn_is_branch(int addr, int *len)	med	coffrd
+00443fd0	F	step_advance	void step_advance(int *refresh, int *stop_run)	med	coffrd
+004444a0	F	step_classify_insn	int step_classify_insn(int addr)	low	coffrd
+004446d0	F	step_setup_next	void step_setup_next(void)	low	coffrd
+00444ad0	F	parse_line_spec	int parse_line_spec(int tok)	med	coffrd
+00444bf0	F	dbg_line_to_addr	unsigned int dbg_line_to_addr(int fileno, unsigned int line, int *addr_space)	med	coffrd
+00444cd0	F	dbg_find_source_file	int dbg_find_source_file(char *name)	high	coffrd
+00444d50	F	dbg_parse_file_line	int dbg_parse_file_line(char *arg, void *value, unsigned int *line)	med	coffrd
+004450a0	F	dbg_next_label	int dbg_next_label(int idx, char **desc)	low	coffrd
+004455b0	F	parse_list_spec	void parse_list_spec(int tok)	med	coffrd
+00445f10	F	cmd_step_exec	void cmd_step_exec(int arg)	low	coffrd
+004466d0	F	cmd_run_devices	void cmd_run_devices(void)	low	symdisp
+00447170	F	cmd_save_parse	void * cmd_save_parse(void)	med	symdisp
+004475b0	F	redirect_show	void redirect_show(int which)	med	symdisp
+00448740	F	io_emit	void io_emit(void *io, char *text)	high	iohist
+004487f0	F	io_out_poll	void io_out_poll(void)	med	iohist
+00448980	F	io_pin_state_str	int io_pin_state_str(void *io, char *buf)	med	iohist
+00448b60	F	io_out_mem_write	void io_out_mem_write(int space, unsigned long addr, unsigned long value)	med	iohist
+00448d80	F	io_read_string	void io_read_string(int space, int addr, char *buf)	med	iohist
+00448de0	F	io_out_reg_write	void io_out_reg_write(int reg, unsigned long *value, int delta)	med	iohist
+00449200	F	io_out_note	int io_out_note(char *text)	med	iohist
+004493d0	F	io_out_insn_trace	void io_out_insn_trace(int idx)	med	iohist
+004496a0	F	io_out_pin_write	void io_out_pin_write(int pin, unsigned long *value, int delta)	med	iohist
+00449a70	F	io_out_periph_write	void io_out_periph_write(int a, int b)	low	iohist
+0044ae30	F	io_next_free_id	int io_next_free_id(int id, void **list)	med	iohist
+0044af20	F	io_lists_reset	void io_lists_reset(void)	low	iohist
+0044af70	F	parse_num_dec	void parse_num_dec(char *s, void *val, unsigned long type)	high	iohist
+0044b0b0	F	parse_num_hex	void parse_num_hex(char *s, void *val, unsigned long type)	high	iohist
+0044b1d0	F	parse_num_bin	void parse_num_bin(char *s, void *val, unsigned long type)	high	iohist
+0044b2e0	F	parse_num_float	void parse_num_float(char *s, void *val, unsigned long type)	high	iohist
+0044b380	F	io_parse_value	void io_parse_value(char *s, void *io, unsigned long type)	med	iohist
+0044b410	F	io_in_mem_read	int io_in_mem_read(int space, unsigned long addr, unsigned long *value)	med	iohist
+0044b4f0	F	io_in_next	void io_in_next(void *io)	med	iohist
+0044b550	F	io_in_read_token	void io_in_read_token(void *io, char *fmt)	med	iohist
+0044b840	F	io_pin_set_from_text	void io_pin_set_from_text(int first, int last, char *text, int analog)	med	iohist
+0044b9d0	F	io_in_skip_loops	void io_in_skip_loops(void *io)	med	iohist
+0044bb90	F	io_in_reg_read	int io_in_reg_read(int reg, unsigned long *value)	med	iohist
+0044bbe0	F	io_in_periph_read	int io_in_periph_read(int a, int b, unsigned long *value)	low	iohist
+0044bc30	F	io_in_pin_read	int io_in_pin_read(int pin, unsigned long *value)	med	iohist
+0044bc80	F	io_in_timed_pin_read	int io_in_timed_pin_read(int pin, unsigned long *value)	med	iohist
+0044bce0	F	io_in_timed_next	int io_in_timed_next(void *io)	med	iohist
+0044bd60	F	io_in_timed_advance	void io_in_timed_advance(void *io)	med	iohist
+0044bde0	F	io_in_poll	void io_in_poll(void)	med	iohist
+0044c150	F	io_pin_copy	void io_pin_copy(int dev, int src, int dst, int analog)	med	iohist
+0044c280	F	io_pin_copy_tri	void io_pin_copy_tri(int dev, int src, int dst)	low	iohist
+0044c340	F	cmd_input_open	void cmd_input_open(void)	med	iohist
+0044c890	F	io_alloc_id	int io_alloc_id(void)	high	iohist
+0044d160	F	help_list_all	void help_list_all(void)	high	help
+0044d370	F	help_page_check	int help_page_check(int state)	high	help
+0044d390	F	help_topic	void help_topic(char *topic)	high	help
+004523c0	F	cmd_change_parse	void * cmd_change_parse(void)	high	run
+00452470	F	break_list_free	void break_list_free(void)	high	run
+004524d0	F	sim_check_stop	int sim_check_stop(void)	med	run
+00452f20	F	break_hit	void break_hit(void *bp, int *stop_run, int *refresh)	med	run
+0047d160	F	subr_on_stack	int subr_on_stack(void *sub)	med	cofload
+0047d1a0	F	subr_return	void subr_return(void *from, int cycles)	low	cofload
+0047d2e0	F	subr_profile_finish	int subr_profile_finish(void)	med	cofload
+0047d4a0	F	subr_format_name	void subr_format_name(void *sub)	med	cofload
+0047d680	F	subr_report	void subr_report(void)	high	cofload
+0047d7a0	F	subr_report_basic	void subr_report_basic(void)	high	cofload
+0047da20	F	subr_report_callgraph	void subr_report_callgraph(void)	high	cofload
+0047dc80	F	prof_load_cld	void prof_load_cld(void)	med	cofload
+0047dd20	F	prof_read_cld	void prof_read_cld(void)	med	cofload
+0047de10	F	prof_read_strtab	int prof_read_strtab(void)	high	cofload
+0047df00	F	prof_read_sections	void prof_read_sections(void)	high	cofload
+0047e020	F	prof_link_sections	void prof_link_sections(void)	low	cofload
+0047e0b0	F	prof_read_filhdr	void prof_read_filhdr(void)	high	cofload
+0047e180	F	prof_read_symbols	void prof_read_symbols(void)	high	cofload
+0047e3a0	F	prof_sym_name	char * prof_sym_name(int *sym)	high	cofload
+0047e3e0	F	prof_build_file_names	void prof_build_file_names(void)	med	cofload
+0047e530	F	prof_aux_name	char * prof_aux_name(char *aux)	high	cofload
+0047e570	F	prof_section_file_name	char * prof_section_file_name(int sec)	med	cofload
+0047e5b0	F	prof_number_symbols	void prof_number_symbols(void)	med	cofload
+0047e680	F	prof_add_symbol	int prof_add_symbol(char *sym, char *name)	med	cofload
+0047e8c0	F	prof_get_source_line	void * prof_get_source_line(int fileno, int line)	med	cofload
+0047eba0	F	prof_read_all_lines	void prof_read_all_lines(void)	med	cofload
+0047eca0	F	prof_mark_data_section	void prof_mark_data_section(int secno, char *sec)	low	cofload
+0047ed70	F	prof_read_section_lines	void prof_read_section_lines(int secno, char *sec)	med	cofload
+0050578c	D	g_sim	void *	high	state	4
+00505790	D	g_devtype	void *	high	state	4
+00505794	D	g_core	void *	high	state	4
+00505798	D	g_dev	void *	high	state	4
+004a8dcc	D	g_cur_dev	int	high	state	4
+004aab0c	D	g_ndev	int	high	state	4
+004aab10	D	g_dev_tab	void **	high	state	4
+004a8db8	D	g_ncmd	int	high	help	4
+004a8dbc	D	g_cmd_tab	void **	high	help	4
+004aab14	D	g_page_abort	int	high	help	4
+004a8db0	D	g_win_rows	int	med	coffrd	4
+004a8dac	D	g_win_cols	int	med	coffrd	4
+004aaaa8	D	g_win_buf	char *	high	coffrd	4
+005023a0	D	g_cld_fp	void *	high	coffrd	4
+005021ec	D	g_src_fp	void *	high	coffrd	4
+005021d0	D	g_cld_filhdr	unsigned long[7]	high	coffrd	28
+00502380	D	g_null_section	unsigned long[8]	med	coffrd	32
+005020d0	D	g_addr_str_buf	char[256]	med	coffrd	256
+00502280	D	g_label_desc_buf	char[128]	med	coffrd	128
+00502268	D	g_dasm_opflags	unsigned long	low	coffrd	4
+00502200	D	g_dasm_pc	unsigned long	low	coffrd	4
+004cc750	D	g_help_misc_topics	char *[]	high	help	0
+004cc810	D	g_help_topic_tab	void *[]	high	help	80
+004d04a8	D	g_bp_type_names	char *[13]	med	run	52
+004d0488	D	g_bp_action_names	char *[8]	med	run	32
+00492018	D	g_redir_names	char *[3]	high	symdisp	12
+00492028	D	g_redir_modes	char *[3]	high	symdisp	12
+004c6d10	D	g_space_names	char *[]	high	coffrd	0
+004cbed0	D	g_radix_names	char *[5]	high	iohist	20
+005042c0	D	g_prof_fp	void *	high	cofload	4
+005042c8	D	g_prof_filhdr	unsigned long[7]	high	cofload	28
+005042bc	D	g_prof_nscns	int	high	cofload	4
+0050457c	D	g_prof_scn_ofs	long	high	cofload	4
+005044a4	D	g_prof_nsyms	long	high	cofload	4
+005044a8	D	g_prof_symptr	long	high	cofload	4
+00504484	D	g_prof_strlen	unsigned long	high	cofload	4
+0050448c	D	g_prof_strtab	char *	high	cofload	4
+00504578	D	g_prof_symtab	char *	high	cofload	4
+005059c4	D	g_prof_sections	char *	high	cofload	4
+00504480	D	g_prof_src_fp	void *	high	cofload	4
+005042b8	D	g_prof_src_name	char *	high	cofload	4
+0050447c	D	g_prof_src_line	int	high	cofload	4
+00504490	D	g_prof_srcinfo	char *[6]	med	cofload	24
+005042e8	D	g_prof_linebuf	char[400]	high	cofload	400
+00505b64	D	g_prof	void *	high	cofload	4
+00505b60	D	g_now	long	med	cofload	4
+00505b20	D	g_prof_jmpbuf	char[64]	med	cofload	64
+004a9468	D	g_tok_start	int[]	med	cmdparse	0
+004a92e8	D	g_cmdline	char[]	med	cmdparse	256
+004a93e8	D	g_tok_type	char[]	med	cmdparse	0
+004a9670	D	g_tok_val	char[]	med	cmdparse	0
+004a8dd0	D	g_errmsg	char *	high	cmdparse	4
+004aaa6c	D	g_err_tok	int	low	cmdparse	4
+005024d8	D	g_null_value	unsigned long[10]	med	iohist	40
+004aaa78	D	g_prompt_help	char **	low	iohist	4
+004a96c4	D	g_io_id_arg	int	low	iohist	4

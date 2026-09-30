@@ -1,0 +1,38 @@
+# addresses named differently by several groups
+004a8d98	owner None -> dev_state_tab	cmd:dev_state_tab(high,state) | exec_a:sim_tab(high,shared) | misc:sim_table(M,state)
+004a8da0	owner None -> history_size	cmd:history_size(med,state) | exec_a:trace_ring_size(med,shared)
+004a8dac	owner None -> screen_cols	cdb1:cdb_wrap_width(med,cdbutil) | cmd:screen_cols(high,console) | coff_io:g_win_cols(med,coffrd)
+004a8db0	owner None -> text_rows	cmd:text_rows(high,console) | coff_io:g_win_rows(med,coffrd) | misc:err_stream(L,state)
+004a8db4	owner None -> itype_tab	cmd:chipui_tab(med,state) | devinit_asm:dev_aux_table(low,devinit) | exec_a:itype_tab(high,shared)
+004a8db8	owner None -> num_commands	cdb1:cmd_count(med,shared) | cmd:num_commands(high,cmdloop) | coff_io:g_ncmd(high,help)
+004a8dbc	owner None -> command_table	cdb1:cmd_tab(med,shared) | cmd:command_table(high,cmdloop) | coff_io:g_cmd_tab(high,help)
+004a8dcc	owner None -> cur_dev_index	cmd:cur_dev_index(high,state) | coff_io:g_cur_dev(high,state) | misc:cur_dev_index(H,state)
+004a8dd0	owner None -> parm_errmsg	cdb1:parm_errmsg(high,cdbsym) | coff_io:g_errmsg(high,cmdparse) | misc:errmsg(H,expr)
+004a8dd4	owner None -> status1_buf	cmd:status1_buf(high,cmdloop) | misc:errmsg_buf(H,expr)
+004a91dc	owner None -> macro_active	cmd:macro_active(high,macro) | misc:script_active(L,misc)
+004a91e8	owner None -> cmd_tokbuf	cdb1:parm_ctx_storage(med,cdbsym) | cmd:cmd_tokbuf(high,macro)
+004aaa78	owner None -> help_lines_cur	cmd:help_lines_cur(med,cmdloop) | coff_io:g_prompt_help(low,iohist)
+004aaa90	owner None -> gui_mode	cmd:gui_mode(med,console) | misc:ext_alloc(M,radix)
+004aaab4	owner None -> quit_on_error	cmd:quit_on_error(high,console) | misc:quit_on_error_en(L,misc)
+004aaab8	owner None -> on_error_active	cmd:on_error_active(low,console) | misc:in_error_quit(L,misc)
+004aab04	owner None -> num_chiptypes	cdb1:dev_type_count(med,shared) | cmd:num_chiptypes(high,state) | devinit_asm:max_devices(high,devinit) | exec_a:ndtypes(high,shared)
+004aab08	owner None -> chiptype_tab	cdb1:dev_type_tab(med,shared) | cmd:chiptype_tab(high,state) | devinit_asm:dev_table(high,devinit) | exec_a:dtype_tab(high,shared) | misc:devtype_table(M,state)
+004aab0c	owner None -> max_devices	cdb1:dev_count(med,shared) | cmd:max_devices(high,state) | coff_io:g_ndev(high,state) | devinit_asm:max_dev_instances(med,devinit) | misc:ndevices(M,state)
+004aab10	owner None -> dev_tab	cdb1:dev_tab(med,shared) | cmd:dev_tab(high,state) | coff_io:g_dev_tab(high,state) | devinit_asm:dev_state_table(med,devinit) | exec_a:dev_tab(high,shared) | misc:dev_table(M,state)
+004aab14	resolved by override -> abort_flag	cmd:abort_flag | coff_io:g_page_abort | misc:bit_mask_tab
+004c4eb0	owner None -> alu_handlers	devinit_asm:alu_handlers(med,asmtab) | exec_a:alu_op_tab(med,exec)
+004db080	owner None -> empty_str	cmd:empty_str(high,fmt) | devinit_asm:asm_empty_field(med,asm)
+005029e0	owner None -> optr	cdb1:cdb_expr_end(med,cdbsym) | devinit_asm:optr(high,asm) | misc:expr_ptr(H,expr)
+00503f44	owner None -> cdb_arch	cdb1:cdb_arch(high,cdbutil) | cdb2:cdb_target_magic(high,cdbeval)
+00503f4c	owner None -> cdb_ext_mask	cdb1:cdb_ext_mask(high,cdbutil) | cdb2:cdb_hiword_mask(med,cdbeval)
+00503f58	owner None -> cdb_ext_bits	cdb1:cdb_ext_bits(high,cdbutil) | cdb2:cdb_mask_58(low,cdbeval)
+00503f60	owner None -> cdb_ext_sign_bit	cdb1:cdb_ext_sign_bit(high,cdbutil) | cdb2:cdb_mask_60(low,cdbeval)
+0050578c	resolved by override -> cur_sim	cdb1:cur_prog | cdb2:g_sim | cmd:cur_state | coff_io:g_sim | devinit_asm:cur_devaux | exec_a:cur_sim | misc:cur_sim
+00505790	resolved by override -> cur_dtype	cdb1:cur_arch_desc | cdb2:g_target | cmd:cur_chip | coff_io:g_devtype | devinit_asm:cur_dev | exec_a:cur_dtype | misc:cur_devtype
+00505794	resolved by override -> cur_itype	cdb1:cur_dev_ops | cdb2:g_host_if | cmd:cur_chipui | coff_io:g_core | exec_a:cur_itype | misc:cur_isa
+00505798	resolved by override -> cur_dev	cdb1:cur_dev | cdb2:g_cur_dev | cmd:cur_dev | coff_io:g_dev | devinit_asm:cur_devstate | exec_a:cur_dev | misc:cur_dev
+005059e0	owner None -> asm_result	devinit_asm:asm_result(high,asm) | misc:expr_err_flag(M,expr)
+00505b20	owner None -> prof_jmpbuf	cdb1:prof_jmpbuf(high,profrep) | coff_io:g_prof_jmpbuf(med,cofload) | misc:prof_jmpbuf(H,profile)
+00505b60	owner None -> prof_file_size	cdb1:prof_file_size(med,profrep) | coff_io:g_now(med,cofload) | misc:prof_exe_mtime(L,profile)
+00505b64	owner None -> prof_ctx	cdb1:prof_ctx(high,profrep) | cdb2:g_dev(med,shared) | coff_io:g_prof(high,cofload) | exec_a:stats_base(high,shared) | misc:prof(H,profile)
+# names given to several addresses (suffixed with the address in the merged file)

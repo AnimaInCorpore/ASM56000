@@ -1,0 +1,68 @@
+# SIM56000.EXE corrected module map (re/scripts/splitsim2.py; from the group notes, supersedes splitsim.py)
+# start	module	functions	bytes-of-decomp	content
+00401000	main	1	1536	main loop (per-device command dispatch)
+00401140	igrp	12	10458	instruction-group statistics methods (igrp_*)
+00401a50	emi1	20	36517	EMI #1 peripheral (56004 DRAM controller)
+00403ae0	core	46	116873	DSP core: register access, reset, core_clock, AGU, interrupts, memory bus
+0040a0a0	dax	12	13958	DAX digital audio transmitter (56011/56012)
+0040ad60	gpio	10	5990	GPIO peripheral
+0040b280	emi2	21	42032	EMI #2 peripheral (56007/56009)
+0040d5a0	shi	12	40317	SHI serial host interface (SPI/I2C)
+0040fb00	sai	20	52922	pin-drive helper + SAI serial audio interface
+004132b0	timer	18	14599	TIMER peripheral
+00413f70	pwm	17	18795	PWM peripheral
+00414e90	wdog	14	8772	watchdog / COP
+004155b0	simvar	4	4180	simvar pseudo peripheral
+004159b0	port	11	9892	parallel PORT peripherals
+00416190	sci	21	35701	SCI async serial
+00418010	ssi	15	34522	SSI synchronous serial
+0041a300	hi	16	31789	HI host interface
+0041c140	devreg	5	7770	device registry (device_install) + licence key generator
+0041c750	insstat	8	9764	per-instruction statistics records, eval_cc, mnemonic_name
+0041cfb0	decode	166	58272	instruction word decoder (110 class handlers) + decode_insn driver
+0041fb70	disfmt	117	70238	disassembler formatters (one per opcode class)
+00423b10	disasm	4	11462	disassemble (token list -> text), display EA calculator
+004240d0	asm	168	146546	inline assembler (same source family as ASM56000 amode/encode/procop)
+0042c4c0	memacc	46	46360	memory/register access engine, region lookup, OMR remap hooks
+0042eec0	insattr	89	30322	per-instruction attribute lookups (timing/class/EA/validate handler tables)
+00430850	alu	57	60975	56-bit ALU primitives, ALU op handlers, dispatch, peripheral reset/name lookup
+004340f0	state	43	104777	device create/destroy, chip cycle hooks, save/load state, path search
+00439000	cmdloop	11	39339	interactive line editor, command completion, command stack, prompt
+0043a470	macro	8	30711	macro file reader, overwrite prompt, memory tags, disassembly line formatter
+0043b5a0	cmdexec	13	19782	command dispatcher cmd_execute, address range maps, register value formatting
+0043c2f0	console	45	45379	register/memory display painter, output/log path, Win32 console, scrollback, arena
+0043e080	snap	6	11676	device-state snapshot relocation/restore; where/frame handlers
+0043e9b0	watch	6	9808	WATCH window
+0043f010	dispval	6	38344	watch value formatting, source-line helpers, wait command
+00440030	dbinfo	74	111101	debug info database, code window, address<->symbol/line, step helpers
+00445030	cmdh1	73	79656	command handlers: view list next until finish type up trace step system streams reset save redirect quit radix path
+00448740	iochan	56	96255	INPUT/OUTPUT back end: channel objects, value parsers, log/load commands, more
+0044d140	help	4	9169	history handler, help command, topic lookup
+0044d670	cmdh2	39	133844	command handlers: help/go/frame/evaluate/down/display/disassemble/device/copy/change
+004523c0	run	4	16667	change syntax matcher, breakpoint list free, stop-condition check, Break #%d report
+00453100	cmdh3	11	30616	command handlers: break, asm; asm parse
+00454630	profrpt	25	51152	profiler report generator (metrics.log, coverage, stats, source lines)
+00456f60	radix	24	22591	device thunks, radix formatting, access trace ring, dsp_alloc allocator, mdisk_free_all
+00458060	mdisk	15	15576	memory disk emulation (m_gdisk/m_pdisk)
+00458c10	profhook	1	5103	per-instruction profiler hook (sim_profile_step)
+00459030	oprefs	3	3335	instruction operand reference recording
+00459250	expr	74	76100	simulator expression evaluator
+0045d120	miscx	13	27971	decimal split helpers, allocator stubs, sim_error
+0045e5a0	hostio	10	14296	host I/O service for the simulated C program (hio_step)
+0045efe0	cdbutil	68	109073	cdbutil.c: C-debugger value access, formatting, register tables, arch params
+00464e30	cdbsym	38	39745	cdbsym: COFF symbol table walking, scope lookup, source/function lookup
+00466950	cmdparse	74	59335	command argument syntax classifier (parse_command_line)
+0046a700	avltree	14	14344	generic AVL tree + iterator
+0046b090	profdata	33	22509	profiler data model, MAJOR PROFILING ERROR handler
+0046c000	cdbbt	31	43027	cdbbt.c: back trace / frame unwinding
+0046e1a0	cdbpro	4	11905	prologue scanners (saved registers per target)
+0046e870	cdbeval	135	228246	cdbeval.c: C expression tree evaluator
+0047a900	cdbhost	10	13381	target host I/O (__send/__receive breakpoints, file I/O emulation)
+0047b670	profps	9	17869	profiler PostScript writer + listing writer
+0047c2c0	profdir	12	19159	profiler '; call' directive parsing, call graph building
+0047d160	profcg	7	17649	profiler call graph reports
+0047dc80	cofscan	19	28325	second COFF reader for profiler/coverage (Failed to handle COFF file)
+0047f090	cdbparse	6	25020	yacc parser for C expressions + node allocator
+004804c0	cdblex	23	33661	parser support + flex-style lexer
+00481d50	profgraph	22	29076	profiler dependency tree / call graph PostScript output
+00483400	crt	261	324232	MSVC CRT, from 0x483400

@@ -1,0 +1,308 @@
+0042c8ba	F	ext_lookup	void * ext_lookup(char *name, int reftype)	med	util
+0042cae9	F	ext_add	void * ext_add(char *name, int force, int reftype)	med	util
+0042cd0d	F	sym_lookup	void * sym_lookup(char *name)	med	util
+0042ceac	F	sym_dedup_locals	void sym_dedup_locals(void)	low	util
+0042d029	F	sym_remove	void sym_remove(void *sym)	med	util
+0042d10b	F	free_scratch_buffers	void free_scratch_buffers(void)	low	util
+0042d175	F	free_module_list	void free_module_list(void)	low	util
+0042d229	F	free_reloc_table	void free_reloc_table(void)	low	util
+0042d3ef	F	ext_free_all	void ext_free_all(void)	med	util
+0042d484	F	sym_free_all	void sym_free_all(void)	med	util
+0042d519	F	free_reloc_table_entries	void free_reloc_table_entries(void)	low	util
+0042d5a4	F	free_section_symbols	void free_section_symbols(void)	low	util
+0042d73f	F	free_local_blocks	void free_local_blocks(void)	low	util
+0042d7fa	F	free_chain	void free_chain(void *p)	low	util
+0042d825	F	free_something_lists	void free_something_lists(void)	low	util
+0042d8d0	F	find_directive_or_macro	void * find_directive_or_macro(char *name)	low	util
+0042d8f3	F	find_option_or_macro	void * find_option_or_macro(char *name)	low	util
+0042d916	F	find_keyword_or_macro	void * find_keyword_or_macro(char *name)	low	util
+0042d939	F	name_cmp	void name_cmp(char *key, void *entry)	med	util
+0042d950	F	mod_has_extern_ref	int mod_has_extern_ref(char *name)	low	util
+0042e170	F	xmalloc	void * xmalloc(unsigned long size)	high	util
+0042e19d	F	xrealloc	void * xrealloc(void *p, unsigned long size)	high	util
+0042e1ce	F	xfree	void xfree(void *p)	high	util
+0042e1df	F	tab_search	void * tab_search(void *key, void *base, int count, int size, void *cmp)	high	util
+0042e25d	F	sort_ptrs	void sort_ptrs(int lo, int hi)	high	util
+0042e3b9	F	sort_swap	void sort_swap(int i, int j)	high	util
+0042e3f9	F	hash_name	unsigned long hash_name(char *s)	high	util
+0042e468	F	base_name	char * base_name(char *path)	high	util
+0042e4df	F	get_string	char * get_string(char *src, char *dst)	high	util
+0042e622	F	get_symbol	void * get_symbol(void)	high	util
+0042e743	F	get_mem_spec	int get_mem_spec(void *spec)	high	util
+0042f146	F	mem_space_char	int mem_space_char(int space)	med	util
+0042f1ca	F	mem_space_index	int mem_space_index(int space)	low	util
+0042f22f	F	get_mem_space	int get_mem_space(int space)	low	util
+0042f2b0	F	mem_space_from_index	int mem_space_from_index(int idx)	low	util
+0042f326	F	counter_index	int counter_index(int ctr)	low	util
+0042f35d	F	char_to_mem_space	int char_to_mem_space(int c)	high	util
+0042f450	F	char_to_counter	int char_to_counter(int c)	high	util
+0042f503	F	char_to_mem_map	int char_to_mem_map(int c1, int c2, int space)	med	util
+0042facc	F	get_force	unsigned long get_force(unsigned long c)	low	util
+0042fc06	F	emi_map	int emi_map(int n, int width)	low	util
+0042fc54	F	mem_map_normalize	int mem_map_normalize(int code)	low	util
+0042fd64	F	mem_map_encode	int mem_map_encode(int kind, int size)	low	util
+0042ffab	F	str_upper	char * str_upper(char *s)	high	util
+00430037	F	str_lower	char * str_lower(char *s)	high	util
+004300c3	F	set_file_buffer	void set_file_buffer(void *fp, int which)	high	util
+004300f8	F	str_has_alpha	int str_has_alpha(void)	low	util
+0043016a	F	merge_mem_space	int merge_mem_space(int space, int space2)	med	util
+004302d1	F	fmt_double	char * fmt_double(char *buf, char *fmt, double val)	high	util
+00430534	F	clear_elf_scratch	void clear_elf_scratch(void)	low	util
+0043055b	F	obj_fread	unsigned long obj_fread(void *buf, unsigned long size, unsigned long n, void *fp)	med	util
+0043062d	F	fread_swapped	unsigned long fread_swapped(void *buf, unsigned long size, unsigned long n, void *fp)	med	util
+00430667	F	obj_fread_swapped	unsigned long obj_fread_swapped(void *buf, unsigned long size, unsigned long n, void *fp)	med	util
+004306a1	F	obj_fwrite	unsigned long obj_fwrite(void *buf, unsigned long size, unsigned long n, void *fp)	med	util
+00430773	F	fwrite_swapped	void fwrite_swapped(void *buf, unsigned long size, unsigned long n, void *fp)	med	util
+004307a4	F	obj_fwrite_swapped	void obj_fwrite_swapped(void *buf, unsigned long size, unsigned long n, void *fp)	med	util
+004307d5	F	swap_words	void swap_words(void *buf, int size, int n)	high	util
+0043084b	F	tm_to_secs	long tm_to_secs(void *tm)	high	util
+00430ac9	F	buf_align_check	unsigned long buf_align_check(unsigned long need, unsigned long align, unsigned long limit)	low	util
+00430b53	F	round_up_pow2	unsigned long round_up_pow2(unsigned long n)	high	util
+00431630	F	elf_tell	long elf_tell(void)	low	util
+0043163a	F	elf_seek	void elf_seek(long pos, void *fp)	med	util
+0043166b	F	elf_write_sections	void elf_write_sections(void *fp)	low	util
+00431bbf	F	elf_write_data	void elf_write_data(char *buf, unsigned long size, unsigned long n, void *fp)	low	util
+00431c05	F	elf_write_data2	void elf_write_data2(char *buf, unsigned long size, unsigned long n, void *fp)	low	util
+00431c4b	F	elf_new_section	void * elf_new_section(char *name)	low	util
+00431ee8	F	strtab_append	int strtab_append(long *tab, char *name)	low	util
+00431ffd	F	elf_init	void elf_init(void)	med	util
+00432261	F	elf_build_header	void elf_build_header(void)	high	util
+004326d0	F	elf_write_maybe_swapped	void elf_write_maybe_swapped(char *buf, unsigned long size, unsigned long n, void *fp)	low	util
+0043271d	F	swap_field	void swap_field(void *p, int size)	low	util
+00432799	F	coff_to_elf	int coff_to_elf(char *coff_path, char *elf_path)	med	util
+004329ca	F	free_elf_section_list	void free_elf_section_list(void)	low	util
+00432a34	F	read_coff_headers	int read_coff_headers(void)	med	util
+00432c0a	F	read_coff_strtab	int read_coff_strtab(long off, long count)	med	util
+00432d7b	F	read_coff_sections	int read_coff_sections(long off, int count)	med	util
+00432ebf	F	sec_list_add	void sec_list_add(char *name, long a, long b, long c, long d)	low	util
+00432fd2	F	record_node_alloc	void * record_node_alloc(void)	low	util
+00432ffa	F	sub_record_list_add	void sub_record_list_add(long *head, long a, long b, long c, long d)	low	util
+004330a6	F	record_list_find	long record_list_find(char *name)	low	util
+004330e5	F	coff_strtab_name	int * coff_strtab_name(int *nameref)	med	util
+0043313b	F	test_bit1	int test_bit1(unsigned long flags)	low	util
+00433153	F	record_list_total_size	long record_list_total_size(void *list)	low	util
+0043329e	F	noop_433	void noop_433(void)	low	util
+004335b0	F	dbg_print_str	void dbg_print_str(char *msg, char *val)	med	util
+004335ca	F	dbg_print_long	void dbg_print_long(char *msg, long val)	med	util
+004335e4	F	dbg_print_ulong	void dbg_print_ulong(char *msg, unsigned long val)	med	util
+00433620	F	longarr_destroy	void longarr_destroy(void *arr)	med	util
+0043364a	F	longarr_create	void * longarr_create(long init_sz, long blocksz)	high	util
+0043374a	F	longarr_dump	void longarr_dump(void *arr)	med	util
+004337cc	F	longarr_free_storage	void longarr_free_storage(void *arr)	low	util
+0043386c	F	longarr_compact	void longarr_compact(void *arr)	low	util
+004338b8	F	longarr_grow	void longarr_grow(void *arr, long need)	high	util
+00433a50	F	longarr_append	void longarr_append(void *arr, long v, void *val)	low	util
+00433ab6	F	longarr_insert	void longarr_insert(void *arr, long idx, void *val)	low	util
+00433b02	F	longarr_get	void * longarr_get(void *arr, long idx)	med	util
+00433b3b	F	longarr_is_empty	void longarr_is_empty(void *arr)	low	util
+00433b6a	F	longarr_is_full	void longarr_is_full(void *arr)	low	util
+00433b99	F	longarr_count	long longarr_count(void)	low	util
+00433d00	F	symtblarr_destroy	void symtblarr_destroy(void *arr)	med	util
+00433d2a	F	symtblarr_create	void * symtblarr_create(long init_sz, long blocksz)	high	util
+00433e2a	F	symtblarr_dump	void symtblarr_dump(void *arr)	med	util
+00433eac	F	symtblarr_free_storage	void symtblarr_free_storage(void *arr)	low	util
+00433f4c	F	symtblarr_compact	void symtblarr_compact(void *arr)	low	util
+00433f98	F	symtblarr_grow	void symtblarr_grow(void *arr, long need)	high	util
+00434130	F	symtblarr_append	void symtblarr_append(void *arr, long v, void *val)	low	util
+00434196	F	symtblarr_insert	void symtblarr_insert(void *arr, long idx, void *val)	low	util
+004341e2	F	symtblarr_get	void * symtblarr_get(void *arr, long idx)	med	util
+0043421b	F	symtblarr_is_empty	void symtblarr_is_empty(void *arr)	low	util
+0043424a	F	symtblarr_is_full	void symtblarr_is_full(void *arr)	low	util
+00434279	F	symtblarr_count	long symtblarr_count(void)	low	util
+004343e0	F	abi_mp_sym_free_elem	void abi_mp_sym_free_elem(void *elem)	med	util
+00434435	F	abi_mp_sym_alloc	void * abi_mp_sym_alloc(char *name, long v1, long v2, long v3)	med	util
+0043447d	F	symtbl_find_by_name	void * symtbl_find_by_name(void *arr, char *name)	med	util
+00434550	F	abimparr_destroy	void abimparr_destroy(void *arr)	med	util
+0043457a	F	abimparr_create	void * abimparr_create(long init_sz, long blocksz)	high	util
+0043467a	F	abimparr_dump	void abimparr_dump(void *arr)	med	util
+004346fc	F	abimparr_free_storage	void abimparr_free_storage(void *arr)	low	util
+0043479c	F	abimparr_compact	void abimparr_compact(void *arr)	low	util
+004347e8	F	abimparr_grow	void abimparr_grow(void *arr, long need)	high	util
+00434980	F	abimparr_append	void abimparr_append(void *arr, long v, void *val)	low	util
+004349e6	F	abimparr_insert	void abimparr_insert(void *arr, long idx, void *val)	low	util
+00434a32	F	abimparr_get	void * abimparr_get(void *arr, long idx)	med	util
+00434a6b	F	abimparr_is_empty	void abimparr_is_empty(void *arr)	low	util
+00434a9a	F	abimparr_is_full	void abimparr_is_full(void *arr)	low	util
+00434ac9	F	abimparr_count	long abimparr_count(void)	low	util
+00434c30	F	abi_mp_sym_free_with_arr	void abi_mp_sym_free_with_arr(void *elem)	med	util
+00434c8f	F	abi_mp_sym_build	void * abi_mp_sym_build(long key)	low	util
+00434d4d	F	abi_mp_sym_find	long abi_mp_sym_find(void *arr, long key)	med	util
+00434e80	F	formarr_destroy	void formarr_destroy(void *arr)	med	util
+00434eaa	F	formarr_create	void * formarr_create(long init_sz, long blocksz)	high	util
+00434faa	F	formarr_dump	void formarr_dump(void *arr)	med	util
+0043502c	F	formarr_free_storage	void formarr_free_storage(void *arr)	low	util
+004350cc	F	formarr_compact	void formarr_compact(void *arr)	low	util
+00435118	F	formarr_grow	void formarr_grow(void *arr, long need)	high	util
+004352b0	F	formarr_append	void formarr_append(void *arr, long v, void *val)	low	util
+00435316	F	formarr_insert	void formarr_insert(void *arr, long idx, void *val)	low	util
+00435362	F	formarr_get	void * formarr_get(void *arr, long idx)	med	util
+0043539b	F	formarr_is_empty	void formarr_is_empty(void *arr)	low	util
+004353ca	F	formarr_is_full	void formarr_is_full(void *arr)	low	util
+004353f9	F	formarr_count	long formarr_count(void)	low	util
+00435560	F	form_elem_free	void form_elem_free(void *elem)	med	util
+0043559d	F	form_define	void * form_define(char *name, void *fn)	low	util
+004355d6	F	form_find_by_name	void * form_find_by_name(void *arr, char *name)	med	util
+004356a0	F	op_uplus	int op_uplus(int a, int b)	low	util
+004356ab	F	op_uminus	int op_uminus(int a, int b)	low	util
+004356b6	F	op_bitnot	int op_bitnot(int a, int b)	low	util
+004356c2	F	op_div	int op_div(int a, int b)	med	util
+004356e5	F	op_mod	int op_mod(int a, int b)	med	util
+0043570a	F	op_add64	long op_add64(unsigned long a_lo, long a_hi, unsigned long b_lo, long b_hi)	low	util
+0043571b	F	op_sub64	long op_sub64(unsigned long a_lo, long a_hi, unsigned long b_lo, long b_hi)	low	util
+0043572c	F	op_mul64	long op_mul64(unsigned long a_lo, long a_hi, unsigned long b_lo, long b_hi)	med	util
+00435746	F	op_div64	long op_div64(unsigned long a_lo, unsigned long a_hi, unsigned long b_lo, unsigned long b_hi)	med	util
+0043577d	F	op_mod64	long op_mod64(unsigned long a_lo, unsigned long a_hi, unsigned long b_lo, unsigned long b_hi)	med	util
+004357b4	F	op_shl	unsigned long op_shl(unsigned long a, int n)	low	util
+004357c1	F	op_shr	int op_shr(int a, int n)	low	util
+004357ce	F	op_neg	unsigned long op_neg(unsigned long a)	low	util
+004357d8	F	op_compl	int op_compl(int a)	low	util
+004357e2	F	op_not	int op_not(int a)	low	util
+004357f0	F	op_and	int op_and(int a, int b)	low	util
+00435817	F	op_or	int op_or(int a, int b)	low	util
+0043583e	F	op_eq	int op_eq(int a, int b)	med	util
+00435850	F	op_ne	int op_ne(int a, int b)	med	util
+00435862	F	op_lt	int op_lt(int a, int b)	med	util
+00435874	F	op_le	int op_le(int a, int b)	med	util
+00435886	F	op_gt	int op_gt(int a, int b)	med	util
+00435898	F	op_ge	int op_ge(int a, int b)	med	util
+004358aa	F	op_uadd	unsigned long op_uadd(unsigned long a, unsigned long b)	low	util
+004358b5	F	op_usub	unsigned long op_usub(unsigned long a, unsigned long b)	low	util
+004358c0	F	op_uxor	unsigned long op_uxor(unsigned long a, unsigned long b)	low	util
+004358cb	F	op_cond	long op_cond(int cond, long a, long b)	high	util
+004358ea	F	abi_assign_op	long abi_assign_op(void *tab, char *name, int op, unsigned long v_lo, unsigned long v_hi)	med	util
+00435d00	F	abi_ctx_free	void abi_ctx_free(void *ctx)	med	util
+00435d2d	F	abi_ctx_new	void * abi_ctx_new(long a, long b)	med	util
+00435e58	F	abi_mp_sym_name	char * abi_mp_sym_name(void *sec, void *tab, long idx)	low	util
+00435f5a	F	abi_mask_then_shift	unsigned long abi_mask_then_shift(unsigned long v, unsigned long mask, int pos, int dir)	high	util
+00435f9f	F	abi_bit_range_mask	int abi_bit_range_mask(int lo, int hi)	med	util
+00436012	F	abi_pack_dispatch	unsigned long abi_pack_dispatch(unsigned long v, short form)	low	util
+00436090	F	abi_report_error	void abi_report_error(char *msg, char *loc, void *lastsym)	med	util
+00436210	F	abi_form_table_init	void abi_form_table_init(void *arr)	med	util
+00436855	F	abi_pack_01	unsigned long abi_pack_01(int v)	low	util
+0043687e	F	abi_pack_02	unsigned long abi_pack_02(int v)	low	util
+004368a4	F	abi_pack_03	unsigned long abi_pack_03(int v)	low	util
+004368cd	F	abi_pack_04	unsigned long abi_pack_04(int v)	low	util
+0043692f	F	abi_pack_05	unsigned long abi_pack_05(int v)	low	util
+00436964	F	abi_pack_06	unsigned long abi_pack_06(int v)	low	util
+0043698d	F	abi_pack_07	unsigned long abi_pack_07(int v)	low	util
+004369c4	F	abi_pack_08	unsigned long abi_pack_08(int v)	low	util
+004369f9	F	abi_pack_09	unsigned long abi_pack_09(int v)	low	util
+00436a22	F	abi_pack_10	unsigned long abi_pack_10(int v)	low	util
+00436a4f	F	abi_pack_11	unsigned long abi_pack_11(int v)	low	util
+00436a84	F	abi_pack_12	unsigned long abi_pack_12(int v)	low	util
+00436ab9	F	abi_pack_13	unsigned long abi_pack_13(int v)	low	util
+00436ae2	F	abi_pack_14	unsigned long abi_pack_14(int v)	low	util
+00436b0b	F	abi_pack_15	unsigned long abi_pack_15(int v)	low	util
+00436b40	F	abi_pack_16	unsigned long abi_pack_16(int v)	low	util
+00436b75	F	abi_pack_17	unsigned long abi_pack_17(int v)	low	util
+00436b9e	F	abi_pack_18	unsigned long abi_pack_18(int v)	low	util
+00436bc7	F	abi_pack_19	unsigned long abi_pack_19(int v)	low	util
+00436bfc	F	abi_pack_20	unsigned long abi_pack_20(int v)	low	util
+00436c25	F	abi_pack_21	unsigned long abi_pack_21(int v)	low	util
+00436c4e	F	abi_pack_22	unsigned long abi_pack_22(int v)	low	util
+00436c77	F	abi_pack_23	unsigned long abi_pack_23(int v)	low	util
+00436cac	F	abi_pack_24	unsigned long abi_pack_24(int v)	low	util
+00436ce1	F	abi_pack_25	unsigned long abi_pack_25(int v)	low	util
+00436d0a	F	abi_pack_26	unsigned long abi_pack_26(int v)	low	util
+00436d6e	F	abi_pack_27	unsigned long abi_pack_27(int v)	low	util
+00436d97	F	abi_pack_28	unsigned long abi_pack_28(int v)	low	util
+00436dcc	F	abi_pack_29	unsigned long abi_pack_29(int v)	low	util
+00436e01	F	abi_pack_30	unsigned long abi_pack_30(int v)	low	util
+00436e38	F	abi_pack_31	unsigned long abi_pack_31(int v)	low	util
+00436e65	F	abi_pack_32	unsigned long abi_pack_32(int v)	low	util
+00436e9a	F	abi_pack_33	unsigned long abi_pack_33(int v)	low	util
+00436ec3	F	abi_pack_34	unsigned long abi_pack_34(int v)	low	util
+00436f26	F	abi_pack_35	unsigned long abi_pack_35(int v)	low	util
+00436f5b	F	abi_pack_36	unsigned long abi_pack_36(int v)	low	util
+00436fb2	F	abi_pack_37	unsigned long abi_pack_37(int v)	low	util
+00436fdb	F	abi_pack_38	unsigned long abi_pack_38(int v)	low	util
+00437012	F	abi_pack_39	unsigned long abi_pack_39(int v)	low	util
+00437069	F	abi_pack_40	unsigned long abi_pack_40(int v)	low	util
+00437096	F	abi_pack_41	unsigned long abi_pack_41(int v)	low	util
+004370cb	F	abi_pack_42	unsigned long abi_pack_42(int v)	low	util
+00437122	F	abi_pack_43	unsigned long abi_pack_43(int v)	low	util
+0043714b	F	abi_pack_44	unsigned long abi_pack_44(int v)	low	util
+00437202	F	abi_pack_45	unsigned long abi_pack_45(int v)	low	util
+0043728f	F	abi_pack_46	unsigned long abi_pack_46(int v)	low	util
+004372e3	F	abi_pack_47	unsigned long abi_pack_47(int v)	low	util
+00437337	F	abi_pack_48	unsigned long abi_pack_48(int v)	low	util
+0043739a	F	abi_pack_49	unsigned long abi_pack_49(int v)	low	util
+00437427	F	abi_pack_50	unsigned long abi_pack_50(int v)	low	util
+00437950	F	abi_map_lookup	int abi_map_lookup(void *sec, long a2, long a3, long a4, long a5, long a6, long a7, long a8, long a9)	low	util
+00437e46	F	abi_func_sym	int abi_func_sym(void *tab, int idx, int flag)	high	util
+00437fc0	F	abi_func_pack	unsigned long abi_func_pack(unsigned long v, char form, short pos, short width)	high	util
+00438042	F	abi_func_check	unsigned long abi_func_check(unsigned long v, char sign, short lo, short hi)	high	util
+00438203	F	abi_mp_sym_get_mask	unsigned long abi_mp_sym_get_mask(void *elem, unsigned long m)	low	util
+0043825a	F	abi_mp_sym_shift_field	void abi_mp_sym_shift_field(void *elem, unsigned long v)	low	util
+004382c9	F	abi_func_memcheck	long abi_func_memcheck(void *sec, long v, int a3, short a4)	high	util
+0043833c	F	set_cur_opt_char	long set_cur_opt_char(long c)	low	util
+0043834c	F	abi_mp_sym_set_type	long abi_mp_sym_set_type(void *elem, int type)	low	util
+004385f0	F	abi_lnk_extract_val	int * abi_lnk_extract_val(int *dst, int *val, int type)	high	util
+00438679	F	abi_lnk_convert_type	int * abi_lnk_convert_type(int *dst, int *val, int totype)	high	util
+004387f2	F	abi_conv_case1	void * abi_conv_case1(void *dst, void *val)	low	util
+00438889	F	abi_conv_case2	void * abi_conv_case2(void *dst, void *val)	low	util
+0043891b	F	abi_conv_case3	void * abi_conv_case3(void *dst, void *val)	low	util
+004389ab	F	abi_conv_case4	void * abi_conv_case4(void *dst, void *val)	low	util
+00438b60	F	yylex	void yylex(void)	high	util
+004394be	F	yy_get_next_buffer	int yy_get_next_buffer(void)	high	util
+00439743	F	yyunput	void yyunput(int c)	low	util
+00439839	F	input	int input(void)	low	util
+004398f9	F	yyrestart	void yyrestart(void *input_file)	high	util
+00439937	F	yy_switch_to_buffer	void yy_switch_to_buffer(void *new_buffer)	high	util
+00439993	F	yy_load_buffer_state	void yy_load_buffer_state(void)	med	util
+004399db	F	yy_create_buffer	void * yy_create_buffer(void *file, int size)	high	util
+00439a57	F	yy_delete_buffer	void yy_delete_buffer(void *b)	med	util
+00439a9d	F	yy_init_buffer	void yy_init_buffer(void *b, void *file)	high	util
+00439afa	F	yy_flush_buffer	void yy_flush_buffer(void *b)	med	util
+00439b54	F	yy_scan_buffer	void * yy_scan_buffer(char *base, unsigned long size)	high	util
+00439c19	F	yy_scan_string	void * yy_scan_string(char *s)	med	util
+00439c52	F	yy_scan_bytes	void * yy_scan_bytes(char *bytes, int len)	high	util
+00439cf9	F	yy_fatal_error	void yy_fatal_error(char *msg)	high	util
+00439d1e	F	yy_flex_alloc	void * yy_flex_alloc(unsigned long size)	high	util
+00439d2f	F	yy_flex_realloc	void * yy_flex_realloc(void *p, unsigned long size)	high	util
+00439d44	F	yy_flex_free	void yy_flex_free(void *p)	high	util
+00439d55	F	yy_copy_buffer	void yy_copy_buffer(void *dst, unsigned long n)	low	util
+00439dbb	F	yy_more_flag	long yy_more_flag(void)	low	util
+0043a260	F	abi_expr_eval	int abi_expr_eval(long a, long b, char *text)	med	util
+0043a289	F	abi_expr_eval_impl	int abi_expr_eval_impl(long a, long b, char *text)	med	util
+0043a394	F	abi_free_all	void abi_free_all(void)	high	util
+0043a3e3	F	abi_mp_symtbl_dispatch	void abi_mp_symtbl_dispatch(void *handler, long key)	low	util
+0043a408	F	abi_expr_error_stub	void abi_expr_error_stub(void)	med	util
+0043a40d	F	yyparse	int yyparse(void)	high	util
+00461ff8	D	ext_hash	void *[2003]	med	bss	8012
+00465e98	D	sym_hash	void *[2003]	med	bss	8012
+00463f48	D	reloc_hash	void *[2003]	low	bss	8012
+00461ddc	D	cur_module	void *	med	bss	4
+00461dbc	D	cur_local_block	void *	low	bss	4
+00461214	D	opt_ci	char	med	bss	4
+00461f18	D	sort_array	void **	high	bss	4
+00461dc8	D	sort_cmp	void *	high	bss	4
+00461d68	D	input_cursor	char *	med	bss	4
+004612e0	D	num_ext_symbols	long	med	bss	4
+004612e4	D	num_deferred_free	long	low	bss	4
+00461248	D	opt_lazy_free	char	low	bss	4
+00461f44	D	buf_align_mode	long	low	bss	4
+00461f74	D	buf_align_limit	unsigned long	low	bss	4
+00469390	D	file_iobuf0	char[2048]	med	bss	2048
+00469d98	D	file_iobuf1	char[2048]	med	bss	2048
+0046a938	D	elf_file_pos	long	med	bss	4
+0046a958	D	elf_section_list	void *	med	bss	4
+0046a950	D	elf_ehdr_buf	void *	med	bss	4
+0046a954	D	elf_shstrtab_rec	void *	low	bss	4
+0046a970	D	elf_strtab_blob	void *	low	bss	4
+0046a974	D	elf_note_blob	void *	low	bss	4
+0046a978	D	elf_symtab_blob	void *	low	bss	4
+0046abac	D	coff_fp	void *	med	bss	4
+0046ac5c	D	elf_fp	void *	med	bss	4
+0046aba8	D	coff_strtab_buf	char *	med	bss	4
+0046aba0	D	coff_strtab_size	unsigned long	med	bss	4
+0046ac64	D	elf_record_list_head	void *	low	bss	4
+0046ac60	D	elf_record_list_tail	void *	low	bss	4
+0046c06c	D	g_symtblarr	void *	med	bss	4
+0046c078	D	g_formarr	void *	med	bss	4
+0046c604	D	g_abimparr	void *	med	bss	4
+0046c070	D	abi_expr_text	char *	med	bss	4
+0046c074	D	abi_expr_text_end	char *	low	bss	4
+0046c378	D	abi_parse_ctx	void *	med	bss	4
+00461314	D	cur_opt_char	long	low	bss	4
+00461320	D	opt_string_buf	char *	low	bss	4

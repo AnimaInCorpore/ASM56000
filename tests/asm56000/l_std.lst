@@ -1,0 +1,40 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  08:19:33  l_std.asm
+  Page 1
+
+
+
+1    d+   P:0000 0000AA            dc      $aa
+2    d+   P:0001 612073            dc      'a string that is longer than one wor
+d',0
+     d           747269
+     d           6E6720
+     d           746861
+     d           742069
+     d           73206C
+     d           6F6E67
+     d           657220
+     d           746861
+     d           6E206F
+     d           6E6520
+     d           776F72
+     d           640000
+     d           000000
+3    d+   P:000F 616263            dc      'abcdefgh'
+     d           646566
+     d           676800
+4     +   P:0012                   ds      4
+5     +   Y:0000                   org     y:$0
+6    d+   Y:0000 FFFFFF  ytab      dc      -1,-0.5,0.5
+     d           C00000
+     d           400000
+7     +   Y:0003 000005            bsc     5,$5
+8     +   L:0020                   org     l:$20
+9    d+   L:0020 000001  ltab      dc      $1,-1
+     d           FFFFFF
+     d           FFFFFF
+10    +                            end     begin
+
+0    Errors
+0    Warnings
+
+

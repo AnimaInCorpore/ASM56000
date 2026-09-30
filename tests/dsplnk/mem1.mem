@@ -1,0 +1,5 @@
+; mem1: MEMORY directive - space bounds for every memory space
+MEMORY p $0 TO $1fff
+MEMORY x $0 TO $1fff
+MEMORY y $0 TO $1fff
+MEMORY l $0 TO $1fff

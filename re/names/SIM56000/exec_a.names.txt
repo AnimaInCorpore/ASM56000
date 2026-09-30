@@ -1,0 +1,189 @@
+# SIM56000.EXE names/prototypes - group exec_a (module exec, 0x401000-0x40dfff)
+# addr	F|D	name	prototype|type	confidence	module[	size-bytes]
+00401140	F	igrp_map_kind	int igrp_map_kind(void *rec)	high	exec
+00401250	F	igrp_names_hook	void igrp_names_hook(void *rec)	low	exec
+00401260	F	igrp_fill_mode_names	void igrp_fill_mode_names(char **tab)	high	exec
+00401380	F	igrp_count_instr	void igrp_count_instr(void *rec)	high	exec
+004016a0	F	igrp_mode_bucket	int igrp_mode_bucket(int mode)	high	exec
+00401a50	F	emi1_m_poke	int emi1_m_poke(int grp, int reg, unsigned long *val)	med	exec
+00401b20	F	emi1_touch_reg	void emi1_touch_reg(int reg)	med	exec
+00401be0	F	emi1_m_clock	void emi1_m_clock(int grp, int dev)	med	exec
+00401c70	F	emi1_m_io_write	int emi1_m_io_write(int grp, unsigned long addr, unsigned long val)	med	exec
+00401da0	F	emi1_m_io_read	int emi1_m_io_read(int grp, unsigned long addr, unsigned long *out, int side)	med	exec
+00401eb0	F	emi1_m_reset	void emi1_m_reset(int grp)	med	exec
+00401fa0	F	emi1_clear_pending	void emi1_clear_pending(void)	med	exec
+00401fc0	F	emi1_m_irq_poll	int emi1_m_irq_poll(int grp)	med	exec
+00402010	F	emi1_m_irq_ack	void emi1_m_irq_ack(int grp, unsigned long vec)	med	exec
+00402060	F	emi1_write_reg	void emi1_write_reg(int reg, unsigned long val)	med	exec
+00402310	F	emi1_read_reg	void emi1_read_reg(int reg, unsigned long *out, int side_effect)	med	exec
+004024b0	F	emi1_next_read_addr	int emi1_next_read_addr(unsigned long ecsr, int idx)	low	exec
+004024f0	F	emi1_next_write_addr	int emi1_next_write_addr(unsigned long ecsr, int idx)	low	exec
+00402530	F	emi1_clock	void emi1_clock(int dev)	med	exec
+00403330	F	emi1_row_addr	void emi1_row_addr(unsigned long mode, unsigned long addr, void *pins, unsigned long ctl)	med	exec
+004036c0	F	emi1_col_addr	void emi1_col_addr(unsigned long mode, unsigned long addr, void *pins, unsigned long ctl, int col)	med	exec
+00403950	F	emi1_sample_dram_data	void emi1_sample_dram_data(unsigned long *pins, int dev)	med	exec
+00403a10	F	emi1_merge_shift_data	void emi1_merge_shift_data(unsigned long *pins)	low	exec
+00403a40	F	emi1_drive_dram_data	void emi1_drive_dram_data(unsigned long *pins, int dev)	med	exec
+00403ab0	F	emi1_shift_in	void emi1_shift_in(unsigned long *pins)	low	exec
+00403ae0	F	core_m_peek	int core_m_peek(int dev, int reg, unsigned long *out)	high	exec
+00403c50	F	core_write_reg	int core_write_reg(int dev, int reg, unsigned long *val)	high	exec
+00403f70	F	core_m_clock	void core_m_clock(int dev)	high	exec
+00404040	F	core_m_reset	void core_m_reset(int dev, int a, int kind, long pinval)	med	exec
+00404130	F	core_m_irq_ack	int core_m_irq_ack(int dev, unsigned long vec)	med	exec
+004042b0	F	core_set_reg	void core_set_reg(int reg, unsigned long val)	high	exec
+004042d0	F	core_set_reg_quiet	void core_set_reg_quiet(int reg, unsigned long val)	high	exec
+004042f0	F	core_m_io_write	int core_m_io_write(int dev, unsigned long addr, unsigned long val)	med	exec
+00404480	F	core_m_io_read	int core_m_io_read(int dev, unsigned long addr, unsigned long *out)	med	exec
+004045f0	F	core_store_reg_masked	void core_store_reg_masked(int reg, unsigned long val)	med	exec
+00404690	F	core_touch_reg	void core_touch_reg(int reg)	high	exec
+004046a0	F	core_touch_reg_ex	void core_touch_reg_ex(int reg, int quiet)	high	exec
+004048d0	F	core_touch_reg_quiet	void core_touch_reg_quiet(int reg)	high	exec
+004048e0	F	core_get_reg	void core_get_reg(int reg, unsigned long *out)	high	exec
+00404900	F	core_copy_reg	void core_copy_reg(int dst, int src)	high	exec
+00404920	F	core_copy_reg_quiet	void core_copy_reg_quiet(int dst, int src)	high	exec
+00404940	F	core_read_copy	void core_read_copy(unsigned long src, int dst)	high	exec
+00404960	F	core_touch_read	void core_touch_read(unsigned long reg)	med	exec
+00404a70	F	core_reset_io	void core_reset_io(int hard)	med	exec
+00404ad0	F	core_reset	void core_reset(void)	high	exec
+00404e30	F	core_reset_pipeline	void core_reset_pipeline(void)	high	exec
+00405000	F	core_fetch_decode	void core_fetch_decode(void)	med	exec
+00405440	F	core_decode_ctl	void core_decode_ctl(void)	med	exec
+00405b40	F	core_clock	void core_clock(int phase_step)	high	exec
+00408510	F	core_sample_pins	void core_sample_pins(void)	med	exec
+00408a30	F	core_cc_test	unsigned long core_cc_test(int cc)	high	exec
+00408b80	F	core_ss_dec	void core_ss_dec(void)	high	exec
+00408bd0	F	core_ss_push	void core_ss_push(int ssh_src, int ssl_src)	high	exec
+00408c70	F	core_ss_pop	void core_ss_pop(int ssh_dst, int ssl_dst)	high	exec
+00408d20	F	core_read_to_bus	void core_read_to_bus(unsigned long src, int dst)	high	exec
+00409170	F	core_agu_setup	void core_agu_setup(unsigned long ea, int latch)	med	exec
+00409230	F	core_agu_calc	void core_agu_calc(unsigned long mode, unsigned long rn)	high	exec
+00409440	F	bit_reverse16	void bit_reverse16(unsigned long v, unsigned long *out)	high	exec
+00409470	F	core_agu_writeback	void core_agu_writeback(unsigned long ea, int flag)	med	exec
+004094c0	F	core_ext_addr_match	int core_ext_addr_match(int space, unsigned long addr)	low	exec
+00409530	F	core_mem_write	void core_mem_write(unsigned long space, unsigned long addr, unsigned long *data, unsigned long strobe)	high	exec
+00409730	F	core_ext_addr	unsigned long core_ext_addr(unsigned long addr)	low	exec
+00409750	F	core_irq_arbitrate	int core_irq_arbitrate(void)	high	exec
+004098a0	F	core_irq_scan	int core_irq_scan(void)	high	exec
+00409b10	F	core_irq_ack	void core_irq_ack(void)	med	exec
+00409b40	F	core_mem_read	void core_mem_read(unsigned long space, unsigned long addr, unsigned long *data, unsigned long strobe)	high	exec
+00409dd0	F	core_write_from_bus	void core_write_from_bus(int src, int dst)	high	exec
+00409f20	F	core_do_loop_end	void core_do_loop_end(void)	med	exec
+00409fa0	F	core_bit_test	int core_bit_test(void)	high	exec
+00409fd0	F	core_bit_test_not	int core_bit_test_not(void)	high	exec
+0040a000	F	core_bit_op	void core_bit_op(void)	high	exec
+0040a0a0	F	dax_m_poke	int dax_m_poke(int grp, int reg, unsigned long *val)	high	exec
+0040a170	F	dax_m_clock	void dax_m_clock(int grp)	high	exec
+0040a1f0	F	dax_m_io_write	int dax_m_io_write(int grp, unsigned long addr, unsigned long val)	high	exec
+0040a2d0	F	dax_m_io_read	int dax_m_io_read(int grp, unsigned long addr, unsigned long *out, int side)	high	exec
+0040a380	F	dax_m_reset	void dax_m_reset(int grp)	high	exec
+0040a3f0	F	dax_reset_regs	void dax_reset_regs(void)	med	exec
+0040a460	F	dax_m_irq_poll	int dax_m_irq_poll(int grp)	high	exec
+0040a4c0	F	dax_m_irq_ack	void dax_m_irq_ack(int grp, unsigned long vec)	high	exec
+0040a530	F	dax_write_reg	void dax_write_reg(int reg, unsigned long val)	med	exec
+0040a640	F	dax_touch_reg	void dax_touch_reg(int reg)	high	exec
+0040a700	F	dax_read_reg	void dax_read_reg(int reg, unsigned long *out, int side_effect)	med	exec
+0040a740	F	dax_clock	void dax_clock(int dev)	med	exec
+0040ad60	F	gpio_m_peek	int gpio_m_peek(int grp, int reg, unsigned long *out)	med	exec
+0040adb0	F	gpio_m_poke	int gpio_m_poke(int grp, int reg, unsigned long *val)	med	exec
+0040ae40	F	gpio_m_clock	void gpio_m_clock(int grp)	med	exec
+0040ae50	F	gpio_m_io_write	int gpio_m_io_write(int grp, unsigned long addr, unsigned long val)	med	exec
+0040aed0	F	gpio_m_io_read	int gpio_m_io_read(int grp, unsigned long addr, unsigned long *out, int side)	med	exec
+0040af60	F	gpio_m_reset	void gpio_m_reset(int grp)	med	exec
+0040afe0	F	gpio_reset_regs	void gpio_reset_regs(void)	med	exec
+0040b000	F	gpio_write_reg	void gpio_write_reg(int grp, int reg, unsigned long val)	med	exec
+0040b0f0	F	gpio_touch_reg	void gpio_touch_reg(int reg)	high	exec
+0040b1b0	F	gpio_read_reg	void gpio_read_reg(int grp, int reg, unsigned long *out, int sample_pins)	med	exec
+0040b280	F	emi2_m_poke	int emi2_m_poke(int grp, int reg, unsigned long *val)	med	exec
+0040b350	F	emi2_touch_reg	void emi2_touch_reg(int reg)	med	exec
+0040b410	F	emi2_m_clock	void emi2_m_clock(int grp, int dev)	med	exec
+0040b4a0	F	emi2_m_io_write	int emi2_m_io_write(int grp, unsigned long addr, unsigned long val)	med	exec
+0040b5d0	F	emi2_m_io_read	int emi2_m_io_read(int grp, unsigned long addr, unsigned long *out, int side)	med	exec
+0040b6e0	F	emi2_m_reset	void emi2_m_reset(int grp)	med	exec
+0040b7d0	F	emi2_clear_pending	void emi2_clear_pending(void)	med	exec
+0040b7f0	F	emi2_m_irq_poll	int emi2_m_irq_poll(int grp)	med	exec
+0040b860	F	emi2_m_irq_ack	void emi2_m_irq_ack(int grp, unsigned long vec)	med	exec
+0040b900	F	emi2_write_reg	void emi2_write_reg(int reg, unsigned long val)	med	exec
+0040bbc0	F	emi2_read_reg	void emi2_read_reg(int reg, unsigned long *out, int side_effect)	med	exec
+0040bd40	F	emi2_next_read_addr	int emi2_next_read_addr(unsigned long ecsr, int idx)	low	exec
+0040bda0	F	emi2_check_wrap	void emi2_check_wrap(unsigned long ecsr, int idx)	low	exec
+0040be40	F	emi2_next_write_addr	int emi2_next_write_addr(unsigned long ecsr, int idx)	low	exec
+0040bea0	F	emi2_clock	void emi2_clock(int dev)	med	exec
+0040cda0	F	emi2_row_addr	void emi2_row_addr(unsigned long mode, unsigned long addr, void *pins, unsigned long ctl)	med	exec
+0040d130	F	emi2_col_addr	void emi2_col_addr(unsigned long mode, unsigned long addr, void *pins, unsigned long ctl, int col)	med	exec
+0040d410	F	emi2_sample_dram_data	void emi2_sample_dram_data(unsigned long *pins, int dev)	med	exec
+0040d4d0	F	emi2_merge_shift_data	void emi2_merge_shift_data(unsigned long *pins)	low	exec
+0040d500	F	emi2_drive_dram_data	void emi2_drive_dram_data(unsigned long *pins, int dev)	med	exec
+0040d570	F	emi2_shift_in	void emi2_shift_in(unsigned long *pins)	low	exec
+0040d5a0	F	shi_m_poke	int shi_m_poke(int grp, int reg, unsigned long *val)	med	exec
+0040d670	F	shi_m_clock	void shi_m_clock(int grp)	med	exec
+0040d6f0	F	shi_m_io_write	int shi_m_io_write(int grp, unsigned long addr, unsigned long val)	med	exec
+0040d7d0	F	shi_m_io_read	int shi_m_io_read(int grp, unsigned long addr, unsigned long *out, int side)	med	exec
+0040d890	F	shi_m_reset	void shi_m_reset(int grp)	med	exec
+0040d900	F	shi_reset_regs	void shi_reset_regs(void)	med	exec
+0040d9a0	F	shi_m_irq_poll	int shi_m_irq_poll(int grp)	med	exec
+0040da20	F	shi_m_irq_ack	void shi_m_irq_ack(int grp, unsigned long vec)	med	exec
+0040dac0	F	shi_write_reg	void shi_write_reg(int reg, unsigned long val)	med	exec
+0040dbc0	F	shi_touch_reg	void shi_touch_reg(int reg)	high	exec
+0040dc80	F	shi_read_reg	void shi_read_reg(int reg, unsigned long *out, int side_effect)	med	exec
+0040dd80	F	shi_clock	void shi_clock(int dev)	med	exec
+004a8d98	D	sim_tab	void **	high	shared	4
+004a8da0	D	trace_ring_size	int	med	shared	4
+004a8db4	D	itype_tab	void **	high	shared	4
+004aab04	D	ndtypes	int	high	shared	4
+004aab08	D	dtype_tab	void **	high	shared	4
+004aab10	D	dev_tab	void **	high	shared	4
+004aab18	D	bit_mask_tab	unsigned long[16]	high	exec	64
+004adaa0	D	emi1_timing_tab_a	unsigned long[8]	low	exec	32
+004adac0	D	emi1_timing_tab_b	unsigned long[8]	low	exec	32
+004adae0	D	emi1_timing_tab_c	unsigned long[4]	low	exec	16
+004b2748	D	regsel_tab	int[]	med	exec	0
+004b2898	D	agu_wrap_mask_tab	unsigned long[16]	med	exec	64
+004b47a0	D	emi2_burst_bits_tab	unsigned long[]	low	exec	0
+004b4870	D	emi2_burst_bits_tab2	unsigned long[]	low	exec	0
+004c4eb0	D	alu_op_tab	void *[]	med	exec	0
+004dbbec	D	emi1_cpu_ctl	unsigned long *	high	exec	4
+004dbbf0	D	emi1_regs	unsigned long *	high	exec	4
+004dbbf4	D	emi1_grp	void *	high	exec	4
+004dbbf8	D	emi1_flags	unsigned long *	high	exec	4
+004dbbfc	D	emi1_regs_slot	unsigned long **	high	exec	4
+004dbc00	D	emi1_aux	void *	high	exec	4
+004dbc04	D	emi1_gruntime	void *	high	exec	4
+004dbc08	D	core_pins_gpio	unsigned long *	high	exec	4
+004dbc0c	D	core_ctl	unsigned long *	high	exec	4
+004dbc10	D	core_regs	unsigned long *	high	exec	4
+004dbc14	D	core_grp	void *	high	exec	4
+004dbc18	D	core_flags	unsigned long *	high	exec	4
+004dbc1c	D	core_pins_addr	unsigned long *	high	exec	4
+004dbc20	D	core_pins_data	unsigned long *	high	exec	4
+004dbc24	D	core_pins	unsigned long *	high	exec	4
+004dbc28	D	core_regs_slot	unsigned long **	high	exec	4
+004dbc2c	D	core_aux	void *	high	exec	4
+004dbc30	D	core_gruntime	void *	high	exec	4
+004dbc34	D	core_trace	unsigned long *	high	exec	4
+004dbc38	D	dax_cpu_ctl	unsigned long *	high	exec	4
+004dbc3c	D	dax_regs	unsigned long *	high	exec	4
+004dbc40	D	dax_grp	void *	high	exec	4
+004dbc44	D	dax_flags	unsigned long *	high	exec	4
+004dbc48	D	dax_regs_slot	unsigned long **	high	exec	4
+004dbc4c	D	dax_aux	void *	high	exec	4
+004dbc50	D	dax_gruntime	void *	high	exec	4
+004dbc54	D	gpio_regs	unsigned long *	high	exec	4
+004dbc58	D	gpio_grp	void *	high	exec	4
+004dbc5c	D	gpio_flags	unsigned long *	high	exec	4
+004dbc6c	D	emi2_cpu_ctl	unsigned long *	high	exec	4
+004dbc70	D	emi2_regs	unsigned long *	high	exec	4
+004dbc74	D	emi2_regs_alias	unsigned long *	high	exec	4
+004dbc78	D	emi2_grp	void *	high	exec	4
+004dbc7c	D	emi2_flags	unsigned long *	high	exec	4
+004dbc80	D	emi2_regs_slot	unsigned long **	high	exec	4
+004dbc84	D	emi2_aux	void *	high	exec	4
+004dbc88	D	emi2_gruntime	void *	high	exec	4
+004dbc8c	D	shi_cpu_ctl	unsigned long *	high	exec	4
+004dbc90	D	shi_regs	unsigned long *	high	exec	4
+004dbc94	D	shi_grp	void *	high	exec	4
+004dbc98	D	shi_flags	unsigned long *	high	exec	4
+0050578c	D	cur_sim	void *	high	shared	4
+00505790	D	cur_dtype	void *	high	shared	4
+00505794	D	cur_itype	void *	high	shared	4
+00505798	D	cur_dev	void *	high	shared	4
+00505b64	D	stats_base	unsigned long *	high	shared	4

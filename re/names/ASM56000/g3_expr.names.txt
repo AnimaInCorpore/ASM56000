@@ -1,0 +1,162 @@
+# g3_expr - ASM56000.EXE - eval.c / func.c / arith.c (expression parser/evaluator,
+# @-functions, arithmetic) - names, prototypes, confidence, owning module.
+# Format: addr<TAB>F|D<TAB>name<TAB>prototype/type<TAB>confidence<TAB>module[<TAB>size-bytes]
+# See re/notes/ASM56000/g3_expr.md for struct layouts, the operator/precedence tables,
+# the @-function id table, and numeric-semantics evidence backing these names.
+
+# ===================== eval.c (27 functions) =====================
+004136cd	F	eval_diag_note	void eval_diag_note(char *msg)	low	eval
+0041379a	F	fatal_usage1	void fatal_usage1(char *msg)	high	eval
+004137c6	F	fatal_usage2	void fatal_usage2(char *msg1, char *msg2)	high	eval
+004137f6	F	warn_usage	void warn_usage(char *msg)	high	eval
+00413818	F	which_field	int which_field(char *pos)	high	eval
+00413999	F	wrap_message	void wrap_message(int indent, char *msg)	high	eval
+00413c50	F	expr_to_uint_bits	int * expr_to_uint_bits(unsigned long mask)	high	eval
+00413cfb	F	expr_to_addr24	int * expr_to_addr24(void)	high	eval
+00413e70	F	expr_to_int_abs	int * expr_to_int_abs(void)	high	eval
+00413f38	F	expr_to_int8	int * expr_to_int8(void)	high	eval
+0041409f	F	expr_to_int16	int * expr_to_int16(void)	high	eval
+004141b1	F	expr_to_int24	int * expr_to_int24(void)	high	eval
+004142a7	F	pack_string_operand	void * pack_string_operand(char *src, unsigned long len)	high	eval
+00414686	F	is_backslash	int is_backslash(char *p)	high	eval
+0041469f	F	escape_char	int escape_char(char *p)	high	eval
+0041479f	F	expr_to_nonneg_line	int expr_to_nonneg_line(void)	med	eval
+004147ee	F	expr_to_nonneg_resolved	int expr_to_nonneg_resolved(void)	med	eval
+00414862	F	eval_expr	int * eval_expr(void)	high	eval
+00414a26	F	parse_expr	int * parse_expr(void)	high	eval
+00414aa1	F	parse_binop_rhs	int * parse_binop_rhs(int *lhs, int min_prec, char *cform_pos)	high	eval
+00414e2e	F	get_operator	int get_operator(void)	high	eval
+0041501f	F	op_precedence	int op_precedence(int opcode)	high	eval
+004150bf	F	emit_canonical_number	void * emit_canonical_number(int *val, char *dst)	med	eval
+0041518e	F	parse_term	double * parse_term(void)	high	eval
+00416453	F	emit_deferred_symbol	void emit_deferred_symbol(int *val)	high	eval
+004165e3	F	classify_value	void classify_value(int *val)	high	eval
+00416653	F	new_expr_value	void * new_expr_value(void)	high	eval
+
+# ===================== func.c (29 functions: @-function dispatcher + implementations) ===
+004167ef	F	free_expr	void free_expr(void *val)	high	func
+00416860	F	free_expr_stack_all	void free_expr_stack_all(void)	high	func
+004168c0	F	eval_function	double * eval_function(double *val)	high	func
+00416efc	F	eval_func_name_cmp	void eval_func_name_cmp(char *key, void *entry)	high	func
+00416f22	F	fn_query_misc	void * fn_query_misc(void *val, unsigned long id)	med	func
+00417168	F	fn_def_or_mac	void * fn_def_or_mac(void *val, int id)	high	func
+00417347	F	fn_arg	unsigned long * fn_arg(unsigned long *val)	high	func
+004175d8	F	fn_exp	void * fn_exp(void *val)	high	func
+0041769d	F	fn_int	void * fn_int(void *val)	high	func
+00417736	F	fn_lcv	void * fn_lcv(void *val)	high	func
+00417d6a	F	fn_msp	void * fn_msp(void *val)	high	func
+00417e90	F	fn_scp	void * fn_scp(void *val)	high	func
+00418033	F	fn_len	void * fn_len(void *val)	high	func
+004180ea	F	fn_pos	void * fn_pos(void *val)	high	func
+00418453	F	fn_fld	void * fn_fld(void *val)	high	func
+00418711	F	fn_convert	double * fn_convert(void *val, unsigned long id)	high	func
+004189ba	F	fn_cvs	void * fn_cvs(void *val)	high	func
+00418b0d	F	fn_sgn	double * fn_sgn(void *val)	high	func
+00418c1e	F	fn_lb_dead	int fn_lb_dead(void *val)	med	func
+00418cdb	F	fn_byte_address	int fn_byte_address(void *val)	high	func
+00418d12	F	fn_word_address	int fn_word_address(void *val)	high	func
+00418d81	F	fn_long_address	int fn_long_address(void *val)	high	func
+00418deb	F	fn_hb_dead	int fn_hb_dead(void *val)	med	func
+00418eba	F	fn_minmax	double * fn_minmax(double *val, int id)	high	func
+0041905d	F	fn_rnd	double * fn_rnd(double *val)	high	func
+0041913c	F	fn_lng	void * fn_lng(void *val)	high	func
+004192d1	F	fn_rvb	void * fn_rvb(void *val)	high	func
+00419493	F	fn_math1	double * fn_math1(void *val, void *fn1)	high	func
+004195e5	F	fn_math2	double * fn_math2(void *val, void *fn2)	high	func
+
+# ===================== arith.c (50 functions: register lexer, binary/unary ops, ==========
+# ===================== fixed<->float conversion, 56-bit bigint helpers) ===================
+004080dc	F	match_register_name	int match_register_name(char **p)	high	arith
+004094bb	F	fmt_storage_directive_text	unsigned long * fmt_storage_directive_text(unsigned long *val)	med	arith
+00409618	F	check_field_size	unsigned long check_field_size(unsigned long val, int width_code)	high	arith
+00409680	F	arith_binop_stub	unsigned long arith_binop_stub(void)	high	arith
+004096ab	F	op_add	double * op_add(double *lhs, double *rhs)	high	arith
+004098e6	F	op_sub	double * op_sub(double *lhs, double *rhs)	high	arith
+004099d3	F	op_check_operands	unsigned long op_check_operands(unsigned long *lhs, unsigned long *rhs)	high	arith
+00409ba7	F	op_mul	double * op_mul(double *lhs, double *rhs)	high	arith
+00409dae	F	op_div	double * op_div(double *lhs, double *rhs)	high	arith
+00409fa6	F	op_mod	double * op_mod(double *lhs, double *rhs)	high	arith
+0040a1ae	F	op_and	unsigned long * op_and(unsigned long *lhs, unsigned long *rhs)	high	arith
+0040a25b	F	op_or	unsigned long * op_or(unsigned long *lhs, unsigned long *rhs)	high	arith
+0040a308	F	op_xor	unsigned long * op_xor(unsigned long *lhs, unsigned long *rhs)	high	arith
+0040a3b5	F	op_shl	unsigned long * op_shl(unsigned long *lhs, int *rhs)	high	arith
+0040a4de	F	op_shr	unsigned long * op_shr(unsigned long *lhs, int *rhs)	high	arith
+0040a628	F	op_land	double * op_land(double *lhs, double *rhs)	high	arith
+0040a6bb	F	op_lor	double * op_lor(double *lhs, double *rhs)	high	arith
+0040a74e	F	op_lt	double * op_lt(double *lhs, double *rhs)	high	arith
+0040a768	F	op_gt	double * op_gt(double *lhs, double *rhs)	high	arith
+0040a782	F	op_eq	double * op_eq(double *lhs, double *rhs)	high	arith
+0040a79c	F	op_ne	double * op_ne(double *lhs, double *rhs)	high	arith
+0040a7b6	F	op_le	double * op_le(double *lhs, double *rhs)	high	arith
+0040a7d0	F	op_ge	double * op_ge(double *lhs, double *rhs)	high	arith
+0040a7ea	F	expr_as_int32	unsigned long expr_as_int32(int *val)	high	arith
+0040a80c	F	negate_value	void negate_value(double *val)	high	arith
+0040a8b1	F	complement_value	void complement_value(unsigned long *val)	high	arith
+0040a8f0	F	op_not	void op_not(double *val)	high	arith
+0040a95b	F	value_truth	unsigned long value_truth(double *val)	high	arith
+0040aa08	F	op_compare	void op_compare(unsigned long opcode, double *lhs, double *rhs)	high	arith
+0040ac4a	F	bigint_divmod	void bigint_divmod(unsigned long ah, unsigned long am, unsigned long al, unsigned long bh, unsigned long bm, unsigned long bl, unsigned long *qh, unsigned long *qm, unsigned long *ql, unsigned long *rh, unsigned long *rm, unsigned long *rl)	high	arith
+0040adde	F	bigint_cmp3	int bigint_cmp3(unsigned long ah, unsigned long am, unsigned long al, unsigned long bh, unsigned long bm, unsigned long bl)	high	arith
+0040ae41	F	bigint_from_words	void bigint_from_words(unsigned long hi, unsigned long mid, unsigned long lo, unsigned long *out8)	high	arith
+0040aece	F	bigint_to_words	void bigint_to_words(unsigned long *in8, unsigned long *hi, unsigned long *mid, unsigned long *lo)	high	arith
+0040af6b	F	bigint_copy	void bigint_copy(unsigned long *src, unsigned long *dst, int n)	high	arith
+0040af95	F	bigint_div_digit	unsigned long bigint_div_digit(unsigned long *divisor, unsigned long *rem, unsigned long n, unsigned long *work)	high	arith
+0040b095	F	bigint_mul_small	void bigint_mul_small(unsigned long digit, unsigned long *src, unsigned long *dst, unsigned long n)	high	arith
+0040b0f1	F	bigint_cmp_ge	int bigint_cmp_ge(unsigned long *a, unsigned long *b, unsigned long n)	high	arith
+0040b14d	F	bigint_sub	void bigint_sub(unsigned long *sub, unsigned long *acc, unsigned long n)	high	arith
+0040b1b1	F	bigint_limb_count	int bigint_limb_count(unsigned long *a)	high	arith
+0040b1e5	F	value_to_float10	double value_to_float10(double *val)	high	arith
+0040b24c	F	float_to_fixed_raw	void float_to_fixed_raw(unsigned long lo32, unsigned long hi32, int fmt, int *out)	high	arith
+0040b312	F	int24_to_float10	double int24_to_float10(unsigned long v24)	high	arith
+0040b376	F	double_to_int24_trunc	unsigned long double_to_int24_trunc(void)	high	arith
+0040b391	F	int48_to_float10	double int48_to_float10(unsigned long hi24, unsigned long lo24)	high	arith
+0040b477	F	double_to_int48_trunc	void double_to_int48_trunc(unsigned long lo32, unsigned long hi32, unsigned long *hi24, unsigned long *lo24)	high	arith
+0040b53d	F	fixed_to_float10	double fixed_to_float10(double *val)	high	arith
+0040b5a4	F	float_to_fixed_frac	void float_to_fixed_frac(unsigned long lo32, unsigned long hi32, int fmt, int *out)	high	arith
+0040b67c	F	frac24_to_float10	double frac24_to_float10(unsigned long v24)	high	arith
+0040b6bf	F	double_to_frac24	unsigned long double_to_frac24(double val)	high	arith
+0040b797	F	double_to_frac_n	unsigned long double_to_frac_n(double val, unsigned long mask)	high	arith
+
+# ===================== globals used by eval/func/arith =====================
+# (many are shared across most modules; names below try to describe meaning per
+#  evidence in g3_expr.md; conflicts with other groups' names to be resolved centrally)
+0045f428	D	cform_buf	char[520]	high	eval	520
+0045f864	D	cform_ptr	char *	high	eval	4
+0045fc98	D	expr_stack_base	void **	high	eval	4
+0045fc9c	D	expr_stack_top	void **	high	eval	4
+00453f7c	D	expr_stack_cap	long	high	eval	4
+0045eb60	D	expr_had_reloc	char	med	arith	4
+0045eb9c	D	fn_exp_flag	char	low	func	4
+0045f8fc	D	pass	long	high	eval	4
+0045ea50	D	no_errors	char	high	eval	4
+0045ea70	D	reasm_deferred	char	med	eval	4
+0045eb10	D	force_long	char	high	eval	4
+0045ea9c	D	list_suppress	char	low	eval	4
+0045fcac	D	list_fp	void *	med	eval	4
+0045fca0	D	in_eval_expr	char	high	eval	4
+0044f79c	D	opt_dsx	char	med	eval	4
+0044f7b4	D	opt_space_check	char	low	eval	4
+0044f7bc	D	opt_short_16	char	med	eval	4
+0044f7cc	D	radix_mode	long	med	eval	4
+0044f790	D	opt_reloc	char	high	eval	4
+0044f794	D	opt_reloc_l	char	med	eval	4
+0044f798	D	opt_reloc_r	char	med	func	4
+0044f828	D	hex_prefix	char *	med	eval	4
+0044f830	D	local_prefix_char	char	high	eval	4
+0045f930	D	ccc_value	long	low	func	4
+0045fb6c	D	cur_macro	void *	high	func	4
+0045fb88	D	rt_counter_obj	void *	high	func	4
+0045fb8c	D	ld_counter_obj	void *	high	func	4
+0045f8c0	D	rt_pc	long *	high	func	4
+0045f8cc	D	ld_pc	long *	high	func	4
+0045f934	D	sym_ref_seq	long	high	func	4
+0045fc70	D	fref_cur	void *	high	func	4
+0045fcb0	D	major_version	long	high	func	4
+0045fcb4	D	minor_version	long	high	func	4
+0045ebec	D	opt_lst_value	long	low	func	4
+0045ebe4	D	checksum_value	long	low	func	4
+0045ebc0	D	rt_ilist_cap	long	med	eval	4
+0045ebc4	D	rt_ilist_count	long	med	eval	4
+0045ebe8	D	ld_ilist_cap	long	med	eval	4
+00454860	D	lb_marker_text	char[8]	high	func	8
+00454868	D	hb_marker_text	char[8]	high	func	684

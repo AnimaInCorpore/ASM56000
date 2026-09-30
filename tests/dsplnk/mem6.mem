@@ -1,0 +1,3 @@
+; mem6: INCLUDE - pull in another memory control file
+MEMORY p $0 TO $1fff
+INCLUDE "mem7.mem"

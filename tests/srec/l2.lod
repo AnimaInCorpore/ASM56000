@@ -1,0 +1,10 @@
+_START MOD
+
+_COMMENT
+this is a comment line
+_data p 0100
+0c0000 000000 1
+_SYMBOL P
+foo I 000100
+_blockdata y 0002 0003 abc
+_END

@@ -1,0 +1,337 @@
+00433cb0	F	sdi_operand	char * sdi_operand(char *operand)	high	sdi
+00433e78	F	sdi_select_group	void sdi_select_group(long counter)	high	sdi
+00433f67	F	sdi_mark_section	void sdi_mark_section(void *sec)	med	sdi
+00434023	F	sdi_record	void sdi_record(char *target, long range1, long range2, unsigned long flags)	high	sdi
+004342fb	F	sdi_next_form	int sdi_next_form(void)	high	sdi
+00434430	F	sdi_optimize	void sdi_optimize(void)	high	sdi
+0043449c	F	sdi_build_table	void sdi_build_table(void *grp)	high	sdi
+004346c2	F	sdi_resolve	void sdi_resolve(void *grp)	high	sdi
+004349d5	F	sdi_find_target	void * sdi_find_target(void *rec)	high	sdi
+00434be7	F	sdi_expr	void sdi_expr(char *mnem, long flags, long range1, long range2, void *op1, void *op2)	med	sdi
+00434d60	F	sdi2_expr	void sdi2_expr(char *mnem, long flags, long range1, long range2, void *op1, void *op2, void *op3)	med	sdi
+00434f48	F	sdi_free	void sdi_free(void)	high	sdi
+004350d3	F	sdi_branch_mnemonic	void * sdi_branch_mnemonic(void)	med	sdi
+004351c0	F	sec_section	int sec_section(char *name, char *mod1, char *mod2)	high	section
+00435924	F	sec_endsec	int sec_endsec(void)	high	section
+00435a59	F	sec_new	void * sec_new(char *name)	high	section
+00435c1a	F	sec_push	int sec_push(void *sec)	high	section
+00435cde	F	sec_debug_sym	void sec_debug_sym(void *sec, int begin)	med	section
+00435d9f	F	sec_save_counters	void sec_save_counters(void)	high	section
+00435eca	F	sec_set_current	void sec_set_current(void *sec, int is_new)	high	section
+004361d3	F	sec_free_all	void sec_free_all(void)	high	section
+004364a5	F	sec_local	int sec_local(void)	high	section
+004366be	F	sec_global	int sec_global(void)	high	section
+004368c3	F	sec_xref	int sec_xref(void)	high	section
+00436b2e	F	sec_xdef	int sec_xdef(void)	high	section
+00436d1b	F	sec_is_local	int sec_is_local(char *name)	high	section
+00436d85	F	sec_is_global	int sec_is_global(char *name)	high	section
+00436def	F	sec_is_xref	int sec_is_xref(char *name)	high	section
+00436e56	F	sec_is_xdef	int sec_is_xdef(char *name)	high	section
+00436ebd	F	sec_check_local	int sec_check_local(char *name)	high	section
+00437037	F	sec_check_global	int sec_check_global(char *name)	high	section
+00437220	F	sec_check_xref	int sec_check_xref(char *name)	high	section
+00437418	F	sec_check_xdef	int sec_check_xdef(char *name)	high	section
+004375e6	F	sec_free_names	void sec_free_names(void)	high	section
+00437710	F	lbl_index_add	void lbl_index_add(char *name)	med	symtab
+00437837	F	lbl_index_free	int lbl_index_free(void)	high	symtab
+004378e5	F	lbl_index_find	int lbl_index_find(char *name)	high	symtab
+0043794f	F	lbl_index_label	int lbl_index_label(void)	med	symtab
+0043797a	F	sym_define_label	int sym_define_label(void)	high	symtab
+00437a9f	F	sym_define	int sym_define(char *name, void *val)	high	symtab
+004382bb	F	sym_new_local_block	void sym_new_local_block(void *sym)	high	symtab
+0043835d	F	sym_set_value	int sym_set_value(void *sym, void *val)	high	symtab
+00438441	F	sym_lookup	void * sym_lookup(char *name, int reftype)	high	symtab
+00438583	F	sym_lookup_local	void * sym_lookup_local(char *name, int reftype)	high	symtab
+00438713	F	sym_search	void * sym_search(char *name, int reftype, int is_local)	high	symtab
+004388eb	F	sym_add_ref	void sym_add_ref(void *sym, int reftype)	high	symtab
+0043896d	F	ext_add	int ext_add(char *name, int force)	high	symtab
+00438b28	F	ext_lookup	void * ext_lookup(char *name)	high	symtab
+00438c00	F	strtab_lookup	void * strtab_lookup(char *name)	high	symtab
+00438c80	F	sdi_adjust_symbols	void sdi_adjust_symbols(void)	high	symtab
+00438f1a	F	find_mnemonic	void * find_mnemonic(char *name, int chk_macro)	high	symtab
+00438f5a	F	mnemonic_cmp	int mnemonic_cmp(char *key, void *entry)	high	symtab
+00438f9c	F	str_lower_copy	char * str_lower_copy(char *s)	high	symtab
+0043903f	F	find_directive	void * find_directive(char *name, int chk_macro)	high	symtab
+004390ac	F	directive_cmp	int directive_cmp(char *key, void *entry)	high	symtab
+004390e6	F	find_option	void * find_option(char *name)	high	symtab
+00439109	F	option_cmp	int option_cmp(char *key, void *entry)	high	symtab
+00439120	F	find_revision	void * find_revision(char *name)	high	symtab
+00439143	F	revision_cmp	int revision_cmp(char *key, void *entry)	high	symtab
+0043915a	F	find_processor	void * find_processor(char *name)	high	symtab
+0043917d	F	processor_cmp	int processor_cmp(char *key, void *entry)	high	symtab
+00439194	F	find_scs_directive	void * find_scs_directive(char *name)	high	symtab
+004391c0	F	scs_directive_cmp	int scs_directive_cmp(char *key, void *entry)	high	symtab
+004391d7	F	find_debug_directive	void * find_debug_directive(char *name)	med	symtab
+00439250	F	debug_directive_cmp	int debug_directive_cmp(char *key, void *entry)	high	symtab
+00439267	F	find_condition	void * find_condition(char *name)	high	symtab
+0043928a	F	condition_cmp	int condition_cmp(char *key, void *entry)	high	symtab
+004392a1	F	fref_free	void fref_free(void)	high	symtab
+00439317	F	fref_rewind	void fref_rewind(void)	high	symtab
+00439326	F	fref_add	void fref_add(void)	high	symtab
+00439374	F	fref_next	void fref_next(void)	high	symtab
+004393b2	F	strtab_free	void strtab_free(void)	high	symtab
+00439431	F	sym_free_all	void sym_free_all(void)	high	symtab
+00439547	F	sym_free_local_blocks	void sym_free_local_blocks(void)	high	symtab
+00439686	F	ext_free_all	void ext_free_all(void)	high	symtab
+00439724	F	misc_list_free	void misc_list_free(void)	low	symtab
+00439760	F	str_dupcat	char * str_dupcat(char *s, ...)	high	util
+00439857	F	xmalloc	void * xmalloc(unsigned long size)	high	util
+00439884	F	xrealloc	void * xrealloc(void *p, unsigned long size)	high	util
+004398b5	F	xfree	void xfree(void *p)	high	util
+004398cc	F	tab_search	void * tab_search(void *key, void *base, int count, int size, void *cmp)	high	util
+0043994a	F	tab_search_pos	void * tab_search_pos(void *key, void *base, int count, int size, void *cmp)	high	util
+004399c9	F	sort_ptrs	void sort_ptrs(int lo, int hi)	high	util
+00439b25	F	sort_swap	void sort_swap(int i, int j)	high	util
+00439b65	F	hash_name	unsigned long hash_name(char *s)	high	util
+00439bd4	F	base_name	char * base_name(char *path)	high	util
+00439c56	F	get_mem_space	int get_mem_space(void *op, int allowed)	high	util
+00439e8d	F	get_mem_spec	int get_mem_spec(void *spec)	high	util
+0043a6c5	F	mem_space_char	int mem_space_char(int space)	high	util
+0043a768	F	mem_space_index	int mem_space_index(int space)	high	util
+0043a807	F	char_to_mem_space	int char_to_mem_space(int c)	high	util
+0043a91e	F	char_to_counter	int char_to_counter(int c)	high	util
+0043a9d1	F	char_to_mem_map	int char_to_mem_map(int c, int c2, int space)	med	util
+0043ae13	F	get_force	unsigned long get_force(unsigned long allowed)	high	util
+0043aeb8	F	emi_map	int emi_map(int n, unsigned long *attr)	med	util
+0043b007	F	check_fields	int check_fields(int nfields)	high	util
+0043b08d	F	get_string	char * get_string(char *src, char *dst)	high	util
+0043b214	F	get_substring	char * get_substring(char *src, char **dst)	high	util
+0043b405	F	get_string_only	char * get_string_only(char *src, char *dst)	high	util
+0043b448	F	get_symbol	char * get_symbol(void)	high	util
+0043b5bb	F	check_reserved	int check_reserved(char *name)	high	util
+0043b659	F	check_symbol	int check_symbol(char *name)	high	util
+0043b7aa	F	str_upper	char * str_upper(char *s)	high	util
+0043b836	F	str_lower	char * str_lower(char *s)	high	util
+0043b8c2	F	str_upper_copy	char * str_upper_copy(char *s)	high	util
+0043b8f1	F	set_file_buffer	void set_file_buffer(void *fp, int which)	high	util
+0043b926	F	check_loc_counters	int check_loc_counters(int chk_underflow)	high	util
+0043baf1	F	merge_mem_space	int merge_mem_space(int space, int space2)	med	util
+0043bc1b	F	skip_symbol	void skip_symbol(void)	high	util
+0043bccb	F	check_extra_operand	int check_extra_operand(void)	high	util
+0043bd1e	F	insert_bits	unsigned long insert_bits(unsigned long word, unsigned long val, int pos, int width)	high	util
+0043bd53	F	insert_bits_expr	char * insert_bits_expr(char *word, char *val, int pos, int width)	high	util
+0043bdfb	F	encode_field	void encode_field(void *code, void *op, int pos, int width)	high	util
+0043be85	F	encode_field2	void encode_field2(void *code, void *op, unsigned long mask1, int shift1, int pos1, int width1, unsigned long mask2, int shift2, int pos2, int width2)	high	util
+0043bf3d	F	insert_bits2	unsigned long insert_bits2(unsigned long word, unsigned long val, unsigned long mask1, int shift1, int pos1, int width1, unsigned long mask2, int shift2, int pos2, int width2)	high	util
+0043bfa7	F	insert_bits2_expr	char * insert_bits2_expr(char *word, char *val, unsigned long mask1, int shift1, int pos1, int width1, unsigned long mask2, int shift2, int pos2, int width2)	high	util
+0043c047	F	enc_expr	void enc_expr(char *name, long val, void *op1, void *op2)	med	util
+0043c0ea	F	fmt_double	char * fmt_double(char *buf, char *fmt, double val)	high	util
+0043c34d	F	clear_coff_sym	void clear_coff_sym(void)	med	util
+0043c37e	F	obj_fwrite	unsigned long obj_fwrite(void *buf, unsigned long size, unsigned long n, void *fp)	high	util
+0043c450	F	fwrite_swapped	unsigned long fwrite_swapped(void *buf, unsigned long size, unsigned long n, void *fp)	high	util
+0043c481	F	obj_fwrite_swapped	unsigned long obj_fwrite_swapped(void *buf, unsigned long size, unsigned long n, void *fp)	high	util
+0043c4b2	F	swap_words	void swap_words(void *buf, int size, int n)	high	util
+0043c528	F	tm_to_secs	long tm_to_secs(void *tm)	high	util
+0043c7a6	F	next_field_has_space	int next_field_has_space(void)	low	util
+0043c810	F	stack_create	void * stack_create(void)	high	util
+0043c870	F	stack_init	int stack_init(void *stk)	high	util
+0043c88d	F	stack_push	int stack_push(void *stk, void *data)	high	util
+0043c91d	F	stack_pop	void * stack_pop(void *stk)	high	util
+0043c98b	F	stack_destroy	void stack_destroy(void *stk)	high	util
+0043c9d4	F	split_string	int split_string(char *str, char *delim, char **argv, int max)	high	util
+0043ca8c	F	name_cmp	int name_cmp(void *a, void *b)	high	util
+0043cab6	F	name_ptr_cmp	int name_ptr_cmp(void *a, void *b)	high	util
+0043cae0	F	ilist_dump	void ilist_dump(void)	high	util
+0043cba9	F	ilist_dump_attrs	void ilist_dump_attrs(void *rec, void *fp)	high	util
+0043cbfb	F	ilist_free	void ilist_free(void)	high	util
+0043cc37	F	ilist_set_pc	void ilist_set_pc(void *rec, long pc)	high	util
+0043cc4e	F	ilist_active	int ilist_active(void)	high	util
+0043cc5f	F	ilist_set_id	void ilist_set_id(void *rec, long id)	med	util
+0043cc75	F	ilist_get_pc	long ilist_get_pc(void *rec)	high	util
+0043cc8b	F	ilist_set_ctr	void ilist_set_ctr(void *rec, long ctr)	high	util
+0043cc9f	F	ilist_get_ctr	long ilist_get_ctr(void *rec)	high	util
+0043ccb5	F	ilist_new	void ilist_new(void)	high	util
+0043ccf3	F	ilist_grow	void ilist_grow(void)	high	util
+0043cd73	F	ilist_last_index	int ilist_last_index(void)	high	util
+0043cd80	F	ilist_current	void * ilist_current(void)	high	util
+0043cdab	F	ilist_from_end	void * ilist_from_end(int off)	high	util
+0043ce03	F	ilist_rewind	void ilist_rewind(void)	high	util
+0043ce12	F	ilist_next	void * ilist_next(void)	high	util
+0043ce62	F	ilist_relative	void * ilist_relative(int off)	high	util
+0043ceb2	F	ilist_set_attr	void ilist_set_attr(void *rec, unsigned long attr)	high	util
+0043cf24	F	ilist_clr_attr	void ilist_clr_attr(void *rec, unsigned long attr)	high	util
+0043cf98	F	ilist_prev_set_target	void ilist_prev_set_target(void *rec, long target)	med	util
+0043cfc5	F	ilist_prev_set_attr	void ilist_prev_set_attr(void *rec, unsigned long attr)	med	util
+0043cff9	F	ilist_prev_test_attr	unsigned long ilist_prev_test_attr(unsigned long attr)	med	util
+0043d028	F	ilist_test_attr	unsigned long ilist_test_attr(void *rec, unsigned long attr)	high	util
+0043d091	F	lbl_list_add	void lbl_list_add(char *name, long val)	high	util
+0043d179	F	lbl_list_remove	void lbl_list_remove(void *node)	high	util
+0043d1e8	F	lbl_list_free	void lbl_list_free(void)	high	util
+0043d23d	F	lbl_list_find	void * lbl_list_find(char *name)	high	util
+0043d27b	F	ifix_new	void ifix_new(void)	med	util
+0043d2b9	F	ifix_grow	void ifix_grow(void)	high	util
+0043d343	F	ifix_current	void * ifix_current(void)	high	util
+0043d35b	F	ifix_set_key	void ifix_set_key(void *fix, long v)	med	util
+0043d36e	F	ifix_set_1	void ifix_set_1(void *fix, long v)	low	util
+0043d382	F	ifix_set_name	void ifix_set_name(void *fix, char *name)	med	util
+0043d3be	F	ifix_set_type	void ifix_set_type(void *fix, long type)	med	util
+0043d3d2	F	ifix_set_7	void ifix_set_7(void *fix, long v)	low	util
+0043d3e6	F	ifix_set_pc	void ifix_set_pc(void *fix, long pc)	med	util
+0043d3fa	F	ifix_set_ctr	void ifix_set_ctr(void *fix, long ctr)	med	util
+0043d40e	F	ifix_set_6	void ifix_set_6(void *fix, long v)	low	util
+0043d422	F	ifix_free	void ifix_free(void)	high	util
+0043d4bc	F	ilist_find	void * ilist_find(long pc, long ctr)	high	util
+0043d51a	F	ifix_find_best	void * ifix_find_best(long key)	med	util
+0043d58e	F	ifix_apply_all	void ifix_apply_all(void)	med	util
+0043d601	F	ifix_apply	void ifix_apply(void *rec, void *fix)	med	util
+0043d808	F	ilist_run_checks	void ilist_run_checks(void)	med	util
+0043da70	F	darray_new	void * darray_new(void)	high	util
+0043dada	F	darray_init	void darray_init(void *da)	high	util
+0043dae9	F	darray_destroy	void darray_destroy(void *da)	high	util
+0043db06	F	darray_append	void darray_append(void *da, long v)	high	util
+0043db63	F	darray_is_empty	int darray_is_empty(void *da)	high	util
+0043db76	F	darray_is_full	int darray_is_full(void *da)	high	util
+0043db8b	F	darray_grow	void darray_grow(void *da)	high	util
+0043dc32	F	darray_set	void darray_set(void *da, int idx, long v)	high	util
+0043dc80	F	darray_get	long darray_get(void *da, int idx)	high	util
+0044e0b0	D	mnemonic_tab	struct[142] of 20 bytes	high	mchglb	2840
+0044ebc8	D	mnemonic_count	long	high	mchglb	4
+0044ebd0	D	cond_tab	struct[19] of 8 bytes	high	mchglb	152
+0044ec68	D	cond_count	long	high	mchglb	4
+0044ec70	D	revision_tab	struct[4] of 12 bytes	high	mchglb	48
+0044eca0	D	revision_count	long	high	mchglb	4
+0044eca8	D	processor_tab	struct[7] of 8 bytes	high	mchglb	56
+0044ece0	D	processor_count	long	high	mchglb	4
+0044f790	D	reloc_mode	char	high	asmglb	4
+0044f794	D	rt_reloc	char	high	asmglb	4
+0044f798	D	ld_reloc	char	high	asmglb	4
+0044f7ac	D	opt_ns	char	high	asmglb	4
+0044f7c4	D	opt_sms	char	high	asmglb	4
+0044f810	D	fld_label	char *	high	asmglb	4
+0044f814	D	fld_opcode	char *	high	asmglb	4
+0044f818	D	fld_operand	char *	high	asmglb	4
+0044f81c	D	fld_operand2	char *	high	asmglb	4
+0044f820	D	fld_operand3	char *	high	asmglb	4
+0044f830	D	local_prefix	char	high	asmglb	8
+0044f838	D	hi_mem_bounds	long[6][2]	med	asmglb	48
+0044f868	D	global_sec_name	char[8]	high	asmglb	8
+0044f870	D	reserve_sec_name	char[8]	high	asmglb	8
+0044f878	D	global_section	struct section (0x90 bytes)	high	asmglb	144
+0044f8e0	D	global_section_sdi_list	void * (= global_section+0x68)	high	asmglb	4
+0044f91c	D	rt_addr_mask	unsigned long	high	asmglb	4
+0044f920	D	ld_addr_mask	unsigned long	high	asmglb	4
+0044f978	D	cur_section	void *	high	asmglb	4
+0044f97c	D	ctr_section	void *	high	asmglb	4
+0044f980	D	section_list	void *	high	asmglb	4
+0044f984	D	section_tail	void *	high	asmglb	4
+0044f988	D	strtab_size	long	high	asmglb	4
+0044f990	D	fref_head	struct fref (12 bytes, list sentinel)	high	asmglb	12
+0044f994	D	fref_head_line	long	med	asmglb	4
+0044f998	D	fref_head_next	void *	high	asmglb	4
+0044f99c	D	zl_prefix	char *	high	asmglb	4
+0044f9a0	D	zl_prefix_lc	char *	high	asmglb	4
+0044f9fc	D	proc_level	long	med	asmglb	4
+0044fa00	D	proc_variant	long	med	asmglb	4
+0044fab0	D	directive_tab	struct[75] of 8 bytes	high	asmglb	600
+0044fd08	D	directive_count	long	high	asmglb	4
+0044fd10	D	option_tab	struct[92] of 8 bytes	high	asmglb	736
+0044fff0	D	option_count	long	high	asmglb	4
+004503b0	D	scs_tab	struct[13] of 12 bytes	high	asmglb	156
+0045044c	D	scs_count	long	high	asmglb	4
+00450450	D	debug_dir_tab	struct[16] of 8 bytes	high	asmglb	128
+004504d0	D	debug_dir_count	long	high	asmglb	4
+00450508	D	month_days	long[12]	high	asmglb	48
+00459db0	D	ia_attr_names	char *[46]	high	util	184
+0045da48	D	lbl_index_hash	void *[1009]	med	bss	4036
+0045ea3c	D	opt_cre	char	high	bss	4
+0045ea50	D	no_errors	char	med	bss	4
+0045ea70	D	in_line_replay	char	high	bss	4
+0045ea84	D	local_block_cont	char	med	bss	4
+0045ea88	D	opt_xr	char	high	bss	4
+0045ea98	D	c_mode	char	med	bss	4
+0045eaa0	D	opt_ic	char	high	bss	4
+0045eab0	D	opt_gl	char	high	bss	4
+0045eab4	D	opt_gs	char	high	bss	4
+0045eab8	D	rt_overflow	char	high	bss	4
+0045eabc	D	ld_overflow	char	high	bss	4
+0045ead0	D	opt_scl	char	high	bss	4
+0045eadc	D	debug_mode	char	high	bss	4
+0045eaf4	D	opt_ur	char	high	bss	4
+0045eb08	D	opt_const	char	high	bss	4
+0045eb0c	D	opt_xll	char	high	bss	4
+0045eb10	D	outer_scope_ref	char	med	bss	4
+0045eb20	D	opt_sco	char	high	bss	4
+0045eb28	D	gset_mode	char	high	bss	4
+0045eb34	D	sdi_enabled	char	high	bss	4
+0045eb38	D	sdi_local_target	char	med	bss	4
+0045eb50	D	opt_t	char	med	bss	4
+0045eb64	D	num_symbols	long	high	bss	4
+0045eb68	D	local_block_num	long	high	bss	4
+0045eb6c	D	num_local_symbols	long	high	bss	4
+0045eb70	D	num_zl_symbols	long	high	bss	4
+0045eb74	D	num_ext_symbols	long	high	bss	4
+0045eb78	D	file_line_num	long	high	bss	4
+0045eb80	D	lst_line_num	long	high	bss	4
+0045eba8	D	section_depth	long	high	bss	4
+0045ebac	D	default_force	unsigned long	med	bss	4
+0045ebc0	D	buffer_num	long	med	bss	4
+0045ebc4	D	in_buffer	long	med	bss	4
+0045ebe8	D	overlay_num	long	med	bss	4
+0045f220	D	tmp_buf	char[]	med	bss	1
+0045f860	D	optr	char *	high	bss	4
+0045f8a0	D	rt_space	long	high	bss	4
+0045f8a4	D	rt_map	long	high	bss	4
+0045f8a8	D	rt_counter	long	high	bss	4
+0045f8ac	D	rt_emi	long	med	bss	4
+0045f8b0	D	ld_space	long	high	bss	4
+0045f8b4	D	ld_map	long	high	bss	4
+0045f8b8	D	ld_counter	long	high	bss	4
+0045f8bc	D	ld_emi	long	med	bss	4
+0045f8c0	D	rt_pc	long *	high	bss	4
+0045f8c4	D	rt_pc_start	long	high	bss	4
+0045f8cc	D	ld_pc	long *	high	bss	4
+0045f8d0	D	ld_pc_start	long	high	bss	4
+0045f8d4	D	rt_lo_bound	long *	high	bss	4
+0045f8d8	D	rt_hi_bound	long *	high	bss	4
+0045f8dc	D	ld_lo_bound	long *	high	bss	4
+0045f8e0	D	ld_hi_bound	long *	high	bss	4
+0045f8fc	D	pass	long	high	bss	4
+0045f934	D	sym_ref_seq	long	high	bss	4
+0045fb60	D	sort_cmp	void *	high	bss	4
+0045fb6c	D	cur_macro	void *	med	bss	4
+0045fb7c	D	local_sec_parent	void *	med	bss	4
+0045fb80	D	section_count	long	high	bss	4
+0045fb84	D	section_stack	void *	high	bss	4
+0045fb88	D	rt_counter_obj	void *	high	bss	4
+0045fb8c	D	ld_counter_obj	void *	high	bss	4
+0045fbb4	D	reloc_count	long	med	bss	4
+0045fbe4	D	strtab_buf	char *	high	bss	4
+0045fc34	D	sym_insert_pt	void *	high	bss	4
+0045fc38	D	local_block_tail	void *	high	bss	4
+0045fc3c	D	local_block_list	void *	high	bss	4
+0045fc40	D	cur_local_block	void *	high	bss	4
+0045fc44	D	local_block_last	void *	high	bss	4
+0045fc48	D	macro_local_list	void *	high	bss	4
+0045fc4c	D	cur_macro_local	void *	med	bss	4
+0045fc54	D	ext_insert_pt	void *	high	bss	4
+0045fc58	D	strtab_insert_pt	void *	high	bss	4
+0045fc70	D	fref_cur	void *	high	bss	4
+0045fc74	D	misc_list	void *	low	bss	4
+0045fc80	D	sort_array	void **	high	bss	4
+0045fc84	D	scs_stack	void *	med	bss	4
+0045fca4	D	sdi_expr_count	long	med	bss	4
+0045fca8	D	obj_fp	void *	high	bss	4
+0045fcc0	D	sym_hash	void *[1009]	high	bss	4036
+00461c50	D	ext_hash	void *[1009]	high	bss	4036
+00462c18	D	strtab_hash	void *[1009]	high	bss	4036
+00463c68	D	lower_buf	char[24]	high	bss	24
+00463c80	D	file_buf0	char[2048]	high	bss	2048
+00464480	D	sym_name_buf	char[513]	high	bss	520
+00464688	D	upper_buf	char[33]	high	bss	40
+004646b0	D	file_buf1	char[2048]	high	bss	2048
+00464eb0	D	rt_ovf_reported	long	high	bss	4
+00464eb4	D	ld_ovf_reported	long	high	bss	4
+00464eb8	D	rt_unf_reported	long	low	bss	4
+00464ebc	D	ld_unf_reported	long	low	bss	4
+00464ec0	D	ilist_cap	long	high	bss	4
+00464ec4	D	ilist_count	long	high	bss	4
+00464ec8	D	ilist_cur	long	high	bss	4
+00464ecc	D	ilist_tab	void *	high	bss	4
+00464ed0	D	ifix_cap	long	high	bss	4
+00464ed4	D	ifix_count	long	high	bss	4
+00464ed8	D	ifix_cur	long	high	bss	4
+00464edc	D	ifix_tab	void *	high	bss	4
+00464ee0	D	lbl_list	void *	high	bss	8
+00465880	D	coff_aux	char[32]	med	bss	32
+00465a34	D	ia_check_fn	void *[41] (dead code, overlaps other globals)	low	bss	164
+00465a60	D	coff_sym	char[32]	med	bss	32

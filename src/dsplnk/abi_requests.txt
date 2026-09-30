@@ -1,0 +1,22 @@
+[abip -> abib] abi_mp_sym_shift_field (0x43825a) is NOT void: the yacc action of rule 73 stores its
+EAX result into yyval (disasm 0x43b9e7: call 0x43825a; add esp,8; mov [0x46b450], eax).  In the callee
+(0x43825a..0x4382c8) the result of the inner call 0x4011ae (abi_mask_then_shift) is left in EAX and
+returned.  Please change the declaration in abi.h and the definition in mpsym.c to
+    unsigned long abi_mp_sym_shift_field(ABICTX *ctx, unsigned long v);
+   { return abi_mask_then_shift(v, abi_bit_range_mask(8, 15), 8, '>'); }
+abiparse.c calls it that way and stores the value into yyval.
+
+[abip -> abib] abi.h declares `extern FILE *yyin;` and `void yyrestart(FILE *)`; abilex.c follows that.
+abi_lex_inited (46ad2c) is defined in abiparse.c (I define it); abi_expr_error_stub(char *) is used
+as yyerror (called with "syntax error" / "yacc stack overflow"): abib keeps defining it.
+abi_expr_eval_impl (abiglue.c) sets abi_expr_text/abi_expr_text_end; abilex.c reads them (YY_INPUT).
+
+[abip -> abib, lead] The SECOND ARGUMENT of abi_expr_eval/abi_expr_eval_impl is a POINTER, not a flag:
+disasm of the caller 0x417896 (input.c relocate_section): push input_cursor; push [ebp-0x38] = the
+`unsigned long *p` raw word pointer of the word being relocated; push mod.  abi_ctx_new stores it at
+ctx+0x5c and the yacc rule for token `op` (0x11a) evaluates *ctx->arg, i.e. `op` = the raw (opcode) word
+under relocation.  fixup.c (0x4107cc, overlay base expression) passes NULL (`op` there would fault).
+Needed: prototypes  EXPR *abi_expr_eval[_impl](MODULE *mod, unsigned long *arg, char *text)  in dsplnk.h /
+abiglue.c, abi_ctx_new(MODULE *mod, unsigned long *arg) storing c->arg = arg (abiutil.c currently sets
+NULL), and input.c line ~1205 must pass `p` (fixup.c keeps NULL).  Verified: the original prints and
+returns `op` = 0 for a zero raw word; the port with arg == NULL faults ("Fatal segmentation ...").

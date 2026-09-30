@@ -5,15 +5,15 @@
 004001c8	.data	[ ]
 004001f0	.idata	[ ]
 00400218	.reloc	[ ]
-004525bc	(Press Retry to debug the application - JIT must be enabled)	[ FUN_0043ec00 FUN_0043ec00 ]
-004525fc	For information on how your program can cause an assertion\nfailure, see the Visual C++ documentation on asserts	[ FUN_0043ec00 FUN_0043ec00 ]
-0045266c	Microsoft Visual C++ Runtime Library	[ _NMSG_WRITE FUN_0043ec00 ]
-00452694	Expression: 	[ FUN_0043ec00 FUN_0043ec00 ]
-004526a4	Line: 	[ FUN_0043ec00 FUN_0043ec00 FUN_0043ec00 FUN_0043ec00 ]
-004526ac	File: 	[ FUN_0043ec00 FUN_0043ec00 FUN_0043ec00 FUN_0043ec00 ]
-004526b4	<program name unknown>	[ _NMSG_WRITE FUN_0043ec00 FUN_0043ec00 _NMSG_WRITE ]
-004526cc	Program: 	[ FUN_0043ec00 FUN_0043ec00 FUN_0043ec00 FUN_0043ec00 ]
-004526d8	Assertion failed!	[ FUN_0043ec00 ]
+004525bc	(Press Retry to debug the application - JIT must be enabled)	[ _assert _assert ]
+004525fc	For information on how your program can cause an assertion\nfailure, see the Visual C++ documentation on asserts	[ _assert _assert ]
+0045266c	Microsoft Visual C++ Runtime Library	[ _NMSG_WRITE _assert ]
+00452694	Expression: 	[ _assert _assert ]
+004526a4	Line: 	[ _assert _assert _assert _assert ]
+004526ac	File: 	[ _assert _assert _assert _assert ]
+004526b4	<program name unknown>	[ _NMSG_WRITE _assert _assert _NMSG_WRITE ]
+004526cc	Program: 	[ _assert _assert _assert _assert ]
+004526d8	Assertion failed!	[ _assert ]
 0045275e	null)	[ _output ]
 0045276d	null)	[ _output _output ]
 00452797	?IsProcessorFeaturePresent	[ ]
@@ -25,34 +25,34 @@
 00452874	MessageBoxA	[ __crtMessageBoxA ]
 00452880	user32.dll	[ __crtMessageBoxA ]
 0045288c	runtime error 	[ ]
-004528a0	TLOSS error\n	[ ]
-004528b0	SING error\n	[ ]
-004528c0	DOMAIN error\n	[ ]
-004528d0	R6028\n- unable to initialize heap\n	[ ]
-004528f8	R6027\n- not enough space for lowio initialization\n	[ ]
-00452930	R6026\n- not enough space for stdio initialization\n	[ ]
-00452968	R6025\n- pure virtual function call\n	[ ]
-00452990	R6024\n- not enough space for _onexit/atexit table\n	[ ]
-004529c8	R6019\n- unable to open console device\n	[ ]
-004529f4	R6018\n- unexpected heap error\n	[ ]
-00452a18	R6017\n- unexpected multithread lock error\n	[ ]
-00452a48	R6016\n- not enough space for thread data\n	[ ]
-00452a74	\nabnormal program termination\n	[ ]
-00452a98	R6009\n- not enough space for environment\n	[ _NMSG_WRITE _NMSG_WRITE _NMSG_WRITE _NMSG_WRITE _NMSG_WRITE 0046015c ]
-00452ac4	R6008\n- not enough space for arguments\n	[ ]
-00452af0	R6002\n- floating point not loaded\n	[ ]
+004528a0	TLOSS error\r\n	[ ]
+004528b0	SING error\r\n	[ ]
+004528c0	DOMAIN error\r\n	[ ]
+004528d0	R6028\r\n- unable to initialize heap\r\n	[ ]
+004528f8	R6027\r\n- not enough space for lowio initialization\r\n	[ ]
+00452930	R6026\r\n- not enough space for stdio initialization\r\n	[ ]
+00452968	R6025\r\n- pure virtual function call\r\n	[ ]
+00452990	R6024\r\n- not enough space for _onexit/atexit table\r\n	[ ]
+004529c8	R6019\r\n- unable to open console device\r\n	[ ]
+004529f4	R6018\r\n- unexpected heap error\r\n	[ ]
+00452a18	R6017\r\n- unexpected multithread lock error\r\n	[ ]
+00452a48	R6016\r\n- not enough space for thread data\r\n	[ ]
+00452a74	\r\nabnormal program termination\r\n	[ ]
+00452a98	R6009\r\n- not enough space for environment\r\n	[ _NMSG_WRITE _NMSG_WRITE _NMSG_WRITE _NMSG_WRITE _NMSG_WRITE 0046015c ]
+00452ac4	R6008\r\n- not enough space for arguments\r\n	[ ]
+00452af0	R6002\r\n- floating point not loaded\r\n	[ ]
 00452b18	Runtime Error!\n\nProgram: 	[ _NMSG_WRITE _NMSG_WRITE ]
 00452b98	floor	[ ]
 00453a30	$Id: dsplnk.c,v 1.46 1999/03/19 20:11:22 jay Exp $	[ ]
-00453a64	%ld.%ld.%ld	[ FUN_00401a20 ]
-00453a70	DSP %s  Version %s\n%s\n	[ FUN_00401a20 ]
-00453a88	Missing object filename	[ FUN_00401a20 ]
-00453aa0	%s: Beginning pass 1\n	[ FUN_00401a20 ]
-00453ab8	%s: Beginning pass 2\n	[ FUN_00401a20 ]
-00453ad8	Object file redirected to stdout, no debug information will be created. Use -b<filename>.	[ FUN_00401a20 ]
-00453b3c	%s: Creating ELF debug information file: %s\n	[ FUN_00401a20 ]
-00453b6c	Failed to create debug information file	[ FUN_00401a20 ]
-00453b94	%s: errors: %d warnings: %d\n	[ FUN_00401a20 ]
+00453a64	%ld.%ld.%ld	[ main ]
+00453a70	DSP %s  Version %s\n%s\n	[ main ]
+00453a88	Missing object filename	[ main ]
+00453aa0	%s: Beginning pass 1\n	[ main ]
+00453ab8	%s: Beginning pass 2\n	[ main ]
+00453ad8	Object file redirected to stdout, no debug information will be created. Use -b<filename>.	[ main ]
+00453b3c	%s: Creating ELF debug information file: %s\n	[ main ]
+00453b6c	Failed to create debug information file	[ main ]
+00453b94	%s: errors: %d warnings: %d\n	[ main ]
 00453bb4	DSP %s  Version %s\n%s\n	[ FUN_00401dfe ]
 00453bcc	Usage:  %s [-a] [-b[<objfil>]] [-e<a|w> <errfil>] [-f<argfil>] [-g] [-i] [-l<library>] [-m[<mapfil>]] [-n] [-o<mem>[<ctr>][<map>]:<origin>] [-p<lpath>] [-q] [-r[<memfil>]] [-u<symbol>] [-v] [-x<opt>[,<opt>...]] [-z] <lnkfil>...\n	[ FUN_00401dfe ]
 00453cb4	where:\n	[ FUN_00401dfe ]
@@ -429,10 +429,10 @@
 00457b10	$Id: lnkglb.c,v 1.150 1999/06/30 21:22:26 ra8614 Exp $	[ ]
 00457c10	%08lX	[ FUN_004200d0 FUN_004200d0 FUN_004200d0 FUN_004207e9 FUN_004207e9 FUN_004207e9 FUN_0041f797 FUN_0041f797 FUN_0041f797 ]
 00457ec8	dsplnk	[ FUN_0040303c FUN_0040303c FUN_0040a0ca FUN_0040a0f6 FUN_0042609f FUN_00414110 FUN_00414110 FUN_00414110 FUN_0040a126 FUN_004143b4 FUN_0040d4e0 FUN_00401dfe 00457ed0 ]
-00457ed8	Linker	[ FUN_00401a20 FUN_0041dd75 FUN_00401dfe FUN_00401dfe ]
-00457ee0	6.3.7 	[ FUN_0041882a FUN_0041882a FUN_00401a20 FUN_00401a20 FUN_0041dd75 FUN_0041dd75 FUN_00401dfe ]
-00457ee8	(C) Copyright Motorola, Inc. 1987-1998.  All rights reserved.	[ FUN_00401a20 FUN_00401dfe ]
-00457f28	DSPLNKOPT	[ FUN_00401a20 FUN_0040343e FUN_00401dfe ]
+00457ed8	Linker	[ main FUN_0041dd75 FUN_00401dfe FUN_00401dfe ]
+00457ee0	6.3.7 	[ FUN_0041882a FUN_0041882a main main FUN_0041dd75 FUN_0041dd75 FUN_00401dfe ]
+00457ee8	(C) Copyright Motorola, Inc. 1987-1998.  All rights reserved.	[ main FUN_00401dfe ]
+00457f28	DSPLNKOPT	[ main FUN_0040343e FUN_00401dfe ]
 00457f38	AaB?b?CcE::e::F:f:GgIiL:l:M?m?NnO:o:P:p:QqR?r?SsTtU:u:V?v?X:x:Zz	[ FUN_00402017 FUN_00403172 ]
 00457f80	DEFAULT	[ FUN_00402b44 ]
 00457f88	GLOBAL	[ FUN_0042bc50 FUN_0041ca95 FUN_0041006f FUN_0041006f FUN_0041006f FUN_0041006f FUN_0041006f FUN_00423863 FUN_0041ca95 FUN_0042bc50 FUN_00425470 ]
@@ -877,8 +877,8 @@
 0045d20c	bad buffer in yy_scan_bytes()	[ FUN_00439c52 ]
 0045d604	yacc stack overflow	[ FUN_0043a40d ]
 0045d618	syntax error	[ FUN_0043a40d ]
-0045db40	Assertion failed: %s, file %s, line %d\n	[ FUN_0043ec00 ]
-0045db98	 \t-]	[ _input ]
+0045db40	Assertion failed: %s, file %s, line %d\n	[ _assert ]
+0045db98	 \t-\r]	[ _input ]
 0046e2a2	ExitProcess	[ ]
 0046e2b0	TerminateProcess	[ ]
 0046e2c4	GetCurrentProcess	[ ]

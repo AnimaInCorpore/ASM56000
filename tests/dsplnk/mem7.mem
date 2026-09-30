@@ -1,0 +1,2 @@
+; mem7: sub-file pulled in via INCLUDE from mem6.mem
+SYMBOL includedsym $55

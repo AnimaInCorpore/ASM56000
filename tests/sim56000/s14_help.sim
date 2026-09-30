@@ -1,0 +1,8 @@
+log s s14.log
+more off
+help radix
+help step
+help unknown
+help r0
+log off
+quit

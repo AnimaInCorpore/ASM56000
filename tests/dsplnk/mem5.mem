@@ -1,0 +1,3 @@
+; mem5: MAP - map file layout options
+MAP opt globmap
+MAP page width 80 length 66

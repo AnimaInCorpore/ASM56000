@@ -1,0 +1,304 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  18:00:41  s_scs.asm
+  Page 1
+
+
+
+1                        ; structured control statements (.IF/.WHILE/.REPEAT/.FO
+R/.LOOP ...)
+2                                  opt     mex,cex
+3         P:0100                   org     p:$100
+4                        start
+5                                  .if     <cs>
+6     +   P:0100 0AF0A0            jcc     Z_L00001
+                 000103
+7     +                  Z_L00000
+8         P:0102 000000            nop
+9                                  .endi
+10    +                  Z_L00001
+11                                 .if     <eq> then
+12    +   P:0103 0AF0A2            jne     Z_L00003
+                 000108
+13    +                  Z_L00002
+14        P:0105 200013            clr     a
+15                                 .else
+16    +   P:0106 0AF080            jmp     Z_L00004
+                 000109
+17    +                  Z_L00003
+18        P:0108 20001B            clr     b
+19                                 .endi
+20    +                  Z_L00004
+21                                 .if     x0 <gt> a then
+22    +   P:0109 21C600            move              a,y0
+23    +   P:010A 20C441            tfr     x0,a      y0,x0
+24    +   P:010B 200045            cmp     x0,a
+25    +   P:010C 0AF0AF            jle     Z_L00006
+                 00010F
+26    +                  Z_L00005
+27        P:010E 000008            inc     a
+28                                 .endi
+29    +                  Z_L00006
+30                                 .if     a <le> b and <cc>
+31    +   P:010F 21E400            move              b,x0
+32    +   P:0110 200045            cmp     x0,a
+33    +   P:0111 0AF0A7            jgt     Z_L00008
+                 000116
+34    +   P:0113 0AF0A8            jcs     Z_L00008
+                 000116
+35    +                  Z_L00007
+36        P:0115 000000            nop
+37                                 .endi
+38    +                  Z_L00008
+39                                 .if     b <ne> y1 or a <lt> x1
+40    +   P:0116 21EE00            move              b,a
+41    +   P:0117 20E400            move              y1,x0
+42    +   P:0118 200045            cmp     x0,a
+43    +   P:0119 0AF0A2            jne     Z_L00009
+                 00011F
+44    +   P:011B 20A400            move              x1,x0
+45    +   P:011C 200045            cmp     x0,a
+46    +   P:011D 0AF0A1            jge     Z_L00010
+                 000122
+47    +                  Z_L00009
+48        P:011F 000000            nop
+49                                 .else
+50    +   P:0120 0AF080            jmp     Z_L00011
+                 000123
+51    +                  Z_L00010
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  18:00:41  s_scs.asm
+  Page 2
+
+
+
+52        P:0122 00000C            rts
+53                                 .endi
+54    +                  Z_L00011
+55                                 .if     <ge>
+56    +   P:0123 0AF0A9            jlt     Z_L00013
+                 000128
+57    +                  Z_L00012
+58                                 .if     <mi>
+59    +   P:0125 0AF0A3            jpl     Z_L00015
+                 000128
+60    +                  Z_L00014
+61        P:0127 000000            nop
+62                                 .endi
+63    +                  Z_L00015
+64                                 .endi
+65    +                  Z_L00013
+66                                 .while  a <gt> b do
+67    +                  Z_L00016
+68    +   P:0128 21E400            move              b,x0
+69    +   P:0129 200045            cmp     x0,a
+70    +   P:012A 0AF0AF            jle     Z_L00018
+                 00012E
+71    +                  Z_L00017
+72        P:012C 200044            sub     x0,a
+73                                 .endw
+74    +   P:012D 0C0128            jmp     Z_L00016
+75    +                  Z_L00018
+76                                 .while  <nr>
+77    +                  Z_L00019
+78    +   P:012E 0AF0A4            jnn     Z_L00021
+                 000132
+79    +                  Z_L00020
+80        P:0130 000000            nop
+81                                 .endw
+82    +   P:0131 0C012E            jmp     Z_L00019
+83    +                  Z_L00021
+84                                 .repeat
+85    +                  Z_L00022
+86        P:0132 00000B            dec     b
+87                                 .until  <eq>
+88    +                  Z_L00024
+89    +   P:0133 0E2132            jne     Z_L00022
+90    +                  Z_L00023
+91                                 .repeat
+92    +                  Z_L00025
+93        P:0134 200060            add     x1,a
+94                                 .until  a <ge> y0 and <pl>
+95    +                  Z_L00027
+96    +   P:0135 20C400            move              y0,x0
+97    +   P:0136 200045            cmp     x0,a
+98    +   P:0137 0E9134            jlt     Z_L00025
+99    +   P:0138 0EB134            jmi     Z_L00025
+100   +                  Z_L00026
+101                                .for    r0 = #0 to #10
+102   +   P:0139 2E0000            move              #0,a
+103   +   P:013A 21D000            move              a,r0
+104   +   P:013B 260A00            move              #10,y0
+105   +   P:013C 44F400            move              #>1,x0
+                 000001
+106   +   P:013E 0AF080            jmp     Z_L00030
+                 000144
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  18:00:41  s_scs.asm
+  Page 3
+
+
+
+107   +                  Z_L00028
+108       P:0140 000000            nop
+109                                .endf
+110   +                  Z_L00029
+111   +   P:0141 220E00            move              r0,a
+112   +   P:0142 200040            add     x0,a
+113   +   P:0143 21D000            move              a,r0
+114   +                  Z_L00030
+115   +   P:0144 200055            cmp     y0,a
+116   +   P:0145 0EF140            jle     Z_L00028
+117   +                  Z_L00031
+118                                .for    x0 = #1 to #20 by #2 do
+119   +   P:0146 2E0100            move              #1,a
+120   +   P:0147 21C400            move              a,x0
+121   +   P:0148 261400            move              #20,y0
+122   +   P:0149 240200            move              #2,x0
+123   +   P:014A 0AF080            jmp     Z_L00034
+                 000150
+124   +                  Z_L00032
+125       P:014C 200040            add     x0,a
+126                                .endf
+127   +                  Z_L00033
+128   +   P:014D 208E00            move              x0,a
+129   +   P:014E 200040            add     x0,a
+130   +   P:014F 21C400            move              a,x0
+131   +                  Z_L00034
+132   +   P:0150 200055            cmp     y0,a
+133   +   P:0151 0EF14C            jle     Z_L00032
+134   +                  Z_L00035
+135                                .for    n1 = y0 downto #0 by #1
+136   +   P:0152 20CE00            move              y0,a
+137   +   P:0153 21D900            move              a,n1
+138   +   P:0154 260000            move              #0,y0
+139   +   P:0155 240100            move              #1,x0
+140   +   P:0156 0AF080            jmp     Z_L00038
+                 00015C
+141   +                  Z_L00036
+142       P:0158 000000            nop
+143                                .endf
+144   +                  Z_L00037
+145   +   P:0159 232E00            move              n1,a
+146   +   P:015A 200044            sub     x0,a
+147   +   P:015B 21D900            move              a,n1
+148   +                  Z_L00038
+149   +   P:015C 200055            cmp     y0,a
+150   +   P:015D 0E1158            jge     Z_L00036
+151   +                  Z_L00039
+152                                .for    x:$10 = #5 to x1
+153   +   P:015E 2E0500            move              #5,a
+154   +   P:015F 561000            move              a,x:$10
+155   +   P:0160 20A600            move              x1,y0
+156   +   P:0161 44F400            move              #>1,x0
+                 000001
+157   +   P:0163 0AF080            jmp     Z_L00042
+                 000169
+158   +                  Z_L00040
+159       P:0165 000000            nop
+160                                .endf
+161   +                  Z_L00041
+162   +   P:0166 569000            move              x:$10,a
+163   +   P:0167 200040            add     x0,a
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  18:00:41  s_scs.asm
+  Page 4
+
+
+
+164   +   P:0168 561000            move              a,x:$10
+165   +                  Z_L00042
+166   +   P:0169 200055            cmp     y0,a
+167   +   P:016A 0EF165            jle     Z_L00040
+168   +                  Z_L00043
+169                                .loop   #5
+170   +   P:016B 060580            do      #5,Z_L00044
+                 00016D
+171       P:016D 000000            nop
+172                                .endl
+173   +                  Z_L00044
+174                                .loop   x0
+175   +   P:016E 06C400            do      x0,Z_L00045
+                 000178
+176       P:0170 000000            nop
+177                                .break
+178   +   P:0171 00008C            enddo
+179   +   P:0172 0AF080            jmp     Z_L00045
+                 000179
+180       P:0174 000000            nop
+181                                .continue
+182   +   P:0175 0AF080            jmp     Z_L00046
+                 000178
+183       P:0177 000000            nop
+184                                .endl
+185   +                  Z_L00046
+186   +   P:0178 000000            nop
+187   +                  Z_L00045
+188                                .while  <cs>
+189   +                  Z_L00047
+190   +   P:0179 0AF0A0            jcc     Z_L00049
+                 000184
+191   +                  Z_L00048
+192                                .if     <eq>
+193   +   P:017B 0AF0A2            jne     Z_L00051
+                 00017F
+194   +                  Z_L00050
+195                                .break
+196   +   P:017D 0AF080            jmp     Z_L00049
+                 000184
+197                                .endi
+198   +                  Z_L00051
+199                                .if     <ne>
+200   +   P:017F 0AF0AA            jeq     Z_L00053
+                 000182
+201   +                  Z_L00052
+202                                .continue
+203   +   P:0181 0C0179            jmp     Z_L00047
+204                                .endi
+205   +                  Z_L00053
+206       P:0182 000000            nop
+207                                .endw
+208   +   P:0183 0C0179            jmp     Z_L00047
+209   +                  Z_L00049
+210                                scsjmp  short
+211                                .if     <eq>
+212   +   P:0184 0E2186            jne     <Z_L00055
+213   +                  Z_L00054
+214       P:0185 000000            nop
+215                                .endi
+216   +                  Z_L00055
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  18:00:41  s_scs.asm
+  Page 5
+
+
+
+217                                scsjmp  long
+218                                .if     <eq>
+219   +   P:0186 0AF0A2            jne     >Z_L00057
+                 000189
+220   +                  Z_L00056
+221       P:0188 000000            nop
+222                                .endi
+223   +                  Z_L00057
+224                                scsreg  y1,b
+225                                .for    r2 = #1 to #3
+226   +   P:0189 2F0100            move              #1,b
+227   +   P:018A 21F200            move              b,r2
+228   +   P:018B 260300            move              #3,y0
+229   +   P:018C 47F400            move              #>1,y1
+                 000001
+230   +   P:018E 0AF080            jmp     >Z_L00060
+                 000194
+231   +                  Z_L00058
+232       P:0190 000000            nop
+233                                .endf
+234   +                  Z_L00059
+235   +   P:0191 224F00            move              r2,b
+236   +   P:0192 200078            add     y1,b
+237   +   P:0193 21F200            move              b,r2
+238   +                  Z_L00060
+239   +   P:0194 20005D            cmp     y0,b
+240   +   P:0195 0AF0AF            jle     >Z_L00058
+                 000190
+241   +                  Z_L00061
+242                                end
+
+0    Errors
+0    Warnings
+
+

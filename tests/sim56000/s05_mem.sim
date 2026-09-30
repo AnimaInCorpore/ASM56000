@@ -1,0 +1,11 @@
+log s s05.log
+more off
+change x:$10 $77
+change y:$20 5
+display x:$10..$12
+display y:$20
+copy x:$10..$11 x:$30
+display x:$30..$32
+display p:0
+log off
+quit

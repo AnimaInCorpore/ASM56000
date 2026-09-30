@@ -1,0 +1,23 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-23  14:21:12  ovl.asm
+  Page 1
+
+
+
+1                        ; overlays: run-time and load-time counters differ
+2         P:0100 Y:0200                   org     p:$100,y:$200
+3         P:0100 Y:0200 2E0100  ovlcode   move              #1,a
+4         P:0101 Y:0201 000000            nop
+5         X:0010 P:0300                   org     x:$10,p:$300
+6         X:0010 P:0300                   dc      $123456,$654321
+7         P:0020                   org     pe:$20
+8         P:0020 000000  extcode   nop
+9         X:0005                   org     xi:$5
+10        X:0005                   dc      7
+11        P:0400                   org     p:$400
+12        P:0400                   dc      *
+13                                 end
+
+0    Errors
+0    Warnings
+
+

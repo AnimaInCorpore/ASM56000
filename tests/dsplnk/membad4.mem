@@ -1,0 +1,2 @@
+; membad4: malformed RESERVE range
+RESERVE p:$0-$ff

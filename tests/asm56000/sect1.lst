@@ -1,0 +1,97 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  17:46:02  sect1.asm
+  Page 1
+
+
+
+1                        ; sections, XDEF/XREF/GLOBAL/LOCAL, nested sections (re
+locatable mode)
+2                                  opt     cex
+3         000042         gconst    equ     $42
+4                                  section main
+5                                  xdef    mentry
+**** 6 [sect1.asm 6]: ERROR --- Symbol undefined on pass 2: helper (Operand fiel
+d)
+**** 6 [sect1.asm 6]: ERROR --- Symbol undefined on pass 2: extfun (Operand fiel
+d)
+**** 6 [sect1.asm 6]: ERROR --- Symbol undefined on pass 2: extdat (Operand fiel
+d)
+6                                  xref    helper,extfun,extdat
+7                                  global  mglob
+8         P:0000                   org     p:
+9         P:0000 0BF080  mentry    jsr     helper
+                 00000F
+**** 10 [sect1.asm 10]: ERROR --- Symbol undefined on pass 2: extfun (Operand fi
+eld)
+10        P:0002 090000            jsr     extfun
+                 000000
+**** 11 [sect1.asm 11]: ERROR --- Symbol undefined on pass 2: extdat (X data mov
+e field)
+11        P:0004 000000            move              x:extdat,a
+                 000000
+12        P:0006 60F400            move              #mdat,r0
+                 000000
+13        P:0008 244200            move              #gconst,x0
+14        P:0009 000000  mglob     nop
+15        X:0000                   org     x:
+16   d    X:0000 000001  mdat      dc      1,2,3
+     d           000002
+     d           000003
+17                                 section inner
+18                                 local   ival
+19                                 xdef    iexp
+20        P:000A                   org     p:
+21        P:000A 61F400  iexp      move              #ival,r1
+                 000000
+**** 22 [sect1.asm 22]: WARNING --- Instruction cannot appear in interrupt vecto
+r locations (Opcode field)
+22        P:000C 00000C            rts
+23        Y:0000                   org     y:
+24   d    Y:0000 000055  ival      dc      $55
+25                                 endsec
+26        P:000D                   org     p:
+**** 27 [sect1.asm 27]: ERROR --- Symbol undefined on pass 2: iexp (Operand fiel
+d)
+27        P:000D 080000            jmp     iexp
+                 000000
+28                                 endsec
+29                                 section helpers   global
+30                                 xdef    helper
+31        P:000F                   org     p:
+32        P:000F 57F000  helper    move              x:hdat,b
+                 000003
+**** 33 [sect1.asm 33]: WARNING --- Instruction cannot appear in interrupt vecto
+r locations (Opcode field)
+33        P:0011 00000C            rts
+34        X:0003                   org     x:
+35        X:0003         hdat      ds      4
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  17:46:02  sect1.asm
+  Page 2
+
+
+
+36                                 endsec
+37                                 section stat      static
+38        P:0012                   org     p:
+**** 39 [sect1.asm 39]: WARNING --- Instruction cannot appear in interrupt vecto
+r locations (Opcode field)
+39        P:0012 00000C  sfun      rts
+40                                 endsec
+41                                 section main
+42        P:0013                   org     p:
+43        P:0013 000000            nop
+44                                 endsec
+45        P:0014                   org     p:
+**** 46 [sect1.asm 46]: ERROR --- Symbol undefined on pass 2: mentry (Operand fi
+eld)
+46        P:0014 080000  gstart    jmp     mentry
+                 000000
+47        X:0007                   org     x:
+**** 48 [sect1.asm 48]: ERROR --- Symbol undefined on pass 2: mentry (Operand fi
+eld)
+48        X:0007 000014  glx       dc      gstart,mentry
+49                                 end     gstart
+
+8    Errors
+4    Warnings
+
+

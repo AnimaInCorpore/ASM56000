@@ -1,0 +1,153 @@
+0042b12c	F	pseudo_check_move_class	int pseudo_check_move_class(int classcode)	low	pseudo
+0042b1e5	F	pseudo_check_move_mask	int pseudo_check_move_mask(unsigned long mask1, unsigned long mask2, void *flagsout)	low	pseudo
+0042b240	F	pseudo_dispatch	int pseudo_dispatch(void *tok)	high	pseudo
+0042baac	F	pseudo_check_label_use	void pseudo_check_label_use(int mode)	high	pseudo
+0042bafc	F	pseudo_allowed_in_do	int pseudo_allowed_in_do(int diridx)	med	pseudo
+0042bba2	F	pseudo_define	int pseudo_define(char *name, char *text, int flags)	high	pseudo
+0042bc44	F	pseudo_undef	int pseudo_undef(char *name)	high	pseudo
+0042bcab	F	pseudo_ident	int pseudo_ident(void)	high	pseudo
+0042bf3a	F	pseudo_include	int pseudo_include(void)	high	pseudo
+0042c457	F	pseudo_maclib_add_path	int pseudo_maclib_add_path(char *path, int fromtext)	high	pseudo
+0042c542	F	pseudo_incpath_add	int pseudo_incpath_add(char *path)	med	pseudo
+0042c5f3	F	pseudo_mode	int pseudo_mode(void)	high	pseudo
+0042c829	F	org_select_counter	void * org_select_counter(void *sec, long *space, unsigned long flags, int reloc)	med	pseudo
+0042cbc5	F	org_new_counter	void * org_new_counter(void *sec, long *space, unsigned long flags)	med	pseudo
+0042ccf5	F	org_alloc_counter_block	long org_alloc_counter_block(unsigned long flags)	med	pseudo
+0042cd9f	F	org_init_counter	void org_init_counter(void *counter, long *space, long flags)	med	pseudo
+0042ce91	F	org_get_bounds	char * org_get_bounds(int spacecode, long *space, int which)	med	pseudo
+0042cef3	F	pseudo_org	int pseudo_org(void)	high	pseudo
+0042dd26	F	org_check_reloc	int org_check_reloc(long *space, int which)	low	pseudo
+0042dddb	F	org_set_reloc	void org_set_reloc(int reloc, long *space, int which)	low	pseudo
+0042de8d	F	pseudo_himem_lomem	int pseudo_himem_lomem(int which)	high	pseudo
+0042e1f7	F	pseudo_page	int pseudo_page(void)	high	pseudo
+0042e539	F	pseudo_lstcol	int pseudo_lstcol(void)	high	pseudo
+0042e7e6	F	pseudo_tabs	int pseudo_tabs(void)	high	pseudo
+0042e838	F	pseudo_if	int pseudo_if(void)	high	pseudo
+0042e939	F	pseudo_if_skip	int pseudo_if_skip(int fromnested)	high	pseudo
+0042eb07	F	pseudo_if_body	int pseudo_if_body(void *ifobj, int haselse)	high	pseudo
+0042ec12	F	pseudo_opt	int pseudo_opt(char *opts)	high	pseudo
+0042f9fb	F	pseudo_revision	int pseudo_revision(char *arg)	low	pseudo
+0042fb7e	F	pseudo_processor	int pseudo_processor(char *arg)	low	pseudo
+0042fd1e	F	pseudo_rdirect	int pseudo_rdirect(void)	high	pseudo
+0042fe46	F	pseudo_rdirect_reset	void pseudo_rdirect_reset(void)	med	pseudo
+0042feb9	F	pseudo_noop_dir34	int pseudo_noop_dir34(void)	low	pseudo
+0042fec3	F	pseudo_comment	int pseudo_comment(int fromskip)	high	pseudo
+00430015	F	pseudo_symobj	int pseudo_symobj(void)	med	pseudo
+0043012d	F	define_tbl_lookup	void * define_tbl_lookup(char *name, int foldcase)	low	pseudo
+00430239	F	pseudo_define_store	int pseudo_define_store(char *name, char *text, int flags)	high	pseudo
+0043035b	F	pseudo_undef_remove	int pseudo_undef_remove(char *name)	high	pseudo
+0043055e	F	pseudo_define_free_all	void pseudo_define_free_all(void)	med	pseudo
+0043063f	F	pseudo_prctl	int pseudo_prctl(void)	high	pseudo
+004308b8	F	pseudo_prctl_save_pushback	void pseudo_prctl_save_pushback(char *buf, unsigned long len)	med	pseudo
+00430916	F	pseudo_message	int pseudo_message(int diridx)	high	pseudo
+00430b62	F	pseudo_equ	int pseudo_equ(void)	high	pseudo
+00430e0f	F	pseudo_set	int pseudo_set(int diridx)	high	pseudo
+0043104e	F	pseudo_radix	int pseudo_radix(void)	high	pseudo
+004310e5	F	pseudo_force	int pseudo_force(int diridx)	high	pseudo
+004312d0	F	pseudo_scsreg	int pseudo_scsreg(void)	high	pseudo
+004314ab	F	pseudo_scsreg_default	void pseudo_scsreg_default(void)	high	pseudo
+0043158e	F	pseudo_set_title	int pseudo_set_title(char **slot)	high	pseudo
+00431657	F	pseudo_splice_local_pfx	void pseudo_splice_local_pfx(void)	low	pseudo
+0040b8ed	F	dsp_frac48_to_double	double dsp_frac48_to_double(unsigned long hi24, unsigned long lo24)	med	data
+0040b9b7	F	dsp_double_to_frac48	void dsp_double_to_frac48(double val, unsigned long *hi24, unsigned long *lo24)	high	data
+0040baed	F	util_swap_pair	void util_swap_pair(long a, long b, long *outhi, long *outlo)	low	data
+0040bb20	F	pseudo_dc	int pseudo_dc(void)	high	data
+0040c252	F	pseudo_dc_chars	int pseudo_dc_chars(void)	med	data
+0040c6ac	F	pseudo_dc_wide	int pseudo_dc_wide(int width)	med	data
+0040ccad	F	pseudo_bsc	int pseudo_bsc(void)	high	data
+0040d1f7	F	pseudo_bsc_typed	int pseudo_bsc_typed(int width)	med	data
+0040d7c7	F	pseudo_block_reserve	int pseudo_block_reserve(unsigned long typeflag, int dirid)	med	data
+0040dd85	F	pseudo_ds	int pseudo_ds(void)	high	data
+0040df7a	F	pseudo_ds_typed	int pseudo_ds_typed(unsigned long spaceflag, int dirid)	med	data
+0040e1a6	F	pseudo_dsm	int pseudo_dsm(void)	med	data
+0040e25f	F	pseudo_baddr	int pseudo_baddr(int dirid)	med	data
+0040e3f6	F	pseudo_buffer	int pseudo_buffer(void)	high	data
+0040e572	F	pseudo_endbuf	int pseudo_endbuf(void)	high	data
+0040e655	F	data_reserve_common	unsigned long data_reserve_common(int typeflag, int definelabel, int dirid)	high	data
+004317e0	F	scs_prep_statement_text	void scs_prep_statement_text(char *src, char *dst)	low	scs
+004318d1	F	scs_run_statement	int scs_run_statement(void *this, int vtabslot)	high	scs
+00431984	F	scs_break	int scs_break(void)	high	scs
+00431b47	F	scs_continue	int scs_continue(void)	high	scs
+00431d53	F	scs_endf	int scs_endf(void)	high	scs
+00432030	F	scs_endi	int scs_endi(void)	high	scs
+00432099	F	scs_endl	int scs_endl(void)	high	scs
+004321c0	F	scs_endw	int scs_endw(void)	high	scs
+0043227c	F	scs_for	int scs_for(void)	high	scs
+00432434	F	scs_break_cond	int scs_break_cond(void)	low	scs
+004324d9	F	scs_loop	int scs_loop(void)	high	scs
+00432623	F	scs_repeat	int scs_repeat(void)	high	scs
+00432691	F	scs_until	int scs_until(void)	high	scs
+004327e6	F	scs_continue_cond	int scs_continue_cond(void)	low	scs
+004328bc	F	scs_parse_condition_chain	int scs_parse_condition_chain(void)	med	scs
+00432926	F	scs_emit_move_compare	void scs_emit_move_compare(void *cond)	med	scs
+00432bc8	F	scs_emit_cond_jump	void scs_emit_cond_jump(void *cond, void *label1, void *label2)	med	scs
+00432c82	F	scs_emit_jump	void scs_emit_jump(void *label)	high	scs
+00432cee	F	scs_emit_line	void scs_emit_line(char *text)	high	scs
+00432d3b	F	scs_parse_condition	int scs_parse_condition(void *out)	high	scs
+004330dd	F	scs_parse_for_clause	int scs_parse_for_clause(void *out)	high	scs
+0043377d	F	scs_next_token	char * scs_next_token(void)	high	scs
+00433870	F	scs_free_cond	void scs_free_cond(void *cond)	high	scs
+004338fa	F	scs_free_for_clause	void scs_free_for_clause(void *forinfo)	high	scs
+00433984	F	scs_match_keyword	int scs_match_keyword(void)	med	scs
+00433a8a	F	scs_for_push	void scs_for_push(void *forinfo)	high	scs
+00433aa7	F	scs_for_pop	void * scs_for_pop(void)	high	scs
+00433ad5	F	scs_new_label	void * scs_new_label(int type)	high	scs
+00433b1a	F	scs_push_label	void scs_push_label(void *label)	high	scs
+00433b34	F	scs_pop_label	void * scs_pop_label(void)	high	scs
+00433b5f	F	scs_emit_label	void scs_emit_label(void *label)	high	scs
+00433b90	F	scs_cleanup	void scs_cleanup(void)	high	scs
+0045ebdc	D	buf_save_xctr	unsigned long	high	data	4
+0045ebe0	D	buf_save_yctr	unsigned long	high	data	4
+0045ebec	D	list_suppress_depth	long	med	pseudo	4
+0045eba4	D	if_nest_depth	long	high	pseudo	4
+0045ebac	D	force_type	unsigned long	high	pseudo	4
+0045ebb0	D	scsjmp_force_type	unsigned long	high	pseudo	4
+0044f7f4	D	lstcol_label_width	int	med	pseudo	4
+0044f7f8	D	lstcol_opcode_width	int	med	pseudo	4
+0044f7fc	D	lstcol_operand_width	int	med	pseudo	4
+0044f800	D	lstcol_xfield_width	int	med	pseudo	4
+0044f804	D	lstcol_yfield_width	int	med	pseudo	4
+0044f7d0	D	tabs_default_stop	int	med	pseudo	4
+0044f9fc	D	cur_opcode_table_max	long	low	pseudo	4
+0045fcbc	D	cur_revision_id	long	low	pseudo	4
+0044fa00	D	cur_processor_flags	unsigned long	low	pseudo	4
+0044f7cc	D	cur_radix	int	high	pseudo	4
+0045ec00	D	title_text	char *	med	pseudo	4
+0045ebfc	D	stitle_text	char *	med	pseudo	4
+0045fc64	D	maclib_path_head	void *	high	pseudo	4
+0045fc68	D	maclib_path_tail	void *	high	pseudo	4
+0045fc5c	D	incpath_head	void *	med	pseudo	4
+0045fc60	D	incpath_tail	void *	med	pseudo	4
+00460c88	D	define_symtab	void *	high	pseudo	3888
+0045eba0	D	define_count	long	high	pseudo	4
+0045f930	D	opt_macx_flag	char	low	pseudo	4
+0044f778	D	opt_mex	char	med	pseudo	1
+0044f784	D	opt_cex	char	low	pseudo	1
+0045ea38	D	opt_gen	char	med	pseudo	1
+0045ea3c	D	opt_cre_sticky	char	med	pseudo	1
+0045ea40	D	opt_cre	char	med	pseudo	1
+0045ea10	D	opt_mu	char	med	pseudo	1
+0045ea30	D	opt_intr	char	low	pseudo	1
+0044f77c	D	opt_dex	char	low	pseudo	1
+0044f780	D	opt_flag_0x07	char	low	pseudo	1
+0045eaa0	D	opt_ic	char	med	pseudo	1
+0045eaa4	D	opt_lb	char	med	pseudo	1
+0045eaa8	D	opt_lbx	char	med	pseudo	1
+0045eab0	D	opt_gl	char	med	pseudo	1
+0045eab4	D	opt_gs	char	med	pseudo	1
+0045eb0c	D	opt_xll	char	med	pseudo	1
+0045eb1c	D	opt_svo	char	med	pseudo	1
+0045eb20	D	opt_sco	char	med	pseudo	1
+0045eb24	D	opt_ldb	char	med	pseudo	1
+0045ea88	D	opt_xr	char	med	pseudo	1
+0045f8fc	D	assembler_pass	int	high	pseudo	4
+0045fc8c	D	scs_label_id_counter	long	high	scs	4
+0045fc90	D	scs_open_stack	void *	high	scs	4
+0045fc94	D	scs_for_stack	void *	high	scs	4
+0045fc84	D	scs_gen_line_head	void *	high	scs	4
+0045fc88	D	scs_gen_line_tail	void *	high	scs	4
+0044f938	D	scs_reg_accum	char *	high	scs	4
+0044f934	D	scs_reg_x	char *	high	scs	4
+0044f93c	D	scs_reg_y	char *	high	scs	4
+0044f940	D	scs_reg_offset	char *	high	scs	4
+0044f99c	D	scs_label_prefix	char *	high	scs	4

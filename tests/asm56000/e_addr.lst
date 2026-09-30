@@ -1,0 +1,87 @@
+Motorola DSP56000 Assembler  Version 6.3.0   99-07-14  14:00:00  e_addr.asm
+  Page 1
+
+
+
+1                        ; addressing mode / register field syntax errors (15 di
+stinct messages)
+2         P:0000                   org     p:$0
+**** 3 [e_addr.asm 3]: ERROR --- Address mode syntax error - expected ')' (X dat
+a move field)
+3         P:0000 000000            move              x:(r0+,a
+                 000000
+**** 4 [e_addr.asm 4]: ERROR --- Address mode syntax error - expected ')' (X dat
+a move field)
+4         P:0002 000000            move              x:(r0,a
+                 000000
+**** 5 [e_addr.asm 5]: ERROR --- Address mode syntax error - expected ')' (X dat
+a move field)
+5         P:0004 000000            move              x:(r0+n0,a
+                 000000
+**** 6 [e_addr.asm 6]: ERROR --- Address mode syntax error - expected comma or e
+nd of field (X data move field)
+6         P:0006 000000            move              x:(r0+n0)),a
+                 000000
+**** 7 [e_addr.asm 7]: ERROR --- Symbols must start with alphabetic character (X
+ data move field)
+7         P:0008 000000            move              x:,a
+                 000000
+**** 8 [e_addr.asm 8]: ERROR --- Symbol undefined on pass 2: r9 (X data move fie
+ld)
+8         P:000A 000000            move              x:(r9)+,a
+                 000000
+**** 9 [e_addr.asm 9]: ERROR --- Address mode syntax error - expected ')' (X dat
+a move field)
+9         P:000C 000000            move              x:(r0+n9),a
+                 000000
+**** 10 [e_addr.asm 10]: ERROR --- Duplicate destination register not allowed (X
+ data move field)
+10        P:000E 000040            add     x0,a      x0,a1
+**** 11 [e_addr.asm 11]: ERROR --- Address mode syntax error - expected ')'
+11        P:000F 0A0020            bset    #1,x:(r0
+                 000000
+**** 12 [e_addr.asm 12]: ERROR --- Reserved name used for symbol name: b (Operan
+d field)
+12        P:0011 0A0080            jclr    #0,a,b,*
+                 000000
+**** 13 [e_addr.asm 13]: ERROR --- Only register direct addressing allowed (Oper
+and field)
+13        P:0013 200013            clr     r99
+**** 14 [e_addr.asm 14]: ERROR --- Only register direct addressing allowed (Oper
+and field)
+14        P:0014 200013            clr     x9
+**** 15 [e_addr.asm 15]: ERROR --- Not enough fields specified for instruction
+15        P:0015 200000            move
+**** 16 [e_addr.asm 16]: ERROR --- Address mode syntax error - expected comma
+16        P:0016 000000            move              r0
+                 000000
+**** 17 [e_addr.asm 17]: ERROR --- Too many fields specified for instruction (Y 
+data move field)
+**** 17 [e_addr.asm 17]: ERROR --- Possible invalid white space between operands
+ or arguments (Y data move field)
+**** 17 [e_addr.asm 17]: ERROR --- Too many fields specified for instruction (Y 
+data move field)
+**** 17 [e_addr.asm 17]: ERROR --- Possible invalid white space between operands
+ or arguments (Y data move field)
+17        P:0018 000000            move    x0,a      x:(r0)+,a1  y:(r4)+,a
+Motorola DSP56000 Assembler  Version 6.3.0   99-07-14  14:00:00  e_addr.asm
+  Page 2
+
+
+
+**** 18 [e_addr.asm 18]: ERROR --- Invalid register specified: x0 (X data move f
+ield)
+18        P:0019 000000            move              l:(r0)+,x0
+**** 19 [e_addr.asm 19]: ERROR --- SSH cannot be both source and destination reg
+ister (X data move field)
+**** 19 [e_addr.asm 19]: WARNING --- Instruction cannot appear in interrupt vect
+or locations (Opcode field)
+19        P:001A 040000            move              ssh,ssh
+**** 20 [e_addr.asm 20]: ERROR --- Immediate value too large (Operand field)
+20        P:001B 0A0020            bset    #99,a
+21                                 end
+
+21   Errors
+1    Warning 
+
+

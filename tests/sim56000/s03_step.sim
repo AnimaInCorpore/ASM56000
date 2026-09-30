@@ -1,0 +1,11 @@
+log s s03.log
+more off
+load p1.cld
+step
+step 3
+trace 2
+step 2 cy
+display a
+display r0
+log off
+quit

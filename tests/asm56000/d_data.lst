@@ -1,0 +1,110 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  11:39:02  d_data.asm
+  Page 1
+
+
+
+1                        ; data definition and storage allocation directives
+2                                  opt     cex
+3         X:0000                   org     x:$0
+4    d    X:0000 000001  w1        dc      1,-1,$7fffff,$800000,$ffffff
+     d           FFFFFF
+     d           7FFFFF
+     d           800000
+     d           FFFFFF
+5    d    X:0005 400000  w2        dc      0.5,-0.5,0.25,-1.0,0.999999,0.0
+     d           C00000
+     d           200000
+     d           800000
+     d           7FFFF8
+     d           000000
+6    d    X:000B 414243  w3        dc      'ABC','abcd','x',''
+     d           616263
+     d           640000
+     d           000078
+     d           000000
+7    d    X:0010 414200  w4        dc      "AB","ABCDEF",'it''s'
+     d           414243
+     d           444546
+     d           697427
+     d           730000
+8    d    X:0015 000042  w5        dc      ('A'+1),('AB'<<8),@cvi(0.5*256),-'a',
+$41+'a'
+     d           414200
+     d           000080
+     d           FFFF9F
+     d           0000A2
+9    d    X:001A 000002  w6        dc      w1+2,*,*-w1,(3+4)*5
+     d           00001A
+     d           00001A
+     d           000023
+10   d    X:001E 414243  w7        dc      'ABC'++'DEF'
+     d           444546
+11   d    X:0020 000001  w8        dc      1,,2
+     d           000000
+     d           000002
+12   d    X:0023 003127  w9        dc      1.5e-3,-2.5E-2,.125,1e-7
+     d           FCCCCD
+     d           100000
+     d           000001
+13        Y:0000                   org     y:$0
+14        Y:0000                   ds      3
+15        Y:0003         yds       ds      $10
+16        Y:0018                   dsm     8
+17        Y:0020         ydsm      dsm     16
+18        Y:0030         ydsr      dsr     16
+19        Y:0040                   dsr     8
+20        Y:0048                   ds      1
+21        P:0100                   org     p:$100
+22        P:0100 123456            bsc     4,$123456
+23        P:0104 000000  pbsc      bsc     3
+24        P:0108 AAAAAA            bsm     8,$aaaaaa
+25        P:0110 000000  pbsm      bsm     4
+26        P:0118 000007            bsr     8,7
+27        P:0120 000001  pbsr      bsr     16,$1
+28        X:0200                   org     x:$200
+**** 29 [d_data.asm 29]: WARNING --- Label field ignored
+29        X:0200         buf1      buffer  m,16
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-29  11:39:02  d_data.asm
+  Page 2
+
+
+
+30   d    X:0200 000001            dc      1,2,3
+     d           000002
+     d           000003
+31        X:0203                   ds      2
+32                                 endbuf
+33        X:0210                   buffer  r,8
+34   d    X:0210 000009            dc      9,8
+     d           000008
+35                                 endbuf
+36        X:0220                   baddr   m,32
+37   d    X:0220 000001            dc      1
+38        X:0224                   baddr   r,4
+39        L:0300                   org     l:$300
+40   d    L:0300 001122  ldat      dc      $1122334455,-1,0.5,1.0e-2
+     d           334455
+     d           FFFFFF
+     d           FFFFFF
+     d           400000
+     d           000000
+     d           0147AE
+     d           147AE1
+41   d    L:0304 414243            dc      'ABCDEF'
+     d           444546
+42        L:0305                   ds      2
+43        L:0307 AABBCC            bsc     2,$aabbccddeeff
+                 DDEEFF
+44                                 dup     2
+45   m                             dc      *
+46   m                             endm
+49        L:030C                   align   4
+50        P:0400                   org     p:$400
+51   d    P:0400 000123            dc      $123,'P'
+     d           000050
+52                                 end
+
+0    Errors
+1    Warning 
+
+

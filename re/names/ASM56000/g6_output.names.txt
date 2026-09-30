@@ -1,0 +1,219 @@
+0041b8bc	F	lst_xy_needs_swap	int lst_xy_needs_swap(void)	med	listing
+0041bb8d	F	lst_swap_xy_fields	void lst_swap_xy_fields(void)	high	listing
+0041bbb2	F	lst_print_reg_note	void lst_print_reg_note(void)	med	listing
+0041bdc0	F	lst_cleanup	void lst_cleanup(void)	med	listing
+0041bdca	F	lst_line	void lst_line(char marker)	high	listing
+0041c742	F	lst_line_cont	void lst_line_cont(char marker)	med	listing
+0041c8fd	F	lst_print_extra_words	void lst_print_extra_words(char marker, int col_words, int col_comment)	high	listing
+0041c9cf	F	lst_putstr	void lst_putstr(char *s)	high	listing
+0041cb2d	F	lst_tab_to	void lst_tab_to(int col)	high	listing
+0041cb65	F	lst_newline	void lst_newline(void)	high	listing
+0041cc4d	F	lst_left_margin	void lst_left_margin(void)	high	listing
+0041cced	F	lst_form_feed	void lst_form_feed(int new_page)	high	listing
+0041ce8d	F	lst_new_page_header	void lst_new_page_header(void)	high	listing
+0041cf64	F	lst_print_header	void lst_print_header(void)	high	listing
+0041d11c	F	lst_put_field	void lst_put_field(char *s)	high	listing
+0041d17c	F	lst_write_raw	void lst_write_raw(char *buf, int len)	med	listing
+0041d23b	F	lst_summary	void lst_summary(void)	high	listing
+0041d334	F	lst_reset_line_flags	void lst_reset_line_flags(void)	high	listing
+0041d36f	F	lst_print_dsphost_syms	int lst_print_dsphost_syms(void)	med	listing
+0041d4fe	F	lst_pad_to	void lst_pad_to(int col)	high	listing
+0041d51c	F	lst_sort_dsphost_syms	void lst_sort_dsphost_syms(void *arr, int count)	high	listing
+0041d544	F	lst_cmp_dsphost_sym	int lst_cmp_dsphost_sym(void *a, void *b)	high	listing
+0041d584	F	lst_print_macro_table	int lst_print_macro_table(void)	high	listing
+0041d770	F	lst_sort_macro_table	void lst_sort_macro_table(void *arr, int count)	high	listing
+0041d798	F	lst_cmp_macro_entry	int lst_cmp_macro_entry(void *a, void *b)	high	listing
+0041d7ce	F	lst_print_section_table	int lst_print_section_table(void)	high	listing
+0041d8ca	F	lst_sort_section_table	void lst_sort_section_table(void *arr, int count)	high	listing
+0041d8f2	F	lst_cmp_section_name	void lst_cmp_section_name(int a, int b)	high	listing
+0041d90d	F	lst_print_symbols	int lst_print_symbols(void)	high	listing
+0041e011	F	lst_put_char	void lst_put_char(void *unused, int c)	med	listing
+0041e02f	F	lst_sort_symbols	void lst_sort_symbols(void *arr, int count)	high	listing
+0041e057	F	lst_cmp_symbol	int lst_cmp_symbol(void *a, void *b)	high	listing
+0041e1e8	F	lst_mem_use_add	void lst_mem_use_add(unsigned long mspace, int len)	high	listing
+0041e289	F	lst_mem_use_new_node	void lst_mem_use_new_node(unsigned long mspace)	high	listing
+0041e4ac	F	lst_print_memory_map	int lst_print_memory_map(void)	high	listing
+0041e8ac	F	lst_print_mem_row	void lst_print_mem_row(void *node, unsigned long mask)	high	listing
+0041ed0d	F	lst_sort_mem_rows	void lst_sort_mem_rows(void *arr, int count)	high	listing
+0041ed35	F	lst_cmp_mem_row	int lst_cmp_mem_row(int a, int b)	high	listing
+0041edc3	F	mac_free_active_exp	void mac_free_active_exp(void)	high	macro
+0041ee40	F	ps_macro	int ps_macro(void)	high	macro
+0041f09a	F	mac_read_body	int * mac_read_body(void *dummy_args)	high	macro
+0041f234	F	mac_scan_line	int * mac_scan_line(void *dummy_args)	high	macro
+0041f58e	F	mac_mark_dummy_ref	char * mac_mark_dummy_ref(char *id_start, char *out, int body_base, int map_base, void *dummy_args, int at_line_start)	med	macro
+0041f6e2	F	mac_store_line	int * mac_store_line(unsigned long *text, void *map)	high	macro
+0041f784	F	mac_parse_args	int * mac_parse_args(int *argc_out)	high	macro
+0041f961	F	mac_free_args	void mac_free_args(int *list)	high	macro
+0041f9ab	F	mac_free_body	void mac_free_body(int *list)	high	macro
+0041fa17	F	mac_free_all	void mac_free_all(void)	high	macro
+0041faa5	F	mac_lookup	void * mac_lookup(unsigned long *name, int cur_section_only)	high	macro
+0041fb89	F	ps_dup	int ps_dup(void)	high	macro
+0041fcec	F	ps_dupa	int ps_dupa(void)	high	macro
+0041fe57	F	ps_dupc	int ps_dupc(void)	high	macro
+004200bc	F	ps_dup_range	int ps_dup_range(void)	low	macro
+004203ff	F	mac_parse_one_arg	int * mac_parse_one_arg(void)	high	macro
+00420504	F	mac_abort_expansion	void mac_abort_expansion(void)	high	macro
+0042052c	F	ps_purge	int ps_purge(void)	high	macro
+004206ea	F	mac_open_library_file	int mac_open_library_file(unsigned long *name)	med	macro
+00420936	F	mac_lib_recursion_guard	int mac_lib_recursion_guard(unsigned long *name)	med	macro
+004209f8	F	mac_expand	int mac_expand(int *macro_def)	high	macro
+00420b7b	F	mac_push_expansion	int * mac_push_expansion(int *dummy_args)	high	macro
+00420cd5	F	mac_run_expansion	void mac_run_expansion(void *exp)	high	macro
+00420dc7	F	parse_str_list	int * parse_str_list(int *count_out)	high	object
+00420f6c	F	mac_free_expansion	void mac_free_expansion(void *exp)	high	object
+00420f8c	F	free_value_list	void free_value_list(int *list)	high	object
+00420fd6	F	mac_libpath_free_all	void mac_libpath_free_all(void)	high	object
+00421052	F	mac_lib_guard_free_all	void mac_lib_guard_free_all(void)	high	object
+004210b0	F	dbg_macro_marker	void dbg_macro_marker(void *macro_def, int begin)	med	object
+00421160	F	obj_fwrite_word	void obj_fwrite_word(char *buf, unsigned long len)	high	object
+0042118f	F	obj_write_comment	void obj_write_comment(void)	high	object
+004212f9	F	obj_write_file	void obj_write_file(void)	high	object
+004213bf	F	obj_write_headers	void obj_write_headers(void)	high	object
+004217d2	F	obj_write_sections	void obj_write_sections(void)	high	object
+00421865	F	obj_pack_section_headers	void obj_pack_section_headers(void)	high	object
+00421ac1	F	obj_init_abs_sections	void obj_init_abs_sections(void)	high	object
+00421c3b	F	obj_write_relocs	void obj_write_relocs(void)	high	object
+00421ca4	F	obj_write_linenos	void obj_write_linenos(void)	high	object
+00421d30	F	obj_write_symbols	void obj_write_symbols(void)	high	object
+00421e32	F	obj_reorder_debug_syms	void obj_reorder_debug_syms(void)	low	object
+00422378	F	obj_relink_tag_ref	void obj_relink_tag_ref(int a, int b, int c, int d, int e, int f)	low	object
+004225ac	F	obj_patch_endndx	void obj_patch_endndx(void)	high	object
+004229f3	F	obj_write_etext_sym	void obj_write_etext_sym(void)	high	object
+00422a74	F	obj_write_strtab	void obj_write_strtab(void)	high	object
+00422b3a	F	obj_write_symbol	void obj_write_symbol(unsigned long *name, int *section)	high	object
+00423011	F	obj_file_scope	void obj_file_scope(void)	med	object
+004232b6	F	obj_emit_word	void obj_emit_word(unsigned long *value, unsigned long *comment, int width)	high	object
+004238a9	F	obj_emit_words	void obj_emit_words(unsigned long count, unsigned long *value, unsigned long *comment, int no_new_section, int width)	high	object
+0042400d	F	obj_stash_listing_word	void obj_stash_listing_word(unsigned long value)	high	object
+00424050	F	obj_track_extent	void obj_track_extent(int len)	high	object
+0040e749	F	dbg_buffer_reserve	int dbg_buffer_reserve(int storage_class, unsigned long count, int mspace)	high	debug
+0040ea5e	F	dbg_open_bss_pair	void dbg_open_bss_pair(int p_start, int p_end, int d_start, int d_end, unsigned long flag_bit, unsigned long p_flags, unsigned long d_flags)	med	debug
+0040ee80	F	dbg_buffer_close	void dbg_buffer_close(int p_start, int p_end, int d_start, int d_end)	med	debug
+0040f21d	F	dbg_section_note	void dbg_section_note(unsigned long p_flags, unsigned long d_flags)	med	debug
+0040f390	F	next_pow2	unsigned long next_pow2(unsigned long n)	high	debug
+0040f3e0	F	dbg_directive_dispatch	int dbg_directive_dispatch(void *op)	high	debug
+0040f5d5	F	dbg_file	int dbg_file(void *name, unsigned long *dir, char *rest, int is_secondary)	high	debug
+0040f814	F	dbg_scope	int dbg_scope(void *op, char *arg)	high	debug
+0040fa17	F	dbg_symbol_begin	int dbg_symbol_begin(unsigned long *name)	high	debug
+0040fb2c	F	dbg_symbol_value	int dbg_symbol_value(char *expr)	med	debug
+0040fcbb	F	dbg_symbol_attr	int dbg_symbol_attr(int which, char *expr)	med	debug
+0040fd68	F	dbg_tag	int dbg_tag(unsigned long *name)	high	debug
+0040fdf9	F	dbg_size	int dbg_size(char *expr)	high	debug
+0040feee	F	dbg_dim	int dbg_dim(char *expr)	high	debug
+0040ffe6	F	dbg_set_lineno_aux	int dbg_set_lineno_aux(char *expr)	med	debug
+0041007c	F	dbg_line	int dbg_line(char *expr)	high	debug
+00410100	F	dbg_symbol_end	int dbg_symbol_end(void)	high	debug
+0045fcac	D	Lst_fp	void *	high	listing	8
+0044f7d4	D	Lst_col	long	med	listing	4
+0044f7d8	D	Lst_want_col	long	med	listing	4
+0044f7dc	D	Lst_width	long	high	listing	4
+0044f7e0	D	Lst_margin	long	high	listing	4
+0044f7e4	D	Lst_line_on_page	long	high	listing	4
+0044f7e8	D	Lst_total_lines	long	high	listing	4
+0044f7ec	D	Lst_page_len	long	high	listing	4
+0044f7f0	D	Lst_page_bottom	long	med	listing	4
+0045ebf4	D	Lst_header_lines	long	high	listing	4
+0045ebf0	D	Lst_page_num	long	high	listing	4
+0045ebfc	D	Lst_title	char *	high	listing	4
+0045ec00	D	Lst_subtitle	char *	high	listing	4
+0045da40	D	Lst_pmem_save	unsigned long	low	listing	8
+0045ea58	D	Lst_suppress_this_line	long	med	listing	4
+0045ec08	D	Lst_comment_buf	char	med	listing	512
+0045ec09	D	Lst_comment_buf2	char	low	listing	511
+00463c10	D	Lst_xy_toggle	long	low	listing	4
+00463c14	D	Lst_xy_swapped	long	low	listing	4
+00463c28	D	Lst_mem_last_space	unsigned long	med	listing	4
+0045ebd4	D	Lst_mem_pri_addr	unsigned long	med	listing	4
+0045ebd8	D	Lst_mem_sec_addr	unsigned long	med	listing	4
+0045fc7c	D	Lst_mem_pri_list	void *	high	listing	4
+0045fc78	D	Lst_mem_sec_list	void *	high	listing	4
+0045f220	D	Lst_line_buf	char	high	listing	512
+0045f924	D	Obj_word_count	long	high	object	4
+0045f928	D	Dup_from	long	med	listing	4
+0045f92c	D	Dup_incr	long	med	listing	4
+0045f930	D	Dup_to	long	low	listing	4
+0045f918	D	Lst_show_hex_off	long	low	listing	4
+0045f91c	D	Lst_show_float	long	low	listing	4
+0045f920	D	Lst_show_hex_on	long	low	listing	4
+00465480	D	Obj_word_buf	unsigned long	high	object	1020
+0045fb70	D	Macro_list	void *	high	macro	4
+0045fb78	D	Maclib_guard_list	void *	high	macro	4
+0045fb6c	D	Macro_exp_stack	void *	high	macro	4
+0045fc48	D	Macro_lineno_head	void *	med	macro	4
+0045fc4c	D	Macro_lineno_cur	void *	med	macro	4
+0045fc50	D	Macro_lineno_tail	void *	med	macro	4
+0045fc64	D	Maclib_path_list	void *	high	macro	4
+0044f830	D	Macro_delim_char	char	med	macro	1
+0044f954	D	Maclib_nest_id	long	med	macro	4
+0045f900	D	Maclib_prev_fp	void *	med	macro	4
+00463c18	D	Dup_mem_prev_len	long	low	macro	4
+00463c1c	D	Dup_mem_addr	long	low	macro	4
+00463c20	D	Dup_mem_size	long	low	macro	4
+00463c24	D	Dup_mem_first	long	low	macro	4
+00463c2c	D	Dup_mem_reset	long	low	macro	4
+0045ea54	D	Suppress_echo	long	med	macro	4
+0044f790	D	Rel_mode	char	high	object	1
+0045fca8	D	Obj_fp	void *	high	object	4
+0045fb90	D	Raw_data_ofs	unsigned long	high	object	4
+0045fb94	D	Raw_word_count	unsigned long	high	object	4
+0045fbb0	D	Reloc_ofs	unsigned long	high	object	4
+0045fbb4	D	Reloc_count	unsigned long	high	object	4
+0045fbb8	D	Reloc_buf	void *	high	object	4
+0045fbbc	D	Reloc_bufsize	unsigned long	high	object	4
+0045fbc0	D	Lineno_ofs	unsigned long	high	object	4
+0045fbc4	D	Lineno_count	unsigned long	high	object	4
+0045fbc8	D	Lineno_buf	void *	high	object	4
+0045fbcc	D	Lineno_bufsize	unsigned long	high	object	4
+0045fbd0	D	Symtab_ofs	unsigned long	high	object	4
+0045fbd4	D	Symtab_count	unsigned long	high	object	4
+0045fbd8	D	Symtab_buf	void *	high	object	4
+0045fbdc	D	Symtab_bufsize	unsigned long	high	object	4
+0045fbe0	D	Strtab_ofs	unsigned long	high	object	4
+0045fbe4	D	Strtab_buf	void *	high	object	4
+0045fbe8	D	Strtab_bufsize	unsigned long	high	object	4
+0044f988	D	Strtab_size	unsigned long	high	object	4
+0045fba0	D	Sect_hdr_buf	void *	high	object	4
+0045fba4	D	Sect_ptr_list	void *	high	object	4
+0045fb98	D	Sect_count	long	high	object	4
+0045fb9c	D	Sect_total_count	long	high	object	4
+0045fb80	D	Section_def_count	long	med	object	4
+0045fb88	D	Cur_pri_section	void *	med	object	4
+0045fb8c	D	Cur_sec_section	void *	med	object	4
+0045fc10	D	Cur_file_scope	void *	med	object	4
+0045fc14	D	File_scope_flags	long	low	object	4
+0045fc08	D	Struct_nest_id	long	med	object	4
+00463be0	D	Struct_tag_stack	void *	med	object	4
+0045fbf0	D	Pending_tag_name	char *	high	debug	4
+0045fbf4	D	Pending_size	long	high	debug	4
+0045fbf8	D	Pending_is_default_type	long	med	debug	4
+0045fbfc	D	Pending_symtab_entry	void *	high	debug	4
+0045fc00	D	Pending_symtab_saved	void *	med	debug	4
+0045fc04	D	Pending_is_new_symbol	long	med	debug	4
+0045fc18	D	Pending_dim_count	long	high	debug	4
+0045fc1c	D	Fcn_nest_count	long	high	debug	4
+0045fc20	D	Block_nest_count	long	high	debug	4
+0045ea80	D	In_def_block	char	high	debug	1
+0045ebc0	D	Buf_count	long	high	debug	4
+0045ebc4	D	Buf_end	unsigned long	high	debug	4
+0045ebc8	D	Buf_sec_end	unsigned long	high	debug	4
+0045ebcc	D	Buf_class	long	high	debug	4
+0045ebd0	D	Buf_align	unsigned long	high	debug	4
+00465a60	D	Sym_stage	unsigned char	high	object	32
+00465880	D	Aux_stage	unsigned char	high	object	32
+00465b20	D	Opthdr_abs_stage	unsigned char	high	object	60
+00465bc0	D	Opthdr_rel_stage	unsigned char	high	object	56
+00465a40	D	Filehdr_stage	unsigned char	high	object	28
+00465b60	D	Struct_aux_pending	unsigned long	med	debug	4
+0045fca4	D	Sdi_total	unsigned long	med	object	4
+0045fcb0	D	Obj_majver	unsigned long	med	object	4
+0045fcb4	D	Obj_minver	unsigned long	med	object	4
+0045fcb8	D	Obj_revno	unsigned long	med	object	4
+0045ebe8	D	Ovl_count	unsigned long	med	object	4
+0045eadc	D	Opt_debug_lines	char	med	debug	1
+0045ea98	D	Opt_incremental	char	med	object	1
+0045eb50	D	Opt_portable	char	med	listing	1
+0044f7f4	D	Col_opcode	long	med	listing	4
+0044f7f8	D	Col_operand	long	med	listing	4
+0044f7fc	D	Col_xmove	long	med	listing	4
+0044f800	D	Col_ymove	long	med	listing	4
+0044f804	D	Col_comment	long	med	listing	4

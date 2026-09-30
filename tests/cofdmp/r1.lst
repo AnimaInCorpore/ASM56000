@@ -1,0 +1,39 @@
+Motorola DSP56000 Assembler  Version 6.3.0   126-09-23  14:21:12  r1.asm
+  Page 1
+
+
+
+1                        ; relocatable module with sections, external references
+ and a float
+2                                  section modone
+3                                  xdef    entry1,buf1,fval
+4                                  xref    extfn
+5         3.141590E+000  fval      equ     3.14159
+6         P:0000                   org     p:
+7         P:0000 60F400  entry1    move              #buf1,r0
+                 000000
+8         P:0002 0BF080            jsr     extfn
+                 000000
+9         P:0004 61F400            move              #>tbl,r1
+                 00000A
+10        P:0006 56D800            move              x:(r0)+,a
+11        P:0007 00000C            rts
+12        X:0000                   org     x:
+13        X:0000         buf1      ds      10
+14        X:000A         tbl       dc      1,2,3
+15                                 endsec
+16                                 section eightchr
+17        Y:0000                   org     y:
+18        Y:0000         yval      dc      $123456
+19                                 endsec
+20                                 section lsect
+21        L:0000                   org     l:
+22        L:0000         lval      dc      $123456789abc
+23        L:0001 111111            bsc     4,$111111222222
+                 222222
+24                                 endsec
+
+0    Errors
+0    Warnings
+
+

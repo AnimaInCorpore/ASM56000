@@ -1,0 +1,33 @@
+more off
+device
+DEVICE STATUS TYPE      DEVICE STATUS TYPE    
+------ ------ --------  ------ ------ --------
+dv00   on     56001     dv16   unused
+dv01   unused           dv17   unused
+dv02   unused           dv18   unused
+dv03   unused           dv19   unused
+dv04   unused           dv20   unused
+dv05   unused           dv21   unused
+dv06   unused           dv22   unused
+dv07   unused           dv23   unused
+dv08   unused           dv24   unused
+dv09   unused           dv25   unused
+dv10   unused           dv26   unused
+dv11   unused           dv27   unused
+dv12   unused           dv28   unused
+dv13   unused           dv29   unused
+dv14   unused           dv30   unused
+dv15   unused           dv31   unused
+
+--Possible device types--
+56000
+56001
+56002
+56004
+56004rom
+56005
+56007
+56009
+56011
+56012
+device dv0 56002

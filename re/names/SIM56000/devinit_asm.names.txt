@@ -1,0 +1,542 @@
+# devinit_asm group: devinit (0x41c140-0x423fff), asm (0x424000-0x42cfff), asmtab (0x42d000-0x433fff); notes: re/notes/SIM56000/devinit_asm.md
+# F: addr<TAB>F<TAB>name<TAB>prototype<TAB>confidence<TAB>module      D: addr<TAB>D<TAB>name<TAB>type<TAB>confidence<TAB>owner<TAB>size
+# Rows whose address is not in re/out/SIM56000/functions.txt ('hidden' handlers reached only through data tables) need a function created at that address.
+0041c140	F	device_install	int device_install(char *name, char *key)	med	devinit
+0041c2c0	F	device_keygen	char * device_keygen(char *name)	med	devinit
+0041c400	F	keygen_step	void keygen_step(void)	med	devinit
+0041c430	F	keygen_mulmod	unsigned long keygen_mulmod(unsigned long a, unsigned long b)	med	devinit
+0041c750	F	insn_stat_classify	void insn_stat_classify(void *stat, void *dec)	low	devinit
+0041c8b0	F	insn_stat_operands	void insn_stat_operands(void *stat, void *dec)	low	devinit
+0041cb40	F	copy_operand4	void copy_operand4(long *dst, long *src)	med	devinit
+0041cb60	F	eval_cc	unsigned long eval_cc(unsigned long ccr, int cc)	high	devinit
+0041cd00	F	mnemonic_name	char * mnemonic_name(int id)	med	devinit
+0041cd40	F	stat_lmove_class	int stat_lmove_class(void *stat, long a2, long a3, long *class_out, long *flag1, long a6, long *flag2)	low	devinit
+0041ce10	F	operand_is_xy_pair	int operand_is_xy_pair(long *a, long *b)	low	devinit
+0041ce50	F	dec_c0_enddo	void dec_c0_enddo(unsigned long opw, void *dec)	low	devinit
+0041cfb0	F	swap_ptrs	void swap_ptrs(void **a, void **b)	med	devinit
+0041cfd0	F	dec_alu	void dec_alu(unsigned long opw, void *dec)	med	devinit
+0041d010	F	dec_flag_nomove	void dec_flag_nomove(void *dec)	med	devinit
+0041d020	F	dec_alu_dp	void dec_alu_dp(unsigned long opw, void *dec)	med	devinit
+0041d090	F	dec_alu_mpy	void dec_alu_mpy(unsigned long opw, void *dec)	med	devinit
+0041d100	F	dec_ea6	void dec_ea6(long *slot, unsigned long ea6)	high	devinit
+0041d170	F	dec_c1_enddo	void dec_c1_enddo(unsigned long opw, void *dec)	low	devinit
+0041d220	F	dec_c2_doforever	void dec_c2_doforever(unsigned long opw, void *dec)	low	devinit
+0041d2d0	F	dec_c9_enddo	void dec_c9_enddo(unsigned long opw, void *dec)	low	devinit
+0041d3d0	F	dec_c10_doforever	void dec_c10_doforever(unsigned long opw, void *dec)	low	devinit
+0041d4d0	F	dec_c11_pm	void dec_c11_pm(unsigned long opw, void *dec)	low	devinit
+0041d530	F	dec_c15_pm	void dec_c15_pm(unsigned long opw, void *dec)	low	devinit
+0041d580	F	dec_pm_update	void dec_pm_update(unsigned long opw, void *dec)	med	devinit
+0041d5b0	F	dec_c19_pm	void dec_c19_pm(unsigned long opw, void *dec)	low	devinit
+0041d5d0	F	dec_c20_enddo	void dec_c20_enddo(unsigned long opw, void *dec)	low	devinit
+0041d690	F	dec_c21_pm	void dec_c21_pm(unsigned long opw, void *dec)	low	devinit
+0041d770	F	dec_c22_pm	void dec_c22_pm(unsigned long opw, void *dec)	low	devinit
+0041d7c0	F	dec_c26_pm	void dec_c26_pm(unsigned long opw, void *dec)	low	devinit
+0041d810	F	dec_c36_jsset	void dec_c36_jsset(unsigned long opw, void *dec)	low	devinit
+0041d830	F	dec_jbit_ea	void dec_jbit_ea(unsigned long opw, void *dec)	med	devinit
+0041d870	F	dec_bit_ea	void dec_bit_ea(unsigned long opw, void *dec)	med	devinit
+0041d8b0	F	dec_c37_jsclr	void dec_c37_jsclr(unsigned long opw, void *dec)	low	devinit
+0041d910	F	dec_c54_jset	void dec_c54_jset(unsigned long opw, void *dec)	low	devinit
+0041d930	F	dec_c55_jclr	void dec_c55_jclr(unsigned long opw, void *dec)	low	devinit
+0041d990	F	dec_c30_jsset	void dec_c30_jsset(unsigned long opw, void *dec)	low	devinit
+0041d9b0	F	dec_jbit_reg	void dec_jbit_reg(unsigned long opw, void *dec)	med	devinit
+0041d9f0	F	dec_bit_reg	void dec_bit_reg(unsigned long opw, void *dec)	med	devinit
+0041da20	F	dec_c31_jsclr	void dec_c31_jsclr(unsigned long opw, void *dec)	low	devinit
+0041da40	F	dec_c48_jset	void dec_c48_jset(unsigned long opw, void *dec)	low	devinit
+0041da60	F	dec_c49_jclr	void dec_c49_jclr(unsigned long opw, void *dec)	low	devinit
+0041db00	F	dec_c40_jsset	void dec_c40_jsset(unsigned long opw, void *dec)	low	devinit
+0041db20	F	dec_jbit_aa	void dec_jbit_aa(unsigned long opw, void *dec)	med	devinit
+0041db60	F	dec_bit_aa	void dec_bit_aa(unsigned long opw, void *dec)	med	devinit
+0041dba0	F	dec_c41_jsclr	void dec_c41_jsclr(unsigned long opw, void *dec)	low	devinit
+0041dbc0	F	dec_c58_jset	void dec_c58_jset(unsigned long opw, void *dec)	low	devinit
+0041dbe0	F	dec_c59_jclr	void dec_c59_jclr(unsigned long opw, void *dec)	low	devinit
+0041dc80	F	dec_c32_jsset	void dec_c32_jsset(unsigned long opw, void *dec)	low	devinit
+0041dca0	F	dec_jbit_pp	void dec_jbit_pp(unsigned long opw, void *dec, long spacesel)	med	devinit
+0041dce0	F	dec_bit_pp	void dec_bit_pp(unsigned long opw, void *dec, long spacesel)	med	devinit
+0041dd30	F	dec_c33_jsclr	void dec_c33_jsclr(unsigned long opw, void *dec)	low	devinit
+0041dd50	F	dec_c50_jset	void dec_c50_jset(unsigned long opw, void *dec)	low	devinit
+0041dd70	F	dec_c51_jclr	void dec_c51_jclr(unsigned long opw, void *dec)	low	devinit
+0041df10	F	dec_c34_btst	void dec_c34_btst(unsigned long opw, void *dec)	low	devinit
+0041df30	F	dec_c35_bchg	void dec_c35_bchg(unsigned long opw, void *dec)	low	devinit
+0041df50	F	dec_c52_bset	void dec_c52_bset(unsigned long opw, void *dec)	low	devinit
+0041df70	F	dec_c53_bclr	void dec_c53_bclr(unsigned long opw, void *dec)	low	devinit
+0041df90	F	dec_c38_btst	void dec_c38_btst(unsigned long opw, void *dec)	low	devinit
+0041dfb0	F	dec_c39_bchg	void dec_c39_bchg(unsigned long opw, void *dec)	low	devinit
+0041dfd0	F	dec_c56_bset	void dec_c56_bset(unsigned long opw, void *dec)	low	devinit
+0041dff0	F	dec_c57_bclr	void dec_c57_bclr(unsigned long opw, void *dec)	low	devinit
+0041e010	F	dec_c42_btst	void dec_c42_btst(unsigned long opw, void *dec)	low	devinit
+0041e030	F	dec_c43_bchg	void dec_c43_bchg(unsigned long opw, void *dec)	low	devinit
+0041e050	F	dec_c60_bset	void dec_c60_bset(unsigned long opw, void *dec)	low	devinit
+0041e070	F	dec_c61_bclr	void dec_c61_bclr(unsigned long opw, void *dec)	low	devinit
+0041e090	F	dec_c65_pm	void dec_c65_pm(unsigned long opw, void *dec)	low	devinit
+0041e0e0	F	dec_movep_ea	void dec_movep_ea(void *dec, long a2, long a3, long a4, long swap, unsigned long ea6)	low	devinit
+0041e1a0	F	dec_c66_pm	void dec_c66_pm(unsigned long opw, void *dec)	low	devinit
+0041e230	F	dec_c67_pm	void dec_c67_pm(unsigned long opw, void *dec)	low	devinit
+0041e280	F	dec_movep_reg	void dec_movep_reg(void *dec, long a2, long a3, long swap, long regsel)	low	devinit
+0041e440	F	dec_c69_enddo	void dec_c69_enddo(unsigned long opw, void *dec)	low	devinit
+0041e4c0	F	dec_c70_doforever	void dec_c70_doforever(unsigned long opw, void *dec)	low	devinit
+0041e540	F	dec_c75_rep	void dec_c75_rep(unsigned long opw, void *dec)	low	devinit
+0041e570	F	dec_c71_rep	void dec_c71_rep(unsigned long opw, void *dec)	low	devinit
+0041e5a0	F	dec_c73_rep	void dec_c73_rep(unsigned long opw, void *dec)	low	devinit
+0041e5e0	F	dec_c77_rep	void dec_c77_rep(unsigned long opw, void *dec)	low	devinit
+0041e610	F	dec_do_imm	void dec_do_imm(unsigned long opw, void *dec)	med	devinit
+0041e650	F	dec_do_reg	void dec_do_reg(unsigned long opw, void *dec)	med	devinit
+0041e690	F	dec_do_ea	void dec_do_ea(unsigned long opw, void *dec)	med	devinit
+0041e6e0	F	dec_do_aa	void dec_do_aa(unsigned long opw, void *dec)	med	devinit
+0041e730	F	dec_c81_pm	void dec_c81_pm(unsigned long opw, void *dec)	low	devinit
+0041e760	F	dec_c79_enddo	void dec_c79_enddo(unsigned long opw, void *dec)	low	devinit
+0041e7f0	F	dec_c83_doforever	void dec_c83_doforever(unsigned long opw, void *dec)	low	devinit
+0041e880	F	dec_c85_enddo	void dec_c85_enddo(unsigned long opw, void *dec)	low	devinit
+0041e900	F	dec_c87_lua	void dec_c87_lua(unsigned long opw, void *dec)	low	devinit
+0041e950	F	dec_tcc	void dec_tcc(unsigned long opw, void *dec)	med	devinit
+0041ea00	F	dec_div	void dec_div(unsigned long opw, void *dec)	med	devinit
+0041ea50	F	dec_incdec	void dec_incdec(unsigned long opw, void *dec)	med	devinit
+0041ea90	F	dec_shift_imm	void dec_shift_imm(unsigned long opw, void *dec)	low	devinit
+0041eaf0	F	dec_shift_reg	void dec_shift_reg(unsigned long opw, void *dec)	low	devinit
+0041eb60	F	dec_lsl_lsr_imm	void dec_lsl_lsr_imm(unsigned long opw, void *dec)	low	devinit
+0041ebb0	F	dec_lsl_lsr_reg	void dec_lsl_lsr_reg(unsigned long opw, void *dec)	low	devinit
+0041ec00	F	dec_extract_reg	void dec_extract_reg(unsigned long opw, void *dec)	low	devinit
+0041ec70	F	dec_insert_reg	void dec_insert_reg(unsigned long opw, void *dec)	low	devinit
+0041ecd0	F	dec_normf_merge	void dec_normf_merge(unsigned long opw, void *dec)	low	devinit
+0041ed20	F	dec_clb	void dec_clb(unsigned long opw, void *dec)	low	devinit
+0041ed70	F	dec_alu_imm_short	void dec_alu_imm_short(unsigned long opw, void *dec)	med	devinit
+0041edc0	F	dec_alu_imm_long	void dec_alu_imm_long(unsigned long opw, void *dec)	med	devinit
+0041ee20	F	dec_cmpu	void dec_cmpu(unsigned long opw, void *dec)	low	devinit
+0041ee80	F	dec_mpy_reg	void dec_mpy_reg(unsigned long opw, void *dec)	low	devinit
+0041ef00	F	dec_mac_su	void dec_mac_su(unsigned long opw, void *dec)	low	devinit
+0041efc0	F	dec_mpyi	void dec_mpyi(unsigned long opw, void *dec)	low	devinit
+0041f040	F	dec_extract_imm	void dec_extract_imm(unsigned long opw, void *dec)	low	devinit
+0041f0b0	F	dec_insert_imm	void dec_insert_imm(unsigned long opw, void *dec)	low	devinit
+0041f110	F	dec_c91_norm	void dec_c91_norm(unsigned long opw, void *dec)	low	devinit
+0041f160	F	dec_c95_ori	void dec_c95_ori(unsigned long opw, void *dec)	low	devinit
+0041f1a0	F	dec_c96_andi	void dec_c96_andi(unsigned long opw, void *dec)	low	devinit
+0041f1e0	F	dec_c97_enddo	void dec_c97_enddo(unsigned long opw, void *dec)	low	devinit
+0041f1f0	F	dec_c98_stop	void dec_c98_stop(unsigned long opw, void *dec)	low	devinit
+0041f200	F	dec_c99_wait	void dec_c99_wait(unsigned long opw, void *dec)	low	devinit
+0041f210	F	dec_c100_reset	void dec_c100_reset(unsigned long opw, void *dec)	low	devinit
+0041f220	F	dec_c104_trap	void dec_c104_trap(unsigned long opw, void *dec)	low	devinit
+0041f230	F	dec_c107_nop	void dec_c107_nop(unsigned long opw, void *dec)	low	devinit
+0041f240	F	dec_c106_rti	void dec_c106_rti(unsigned long opw, void *dec)	low	devinit
+0041f250	F	dec_c101_rts	void dec_c101_rts(unsigned long opw, void *dec)	low	devinit
+0041f260	F	dec_c63_pm	void dec_c63_pm(unsigned long opw, void *dec)	low	devinit
+0041f2e0	F	dec_c62_pm	void dec_c62_pm(unsigned long opw, void *dec)	low	devinit
+0041f350	F	dec_c28_btst	void dec_c28_btst(unsigned long opw, void *dec)	low	devinit
+0041f370	F	dec_c29_bchg	void dec_c29_bchg(unsigned long opw, void *dec)	low	devinit
+0041f390	F	dec_c46_bset	void dec_c46_bset(unsigned long opw, void *dec)	low	devinit
+0041f3b0	F	dec_c47_bclr	void dec_c47_bclr(unsigned long opw, void *dec)	low	devinit
+0041f3d0	F	dec_c93_debug	void dec_c93_debug(unsigned long opw, void *dec)	low	devinit
+0041f3f0	F	dec_c105_illegal	void dec_c105_illegal(unsigned long opw, void *dec)	low	devinit
+0041f850	F	dec_alu_cc	void dec_alu_cc(unsigned long opw, void *dec)	low	devinit
+0041f9e0	F	decode_insn	int decode_insn(void *dec, long pc, long unused, unsigned long *flags)	med	devinit
+0041fab0	F	dec_init	void dec_init(void *dec)	med	devinit
+0041fb70	F	dis_fmt_c0	int dis_fmt_c0(unsigned long opw, long *tok)	med	devinit
+0041fd70	F	dis_fmt_c1	int dis_fmt_c1(unsigned long opw, long *tok)	low	devinit
+0041feb0	F	dis_fmt_c2	int dis_fmt_c2(unsigned long opw, long *tok)	low	devinit
+0041ffc0	F	dis_fmt_c3	int dis_fmt_c3(unsigned long opw, long *tok)	low	devinit
+00420100	F	dis_fmt_c4	int dis_fmt_c4(unsigned long opw, long *tok)	low	devinit
+00420210	F	dis_fmt_c5	int dis_fmt_c5(unsigned long opw, long *tok)	med	devinit
+004203e0	F	pm_is_short_ea	int pm_is_short_ea(unsigned long opw)	low	devinit
+00420400	F	dis_fmt_c6	int dis_fmt_c6(unsigned long opw, long *tok)	low	devinit
+004205b0	F	dis_fmt_c7	int dis_fmt_c7(unsigned long opw, long *tok)	low	devinit
+004206e0	F	dis_fmt_c8	int dis_fmt_c8(unsigned long opw, long *tok)	low	devinit
+004207f0	F	dis_fmt_c9	int dis_fmt_c9(unsigned long opw, long *tok)	med	devinit
+00420980	F	dis_fmt_c10	int dis_fmt_c10(unsigned long opw, long *tok)	med	devinit
+00420b00	F	dis_fmt_c11	int dis_fmt_c11(unsigned long opw, long *tok)	med	devinit
+00420b80	F	dis_fmt_c12	int dis_fmt_c12(unsigned long opw, long *tok)	med	devinit
+00420c00	F	dis_fmt_c13	int dis_fmt_c13(unsigned long opw, long *tok)	low	devinit
+00420d10	F	dis_fmt_c14	int dis_fmt_c14(unsigned long opw, long *tok)	med	devinit
+00420d90	F	dis_fmt_c15	int dis_fmt_c15(unsigned long opw, long *tok)	low	devinit
+00420eb0	F	dis_fmt_c18	int dis_fmt_c18(unsigned long opw, long *tok)	med	devinit
+00420ef0	F	dis_fmt_c19	int dis_fmt_c19(unsigned long opw, long *tok)	med	devinit
+00420f50	F	dis_fmt_c20	int dis_fmt_c20(unsigned long opw, long *tok)	med	devinit
+004210f0	F	dis_fmt_c21	int dis_fmt_c21(unsigned long opw, long *tok)	med	devinit
+00421280	F	dis_fmt_c22	int dis_fmt_c22(unsigned long opw, long *tok)	low	devinit
+004212a0	F	dis_fmt_h4212a0	int dis_fmt_h4212a0(unsigned long opw, long *tok)	none	devinit
+00421340	F	dis_fmt_c23	int dis_fmt_c23(unsigned long opw, long *tok)	low	devinit
+00421360	F	dis_fmt_c24	int dis_fmt_c24(unsigned long opw, long *tok)	low	devinit
+00421380	F	dis_fmt_c25	int dis_fmt_c25(unsigned long opw, long *tok)	low	devinit
+004213a0	F	dis_fmt_c26	int dis_fmt_c26(unsigned long opw, long *tok)	low	devinit
+004213c0	F	dis_fmt_h4213c0	int dis_fmt_h4213c0(unsigned long opw, long *tok)	none	devinit
+00421460	F	dis_fmt_c44	int dis_fmt_c44(unsigned long opw, long *tok)	low	devinit
+00421480	F	dis_fmt_c27	int dis_fmt_c27(unsigned long opw, long *tok)	low	devinit
+004214a0	F	dis_fmt_c45	int dis_fmt_c45(unsigned long opw, long *tok)	low	devinit
+004214c0	F	dis_fmt_c32	int dis_fmt_c32(unsigned long opw, long *tok)	low	devinit
+004214e0	F	dis_fmt_h4214e0	int dis_fmt_h4214e0(unsigned long opw, long *tok)	none	devinit
+004215f0	F	dis_fmt_c33	int dis_fmt_c33(unsigned long opw, long *tok)	low	devinit
+00421610	F	dis_fmt_c50	int dis_fmt_c50(unsigned long opw, long *tok)	low	devinit
+00421630	F	dis_fmt_c51	int dis_fmt_c51(unsigned long opw, long *tok)	low	devinit
+00421650	F	dis_fmt_c36	int dis_fmt_c36(unsigned long opw, long *tok)	low	devinit
+00421670	F	dis_fmt_h421670	int dis_fmt_h421670(unsigned long opw, long *tok)	none	devinit
+00421770	F	dis_fmt_c37	int dis_fmt_c37(unsigned long opw, long *tok)	low	devinit
+00421790	F	dis_fmt_c54	int dis_fmt_c54(unsigned long opw, long *tok)	low	devinit
+004217b0	F	dis_fmt_c55	int dis_fmt_c55(unsigned long opw, long *tok)	low	devinit
+004217d0	F	dis_fmt_c40	int dis_fmt_c40(unsigned long opw, long *tok)	low	devinit
+004217f0	F	dis_fmt_h4217f0	int dis_fmt_h4217f0(unsigned long opw, long *tok)	none	devinit
+004218f0	F	dis_fmt_c41	int dis_fmt_c41(unsigned long opw, long *tok)	low	devinit
+00421910	F	dis_fmt_c58	int dis_fmt_c58(unsigned long opw, long *tok)	low	devinit
+00421930	F	dis_fmt_c59	int dis_fmt_c59(unsigned long opw, long *tok)	low	devinit
+00421950	F	dis_fmt_c34	int dis_fmt_c34(unsigned long opw, long *tok)	low	devinit
+00421970	F	dis_fmt_h421970	int dis_fmt_h421970(unsigned long opw, long *tok)	none	devinit
+00421a60	F	dis_fmt_c35	int dis_fmt_c35(unsigned long opw, long *tok)	low	devinit
+00421a80	F	dis_fmt_c52	int dis_fmt_c52(unsigned long opw, long *tok)	low	devinit
+00421aa0	F	dis_fmt_c53	int dis_fmt_c53(unsigned long opw, long *tok)	low	devinit
+00421ac0	F	dis_fmt_c38	int dis_fmt_c38(unsigned long opw, long *tok)	low	devinit
+00421ae0	F	dis_fmt_h421ae0	int dis_fmt_h421ae0(unsigned long opw, long *tok)	none	devinit
+00421bd0	F	dis_fmt_c39	int dis_fmt_c39(unsigned long opw, long *tok)	low	devinit
+00421bf0	F	dis_fmt_c56	int dis_fmt_c56(unsigned long opw, long *tok)	low	devinit
+00421c10	F	dis_fmt_c57	int dis_fmt_c57(unsigned long opw, long *tok)	low	devinit
+00421c30	F	dis_fmt_c42	int dis_fmt_c42(unsigned long opw, long *tok)	low	devinit
+00421c50	F	dis_fmt_h421c50	int dis_fmt_h421c50(unsigned long opw, long *tok)	none	devinit
+00421d30	F	dis_fmt_c43	int dis_fmt_c43(unsigned long opw, long *tok)	low	devinit
+00421d50	F	dis_fmt_c60	int dis_fmt_c60(unsigned long opw, long *tok)	low	devinit
+00421d70	F	dis_fmt_c61	int dis_fmt_c61(unsigned long opw, long *tok)	low	devinit
+00421d90	F	dis_fmt_c65	int dis_fmt_c65(unsigned long opw, long *tok)	med	devinit
+00421f60	F	dis_fmt_c66	int dis_fmt_c66(unsigned long opw, long *tok)	low	devinit
+004220e0	F	dis_fmt_c67	int dis_fmt_c67(unsigned long opw, long *tok)	low	devinit
+00422220	F	dis_fmt_c69	int dis_fmt_c69(unsigned long opw, long *tok)	low	devinit
+00422330	F	dis_fmt_c70	int dis_fmt_c70(unsigned long opw, long *tok)	low	devinit
+00422440	F	dis_fmt_c75	int dis_fmt_c75(unsigned long opw, long *tok)	low	devinit
+004224a0	F	dis_fmt_c71	int dis_fmt_c71(unsigned long opw, long *tok)	low	devinit
+00422560	F	dis_fmt_c73	int dis_fmt_c73(unsigned long opw, long *tok)	low	devinit
+004225f0	F	dis_fmt_c77	int dis_fmt_c77(unsigned long opw, long *tok)	low	devinit
+004226a0	F	dis_fmt_c76	int dis_fmt_c76(unsigned long opw, long *tok)	low	devinit
+00422730	F	dis_fmt_c72	int dis_fmt_c72(unsigned long opw, long *tok)	low	devinit
+004227e0	F	dis_fmt_c74	int dis_fmt_c74(unsigned long opw, long *tok)	low	devinit
+00422890	F	dis_fmt_c78	int dis_fmt_c78(unsigned long opw, long *tok)	low	devinit
+00422960	F	dis_fmt_c82	int dis_fmt_c82(unsigned long opw, long *tok)	med	devinit
+004229d0	F	dis_fmt_c80	int dis_fmt_c80(unsigned long opw, long *tok)	low	devinit
+00422b00	F	dis_fmt_c84	int dis_fmt_c84(unsigned long opw, long *tok)	med	devinit
+00422c10	F	dis_fmt_c81	int dis_fmt_c81(unsigned long opw, long *tok)	med	devinit
+00422c80	F	dis_fmt_c79	int dis_fmt_c79(unsigned long opw, long *tok)	low	devinit
+00422dc0	F	dis_fmt_c83	int dis_fmt_c83(unsigned long opw, long *tok)	low	devinit
+00422ec0	F	dis_fmt_c86	int dis_fmt_c86(unsigned long opw, long *tok)	med	devinit
+00422f80	F	dis_fmt_c85	int dis_fmt_c85(unsigned long opw, long *tok)	low	devinit
+00423050	F	dis_fmt_c88	int dis_fmt_c88(unsigned long opw, long *tok)	med	devinit
+004230c0	F	dis_fmt_c87	int dis_fmt_c87(unsigned long opw, long *tok)	med	devinit
+00423130	F	dis_fmt_c89	int dis_fmt_c89(unsigned long opw, long *tok)	med	devinit
+00423210	F	dis_fmt_c90	int dis_fmt_c90(unsigned long opw, long *tok)	med	devinit
+004232b0	F	dis_fmt_c91	int dis_fmt_c91(unsigned long opw, long *tok)	med	devinit
+00423310	F	dis_fmt_c92	int dis_fmt_c92(unsigned long opw, long *tok)	low	devinit
+00423370	F	dis_fmt_c95	int dis_fmt_c95(unsigned long opw, long *tok)	med	devinit
+004233e0	F	dis_fmt_c96	int dis_fmt_c96(unsigned long opw, long *tok)	med	devinit
+00423450	F	dis_fmt_c97	int dis_fmt_c97(unsigned long opw, long *tok)	low	devinit
+00423460	F	dis_fmt_c98	int dis_fmt_c98(unsigned long opw, long *tok)	low	devinit
+00423470	F	dis_fmt_c99	int dis_fmt_c99(unsigned long opw, long *tok)	low	devinit
+00423480	F	dis_fmt_c100	int dis_fmt_c100(unsigned long opw, long *tok)	low	devinit
+00423490	F	dis_fmt_c104	int dis_fmt_c104(unsigned long opw, long *tok)	low	devinit
+004234a0	F	dis_fmt_c107	int dis_fmt_c107(unsigned long opw, long *tok)	low	devinit
+004234b0	F	dis_fmt_c106	int dis_fmt_c106(unsigned long opw, long *tok)	low	devinit
+004234c0	F	dis_fmt_c101	int dis_fmt_c101(unsigned long opw, long *tok)	low	devinit
+004234d0	F	dis_fmt_c68	int dis_fmt_c68(unsigned long opw, long *tok)	med	devinit
+004235d0	F	dis_fmt_c63	int dis_fmt_c63(unsigned long opw, long *tok)	low	devinit
+004235f0	F	dis_fmt_c64	int dis_fmt_c64(unsigned long opw, long *tok)	med	devinit
+004236f0	F	dis_fmt_c62	int dis_fmt_c62(unsigned long opw, long *tok)	low	devinit
+00423710	F	dis_fmt_c30	int dis_fmt_c30(unsigned long opw, long *tok)	low	devinit
+00423730	F	dis_fmt_h423730	int dis_fmt_h423730(unsigned long opw, long *tok)	none	devinit
+00423820	F	dis_fmt_c31	int dis_fmt_c31(unsigned long opw, long *tok)	low	devinit
+00423840	F	dis_fmt_c48	int dis_fmt_c48(unsigned long opw, long *tok)	low	devinit
+00423860	F	dis_fmt_c49	int dis_fmt_c49(unsigned long opw, long *tok)	low	devinit
+00423880	F	dis_fmt_c28	int dis_fmt_c28(unsigned long opw, long *tok)	low	devinit
+004238a0	F	dis_fmt_h4238a0	int dis_fmt_h4238a0(unsigned long opw, long *tok)	none	devinit
+00423960	F	dis_fmt_c29	int dis_fmt_c29(unsigned long opw, long *tok)	low	devinit
+00423980	F	dis_fmt_c46	int dis_fmt_c46(unsigned long opw, long *tok)	low	devinit
+004239a0	F	dis_fmt_c47	int dis_fmt_c47(unsigned long opw, long *tok)	low	devinit
+004239c0	F	dis_fmt_c93	int dis_fmt_c93(unsigned long opw, long *tok)	low	devinit
+004239f0	F	dis_fmt_c105	int dis_fmt_c105(unsigned long opw, long *tok)	low	devinit
+00423a00	F	dis_fmt_c102	int dis_fmt_c102(unsigned long opw, long *tok)	low	devinit
+00423a40	F	dis_fmt_c109	int dis_fmt_c109(unsigned long opw, long *tok)	low	devinit
+00423b10	F	disassemble	int disassemble(unsigned long *insn, char *text, long a3, long a4, void *info)	med	devinit
+00423d90	F	dis_move_addrs	void dis_move_addrs(void *info, unsigned long pc)	med	devinit
+00423e90	F	dis_ea_addr	void dis_ea_addr(void *info, unsigned long pc, unsigned long sel, unsigned long defval, unsigned long *out)	med	devinit
+00423f90	F	dis_agu_addr	void dis_agu_addr(unsigned long rn, unsigned long nn, unsigned long mn, int negate, unsigned long *out)	med	devinit
+004240d0	F	bitrev16	void bitrev16(unsigned long v, unsigned long *out)	high	asm
+00424100	F	dis_reset	void dis_reset(void)	med	asm
+00424160	F	disassemble_l1	void disassemble_l1(unsigned long *insn, char *text, long a3, long a4, void *info)	med	asm
+00424190	F	str_find_token	unsigned long str_find_token(char *hay, char *needle, char **pos)	med	asm
+00424200	F	fmt_hex_dollar	void fmt_hex_dollar(unsigned long v, char *out)	high	asm
+00424260	F	fmt_hex24	void fmt_hex24(unsigned long v, char *out)	high	asm
+004242c0	F	dis_ea_tokens	int dis_ea_tokens(unsigned long opw, long *tok)	med	asm
+00424480	F	asm_split_fields	void asm_split_fields(void)	high	asm
+004246e0	F	skip_to_space	char * skip_to_space(char *s)	med	asm
+00424730	F	asm_line	void asm_line(void)	high	asm
+00424790	F	str_lower_copy	char * str_lower_copy(char *s)	med	asm
+004247d0	F	lower_char	char lower_char(char c)	med	asm
+00424810	F	find_mnemonic	void * find_mnemonic(char *name)	high	asm
+00424830	F	bsearch_cb	void * bsearch_cb(char *key, char *base, long count, long size, void *cmp)	high	asm
+004248e0	F	proc_instr	int proc_instr(void *ientry)	high	asm
+00424c50	F	do_xy	int do_xy(void *insn, int pmclass, void *xs, void *xd, void *ys, void *yd)	high	asm
+00424f60	F	parse_space	int parse_space(long *space, int cls)	high	asm
+004250d0	F	space_code	int space_code(char c)	high	asm
+00425140	F	parse_xfield_src	int parse_xfield_src(void *op)	high	asm
+004251c0	F	parse_operand	int parse_operand(unsigned long flags, void *op, int regclass, int eaclass, int absclass, int immclass)	high	asm
+00425230	F	get_amode	int get_amode(unsigned long flags, void *op, int regclass, int eaclass, int absclass, int immclass)	high	asm
+00425390	F	amode_indirect	int amode_indirect(int eaclass, void *op)	high	asm
+004255d0	F	parse_addr_reg	int parse_addr_reg(void)	high	asm
+004255f0	F	parse_offset_reg	int parse_offset_reg(int areg)	high	asm
+00425650	F	match_register_name	int match_register_name(char **pp)	high	asm
+00426210	F	amode_immediate	int amode_immediate(int immclass, void *op)	high	asm
+00426370	F	get_imm_expr	int get_imm_expr(int immclass)	med	asm
+00426410	F	amode_absolute	int amode_absolute(int absclass, void *op)	high	asm
+004267d0	F	amode_register	int amode_register(int regclass, void *op)	high	asm
+00426b50	F	note_reg_direct	int note_reg_direct(unsigned long flags, int regclass, int reg)	med	asm
+00426b80	F	check_dup_dest	int check_dup_dest(int regclass, int reg)	high	asm
+00426c90	F	chk_no_yfield	int chk_no_yfield(void)	high	asm
+00426cd0	F	xy_imm_short	int xy_imm_short(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm
+00426e50	F	xy_imm_long	int xy_imm_long(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm
+00427020	F	xy_lreg	int xy_lreg(void *insn, void *xs, void *xd)	high	asm
+00427100	F	xy_acc	int xy_acc(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm
+004273b0	F	xy_xreg	int xy_xreg(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm
+004274e0	F	xdst_mem	int xdst_mem(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm
+00427b80	F	chk_move_class	int chk_move_class(int pmclass, long mask, void *insn)	high	asm
+00427c20	F	xy_reg	int xy_reg(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm
+00427f40	F	xy_mreg	int xy_mreg(int pmclass, void *insn, void *xs, void *xd)	high	asm
+00428070	F	xy_ctlreg	int xy_ctlreg(int pmclass, void *insn, void *xs, void *xd)	high	asm
+004281c0	F	xy_xsrc	int xy_xsrc(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm
+004286e0	F	xy_xsrc_acc	int xy_xsrc_acc(int pmclass, void *insn, void *xs, void *xd, void *ys, void *yd)	high	asm
+00428910	F	xy_ysrc	int xy_ysrc(int pmclass, void *insn, void *xs, void *xd)	high	asm
+00428b40	F	xy_lsrc	int xy_lsrc(void *insn, void *xs, void *xd)	high	asm
+00428bc0	F	xy_psrc	int xy_psrc(int pmclass, void *insn, void *xs, void *xd)	high	asm
+00428cf0	F	chk_xy_regs	int chk_xy_regs(int xreg, int yreg)	high	asm
+00428d60	F	canon_xy_fields	int canon_xy_fields(void)	med	asm
+00428dc0	F	swap_op2_op3	void swap_op2_op3(void)	med	asm
+00428de0	F	asm_clear_flags	void asm_clear_flags(void)	low	asm
+00428df0	F	p_noarg	int p_noarg(void)	high	asm
+00428e20	F	p_rts	int p_rts(void)	high	asm
+00428e50	F	p_andi	int p_andi(void *insn)	high	asm
+00428ed0	F	p_and_or	int p_and_or(void *insn)	high	asm
+00428fa0	F	p_alu_dst	int p_alu_dst(int cls)	med	asm
+00429080	F	p_alu1	int p_alu1(int iclass, void *insn)	high	asm
+00429110	F	p_addl	int p_addl(void *insn)	high	asm
+00429180	F	p_eor_adc	int p_eor_adc(int iclass, void *insn)	high	asm
+00429220	F	p_alu2	int p_alu2(int iclass, void *insn)	high	asm
+004292e0	F	p_norm	int p_norm(void *insn)	high	asm
+00429340	F	p_lua	int p_lua(void *insn)	high	asm
+004293a0	F	p_div	int p_div(void *insn)	high	asm
+00429400	F	p_bitop	int p_bitop(void *insn)	high	asm
+00429540	F	p_do	int p_do(void *insn)	high	asm
+004296e0	F	p_enddo	int p_enddo(void)	high	asm
+00429710	F	p_rep	int p_rep(void *insn)	high	asm
+00429800	F	p_jmp	int p_jmp(int iclass, void *insn)	high	asm
+004298d0	F	p_jsr	int p_jsr(int iclass, void *insn)	high	asm
+004299a0	F	p_jbit	int p_jbit(void *insn)	high	asm
+00429b00	F	p_tcc	int p_tcc(void *insn)	high	asm
+00429c10	F	p_mul	int p_mul(int iclass, void *insn)	high	asm
+00429da0	F	mulreg	int mulreg(int s1, int s2, int d, unsigned long *word)	high	asm
+00429ea0	F	p_move	int p_move(void)	high	asm
+00429f00	F	p_movep	int p_movep(void *insn)	high	asm
+0042a3a0	F	skip_comma	void skip_comma(void)	high	asm
+0042a3c0	F	enc_andi	void enc_andi(void *insn, void *imm, void *dst)	high	asm
+0042a410	F	insert_bits	unsigned long insert_bits(unsigned long word, unsigned long val, int pos, int width)	high	asm
+0042a440	F	ee_code	int ee_code(int reg)	high	asm
+0042a470	F	enc_div	void enc_div(void *insn, void *src, void *dst)	high	asm
+0042a4c0	F	d_code	int d_code(int reg)	high	asm
+0042a4f0	F	jjj_code	int jjj_code(int reg)	high	asm
+0042a550	F	enc_norm	void enc_norm(void *insn, void *src, void *dst)	high	asm
+0042a5b0	F	rrr_code	int rrr_code(int mode, int reg)	high	asm
+0042a640	F	enc_loop_ea	void enc_loop_ea(void *insn, void *op)	high	asm
+0042a6c0	F	mmm_code	int mmm_code(int mode)	high	asm
+0042a750	F	s_code	int s_code(int space)	high	asm
+0042a760	F	enc_loop_abs	void enc_loop_abs(void *insn, void *op)	high	asm
+0042a7a0	F	enc_loop_reg	void enc_loop_reg(void *insn, void *op)	high	asm
+0042a7e0	F	d6_code	int d6_code(int reg)	high	asm
+0042a870	F	ccc_code	int ccc_code(int reg)	high	asm
+0042a8e0	F	ddddd_code	int ddddd_code(int reg)	high	asm
+0042a980	F	dd_code	int dd_code(int reg)	high	asm
+0042a9d0	F	nnn_code	int nnn_code(int reg)	high	asm
+0042aa40	F	ddd_code	int ddd_code(int reg)	high	asm
+0042aac0	F	fff_code	int fff_code(int reg)	high	asm
+0042ab30	F	enc_loop_imm	void enc_loop_imm(void *insn, void *op)	high	asm
+0042ab80	F	enc_do_ea	void enc_do_ea(void *insn, void *op, void *target)	high	asm
+0042abb0	F	enc_do_abs	void enc_do_abs(void *insn, void *op, void *target)	high	asm
+0042abe0	F	enc_do_reg	void enc_do_reg(void *insn, void *op, void *target)	high	asm
+0042ac10	F	enc_do_imm	void enc_do_imm(void *insn, void *op, void *target)	high	asm
+0042ac40	F	enc_jmp_abs	void enc_jmp_abs(void *insn, void *op)	high	asm
+0042ac80	F	enc_jmp_ea	void enc_jmp_ea(void *insn, void *op)	high	asm
+0042ad10	F	set_ext_word	void set_ext_word(void *insn, void *op)	high	asm
+0042ad40	F	enc_jcc_abs	void enc_jcc_abs(void *insn, void *op)	high	asm
+0042ad80	F	enc_jcc_ea	void enc_jcc_ea(void *insn, void *op)	high	asm
+0042ae10	F	enc_tcc_r	void enc_tcc_r(void *insn, void *s1, void *d1, void *s2, void *d2)	high	asm
+0042aec0	F	enc_tcc	void enc_tcc(void *insn, void *s1, void *d1)	high	asm
+0042af10	F	enc_bit_ea	void enc_bit_ea(void *insn, void *bitno, void *op)	high	asm
+0042afb0	F	enc_bit_reg	void enc_bit_reg(void *insn, void *bitno, void *op)	high	asm
+0042b010	F	enc_bit_abs	void enc_bit_abs(void *insn, void *bitno, void *op)	high	asm
+0042b070	F	enc_bit_pp	void enc_bit_pp(void *insn, void *bitno, void *op)	high	asm
+0042b0e0	F	enc_jbit_ea	void enc_jbit_ea(void *insn, void *bitno, void *op, void *target)	high	asm
+0042b110	F	enc_jbit_reg	void enc_jbit_reg(void *insn, void *bitno, void *op, void *target)	high	asm
+0042b180	F	enc_jbit_abs	void enc_jbit_abs(void *insn, void *bitno, void *op, void *target)	high	asm
+0042b1b0	F	enc_jbit_pp	void enc_jbit_pp(void *insn, void *bitno, void *op, void *target)	high	asm
+0042b1e0	F	enc_movep_reg	void enc_movep_reg(void *insn, void *pp, void *reg)	high	asm
+0042b250	F	enc_movep_mem	void enc_movep_mem(void *insn, void *pp, void *mem)	high	asm
+0042b320	F	enc_movep_reg_w	void enc_movep_reg_w(void *insn, void *reg, void *pp)	high	asm
+0042b350	F	enc_movep_mem_w	void enc_movep_mem_w(void *insn, void *mem, void *pp)	high	asm
+0042b380	F	enc_movec_ea	void enc_movec_ea(void *insn, void *creg, void *mem)	high	asm
+0042b440	F	enc_movec_ea_w	void enc_movec_ea_w(void *insn, void *mem, void *creg)	high	asm
+0042b470	F	enc_movec_imm	void enc_movec_imm(void *insn, void *imm, void *creg)	high	asm
+0042b4e0	F	enc_movec_reg	void enc_movec_reg(void *insn, void *creg, void *reg)	high	asm
+0042b560	F	enc_movec_reg_w	void enc_movec_reg_w(void *insn, void *reg, void *creg)	high	asm
+0042b590	F	enc_movec_abs	void enc_movec_abs(void *insn, void *creg, void *abs)	high	asm
+0042b610	F	enc_movec_abs_w	void enc_movec_abs_w(void *insn, void *abs, void *creg)	high	asm
+0042b640	F	enc_movec_ea2	void enc_movec_ea2(void *insn, void *creg, void *mem)	high	asm
+0042b700	F	enc_movec_ea2_w	void enc_movec_ea2_w(void *insn, void *mem, void *creg)	high	asm
+0042b730	F	enc_pm_xy	void enc_pm_xy(void *insn, void *xreg, void *xmem, void *yreg, void *ymem)	high	asm
+0042b810	F	xx_code	int xx_code(int reg)	high	asm
+0042b860	F	yy_code	int yy_code(int reg)	high	asm
+0042b8b0	F	enc_pm_xy_wx	void enc_pm_xy_wx(void *insn, void *xmem, void *xreg, void *yreg, void *ymem)	high	asm
+0042b8f0	F	enc_pm_xy_wy	void enc_pm_xy_wy(void *insn, void *xreg, void *xmem, void *ymem, void *yreg)	high	asm
+0042b930	F	enc_pm_xy_wxy	void enc_pm_xy_wxy(void *insn, void *xmem, void *xreg, void *ymem, void *yreg)	high	asm
+0042b980	F	enc_pm_xr2	void enc_pm_xr2(void *insn, void *acc, void *mem)	high	asm
+0042ba20	F	enc_pm_x_ea	void enc_pm_x_ea(void *insn, void *reg, void *mem)	high	asm
+0042bad0	F	enc_pm_x_ea_w	void enc_pm_x_ea_w(void *insn, void *mem, void *reg)	high	asm
+0042bb00	F	enc_pm_y_ea	void enc_pm_y_ea(void *insn, void *reg, void *mem)	high	asm
+0042bb30	F	enc_pm_y_ea_w	void enc_pm_y_ea_w(void *insn, void *mem, void *reg)	high	asm
+0042bb60	F	enc_pm_x_abs	void enc_pm_x_abs(void *insn, void *reg, void *abs)	high	asm
+0042bbd0	F	enc_pm_x_abs_w	void enc_pm_x_abs_w(void *insn, void *abs, void *reg)	high	asm
+0042bc00	F	enc_pm_y_abs	void enc_pm_y_abs(void *insn, void *reg, void *abs)	high	asm
+0042bc30	F	enc_pm_y_abs_w	void enc_pm_y_abs_w(void *insn, void *abs, void *reg)	high	asm
+0042bc60	F	enc_pm_ry	void enc_pm_ry(void *insn, void *s1, void *d1, void *yreg, void *ymem)	high	asm
+0042bd40	F	x_code	int x_code(int reg)	high	asm
+0042bd70	F	enc_pm_ry_w	void enc_pm_ry_w(void *insn, void *s1, void *d1, void *ymem, void *yreg)	high	asm
+0042bdb0	F	enc_pm_xr	void enc_pm_xr(void *insn, void *xreg, void *xmem, void *s2, void *d2)	high	asm
+0042be80	F	y_code	int y_code(int reg)	high	asm
+0042beb0	F	enc_pm_xr_w	void enc_pm_xr_w(void *insn, void *xmem, void *xreg, void *s2, void *d2)	high	asm
+0042bef0	F	enc_pm_l_abs	void enc_pm_l_abs(void *insn, void *reg, void *abs)	high	asm
+0042bf50	F	lll_code	int lll_code(int reg)	high	asm
+0042c000	F	enc_pm_l_abs_w	void enc_pm_l_abs_w(void *insn, void *abs, void *reg)	high	asm
+0042c030	F	enc_pm_l_ea	void enc_pm_l_ea(void *insn, void *reg, void *mem)	high	asm
+0042c0d0	F	enc_pm_l_ea_w	void enc_pm_l_ea_w(void *insn, void *mem, void *reg)	high	asm
+0042c100	F	enc_pm_imm	void enc_pm_imm(void *insn, void *imm, void *dst)	high	asm
+0042c160	F	enc_pm_reg	void enc_pm_reg(void *insn, void *src, void *dst)	high	asm
+0042c1c0	F	enc_pm_update	void enc_pm_update(void *insn, void *op)	high	asm
+0042c230	F	enc_movem_ea	void enc_movem_ea(void *insn, void *reg, void *mem)	high	asm
+0042c2e0	F	enc_movem_ea_w	void enc_movem_ea_w(void *insn, void *mem, void *reg)	high	asm
+0042c310	F	enc_movem_abs	void enc_movem_abs(void *insn, void *reg, void *abs)	high	asm
+0042c360	F	enc_movem_abs_w	void enc_movem_abs_w(void *insn, void *abs, void *reg)	high	asm
+0042c390	F	enc_lua	void enc_lua(void *insn, void *mem, void *dst)	high	asm
+0042c400	F	enc_mul_imm	void enc_mul_imm(void *insn, void *s1, void *imm, void *dst)	high	asm
+0042c470	F	qq_code	int qq_code(int reg)	high	asm
+0042c4c0	F	mem_reg_read	int mem_reg_read(int id, unsigned long addr, unsigned long *out)	med	asm
+0042c7f0	F	reg_field_pack	unsigned long reg_field_pack(int id, unsigned long val, int idx)	low	asm
+0042d460	F	mem_write_n	int mem_write_n(int id, long a2, long a3, unsigned long addr, unsigned long count, unsigned long val)	low	asmtab
+0042d4c0	F	mem_region_of	int mem_region_of(int space, unsigned long addr)	med	asmtab
+0042da70	F	mem_reg_write	int mem_reg_write(int id, unsigned long addr, unsigned long val)	med	asmtab
+0042dd70	F	omr_remap_56009	void omr_remap_56009(unsigned long omr)	med	asmtab
+0042dec0	F	omr_remap_56011	void omr_remap_56011(unsigned long omr)	med	asmtab
+0042e010	F	omr_remap_56012	void omr_remap_56012(unsigned long omr)	med	asmtab
+0042e160	F	reg_write_check	int reg_write_check(int id, long a2, unsigned long val)	low	asmtab
+0042e370	F	reg_read_check	int reg_read_check(int id, long a2, unsigned long val)	low	asmtab
+0042eec0	F	insn_exec_info	void insn_exec_info(unsigned long devflags, unsigned long opw, long mode, long sel, void **rec)	med	asmtab
+0042f2a0	F	insn_move_info	void insn_move_info(unsigned long opw, long mode, long sel, void **rec, unsigned long devflags)	med	asmtab
+0042fdb0	F	insn_class_code	unsigned long insn_class_code(unsigned long opw, long mode, long sel, unsigned long devflags)	med	asmtab
+0042fe10	F	insn_ea_class	void insn_ea_class(unsigned long opw, long flag, unsigned long *out, unsigned long devflags)	med	asmtab
+0042ff20	F	ea_mode_index	int ea_mode_index(unsigned long opw)	med	asmtab
+0042ff80	F	insn_valid_pm_a	int insn_valid_pm_a(unsigned long opw)	low	asmtab
+00430080	F	insn_valid_pm_b	int insn_valid_pm_b(unsigned long opw)	low	asmtab
+004302d0	F	insn_valid_pm_c	int insn_valid_pm_c(unsigned long opw)	low	asmtab
+00430300	F	insn_valid_pm_d	int insn_valid_pm_d(unsigned long opw)	low	asmtab
+00430390	F	insn_valid_pm_e	int insn_valid_pm_e(unsigned long opw)	low	asmtab
+00430670	F	insn_valid_pm_f	int insn_valid_pm_f(unsigned long opw)	low	asmtab
+00430740	F	opclass_lookup	int opclass_lookup(unsigned long opw, unsigned long cpu)	high	asmtab
+004307d0	F	opclass_lookup_any	int opclass_lookup_any(unsigned long opw)	high	asmtab
+00430850	F	insn_validate	int insn_validate(unsigned long opw, unsigned long devflags)	med	asmtab
+004309c0	F	alu_ovf_add	void alu_ovf_add(void)	low	asmtab
+00430a10	F	alu_norm_sum	void alu_norm_sum(void)	med	asmtab
+00430b90	F	alu_ovf_sub	void alu_ovf_sub(void)	low	asmtab
+00430be0	F	alu_add56	void alu_add56(void)	med	asmtab
+00430e00	F	alu_norm_res	void alu_norm_res(void)	med	asmtab
+00431400	F	alu_ovf_c	void alu_ovf_c(void)	low	asmtab
+00431450	F	alu_ovf_d	void alu_ovf_d(void)	low	asmtab
+00431680	F	alu_norm_abs	void alu_norm_abs(void)	med	asmtab
+00432d50	F	alu_mpy	void alu_mpy(void)	med	asmtab
+00433020	F	alu_mac	void alu_mac(void)	med	asmtab
+00433250	F	alu_round	void alu_round(void)	med	asmtab
+00433360	F	alu_shift1	void alu_shift1(void *core)	med	asmtab
+00433700	F	alu_store_ext	void alu_store_ext(void)	low	asmtab
+004337c0	F	alu_load_src	void alu_load_src(int mode)	low	asmtab
+00433890	F	alu_set_ccr	void alu_set_ccr(void)	med	asmtab
+004339b0	F	alu_load_acc	void alu_load_acc(void)	low	asmtab
+00433a30	F	alu_load_ops	void alu_load_ops(void)	low	asmtab
+00433c50	F	sign_ext_word	void sign_ext_word(int src, int dst)	low	asmtab
+00433c80	F	alu_execute	void alu_execute(void *core)	med	asmtab
+00433ce0	F	alu_decode	void alu_decode(unsigned long opw, long *out)	low	asmtab
+00433e80	F	periph_reset	void periph_reset(void)	med	asmtab
+00433f10	F	periph_call	long periph_call(int devidx, int periph, long a, long b)	med	asmtab
+00433f60	F	periph_find_reg	long periph_find_reg(int devidx, char *name, int *periph, int *reg)	med	asmtab
+004a24f8	D	dev_56007	void *	high	devinit	1248
+004a29e8	D	dev_56011	void *	high	devinit	1248
+004a2ed8	D	dev_56012	void *	high	devinit	1248
+004a33c8	D	dev_56009	void *	high	devinit	1248
+004a3da8	D	dev_56002	void *	high	devinit	1248
+004a4298	D	dev_56000	void *	high	devinit	1248
+004a4788	D	dev_56001	void *	high	devinit	1248
+004a4c78	D	dev_56004	void *	high	devinit	1248
+004a5168	D	dev_56004rom	void *	high	devinit	1248
+004a5658	D	dev_56005	void *	high	devinit	1248
+004a8db4	D	dev_aux_table	void **	low	devinit	4
+004aab04	D	max_devices	long	high	devinit	4
+004aab08	D	dev_table	void *[13]	high	devinit	52
+004aab0c	D	max_dev_instances	long	med	devinit	4
+004aab10	D	dev_state_table	void **	med	devinit	4
+004bcef8	D	dev_68356	void *	high	devinit	1248
+004be8e0	D	dev_56030	void *	high	devinit	1248
+004bf758	D	keyed_dev_aux	void *[2]	low	devinit	8
+004bf760	D	keyed_dev_table	void *[8]	high	devinit	32
+004bf780	D	keygen_mod	unsigned long	high	devinit	4
+004bf784	D	keygen_base	unsigned long	high	devinit	4
+004bf788	D	keygen_mult	unsigned long	high	devinit	4
+004bf860	D	mnemonic_names	char *[103]	high	devinit	412
+004bfc78	D	dec_cpu_level	long	med	devinit	4
+004c02b0	D	dec_handlers	void *[210]	high	devinit	840
+004c05e8	D	hex_digits	char *	high	devinit	4
+004c05f0	D	dis_token_strings	char *[256]	high	devinit	1024
+004c1298	D	dis_fmt_handlers	void *[110]	high	devinit	440
+004c16f0	D	asm_mnem_table	void *[420]	high	asm	1680
+004c1d80	D	asm_mnem_count	long	high	asm	4
+004c2ab0	D	core_vtable_56000	void *[7]	high	asmtab	28
+004c2af0	D	core_vtable_56009	void *[7]	high	asmtab	28
+004c2b30	D	core_vtable_56011	void *[7]	high	asmtab	28
+004c2b70	D	core_vtable_56012	void *[7]	high	asmtab	28
+004c2bb0	D	insn_exec_records	long[]	med	asmtab	0
+004c36f0	D	insn_exec_handlers	void *[110]	med	asmtab	440
+004c38a8	D	insn_move_records	long[]	med	asmtab	0
+004c3ad0	D	insn_move_handlers	void *[110]	med	asmtab	440
+004c3c88	D	insn_class_handlers	void *[110]	med	asmtab	440
+004c45b0	D	opclass_table	unsigned long[436]	high	devinit	1744
+004c4c90	D	insn_valid_handlers	void *[109]	med	asmtab	436
+004c4e48	D	opclass_last_any	long	med	devinit	4
+004c4e4c	D	opclass_last	long	med	devinit	4
+004c4eb0	D	alu_handlers	void *[64]	med	asmtab	256
+004db080	D	asm_empty_field	char[4]	med	asm	4
+004dbdc0	D	keygen_seed	unsigned long	high	devinit	4
+004dbdc8	D	keygen_out	char[9]	high	devinit	9
+004dbe78	D	dec_uses_extword	long	high	devinit	4
+004dbe7c	D	dec_extword	unsigned long	high	devinit	4
+004dbe80	D	dec_pc	unsigned long	med	devinit	4
+004dbe88	D	dis_hex_ea	char[16]	med	devinit	16
+004dbea0	D	dis_effect_flags	unsigned long	med	devinit	4
+004dbea4	D	dis_sel_a	unsigned long	low	devinit	4
+004dbea8	D	dis_sel_b	unsigned long	low	devinit	4
+004dbeac	D	dis_sel_c	unsigned long	low	devinit	4
+004dbeb0	D	dis_sel_d	unsigned long	low	devinit	4
+004dbeb4	D	dis_sel_e	unsigned long	low	devinit	4
+004dbeb8	D	dis_val_b	unsigned long	low	devinit	4
+004dbed0	D	dis_hex_b	char[16]	low	devinit	16
+004dbee8	D	dis_hex_c	char[16]	low	devinit	16
+004dbefc	D	dis_cpu_level	long	med	devinit	4
+004dbf00	D	asm_op3_field	char *	high	asm	4
+004dbf08	D	asm_line_buf	char[264]	med	asm	264
+004dc008	D	asm_op1_field	char *	high	asm	4
+004dc00c	D	asm_mnem_field	char *	high	asm	4
+004dc010	D	asm_label	char *	med	asm	4
+004dc110	D	asm_flags	long	low	asm	4
+004dc114	D	asm_xy_swapped	long	med	asm	4
+004dc118	D	asm_op2_field	char *	high	asm	4
+004dc120	D	asm_mnem_lower	char[16]	med	asm	16
+004dc134	D	opclass_key_any	unsigned long	med	devinit	4
+004dc138	D	opclass_key	unsigned long	med	devinit	4
+004dc13c	D	alu_ccr	unsigned long	med	asmtab	4
+004dc140	D	alu_flag	long	low	asmtab	4
+004dc144	D	alu_core	void *	med	asmtab	4
+005029e0	D	optr	char *	high	asm	4
+0050578c	D	cur_devaux	void *	low	asmtab	4
+00505790	D	cur_dev	void *	high	asmtab	4
+00505798	D	cur_devstate	void *	high	asmtab	4
+005059e0	D	asm_result	long[3]	high	asm	12
