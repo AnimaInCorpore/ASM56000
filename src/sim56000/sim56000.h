@@ -346,7 +346,10 @@ struct insn_stat {
     long cat;                          /* +0x10 category (mnemonic id, or 0x63..0x65 for move forms) */
     struct stat_op op[4];              /* +0x14 operands */
     struct stat_link *link;            /* +0x84 L: move list */
-    long aux;                          /* +0x88 */
+    long aux;                          /* +0x88 condition code field of the instruction */
+    long ccr, omr;                     /* +0x8c, +0x90 status registers when the record was taken */
+    long pad94[21];
+    long cc_true;                      /* +0xe8 condition evaluated true (eval_cc of ccr and aux) */
 };
 
 /* ------------------------------------------------------------------ simulator block (`state`, 0x4408 bytes; cur_sim = sim_tab[n])
@@ -389,6 +392,9 @@ struct sim_state {
     void *cdb;                         /* C-debugger data of this device (frames at +0x3fac/+0x3fb0/+0x3fb4) */
     struct prof_ctx *prof;             /* profiler context (+0x490 region) */
     struct op_ref refs[20];            /* +0x294 pending operand references */
+    long regs_cached;                  /* +0x48c the run loop has cached SR/OMR in sr_cache/omr_cache */
+    unsigned long sr_cache, omr_cache; /* +0x480, +0x484 */
+    long flag_428;                     /* +0x428 set when a `dc`-style (kind 0x23) instruction was seen by the profiler */
 };
 /* dev_state_tab (0x4a8d98 -> 0x4dba88, 32 slots) and dev_tab (0x4aab10 -> 0x4dbb08, 32 slots): see simdata.h */
 extern struct sim_state *cur_sim;                  /* 0x50578c */
@@ -581,6 +587,12 @@ struct prof_ctx {
     struct avl_tree *addr_tree;        /* +8 */
     struct avl_tree *file_tree;        /* +0xc */
     void *pool;                        /* +0x34e8 string pool / arena */
+    long kind_on[128];                 /* +0xc8 statistics enabled per instruction kind */
+    long cnt_plain[200];               /* +0x2648 executed instructions per kind (no parallel move) */
+    long cnt_pm1[200];                 /* +0x2968 ... with one parallel move */
+    long cnt_pm2[200];                 /* +0x2c88 ... with two parallel moves */
+    long cnt_pm[6];                    /* +0x2fc8 one move (no/other kind), two moves; L: move classes */
+    long grp[9][16];                   /* +0x2fe0 per instruction group: [0] total, [mode bucket] (igrp.c) */
 };
 extern struct prof_ctx *prof_ctx;                  /* 0x505b64 */
 

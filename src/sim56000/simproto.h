@@ -6,11 +6,17 @@
 
 /* ---- module igrp (0x401140): instruction-group statistics methods (igrp_*) */
 extern long igrp_map_kind(void *rec); /* 401140 */
-extern void igrp_names_hook(void *rec); /* 401250 */
+extern char *igrp_names_hook(long id); /* 401250 */
 extern void igrp_fill_mode_names(char **tab); /* 401260 */
 extern void igrp_count_instr(void *rec); /* 401380 */
 extern long igrp_mode_bucket(long mode); /* 4016a0 */
-/* no prototype yet: igrp_method_401700@401700 igrp_method_401860@401860 igrp_method_4018b0@4018b0 igrp_method_401910@401910 igrp_method_401970@401970 igrp_method_401990@401990 igrp_method_401a10@401a10 */
+extern void igrp_method_401700(void *stat); /* 401700 */
+extern long igrp_method_401860(void *stat); /* 401860 */
+extern long igrp_method_4018b0(void *stat); /* 4018b0 */
+extern long igrp_method_401910(void *stat); /* 401910 */
+extern long igrp_method_401970(void *stat); /* 401970 */
+extern char *igrp_method_401990(void *stat); /* 401990 */
+extern long igrp_method_401a10(void *stat); /* 401a10 */
 
 /* ---- module emi1 (0x401a50): EMI #1 peripheral (56004 DRAM controller) */
 extern long emi1_m_poke(long grp, long reg, unsigned long *val); /* 401a50 */

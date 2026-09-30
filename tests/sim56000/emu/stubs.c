@@ -114,3 +114,15 @@ long tst_periph_setup(long t, unsigned long *rnd, long dump_only, unsigned long 
             out[n++] = sim.regflags[i].flags[j] & 0xffffffffUL;
     return n;
 }
+
+/* profiler counter access for the igrp tests */
+void tst_prof_new(void) { static struct prof_ctx p; memset(&p, 0, sizeof p); prof_ctx = &p; }
+void tst_prof_set_on(long k, long v) { prof_ctx->kind_on[k] = v; }
+long tst_prof_dump(long *out)
+{
+    long n = 0, k, g, m;
+    for (k = 0; k < 0x67; k++) { out[n++] = prof_ctx->kind_on[k]; out[n++] = prof_ctx->cnt_plain[k]; out[n++] = prof_ctx->cnt_pm1[k]; out[n++] = prof_ctx->cnt_pm2[k]; }
+    for (k = 0; k < 6; k++) out[n++] = prof_ctx->cnt_pm[k];
+    for (g = 0; g < 9; g++) for (m = 0; m < 16; m++) out[n++] = prof_ctx->grp[g][m];
+    return n;
+}
