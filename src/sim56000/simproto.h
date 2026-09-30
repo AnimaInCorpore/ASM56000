@@ -314,124 +314,124 @@ extern unsigned long eval_cc(unsigned long ccr, long cc); /* 41cb60 */
 extern char * mnemonic_name(long id); /* 41cd00 */
 extern long stat_lmove_class(void *stat, long a2, long a3, long *class_out, long *flag1, long a6, long *flag2); /* 41cd40 */
 extern long operand_is_xy_pair(long *a, long *b); /* 41ce10 */
-extern void dec_c0_enddo(unsigned long opw, void *dec); /* 41ce50 */
+extern void dec_c0_enddo(unsigned long opw, long *dec); /* 41ce50 */
 
 /* ---- module decode (0x41cfb0): instruction word decoder (110 class handlers) + decode_insn driver */
 extern void swap_ptrs(void **a, void **b); /* 41cfb0 */
-extern void dec_alu(unsigned long opw, void *dec); /* 41cfd0 */
-extern void dec_flag_nomove(void *dec); /* 41d010 */
-extern void dec_alu_dp(unsigned long opw, void *dec); /* 41d020 */
-extern void dec_alu_mpy(unsigned long opw, void *dec); /* 41d090 */
+extern void dec_alu(unsigned long opw, long *dec); /* 41cfd0 */
+extern void dec_flag_nomove(long *dec); /* 41d010 */
+extern void dec_alu_dp(unsigned long opw, long *dec); /* 41d020 */
+extern void dec_alu_mpy(unsigned long opw, long *dec); /* 41d090 */
 extern void dec_ea6(long *slot, unsigned long ea6); /* 41d100 */
-extern void dec_c1_enddo(unsigned long opw, void *dec); /* 41d170 */
-extern void dec_c2_doforever(unsigned long opw, void *dec); /* 41d220 */
-extern void dec_c9_enddo(unsigned long opw, void *dec); /* 41d2d0 */
-extern void dec_c10_doforever(unsigned long opw, void *dec); /* 41d3d0 */
-extern void dec_c11_pm(unsigned long opw, void *dec); /* 41d4d0 */
-extern void dec_c15_pm(unsigned long opw, void *dec); /* 41d530 */
-extern void dec_pm_update(unsigned long opw, void *dec); /* 41d580 */
-extern void dec_c19_pm(unsigned long opw, void *dec); /* 41d5b0 */
-extern void dec_c20_enddo(unsigned long opw, void *dec); /* 41d5d0 */
-extern void dec_c21_pm(unsigned long opw, void *dec); /* 41d690 */
-extern void dec_c22_pm(unsigned long opw, void *dec); /* 41d770 */
-extern void dec_c26_pm(unsigned long opw, void *dec); /* 41d7c0 */
-extern void dec_c36_jsset(unsigned long opw, void *dec); /* 41d810 */
-extern void dec_jbit_ea(unsigned long opw, void *dec); /* 41d830 */
-extern void dec_bit_ea(unsigned long opw, void *dec); /* 41d870 */
-extern void dec_c37_jsclr(unsigned long opw, void *dec); /* 41d8b0 */
-extern void dec_c54_jset(unsigned long opw, void *dec); /* 41d910 */
-extern void dec_c55_jclr(unsigned long opw, void *dec); /* 41d930 */
-extern void dec_c30_jsset(unsigned long opw, void *dec); /* 41d990 */
-extern void dec_jbit_reg(unsigned long opw, void *dec); /* 41d9b0 */
-extern void dec_bit_reg(unsigned long opw, void *dec); /* 41d9f0 */
-extern void dec_c31_jsclr(unsigned long opw, void *dec); /* 41da20 */
-extern void dec_c48_jset(unsigned long opw, void *dec); /* 41da40 */
-extern void dec_c49_jclr(unsigned long opw, void *dec); /* 41da60 */
-extern void dec_c40_jsset(unsigned long opw, void *dec); /* 41db00 */
-extern void dec_jbit_aa(unsigned long opw, void *dec); /* 41db20 */
-extern void dec_bit_aa(unsigned long opw, void *dec); /* 41db60 */
-extern void dec_c41_jsclr(unsigned long opw, void *dec); /* 41dba0 */
-extern void dec_c58_jset(unsigned long opw, void *dec); /* 41dbc0 */
-extern void dec_c59_jclr(unsigned long opw, void *dec); /* 41dbe0 */
-extern void dec_c32_jsset(unsigned long opw, void *dec); /* 41dc80 */
-extern void dec_jbit_pp(unsigned long opw, void *dec, long spacesel); /* 41dca0 */
-extern void dec_bit_pp(unsigned long opw, void *dec, long spacesel); /* 41dce0 */
-extern void dec_c33_jsclr(unsigned long opw, void *dec); /* 41dd30 */
-extern void dec_c50_jset(unsigned long opw, void *dec); /* 41dd50 */
-extern void dec_c51_jclr(unsigned long opw, void *dec); /* 41dd70 */
-extern void dec_c34_btst(unsigned long opw, void *dec); /* 41df10 */
-extern void dec_c35_bchg(unsigned long opw, void *dec); /* 41df30 */
-extern void dec_c52_bset(unsigned long opw, void *dec); /* 41df50 */
-extern void dec_c53_bclr(unsigned long opw, void *dec); /* 41df70 */
-extern void dec_c38_btst(unsigned long opw, void *dec); /* 41df90 */
-extern void dec_c39_bchg(unsigned long opw, void *dec); /* 41dfb0 */
-extern void dec_c56_bset(unsigned long opw, void *dec); /* 41dfd0 */
-extern void dec_c57_bclr(unsigned long opw, void *dec); /* 41dff0 */
-extern void dec_c42_btst(unsigned long opw, void *dec); /* 41e010 */
-extern void dec_c43_bchg(unsigned long opw, void *dec); /* 41e030 */
-extern void dec_c60_bset(unsigned long opw, void *dec); /* 41e050 */
-extern void dec_c61_bclr(unsigned long opw, void *dec); /* 41e070 */
-extern void dec_c65_pm(unsigned long opw, void *dec); /* 41e090 */
-extern void dec_movep_ea(void *dec, long a2, long a3, long a4, long swap, unsigned long ea6); /* 41e0e0 */
-extern void dec_c66_pm(unsigned long opw, void *dec); /* 41e1a0 */
-extern void dec_c67_pm(unsigned long opw, void *dec); /* 41e230 */
-extern void dec_movep_reg(void *dec, long a2, long a3, long swap, long regsel); /* 41e280 */
-extern void dec_c69_enddo(unsigned long opw, void *dec); /* 41e440 */
-extern void dec_c70_doforever(unsigned long opw, void *dec); /* 41e4c0 */
-extern void dec_c75_rep(unsigned long opw, void *dec); /* 41e540 */
-extern void dec_c71_rep(unsigned long opw, void *dec); /* 41e570 */
-extern void dec_c73_rep(unsigned long opw, void *dec); /* 41e5a0 */
-extern void dec_c77_rep(unsigned long opw, void *dec); /* 41e5e0 */
-extern void dec_do_imm(unsigned long opw, void *dec); /* 41e610 */
-extern void dec_do_reg(unsigned long opw, void *dec); /* 41e650 */
-extern void dec_do_ea(unsigned long opw, void *dec); /* 41e690 */
-extern void dec_do_aa(unsigned long opw, void *dec); /* 41e6e0 */
-extern void dec_c81_pm(unsigned long opw, void *dec); /* 41e730 */
-extern void dec_c79_enddo(unsigned long opw, void *dec); /* 41e760 */
-extern void dec_c83_doforever(unsigned long opw, void *dec); /* 41e7f0 */
-extern void dec_c85_enddo(unsigned long opw, void *dec); /* 41e880 */
-extern void dec_c87_lua(unsigned long opw, void *dec); /* 41e900 */
-extern void dec_tcc(unsigned long opw, void *dec); /* 41e950 */
-extern void dec_div(unsigned long opw, void *dec); /* 41ea00 */
-extern void dec_incdec(unsigned long opw, void *dec); /* 41ea50 */
-extern void dec_shift_imm(unsigned long opw, void *dec); /* 41ea90 */
-extern void dec_shift_reg(unsigned long opw, void *dec); /* 41eaf0 */
-extern void dec_lsl_lsr_imm(unsigned long opw, void *dec); /* 41eb60 */
-extern void dec_lsl_lsr_reg(unsigned long opw, void *dec); /* 41ebb0 */
-extern void dec_extract_reg(unsigned long opw, void *dec); /* 41ec00 */
-extern void dec_insert_reg(unsigned long opw, void *dec); /* 41ec70 */
-extern void dec_normf_merge(unsigned long opw, void *dec); /* 41ecd0 */
-extern void dec_clb(unsigned long opw, void *dec); /* 41ed20 */
-extern void dec_alu_imm_short(unsigned long opw, void *dec); /* 41ed70 */
-extern void dec_alu_imm_long(unsigned long opw, void *dec); /* 41edc0 */
-extern void dec_cmpu(unsigned long opw, void *dec); /* 41ee20 */
-extern void dec_mpy_reg(unsigned long opw, void *dec); /* 41ee80 */
-extern void dec_mac_su(unsigned long opw, void *dec); /* 41ef00 */
-extern void dec_mpyi(unsigned long opw, void *dec); /* 41efc0 */
-extern void dec_extract_imm(unsigned long opw, void *dec); /* 41f040 */
-extern void dec_insert_imm(unsigned long opw, void *dec); /* 41f0b0 */
-extern void dec_c91_norm(unsigned long opw, void *dec); /* 41f110 */
-extern void dec_c95_ori(unsigned long opw, void *dec); /* 41f160 */
-extern void dec_c96_andi(unsigned long opw, void *dec); /* 41f1a0 */
-extern void dec_c97_enddo(unsigned long opw, void *dec); /* 41f1e0 */
-extern void dec_c98_stop(unsigned long opw, void *dec); /* 41f1f0 */
-extern void dec_c99_wait(unsigned long opw, void *dec); /* 41f200 */
-extern void dec_c100_reset(unsigned long opw, void *dec); /* 41f210 */
-extern void dec_c104_trap(unsigned long opw, void *dec); /* 41f220 */
-extern void dec_c107_nop(unsigned long opw, void *dec); /* 41f230 */
-extern void dec_c106_rti(unsigned long opw, void *dec); /* 41f240 */
-extern void dec_c101_rts(unsigned long opw, void *dec); /* 41f250 */
-extern void dec_c63_pm(unsigned long opw, void *dec); /* 41f260 */
-extern void dec_c62_pm(unsigned long opw, void *dec); /* 41f2e0 */
-extern void dec_c28_btst(unsigned long opw, void *dec); /* 41f350 */
-extern void dec_c29_bchg(unsigned long opw, void *dec); /* 41f370 */
-extern void dec_c46_bset(unsigned long opw, void *dec); /* 41f390 */
-extern void dec_c47_bclr(unsigned long opw, void *dec); /* 41f3b0 */
-extern void dec_c93_debug(unsigned long opw, void *dec); /* 41f3d0 */
-extern void dec_c105_illegal(unsigned long opw, void *dec); /* 41f3f0 */
-extern void dec_alu_cc(unsigned long opw, void *dec); /* 41f850 */
-extern long decode_insn(void *dec, long pc, long unused, unsigned long *flags); /* 41f9e0 */
-extern void dec_init(void *dec); /* 41fab0 */
+extern void dec_c1_enddo(unsigned long opw, long *dec); /* 41d170 */
+extern void dec_c2_doforever(unsigned long opw, long *dec); /* 41d220 */
+extern void dec_c9_enddo(unsigned long opw, long *dec); /* 41d2d0 */
+extern void dec_c10_doforever(unsigned long opw, long *dec); /* 41d3d0 */
+extern void dec_c11_pm(unsigned long opw, long *dec); /* 41d4d0 */
+extern void dec_c15_pm(unsigned long opw, long *dec); /* 41d530 */
+extern void dec_pm_update(unsigned long opw, long *dec); /* 41d580 */
+extern void dec_c19_pm(unsigned long opw, long *dec); /* 41d5b0 */
+extern void dec_c20_enddo(unsigned long opw, long *dec); /* 41d5d0 */
+extern void dec_c21_pm(unsigned long opw, long *dec); /* 41d690 */
+extern void dec_c22_pm(unsigned long opw, long *dec); /* 41d770 */
+extern void dec_c26_pm(unsigned long opw, long *dec); /* 41d7c0 */
+extern void dec_c36_jsset(unsigned long opw, long *dec); /* 41d810 */
+extern void dec_jbit_ea(unsigned long opw, long *dec); /* 41d830 */
+extern void dec_bit_ea(unsigned long opw, long *dec); /* 41d870 */
+extern void dec_c37_jsclr(unsigned long opw, long *dec); /* 41d8b0 */
+extern void dec_c54_jset(unsigned long opw, long *dec); /* 41d910 */
+extern void dec_c55_jclr(unsigned long opw, long *dec); /* 41d930 */
+extern void dec_c30_jsset(unsigned long opw, long *dec); /* 41d990 */
+extern void dec_jbit_reg(unsigned long opw, long *dec); /* 41d9b0 */
+extern void dec_bit_reg(unsigned long opw, long *dec); /* 41d9f0 */
+extern void dec_c31_jsclr(unsigned long opw, long *dec); /* 41da20 */
+extern void dec_c48_jset(unsigned long opw, long *dec); /* 41da40 */
+extern void dec_c49_jclr(unsigned long opw, long *dec); /* 41da60 */
+extern void dec_c40_jsset(unsigned long opw, long *dec); /* 41db00 */
+extern void dec_jbit_aa(unsigned long opw, long *dec); /* 41db20 */
+extern void dec_bit_aa(unsigned long opw, long *dec); /* 41db60 */
+extern void dec_c41_jsclr(unsigned long opw, long *dec); /* 41dba0 */
+extern void dec_c58_jset(unsigned long opw, long *dec); /* 41dbc0 */
+extern void dec_c59_jclr(unsigned long opw, long *dec); /* 41dbe0 */
+extern void dec_c32_jsset(unsigned long opw, long *dec); /* 41dc80 */
+extern void dec_jbit_pp(unsigned long opw, long *dec, long spacesel); /* 41dca0 */
+extern void dec_bit_pp(unsigned long opw, long *dec, long spacesel); /* 41dce0 */
+extern void dec_c33_jsclr(unsigned long opw, long *dec); /* 41dd30 */
+extern void dec_c50_jset(unsigned long opw, long *dec); /* 41dd50 */
+extern void dec_c51_jclr(unsigned long opw, long *dec); /* 41dd70 */
+extern void dec_c34_btst(unsigned long opw, long *dec); /* 41df10 */
+extern void dec_c35_bchg(unsigned long opw, long *dec); /* 41df30 */
+extern void dec_c52_bset(unsigned long opw, long *dec); /* 41df50 */
+extern void dec_c53_bclr(unsigned long opw, long *dec); /* 41df70 */
+extern void dec_c38_btst(unsigned long opw, long *dec); /* 41df90 */
+extern void dec_c39_bchg(unsigned long opw, long *dec); /* 41dfb0 */
+extern void dec_c56_bset(unsigned long opw, long *dec); /* 41dfd0 */
+extern void dec_c57_bclr(unsigned long opw, long *dec); /* 41dff0 */
+extern void dec_c42_btst(unsigned long opw, long *dec); /* 41e010 */
+extern void dec_c43_bchg(unsigned long opw, long *dec); /* 41e030 */
+extern void dec_c60_bset(unsigned long opw, long *dec); /* 41e050 */
+extern void dec_c61_bclr(unsigned long opw, long *dec); /* 41e070 */
+extern void dec_c65_pm(unsigned long opw, long *dec); /* 41e090 */
+extern void dec_movep_ea(long *dec, long a2, long a3, long a4, long swap, unsigned long ea6); /* 41e0e0 */
+extern void dec_c66_pm(unsigned long opw, long *dec); /* 41e1a0 */
+extern void dec_c67_pm(unsigned long opw, long *dec); /* 41e230 */
+extern void dec_movep_reg(long *dec, long a2, long a3, long swap, long regsel); /* 41e280 */
+extern void dec_c69_enddo(unsigned long opw, long *dec); /* 41e440 */
+extern void dec_c70_doforever(unsigned long opw, long *dec); /* 41e4c0 */
+extern void dec_c75_rep(unsigned long opw, long *dec); /* 41e540 */
+extern void dec_c71_rep(unsigned long opw, long *dec); /* 41e570 */
+extern void dec_c73_rep(unsigned long opw, long *dec); /* 41e5a0 */
+extern void dec_c77_rep(unsigned long opw, long *dec); /* 41e5e0 */
+extern void dec_do_imm(unsigned long opw, long *dec); /* 41e610 */
+extern void dec_do_reg(unsigned long opw, long *dec); /* 41e650 */
+extern void dec_do_ea(unsigned long opw, long *dec); /* 41e690 */
+extern void dec_do_aa(unsigned long opw, long *dec); /* 41e6e0 */
+extern void dec_c81_pm(unsigned long opw, long *dec); /* 41e730 */
+extern void dec_c79_enddo(unsigned long opw, long *dec); /* 41e760 */
+extern void dec_c83_doforever(unsigned long opw, long *dec); /* 41e7f0 */
+extern void dec_c85_enddo(unsigned long opw, long *dec); /* 41e880 */
+extern void dec_c87_lua(unsigned long opw, long *dec); /* 41e900 */
+extern void dec_tcc(unsigned long opw, long *dec); /* 41e950 */
+extern void dec_div(unsigned long opw, long *dec); /* 41ea00 */
+extern void dec_incdec(unsigned long opw, long *dec); /* 41ea50 */
+extern void dec_shift_imm(unsigned long opw, long *dec); /* 41ea90 */
+extern void dec_shift_reg(unsigned long opw, long *dec); /* 41eaf0 */
+extern void dec_lsl_lsr_imm(unsigned long opw, long *dec); /* 41eb60 */
+extern void dec_lsl_lsr_reg(unsigned long opw, long *dec); /* 41ebb0 */
+extern void dec_extract_reg(unsigned long opw, long *dec); /* 41ec00 */
+extern void dec_insert_reg(unsigned long opw, long *dec); /* 41ec70 */
+extern void dec_normf_merge(unsigned long opw, long *dec); /* 41ecd0 */
+extern void dec_clb(unsigned long opw, long *dec); /* 41ed20 */
+extern void dec_alu_imm_short(unsigned long opw, long *dec); /* 41ed70 */
+extern void dec_alu_imm_long(unsigned long opw, long *dec); /* 41edc0 */
+extern void dec_cmpu(unsigned long opw, long *dec); /* 41ee20 */
+extern void dec_mpy_reg(unsigned long opw, long *dec); /* 41ee80 */
+extern void dec_mac_su(unsigned long opw, long *dec); /* 41ef00 */
+extern void dec_mpyi(unsigned long opw, long *dec); /* 41efc0 */
+extern void dec_extract_imm(unsigned long opw, long *dec); /* 41f040 */
+extern void dec_insert_imm(unsigned long opw, long *dec); /* 41f0b0 */
+extern void dec_c91_norm(unsigned long opw, long *dec); /* 41f110 */
+extern void dec_c95_ori(unsigned long opw, long *dec); /* 41f160 */
+extern void dec_c96_andi(unsigned long opw, long *dec); /* 41f1a0 */
+extern void dec_c97_enddo(unsigned long opw, long *dec); /* 41f1e0 */
+extern void dec_c98_stop(unsigned long opw, long *dec); /* 41f1f0 */
+extern void dec_c99_wait(unsigned long opw, long *dec); /* 41f200 */
+extern void dec_c100_reset(unsigned long opw, long *dec); /* 41f210 */
+extern void dec_c104_trap(unsigned long opw, long *dec); /* 41f220 */
+extern void dec_c107_nop(unsigned long opw, long *dec); /* 41f230 */
+extern void dec_c106_rti(unsigned long opw, long *dec); /* 41f240 */
+extern void dec_c101_rts(unsigned long opw, long *dec); /* 41f250 */
+extern void dec_c63_pm(unsigned long opw, long *dec); /* 41f260 */
+extern void dec_c62_pm(unsigned long opw, long *dec); /* 41f2e0 */
+extern void dec_c28_btst(unsigned long opw, long *dec); /* 41f350 */
+extern void dec_c29_bchg(unsigned long opw, long *dec); /* 41f370 */
+extern void dec_c46_bset(unsigned long opw, long *dec); /* 41f390 */
+extern void dec_c47_bclr(unsigned long opw, long *dec); /* 41f3b0 */
+extern void dec_c93_debug(unsigned long opw, long *dec); /* 41f3d0 */
+extern void dec_c105_illegal(unsigned long opw, long *dec); /* 41f3f0 */
+extern void dec_alu_cc(unsigned long opw, long *dec); /* 41f850 */
+extern long decode_insn(long *dec, long pc, long unused, unsigned long *flags); /* 41f9e0 */
+extern void dec_init(long *dec); /* 41fab0 */
 /* no prototype yet: dec_h41d8d0@41d8d0 dec_h41d8f0@41d8f0 dec_h41d950@41d950 dec_h41d970@41d970 dec_h41da80@41da80 dec_h41daa0@41daa0 dec_h41dac0@41dac0 dec_h41dae0@41dae0 dec_h41dc00@41dc00 dec_h41dc20@41dc20 dec_h41dc40@41dc40 dec_h41dc60@41dc60 dec_h41dd90@41dd90 dec_h41ddb0@41ddb0 dec_h41ddd0@41ddd0 dec_h41ddf0@41ddf0 dec_h41de10@41de10 dec_h41de30@41de30 dec_h41de50@41de50 dec_h41de70@41de70 dec_h41de90@41de90 dec_h41deb0@41deb0 dec_h41ded0@41ded0 dec_h41def0@41def0 dec_h41e150@41e150 dec_h41e1f0@41e1f0 dec_h41e2f0@41e2f0 dec_h41e340@41e340 dec_h41e390@41e390 dec_h41e3f0@41e3f0 dec_h41f400@41f400 dec_h41f420@41f420 dec_h41f440@41f440 dec_h41f460@41f460 dec_h41f480@41f480 dec_h41f4f0@41f4f0 dec_h41f540@41f540 dec_h41f580@41f580 dec_h41f5e0@41f5e0 dec_h41f620@41f620 dec_h41f650@41f650 dec_h41f700@41f700 dec_h41f7b0@41f7b0 dec_h41f7f0@41f7f0 dec_h41f890@41f890 dec_h41f8b0@41f8b0 dec_h41f8d0@41f8d0 dec_h41f8f0@41f8f0 dec_h41f910@41f910 dec_h41f940@41f940 dis_fmt_h41fb60@41fb60 */
 
 /* ---- module disfmt (0x41fb70): disassembler formatters (one per opcode class) */

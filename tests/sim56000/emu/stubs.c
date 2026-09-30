@@ -50,3 +50,10 @@ W void *pool_alloc(void *p, unsigned long n) { return calloc(1, n); }
 
 W void *dsp_alloc(unsigned long n, long z) { return z ? calloc(1, n) : malloc(n); }
 W void dsp_free(void *p) { free(p); }
+
+/* callbacks into the emulated original for functions that are not translated yet (set from Python) */
+long (*cb_opclass_lookup)(unsigned long, unsigned long);
+long (*cb_insn_validate)(unsigned long, unsigned long);
+W long opclass_lookup(unsigned long opw, unsigned long cpu) { return cb_opclass_lookup ? cb_opclass_lookup(opw, cpu) : 0; }
+W long insn_validate(unsigned long opw, unsigned long fam) { return cb_insn_validate ? cb_insn_validate(opw, fam) : 0; }
+W void set_family(long f) { static struct dev_type dt; dt.family = f; cur_dtype = &dt; }

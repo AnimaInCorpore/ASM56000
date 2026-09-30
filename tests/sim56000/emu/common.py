@@ -9,12 +9,41 @@ BUILD = os.path.join(ROOT, 'build', 'emu')
 SRC = os.path.join(ROOT, 'src', 'sim56000')
 
 
-def build(name, sources):
+def build(name, sources, data=()):
+    """Compile the given translation units (plus generated data files) with the test stubs into a shared
+    library; symbols that are still undefined (functions of untranslated modules) get empty stand-ins."""
     os.makedirs(BUILD, exist_ok=True)
     out = os.path.join(BUILD, name + '.so')
-    cmd = ['gcc', '-shared', '-fPIC', '-O1', '-std=gnu89', '-w', '-I' + SRC,
-           os.path.join(os.path.dirname(__file__), 'stubs.c')] + [os.path.join(SRC, s) for s in sources] + ['-lm', '-o', out]
-    subprocess.check_call(cmd)
+    objs = []
+    files = [os.path.join(os.path.dirname(__file__), 'stubs.c')] + [os.path.join(SRC, x) for x in list(sources) + list(data)]
+    for f in files:
+        o = os.path.join(BUILD, name + '_' + os.path.basename(f) + '.o')
+        subprocess.check_call(['gcc', '-c', '-fPIC', '-O1', '-std=gnu89', '-w', '-I' + SRC, f, '-o', o])
+        objs.append(o)
+    defined, undefined = set(), set()
+    for o in objs:
+        for line in subprocess.check_output(['nm', '-g', o]).decode().splitlines():
+            p = line.split()
+            if len(p) == 3 and p[1] in 'TDBRVW':
+                defined.add(p[2])
+            elif len(p) == 2 and p[0] == 'U':
+                undefined.add(p[1])
+            elif len(p) == 3 and p[1] == 'U':
+                undefined.add(p[2])
+    missing = sorted(u for u in undefined - defined if not u.startswith('_') and u not in
+                     ('memcpy', 'memset', 'memcmp', 'malloc', 'calloc', 'free', 'realloc', 'strlen', 'strcpy', 'strcmp',
+                      'strncpy', 'strchr', 'sprintf', 'fprintf', 'fscanf', 'fopen', 'fclose', 'fseek', 'ftell', 'fread',
+                      'fwrite', 'exit', 'strtod', 'fmod', 'ldexp', 'frexp', 'floor', 'sqrt', 'isalpha', 'isalnum',
+                      'isupper', 'tolower', 'toupper', 'printf', 'puts', 'strtol', 'getenv', 'time', 'longjmp', 'setjmp',
+                      'strcat', 'strrchr', 'strstr', 'fgets', 'fputs', 'fputc', 'fgetc', 'atoi', 'atol', 'abs', 'pow',
+                      'sin', 'cos', 'atan', 'log', 'exp', 'strncmp', 'isdigit', 'isspace', 'islower', 'isxdigit', 'qsort'))
+    if missing:
+        st = os.path.join(BUILD, name + '_autostubs.c')
+        open(st, 'w').write('/* generated stand-ins */\n' + ''.join('void %s(void) { }\n' % m for m in missing))
+        o = st[:-2] + '.o'
+        subprocess.check_call(['gcc', '-c', '-fPIC', '-w', st, '-o', o])
+        objs.append(o)
+    subprocess.check_call(['gcc', '-shared', '-o', out] + objs + ['-lm'])
     return ctypes.CDLL(out)
 
 
