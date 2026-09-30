@@ -131,6 +131,11 @@ struct val {
     unsigned long f20;                 /* +0x20 */
     long idx;                          /* +0x24 index into the space table */
 };
+extern char *optr;                                 /* 0x5029e0 expression/assembler text cursor */
+extern long asm_result[3];                         /* 0x5059e0 [0] = -1 after an expression error */
+extern char *expr_err_msg;                         /* 0x5059f0 */
+extern void dbl_unpack(double d, unsigned long *hi, unsigned long *lo);   /* IEEE bit halves (exprmp.c) */
+extern double dbl_pack(unsigned long hi, unsigned long lo);
 extern unsigned long expr_mode;                    /* 0x5029dc expression mode word (XM_*) */
 /* mode word of the current device: cur_dtype->flags unless the type carries the +0x4e8 hook (radix.c) */
 extern unsigned long dev_mode_word(void);

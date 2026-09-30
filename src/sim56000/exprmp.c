@@ -9,7 +9,7 @@
 unsigned long expr_mode = 0;           /* 0x5029dc */
 
 /* ------------------------------------------------------------------ IEEE bit halves of a double */
-static void dbl_unpack(double d, unsigned long *hi, unsigned long *lo)
+void dbl_unpack(double d, unsigned long *hi, unsigned long *lo)
 {
     unsigned long sign = 0, biased;
     double m, top;
@@ -48,7 +48,7 @@ static void dbl_unpack(double d, unsigned long *hi, unsigned long *lo)
     *lo = (unsigned long)(m - top * 4294967296.0);
 }
 
-static double dbl_pack(unsigned long hi, unsigned long lo)
+double dbl_pack(unsigned long hi, unsigned long lo)
 {
     double v, mant;
     unsigned long e = (hi >> 20) & 0x7ff;

@@ -310,6 +310,8 @@ def layout(s, e):
         tk = kinds[nel * st:]
         return dict(kind="struct", stride=st, cols=cols, words=words[:nel * st], kinds=kinds[:nel * st],
                     count=nel, tail=(tw, tk))
+    if hint.get("ctype") == "char *" and n == 4:      # pointer that is NULL in the image (set at run time)
+        return dict(kind="scalar", ctype="char *", vals=[0], count=1)
     sizes, sgn = access_width(s, e)
     if hint.get("width"):
         w = hint["width"]

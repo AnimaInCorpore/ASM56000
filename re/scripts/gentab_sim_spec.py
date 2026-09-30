@@ -192,3 +192,6 @@ NAMES[0x4a8d98] = dict(ptype="struct sim_state **")     # dev_state_tab -> 0x4db
 NAMES[0x4aab10] = dict(ptype="struct dev_type **" if False else "struct dev_inst **")   # dev_tab -> 0x4dbb08 (BSS, 32 slots)
 NAMES[0x4aab08] = dict(ptype="struct dev_type **")      # chiptype_tab -> 0x4aaac8
 NAMES[0x4aaac8] = dict(ptype="struct dev_type *")       # 13 slots, 10 filled
+
+# scalars that hold run-time pointers
+NAMES[0x4a8dd0] = dict(ctype="char *")   # parm_errmsg

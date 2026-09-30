@@ -124,7 +124,7 @@ void *profiler_hook = (void *)&d_4a8d88; /* 004a8dc8 4 */
 
 long cur_dev_index = 0; /* 004a8dcc 4 */
 
-long parm_errmsg = 0; /* 004a8dd0 4 */
+char * parm_errmsg = 0; /* 004a8dd0 4 */
 
 unsigned char status1_buf[256] = { /* 004a8dd4 256 */
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

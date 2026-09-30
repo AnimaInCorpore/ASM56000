@@ -3525,7 +3525,7 @@ extern void *default_help_lines;
 extern void *cmdstack_buf;
 extern void *profiler_hook;
 extern long cur_dev_index;
-extern long parm_errmsg;
+extern char * parm_errmsg;
 extern unsigned char status1_buf[256];
 extern long status2_buf[25];
 extern unsigned char d_4a8f38[155];
