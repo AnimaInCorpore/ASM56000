@@ -904,7 +904,7 @@ extern void screen_fill_rows(char *text); /* 43dc00 */
 extern void pool_init(long *pool, unsigned long blocksize); /* 43dcb0 */
 extern unsigned long *pool_new_block(long pool, unsigned long size, unsigned long kind); /* 43dcf0 */
 extern void chain_free(void **head); /* 43dd40 */
-extern long pool_alloc(long pool, unsigned long n); /* 43dd70 */
+extern void *pool_alloc(void *pool, unsigned long n); /* 43dd70 */
 extern char *pool_strdup(long pool, char *s); /* 43ddd0 */
 extern void cdb_snapshot_write(char *name, long unused, long mode); /* 43deb0 */
 /* no prototype yet: cmd_watch_h1_sub_43cbb0@43cbb0 cmd_watch_h1_sub_43cc10@43cc10 cmd_unlock_h0@43ce80 hid_43d080@43d080 avl_cmp_h43de70@43de70 */
@@ -1424,8 +1424,8 @@ extern void avl_rebalance(void *n0, void *n1, void *l, void *d1, void *m, void *
 extern void *avl_delete(void *tree, void *key, long free_mode, long repeat); /* 46aa90 */
 extern void *avl_delete_node(void *node, void *key); /* 46ab20 */
 extern void *avl_find(void *tree, void *key, long mode); /* 46ac60 */
-extern void avl_walk(void *tree, void *fn, long order, long bracket); /* 46acf0 */
-extern void avl_walk_node(void *node, void *fn, long order); /* 46ad40 */
+extern void avl_walk(void *tree, void (*fn)(void *), long order, long bracket); /* 46acf0 */
+extern void avl_walk_node(void *node, void (*fn)(void *), long order); /* 46ad40 */
 extern void *avl_copy_sorted(void *tree, long cmp_type, long resort); /* 46ade0 */
 extern char *avl_iter(void *tree, char *iter, void *key); /* 46aec0 */
 

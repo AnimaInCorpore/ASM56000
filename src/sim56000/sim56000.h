@@ -505,12 +505,14 @@ struct prof_ctx {
     long words_executed;               /* +0xac */
     long insn_all, insn_cond;          /* +0xb0, +0xb4 */
     long cycles;                       /* +0xc0 */
+    long alloc_mode;                   /* +0x3500 (1 = prof_malloc, else arena) */
     long src_limit;                    /* +0x3504 (-1 = report by address) */
     long mode;                         /* +0x37a0 (1 no instructions executed, 3 dynamic data) */
     struct avl_tree *addr_tree;        /* +8 */
     struct avl_tree *file_tree;        /* +0xc */
     void *pool;                        /* +0x34e8 string pool / arena */
 };
+extern struct prof_ctx *prof_ctx;                  /* 0x505b64 */
 
 /* ------------------------------------------------------------------ helpers implemented in util.c-style modules */
 /* 24-bit words in state files are written with "%lx"; masks below reproduce 32-bit wraparound on wider longs */

@@ -123,7 +123,7 @@
 0043dcb0	F	pool_init	void pool_init(int *pool, unsigned long blocksize)	med	console
 0043dcf0	F	pool_new_block	unsigned long *pool_new_block(int pool, unsigned long size, unsigned long kind)	med	console
 0043dd40	F	chain_free	void chain_free(void **head)	low	console
-0043dd70	F	pool_alloc	int pool_alloc(int pool, unsigned long n)	med	console
+0043dd70	F	pool_alloc	void *pool_alloc(void *pool, unsigned long n)	med	console
 0043ddd0	F	pool_strdup	char *pool_strdup(int pool, char *s)	med	console
 0043deb0	F	cdb_snapshot_write	void cdb_snapshot_write(char *name, int unused, int mode)	low	console
 #

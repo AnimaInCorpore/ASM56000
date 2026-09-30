@@ -1045,7 +1045,7 @@
 0043dcb0	F	pool_init	void pool_init(int *pool, unsigned long blocksize)	med	console	
 0043dcf0	F	pool_new_block	unsigned long *pool_new_block(int pool, unsigned long size, unsigned long kind)	med	console	
 0043dd40	F	chain_free	void chain_free(void **head)	low	console	
-0043dd70	F	pool_alloc	int pool_alloc(int pool, unsigned long n)	med	console	
+0043dd70	F	pool_alloc	void *pool_alloc(void *pool, unsigned long n)	med	console	
 0043ddd0	F	pool_strdup	char *pool_strdup(int pool, char *s)	med	console	
 0043de70	F	avl_cmp_h43de70		low	hidden	
 0043deb0	F	cdb_snapshot_write	void cdb_snapshot_write(char *name, int unused, int mode)	low	console	
@@ -1683,8 +1683,8 @@
 0046aa90	F	avl_delete	void *avl_delete(void *tree, void *key, int free_mode, int repeat)	high	cdbsym	
 0046ab20	F	avl_delete_node	void *avl_delete_node(void *node, void *key)	high	cdbsym	
 0046ac60	F	avl_find	void *avl_find(void *tree, void *key, int mode)	high	cdbsym	
-0046acf0	F	avl_walk	void avl_walk(void *tree, void *fn, int order, int bracket)	high	cdbsym	
-0046ad40	F	avl_walk_node	void avl_walk_node(void *node, void *fn, int order)	high	cdbsym	
+0046acf0	F	avl_walk	void avl_walk(void *tree, void (*fn)(void *), int order, int bracket)	high	cdbsym	
+0046ad40	F	avl_walk_node	void avl_walk_node(void *node, void (*fn)(void *), int order)	high	cdbsym	
 0046ade0	F	avl_copy_sorted	void *avl_copy_sorted(void *tree, int cmp_type, int resort)	med	cdbsym	
 0046aec0	F	avl_iter	char *avl_iter(void *tree, char *iter, void *key)	high	cdbsym	
 0046b090	F	prof_list_count	int prof_list_count(void *tree)	high	profrep	
