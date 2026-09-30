@@ -131,6 +131,7 @@ struct val {
     unsigned long f20;                 /* +0x20 */
     long idx;                          /* +0x24 index into the space table */
 };
+extern unsigned long expr_mode;                    /* 0x5029dc expression mode word (XM_*) */
 /* mode word of the current device: cur_dtype->flags unless the type carries the +0x4e8 hook (radix.c) */
 extern unsigned long dev_mode_word(void);
 

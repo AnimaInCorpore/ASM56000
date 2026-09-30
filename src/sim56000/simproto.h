@@ -1194,16 +1194,16 @@ extern void mp_mul_digit(unsigned long d,unsigned long *a,unsigned long *out,lon
 extern long mp_ge(unsigned long *a,unsigned long *b,long n); /* 45c550 */
 extern void mp_sub(unsigned long *a,unsigned long *b,long n); /* 45c590 */
 extern long mp_len(unsigned long *limbs); /* 45c5d0 */
-extern void ieee_single_to_double(unsigned long f,unsigned long *d); /* 45c5f0 */
+extern void ieee_single_to_double(unsigned long f,double *d); /* 45c5f0 */
 extern void word_to_frac(unsigned long mode,void *node); /* 45c6c0 */
-extern void double_to_ieee_single(unsigned long *d); /* 45c7b0 */
+extern void double_to_ieee_single(void *node); /* 45c7b0 */
 extern unsigned long frac_to_word(unsigned long mode,void *node); /* 45c890 */
 extern void dword_to_frac(unsigned long mode,void *node); /* 45ca20 */
 extern void long_to_frac(void *node); /* 45cb30 */
-extern void ext_to_double(unsigned long *v); /* 45ccc0 */
+extern void ext_to_double(void *node); /* 45ccc0 */
 extern void frac_to_dword(unsigned long mode,void *node); /* 45cd40 */
 extern void frac_to_long(void *node); /* 45ced0 */
-extern void double_to_ext(unsigned long *v); /* 45d0c0 */
+extern void double_to_ext(void *node); /* 45d0c0 */
 
 /* ---- module miscx (0x45d120): decimal split helpers, allocator stubs, sim_error */
 extern void val_to_dec_parts2(unsigned long mode,unsigned long *in,unsigned long *out); /* 45d120 */

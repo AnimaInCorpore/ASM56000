@@ -1460,16 +1460,16 @@
 0045c550	F	mp_ge	int mp_ge(unsigned long *a,unsigned long *b,int n)	M	expr	
 0045c590	F	mp_sub	void mp_sub(unsigned long *a,unsigned long *b,int n)	H	expr	
 0045c5d0	F	mp_len	int mp_len(unsigned long *limbs)	H	expr	
-0045c5f0	F	ieee_single_to_double	void ieee_single_to_double(unsigned long f,unsigned long *d)	H	expr	
+0045c5f0	F	ieee_single_to_double	void ieee_single_to_double(unsigned long f,double *d)	H	expr	
 0045c6c0	F	word_to_frac	void word_to_frac(unsigned long mode,void *node)	H	expr	
-0045c7b0	F	double_to_ieee_single	void double_to_ieee_single(unsigned long *d)	H	expr	
+0045c7b0	F	double_to_ieee_single	void double_to_ieee_single(void *node)	H	expr	
 0045c890	F	frac_to_word	unsigned long frac_to_word(unsigned long mode,void *node)	H	expr	
 0045ca20	F	dword_to_frac	void dword_to_frac(unsigned long mode,void *node)	H	expr	
 0045cb30	F	long_to_frac	void long_to_frac(void *node)	H	expr	
-0045ccc0	F	ext_to_double	void ext_to_double(unsigned long *v)	M	expr	
+0045ccc0	F	ext_to_double	void ext_to_double(void *node)	M	expr	
 0045cd40	F	frac_to_dword	void frac_to_dword(unsigned long mode,void *node)	H	expr	
 0045ced0	F	frac_to_long	void frac_to_long(void *node)	H	expr	
-0045d0c0	F	double_to_ext	void double_to_ext(unsigned long *v)	M	expr	
+0045d0c0	F	double_to_ext	void double_to_ext(void *node)	M	expr	
 0045d120	F	val_to_dec_parts2	void val_to_dec_parts2(unsigned long mode,unsigned long *in,unsigned long *out)	M	misc	
 0045d1b0	F	val_to_dec_parts	void val_to_dec_parts(unsigned long mode,unsigned long *in,long *out)	M	misc	
 0045d280	F	dsp_free_ext	void dsp_free_ext(void *p)	M	misc	
