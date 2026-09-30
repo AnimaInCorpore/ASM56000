@@ -10,3 +10,4 @@ scratch_*/
 build_*/
 *.cld
 !tests/**/*.cld
+re/bin/
