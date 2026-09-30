@@ -609,5 +609,13 @@ extern struct prof_ctx *prof_ctx;                  /* 0x505b64 */
 /* original getenv/time convention of the project: SOURCE_DATE_EPOCH overrides time(NULL) */
 
 #include "simproto.h"
+#include "sim_asm.h"
+#include "sim_core.h"
+#include "sim_periph.h"
+#include "sim_front.h"
+#include "sim_cmd.h"
+#include "sim_dbg.h"
+#include "sim_ceval.h"
+#include "sim_prof.h"
 
 #endif /* SIM56000_H */
