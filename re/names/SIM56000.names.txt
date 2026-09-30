@@ -1002,7 +1002,7 @@
 0043bb00	F	status_line2	void status_line2(char *text)	high	fmt	
 0043bb50	F	display_refresh	void display_refresh(int full)	high	fmt	
 0043bc00	F	memtag_rebuild	void memtag_rebuild(void)	high	fmt	
-0043bd90	F	fmt_float_exp	char *fmt_float_exp(char *fmt, int *dbl)	high	fmt	
+0043bd90	F	fmt_float_exp	char *fmt_float_exp(char *fmt, double *dbl)	high	fmt	
 0043bec0	F	fmt_register	int fmt_register(int bank, int reg, int radix, char *out)	high	fmt	
 0043c2f0	F	display_all	void display_all(int with_watch)	high	console	
 0043ca50	F	rtrim_line	int rtrim_line(char *s)	high	console	

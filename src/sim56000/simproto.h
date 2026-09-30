@@ -863,7 +863,7 @@ extern void prompt_help_cycle(long step); /* 43ba70 */
 extern void status_line2(char *text); /* 43bb00 */
 extern void display_refresh(long full); /* 43bb50 */
 extern void memtag_rebuild(void); /* 43bc00 */
-extern char *fmt_float_exp(char *fmt, long *dbl); /* 43bd90 */
+extern char *fmt_float_exp(char *fmt, double *dbl); /* 43bd90 */
 extern long fmt_register(long bank, long reg, long radix, char *out); /* 43bec0 */
 
 /* ---- module console (0x43c2f0): register/memory display painter, output/log path, Win32 console, scrollback, arena */

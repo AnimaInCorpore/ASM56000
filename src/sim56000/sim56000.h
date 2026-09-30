@@ -121,6 +121,19 @@ typedef unsigned long uword;     /* one simulated 24/32-bit word, kept in 32 bit
 #define VF_SIZE2    0x02L              /* double 48 bit */
 #define VF_SIZE4    0x04L              /* long / accumulator 96 bit */
 
+/* value node of the expression evaluator (0x28 bytes in the original) */
+struct val {
+    double d;                          /* +0 floating value (flags & VF_FLOAT) */
+    unsigned long lo, hi, ext;         /* +8 limb 0 (low word), +0xc limb 1, +0x10 limb 2 (accumulator extension) */
+    unsigned long addr;                /* +0x14 address / raw copy */
+    unsigned long id;                  /* +0x18 memory space id or register id */
+    unsigned long flags;               /* +0x1c VF_* | size code bits copied from the region attribute */
+    unsigned long f20;                 /* +0x20 */
+    long idx;                          /* +0x24 index into the space table */
+};
+/* mode word of the current device: cur_dtype->flags unless the type carries the +0x4e8 hook (radix.c) */
+extern unsigned long dev_mode_word(void);
+
 /* ------------------------------------------------------------------ chip descriptors (from simdata.h)
  * dev_type, periph_desc, group_def, reg_desc, mem_region, core_vtable are generated. */
 /* chiptype_tab (struct dev_type **, -> the 13-slot array at 0x4aaac8, 10 filled) and num_chiptypes (13) are
