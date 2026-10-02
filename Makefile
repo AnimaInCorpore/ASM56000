@@ -200,4 +200,45 @@ clean:
 	      $(B)/test-asm56000-primitives$(EXE) \
 	      $(B)/test-asm56000-expr$(EXE) \
 	      $(B)/test-asm56000-instr$(EXE) \
-	      $(B)/dsplnk-*.o
+	      $(B)/dsplnk-*.o $(B)/test-sim56000-avl$(EXE) \
+	      $(B)/test-sim56000-mem$(EXE) $(B)/sim56000-*.o
+
+# SIM56000 foundation primitives (the full simulator is not linked yet).
+sim56000-tests: $(B) $(B)/test-sim56000-avl$(EXE)
+	$(B)/test-sim56000-avl$(EXE)
+
+$(B)/test-sim56000-avl$(EXE): tests/sim56000/test_avl.c tests/sim56000/avlmock.c \
+                            src/sim56000/avltree.c src/sim56000/sim56000.h \
+                            src/sim56000/simdata.h src/sim56000/simproto.h
+	$(CC) $(CFLAGS) -std=c89 -pedantic -Wall -Wextra -Isrc/sim56000 \
+	    -o $@ tests/sim56000/test_avl.c tests/sim56000/avlmock.c src/sim56000/avltree.c
+
+SIM56000_MEM_SRC = src/sim56000/console.c src/sim56000/profdata.c \
+                   src/sim56000/miscx.c src/sim56000/avltree.c
+SIM56000_HEADERS = src/sim56000/sim56000.h src/sim56000/simdata.h \
+                   src/sim56000/simproto.h
+
+sim56000-memory-tests: $(B) $(B)/test-sim56000-mem$(EXE)
+	$(B)/test-sim56000-mem$(EXE)
+
+# Override libc allocation only in the radix object to inject deterministic
+# failures. The test harness and all other modules use ordinary libc.
+$(B)/sim56000-memtest.o: src/sim56000/radix.c $(SIM56000_HEADERS)
+	$(CC) $(CFLAGS) -std=c89 -pedantic -Wall -Wextra \
+	    -Dmalloc=sim_test_malloc -Drealloc=sim_test_realloc -Dfree=sim_test_free \
+	    -c -o $@ src/sim56000/radix.c
+
+$(B)/test-sim56000-mem$(EXE): tests/sim56000/test_mem.c $(SIM56000_MEM_SRC) \
+                             $(B)/sim56000-memtest.o $(SIM56000_HEADERS)
+	$(CC) $(CFLAGS) -std=c89 -pedantic -Wall -Wextra -Isrc/sim56000 \
+	    -o $@ tests/sim56000/test_mem.c $(SIM56000_MEM_SRC) \
+	    $(B)/sim56000-memtest.o
+
+sim56000-tests: sim56000-memory-tests
+
+SIM56000_FOUNDATION_SRC = $(SIM56000_MEM_SRC) src/sim56000/radix.c
+
+sim56000-modules: $(B) $(SIM56000_FOUNDATION_SRC:src/sim56000/%.c=$(B)/sim56000-%.o)
+
+$(B)/sim56000-%.o: src/sim56000/%.c $(SIM56000_HEADERS)
+	$(CC) $(CFLAGS) -std=c89 -pedantic -Wall -Wextra -c -o $@ $<

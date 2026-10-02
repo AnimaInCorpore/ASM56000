@@ -901,13 +901,14 @@ extern void screen_release(void); /* 43db50 */
 extern void console_close(void); /* 43db70 */
 extern long abort_check(void); /* 43dbc0 */
 extern void screen_fill_rows(char *text); /* 43dc00 */
-extern void pool_init(long *pool, unsigned long blocksize); /* 43dcb0 */
-extern unsigned long *pool_new_block(long pool, unsigned long size, unsigned long kind); /* 43dcf0 */
-extern void chain_free(void **head); /* 43dd40 */
-extern long pool_alloc(long pool, unsigned long n); /* 43dd70 */
-extern char *pool_strdup(long pool, char *s); /* 43ddd0 */
+extern void pool_init(void *pool, unsigned long blocksize); /* 43dcb0 */
+extern void *pool_new_block(void *pool, unsigned long size, unsigned long kind); /* 43dcf0 */
+extern void chain_free(void *head); /* 43dd40 */
+extern void *pool_alloc(void *pool, unsigned long n); /* 43dd70 */
+extern char *pool_strdup(void *pool, char *s); /* 43ddd0 */
+extern long avl_cmp_h43de70(void *a, void *b); /* 43de70 */
 extern void cdb_snapshot_write(char *name, long unused, long mode); /* 43deb0 */
-/* no prototype yet: cmd_watch_h1_sub_43cbb0@43cbb0 cmd_watch_h1_sub_43cc10@43cc10 cmd_unlock_h0@43ce80 hid_43d080@43d080 avl_cmp_h43de70@43de70 */
+/* no prototype yet: cmd_watch_h1_sub_43cbb0@43cbb0 cmd_watch_h1_sub_43cc10@43cc10 cmd_unlock_h0@43ce80 hid_43d080@43d080 */
 
 /* ---- module snap (0x43e080): device-state snapshot relocation/restore; where/frame handlers */
 extern void snap_reloc_add(unsigned long *slot, long kind); /* 43e080 */
@@ -1419,15 +1420,15 @@ extern void avl_free(void *tree, long free_mode); /* 46a750 */
 extern void avl_free_nodes(void *node, long free_mode); /* 46a780 */
 extern void avl_insert(void *tree, void *item, long replace); /* 46a7d0 */
 extern void *avl_insert_node(void *node, void *item, long replace); /* 46a800 */
-extern void avl_set_node(void *node, void *left, void *item, void *right); /* 46a930 */
-extern void avl_rebalance(void *n0, void *n1, void *l, void *d1, void *m, void *d2, void *r); /* 46a990 */
+extern void *avl_set_node(void *node, void *left, void *item, void *right); /* 46a930 */
+extern void *avl_rebalance(void *n0, void *n1, void *l, void *d1, void *m, void *d2, void *r); /* 46a990 */
 extern void *avl_delete(void *tree, void *key, long free_mode, long repeat); /* 46aa90 */
 extern void *avl_delete_node(void *node, void *key); /* 46ab20 */
 extern void *avl_find(void *tree, void *key, long mode); /* 46ac60 */
-extern void avl_walk(void *tree, void *fn, long order, long bracket); /* 46acf0 */
-extern void avl_walk_node(void *node, void *fn, long order); /* 46ad40 */
+extern void avl_walk(void *tree, void (*fn)(void *), long order, long bracket); /* 46acf0 */
+extern void avl_walk_node(void *node, void (*fn)(void *), long order); /* 46ad40 */
 extern void *avl_copy_sorted(void *tree, long cmp_type, long resort); /* 46ade0 */
-extern char *avl_iter(void *tree, char *iter, void *key); /* 46aec0 */
+extern void *avl_iter(void *tree, void *iter, void *key); /* 46aec0 */
 
 /* ---- module profdata (0x46b090): profiler data model, MAJOR PROFILING ERROR handler */
 extern long prof_list_count(void *tree); /* 46b090 */
@@ -1440,21 +1441,29 @@ extern void prof_fwrite(void *buf, unsigned long size, unsigned long count, void
 extern void *prof_fread(void *buf, unsigned long size, unsigned long count, void *fp, long swap); /* 46b510 */
 extern void prof_func_fullname(char *out, void *func, unsigned long max); /* 46b580 */
 extern long prof_strnicmp(char *a, char *b, long n); /* 46b610 */
+extern long avl_cmp_h46b6c0(void *a, void *b); /* 46b6c0 */
 extern void *prof_add_line(unsigned long file_idx, unsigned long line); /* 46b700 */
 extern void prof_del_line(unsigned long file_idx, unsigned long line); /* 46b770 */
-extern long prof_cmp_ulong(unsigned long *a, unsigned long *b); /* 46b7a0 */
+extern long prof_cmp_ulong(void *a, void *b); /* 46b7a0 */
+extern long avl_cmp_h46b7c0(void *a, void *b); /* 46b7c0 */
+extern long avl_cmp_h46b870(void *a, void *b); /* 46b870 */
 extern void *prof_add_instr(unsigned long addr, long kind, unsigned long space_addr, void *srcloc); /* 46b8b0 */
 extern long prof_is_branch_class(void *instr); /* 46ba80 */
 extern char *prof_find_instr(unsigned long addr, void *ref, long mode); /* 46bac0 */
 extern long prof_cmp_srcloc(void *a, void *b); /* 46bbb0 */
+extern long avl_cmp_h46bc60(void *a, void *b); /* 46bc60 */
 extern void *prof_add_file(char *name, unsigned long kind); /* 46bcd0 */
 extern void prof_del_file(void *a, void *b); /* 46bd40 */
+extern long avl_cmp_h46bd80(void *a, void *b); /* 46bd80 */
+extern long avl_cmp_h46bda0(void *a, void *b); /* 46bda0 */
+extern long avl_cmp_h46bdc0(void *a, void *b); /* 46bdc0 */
 extern long prof_cmp_name_nocase(void *a, void *b); /* 46bde0 */
 extern void *prof_add_func(void *instr, char *name, long kind); /* 46be10 */
+extern long avl_cmp_h46bf00(void *a, void *b); /* 46bf00 */
+extern long avl_cmp_h46bf30(void *a, void *b); /* 46bf30 */
 extern void *prof_list_add(void *list, void *item); /* 46bf50 */
 extern void prof_list_remove(void *list, void *item); /* 46bfa0 */
 extern void prof_list_delete(void *list, void *item); /* 46bfd0 */
-/* no prototype yet: avl_cmp_h46b6c0@46b6c0 avl_cmp_h46b7c0@46b7c0 avl_cmp_h46b870@46b870 avl_cmp_h46bc60@46bc60 avl_cmp_h46bd80@46bd80 avl_cmp_h46bda0@46bda0 avl_cmp_h46bdc0@46bdc0 avl_cmp_h46bf00@46bf00 avl_cmp_h46bf30@46bf30 */
 
 /* ---- module cdbbt (0x46c000): cdbbt.c: back trace / frame unwinding */
 extern void cdb_build_backtrace(void); /* 46c000 */

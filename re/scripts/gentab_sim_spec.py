@@ -192,3 +192,10 @@ NAMES[0x4a8d98] = dict(ptype="struct sim_state **")     # dev_state_tab -> 0x4db
 NAMES[0x4aab10] = dict(ptype="struct dev_type **" if False else "struct dev_inst **")   # dev_tab -> 0x4dbb08 (BSS, 32 slots)
 NAMES[0x4aab08] = dict(ptype="struct dev_type **")      # chiptype_tab -> 0x4aaac8
 NAMES[0x4aaac8] = dict(ptype="struct dev_type *")       # 13 slots, 10 filled
+
+# AVL comparator table: preserve the recovered two-row layout, but give its
+# function pointers the actual portable return type and argument contract.
+HEADER_PRE.append("typedef long (*simcmp)(void *, void *);")
+_ts("rec7w_ecd15", [("w%d" % i, "C") for i in range(7)])
+NAMES[0x4d3b48] = dict(type="rec7w_ecd15", stride=7, sym="avl_cmp_tab")
+AVL_CMP_NAMES = {funcname(u32(0x4d3b48 + 4 * i)) for i in range(13)}

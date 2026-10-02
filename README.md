@@ -13,7 +13,7 @@ See `CLAUDE.md` for the portability rules, the build recipe and the workflow.
 | cldinfo, cldlod, cofdmp, dsplib, srec, strip, tiohist | done, tested against the originals |
 | asm56000 (assembler) | working; nearly all cases in `tests/asm56000` match. Known weak spots: parts of the object writer are still fitted to test inputs (special cases in the relocatable writer), and error handling for malformed instruction operands is incomplete. See `tests/asm56000/cases.txt` |
 | dsplnk (linker) | working; all cases in `tests/dsplnk` match. ABI/ELF output (`-c`, target 100) is stubbed (`abistub.c`); the port is in progress (`abi*.c`, `elfout.c`, `cof2elf.c` are work in progress and not yet in the Makefile). The hidden `-j` SDI optimiser is untested (it crashes in the original) |
-| sim56000 (simulator) | analysis complete, translation not started (see below) |
+| sim56000 (simulator) | analysis complete, foundation translation started: all 14 AVL routines plus memory/pool helpers translated; integration tests use reconstructed allocation and two comparators. No runnable simulator yet (see below) |
 
 ## Layout
 

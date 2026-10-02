@@ -234,7 +234,7 @@ def struct_for(cols, hint=None):
     return name
 
 
-FT = {"S": "const char *", "F": "simfn", "P": "void *", "L": "long", "U": "unsigned long"}
+FT = {"S": "const char *", "F": "simfn", "C": "simcmp", "P": "void *", "L": "long", "U": "unsigned long"}
 
 
 def col_kind(vals):
@@ -380,8 +380,9 @@ def emit_value(k, v, cast=None):
         if not isstr(v):
             return "(const char *)" + ptr_expr(v)[len("(void *)"):]
         return cq(cstr_at(v))
-    if k == "F":
-        return funcname(v)
+    if k in ("F", "C"):
+        name = funcname(v)
+        return "(simfn)main" if name == "main" else name
     if k == "P":
         return ptr_expr(v)
     raise ValueError(k)
@@ -544,7 +545,9 @@ def file_text(fname, bodies):
             if tok in FNAMES_ALL:
                 fn.add(tok)
     for f in sorted(fn):
-        o.append("extern void %s();" % f)
+        o.append("extern long %s(void *, void *);" % f if f in AVL_CMP_NAMES
+                 else "extern int main(void);" if f == "main"
+                 else "extern void %s();" % f)
     o.append("")
     for s, b in bodies:
         o.append(b)

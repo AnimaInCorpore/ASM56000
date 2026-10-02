@@ -8,6 +8,7 @@ typedef void (*simfn)();
 #define YYNONE 0x7fffffffL /* NULL yystoff */
 struct sim_state;
 struct dev_inst;
+typedef long (*simcmp)(void *, void *);
 struct dev_type;
 struct periph_desc;
 struct group_def;
@@ -19,6 +20,7 @@ struct mnem_entry;
 struct command_entry;
 struct cmd_ptr;
 struct yysvf;
+struct rec7w_ecd15;
 
 struct dev_type {
     const char *name;  /* +0x00 device name */
@@ -132,6 +134,15 @@ struct yysvf {
     long stoff;  /* index into yycrank (2-byte units, may be negative); YYNONE = NULL */
     struct yysvf *other;  /* next state (pointer into yysvec) */
     long stops;  /* index into yyvstop; -1 = none */
+};
+struct rec7w_ecd15 {
+    simcmp w0;
+    simcmp w1;
+    simcmp w2;
+    simcmp w3;
+    simcmp w4;
+    simcmp w5;
+    simcmp w6;
 };
 
 struct rec3w_7a303 {
@@ -2310,15 +2321,6 @@ struct rec64w_3a8a1 {
 struct rec2w_18d52 {
     simfn w0;
     long w1;
-};
-struct rec7w_ecd15 {
-    simfn w0;
-    simfn w1;
-    simfn w2;
-    simfn w3;
-    simfn w4;
-    simfn w5;
-    simfn w6;
 };
 struct flat_4d3b80 {
     const char * w0;

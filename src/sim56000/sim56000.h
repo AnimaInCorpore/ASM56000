@@ -494,6 +494,23 @@ struct avl_tree {                      /* 0xc bytes */
     long cmp_index;                    /* index into avl_cmp_tab */
 };
 
+/* Pool storage embedded in the profiler, original +0x34e8 (six words). */
+struct pool_block {
+    unsigned long size, kind;          /* +0/+4 */
+    unsigned char *data;               /* +8 allocation base */
+    unsigned long used;                /* +0xc cursor as byte count */
+    struct pool_block *next;           /* +0x10 */
+};
+struct sim_pool {
+    struct pool_block *head, *tail, *objects, *strings;
+    unsigned long block_size;
+    long block_count;
+};
+extern struct prof_ctx *prof_ctx;
+extern jmp_buf prof_jmpbuf;
+extern struct avl_tree *avl_cur_tree;
+extern struct avl_node *avl_spare_node, *avl_removed;
+
 /* ------------------------------------------------------------------ profiler context (sim+0x490; only documented members) */
 #define PROF_FL_COFF_BAD    0x01L
 #define PROF_FL_UNDECODED_P 0x08L
@@ -509,7 +526,8 @@ struct prof_ctx {
     long mode;                         /* +0x37a0 (1 no instructions executed, 3 dynamic data) */
     struct avl_tree *addr_tree;        /* +8 */
     struct avl_tree *file_tree;        /* +0xc */
-    void *pool;                        /* +0x34e8 string pool / arena */
+    struct sim_pool pool;              /* +0x34e8 string pool / arena */
+    long heap_mode;                     /* +0x3500: 1 allocates AVL nodes individually */
 };
 
 /* ------------------------------------------------------------------ helpers implemented in util.c-style modules */

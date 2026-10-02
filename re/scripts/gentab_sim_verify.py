@@ -81,12 +81,17 @@ def verify():
     d = os.path.join(ROOT, "re", "out", "SIM56000")
     o = ["/* link stubs for simverify (functions and BSS objects the data refers to) */"]
     used = set()
+    comparators = set()
     for fname, lo, hi in FILES:
         for line in open(os.path.join(OUT, fname), encoding="latin-1"):
             if line.startswith("extern void "):
                 used.add(line[12:].split("(")[0])
+            elif line.startswith("extern long "):
+                comparators.add(line[12:].split("(")[0])
     for f in sorted(used - {"main"}):
         o.append("void %s() {}" % f)
+    for f in sorted(comparators):
+        o.append("long %s(void *a, void *b) { (void)a; (void)b; return 0; }" % f)
     for a, n in sorted(BSS_USED.items()):
         o.append("char %s[16];" % n)
     open(os.path.join(d, "simverify_stubs.c"), "w", newline="\n").write("\n".join(o) + "\n")

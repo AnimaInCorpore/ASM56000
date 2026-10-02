@@ -1042,12 +1042,12 @@
 0043db70	F	console_close	void console_close(void)	high	console	
 0043dbc0	F	abort_check	int abort_check(void)	high	console	
 0043dc00	F	screen_fill_rows	void screen_fill_rows(char *text)	med	console	
-0043dcb0	F	pool_init	void pool_init(int *pool, unsigned long blocksize)	med	console	
-0043dcf0	F	pool_new_block	unsigned long *pool_new_block(int pool, unsigned long size, unsigned long kind)	med	console	
-0043dd40	F	chain_free	void chain_free(void **head)	low	console	
-0043dd70	F	pool_alloc	int pool_alloc(int pool, unsigned long n)	med	console	
-0043ddd0	F	pool_strdup	char *pool_strdup(int pool, char *s)	med	console	
-0043de70	F	avl_cmp_h43de70		low	hidden	
+0043dcb0	F	pool_init	void pool_init(void *pool, unsigned long blocksize)	med	console
+0043dcf0	F	pool_new_block	void *pool_new_block(void *pool, unsigned long size, unsigned long kind)	med	console
+0043dd40	F	chain_free	void chain_free(void *head)	low	console
+0043dd70	F	pool_alloc	void *pool_alloc(void *pool, unsigned long n)	med	console
+0043ddd0	F	pool_strdup	char *pool_strdup(void *pool, char *s)	med	console
+0043de70	F	avl_cmp_h43de70	long avl_cmp_h43de70(void *a, void *b)	low	hidden
 0043deb0	F	cdb_snapshot_write	void cdb_snapshot_write(char *name, int unused, int mode)	low	console	
 0043e080	F	snap_reloc_add	void snap_reloc_add(unsigned long *slot, int kind)	med	cdbwatch	
 0043e4a0	F	snap_find_block	int snap_find_block(unsigned long addr, int *out_block_off)	med	cdbwatch	
@@ -1678,15 +1678,15 @@
 0046a780	F	avl_free_nodes	void avl_free_nodes(void *node, int free_mode)	high	cdbsym	
 0046a7d0	F	avl_insert	void avl_insert(void *tree, void *item, int replace)	high	cdbsym	
 0046a800	F	avl_insert_node	void *avl_insert_node(void *node, void *item, int replace)	high	cdbsym	
-0046a930	F	avl_set_node	void avl_set_node(void *node, void *left, void *item, void *right)	high	cdbsym	
-0046a990	F	avl_rebalance	void avl_rebalance(void *n0, void *n1, void *l, void *d1, void *m, void *d2, void *r)	med	cdbsym	
+0046a930	F	avl_set_node	void *avl_set_node(void *node, void *left, void *item, void *right)	high	cdbsym
+0046a990	F	avl_rebalance	void *avl_rebalance(void *n0, void *n1, void *l, void *d1, void *m, void *d2, void *r)	med	cdbsym
 0046aa90	F	avl_delete	void *avl_delete(void *tree, void *key, int free_mode, int repeat)	high	cdbsym	
 0046ab20	F	avl_delete_node	void *avl_delete_node(void *node, void *key)	high	cdbsym	
 0046ac60	F	avl_find	void *avl_find(void *tree, void *key, int mode)	high	cdbsym	
-0046acf0	F	avl_walk	void avl_walk(void *tree, void *fn, int order, int bracket)	high	cdbsym	
-0046ad40	F	avl_walk_node	void avl_walk_node(void *node, void *fn, int order)	high	cdbsym	
+0046acf0	F	avl_walk	void avl_walk(void *tree, void (*fn)(void *), int order, int bracket)	high	cdbsym
+0046ad40	F	avl_walk_node	void avl_walk_node(void *node, void (*fn)(void *), int order)	high	cdbsym
 0046ade0	F	avl_copy_sorted	void *avl_copy_sorted(void *tree, int cmp_type, int resort)	med	cdbsym	
-0046aec0	F	avl_iter	char *avl_iter(void *tree, char *iter, void *key)	high	cdbsym	
+0046aec0	F	avl_iter	void *avl_iter(void *tree, void *iter, void *key)	high	cdbsym
 0046b090	F	prof_list_count	int prof_list_count(void *tree)	high	profrep	
 0046b0a0	F	prof_error	void prof_error(int level, char *fmt, ...)	high	profrep	
 0046b150	F	prof_malloc	void *prof_malloc(unsigned long n)	high	profrep	
@@ -1697,26 +1697,26 @@
 0046b510	F	prof_fread	void *prof_fread(void *buf, unsigned long size, unsigned long count, void *fp, int swap)	high	profrep	
 0046b580	F	prof_func_fullname	void prof_func_fullname(char *out, void *func, unsigned long max)	med	profrep	
 0046b610	F	prof_strnicmp	int prof_strnicmp(char *a, char *b, int n)	high	profrep	
-0046b6c0	F	avl_cmp_h46b6c0		low	hidden	
+0046b6c0	F	avl_cmp_h46b6c0	long avl_cmp_h46b6c0(void *a, void *b)	low	hidden
 0046b700	F	prof_add_line	void *prof_add_line(unsigned long file_idx, unsigned long line)	med	profrep	
 0046b770	F	prof_del_line	void prof_del_line(unsigned long file_idx, unsigned long line)	med	profrep	
-0046b7a0	F	prof_cmp_ulong	int prof_cmp_ulong(unsigned long *a, unsigned long *b)	high	profrep	
-0046b7c0	F	avl_cmp_h46b7c0		low	hidden	
-0046b870	F	avl_cmp_h46b870		low	hidden	
+0046b7a0	F	prof_cmp_ulong	long prof_cmp_ulong(void *a, void *b)	high	profrep
+0046b7c0	F	avl_cmp_h46b7c0	long avl_cmp_h46b7c0(void *a, void *b)	low	hidden
+0046b870	F	avl_cmp_h46b870	long avl_cmp_h46b870(void *a, void *b)	low	hidden
 0046b8b0	F	prof_add_instr	void *prof_add_instr(unsigned long addr, int kind, unsigned long space_addr, void *srcloc)	med	profrep	
 0046ba80	F	prof_is_branch_class	int prof_is_branch_class(void *instr)	low	profrep	
 0046bac0	F	prof_find_instr	char *prof_find_instr(unsigned long addr, void *ref, int mode)	med	profrep	
-0046bbb0	F	prof_cmp_srcloc	int prof_cmp_srcloc(void *a, void *b)	med	profrep	
-0046bc60	F	avl_cmp_h46bc60		low	hidden	
+0046bbb0	F	prof_cmp_srcloc	long prof_cmp_srcloc(void *a, void *b)	med	profrep
+0046bc60	F	avl_cmp_h46bc60	long avl_cmp_h46bc60(void *a, void *b)	low	hidden
 0046bcd0	F	prof_add_file	void *prof_add_file(char *name, unsigned long kind)	med	profrep	
 0046bd40	F	prof_del_file	void prof_del_file(void *a, void *b)	low	profrep	
-0046bd80	F	avl_cmp_h46bd80		low	hidden	
-0046bda0	F	avl_cmp_h46bda0		low	hidden	
-0046bdc0	F	avl_cmp_h46bdc0		low	hidden	
-0046bde0	F	prof_cmp_name_nocase	int prof_cmp_name_nocase(void *a, void *b)	high	profrep	
+0046bd80	F	avl_cmp_h46bd80	long avl_cmp_h46bd80(void *a, void *b)	low	hidden
+0046bda0	F	avl_cmp_h46bda0	long avl_cmp_h46bda0(void *a, void *b)	low	hidden
+0046bdc0	F	avl_cmp_h46bdc0	long avl_cmp_h46bdc0(void *a, void *b)	low	hidden
+0046bde0	F	prof_cmp_name_nocase	long prof_cmp_name_nocase(void *a, void *b)	high	profrep
 0046be10	F	prof_add_func	void *prof_add_func(void *instr, char *name, int kind)	med	profrep	
-0046bf00	F	avl_cmp_h46bf00		low	hidden	
-0046bf30	F	avl_cmp_h46bf30		low	hidden	
+0046bf00	F	avl_cmp_h46bf00	long avl_cmp_h46bf00(void *a, void *b)	low	hidden
+0046bf30	F	avl_cmp_h46bf30	long avl_cmp_h46bf30(void *a, void *b)	low	hidden
 0046bf50	F	prof_list_add	void *prof_list_add(void *list, void *item)	high	profrep	
 0046bfa0	F	prof_list_remove	void prof_list_remove(void *list, void *item)	high	profrep	
 0046bfd0	F	prof_list_delete	void prof_list_delete(void *list, void *item)	high	profrep	
